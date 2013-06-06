@@ -12,6 +12,31 @@
     "common": true
   },
   {
+    "name": "background",
+    "type": "image",
+    "label": "Background image",
+    "optional": true,
+    "description": "Optional. Select an image to use as background for your drag and drop task."
+  },
+  {
+    "name": "size",
+    "type": "group",
+    "widget": "dimensions",
+    "label": "Task size",
+    "description": "Specifiy how large (in px) the play area should be.",
+    "default": "background",
+    "fields": [
+      {
+        "name": "x",
+        "type": "number"
+      },
+      {
+        "name": "y",
+        "type": "number"
+      }
+    ]
+  },
+  {
     "name": "question",
     "type": "group",
     "widget": "dragQuestion",
