@@ -9,12 +9,28 @@
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",
   "preloadedCss": [
-    {"path": "css/dragquestion.css"}
+    {
+      "path": "css/dragquestion.css"
+    }
   ],
-	"preloadedDependencies": [
-    {"machineName": "jQuery.ui", "majorVersion": 1, "minorVersion": 10, "defaultStyles": true}
+  "preloadedDependencies": [
+    {
+      "machineName": "jQuery.ui",
+      "majorVersion": 1,
+      "minorVersion": 10,
+      "defaultStyles": true
+    }
   ],
   "preloadedJs": [
-    {"path": "js/dragquestion.js"}
+    {
+      "path": "js/dragquestion.js"
+    }
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.DragQuestion",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
   ]
 }

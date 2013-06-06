@@ -35,118 +35,76 @@
                 "H5P.Image 1.0"
               ]
             },
-        {
-          "name": "x",
-          "type": "number",
-          "label": "X-position"
-        },
-        {
-          "name": "y",
-          "type": "number",
-          "label": "Y-position"
-        },
-        {
-          "name": "height",
-          "type": "number",
-          "label": "Height"
-        },
-        {
-          "name": "width",
-          "type": "number",
-          "label": "Width"
-        }
-      ]
-    }
-  },
-  {
-    "name": "droppables",
-    "type": "list",
-    "label": "Targets",
-    "entity": "target",
-    "field": {
-      "name": "droppables",
-      "type": "group",
-      "fields": [
-        {
-           "name": "scope",
-           "type": "number",
-           "max": 20,
-           "label": "Scope"
-        },
-        {
-          "name": "x",
-          "type": "number",
-          "label": "X-position"
-        },
-        {
-          "name": "y",
-          "type": "number",
-          "label": "Y-position"
-        },
-        {
-          "name": "height",
-          "type": "number",
-          "label": "Height"
-        },
-        {
-          "name": "width",
-          "type": "number",
-          "label": "Width"
-        }
-      ]
-    }
-  },
-  {
-    "name": "draggables",
-    "type": "list",
-    "label": "Draggables",
-    "entity": "draggable",
-    "field": {
-      "name": "draggables",
-      "type": "group",
-      "fields": [
-        {
-          "name": "content",
-          "type": "library",
-          "description": "Choose the type of content you would like to add.",
-          "options": [
-            "H5P.Text 1.0",
-            "H5P.Image 1.0"
+            {
+              "name": "x",
+              "type": "number",
+              "widget": "none"
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "widget": "none"
+            },
+            {
+              "name": "height",
+              "type": "number",
+              "widget": "none"
+            },
+            {
+              "name": "width",
+              "type": "number",
+              "widget": "none"
+            },
+            {
+              "name": "dropZones",
+              "type": "select",
+              "widget": "none"
+            }
           ]
-        },
-        {
-           "name": "scope",
-           "type": "number",
-           "label": "Scope"
-        },
-        {
-           "name": "target",
-           "type": "number",
-           "label": "Target"
-        },
-        {
-          "name": "x",
-          "type": "number",
-          "label": "X-position"
-        },
-        {
-          "name": "y",
-          "type": "number",
-          "label": "Y-position"
-        },
-        {
-          "name": "height",
-          "type": "number",
-          "label": "Height"
-        },
-        {
-          "name": "width",
-          "type": "number",
-          "label": "Width"
         }
-      ]
-    }
-  }
+      },
+      {
+        "name": "dropZones",
+        "type": "list",
+        "label": "Drop Zones",
+        "entity": "Drop Zone",
+        "field": {
+          "type": "group",
+          "label": "Drop Zone",
+          "fields": [
+            {
+              "name": "label",
+              "type": "text",
+              "label": "Label"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "label": "X-position"
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "label": "Y-position"
+            },
+            {
+              "name": "height",
+              "type": "number",
+              "label": "Height"
+            },
+            {
+              "name": "width",
+              "type": "number",
+              "label": "Width"
+            },
+            {
+              "name": "correctElements",
+              "type": "select",
+              "widget": "none"
+            }
+          ]
+        }
+      }
     ]
   }
 ]
