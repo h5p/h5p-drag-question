@@ -1,0 +1,81 @@
+[
+  {
+    "label": "Tittel"
+  },
+  {
+    "label": "Statisk innhald",
+    "entity": "statisk innhald",
+    "field": {
+      "label": "Innhald",
+      "fields": [
+        {
+          "description": "Vel innhaldstypen du vil legge til."
+        },
+        {
+          "label": "X-posisjon"
+        },
+        {
+          "label": "Y-posisjon"
+        },
+        {
+          "label": "Høgde"
+        },
+        {
+          "label": "Breidde"
+        }
+      ]
+    }
+  },
+  {
+    "label": "Målområde",
+    "entity": "målområde",
+    "field": {
+      "fields": [
+        {
+           "label": "Scope"
+        },
+        {
+          "label": "X-posisjon"
+        },
+        {
+          "label": "Y-posisjon"
+        },
+        {
+          "label": "Høgde"
+        },
+        {
+          "label": "Breidde"
+        }
+      ]
+    }
+  },
+  {
+    "label": "Flyttbare alternativ",
+    "entity": "flyttbart alternativ",
+    "field": {
+      "fields": [
+        {
+          "description": "Vel typen innhald du vil legge til."
+        },
+        {
+           "label": "Scope"
+        },
+        {
+           "label": "Målområde"
+        },
+        {
+          "label": "X-posisjon"
+        },
+        {
+          "label": "Y-posisjon"
+        },
+        {
+          "label": "Høgde"
+        },
+        {
+          "label": "Breidde"
+        }
+      ]
+    }
+  }
+]

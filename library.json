@@ -1,0 +1,20 @@
+{
+  "title": "Drag and drop question",
+  "description": "Question type",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 2,
+  "runnable": 1,
+  "author": "Amendor AS",
+  "license": "cc-by-sa",
+  "machineName": "H5P.DragQuestion",
+  "preloadedCss": [
+    {"path": "css/dragquestion.css"}
+  ],
+	"preloadedDependencies": [
+    {"machineName": "jQuery.ui", "majorVersion": 1, "minorVersion": 10, "defaultStyles": true}
+  ],
+  "preloadedJs": [
+    {"path": "js/dragquestion.js"}
+  ]
+}

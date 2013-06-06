@@ -1,0 +1,152 @@
+[
+  {
+    "name": "title",
+    "type": "text",
+    "label": "Title"
+  },
+  {
+    "name": "scoreShow",
+    "type": "text",
+    "label": "Score show button",
+    "default": "Score show",
+    "common": true
+  },
+  {
+    "name": "question",
+    "type": "group",
+    "widget": "dragQuestion",
+    "label": "Drag and drop task",
+    "fields": [
+      {
+        "name": "elements",
+        "type": "list",
+        "label": "Elements",
+        "entity": "element",
+        "field": {
+          "type": "group",
+          "label": "Element",
+          "fields": [
+            {
+              "name": "type",
+              "type": "library",
+              "description": "Choose the type of content you would like to add.",
+              "options": [
+                "H5P.Text 1.0",
+                "H5P.Image 1.0"
+              ]
+            },
+        {
+          "name": "x",
+          "type": "number",
+          "label": "X-position"
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "label": "Y-position"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "label": "Height"
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "label": "Width"
+        }
+      ]
+    }
+  },
+  {
+    "name": "droppables",
+    "type": "list",
+    "label": "Targets",
+    "entity": "target",
+    "field": {
+      "name": "droppables",
+      "type": "group",
+      "fields": [
+        {
+           "name": "scope",
+           "type": "number",
+           "max": 20,
+           "label": "Scope"
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "label": "X-position"
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "label": "Y-position"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "label": "Height"
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "label": "Width"
+        }
+      ]
+    }
+  },
+  {
+    "name": "draggables",
+    "type": "list",
+    "label": "Draggables",
+    "entity": "draggable",
+    "field": {
+      "name": "draggables",
+      "type": "group",
+      "fields": [
+        {
+          "name": "content",
+          "type": "library",
+          "description": "Choose the type of content you would like to add.",
+          "options": [
+            "H5P.Text 1.0",
+            "H5P.Image 1.0"
+          ]
+        },
+        {
+           "name": "scope",
+           "type": "number",
+           "label": "Scope"
+        },
+        {
+           "name": "target",
+           "type": "number",
+           "label": "Target"
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "label": "X-position"
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "label": "Y-position"
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "label": "Height"
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "label": "Width"
+        }
+      ]
+    }
+  }
+    ]
+  }
+]
