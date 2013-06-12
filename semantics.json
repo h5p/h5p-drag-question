@@ -103,6 +103,11 @@
               "label": "Label"
             },
             {
+              "name": "showLabel",
+              "type": "boolean",
+              "label": "Show label"
+            },
+            {
               "name": "x",
               "type": "number",
               "label": "X-position"

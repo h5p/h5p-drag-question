@@ -57,7 +57,30 @@
 .draggable:hover {
   border: 1px solid #aaaaaa;
 }
-.droppable {
+.draggable-correct,
+.dropzone-answer {
+  background: lightgreen;
+  color: green;
+  border: 1px solid green;
+}
+.draggable-wrong {
+  background: pink;
+  color: red;
+  border: 1px solid red;
+}
+.draggable-correct:after,
+.draggable-wrong:after {
+  font-family: 'H5PFontAwesome';
+  position: absolute;
+  right: 5px;
+}
+.draggable-correct:after {
+  content: "\f046";
+}
+.draggable-wrong:after {
+  content: "\f00d";
+}
+.dropzone {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
@@ -65,16 +88,33 @@
   position: absolute;
   background-color: #ffffff;
 }
-.droppable-correct-answer {
+.dropzone-correct-answer {
   border: 2px solid green;
 }
-.droppable-wrong-answer {
+.dropzone-wrong-answer {
   border: 2px dashed red;
 }
-.droppable-active {
+.dropzone-active {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
   border: 2px dashed #666666;
   position: absolute;
+}
+.dragquestion-label {
+  position: absolute;
+  top: -27px;
+  left: 0px;
+}
+.dropzone-answer {
+  position: absolute;
+  bottom: -15px;
+  right: 0px;
+  padding: 4px 10px;
+  font-size: 90%;
+  line-height: 100%;
+
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }

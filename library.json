@@ -3,7 +3,7 @@
   "description": "Question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 2,
+  "patchVersion": 3,
   "runnable": 1,
   "author": "Amendor AS",
   "license": "cc-by-sa",
@@ -14,6 +14,24 @@
     }
   ],
   "preloadedDependencies": [
+    {
+      "machineName": "H5P.Text",
+      "majorVersion": 1,
+      "minorVersion": 0,
+      "defaultStyles": true
+    },
+    {
+      "machineName": "H5P.Image",
+      "majorVersion": 1,
+      "minorVersion": 0,
+      "defaultStyles": true
+    },
+    {
+      "machineName": "FontAwesome",
+      "majorVersion": 3,
+      "minorVersion": 1,
+      "defaultStyles": true
+    },
     {
       "machineName": "jQuery.ui",
       "majorVersion": 1,
