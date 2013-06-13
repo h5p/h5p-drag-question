@@ -52,7 +52,7 @@ H5P.DragQuestion = function (options, contentId) {
       var $dropzone = $(el),
         corrects = $dropzone.data('correctElements');
       // If labels are hidden, show them now.
-      if (options.dropZones[idx].showLabel === false) {
+      if (options.question.dropZones[idx].showLabel === false) {
         // Render label
         $dropzone.append('<div class="dragquestion-label">'+$dropzone.data('label')+'</div>');
       }
@@ -70,7 +70,7 @@ H5P.DragQuestion = function (options, contentId) {
         $currentDraggable.addClass('draggable-wrong').removeClass('draggable-correct');
         // Show correct answer below. Only use first listed correct answer.
         var text,
-          correct = options.elements[corrects[0] - 1];
+          correct = options.question.elements[corrects[0] - 1];
         if (correct.content.library.lastIndexOf('H5P.Text', 0) === 0) {
           text = correct.content.params.text;
         } else if (correct.content.library.lastIndexOf('H5P.Image', 0) === 0) {
@@ -85,11 +85,16 @@ H5P.DragQuestion = function (options, contentId) {
   var attach = function(board) {
     score = 0;
     var $ = H5P.jQuery;
-    var dropzones = options.dropZones;
-    var elements = options.elements;
-    var $dragndrop = $('<div class="dragndrop"></div>');
+    var dropzones = options.question.dropZones;
+    var elements = options.question.elements;
 
     target = typeof(board) === "string" ? $("#" + board) : $(board);
+    target.addClass('h5p-dragquestion');
+
+    var width = target.width();
+    var height = width * (options.size.height / options.size.width);
+    var fontSize = parseInt(target.css('fontSize')) * (width / options.size.width);
+    var $dragndrop = $('<div class="dragndrop" style="height:' +  height + 'px;font-size:' + fontSize + 'px"></div>');
 
     if (options.title) {
       target.html('<div class="dragndrop-title">' + options.title + '</div>');
@@ -98,8 +103,8 @@ H5P.DragQuestion = function (options, contentId) {
 
     function addElement(id, className, el, z) {
       var $el = $('<div class="'+className+'">' + (el.text !== undefined ? el.text : '') + '</div>');
-      if (el.content) {
-        var elementInstance = new (H5P.classFromName(el.content.library.split(' ')[0]))(el.content.params, cp);
+      if (el.type !== undefined) {
+        var elementInstance = new (H5P.classFromName(el.type.library.split(' ')[0]))(el.type.params, cp);
         elementInstance.attach($el);
       }
       $dragndrop.append($el);
@@ -119,10 +124,10 @@ H5P.DragQuestion = function (options, contentId) {
         $el.data('correctElements', el.correctElements);
       }
       if (el.width !== undefined) {
-        $el.css({width: el.width + '%'});
+        $el.css({width: el.width + 'em'});
       }
       if (el.height !== undefined) {
-        $el.css({height: el.height + '%'});
+        $el.css({height: el.height + 'em'});
       }
       if(el.x !== undefined) {
         $el.css({left: el.x + '%'});

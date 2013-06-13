@@ -103,8 +103,11 @@
 }
 .dragquestion-label {
   position: absolute;
-  top: -27px;
-  left: 0px;
+  background: #efe2c9;
+  font-size: 0.5em;
+  top: -1.75em;
+  left: -0.0625em;
+  padding: 0 0.25em;
 }
 .dropzone-answer {
   position: absolute;
