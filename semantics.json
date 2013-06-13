@@ -110,22 +110,22 @@
             {
               "name": "x",
               "type": "number",
-              "label": "X-position"
+              "widget": "none"
             },
             {
               "name": "y",
               "type": "number",
-              "label": "Y-position"
+              "widget": "none"
             },
             {
               "name": "height",
               "type": "number",
-              "label": "Height"
+              "widget": "none"
             },
             {
               "name": "width",
               "type": "number",
-              "label": "Width"
+              "widget": "none"
             },
             {
               "name": "correctElements",
