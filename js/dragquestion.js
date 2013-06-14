@@ -37,7 +37,7 @@ H5P.DragQuestion = function (options, contentId) {
       var $dropzone = $(el),
         dragIndex = $dropzone.data('content'),
         corrects = $dropzone.data('correctElements');
-      if (dragIndex && (corrects.contains(dragIndex))) {
+      if (dragIndex && (corrects.contains('' + (dragIndex - 1)))) {
         score++;
       }
     });
