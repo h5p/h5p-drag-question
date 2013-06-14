@@ -60,7 +60,7 @@ H5P.DragQuestion = function (options, contentId) {
       // Show correct/wrong style for dropzone.
       var draggableId = $(el).data('content'),
         $currentDraggable = $('.draggable-' + draggableId);
-      if ($dropzone.data('content') && corrects.contains(draggableId)) {
+      if ($dropzone.data('content') && corrects.contains('' + (draggableId - 1))) {
         $dropzone.addClass('dropzone-correct-answer').removeClass('dropzone-wrong-answer');
         $currentDraggable.addClass('draggable-correct').removeClass('draggable-wrong');
         score++;
@@ -69,14 +69,16 @@ H5P.DragQuestion = function (options, contentId) {
         $dropzone.addClass('dropzone-wrong-answer').removeClass('dropzone-correct-answer');
         $currentDraggable.addClass('draggable-wrong').removeClass('draggable-correct');
         // Show correct answer below. Only use first listed correct answer.
-        var text,
-          correct = options.question.elements[corrects[0] - 1];
-        if (correct.content.library.lastIndexOf('H5P.Text', 0) === 0) {
-          text = correct.content.params.text;
-        } else if (correct.content.library.lastIndexOf('H5P.Image', 0) === 0) {
-          text = correct.content.params.alt;
+        if (corrects.length) {
+          var text,
+          correct = options.question.elements[corrects[0]];
+          if (correct.type.library.lastIndexOf('H5P.Text', 0) === 0) {
+            text = correct.type.params.text;
+          } else if (correct.type.library.lastIndexOf('H5P.Image', 0) === 0) {
+            text = correct.type.params.alt;
+          }
+          $dropzone.append('<div class="dropzone-answer">Correct: '+text+'</div>');
         }
-        $dropzone.append('<div class="dropzone-answer">Correct: '+text+'</div>');
       }
     });
     //target.find('.score').html(options.scoreText.replace('@score', score).replace('@total', count));
@@ -209,8 +211,16 @@ H5P.DragQuestion = function (options, contentId) {
         activeClass: 'dropzone-active',
         fit: 'intersect',
         accept: function (draggable) {
-          var dropzones = $(draggable).data('dropzones');
-          return (dropzones && (dropzones.contains($(el).data('id'))));
+          var dropZones = $(draggable).data('dropzones');
+          var id = $(el).data('id') - 1;
+
+          for (var i = 0; i < dropZones.length; i++) {
+            if (parseInt(dropZones[i]) === id) {
+              return true;
+            }
+          }
+
+          return false;
         },
         out: function(event, ui) {
           // TODO: somthing

@@ -83,7 +83,8 @@
             {
               "name": "dropZones",
               "type": "select",
-              "widget": "none"
+              "widget": "dynamicCheckboxes",
+              "label": "Select drop zones"
             }
           ]
         }
@@ -130,7 +131,8 @@
             {
               "name": "correctElements",
               "type": "select",
-              "widget": "none"
+              "widget": "dynamicCheckboxes",
+              "label": "Select correct elements"
             }
           ]
         }
