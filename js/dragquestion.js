@@ -51,7 +51,7 @@ H5P.DragQuestion = function (options, contentId) {
       count++;
       var $dropzone = $(el),
         corrects = $dropzone.data('correctElements');
-      var dz = options.question.dropZones[idx];
+      var dz = options.question.task.dropZones[idx];
       // If labels are hidden, show them now.
       if (dz.showLabel === undefined || dz.showLabel === false) {
         // Render label
@@ -72,7 +72,7 @@ H5P.DragQuestion = function (options, contentId) {
         // Show correct answer below. Only use first listed correct answer.
         if (corrects.length) {
           var text,
-          correct = options.question.elements[corrects[0]];
+          correct = options.question.task.elements[corrects[0]];
           if (correct.type.library.lastIndexOf('H5P.Text', 0) === 0) {
             text = correct.type.params.text;
           } else if (correct.type.library.lastIndexOf('H5P.Image', 0) === 0) {
@@ -88,19 +88,19 @@ H5P.DragQuestion = function (options, contentId) {
   var attach = function(board) {
     score = 0;
     var $ = H5P.jQuery;
-    var dropzones = options.question.dropZones;
-    var elements = options.question.elements;
+    var dropzones = options.question.task.dropZones;
+    var elements = options.question.task.elements;
 
     target = typeof(board) === "string" ? $("#" + board) : $(board);
     target.addClass('h5p-dragquestion');
 
     var width = target.width();
-    var height = width * (options.size.height / options.size.width);
-    var fontSize = parseInt(target.css('fontSize')) * (width / options.size.width);
+    var height = width * (options.question.settings.size.height / options.question.settings.size.width);
+    var fontSize = parseInt(target.css('fontSize')) * (width / options.question.settings.size.width);
     var $dragndrop = $('<div class="dragndrop" style="height:' +  height + 'px;font-size:' + fontSize + 'px"></div>');
 
-    if (options.title) {
-      target.html('<div class="dragndrop-title">' + options.title + '</div>');
+    if (options.question.settings.title) {
+      target.html('<div class="dragndrop-title">' + options.question.settings.title + '</div>');
     }
     target.append($dragndrop);
 
