@@ -44,15 +44,16 @@ H5P.DragQuestion = function (options, contentId) {
     return score;
   };
 
-  var showSolutions = function() {
+  var showSolutions = this.showSolutions = function() {
     var score = 0;
     var count = 0;
     target.find('.dropzone').each(function (idx, el) {
       count++;
       var $dropzone = $(el),
         corrects = $dropzone.data('correctElements');
+      var dz = options.question.dropZones[idx];
       // If labels are hidden, show them now.
-      if (options.question.dropZones[idx].showLabel === false) {
+      if (dz.showLabel === undefined || dz.showLabel === false) {
         // Render label
         $dropzone.append('<div class="dragquestion-label">'+$dropzone.data('label')+'</div>');
       }
