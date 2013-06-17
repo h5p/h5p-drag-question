@@ -111,10 +111,11 @@
 }
 .dropzone-answer {
   position: absolute;
-  bottom: -15px;
-  right: 0px;
+  top: 100%;
+  margin-top: 2px;
+  right: 0;
   padding: 4px 10px;
-  font-size: 90%;
+  font-size: 0.625em;
   line-height: 100%;
 
   -moz-border-radius: 6px;
