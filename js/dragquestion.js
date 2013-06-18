@@ -192,14 +192,14 @@ H5P.DragQuestion = function (options, contentId) {
 
     // Restore user answers
     if (options.userAnswers !== undefined) {
-      for (var droppableId in options.userAnswers) {
-        var draggableId = options.userAnswers[droppableId];
+      for (var dropzoneId in options.userAnswers) {
+        var draggableId = options.userAnswers[dropzoneId];
         var $draggable = target.find('.draggable-' + draggableId);
-        var $dropzone = target.find('.dropzone-' + droppableId);
+        var $dropzone = target.find('.dropzone-' + dropzoneId);
 
         // Set attributes
         $dropzone.data('content', draggableId);
-        $draggable.data('content', droppableId).css('z-index', '1');
+        $draggable.data('content', dropzoneId).css('z-index', '1');
 
         // Move drag to center of drop
         // Since we're using percent we need to account for css problems with margins and paddings...
