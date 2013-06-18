@@ -10,6 +10,11 @@ H5P.DragQuestion = function (options, contentId) {
     return new H5P.DragQuestion(options, contentId);
   }
 
+  options = $.extend({}, {
+    scoreShow: 'Score show',
+    correct: 'Correct'
+  }, options);
+
   var cp = H5P.getContentPath(contentId);
 
   var allAnswered = function() {
@@ -78,7 +83,7 @@ H5P.DragQuestion = function (options, contentId) {
           } else if (correct.type.library.lastIndexOf('H5P.Image', 0) === 0) {
             text = correct.type.params.alt;
           }
-          $dropzone.append('<div class="dropzone-answer">Correct: '+text+'</div>');
+          $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+text+'</div>');
         }
       }
     });

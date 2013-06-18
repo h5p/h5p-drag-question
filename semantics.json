@@ -7,6 +7,13 @@
     "common": true
   },
   {
+    "name": "correct",
+    "type": "text",
+    "label": "Correct label text",
+    "default": "Correct",
+    "common": true
+  },
+  {
     "name": "question",
     "type": "group",
     "widget": "wizard",
