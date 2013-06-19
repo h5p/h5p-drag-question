@@ -35,38 +35,36 @@
   width: 100%;
 }
 .dragndrop-title {
-   font-size: 16px;
-   font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 	padding-top: 10px;
-   text-align: center;
+  text-align: center;
 }
 .static {
   position: absolute;
 }
 .draggable {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: 1px solid #dcdcdc;
-  border-width: 1px;
+  border-radius: 0.5em;
+  border: 0.0625em solid #dcdcdc;
   cursor: pointer;
   position: absolute;
   text-align: center;
-  padding: 2px;
+  padding: 0.125em;
+  line-height: 1.25em;
 }
 .draggable:hover {
-  border: 1px solid #aaaaaa;
+  border: 0.0625em solid #aaaaaa;
 }
 .draggable-correct,
 .dropzone-answer {
   background: lightgreen;
   color: green;
-  border: 1px solid green;
+  border: 0.0625em solid green;
 }
 .draggable-wrong {
   background: pink;
   color: red;
-  border: 1px solid red;
+  border: 0.0625em solid red;
 }
 .draggable-correct:after,
 .draggable-wrong:after {
@@ -82,44 +80,38 @@
   content: "\f00d";
 }
 .dropzone {
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  border: 2px solid #f5f5f5;
+  border-radius: 0.5em;
+  border: 0.125em solid #f5f5f5;
   position: absolute;
   background-color: #ffffff;
 }
 .dropzone-correct-answer {
-  border: 2px solid green;
+  border: 0.125em solid green;
 }
 .dropzone-wrong-answer {
-  border: 2px dashed red;
+  border: 0.125em dashed red;
 }
 .dropzone-active {
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  border: 2px dashed #666666;
+  border: 0.125em dashed #666666;
   position: absolute;
 }
 .dragquestion-label {
   position: absolute;
   background: #efe2c9;
   font-size: 0.5em;
-  top: -1.75em;
-  left: -0.0625em;
+  line-height: 1.25em;
+  top: -1.5em;
+  left: -0.25em;
   padding: 0 0.25em;
 }
 .dropzone-answer {
   position: absolute;
   top: 100%;
-  margin-top: 2px;
+  margin-top: 0.125em;
   right: 0;
-  padding: 4px 10px;
+  padding: 0.25em 0.625em;
   font-size: 0.625em;
   line-height: 100%;
 
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  border-radius: 0.5em;
 }
