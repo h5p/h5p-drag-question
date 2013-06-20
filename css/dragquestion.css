@@ -46,6 +46,7 @@
 .draggable {
   border-radius: 0.5em;
   border: 0.0625em solid #dcdcdc;
+  overflow: hidden;
   cursor: pointer;
   position: absolute;
   text-align: center;
