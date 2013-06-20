@@ -9,8 +9,8 @@
   {
     "name": "correct",
     "type": "text",
-    "label": "Correct label text",
-    "default": "Correct",
+    "label": "Correct solution label text",
+    "default": "Solution",
     "common": true
   },
   {

@@ -12,7 +12,7 @@ H5P.DragQuestion = function (options, contentId) {
 
   options = $.extend({}, {
     scoreShow: 'Score show',
-    correct: 'Correct'
+    correct: 'Solution'
   }, options);
 
   var cp = H5P.getContentPath(contentId);
