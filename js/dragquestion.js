@@ -5,6 +5,7 @@ H5P.DragQuestion = function (options, contentId) {
   var target;
   var $ = H5P.jQuery;
   var score = 0;
+  var $container;
 
   if ( !(this instanceof H5P.DragQuestion) ){
     return new H5P.DragQuestion(options, contentId);
@@ -12,10 +13,20 @@ H5P.DragQuestion = function (options, contentId) {
 
   options = $.extend({}, {
     scoreShow: 'Score show',
-    correct: 'Solution'
+    correct: 'Solution',
+    question: {
+      settings: {
+        size: {
+          width: 640,
+          height: 320
+        }
+      },
+      task: {
+        elements: [],
+        dropZones: []
+      }
+    }
   }, options);
-
-  var cp = H5P.getContentPath(contentId);
 
   var allAnswered = function() {
     var dropzones = 0;
@@ -90,6 +101,14 @@ H5P.DragQuestion = function (options, contentId) {
     //target.find('.score').html(options.scoreText.replace('@score', score).replace('@total', count));
   };
 
+  var resize = function () {
+    var width = $container.width();
+    $container.find('.dragndrop').css({
+      height: width * (options.question.settings.size.height / options.question.settings.size.width),
+      fontSize: parseInt($container.css('fontSize')) * (width / options.question.settings.size.width)
+    });
+  };
+
   var attach = function(board) {
     score = 0;
     var $ = H5P.jQuery;
@@ -99,10 +118,10 @@ H5P.DragQuestion = function (options, contentId) {
     target = typeof(board) === "string" ? $("#" + board) : $(board);
     target.addClass('h5p-dragquestion');
 
-    var width = target.width();
-    var height = width * (options.question.settings.size.height / options.question.settings.size.width);
-    var fontSize = parseInt(target.css('fontSize')) * (width / options.question.settings.size.width);
-    var $dragndrop = $('<div class="dragndrop" style="height:' +  height + 'px;font-size:' + fontSize + 'px"></div>');
+    $container = target;
+
+    var styles = (options.question.settings.background !== undefined ? 'style="background-image:url(\'' + H5P.getContentPath(contentId) + options.question.settings.background.path + '\')"' : '');
+    var $dragndrop = $('<div class="dragndrop"'+ styles + '></div>');
 
     if (options.question.settings.title) {
       target.html('<div class="dragndrop-title">' + options.question.settings.title + '</div>');
@@ -112,7 +131,7 @@ H5P.DragQuestion = function (options, contentId) {
     function addElement(id, className, el, z) {
       var $el = $('<div class="'+className+'">' + (el.text !== undefined ? el.text : '') + '</div>');
       if (el.type !== undefined) {
-        var elementInstance = new (H5P.classFromName(el.type.library.split(' ')[0]))(el.type.params, cp);
+        var elementInstance = new (H5P.classFromName(el.type.library.split(' ')[0]))(el.type.params, contentId);
         elementInstance.attach($el);
       }
       $dragndrop.append($el);
@@ -291,6 +310,11 @@ H5P.DragQuestion = function (options, contentId) {
       });
     });
 
+    if (returnObject.preventResize === false) {
+      H5P.$window.bind('resize', resize);
+    }
+    resize();
+
     return this;
   };
 
@@ -306,7 +330,9 @@ H5P.DragQuestion = function (options, contentId) {
     getMaxScore: function() {
       return getMaxScore();
     },
-    showSolutions: showSolutions
+    showSolutions: showSolutions,
+    resize: resize,
+    preventResize: false
   };
 
   return returnObject;
