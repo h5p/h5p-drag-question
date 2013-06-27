@@ -120,7 +120,7 @@ H5P.DragQuestion = function (options, contentId) {
 
     $container = target;
 
-    var styles = (options.question.settings.background !== undefined ? 'style="background-image:url(\'' + H5P.getPath(contentId, options.question.settings.background.path) + '\')"' : '');
+    var styles = (options.question.settings.background !== undefined ? 'style="background-image:url(\'' + H5P.getPath(options.question.settings.background.path, contentId) + '\')"' : '');
     var $dragndrop = $('<div class="dragndrop"'+ styles + '></div>');
 
     if (options.question.settings.title) {
