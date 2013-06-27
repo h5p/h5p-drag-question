@@ -115,18 +115,16 @@ H5P.DragQuestion = function (options, contentId) {
     var dropzones = options.question.task.dropZones;
     var elements = options.question.task.elements;
 
-    target = typeof(board) === "string" ? $("#" + board) : $(board);
-    target.addClass('h5p-dragquestion');
-
-    $container = target;
+    $container = target = (typeof(board) === "string" ? $("#" + board) : $(board));
+    $container.addClass('h5p-dragquestion');
 
     var styles = (options.question.settings.background !== undefined ? 'style="background-image:url(\'' + H5P.getContentPath(contentId) + options.question.settings.background.path + '\')"' : '');
     var $dragndrop = $('<div class="dragndrop"'+ styles + '></div>');
 
     if (options.question.settings.title) {
-      target.html('<div class="dragndrop-title">' + options.question.settings.title + '</div>');
+      $container.html('<div class="dragndrop-title">' + options.question.settings.title + '</div>');
     }
-    target.append($dragndrop);
+    $container.append($dragndrop);
 
     function addElement(id, className, el, z) {
       var $el = $('<div class="'+className+'">' + (el.text !== undefined ? el.text : '') + '</div>');
@@ -177,13 +175,15 @@ H5P.DragQuestion = function (options, contentId) {
 
     var buttons = Array();
 
-    if($('.qs-footer').length) {
+    // If not in QuestionSet, BoardGame or Course Presentation, add button.
+    if (-1 === $.inArray($container.parents('.h5p-content').data('class'),
+                         ['H5P.QuestionSet', 'H5P.BoardGame', 'H5P.CoursePresentation'])) {
+      buttons.push({
+        text: options.scoreShow,
+        click: showSolutions,
+        className: 'button show-score'
+      });
     }
-    else {
-      // Add show score button when not boardgame
-      var buttons = Array( { text: options.scoreShow, click: showSolutions, className: 'button show-score' });
-    }
-
 
     // Add buttons
     for (var i = 0; i < buttons.length; i++) {
