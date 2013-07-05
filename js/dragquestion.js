@@ -255,6 +255,10 @@ H5P.DragQuestion = function (options, contentId) {
         activeClass: 'dropzone-active',
         fit: 'intersect',
         accept: function (draggable) {
+          if (target.find(draggable).length === 0) {
+            return false;
+          }
+
           var dropZones = $(draggable).data('dropzones');
           var id = $(el).data('id') - 1;
 
