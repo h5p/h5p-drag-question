@@ -48,11 +48,11 @@
             },
             "fields": [
               {
-                "name": "x",
+                "name": "width",
                 "type": "number"
               },
               {
-                "name": "y",
+                "name": "height",
                 "type": "number"
               }
             ]
