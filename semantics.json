@@ -2,8 +2,8 @@
   {
     "name": "scoreShow",
     "type": "text",
-    "label": "Score show button",
-    "default": "Score show",
+    "label": "Show score button",
+    "default": "Show score",
     "common": true
   },
   {
