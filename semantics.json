@@ -40,7 +40,7 @@
             "type": "group",
             "widget": "dimensions",
             "label": "Task size",
-            "description": "Specifiy how large (in px) the play area should be.",
+            "description": "Specify how large (in px) the play area should be.",
             "default": {
               "width": 640,
               "height": 320,
