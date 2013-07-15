@@ -30,7 +30,7 @@ H5P.DragQuestion = function (options, contentId) {
     return new H5P.DragQuestion(options, contentId);
   }
 
-  options = $.extend({}, {
+  options = $.extend(true, {}, {
     scoreShow: 'Show score',
     correct: 'Solution',
     question: {
