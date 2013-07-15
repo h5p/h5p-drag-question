@@ -285,7 +285,8 @@ H5P.DragQuestion = function (options, contentId) {
             .animate({
               left: $currentDraggable.data('x') + '%',
               top:  $currentDraggable.data('y') + '%'
-            });
+            })
+            .removeClass('h5p-connected');
           }
 
 //          // Was object in another drop?
@@ -302,8 +303,11 @@ H5P.DragQuestion = function (options, contentId) {
           // Move drag to center of drop
           ui.draggable.animate({
             top: Math.round(($(this).outerHeight() - ui.draggable.outerHeight()) / 2) + parseInt($(this).css('top')),
-            left: Math.round(($(this).outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($(this).css('left'))
-          });
+            left: Math.round(($(this).outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($(this).css('left')),
+            complete: function() {
+              H5P.jQuery(this).addClass('h5p-connected');
+            }
+          })
 
           // Store this answer
           if (options.userAnswers === undefined) {
@@ -326,9 +330,13 @@ H5P.DragQuestion = function (options, contentId) {
         revert: 'invalid',
         start: function(event, ui) {
           ui.helper.css('z-index', '2');
+          H5P.jQuery(this).removeClass('h5p-connected');
         },
         stop: function(event, ui) {
-          // Todo something
+          var $this = H5P.jQuery(this)
+          if ($this.data('content') !== undefined) {
+            $this.addClass('h5p-connected');
+          }
         }
       });
     });
