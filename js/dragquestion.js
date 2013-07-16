@@ -94,9 +94,10 @@ H5P.DragQuestion = function (options, contentId) {
       }
 
       // Show correct/wrong style for dropzone.
-      var draggableId = $(el).data('content'),
+      var draggableId = $dropzone.data('content'),
         $currentDraggable = $('.draggable-' + draggableId);
-      if ($dropzone.data('content') && (correctElement === '' + (draggableId - 1))) {
+      if ((draggableId && (correctElement === '' + (draggableId - 1)))
+        || (correctElement === '' && !draggableId)) {
         $dropzone.addClass('dropzone-correct-answer').removeClass('dropzone-wrong-answer');
         $currentDraggable.addClass('draggable-correct').removeClass('draggable-wrong');
         score++;
@@ -114,6 +115,9 @@ H5P.DragQuestion = function (options, contentId) {
             text = correct.type.params.alt;
           }
           $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+text+'</div>');
+        }
+        else {
+          $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+'<em>none</em>'+'</div>');
         }
       }
     });
@@ -267,17 +271,20 @@ H5P.DragQuestion = function (options, contentId) {
 
           return false;
         },
-        out: function(event, ui) {
+        out: function (event, ui) {
           // TODO: somthing
         },
-        drop: function(event, ui) {
-          $(this).removeClass('dropzone-wrong-answer');
+        drop: function (event, ui) {
+          var $dropzone = $(this),
+            currentDraggableId = $dropzone.data('content'),
+            newDraggableId = ui.draggable.data('id');
+
+          $dropzone.removeClass('dropzone-wrong-answer');
 
           // If this drag was in a drop area and this drag is not the same
-          if($(this).data('content') && ui.draggable.data('id') !== $(this).data('content')) {
+          if (currentDraggableId && newDraggableId !== currentDraggableId) {
             // Remove underlaying drag (move to initial position)
-            var id = $(this).data('content');
-            var $currentDraggable = target.find('.draggable-' + id);
+            var $currentDraggable = target.find('.draggable-' + currentDraggableId);
             $currentDraggable.data('content', null)
             .animate({
               left: $currentDraggable.data('x') + '%',
@@ -286,21 +293,22 @@ H5P.DragQuestion = function (options, contentId) {
             .removeClass('h5p-connected');
           }
 
-//          // Was object in another drop?
-//          if(ui.draggable.data('content')) {
-//            // Remove object from previous drop
-//            $('.'+ui.draggable.data('content')) = null;
-//          }
+         // Was object in another drop?
+         if (ui.draggable.data('content')) {
+           // Remove object from previous drop
+           console.log("removeing from previous dropzone");
+           $('.dropzone-'+ui.draggable.data('content')).data('content', null);
+         }
 
           // Set attributes
-          $(this).data('content', ui.draggable.data('id'));
-          ui.draggable.data('content', $(this).data('id'));
+          $dropzone.data('content', newDraggableId);
+          ui.draggable.data('content', $dropzone.data('id'));
           ui.draggable.css('z-index', '1');
 
           // Move drag to center of drop
           ui.draggable.animate({
-            top: Math.round(($(this).outerHeight() - ui.draggable.outerHeight()) / 2) + parseInt($(this).css('top')),
-            left: Math.round(($(this).outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($(this).css('left')),
+            top: Math.round(($dropzone.outerHeight() - ui.draggable.outerHeight()) / 2) + parseInt($dropzone.css('top')),
+            left: Math.round(($dropzone.outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($dropzone.css('left')),
             complete: function() {
               H5P.jQuery(this).addClass('h5p-connected');
             }
@@ -310,7 +318,7 @@ H5P.DragQuestion = function (options, contentId) {
           if (options.userAnswers === undefined) {
             options.userAnswers = {};
           }
-          options.userAnswers[$(this).data('id')] = ui.draggable.data('id');
+          options.userAnswers[$dropzone.data('id')] = newDraggableId;
 
           if(allAnswered()){
             $(returnObject).trigger('h5pQuestionAnswered');
