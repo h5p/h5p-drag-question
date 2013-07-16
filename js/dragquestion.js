@@ -198,7 +198,7 @@ H5P.DragQuestion = function (options, contentId) {
       buttons.push({
         text: options.scoreShow,
         click: showSolutions,
-        className: 'button show-score'
+        className: 'button h5p-show-solution'
       });
     }
 
