@@ -116,9 +116,6 @@ H5P.DragQuestion = function (options, contentId) {
           }
           $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+text+'</div>');
         }
-        else {
-          $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+'<em>none</em>'+'</div>');
-        }
       }
     });
     //target.find('.score').html(options.scoreText.replace('@score', score).replace('@total', count));
@@ -296,7 +293,6 @@ H5P.DragQuestion = function (options, contentId) {
          // Was object in another drop?
          if (ui.draggable.data('content')) {
            // Remove object from previous drop
-           console.log("removeing from previous dropzone");
            $('.dropzone-'+ui.draggable.data('content')).data('content', null);
          }
 
