@@ -1,81 +1,83 @@
-[
-  {
-    "label": "Tittel"
-  },
-  {
-    "label": "Statisk innhald",
-    "entity": "statisk innhald",
-    "field": {
-      "label": "Innhald",
+{
+  "semantics": [
+    {
+      "label": "Vis svar knappen",
+      "default": "Vis svar"
+    },
+    {
+      "label": "Ledetekst for riktig svar i fasiten",
+      "default": "Korrekt"
+    },
+    {
       "fields": [
         {
-          "description": "Vel innhaldstypen du vil legge til."
+          "label": "Innstillinger",
+          "fields": [
+            {
+              "label": "Bakgrunnsbilde",
+              "description": "Valgfritt. Velg et bakgrunnsbilde for oppgaven."
+            },
+            {
+              "label": "Oppgavens størrelse",
+              "description": "Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i."
+            }
+          ]
         },
         {
-          "label": "X-posisjon"
-        },
-        {
-          "label": "Y-posisjon"
-        },
-        {
-          "label": "Høgde"
-        },
-        {
-          "label": "Breidde"
+          "label": "Oppgave",
+          "description": "Begynn med å plassere målområder.<br/>Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br/>Til slutt redigeres målområdene igjen for å angi fasit.",
+          "fields": [
+            {
+              "label": "Elementer",
+              "entity": "element",
+              "field": {
+                "label": "Element",
+                "fields": [
+                  {
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                    "label": "Velg målområder"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Målområder",
+              "entity": "målområde",
+              "field": {
+                "label": "Målområde",
+                "fields": [
+                  {
+                    "label": "Tittel"
+                  },
+                  {
+                    "label": "Vis tittel"
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                    "label": "Velg riktige elementer"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     }
-  },
-  {
-    "label": "Målområde",
-    "entity": "målområde",
-    "field": {
-      "fields": [
-        {
-           "label": "Scope"
-        },
-        {
-          "label": "X-posisjon"
-        },
-        {
-          "label": "Y-posisjon"
-        },
-        {
-          "label": "Høgde"
-        },
-        {
-          "label": "Breidde"
-        }
-      ]
-    }
-  },
-  {
-    "label": "Flyttbare alternativ",
-    "entity": "flyttbart alternativ",
-    "field": {
-      "fields": [
-        {
-          "description": "Vel typen innhald du vil legge til."
-        },
-        {
-           "label": "Scope"
-        },
-        {
-           "label": "Målområde"
-        },
-        {
-          "label": "X-posisjon"
-        },
-        {
-          "label": "Y-posisjon"
-        },
-        {
-          "label": "Høgde"
-        },
-        {
-          "label": "Breidde"
-        }
-      ]
-    }
-  }
-]
+  ]
+}
