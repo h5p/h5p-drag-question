@@ -35,12 +35,6 @@
   height: 300px;
   width: 100%;
 }
-.dragndrop-title {
-  font-size: 1.2em;
-  font-weight: bold;
-	padding: 0.7em;
-  text-align: center;
-}
 .static {
   position: absolute;
 }

@@ -24,11 +24,6 @@
         "label": "Settings",
         "fields": [
           {
-            "name": "title",
-            "type": "text",
-            "label": "Title"
-          },
-          {
             "name": "background",
             "type": "image",
             "label": "Background image",
