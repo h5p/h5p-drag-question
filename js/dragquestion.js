@@ -71,8 +71,8 @@ H5P.DragQuestion = function (options, contentId) {
     target.find('.dropzone').each(function (idx, el) {
       var $dropzone = $(el),
         dragIndex = $dropzone.data('content'),
-        corrects = $dropzone.data('correctElements');
-      if (dragIndex && (corrects.contains('' + (dragIndex - 1)))) {
+        correctElement = $dropzone.data('correctElements');
+      if (dragIndex && (correctElement === '' + (dragIndex - 1))) {
         score++;
       }
     });
@@ -85,7 +85,7 @@ H5P.DragQuestion = function (options, contentId) {
     target.find('.dropzone').each(function (idx, el) {
       count++;
       var $dropzone = $(el),
-        corrects = $dropzone.data('correctElements');
+        correctElement = $dropzone.data('correctElements');
       var dz = options.question.task.dropZones[idx];
       // If labels are hidden, show them now.
       if (dz.showLabel === undefined || dz.showLabel === false) {
@@ -96,7 +96,7 @@ H5P.DragQuestion = function (options, contentId) {
       // Show correct/wrong style for dropzone.
       var draggableId = $(el).data('content'),
         $currentDraggable = $('.draggable-' + draggableId);
-      if ($dropzone.data('content') && corrects.contains('' + (draggableId - 1))) {
+      if ($dropzone.data('content') && (correctElement === '' + (draggableId - 1))) {
         $dropzone.addClass('dropzone-correct-answer').removeClass('dropzone-wrong-answer');
         $currentDraggable.addClass('draggable-correct').removeClass('draggable-wrong');
         score++;
@@ -105,9 +105,9 @@ H5P.DragQuestion = function (options, contentId) {
         $dropzone.addClass('dropzone-wrong-answer').removeClass('dropzone-correct-answer');
         $currentDraggable.addClass('draggable-wrong').removeClass('draggable-correct');
         // Show correct answer below. Only use first listed correct answer.
-        if (corrects.length) {
+        if (correctElement !== '') {
           var text,
-          correct = options.question.task.elements[corrects[0]];
+            correct = options.question.task.elements[correctElement];
           if (correct.type.library.lastIndexOf('H5P.Text', 0) === 0) {
             text = correct.type.params.text;
           } else if (correct.type.library.lastIndexOf('H5P.Image', 0) === 0) {
