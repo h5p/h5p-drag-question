@@ -143,6 +143,15 @@ H5P.DragQuestion = function (options, contentId) {
 
     $container.append($dragndrop);
 
+    function percentagePosition($el) {
+      var $dnd = $container.find('.dragndrop');
+      var positioning = {
+        top: (parseInt($el.css('top')) * 100 / $dnd.innerHeight()) + '%',
+        left: (parseInt($el.css('left')) * 100 / $dnd.innerWidth()) + '%'
+      };
+      $el.css(positioning);
+    }
+
     function addElement(id, className, el, z) {
       var $el = $('<div class="'+className+'">' + (el.text !== undefined ? el.text : '') + '</div>');
       if (el.type !== undefined) {
@@ -304,11 +313,13 @@ H5P.DragQuestion = function (options, contentId) {
           // Move drag to center of drop
           ui.draggable.animate({
             top: Math.round(($dropzone.outerHeight() - ui.draggable.outerHeight()) / 2) + parseInt($dropzone.css('top')),
-            left: Math.round(($dropzone.outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($dropzone.css('left')),
+            left: Math.round(($dropzone.outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($dropzone.css('left'))
+          }, {
             complete: function() {
               H5P.jQuery(this).addClass('h5p-connected');
+              percentagePosition(H5P.jQuery(this));
             }
-          })
+          });
 
           // Store this answer
           if (options.userAnswers === undefined) {
@@ -316,7 +327,7 @@ H5P.DragQuestion = function (options, contentId) {
           }
           options.userAnswers[$dropzone.data('id')] = newDraggableId;
 
-          if(allAnswered()){
+          if (allAnswered()){
             $(returnObject).trigger('h5pQuestionAnswered');
           }
           // Store the new score
@@ -335,6 +346,8 @@ H5P.DragQuestion = function (options, contentId) {
         },
         stop: function(event, ui) {
           var $this = H5P.jQuery(this)
+          percentagePosition($this);
+
           if ($this.data('content') !== undefined) {
             $this.addClass('h5p-connected');
           }
