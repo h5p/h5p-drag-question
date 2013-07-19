@@ -143,6 +143,8 @@ H5P.DragQuestion = function (options, contentId) {
 
     $container.append($dragndrop);
 
+    // Convert element position data to percentage of the main dragndrop
+    // container.  Draggable and animate only create pixel positioned data.
     function percentagePosition($el) {
       var $dnd = $container.find('.dragndrop');
       var positioning = {
@@ -247,12 +249,11 @@ H5P.DragQuestion = function (options, contentId) {
         $draggable.data('content', dropzoneId).css('z-index', '1');
 
         // Move drag to center of drop
-        // Since we're using percent we need to account for css problems with margins and paddings...
-        var cssErrorRate = $draggable.parent().parent().width() / $draggable.parent().width();
         $draggable.css({
           top: Math.round(($dropzone.outerHeight() - $draggable.outerHeight()) / 2) + parseInt($dropzone.css('top'), 10),
-          left: Math.round(($dropzone.outerWidth() - $draggable.outerWidth()) / 2) + parseInt($dropzone.css('left'), 10) * cssErrorRate
+          left: Math.round(($dropzone.outerWidth() - $draggable.outerWidth()) / 2) + parseInt($dropzone.css('left'), 10)
         });
+        percentagePosition($draggable);
       }
     }
 
