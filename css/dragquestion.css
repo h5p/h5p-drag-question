@@ -12,7 +12,7 @@
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
-  border: 0.1em solid #dcdcdc;
+  border: 1.5px solid #dcdcdc;
   color: #777777;
   font-family: arial;
   font-size: 1em;
@@ -40,7 +40,7 @@
 }
 .draggable {
   border-radius: 0.5em;
-  border: 0.0625em solid #dcdcdc;
+  border: 1px solid #dcdcdc;
   overflow: hidden;
   cursor: pointer;
   position: absolute;
@@ -58,18 +58,18 @@
   padding: 0;
 }
 .draggable:hover {
-  border: 0.0625em solid #aaaaaa;
+  border: 1px solid #aaaaaa;
 }
 .draggable-correct,
 .dropzone-answer {
   background: lightgreen;
   color: green;
-  border: 0.0625em solid green;
+  border: 1px solid green;
 }
 .draggable-wrong {
   background: pink;
   color: red;
-  border: 0.0625em solid red;
+  border: 1px solid red;
 }
 .draggable-correct:after,
 .draggable-wrong:after {
@@ -85,19 +85,19 @@
   content: "\f00d";
 }
 .dropzone {
-  border: 0.1em solid #ffffff;
+  border: 1.5px solid #ffffff;
   border-radius: 0.5em;
   position: absolute;
   background-color: #ffffff;
 }
 .dropzone-correct-answer {
-  border: 0.125em solid green;
+  border: 2px solid green;
 }
 .dropzone-wrong-answer {
-  border: 0.125em dashed red;
+  border: 2px dashed red;
 }
 .dropzone-active {
-  border: 0.125em dashed #666666;
+  border: 2px dashed #666666;
   position: absolute;
 }
 .dragquestion-label {
