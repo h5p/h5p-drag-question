@@ -21,7 +21,7 @@
   text-decoration: none;
   text-shadow: 0.1em 0.1em 0px #ffffff;
 }
-.h5p-show-solution {
+.dragndrop .h5p-show-solution {
   position: absolute;
   bottom: 10px;
   right: 10px;
