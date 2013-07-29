@@ -125,7 +125,7 @@ H5P.DragQuestion = function (options, contentId) {
     var width = $container.width();
     $container.find('.dragndrop').css({
       height: width * (options.question.settings.size.height / options.question.settings.size.width),
-      fontSize: parseInt($container.css('fontSize')) * (width / options.question.settings.size.width)
+      fontSize: 16 * (width / options.question.settings.size.width)
     });
   };
 
