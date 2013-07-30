@@ -107,6 +107,7 @@
   padding: 0.1em 0.25em 0.7em;
   position: absolute;
   top: -1.5em;
+  white-space: nowrap;
 }
 .dropzone-answer {
   position: absolute;
