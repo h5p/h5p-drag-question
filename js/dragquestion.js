@@ -19,367 +19,338 @@ if (H5P.getPath === undefined) {
   };
 }
 
-H5P.DragQuestion = function (options, contentId) {
+/**
+ * DragQuestion module.
+ *
+ * @param {jQuery} $
+ */
+H5P.DragQuestion = (function ($) {
 
-  var target;
-  var $ = H5P.jQuery;
-  var score = 0;
-  var $container;
+  /**
+   * Initialize module.
+   *
+   * @param {Object} options Run parameters
+   * @param {Number} id Content identification
+   */
+  function C(options, id) {
+    this.tryAgain = true;
+    this.preventResize = false;
 
-  if ( !(this instanceof H5P.DragQuestion) ){
-    return new H5P.DragQuestion(options, contentId);
-  }
-
-  options = $.extend(true, {}, {
-    scoreShow: 'Show score',
-    correct: 'Solution',
-    question: {
-      settings: {
-        size: {
-          width: 640,
-          height: 320
-        }
-      },
-      task: {
-        elements: [],
-        dropZones: []
-      }
-    }
-  }, options);
-
-  var allAnswered = function() {
-    var dropzones = 0;
-    var answers = 0;
-    target.find('.dropzone').each(function (idx, el) {
-      dropzones++;
-      if($(el).data('content')) {
-        answers++;
-      }
-    });
-    return (dropzones === answers);
-  };
-
-  var getMaxScore = function() {
-    return target.find('.dropzone').length;
-  };
-
-  var getScore = function() {
-    if (!$.contains(document.documentElement, target[0])) {
-      return score;
-    }
-    score = 0;
-    target.find('.dropzone').each(function (idx, el) {
-      var $dropzone = $(el),
-        dragIndex = $dropzone.data('content'),
-        correctElement = $dropzone.data('correctElements');
-      if (dragIndex && (correctElement === '' + (dragIndex - 1))) {
-        score++;
-      }
-    });
-    return score;
-  };
-
-  var showSolutions = this.showSolutions = function() {
-    var score = 0;
-    var count = 0;
-    target.find('.dropzone').each(function (idx, el) {
-      count++;
-      var $dropzone = $(el),
-        correctElement = $dropzone.data('correctElements');
-      var dz = options.question.task.dropZones[idx];
-      // If labels are hidden, show them now.
-      if (dz.showLabel === undefined || dz.showLabel === false) {
-        // Render label
-        $dropzone.append('<div class="dragquestion-label">'+$dropzone.data('label')+'</div>');
-      }
-
-      // Show correct/wrong style for dropzone.
-      var draggableId = $dropzone.data('content'),
-        $currentDraggable = $('.draggable-' + draggableId);
-      if ((draggableId && (correctElement === '' + (draggableId - 1)))
-        || (correctElement === '' && !draggableId)) {
-        $dropzone.addClass('dropzone-correct-answer').removeClass('dropzone-wrong-answer');
-        $currentDraggable.addClass('draggable-correct').removeClass('draggable-wrong');
-        score++;
-      }
-      else {
-        $dropzone.addClass('dropzone-wrong-answer').removeClass('dropzone-correct-answer');
-        $currentDraggable.addClass('draggable-wrong').removeClass('draggable-correct');
-        // Show correct answer below. Only use first listed correct answer.
-        if (correctElement !== '') {
-          var text,
-            correct = options.question.task.elements[correctElement];
-          if (correct.type.library.lastIndexOf('H5P.Text', 0) === 0) {
-            text = correct.type.params.text;
-          } else if (correct.type.library.lastIndexOf('H5P.Image', 0) === 0) {
-            text = correct.type.params.alt;
+    this.id = id;
+    this.options = $.extend(true, {}, {
+      scoreShow: 'Show score',
+      correct: 'Solution',
+      tryAgain: 'Try again',
+      question: {
+        settings: {
+          size: {
+            width: 620,
+            height: 310
           }
-          $dropzone.append('<div class="dropzone-answer">' + options.correct + ': '+text+'</div>');
+        },
+        task: {
+          elements: [],
+          dropZones: []
+        }
+      }
+    }, options);
+
+    this.userAnswers = [];
+    this.$elements = [];
+  };
+
+  /**
+   * Append field to wrapper.
+   *
+   * @param {jQuery} $container
+   */
+  C.prototype.attach = function ($container) {
+    var that = this;
+
+    this.$container = $container.addClass('h5p-dragquestion');
+    if (this.options.question.settings.background !== undefined) {
+      $container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+    }
+
+    // Add show score button
+    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo($container).click(function () {
+      if ($button.hasClass('h5p-try-again')) {
+        $button.val(that.options.scoreShow).removeClass('h5p-try-again');
+        that.hideSolutions();
+      }
+      else if (that.showSolutions()) {
+        if (that.tryAgain) {
+          $button.val(that.options.tryAgain).addClass('h5p-try-again');
+        }
+        else {
+          $button.remove();
         }
       }
     });
-    //target.find('.score').html(options.scoreText.replace('@score', score).replace('@total', count));
-  };
+    // TODO: Make sure the following libs hide this button: 'H5P.QuestionSet', 'H5P.BoardGame', 'H5P.CoursePresentation'
 
-  var resize = function () {
-    var width = $container.width();
-    $container.find('.dragndrop').css({
-      height: width * (options.question.settings.size.height / options.question.settings.size.width),
-      fontSize: 16 * (width / options.question.settings.size.width)
-    });
-  };
-
-  var attach = function(board) {
-    score = 0;
-    var $ = H5P.jQuery;
-    var dropzones = options.question.task.dropZones;
-    var elements = options.question.task.elements;
-
-    $container = target = (typeof(board) === "string" ? $("#" + board) : $(board));
-    $container.addClass('h5p-dragquestion');
-
-    var styles = (options.question.settings.background !== undefined ? 'style="background-image:url(\'' + H5P.getPath(options.question.settings.background.path, contentId) + '\')"' : '');
-    var $dragndrop = $('<div class="dragndrop"'+ styles + '></div>');
-
-    $container.append($dragndrop);
-
-    // Convert element position data to percentage of the main dragndrop
-    // container.  Draggable and animate only create pixel positioned data.
-    function percentagePosition($el) {
-      var $dnd = $container.find('.dragndrop');
-      var positioning = {
-        top: (parseInt($el.css('top')) * 100 / $dnd.innerHeight()) + '%',
-        left: (parseInt($el.css('left')) * 100 / $dnd.innerWidth()) + '%'
-      };
-      $el.css(positioning);
-    }
-
-    function addElement(id, className, el, z) {
-      var $el = $('<div class="'+className+'">' + (el.text !== undefined ? el.text : '') + '</div>');
-      if (el.type !== undefined) {
-        var elementInstance = new (H5P.classFromName(el.type.library.split(' ')[0]))(el.type.params, contentId);
-        elementInstance.attach($el);
-      }
-      $dragndrop.append($el);
-      if (id !== undefined) {
-        $el.data('id', id);
-      }
-      if (z !== undefined) {
-        $el.css({'z-index': z});
-      }
-      // Store draggable drop zones. Will be used later to check for valid
-      // draggables in drop zones..
-      if (el.dropZones !== undefined) {
-        $el.data('dropzones', el.dropZones);
-      }
-      // Store drop zone correct answers
-      if (el.correctElements !== undefined) {
-        $el.data('correctElements', el.correctElements);
-      }
-      if (el.width !== undefined) {
-        $el.css({width: el.width + 'em'});
-      }
-      if (el.height !== undefined) {
-        $el.css({height: el.height + 'em'});
-      }
-      if(el.x !== undefined) {
-        $el.css({left: el.x + '%'});
-        $el.data('x', el.x);
-      }
-      if (el.y !== undefined) {
-        $el.css({top: el.y + '%'});
-        $el.data('y', el.y);
-      }
-      // Implicitly, all elements can have a label. Semantically, it's only
-      // supported in drop zones.
-      if (el.label !== undefined) {
-        $el.data('label', el.label);
-        if (el.showLabel) {
-          $el.append('<div class="dragquestion-label">'+el.label+'</div>');
-        }
-      }
-      return $el;
-    }
-
-    var buttons = Array();
-
-    // If not in QuestionSet, BoardGame or Course Presentation, add button.
-    if (-1 === $.inArray($container.parents('.h5p-content').data('class'),
-                         ['H5P.QuestionSet', 'H5P.BoardGame', 'H5P.CoursePresentation'])) {
-      buttons.push({
-        text: options.scoreShow,
-        click: showSolutions,
-        className: 'button h5p-show-solution'
-      });
-    }
-
-    // Add buttons
-    for (var i = 0; i < buttons.length; i++) {
-      var $button = addElement('lol', buttons[i].className, buttons[i], 1);
-      $button.click(buttons[i].click);
-    }
+    var $element, task = this.options.question.task;
 
     // Add drop zones
-    for (var i = 0; i < dropzones.length; i++) {
-      addElement((i + 1), 'dropzone dropzone-' + (i + 1), dropzones[i], 1);
-    }
+    for (var i = 0; i < task.dropZones.length; i++) {
+      var dropZone = task.dropZones[i];
 
-    // Add elements (static and draggable)
-    for (var i = 0; i < elements.length; i++) {
-      var el = elements[i];
-      // Add element as draggable if it has any defined drop zones, or static
-      // if not.
-      if (el.dropZones !== undefined && el.dropZones.length !== 0) {
-        addElement((i + 1), 'draggable draggable-' + (i + 1), el, 2);
+      var html = '<div class="h5p-inner"></div>';
+      if (dropZone.showLabel) {
+        html = '<div class="h5p-label">' + dropZone.label + '</div>' + html;
       }
-      else {
-        addElement((i + 1), 'static content-' + (i + 1), el, 0);
-      }
-    }
 
-    // Restore user answers
-    if (options.userAnswers !== undefined) {
-      for (var dropzoneId in options.userAnswers) {
-        var draggableId = options.userAnswers[dropzoneId];
-        var $draggable = target.find('.draggable-' + draggableId);
-        var $dropzone = target.find('.dropzone-' + dropzoneId);
-
-        // Set attributes
-        $dropzone.data('content', draggableId);
-        $draggable.data('content', dropzoneId).css('z-index', '1');
-
-        // Move drag to center of drop
-        $draggable.css({
-          top: Math.round(($dropzone.outerHeight() - $draggable.outerHeight()) / 2) + parseInt($dropzone.css('top'), 10),
-          left: Math.round(($dropzone.outerWidth() - $draggable.outerWidth()) / 2) + parseInt($dropzone.css('left'), 10)
-        });
-        percentagePosition($draggable);
-      }
-    }
-
-    // Make dropzones
-    target.find('.dropzone').each(function (idx, el) {
-      $(el).droppable({
-        activeClass: 'dropzone-active',
-        fit: 'intersect',
+      $element = this.addElement(dropZone, 'dropzone', i).html(html).children('.h5p-inner').droppable({
+        activeClass: 'h5p-active',
+        tolerance: 'intersect',
         accept: function (draggable) {
-          if (target.find(draggable).length === 0) {
-            return false;
-          }
-
-          var dropZones = $(draggable).data('dropzones');
-          var id = $(el).data('id') - 1;
-
-          for (var i = 0; i < dropZones.length; i++) {
-            if (parseInt(dropZones[i]) === id) {
-              return true;
+          // Check that the draggable belongs to this task.
+          var $draggable = $container.find(draggable);
+          if ($draggable.length) {
+            // Check that the draggable has this drop zone.
+            var id = $(this).parent().data('id');
+            var draggableDropZones = task.elements[$draggable.data('id')].dropZones;
+            for (var i = 0; i < draggableDropZones.length; i++) {
+              if (parseInt(draggableDropZones[i]) === id) {
+                return true;
+              }
             }
           }
 
           return false;
         },
-        out: function (event, ui) {
-          // TODO: somthing
-        },
         drop: function (event, ui) {
-          var $dropzone = $(this),
-            currentDraggableId = $dropzone.data('content'),
-            newDraggableId = ui.draggable.data('id');
-
-          $dropzone.removeClass('dropzone-wrong-answer');
-
-          // If this drag was in a drop area and this drag is not the same
-          if (currentDraggableId && newDraggableId !== currentDraggableId) {
-            // Remove underlaying drag (move to initial position)
-            var $currentDraggable = target.find('.draggable-' + currentDraggableId);
-            $currentDraggable.data('content', null)
-            .animate({
-              left: $currentDraggable.data('x') + '%',
-              top:  $currentDraggable.data('y') + '%'
-            })
-            .removeClass('h5p-connected');
-          }
-
-         // Was object in another drop?
-         if (ui.draggable.data('content')) {
-           // Remove object from previous drop
-           $('.dropzone-'+ui.draggable.data('content')).data('content', null);
-         }
-
-          // Set attributes
-          $dropzone.data('content', newDraggableId);
-          ui.draggable.data('content', $dropzone.data('id'));
-          ui.draggable.css('z-index', '1');
-
-          // Move drag to center of drop
-          ui.draggable.animate({
-            top: Math.round(($dropzone.outerHeight() - ui.draggable.outerHeight()) / 2) + parseInt($dropzone.css('top')),
-            left: Math.round(($dropzone.outerWidth() - ui.draggable.outerWidth()) / 2) + parseInt($dropzone.css('left'))
-          }, {
-            complete: function() {
-              H5P.jQuery(this).addClass('h5p-connected');
-              percentagePosition(H5P.jQuery(this));
-            }
-          });
-
-          // Store this answer
-          if (options.userAnswers === undefined) {
-            options.userAnswers = {};
-          }
-          options.userAnswers[$dropzone.data('id')] = newDraggableId;
-
-          if (allAnswered()){
-            $(returnObject).trigger('h5pQuestionAnswered');
-          }
-          // Store the new score
-          getScore();
-        }
-      });
-    });
-
-    // Make draggables
-    target.find('.draggable').each(function (idx, el) {
-      $(el).draggable({
-        revert: 'invalid',
-        start: function(event, ui) {
-          ui.helper.css('z-index', '2');
-          H5P.jQuery(this).removeClass('h5p-connected');
+          $(this).removeClass('h5p-over');
+          ui.draggable.data('addToZone', $(this).parent().data('id'));
         },
-        stop: function(event, ui) {
-          var $this = H5P.jQuery(this)
-          percentagePosition($this);
-
-          if ($this.data('content') !== undefined) {
-            $this.addClass('h5p-connected');
-          }
+        over: function (event, ui) {
+          $(this).addClass('h5p-over');
+        },
+        out: function (event, ui) {
+          $(this).removeClass('h5p-over');
         }
-      });
-    });
-
-    if (returnObject.preventResize === false) {
-      H5P.$window.bind('resize', resize);
+      }).end();
     }
-    resize();
 
-    return this;
+    // Add elements (static and draggable)
+    for (var i = 0; i < task.elements.length; i++) {
+      var element = task.elements[i];
+
+      if (element.dropZones !== undefined && element.dropZones.length !== 0) {
+        // Add draggable element
+        $element = this.$elements[i] = this.addElement(element, 'draggable', i).draggable({
+          revert: function (event, ui) {
+            var $this = $(this);
+            var element = task.elements[$this.data('id')];
+            $this.data("uiDraggable").originalPosition = {
+              top: element.y + '%',
+              left: element.x + '%'
+            };
+            return !event;
+          },
+          start: function(event, ui) {
+            // Send element to the top!
+            $(this).detach().appendTo(that.$container);
+          },
+          stop: function(event, ui) {
+            var $this = $(this);
+            var position = that.positionToPercentage($this);
+            $this.css(position);
+
+            // Remove from zone
+            var zone = $this.data('content');
+            var id = $this.data('id');
+            if (zone !== undefined && that.userAnswers[zone] !== undefined) {
+              $this.removeData('content');
+              var zoneAnswers = that.userAnswers[zone];
+              for (var i = 0; i < zoneAnswers.length; i++) {
+                if (zoneAnswers[i].id === id) {
+                  zoneAnswers.splice(i, 1);
+                }
+              }
+            }
+
+            var addToZone = $this.data('addToZone');
+            if (addToZone !== undefined) {
+              $this.removeData('addToZone').data('content', addToZone);
+
+              // Add to zone answers
+              if (that.userAnswers[addToZone] === undefined) {
+                that.userAnswers[addToZone] = [];
+              }
+              that.userAnswers[addToZone].push({
+                id: id,
+                position: position
+              });
+            }
+          }
+        });
+      }
+      else {
+        // Add static element
+        $element = this.addElement(element, 'static', i);
+      }
+
+      var elementInstance = new (H5P.classFromName(element.type.library.split(' ')[0]))(element.type.params, this.id);
+      elementInstance.attach($element);
+    }
+
+    // Restore user answers
+    for (var i = 0; i < that.userAnswers.length; i++) {
+      var dropZoneAnswers = that.userAnswers[i];
+      if (dropZoneAnswers !== undefined) {
+        for (var j = 0; j < dropZoneAnswers.length; j++) {
+          this.$elements[dropZoneAnswers[j].id].css(dropZoneAnswers[j].css).data('content', i);
+        }
+      }
+    }
+
+    if (this.preventResize === false) {
+      H5P.$window.bind('resize', function () {
+        that.resize();
+      });
+    }
+    this.resize();
   };
 
-  var returnObject = {
-    attach: attach,
-    machineName: 'H5P.DragQuestion',
-    getScore: function() {
-      return getScore();
-    },
-    getAnswerGiven: function() {
-      return allAnswered();
-    },
-    getMaxScore: function() {
-      return getMaxScore();
-    },
-    showSolutions: showSolutions,
-    resize: resize,
-    preventResize: false
+  /**
+   * Add element/drop zone to task.
+   *
+   * @param {Object} element
+   * @param {String} type Class
+   * @param {Number} id
+   * @returns {jQuery}
+   */
+  C.prototype.addElement = function (element, type, id) {
+    return $('<div class="h5p-' + type + '" style="left:' + element.x + '%;top:' + element.y + '%;width:' + element.width + 'em;height:' + element.height + 'em"></div>').appendTo(this.$container).data('id', id);
   };
 
-  return returnObject;
-};
+  /**
+   * Set correct height of container
+   */
+  C.prototype.resize = function () {
+    var width = this.$container.width();
+    var size = this.options.question.settings.size;
+    this.$container.css({
+      height: width * (size.height / size.width),
+      fontSize: 16 * (width / size.width)
+    });
+  };
+
+  /**
+   * Get css position in percentage.
+   *
+   * @param {jQuery} $element
+   * @returns {Object} CSS position
+   */
+  C.prototype.positionToPercentage = function ($element) {
+    return {
+      top: (parseInt($element.css('top')) * 100 / this.$container.innerHeight()) + '%',
+      left: (parseInt($element.css('left')) * 100 / this.$container.innerWidth()) + '%'
+    };
+  };
+
+  /**
+   * Display the correct solution for the input boxes.
+   */
+  C.prototype.showSolutions = function () {
+    var task = this.options.question.task;
+    this.points = 0;
+
+    // Create map over correct drop zones for elements
+    var map = [];
+    for (var i = 0; i < task.dropZones.length; i++) {
+      var correctElements = task.dropZones[i].correctElements;
+      for (var j = 0; j < correctElements.length; j++) {
+        var correctElement = correctElements[j];
+        if (map[correctElement] === undefined) {
+          map[correctElement] = [];
+        }
+        map[correctElement].push(i);
+      }
+    }
+
+    for (var i = 0; i < this.$elements.length; i++) {
+      var $element = this.$elements[i];
+      if ($element === undefined) {
+        continue;
+      }
+
+      // Disable dragging
+      $element.draggable('disable');
+
+      // Find out where we are.
+      var dropZone = $element.data('content');
+
+      if (map[i] === undefined) {
+        // We should not be anywhere.
+        if (dropZone !== undefined) {
+          // ... but we are!
+          $element.addClass('h5p-wrong');
+        }
+        else {
+          this.points++;
+        }
+        continue;
+      }
+
+      // Are we somewhere we should be?
+      var correct = false;
+      for (var j = 0; j < map[i].length; j++) {
+        if (dropZone === map[i][j]) {
+          correct = true;
+          $element.addClass('h5p-correct');
+          this.points++;
+          break;
+        }
+      }
+      if (!correct) {
+        $element.addClass('h5p-wrong');
+      }
+    }
+
+    return true;
+  };
+
+  /**
+   * Hide solutions. (/try again)
+   */
+  C.prototype.hideSolutions = function () {
+    for (var i = 0; i < this.$elements.length; i++) {
+      if (this.$elements[i] !== undefined) {
+        this.$elements[i].removeClass('h5p-wrong h5p-correct').draggable('enable');
+      }
+    }
+    delete this.points;
+  };
+
+  /**
+   * Get maximum score.
+   *
+   * @returns {Number} Max points
+   */
+  C.prototype.getMaxScore = function () {
+    var max = 0;
+    for (var i = 0; i < this.$elements.length; i++) {
+      if (this.$elements[i] !== undefined) {
+        max++;
+      }
+    }
+
+    return max;
+  };
+
+  /**
+   * Count the number of correct answers.
+   * Only works while showing solution.
+   *
+   * @returns {Number} Points
+   */
+  C.prototype.getScore = function () {
+    if (this.points !== undefined) {
+      return this.points;
+    }
+  };
+
+  return C;
+})(H5P.jQuery);

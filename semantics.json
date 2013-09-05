@@ -37,8 +37,8 @@
             "label": "Task size",
             "description": "Specify how large (in px) the play area should be.",
             "default": {
-              "width": 640,
-              "height": 320,
+              "width": 620,
+              "height": 310,
               "field": "background"
             },
             "fields": [
