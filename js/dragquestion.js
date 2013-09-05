@@ -67,13 +67,13 @@ H5P.DragQuestion = (function ($) {
   C.prototype.attach = function ($container) {
     var that = this;
 
-    this.$container = $container.addClass('h5p-dragquestion');
+    this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
     if (this.options.question.settings.background !== undefined) {
-      $container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+      this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
     }
 
     // Add show score button
-    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo($container).click(function () {
+    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
       if ($button.hasClass('h5p-try-again')) {
         $button.val(that.options.scoreShow).removeClass('h5p-try-again');
         that.hideSolutions();
@@ -105,7 +105,7 @@ H5P.DragQuestion = (function ($) {
         tolerance: 'intersect',
         accept: function (draggable) {
           // Check that the draggable belongs to this task.
-          var $draggable = $container.find(draggable);
+          var $draggable = that.$container.find(draggable);
           if ($draggable.length) {
             // Check that the draggable has this drop zone.
             var id = $(this).parent().data('id');
@@ -229,11 +229,30 @@ H5P.DragQuestion = (function ($) {
    * Set correct height of container
    */
   C.prototype.resize = function () {
-    var width = this.$container.width();
+    var fullscreenOn = H5P.$body.hasClass('h5p-fullscreen') || H5P.$body.hasClass('h5p-semi-fullscreen');
+    if (!fullscreenOn) {
+      // Make sure we use all the height we can get. Needed to scale up.
+      this.$container.css('height', '99999px');
+    }
+
     var size = this.options.question.settings.size;
+    var ratio = size.width / size.height;
+    var width = this.$container.parent().width();
+    var height = this.$container.parent().height();
+
+    if (width / height >= ratio) {
+      // Wider
+      width = height * ratio;
+    }
+    else {
+      // Narrower
+      height = width / ratio;
+    }
+
     this.$container.css({
-      height: width * (size.height / size.width),
-      fontSize: 16 * (width / size.width)
+      width: width + 'px',
+      height: height + 'px',
+      fontSize: (16 * (width / size.width)) + 'px'
     });
   };
 

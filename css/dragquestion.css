@@ -1,11 +1,12 @@
 .h5p-dragquestion {
+  display: block;
+}
+.h5p-dragquestion > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%;
-  display: block;
-  height: 300px;
-  width: 100%;
+  margin: 0 auto;
 }
 .h5p-dragquestion .h5p-button {
   cursor: pointer;
