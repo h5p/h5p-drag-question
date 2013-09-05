@@ -7,6 +7,13 @@
     "common": true
   },
   {
+    "name": "tryAgain",
+    "type": "text",
+    "label": "Try again button",
+    "default": "Try again",
+    "common": true
+  },
+  {
     "name": "correct",
     "type": "text",
     "label": "Correct solution label text",
