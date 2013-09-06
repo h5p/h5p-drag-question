@@ -112,6 +112,15 @@
                   "widget": "dynamicCheckboxes",
                   "label": "Select drop zones",
                   "multiple": true
+                },
+                {
+                  "name": "backgroundOpacity",
+                  "type": "number",
+                  "label": "BackgroundOpacity",
+                  "min": 0,
+                  "max": 100,
+                  "step": 5,
+                  "default": 100
                 }
               ]
             }
@@ -161,6 +170,15 @@
                   "widget": "dynamicCheckboxes",
                   "label": "Select correct elements",
                   "multiple": true
+                },
+                {
+                  "name": "backgroundOpacity",
+                  "type": "number",
+                  "label": "BackgroundOpacity",
+                  "min": 0,
+                  "max": 100,
+                  "step": 5,
+                  "default": 100
                 }
               ]
             }

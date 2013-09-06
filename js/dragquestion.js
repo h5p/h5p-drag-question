@@ -96,11 +96,13 @@ H5P.DragQuestion = (function ($) {
       var dropZone = task.dropZones[i];
 
       var html = '<div class="h5p-inner"></div>';
+      var extraClass = '';
       if (dropZone.showLabel) {
         html = '<div class="h5p-label">' + dropZone.label + '</div>' + html;
+        extraClass = ' h5p-has-label';
       }
 
-      $element = this.addElement(dropZone, 'dropzone', i).html(html).children('.h5p-inner').droppable({
+      $element = this.addElement(dropZone, 'dropzone' + extraClass, i).html(html).children('.h5p-inner').droppable({
         activeClass: 'h5p-active',
         tolerance: 'intersect',
         accept: function (draggable) {
@@ -120,16 +122,21 @@ H5P.DragQuestion = (function ($) {
           return false;
         },
         drop: function (event, ui) {
-          $(this).removeClass('h5p-over');
+          var $this = $(this);
+          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '255,255,255');
           ui.draggable.data('addToZone', $(this).parent().data('id'));
         },
         over: function (event, ui) {
-          $(this).addClass('h5p-over');
+          var $this = $(this);
+          C.setBackgroundOpacity($this.addClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224');
         },
         out: function (event, ui) {
-          $(this).removeClass('h5p-over');
+          var $this = $(this);
+          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '255,255,255');
         }
       }).end();
+
+      C.setBackgroundOpacity($element.children(), dropZone, '255,255,255');
     }
 
     // Add elements (static and draggable)
@@ -193,6 +200,8 @@ H5P.DragQuestion = (function ($) {
 
       var elementInstance = new (H5P.classFromName(element.type.library.split(' ')[0]))(element.type.params, this.id);
       elementInstance.attach($element);
+
+      C.setBackgroundOpacity($element, element, '255,255,255');
     }
 
     // Restore user answers
@@ -369,6 +378,13 @@ H5P.DragQuestion = (function ($) {
     if (this.points !== undefined) {
       return this.points;
     }
+  };
+
+  C.setBackgroundOpacity = function ($element, element, color) {
+    if (element.backgroundOpacity === undefined) {
+      element.backgroundOpacity = 100;
+    }
+    $element.css('backgroundColor', 'rgba(' + color + ',' + (element.backgroundOpacity / 100) + ')');
   };
 
   return C;

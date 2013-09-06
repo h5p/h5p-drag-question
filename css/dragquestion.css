@@ -37,6 +37,9 @@
   position: absolute;
   z-index: 1;
 }
+.h5p-dragquestion .h5p-static.h5p-text {
+  padding: 0.25em 0.5em;
+}
 .h5p-dragquestion .h5p-static > h2 {
   font-size: 1.5em;
 }
@@ -65,7 +68,7 @@
   margin: 0;
 }
 .h5p-dragquestion .h5p-draggable.ui-draggable-dragging {
-  background-color: rgba(255, 255, 255, 0.85);
+  opacity: 0.85;
   box-shadow: 0.4em 0.4em 0.4em rgba(0,0,0,0.5);
 }
 .h5p-dragquestion .h5p-draggable.ui-state-disabled {
@@ -106,13 +109,17 @@
   position: absolute;
 }
 .h5p-dragquestion .h5p-dropzone > .h5p-inner {
-  border: 2px solid #ffffff;
+  padding: 2px;
   border-radius: 0.5em;
   background-color: #ffffff;
   height: 100%;
   position: relative;
 }
+.h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
+  border-radius: 0 0.5em 0.5em 0.5em;
+}
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-active {
+  padding: 0;
   border: 2px dashed #666666;
 }
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
@@ -122,9 +129,9 @@
   background: none repeat scroll 0 0 rgb(255, 255, 255);
   left: 0;
   line-height: 1.25em;
-  padding: 0.25em 0.5em 0.7em;
+  padding: 0.25em 0.5em;
   position: absolute;
-  top: -1.65em;
+  bottom: 100%;
   white-space: nowrap;
   border-radius: 0.5em 0.5em 0 0;
 }
