@@ -57,6 +57,7 @@ H5P.DragQuestion = (function ($) {
 
     this.userAnswers = [];
     this.$elements = [];
+    this.displayingSolution = false;
   };
 
   /**
@@ -73,21 +74,15 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add show score button
-    var $button = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
-      if ($button.hasClass('h5p-try-again')) {
-        $button.val(that.options.scoreShow).removeClass('h5p-try-again');
+    this.$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
+      if (that.$solutionButton.hasClass('h5p-try-again')) {
+        that.$solutionButton.val(that.options.scoreShow).removeClass('h5p-try-again');
         that.hideSolutions();
       }
-      else if (that.showSolutions()) {
-        if (that.tryAgain) {
-          $button.val(that.options.tryAgain).addClass('h5p-try-again');
-        }
-        else {
-          $button.remove();
-        }
+      else {
+        that.showSolutions();
       }
     });
-    // TODO: Make sure the following libs hide this button: 'H5P.QuestionSet', 'H5P.BoardGame', 'H5P.CoursePresentation'
 
     var $element, task = this.options.question.task;
 
@@ -282,6 +277,17 @@ H5P.DragQuestion = (function ($) {
    * Display the correct solution for the input boxes.
    */
   C.prototype.showSolutions = function () {
+    if (this.displayingSolution) {
+      return;
+    }
+
+    if (this.tryAgain) {
+      this.$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
+    }
+    else {
+      this.$solutionButton.remove();
+    }
+
     var task = this.options.question.task;
     this.points = 0;
 
@@ -337,7 +343,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
-    return true;
+    this.displayingSolution = true;
   };
 
   /**
@@ -350,6 +356,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
     delete this.points;
+    this.displayingSolution = false;
   };
 
   /**
