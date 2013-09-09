@@ -11,7 +11,8 @@
     "type": "text",
     "label": "Try again button",
     "default": "Try again",
-    "common": true
+    "common": true,
+    "optional": true
   },
   {
     "name": "correct",
@@ -120,7 +121,8 @@
                   "min": 0,
                   "max": 100,
                   "step": 5,
-                  "default": 100
+                  "default": 100,
+                  "optional": true
                 }
               ]
             }
@@ -178,7 +180,8 @@
                   "min": 0,
                   "max": 100,
                   "step": 5,
-                  "default": 100
+                  "default": 100,
+                  "optional": true
                 }
               ]
             }

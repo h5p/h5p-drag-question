@@ -380,6 +380,22 @@ H5P.DragQuestion = (function ($) {
     }
   };
 
+  /**
+   * Checks if all has been answered.
+   *
+   * @returns {Boolean}
+   */
+  C.prototype.getAnswerGiven = function () {
+    return true;
+  };
+
+  /**
+   * Sets background opacity for the given element.
+   *
+   * @param {jQuery} $element
+   * @param {Object} element
+   * @param {String} color
+   */
   C.setBackgroundOpacity = function ($element, element, color) {
     if (element.backgroundOpacity === undefined) {
       element.backgroundOpacity = 100;
