@@ -33,7 +33,6 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} id Content identification
    */
   function C(options, id) {
-    this.tryAgain = true;
     this.preventResize = false;
 
     this.id = id;
@@ -52,9 +51,11 @@ H5P.DragQuestion = (function ($) {
           elements: [],
           dropZones: []
         }
-      }
+      },
+      enableTryAgain: true
     }, options);
 
+    this.tryAgain = this.options.enableTryAgain;
     this.userAnswers = [];
     this.$elements = [];
     this.displayingSolution = false;

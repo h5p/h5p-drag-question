@@ -189,5 +189,12 @@
         ]
       }
     ]
+  },
+  {
+    "name": "enableTryAgain",
+    "type": "boolean",
+    "label": "Enable try again button",
+    "default": true,
+    "optional": true
   }
 ]
