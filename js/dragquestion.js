@@ -184,6 +184,8 @@ H5P.DragQuestion = (function ($) {
                 id: id,
                 position: position
               });
+
+              $(that).trigger('h5pQuestionAnswered');
             }
           }
         });
@@ -393,7 +395,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Boolean}
    */
   C.prototype.getAnswerGiven = function () {
-    return true;
+    return this.userAnswers.length !== 0;
   };
 
   /**
