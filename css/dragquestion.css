@@ -32,6 +32,8 @@
   padding: 0.5em 1em;
   text-decoration: none;
   text-shadow: 0.1em 0.1em 0px #ffffff;
+  z-index: 4;
+  opacity: 0.9;
 }
 .h5p-dragquestion .h5p-static {
   position: absolute;
