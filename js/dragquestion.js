@@ -207,7 +207,7 @@ H5P.DragQuestion = (function ($) {
       var dropZoneAnswers = that.userAnswers[i];
       if (dropZoneAnswers !== undefined) {
         for (var j = 0; j < dropZoneAnswers.length; j++) {
-          this.$elements[dropZoneAnswers[j].id].css(dropZoneAnswers[j].css).data('content', i);
+          this.$elements[dropZoneAnswers[j].id].css(dropZoneAnswers[j].position).data('content', i);
         }
       }
     }
@@ -385,9 +385,14 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Points
    */
   C.prototype.getScore = function () {
-    if (this.points !== undefined) {
-      return this.points;
+    if (this.points === undefined) {
+      this.showSolutions();
+      var points = this.points;
+      this.hideSolutions();
+      return points;
     }
+
+    return this.points;
   };
 
   /**
