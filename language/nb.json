@@ -5,6 +5,10 @@
       "default": "Vis svar"
     },
     {
+      "label": "«Prøv igjen»-knapp",
+      "default": "Prøv igjen"
+    },
+    {
       "label": "Ledetekst for riktig svar i fasiten",
       "default": "Korrekt"
     },
@@ -45,6 +49,9 @@
                   },
                   {
                     "label": "Velg målområder"
+                  },
+                  {
+                    "label": "Opasitet for bakgrunn"
                   }
                 ]
               }
@@ -71,6 +78,9 @@
                   },
                   {
                     "label": "Velg riktige elementer"
+                  },
+                  {
+                    "label": "Opasitet for bakgrunn"
                   }
                 ]
               }
@@ -78,6 +88,9 @@
           ]
         }
       ]
+    },
+    {
+      "label": "Aktiver «Prøv igjen»-knapp"
     }
   ]
 }
