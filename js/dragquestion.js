@@ -33,8 +33,6 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} id Content identification
    */
   function C(options, id) {
-    this.preventResize = false;
-
     this.id = id;
     this.options = $.extend(true, {}, {
       scoreShow: 'Show score',
@@ -52,11 +50,14 @@ H5P.DragQuestion = (function ($) {
           dropZones: []
         }
       },
-      enableTryAgain: true
+      enableTryAgain: true,
+      preventResize: false,
+      displaySolutionsButton: true,
+      postUserStatistics: (H5P.postUserStatistics === true)
     }, options);
 
-    this.tryAgain = this.options.enableTryAgain;
     this.userAnswers = [];
+    this.elementZones = [];
     this.$elements = [];
     this.displayingSolution = false;
   };
@@ -75,15 +76,9 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add show score button
-    this.$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
-      if (that.$solutionButton.hasClass('h5p-try-again')) {
-        that.$solutionButton.val(that.options.scoreShow).removeClass('h5p-try-again');
-        that.hideSolutions();
-      }
-      else {
-        that.showSolutions();
-      }
-    });
+    if (this.options.displaySolutionsButton === true) {
+      this.addSolutionButton();
+    }
 
     var $element, task = this.options.question.task;
 
@@ -161,10 +156,10 @@ H5P.DragQuestion = (function ($) {
             $this.css(position);
 
             // Remove from zone
-            var zone = $this.data('content');
             var id = $this.data('id');
+            var zone = that.elementZones[id];
             if (zone !== undefined && that.userAnswers[zone] !== undefined) {
-              $this.removeData('content');
+              delete that.elementZones[id];
               var zoneAnswers = that.userAnswers[zone];
               for (var i = 0; i < zoneAnswers.length; i++) {
                 if (zoneAnswers[i].id === id) {
@@ -175,7 +170,8 @@ H5P.DragQuestion = (function ($) {
 
             var addToZone = $this.data('addToZone');
             if (addToZone !== undefined) {
-              $this.removeData('addToZone').data('content', addToZone);
+              $this.removeData('addToZone');
+              that.elementZones[id] = addToZone;
 
               // Add to zone answers
               if (that.userAnswers[addToZone] === undefined) {
@@ -207,17 +203,43 @@ H5P.DragQuestion = (function ($) {
       var dropZoneAnswers = that.userAnswers[i];
       if (dropZoneAnswers !== undefined) {
         for (var j = 0; j < dropZoneAnswers.length; j++) {
-          this.$elements[dropZoneAnswers[j].id].css(dropZoneAnswers[j].position).data('content', i);
+          var dza = dropZoneAnswers[j];
+          this.$elements[dza.id].css(dza.position);
+          this.elementZones[dza.id] = i;
         }
       }
     }
 
-    if (this.preventResize === false) {
+    if (this.options.preventResize === false) {
       H5P.$window.bind('resize', function () {
         that.resize();
       });
     }
     this.resize();
+  };
+
+  /**
+   * Add solution button to our container.
+   */
+  C.prototype.addSolutionButton = function () {
+    var that = this;
+
+    if (this._$solutionButton !== undefined) {
+      return;
+    }
+
+    this._$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
+      if (that._$solutionButton.hasClass('h5p-try-again')) {
+        that._$solutionButton.val(that.options.scoreShow).removeClass('h5p-try-again');
+        that.hideSolutions();
+      }
+      else {
+        that.showSolutions();
+        if (that.options.postUserStatistics === true) {
+          H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+        }
+      }
+    });
   };
 
   /**
@@ -279,16 +301,18 @@ H5P.DragQuestion = (function ($) {
   /**
    * Display the correct solution for the input boxes.
    */
-  C.prototype.showSolutions = function () {
+  C.prototype.showSolutions = function (skipVisuals) {
     if (this.displayingSolution) {
       return;
     }
 
-    if (this.tryAgain) {
-      this.$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
-    }
-    else {
-      this.$solutionButton.remove();
+    if (this._$solutionButton !== undefined) {
+      if (this.options.enableTryAgain) {
+        this._$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
+      }
+      else {
+        this._$solutionButton.remove();
+      }
     }
 
     var task = this.options.question.task;
@@ -314,16 +338,16 @@ H5P.DragQuestion = (function ($) {
       }
 
       // Disable dragging
-      $element.draggable('disable');
+      if (skipVisuals !== true) $element.draggable('disable');
 
       // Find out where we are.
-      var dropZone = $element.data('content');
+      var dropZone = this.elementZones[i];
 
       if (map[i] === undefined) {
         // We should not be anywhere.
         if (dropZone !== undefined) {
           // ... but we are!
-          $element.addClass('h5p-wrong');
+          if (skipVisuals !== true) $element.addClass('h5p-wrong');
         }
         else {
           this.points++;
@@ -336,17 +360,17 @@ H5P.DragQuestion = (function ($) {
       for (var j = 0; j < map[i].length; j++) {
         if (dropZone === map[i][j]) {
           correct = true;
-          $element.addClass('h5p-correct');
+          if (skipVisuals !== true) $element.addClass('h5p-correct');
           this.points++;
           break;
         }
       }
       if (!correct) {
-        $element.addClass('h5p-wrong');
+        if (skipVisuals !== true) $element.addClass('h5p-wrong');
       }
     }
 
-    this.displayingSolution = true;
+    if (skipVisuals !== true) this.displayingSolution = true;
   };
 
   /**
@@ -386,9 +410,9 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.getScore = function () {
     if (this.points === undefined) {
-      this.showSolutions();
+      this.showSolutions(true);
       var points = this.points;
-      this.hideSolutions();
+      delete this.points;
       return points;
     }
 
