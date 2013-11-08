@@ -70,6 +70,10 @@ H5P.DragQuestion = (function ($) {
   C.prototype.attach = function ($container) {
     var that = this;
 
+    // If reattaching, we no longer show solution. So forget that we
+    // might have done so before.
+    this.displayingSolution = false;
+
     this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
