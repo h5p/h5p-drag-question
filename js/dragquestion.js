@@ -53,13 +53,28 @@ H5P.DragQuestion = (function ($) {
       enableTryAgain: true,
       preventResize: false,
       displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true)
+      postUserStatistics: (H5P.postUserStatistics === true),
+      singlePoint: true
     }, options);
 
     this.userAnswers = [];
     this.elementZones = [];
     this.$elements = [];
     this.displayingSolution = false;
+    
+    // Create map over correct drop zones for elements
+    var task = this.options.question.task;
+    this.correctDZs = [];
+    for (var i = 0; i < task.dropZones.length; i++) {
+      var correctElements = task.dropZones[i].correctElements;
+      for (var j = 0; j < correctElements.length; j++) {
+        var correctElement = correctElements[j];
+        if (this.correctDZs[correctElement] === undefined) {
+          this.correctDZs[correctElement] = [];
+        }
+        this.correctDZs[correctElement].push(i);
+      }
+    }
   };
 
   /**
@@ -322,19 +337,6 @@ H5P.DragQuestion = (function ($) {
     var task = this.options.question.task;
     this.points = 0;
 
-    // Create map over correct drop zones for elements
-    var map = [];
-    for (var i = 0; i < task.dropZones.length; i++) {
-      var correctElements = task.dropZones[i].correctElements;
-      for (var j = 0; j < correctElements.length; j++) {
-        var correctElement = correctElements[j];
-        if (map[correctElement] === undefined) {
-          map[correctElement] = [];
-        }
-        map[correctElement].push(i);
-      }
-    }
-
     for (var i = 0; i < this.$elements.length; i++) {
       var $element = this.$elements[i];
       if ($element === undefined) {
@@ -347,22 +349,20 @@ H5P.DragQuestion = (function ($) {
       // Find out where we are.
       var dropZone = this.elementZones[i];
 
-      if (map[i] === undefined) {
+      if (this.correctDZs[i] === undefined) {
         // We should not be anywhere.
         if (dropZone !== undefined) {
           // ... but we are!
           if (skipVisuals !== true) $element.addClass('h5p-wrong');
-        }
-        else {
-          this.points++;
+          this.points--;
         }
         continue;
       }
 
       // Are we somewhere we should be?
       var correct = false;
-      for (var j = 0; j < map[i].length; j++) {
-        if (dropZone === map[i][j]) {
+      for (var j = 0; j < this.correctDZs[i].length; j++) {
+        if (dropZone === this.correctDZs[i][j]) {
           correct = true;
           if (skipVisuals !== true) $element.addClass('h5p-correct');
           this.points++;
@@ -375,6 +375,13 @@ H5P.DragQuestion = (function ($) {
     }
 
     if (skipVisuals !== true) this.displayingSolution = true;
+    
+    if (this.points < 0) {
+      this.points = 0;
+    }
+    if (this.options.singlePoint) {
+      this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
+    }
   };
 
   /**
@@ -391,19 +398,28 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Get maximum score.
-   *
+   * Calculates the real max score.
+   * 
    * @returns {Number} Max points
    */
-  C.prototype.getMaxScore = function () {
+  C.prototype.calculateMaxScore = function () {
     var max = 0;
     for (var i = 0; i < this.$elements.length; i++) {
-      if (this.$elements[i] !== undefined) {
+      if (this.$elements[i] !== undefined && this.correctDZs[i] !== undefined) {
         max++;
       }
     }
 
     return max;
+  };
+
+  /**
+   * Get maximum score.
+   *
+   * @returns {Number} Max points
+   */
+  C.prototype.getMaxScore = function () {
+    return (this.options.singlePoint ? 1 : this.calculateMaxScore());
   };
 
   /**

@@ -196,5 +196,12 @@
     "label": "Enable try again button",
     "default": true,
     "optional": true
-  }
+  },
+  {
+    "name": "singlePoint",
+    "type": "boolean",
+    "label": "Single point score",
+    "description": "Disable to get 1 point for each correct answer.",
+    "default": true
+  },
 ]
