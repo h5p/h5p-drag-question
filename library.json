@@ -1,9 +1,9 @@
 {
   "title": "Drag and drop question",
-  "description": "Question type",
+  "description": "Drag and drop question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 25,
+  "patchVersion": 26,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",

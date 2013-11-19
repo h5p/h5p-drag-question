@@ -247,9 +247,9 @@ H5P.DragQuestion = (function ($) {
       return;
     }
 
-    this._$solutionButton = $('<input class="h5p-button" type="submit" value="' + this.options.scoreShow + '"/>').appendTo(this.$container).click(function () {
+    this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
       if (that._$solutionButton.hasClass('h5p-try-again')) {
-        that._$solutionButton.val(that.options.scoreShow).removeClass('h5p-try-again');
+        that._$solutionButton.text(that.options.scoreShow).removeClass('h5p-try-again');
         that.hideSolutions();
       }
       else {
@@ -327,7 +327,7 @@ H5P.DragQuestion = (function ($) {
 
     if (this._$solutionButton !== undefined) {
       if (this.options.enableTryAgain) {
-        this._$solutionButton.val(this.options.tryAgain).addClass('h5p-try-again');
+        this._$solutionButton.text(this.options.tryAgain).addClass('h5p-try-again');
       }
       else {
         this._$solutionButton.remove();
