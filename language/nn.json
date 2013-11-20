@@ -91,6 +91,10 @@
     },
     {
       "label": "Aktiver «Prøv igjen»-knapp"
+    },
+    {
+      "label": "Enkeltpoeng",
+      "description": "Skru av for å få 1 poeng for kvart riktige svar."
     }
   ]
 }
