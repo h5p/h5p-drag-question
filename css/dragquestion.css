@@ -104,9 +104,12 @@
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   font-family: 'H5PFontAwesome';
+  font-size: 1.5em;
+  font-weight: bold;
   position: absolute;
   right: 0.15em;
   top: 0.15em;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after {
   content: "\2714";
