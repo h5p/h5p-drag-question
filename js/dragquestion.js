@@ -278,7 +278,6 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.resize = function () {
     var fullscreenOn = H5P.$body.hasClass('h5p-fullscreen') || H5P.$body.hasClass('h5p-semi-fullscreen');
-    var $dialog = this.$container.closest('.h5p-dialog-inner');
     if (!fullscreenOn) {
       // Make sure we use all the height we can get. Needed to scale up.
       this.$container.css('height', '99999px');
@@ -286,29 +285,23 @@ H5P.DragQuestion = (function ($) {
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
-    
-    var $container = this.$container;
-    
-    // TODO - this should be improved. Without timeout, width and height returned is 0.
-    setTimeout(function () {
-      var width = $dialog.length > 0 ? $dialog.width() : $container.parent().width();
-      var height = $dialog.length > 0 ? $dialog.height() : $container.parent().height();
-      
-      if (width / height >= ratio) {
-        // Wider
-        width = height * ratio;
-      }
-      else {
-        // Narrower
-        height = width / ratio;
-      }
-      
-      $container.css({
-        width: width + 'px',
-        height: height + 'px',
-        fontSize: (16 * (width / size.width)) + 'px'
-      });
-    }, 1);
+    var width = this.$container.parent().width();
+    var height = this.$container.parent().height();
+
+    if (width / height >= ratio) {
+      // Wider
+      width = height * ratio;
+    }
+    else {
+      // Narrower
+      height = width / ratio;
+    }
+
+    this.$container.css({
+      width: width + 'px',
+      height: height + 'px',
+      fontSize: (16 * (width / size.width)) + 'px'
+    });
   };
 
   /**
