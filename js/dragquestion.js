@@ -277,11 +277,8 @@ H5P.DragQuestion = (function ($) {
    * Set correct height of container
    */
   C.prototype.resize = function () {
-    var fullscreenOn = H5P.$body.hasClass('h5p-fullscreen') || H5P.$body.hasClass('h5p-semi-fullscreen');
-    if (!fullscreenOn) {
-      // Make sure we use all the height we can get. Needed to scale up.
-      this.$container.css('height', '99999px');
-    }
+    // Make sure we use all the height we can get. Needed to scale up.
+    this.$container.css('height', '99999px');
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
