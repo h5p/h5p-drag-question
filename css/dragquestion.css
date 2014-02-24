@@ -103,7 +103,7 @@
   border: 1px solid red;
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
-  font-family: 'H5PFontAwesome';
+  font-family: H5PFontAwesome4;
   font-size: 1.5em;
   font-weight: bold;
   position: absolute;

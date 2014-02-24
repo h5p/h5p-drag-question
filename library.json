@@ -3,10 +3,14 @@
   "description": "Drag and drop question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 29,
+  "patchVersion": 30,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 1
+  },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",
   "preloadedCss": [
@@ -15,11 +19,6 @@
     }
   ],
   "preloadedDependencies": [
-    {
-      "machineName": "H5P.API",
-      "majorVersion": 1,
-      "minorVersion": 0
-    },
     {
       "machineName": "H5P.Text",
       "majorVersion": 1,
@@ -30,12 +29,6 @@
       "machineName": "H5P.Image",
       "majorVersion": 1,
       "minorVersion": 0,
-      "defaultStyles": true
-    },
-    {
-      "machineName": "FontAwesome",
-      "majorVersion": 3,
-      "minorVersion": 1,
       "defaultStyles": true
     },
     {
