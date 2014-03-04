@@ -128,25 +128,25 @@ H5P.DragQuestion = (function ($) {
               }
             }
           }
-
+          
           return false;
         },
         drop: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '255,255,255');
-          ui.draggable.data('addToZone', $(this).parent().data('id'));
+          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224', '255,255,255');
+          ui.draggable.data('addToZone', $this.parent().data('id'));
         },
         over: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.addClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224');
+          C.setBackgroundOpacity($this.addClass('h5p-over'), task.dropZones[$this.parent().data('id')], '212,190,216', '234,224,236');
         },
         out: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '255,255,255');
+          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224', '255,255,255');
         }
       }).end();
 
-      C.setBackgroundOpacity($element.children(), dropZone, '255,255,255');
+      C.setBackgroundOpacity($element.children(), dropZone, '224,224,224', '255,255,255');
     }
 
     // Add elements (static and draggable)
@@ -159,10 +159,11 @@ H5P.DragQuestion = (function ($) {
           revert: function (event, ui) {
             var $this = $(this);
             var element = task.elements[$this.data('id')];
-            $this.data("uiDraggable").originalPosition = {
+            $this.removeClass('h5p-dropped').data("uiDraggable").originalPosition = {
               top: element.y + '%',
               left: element.x + '%'
             };
+            C.setElementBackgroundHover($this, element);
             return !event;
           },
           start: function(event, ui) {
@@ -202,6 +203,9 @@ H5P.DragQuestion = (function ($) {
               });
 
               $(that).trigger('h5pQuestionAnswered');
+                
+              $this.addClass('h5p-dropped');
+              C.setElementBackgroundHover($this, task.elements[id]);
             }
           }
         });
@@ -214,7 +218,8 @@ H5P.DragQuestion = (function ($) {
       var elementInstance = new (H5P.classFromName(element.type.library.split(' ')[0]))(element.type.params, this.id);
       elementInstance.attach($element);
 
-      C.setBackgroundOpacity($element, element, '255,255,255');
+      C.addHover($element, element);
+      C.setElementBackground($element, element);
     }
 
     // Restore user answers
@@ -235,6 +240,66 @@ H5P.DragQuestion = (function ($) {
       });
     }
     this.resize();
+  };
+  
+  /**
+   * 
+   * @param {type} $element
+   * @param {type} element
+   * @returns {undefined} 
+   */
+  C.addHover = function ($element, element) {
+    $element.hover(function () {
+      C.setElementBackgroundHover($element, element);
+    }, function () {
+      C.setElementBackground($element, element);
+    });
+  };
+  
+  C.setElementBackground = function ($element, element) {
+    var colorTop, colorBottom;
+      
+    if ($element.hasClass('h5p-wrong')) {
+      colorTop = '230,206,209';
+      colorBottom = '230,206,209';
+    }
+    else if ($element.hasClass('h5p-correct')) {
+      colorTop = '209,226,206';
+      colorBottom = '209,226,206';
+    }
+    else if ($element.hasClass('h5p-dropped')) {
+      colorTop = '227,234,238';
+      colorBottom = '203,222,231';
+    }
+    else {
+      colorTop = '255,255,255';
+      colorBottom = '224,224,224';
+    }
+              
+    C.setBackgroundOpacity($element, element, colorTop, colorBottom);
+  };
+  
+  C.setElementBackgroundHover = function ($element, element) {
+    var colorTop, colorBottom;
+      
+    if ($element.hasClass('h5p-wrong')) {
+      colorTop = '230,206,209';
+      colorBottom = '230,206,209';
+    }
+    else if ($element.hasClass('h5p-correct')) {
+      colorTop = '209,226,206';
+      colorBottom = '209,226,206';
+    }
+    else if ($element.hasClass('h5p-dropped')) {
+      colorTop = '234,224,236';
+      colorBottom = '212,190,216';
+    }
+    else {
+      colorTop = '234,224,236';
+      colorBottom = '212,190,216';
+    }
+              
+    C.setBackgroundOpacity($element, element, colorTop, colorBottom);
   };
 
   /**
@@ -277,8 +342,11 @@ H5P.DragQuestion = (function ($) {
    * Set correct height of container
    */
   C.prototype.resize = function () {
-    // Make sure we use all the height we can get. Needed to scale up.
-    this.$container.css('height', '99999px');
+    var fullscreenOn = H5P.$body.hasClass('h5p-fullscreen') || H5P.$body.hasClass('h5p-semi-fullscreen');
+    if (!fullscreenOn) {
+      // Make sure we use all the height we can get. Needed to scale up.
+      this.$container.css('height', '99999px');
+    }
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
@@ -339,6 +407,7 @@ H5P.DragQuestion = (function ($) {
       if ($element === undefined) {
         continue;
       }
+      var element = task.elements[i];
 
       // Disable dragging
       if (skipVisuals !== true) $element.draggable('disable');
@@ -350,7 +419,10 @@ H5P.DragQuestion = (function ($) {
         // We should not be anywhere.
         if (dropZone !== undefined) {
           // ... but we are!
-          if (skipVisuals !== true) $element.addClass('h5p-wrong');
+          if (skipVisuals !== true) { 
+            $element.addClass('h5p-wrong'); 
+            C.setElementBackground($element, element); 
+          }
           this.points--;
         }
         continue;
@@ -361,13 +433,19 @@ H5P.DragQuestion = (function ($) {
       for (var j = 0; j < this.correctDZs[i].length; j++) {
         if (dropZone === this.correctDZs[i][j]) {
           correct = true;
-          if (skipVisuals !== true) $element.addClass('h5p-correct');
+          if (skipVisuals !== true) {
+            $element.addClass('h5p-correct');
+            C.setElementBackground($element, element); 
+          }
           this.points++;
           break;
         }
       }
       if (!correct) {
-        if (skipVisuals !== true) $element.addClass('h5p-wrong');
+        if (skipVisuals !== true) {
+          $element.addClass('h5p-wrong');
+          C.setElementBackground($element, element);
+        }
       }
     }
 
@@ -388,6 +466,7 @@ H5P.DragQuestion = (function ($) {
     for (var i = 0; i < this.$elements.length; i++) {
       if (this.$elements[i] !== undefined) {
         this.$elements[i].removeClass('h5p-wrong h5p-correct').draggable('enable');
+        C.setElementBackground(this.$elements[i], this.options.question.task.elements[i]);
       }
     }
     delete this.points;
@@ -426,11 +505,14 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Points
    */
   C.prototype.getScore = function () {
-    // TODO: Refactor. This function shouldn't rely on showSolutions
-    this.showSolutions(true);
-    var points = this.points;
-    delete this.points;
-    return points;
+    if (this.points === undefined) {
+      this.showSolutions(true);
+      var points = this.points;
+      delete this.points;
+      return points;
+    }
+
+    return this.points;
   };
 
   /**
@@ -449,11 +531,12 @@ H5P.DragQuestion = (function ($) {
    * @param {Object} element
    * @param {String} color
    */
-  C.setBackgroundOpacity = function ($element, element, color) {
+  C.setBackgroundOpacity = function ($element, element, colorTop, colorBottom) {
     if (element.backgroundOpacity === undefined) {
       element.backgroundOpacity = 100;
     }
-    $element.css('backgroundColor', 'rgba(' + color + ',' + (element.backgroundOpacity / 100) + ')');
+    $element.css('backgroundColor', 'rgba(' + colorTop + ',' + (element.backgroundOpacity / 100) + ')');
+    $element.css('background', 'linear-gradient(to bottom, rgba(' + colorTop + ',' + (element.backgroundOpacity / 100) + ') 0%,rgba(' + colorBottom + ',' + (element.backgroundOpacity / 100) + ') 100%)');
   };
 
   return C;

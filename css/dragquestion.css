@@ -8,33 +8,59 @@
   background-size: 100% 100%;
   margin: 0 auto;
 }
+
+.h5p-dragquestion img {
+  border-radius: 0.25em;
+}
+
 .h5p-dragquestion .h5p-button {
-  cursor: pointer;
   position: absolute;
   bottom: 10px;
   right: 10px;
-  text-align: center;
-  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-  background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-  background-color: #ededed;
-  -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  border: 1.5px solid #dcdcdc;
-  color: #777777;
-  font-family: arial;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border: 0.1875em solid #fff;
+  border-radius: 0.3125em;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 0.5em #999;
   text-decoration: none;
-  text-shadow: 0.1em 0.1em 0px #ffffff;
+  text-align: center;
+  margin: auto;
+
+  background: rgb(100,152,254); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(100,152,254,1) 0%, rgba(4,104,206,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,152,254,1)), color-stop(100%,rgba(4,104,206,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* IE10+ */
+
   z-index: 4;
-  opacity: 0.9;
 }
+
+.h5p-dragquestion .h5p-button:hover {
+  background: rgb(4,104,206); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(4,104,206,1) 0%, rgba(100,152,254,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4,104,206,1)), color-stop(100%,rgba(100,152,254,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
+}
+
+.h5p-dragquestion .h5p-button.h5p-try-again:before {
+  font-family: H5PFontAwesome4;
+  content: "\f01e";
+  margin-right: 0.5em;
+}
+
+.h5p-dragquestion .h5p-button:before {
+  font-family: H5PFontAwesome4;
+  content: "\f06e";
+  margin-right: 0.5em;
+}
+
 .h5p-dragquestion .h5p-static {
   position: absolute;
   z-index: 1;
@@ -53,18 +79,37 @@
   font-size: 1em;
   line-height: 1.25em;
 }
+
+.h5p-dragquestion .h5p-draggable.h5p-dropped {
+  color: #235e7c;
+  border: 0.1em solid #a9c3d0;
+}
+
 .h5p-dragquestion .h5p-draggable {
   border-radius: 0.5em;
-  border: 1px solid #dcdcdc;
+  border: 0.1em solid #c6c6c6;
   overflow: hidden;
   cursor: pointer;
   position: absolute;
   text-align: center;
-  padding: 0.5em 0.125em;
+  padding: 0.3em 0.3em;
   line-height: 1.25em;
-  background: #fff;
-  box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.5);
+
+  background: #ececec; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ececec 1%, #e0e0e0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ececec), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ececec 1%,#e0e0e0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+
+
+  box-shadow: 0em 0em 0.4em rgba(0,0,0,0.5);
   z-index: 3;
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
@@ -78,8 +123,8 @@
   margin: 0;
 }
 .h5p-dragquestion .h5p-draggable.ui-draggable-dragging {
-  opacity: 0.85;
-  box-shadow: 0.4em 0.4em 0.4em rgba(0,0,0,0.5);
+  opacity: 0.5;
+  box-shadow: 0em 0em 0.8em rgba(0,0,0,0.5);
 }
 .h5p-dragquestion .h5p-draggable.ui-state-disabled {
   opacity: 1;
@@ -89,65 +134,129 @@
   padding: 0;
 }
 .h5p-dragquestion .h5p-draggable:hover {
-  border: 1px solid #aaaaaa;
+  border: 0.1em solid #ceb8d2;
+  color: #663366;
+  
+  background: rgb(234,224,236); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(234,224,236,1) 0%, rgba(212,190,216,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(234,224,236,1)), color-stop(100%,rgba(212,190,216,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae0ec', endColorstr='#d4bed8',GradientType=0 ); /* IE6-9 */
 }
 
 .h5p-dragquestion .h5p-draggable.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
-  background: lightgreen;
-  color: green;
-  border: 1px solid green;
+  background: #d1e2ce;
+  color: #39692e;
+  border: 0.1em solid #afcdaa;
+  box-shadow: none;
 }
+
 .h5p-dragquestion .h5p-draggable.h5p-wrong {
-  background: pink;
-  color: red;
-  border: 1px solid red;
+  border: 0.1em solid #ce9b9b;
+  color: #c33f62;
+  background: #e6ced1;
+  box-shadow: none;
 }
-.h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
-  font-family: 'H5PFontAwesome';
-  font-size: 1.5em;
-  font-weight: bold;
+
+.h5p-dragquestion .h5p-draggable.h5p-wrong:before {
+  content: "";
+  height: 1em;
+  width: 1em; 
+  border-radius: 50%;
+  background: #e6ced1;
   position: absolute;
-  right: 0.15em;
-  top: 0.15em;
-  background-color: rgba(255, 255, 255, 0.6);
+  right: 0.42em;
+  top: 0.42em;
+}
+
+.h5p-dragquestion .h5p-draggable.h5p-correct:before {
+  content: "";
+  height: 1em;
+  width: 1em; 
+  border-radius: 50%;
+  background: #d1e2ce;
+  position: absolute;
+  right: 0.42em;
+  top: 0.42em;
+}
+
+.h5p-dragquestion .h5p-draggable.h5p-correct:after {
+  font-family: 'H5PFontAwesome';
+  position: absolute;
+  right: 0.52em;
+  top: 0.35em;
+  font-size: 0.9em;
+}
+
+.h5p-dragquestion .h5p-draggable.h5p-wrong:after {
+  font-family: 'H5PFontAwesome';
+  position: absolute;
+  right: 0.53em;
+  top: 0.28em;
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after {
-  content: "\2714";
+  content: "\f00c";
 }
 .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   content: "\f00d";
 }
+
 .h5p-dragquestion .h5p-dropzone {
   z-index: 2;
   position: absolute;
 }
+
 .h5p-dragquestion .h5p-dropzone > .h5p-inner {
-  padding: 2px;
   border-radius: 0.5em;
-  background-color: #ffffff;
   height: 100%;
   position: relative;
+  border: 0.1em solid #999;
+
+  background: rgb(236,236,236); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,236,236,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
+
 .h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
-  border-radius: 0 0.5em 0.5em 0.5em;
+  border-radius: 0 0em 0.5em 0.5em;
 }
+
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-active {
   padding: 0;
-  border: 2px dashed #666666;
+  border: 0.1em dashed #666;
 }
+
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
   background: #e0e0e0;
 }
+
 .h5p-dragquestion .h5p-label {
-  background: none repeat scroll 0 0 rgb(255, 255, 255);
-  left: 0;
   line-height: 1.25em;
-  padding: 0.25em 0.5em;
-  position: absolute;
+  padding-left: 0.5em;
+  margin-right: 0;
   bottom: 100%;
   white-space: nowrap;
   border-radius: 0.5em 0.5em 0 0;
+
+  background: rgb(236,236,236); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,236,236,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
 }
+
 .h5p-dragquestion .h5p-dropzone-answer {
   position: absolute;
   top: 100%;
