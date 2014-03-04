@@ -147,21 +147,21 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae0ec', endColorstr='#d4bed8',GradientType=0 ); /* IE6-9 */
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
+.h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
   background: #d1e2ce;
   color: #39692e;
   border: 0.1em solid #afcdaa;
   box-shadow: none;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-wrong {
+.h5p-dragquestion .h5p-dropped.h5p-wrong {
   border: 0.1em solid #ce9b9b;
   color: #c33f62;
   background: #e6ced1;
   box-shadow: none;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-wrong:before {
+.h5p-dragquestion .h5p-dropped.h5p-wrong:before {
   content: "";
   height: 1em;
   width: 1em; 
@@ -172,7 +172,7 @@
   top: 0.42em;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-correct:before {
+.h5p-dragquestion .h5p-dropped.h5p-correct:before {
   content: "";
   height: 1em;
   width: 1em; 
@@ -183,24 +183,20 @@
   top: 0.42em;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-correct:after {
-  font-family: 'H5PFontAwesome';
+.h5p-dragquestion .h5p-dropped.h5p-correct:after {
+  font-family: H5PFontAwesome4;
   position: absolute;
   right: 0.52em;
   top: 0.35em;
   font-size: 0.9em;
+  content: "\f00c";
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-wrong:after {
-  font-family: 'H5PFontAwesome';
+.h5p-dragquestion .h5p-dropped.h5p-wrong:after {
+  font-family: H5PFontAwesome4;
   position: absolute;
   right: 0.53em;
   top: 0.28em;
-}
-.h5p-dragquestion .h5p-draggable.h5p-correct:after {
-  content: "\f00c";
-}
-.h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   content: "\f00d";
 }
 

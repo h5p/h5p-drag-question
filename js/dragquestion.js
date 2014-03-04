@@ -259,17 +259,19 @@ H5P.DragQuestion = (function ($) {
   C.setElementBackground = function ($element, element) {
     var colorTop, colorBottom;
       
-    if ($element.hasClass('h5p-wrong')) {
-      colorTop = '230,206,209';
-      colorBottom = '230,206,209';
-    }
-    else if ($element.hasClass('h5p-correct')) {
-      colorTop = '209,226,206';
-      colorBottom = '209,226,206';
-    }
-    else if ($element.hasClass('h5p-dropped')) {
-      colorTop = '227,234,238';
-      colorBottom = '203,222,231';
+    if ($element.hasClass('h5p-dropped')) {
+      if ($element.hasClass('h5p-wrong')) {
+        colorTop = '230,206,209';
+        colorBottom = '230,206,209';
+      }
+      else if ($element.hasClass('h5p-correct')) {
+        colorTop = '209,226,206';
+        colorBottom = '209,226,206';
+      }
+      else {
+        colorTop = '227,234,238';
+        colorBottom = '203,222,231';
+      }
     }
     else {
       colorTop = '255,255,255';
@@ -282,17 +284,19 @@ H5P.DragQuestion = (function ($) {
   C.setElementBackgroundHover = function ($element, element) {
     var colorTop, colorBottom;
       
-    if ($element.hasClass('h5p-wrong')) {
-      colorTop = '230,206,209';
-      colorBottom = '230,206,209';
-    }
-    else if ($element.hasClass('h5p-correct')) {
-      colorTop = '209,226,206';
-      colorBottom = '209,226,206';
-    }
-    else if ($element.hasClass('h5p-dropped')) {
-      colorTop = '234,224,236';
-      colorBottom = '212,190,216';
+    if ($element.hasClass('h5p-dropped')) {
+      if ($element.hasClass('h5p-wrong')) {
+        colorTop = '230,206,209';
+        colorBottom = '230,206,209';
+      }
+      else if ($element.hasClass('h5p-correct')) {
+        colorTop = '209,226,206';
+        colorBottom = '209,226,206';
+      }
+      else {
+        colorTop = '234,224,236';
+        colorBottom = '212,190,216';
+      }
     }
     else {
       colorTop = '234,224,236';
