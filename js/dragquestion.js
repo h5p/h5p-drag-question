@@ -521,6 +521,37 @@ H5P.DragQuestion = (function ($) {
   C.prototype.getAnswerGiven = function () {
     return this.userAnswers.length !== 0;
   };
+  
+  /**
+   * Gather copyright information for the current content.
+   *
+   * @returns {Object} Copyright information
+   */
+  C.prototype.getCopyrights = function () {
+    var self = this;
+    var information = {
+      copyrights: [],
+      children: []
+    };
+    
+    var background = self.options.question.settings.background;
+    if (background !== undefined && background.copyrights !== undefined && background.copyrights.length) {
+      information.copyrights = H5P.getCopyrightList(background.copyrights);
+    }
+    
+    for (var i = 0; i < self.options.question.task.elements.length; i++) {
+      var element = self.options.question.task.elements[i];
+      var instance = H5P.newRunnable(element.type, self.id);
+      
+      if (instance.getCopyrights !== undefined) {
+        var interactionCopyrights = instance.getCopyrights();
+        interactionCopyrights.label = (element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element');
+        information.children.push(interactionCopyrights);
+      }
+    }
+    
+    return information;
+  };
 
   /**
    * Sets background opacity for the given element.
