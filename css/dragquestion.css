@@ -237,10 +237,12 @@
 .h5p-dragquestion .h5p-label {
   line-height: 1.25em;
   padding-left: 0.5em;
-  margin-right: 0;
+  right: 0;
+  left: 0;
   bottom: 100%;
   white-space: nowrap;
   border-radius: 0.5em 0.5em 0 0;
+  position: absolute;
 
   background: rgb(236,236,236); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
@@ -250,7 +252,6 @@
   background: -ms-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
 }
 
 .h5p-dragquestion .h5p-dropzone-answer {
