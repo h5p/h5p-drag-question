@@ -216,12 +216,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
-    if (this.options.preventResize === false) {
-      this.$.on('h5pResize', function (event) {
-        that.resize();
-      });
-    }
-    else {
+    if (this.options.preventResize !== false) {
       this.resize();
     }
   };
