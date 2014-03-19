@@ -217,7 +217,7 @@ H5P.DragQuestion = (function ($) {
     }
 
     if (this.options.preventResize !== false) {
-      this.resize();
+      this.$.trigger('resize');
     }
   };
   
