@@ -65,9 +65,11 @@
   position: absolute;
   z-index: 1;
 }
+
 .h5p-dragquestion .h5p-static.h5p-text {
   padding: 0.25em 0.5em;
 }
+
 .h5p-dragquestion .h5p-static > h2 {
   font-size: 1.5em;
   line-height: 1.25em;
