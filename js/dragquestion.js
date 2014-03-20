@@ -191,17 +191,17 @@ H5P.DragQuestion = (function ($) {
             }
           }
         });
+        C.addHover($element, element);
+        C.setElementBackground($element, element);
       }
       else {
         // Add static element
         $element = this.addElement(element, 'static', i);
+        C.setBackgroundOpacity($element, element, '255,255,255', '255,255,255');
       }
 
       var elementInstance = new (H5P.classFromName(element.type.library.split(' ')[0]))(element.type.params, this.id);
       elementInstance.attach($element);
-
-      C.addHover($element, element);
-      C.setElementBackground($element, element);
     }
 
     // Restore user answers
