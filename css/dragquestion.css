@@ -212,6 +212,7 @@
   height: 100%;
   position: relative;
   border: 0.1em solid #999;
+  box-sizing: border-box;
 
   background: rgb(236,236,236); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
