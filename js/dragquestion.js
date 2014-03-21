@@ -504,18 +504,18 @@ H5P.DragQuestion = (function ($) {
   /**
    * Gather copyright information for the current content.
    *
-   * @returns {Object} Copyright information
+   * @returns {H5P.ContentCopyright}
    */
   C.prototype.getCopyrights = function () {
     var self = this;
-    var information = {
-      copyrights: [],
-      children: []
-    };
+    var info = new H5P.ContentCopyrights();
     
     var background = self.options.question.settings.background;
-    if (background !== undefined && background.copyrights !== undefined && background.copyrights.length) {
-      information.copyrights = H5P.getCopyrightList(background.copyrights);
+    
+    if (background !== undefined && background.copyrights !== undefined) {
+      var image = new H5P.MediaCopyright(background.copyrights);
+      image.setThumbnail(new H5P.Thumbnail(H5P.getPath(background.path, self.id), background.width, background.height));
+      info.addMedia(image);
     }
     
     for (var i = 0; i < self.options.question.task.elements.length; i++) {
@@ -523,13 +523,13 @@ H5P.DragQuestion = (function ($) {
       var instance = H5P.newRunnable(element.type, self.id);
       
       if (instance.getCopyrights !== undefined) {
-        var interactionCopyrights = instance.getCopyrights();
-        interactionCopyrights.label = (element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element');
-        information.children.push(interactionCopyrights);
+        var rights = instance.getCopyrights();
+        rights.setLabel(element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element');
+        info.addContent(rights);
       }
     }
     
-    return information;
+    return info;
   };
 
   /**
