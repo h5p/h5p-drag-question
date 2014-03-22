@@ -225,6 +225,7 @@
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-active {
   padding: 0;
+  border: 0.1em dashed #666;
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
