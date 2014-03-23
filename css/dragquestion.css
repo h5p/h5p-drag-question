@@ -9,11 +9,6 @@
   margin: 0 auto;
   overflow: hidden;
 }
-
-.h5p-dragquestion img {
-  border-radius: 0.25em;
-}
-
 .h5p-dragquestion .h5p-button {
   position: absolute;
   bottom: 10px;
@@ -220,7 +215,6 @@
   border-radius: 0.5em;
   height: 100%;
   position: relative;
-  border: 0.1em solid #999;
   box-sizing: border-box;
 
   background: rgb(236,236,236); /* Old browsers */
