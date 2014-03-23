@@ -511,9 +511,8 @@ H5P.DragQuestion = (function ($) {
     var info = new H5P.ContentCopyrights();
     
     var background = self.options.question.settings.background;
-    
-    if (background !== undefined && background.copyrights !== undefined) {
-      var image = new H5P.MediaCopyright(background.copyrights);
+    if (background !== undefined && background.copyright !== undefined) {
+      var image = new H5P.MediaCopyright(background.copyright);
       image.setThumbnail(new H5P.Thumbnail(H5P.getPath(background.path, self.id), background.width, background.height));
       info.addMedia(image);
     }
