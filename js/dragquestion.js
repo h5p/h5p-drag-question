@@ -115,20 +115,20 @@ H5P.DragQuestion = (function ($) {
         },
         drop: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224', '255,255,255');
+          C.setOpacity($this.removeClass('h5p-over'), 'background', task.dropZones[$this.parent().data('id')].backgroundOpacity);
           ui.draggable.data('addToZone', $this.parent().data('id'));
         },
         over: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.addClass('h5p-over'), task.dropZones[$this.parent().data('id')], '212,190,216', '234,224,236');
+          C.setOpacity($this.addClass('h5p-over'), 'background', task.dropZones[$this.parent().data('id')].backgroundOpacity);
         },
         out: function (event, ui) {
           var $this = $(this);
-          C.setBackgroundOpacity($this.removeClass('h5p-over'), task.dropZones[$this.parent().data('id')], '224,224,224', '255,255,255');
+          C.setOpacity($this.removeClass('h5p-over'), 'background', task.dropZones[$this.parent().data('id')].backgroundOpacity);
         }
       }).end();
 
-      C.setBackgroundOpacity($element.children(), dropZone, '224,224,224', '255,255,255');
+      C.setOpacity($element.children(), 'background', dropZone.backgroundOpacity);
     }
 
     // Add elements (static and draggable)
@@ -145,7 +145,7 @@ H5P.DragQuestion = (function ($) {
               top: element.y + '%',
               left: element.x + '%'
             };
-            C.setElementBackgroundHover($this, element);
+            C.setElementOpacity($this, element.backgroundOpacity);
             return !event;
           },
           start: function(event, ui) {
@@ -187,17 +187,17 @@ H5P.DragQuestion = (function ($) {
               $(that).trigger('h5pQuestionAnswered');
                 
               $this.addClass('h5p-dropped');
-              C.setElementBackgroundHover($this, task.elements[id]);
+              C.setElementOpacity($this, task.elements[id].backgroundOpacity);
             }
           }
         });
+        
         C.addHover($element, element);
-        C.setElementBackground($element, element);
       }
       else {
         // Add static element
         $element = this.addElement(element, 'static', i);
-        C.setBackgroundOpacity($element, element, '255,255,255', '255,255,255');
+        C.setOpacity($element, 'background', element.backgroundOpacity);
       }
 
       var elementInstance = new (H5P.classFromName(element.type.library.split(' ')[0]))(element.type.params, this.id);
@@ -222,67 +222,30 @@ H5P.DragQuestion = (function ($) {
   };
   
   /**
-   * 
-   * @param {type} $element
-   * @param {type} element
-   * @returns {undefined} 
+   * Makes sure element gets correct opacity when hovered.
+   *
+   * @param {jQuery} $element
+   * @param {Object} element
    */
   C.addHover = function ($element, element) {
     $element.hover(function () {
-      C.setElementBackgroundHover($element, element);
+      C.setElementOpacity($element, element.backgroundOpacity);
     }, function () {
-      C.setElementBackground($element, element);
+      C.setElementOpacity($element, element.backgroundOpacity);
     });
+    C.setElementOpacity($element, element.backgroundOpacity);
   };
   
-  C.setElementBackground = function ($element, element) {
-    var colorTop, colorBottom;
-      
-    if ($element.hasClass('h5p-dropped')) {
-      if ($element.hasClass('h5p-wrong')) {
-        colorTop = '230,206,209';
-        colorBottom = '230,206,209';
-      }
-      else if ($element.hasClass('h5p-correct')) {
-        colorTop = '209,226,206';
-        colorBottom = '209,226,206';
-      }
-      else {
-        colorTop = '227,234,238';
-        colorBottom = '203,222,231';
-      }
-    }
-    else {
-      colorTop = '255,255,255';
-      colorBottom = '224,224,224';
-    }
-              
-    C.setBackgroundOpacity($element, element, colorTop, colorBottom);
-  };
-  
-  C.setElementBackgroundHover = function ($element, element) {
-    var colorTop, colorBottom;
-      
-    if ($element.hasClass('h5p-dropped')) {
-      if ($element.hasClass('h5p-wrong')) {
-        colorTop = '230,206,209';
-        colorBottom = '230,206,209';
-      }
-      else if ($element.hasClass('h5p-correct')) {
-        colorTop = '209,226,206';
-        colorBottom = '209,226,206';
-      }
-      else {
-        colorTop = '234,224,236';
-        colorBottom = '212,190,216';
-      }
-    }
-    else {
-      colorTop = '234,224,236';
-      colorBottom = '212,190,216';
-    }
-              
-    C.setBackgroundOpacity($element, element, colorTop, colorBottom);
+  /**
+   * Makes element background, border and shadow transparent.
+   *
+   * @param {jQuery} $element
+   * @param {Number} opacity
+   */
+  C.setElementOpacity = function ($element, opacity) {
+    C.setOpacity($element, 'borderColor', opacity);
+    C.setOpacity($element, 'boxShadow', opacity);
+    C.setOpacity($element, 'background', opacity);
   };
 
   /**
@@ -400,8 +363,8 @@ H5P.DragQuestion = (function ($) {
         if (dropZone !== undefined) {
           // ... but we are!
           if (skipVisuals !== true) { 
-            $element.addClass('h5p-wrong'); 
-            C.setElementBackground($element, element); 
+            $element.addClass('h5p-wrong');
+            C.setElementOpacity($element, element.backgroundOpacity);
           }
           this.points--;
         }
@@ -415,7 +378,7 @@ H5P.DragQuestion = (function ($) {
           correct = true;
           if (skipVisuals !== true) {
             $element.addClass('h5p-correct');
-            C.setElementBackground($element, element); 
+            C.setElementOpacity($element, element.backgroundOpacity);
           }
           this.points++;
           break;
@@ -424,7 +387,7 @@ H5P.DragQuestion = (function ($) {
       if (!correct) {
         if (skipVisuals !== true) {
           $element.addClass('h5p-wrong');
-          C.setElementBackground($element, element);
+          C.setElementOpacity($element, element.backgroundOpacity);
         }
       }
     }
@@ -446,7 +409,7 @@ H5P.DragQuestion = (function ($) {
     for (var i = 0; i < this.$elements.length; i++) {
       if (this.$elements[i] !== undefined) {
         this.$elements[i].removeClass('h5p-wrong h5p-correct').draggable('enable');
-        C.setElementBackground(this.$elements[i], this.options.question.task.elements[i]);
+        C.setElementOpacity(this.$elements[i], this.options.question.task.elements[i].backgroundOpacity);
       }
     }
     delete this.points;
@@ -530,20 +493,50 @@ H5P.DragQuestion = (function ($) {
     
     return info;
   };
-
+  
   /**
-   * Sets background opacity for the given element.
+   * Updates alpha channel for colors in the given style.
+   *   
+   * @param {String} style
+   * @param {String} prefix
+   * @param {Number} alpha
+   */
+  C.setAlphas = function (style, prefix, alpha) {
+    var colorStart = style.indexOf(prefix);
+    
+    while (colorStart !== -1) {
+      var colorEnd = style.indexOf(')', colorStart);
+      var channels = style.substring(colorStart + prefix.length, colorEnd).split(',');
+      
+      // Set alpha channel
+      channels[3] = (channels[3] !== undefined ? parseFloat(channels[3]) * alpha : alpha);
+      
+      style = style.substring(0, colorStart) + 'rgba(' + channels.join(',') + style.substring(colorEnd, style.length);
+            
+      // Look for more colors
+      colorStart = style.indexOf(prefix, colorEnd);
+    }
+    
+    return style;
+  };
+  
+  /**
+   * Makes element background, border and shadow transparent.
    *
    * @param {jQuery} $element
-   * @param {Object} element
-   * @param {String} color
+   * @param {String} property
+   * @param {Number} opacity
    */
-  C.setBackgroundOpacity = function ($element, element, colorTop, colorBottom) {
-    if (element.backgroundOpacity === undefined) {
-      element.backgroundOpacity = 100;
-    }
-    $element.css('backgroundColor', 'rgba(' + colorTop + ',' + (element.backgroundOpacity / 100) + ')');
-    $element.css('background', 'linear-gradient(to bottom, rgba(' + colorTop + ',' + (element.backgroundOpacity / 100) + ') 0%,rgba(' + colorBottom + ',' + (element.backgroundOpacity / 100) + ') 100%)');
+  C.setOpacity = function ($element, property, opacity) {
+    opacity = (opacity === undefined ? 1 : opacity / 100);
+    
+    // Make sure we are using CSS and not inline values.
+    $element.css(property, '');
+    var style = $element.css(property);
+    style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
+    style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
+    
+    $element.css(property, style);
   };
 
   return C;
