@@ -31,7 +31,7 @@
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,152,254,1)), color-stop(100%,rgba(4,104,206,1))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* IE10+ */
+  background: linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%);
 
   z-index: 4;
 }
@@ -42,7 +42,7 @@
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4,104,206,1)), color-stop(100%,rgba(100,152,254,1))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* IE10+ */
+  background: linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%);
 }
 
 .h5p-dragquestion .h5p-button.h5p-try-again:before {
@@ -58,12 +58,14 @@
 }
 
 .h5p-dragquestion .h5p-static {
+  background: #fff;
   position: absolute;
   z-index: 1;
 }
 
 .h5p-dragquestion .h5p-static.h5p-text {
   padding: 0.25em 0.5em;
+  border-radius: 0.25em;
 }
 
 .h5p-dragquestion .h5p-static > h2 {
@@ -78,11 +80,6 @@
   line-height: 1.25em;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-dropped {
-  color: #235e7c;
-  border: 0.1em solid #a9c3d0;
-}
-
 .h5p-dragquestion .h5p-draggable {
   border-radius: 0.5em;
   border: 0.1em solid #c6c6c6;
@@ -93,21 +90,29 @@
   padding: 0.3em 0.3em;
   line-height: 1.25em;
 
-  background: #ececec; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ececec 1%, #e0e0e0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ececec), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ececec 1%,#e0e0e0 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ececec 1%,#e0e0e0 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-
+  background: rgb(255,255,255);
+  background: -webkit-linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%);
+  background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%);
 
   box-shadow: 0em 0em 0.4em rgba(0,0,0,0.5);
   z-index: 3;
   -webkit-user-select: none;
   -moz-user-select: none; 
   -ms-user-select: none; 
+}
+.h5p-dragquestion .h5p-draggable:hover {
+  border: 0.1em solid #ceb8d2;
+  color: #663366;
+  background: rgb(234,224,236);
+  background: -webkit-linear-gradient(to bottom, rgb(234,224,236) 0%, rgb(212,190,216) 100%);
+  background: linear-gradient(to bottom, rgb(234,224,236) 0%, rgb(212,190,216) 100%);
+}
+.h5p-dragquestion .h5p-draggable.h5p-dropped {
+  color: #235e7c;
+  border: 0.1em solid #a9c3d0;
+  background: rgb(227,234,238);
+  background: -webkit-linear-gradient(to bottom, rgb(227,234,238) 0%, rgb(203,222,231) 100%);
+  background: linear-gradient(to bottom, rgb(227,234,238) 0%, rgb(203,222,231) 100%);
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
@@ -131,32 +136,23 @@
   margin: 0;
   padding: 0;
 }
-.h5p-dragquestion .h5p-draggable:hover {
-  border: 0.1em solid #ceb8d2;
-  color: #663366;
-  
-  background: rgb(234,224,236); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(234,224,236,1) 0%, rgba(212,190,216,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(234,224,236,1)), color-stop(100%,rgba(212,190,216,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(234,224,236,1) 0%,rgba(212,190,216,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae0ec', endColorstr='#d4bed8',GradientType=0 ); /* IE6-9 */
-}
 
 .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
-  background: #d1e2ce;
   color: #39692e;
   border: 0.1em solid #afcdaa;
   box-shadow: none;
+  background: rgb(209,226,206);
+  background: -webkit-linear-gradient(to bottom, rgb(209,226,206) 0%, rgb(209,226,206) 100%);
+  background: linear-gradient(to bottom, rgb(209,226,206) 0%, rgb(209,226,206) 100%);
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong {
   border: 0.1em solid #ce9b9b;
   color: #c33f62;
-  background: #e6ced1;
   box-shadow: none;
+  background: rgb(230,206,209);
+  background: -webkit-linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
+  background: linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   font-family: H5PFontAwesome4;
@@ -216,15 +212,10 @@
   height: 100%;
   position: relative;
   box-sizing: border-box;
-
-  background: rgb(236,236,236); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(236,236,236,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,236,236,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(236,236,236,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  -moz-box-sizing: border-box;
+  background: rgb(224,224,224);
+  background: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);
+  background: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);
 }
 
 .h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
@@ -237,7 +228,9 @@
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
-  background: #e0e0e0;
+  background: rgb(212,190,216);
+  background: -webkit-linear-gradient(to bottom, rgb(212,190,216) 0%, rgb(234,224,236) 100%);
+  background: linear-gradient(to bottom, rgb(212,190,216) 0%, rgb(234,224,236) 100%);
 }
 
 .h5p-dragquestion .h5p-label {
