@@ -36,7 +36,8 @@ H5P.DragQuestion = (function ($) {
       preventResize: false,
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true),
-      singlePoint: true
+      singlePoint: true,
+      showSolutionsRequiresInput: true
     }, options);
 
     this.userAnswers = [];
@@ -57,6 +58,8 @@ H5P.DragQuestion = (function ($) {
         this.correctDZs[correctElement].push(i);
       }
     }
+    
+    this.weight = 1;
   };
 
   /**
@@ -82,10 +85,15 @@ H5P.DragQuestion = (function ($) {
     }
 
     var $element, task = this.options.question.task;
+    that.blankIsCorrect = true;
 
     // Add drop zones
     for (var i = 0; i < task.dropZones.length; i++) {
       var dropZone = task.dropZones[i];
+      
+      if (that.blankIsCorrect && dropZone.correctElements.length) {
+        that.blankIsCorrect = false;
+      }
 
       var html = '<div class="h5p-inner"></div>';
       var extraClass = '';
@@ -264,14 +272,16 @@ H5P.DragQuestion = (function ($) {
         that.hideSolutions();
       }
       else {
-        that.showSolutions();
-        if (that.options.postUserStatistics === true) {
-          H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+        if (!that.options.showSolutionsRequiresInput || that.userAnswers.length || that.blankIsCorrect) {
+          that.showSolutions();
+          if (that.options.postUserStatistics === true) {
+            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
+          }
         }
       }
     });
   };
-
+  
   /**
    * Add element/drop zone to task.
    *
@@ -397,6 +407,9 @@ H5P.DragQuestion = (function ($) {
     if (this.points < 0) {
       this.points = 0;
     }
+    if (!this.userAnswers.length && this.blankIsCorrect) {
+      this.points = this.weight;
+    }
     if (this.options.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
@@ -422,6 +435,10 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.calculateMaxScore = function () {
+    if (this.blankIsCorrect) {
+      return this.weight;
+    }
+  
     var max = 0;
     for (var i = 0; i < this.$elements.length; i++) {
       if (this.$elements[i] !== undefined && this.correctDZs[i] !== undefined) {
@@ -438,7 +455,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.getMaxScore = function () {
-    return (this.options.singlePoint ? 1 : this.calculateMaxScore());
+    return (this.options.singlePoint ? this.weight : this.calculateMaxScore());
   };
 
   /**
