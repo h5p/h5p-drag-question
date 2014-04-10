@@ -293,7 +293,7 @@ H5P.DragQuestion = (function ($) {
         that.hideSolutions();
       }
       else {
-        if (!that.options.showSolutionsRequiresInput || that.userAnswers.length || that.blankIsCorrect) {
+        if (that.getAnswerGiven()) {
           that.showSolutions();
           if (that.options.postUserStatistics === true) {
             H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
@@ -499,7 +499,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Boolean}
    */
   C.prototype.getAnswerGiven = function () {
-    return this.userAnswers.length !== 0;
+    return !this.options.showSolutionsRequiresInput || this.userAnswers.length || this.blankIsCorrect;
   };
   
   /**
