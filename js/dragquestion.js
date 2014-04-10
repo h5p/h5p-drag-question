@@ -566,15 +566,45 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} opacity
    */
   C.setOpacity = function ($element, property, opacity) {
+    if (property === 'background') {
+      // Set both color and gradient.
+      C.setOpacity($element, 'backgroundColor', opacity);
+      C.setOpacity($element, 'backgroundImage', opacity);
+      return;
+    }
+    
     opacity = (opacity === undefined ? 1 : opacity / 100);
     
-    // Make sure we are using CSS and not inline values.
-    $element.css(property, '');
-    var style = $element.css(property);
+    // Private. Get css properties objects.
+    function getProperties(property, value) {
+      switch (property) {
+        case 'borderColor':
+          return {
+            borderTopColor: value,
+            borderRightColor: value,
+            borderBottomColor: value,
+            borderLeftColor: value
+          };
+        
+        default:
+          var properties = {};
+          properties[property] = value;
+          return properties;
+      }
+    }
+    
+    // Reset css to be sure we're using CSS and not inline values.
+    var properties = getProperties(property, '');
+    $element.css(properties);
+    
+    for (var prop in properties) {
+      break;
+    }
+    var style = $element.css(prop); // Assume all props are the same and use the first.
     style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
     
-    $element.css(property, style);
+    $element.css(getProperties(property, style));
   };
 
   return C;
