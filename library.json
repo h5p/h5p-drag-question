@@ -43,6 +43,11 @@
       "majorVersion": 1,
       "minorVersion": 10,
       "defaultStyles": true
+    },
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ],
   "preloadedJs": [

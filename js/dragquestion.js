@@ -155,6 +155,11 @@ H5P.DragQuestion = (function ($) {
       }).end();
 
       C.setOpacity($element.children(), 'background', dropZone.backgroundOpacity);
+      
+      // Add tip after setOpacity(), so this does not get background opacity:
+      if(dropZone.tip !== undefined && dropZone.tip.trim().length > 0) {
+        $element.append(H5P.JoubelUI.createTip(dropZone.tip));
+      }
     }
 
     // Add elements (static and draggable)

@@ -182,6 +182,21 @@
                   "step": 5,
                   "default": 100,
                   "optional": true
+                },
+                {
+                  "name": "tip",
+                  "type": "group",
+                  "label": "Tip",
+                  "optional": true,
+                  "fields": [
+                    {
+                      "name": "tip",
+                      "label": "Tip",
+                      "type": "text",
+                      "optional": true,
+                      "description": "An icon is placed on the drop zone. When icon is clicked the tip is displayed"
+                    }
+                  ]
                 }
               ]
             }
