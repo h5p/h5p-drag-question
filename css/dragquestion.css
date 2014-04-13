@@ -254,7 +254,7 @@
 
 .h5p-dragquestion .joubel-tip-container {
   position: absolute;
-  right: 0;
+  right: 0.15em;
   bottom: 0;
   font-size: 0.8em;
 }

@@ -191,10 +191,9 @@
                   "fields": [
                     {
                       "name": "tip",
-                      "label": "Tip",
+                      "label": "Tip text",
                       "type": "text",
-                      "optional": true,
-                      "description": "An icon is placed on the drop zone. When icon is clicked the tip is displayed"
+                      "optional": true
                     }
                   ]
                 }
