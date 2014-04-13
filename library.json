@@ -3,7 +3,7 @@
   "description": "Drag and drop question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 48,
+  "patchVersion": 49,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",
@@ -36,6 +36,11 @@
       "majorVersion": 1,
       "minorVersion": 10,
       "defaultStyles": true
+    },
+    {
+      "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ],
   "preloadedJs": [
