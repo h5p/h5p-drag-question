@@ -77,8 +77,8 @@
                     "label": "Tips",
                     "fields": [
                       {
-                        label: "Tips",
-                        description: "Et tipsikon vil vises på målområdet. Når man klikker på ikonet, vil tipset vises"
+                        "label": "Tips",
+                        "description": "Et tipsikon vil vises på målområdet. Når man klikker på ikonet, vil tipset vises"
                       }
                     ]
                   }
