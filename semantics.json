@@ -9,8 +9,8 @@
   {
     "name": "tryAgain",
     "type": "text",
-    "label": "Try again button",
-    "default": "Try again",
+    "label": "Retry button",
+    "default": "Retry",
     "common": true,
     "optional": true
   },
@@ -207,7 +207,7 @@
   {
     "name": "enableTryAgain",
     "type": "boolean",
-    "label": "Enable try again button",
+    "label": "Enable Retry button",
     "default": true,
     "optional": true
   },
