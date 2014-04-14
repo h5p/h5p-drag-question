@@ -9,8 +9,8 @@
   {
     "name": "tryAgain",
     "type": "text",
-    "label": "Try again button",
-    "default": "Try again",
+    "label": "Retry button",
+    "default": "Retry",
     "common": true,
     "optional": true
   },
@@ -191,10 +191,9 @@
                   "fields": [
                     {
                       "name": "tip",
-                      "label": "Tip",
+                      "label": "Tip text",
                       "type": "text",
-                      "optional": true,
-                      "description": "An icon is placed on the drop zone. When icon is clicked the tip is displayed"
+                      "optional": true
                     }
                   ]
                 }
@@ -208,7 +207,7 @@
   {
     "name": "enableTryAgain",
     "type": "boolean",
-    "label": "Enable try again button",
+    "label": "Enable Retry button",
     "default": true,
     "optional": true
   },
