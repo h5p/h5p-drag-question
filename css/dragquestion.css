@@ -11,10 +11,10 @@
 }
 .h5p-dragquestion .h5p-button {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0.625em;
+  right: 0.625em;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1em;
   display: inline-block;
   padding: 0.25em 0.75em;
   border: 0.1875em solid #fff;
