@@ -3,13 +3,13 @@
   "description": "Drag and drop question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 51,
+  "patchVersion": 53,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 1
+    "minorVersion": 2
   },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",
