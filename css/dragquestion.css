@@ -46,13 +46,13 @@
 }
 
 .h5p-dragquestion .h5p-button.h5p-try-again:before {
-  font-family: H5PFontAwesome4;
+  font-family: 'H5PFontAwesome4';
   content: "\f01e";
   margin-right: 0.5em;
 }
 
 .h5p-dragquestion .h5p-button:before {
-  font-family: H5PFontAwesome4;
+  font-family: 'H5PFontAwesome4';
   content: "\f06e";
   margin-right: 0.5em;
 }
@@ -186,7 +186,7 @@
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-correct:after {
-  font-family: H5PFontAwesome4;
+  font-family: 'H5PFontAwesome4';
   position: absolute;
   right: 0.52em;
   top: 0.35em;
@@ -195,7 +195,7 @@
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong:after {
-  font-family: H5PFontAwesome4;
+  font-family: 'H5PFontAwesome4';
   position: absolute;
   right: 0.53em;
   top: 0.28em;

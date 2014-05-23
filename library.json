@@ -22,20 +22,22 @@
     {
       "machineName": "H5P.Text",
       "majorVersion": 1,
-      "minorVersion": 0,
-      "defaultStyles": true
+      "minorVersion": 0
     },
     {
       "machineName": "H5P.Image",
       "majorVersion": 1,
-      "minorVersion": 0,
-      "defaultStyles": true
+      "minorVersion": 0
+    },
+    {
+      "machineName": "FontAwesome",
+      "majorVersion": 4,
+      "minorVersion": 1
     },
     {
       "machineName": "jQuery.ui",
       "majorVersion": 1,
-      "minorVersion": 10,
-      "defaultStyles": true
+      "minorVersion": 10
     },
     {
       "machineName": "H5P.JoubelUI",
