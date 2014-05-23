@@ -3,7 +3,7 @@
   "description": "Drag and drop question type",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 51,
+  "patchVersion": 52,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",
@@ -23,26 +23,22 @@
     {
       "machineName": "H5P.Text",
       "majorVersion": 1,
-      "minorVersion": 0,
-      "defaultStyles": true
+      "minorVersion": 0
     },
     {
       "machineName": "H5P.Image",
       "majorVersion": 1,
-      "minorVersion": 0,
-      "defaultStyles": true
+      "minorVersion": 0
     },
     {
       "machineName": "FontAwesome",
-      "majorVersion": 3,
-      "minorVersion": 1,
-      "defaultStyles": true
+      "majorVersion": 4,
+      "minorVersion": 1
     },
     {
       "machineName": "jQuery.ui",
       "majorVersion": 1,
-      "minorVersion": 10,
-      "defaultStyles": true
+      "minorVersion": 10
     },
     {
       "machineName": "H5P.JoubelUI",
