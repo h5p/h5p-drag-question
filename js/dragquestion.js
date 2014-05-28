@@ -170,6 +170,7 @@ H5P.DragQuestion = (function ($) {
         // Add draggable element
         $element = this.$elements[i] = this.addElement(element, 'draggable', i).draggable({
           revert: function (event, ui) {
+            that.$container.removeClass('h5p-dragging');
             var $this = $(this);
             var element = task.elements[$this.data('id')];
             $this.removeClass('h5p-dropped').data("uiDraggable").originalPosition = {
@@ -182,6 +183,7 @@ H5P.DragQuestion = (function ($) {
           start: function(event, ui) {
             // Send element to the top!
             $(this).detach().appendTo(that.$container);
+            that.$container.addClass('h5p-dragging');
           },
           stop: function(event, ui) {
             var $this = $(this);
@@ -263,9 +265,15 @@ H5P.DragQuestion = (function ($) {
    */
   C.addHover = function ($element, element) {
     $element.hover(function () {
-      C.setElementOpacity($element, element.backgroundOpacity);
+      if (!$element.parent().hasClass('h5p-dragging')) {
+        C.setElementOpacity($element, element.backgroundOpacity);
+      }
     }, function () {
-      C.setElementOpacity($element, element.backgroundOpacity);
+      if (!$element.parent().hasClass('h5p-dragging')) {
+        setTimeout(function () {
+          C.setElementOpacity($element, element.backgroundOpacity);
+        }, 1);
+      }
     });
     C.setElementOpacity($element, element.backgroundOpacity);
   };
@@ -605,6 +613,7 @@ H5P.DragQuestion = (function ($) {
     for (var prop in properties) {
       break;
     }
+    
     var style = $element.css(prop); // Assume all props are the same and use the first.
     style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
