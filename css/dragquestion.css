@@ -149,7 +149,6 @@
 .h5p-dragquestion .h5p-dropped.h5p-wrong {
   border: 0.1em solid #ce9b9b;
   color: #c33f62;
-  box-shadow: none;
   background: rgb(230,206,209);
   background: -webkit-linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
   background: linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);

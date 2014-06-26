@@ -170,7 +170,6 @@ H5P.DragQuestion = (function ($) {
         // Add draggable element
         $element = this.$elements[i] = this.addElement(element, 'draggable', i).draggable({
           revert: function (event, ui) {
-            that.$container.removeClass('h5p-dragging');
             var $this = $(this);
             var element = task.elements[$this.data('id')];
             $this.removeClass('h5p-dropped').data("uiDraggable").originalPosition = {
@@ -181,9 +180,12 @@ H5P.DragQuestion = (function ($) {
             return !event;
           },
           start: function(event, ui) {
+            var $this = $(this);
+            var id = $this.data('id');
+            
             // Send element to the top!
-            $(this).detach().appendTo(that.$container);
-            that.$container.addClass('h5p-dragging');
+            $this.removeClass('h5p-wrong').detach().appendTo(that.$container);
+            C.setElementOpacity($this, task.elements[id].backgroundOpacity);
           },
           stop: function(event, ui) {
             var $this = $(this);
@@ -265,15 +267,9 @@ H5P.DragQuestion = (function ($) {
    */
   C.addHover = function ($element, element) {
     $element.hover(function () {
-      if (!$element.parent().hasClass('h5p-dragging')) {
-        C.setElementOpacity($element, element.backgroundOpacity);
-      }
+      C.setElementOpacity($element, element.backgroundOpacity);
     }, function () {
-      if (!$element.parent().hasClass('h5p-dragging')) {
-        setTimeout(function () {
-          C.setElementOpacity($element, element.backgroundOpacity);
-        }, 1);
-      }
+      C.setElementOpacity($element, element.backgroundOpacity);
     });
     C.setElementOpacity($element, element.backgroundOpacity);
   };
@@ -301,16 +297,10 @@ H5P.DragQuestion = (function ($) {
     }
 
     this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
-      if (that._$solutionButton.hasClass('h5p-try-again')) {
-        that._$solutionButton.text(that.options.scoreShow).removeClass('h5p-try-again');
-        that.hideSolutions();
-      }
-      else {
-        if (that.getAnswerGiven()) {
-          that.showSolutions();
-          if (that.options.postUserStatistics === true) {
-            H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-          }
+      if (that.getAnswerGiven()) {
+        that.showSolutions();
+        if (that.options.postUserStatistics === true) {
+          H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
         }
       }
     });
@@ -373,19 +363,6 @@ H5P.DragQuestion = (function ($) {
    * Display the correct solution for the input boxes.
    */
   C.prototype.showSolutions = function (skipVisuals) {
-    if (this.displayingSolution) {
-      return;
-    }
-
-    if (this._$solutionButton !== undefined) {
-      if (this.options.enableTryAgain) {
-        this._$solutionButton.text(this.options.tryAgain).addClass('h5p-try-again');
-      }
-      else {
-        this._$solutionButton.remove();
-      }
-    }
-
     var task = this.options.question.task;
     this.points = 0;
 
@@ -396,8 +373,9 @@ H5P.DragQuestion = (function ($) {
       }
       var element = task.elements[i];
 
-      // Disable dragging
-      if (skipVisuals !== true) $element.draggable('disable');
+      if (this.options.enableTryAgain === false) {
+        $element.draggable('disable');
+      }
 
       // Find out where we are.
       var dropZone = this.elementZones[i];
@@ -421,7 +399,7 @@ H5P.DragQuestion = (function ($) {
         if (dropZone === this.correctDZs[i][j]) {
           correct = true;
           if (skipVisuals !== true) {
-            $element.addClass('h5p-correct');
+            $element.addClass('h5p-correct').draggable('disable');
             C.setElementOpacity($element, element.backgroundOpacity);
           }
           this.points++;
@@ -447,20 +425,11 @@ H5P.DragQuestion = (function ($) {
     if (this.options.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
-  };
-
-  /**
-   * Hide solutions. (/try again)
-   */
-  C.prototype.hideSolutions = function () {
-    for (var i = 0; i < this.$elements.length; i++) {
-      if (this.$elements[i] !== undefined) {
-        this.$elements[i].removeClass('h5p-wrong h5p-correct').draggable('enable');
-        C.setElementOpacity(this.$elements[i], this.options.question.task.elements[i].backgroundOpacity);
-      }
+    
+    if (this._$solutionButton !== undefined && (this.options.enableTryAgain === false || this.points === this.getMaxScore())) {
+      // Max score reached, or the user cannot try again.
+      this._$solutionButton.remove();
     }
-    delete this.points;
-    this.displayingSolution = false;
   };
 
   /**
@@ -613,7 +582,6 @@ H5P.DragQuestion = (function ($) {
     for (var prop in properties) {
       break;
     }
-    
     var style = $element.css(prop); // Assume all props are the same and use the first.
     style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
