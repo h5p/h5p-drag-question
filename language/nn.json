@@ -47,6 +47,10 @@
                   },
                   {
                     "label": "Opasitet for bakgrunn"
+                  },
+                  {
+                    "label": "Uendelig antall instanser av elementet",
+                    "description": "Klon dette elementet slik at det kan dras til flere målområder."
                   }
                 ]
               }
@@ -80,6 +84,9 @@
                         "label": "Tipstekst"
                       }
                     ]
+                  },
+                  {
+                    "label": "Dette målområdet kan bare innehalde eit element"
                   }
                 ]
               }

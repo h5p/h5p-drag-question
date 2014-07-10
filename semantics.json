@@ -123,6 +123,14 @@
                   "step": 5,
                   "default": 100,
                   "optional": true
+                },
+                {
+                  "name": "multiple",
+                  "type": "boolean",
+                  "label": "Infinite number of element instances",
+                  "description": "Clones this element so that it can be dragged to multiple drop zones.",
+                  "default": false,
+                  "optional": true
                 }
               ]
             }
@@ -196,6 +204,13 @@
                       "optional": true
                     }
                   ]
+                },
+                {
+                  "name": "single",
+                  "type": "boolean",
+                  "label": "This drop zone can only contain one element",
+                  "default": false,
+                  "optional": true
                 }
               ]
             }
