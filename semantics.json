@@ -209,7 +209,7 @@
                   "name": "single",
                   "type": "boolean",
                   "label": "This drop zone can only contain one element",
-                  "default": false,
+                  "default": true,
                   "optional": true
                 }
               ]
