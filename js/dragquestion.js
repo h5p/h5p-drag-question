@@ -786,6 +786,9 @@ H5P.DragQuestion = (function ($) {
             var element;
             
             for (var i = 0; i < draggables.length; i++) {
+              if (draggables[i] === undefined) {
+                continue;
+              }
               if (self.single && draggables[i].isInDropZone(self.id)) {
                 // This drop zone is already occupied!
                 return false;
