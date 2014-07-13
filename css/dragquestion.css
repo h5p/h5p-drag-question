@@ -1,5 +1,6 @@
 .h5p-dragquestion {
   display: block;
+  background: #fff;
 }
 .h5p-dragquestion > .h5p-inner {
   position: relative;
