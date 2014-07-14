@@ -147,7 +147,15 @@
                 {
                   "name": "label",
                   "type": "text",
-                  "label": "Label"
+                  "widget": "html",
+                  "label": "Label",
+                  "enterMode": "div",
+                  "tags": [
+                    "strong",
+                    "em",
+                    "del"
+                  ]
+                  
                 },
                 {
                   "name": "showLabel",
