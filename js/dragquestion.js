@@ -64,8 +64,6 @@ H5P.DragQuestion = (function ($) {
     
     this.weight = 1;
     
-    // TODO: Initialize elements and drop zones here!
-    
     // Add draggable elements
     var task = this.options.question.task;
     for (var i = 0; i < task.elements.length; i++) {
@@ -101,6 +99,8 @@ H5P.DragQuestion = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
+    var self = this;
+    
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
     this.displayingSolution = false;
@@ -115,6 +115,7 @@ H5P.DragQuestion = (function ($) {
       this.addSolutionButton();
     }
 
+    var ids = [];
     var $element, task = this.options.question.task;
 
     // Add elements (static and draggable)
@@ -127,20 +128,53 @@ H5P.DragQuestion = (function ($) {
       }
       else {
         // Add static element
+        if (element.type.library.split(' ')[0] === 'H5P.Text') {
+          // Find drop zones inside this static text
+          element.type.params.text = C.processParamsText(element.type.params.text, this.dropZones, ids);
+        }
+        
         $element = this.addElement(element, 'static', i);
         C.setOpacity($element, 'background', element.backgroundOpacity);
         H5P.newRunnable(element.type, this.id, $element);
       }
     }
     
+    // Attach drop zones inside static texts
+    this.$container.find('span.h5p-dq-dz').each(function (i) {
+      self.dropZones[ids[i]].appendTo($(this), self.draggables);
+    });
+    
     // Attach drop zones
     for (var i = 0; i < this.dropZones.length; i++) {
-      this.dropZones[i].appendTo(this.$container, this.draggables);
+      if (!this.dropZones[i].isText) {
+        this.dropZones[i].appendTo(this.$container, this.draggables);
+      }
     }
 
     if (this.options.preventResize !== false) {
       this.$.trigger('resize');
     }
+  };
+  
+  /**
+   * Convert all drop zones inserted with *id:text*. 
+   * 
+   * @param {String} text
+   * @param {Array} dropZones params
+   * @param {Array} ids All valid DZ ids.
+   * @returns {undefined}
+   */
+  C.processParamsText = function (text, dropZones, ids) {
+    text = text.replace(/\*(\d+):([^*]+)\*/g, function (original, id, text) {
+      id = parseInt(id);
+      if (dropZones[id] !== undefined && dropZones[id].x === -1) {
+        ids.push(id);
+        return '<span class="h5p-dq-dz">' + text + '</span>'; 
+      }
+      return original;
+    });
+    
+    return text;
   };
   
   /**
@@ -746,6 +780,8 @@ H5P.DragQuestion = (function ($) {
     self.backgroundOpacity = dropZone.backgroundOpacity;
     self.tip = dropZone.tip;
     self.single = dropZone.single;
+    
+    self.isText = (self.x === -1);
   }
   
   /**
@@ -757,27 +793,36 @@ H5P.DragQuestion = (function ($) {
    */
   DropZone.prototype.appendTo = function ($container, draggables) {
     var self = this;
+    var $dropZone;
     
     // Prepare inner html
-    var html = '<div class="h5p-inner"></div>';
+    var html = '<div class="h5p-inner">' + (self.isText ? $container.text() : '') + '</div>';
     var extraClass = '';
     if (self.showLabel) {
       html = '<div class="h5p-label">' + self.label + '</div>' + html;
       extraClass = ' h5p-has-label';
     }
     
-    // Create drop zone element
-    var $dropZone = $('<div/>', {
-      class: 'h5p-dropzone' + extraClass,
-      css: {
-        left: self.x + '%',
-        top: self.y + '%',
-        width: self.width + 'em',
-        height: self.height + 'em'
-      },
-      html: html
-    })
-      .appendTo($container)
+    if (self.isText) {
+      // Use container as drop zone element
+      $dropZone = $container;
+    }
+    else {
+      // Create drop zone element
+      $dropZone = $('<div/>', {
+        css: {
+          left: self.x + '%',
+          top: self.y + '%',
+          width: self.width + 'em',
+          height: self.height + 'em'
+        }
+      })
+        .appendTo($container);
+    }
+    
+    $dropZone
+      .attr('class', 'h5p-dropzone' + extraClass)
+      .html(html)
       .children('.h5p-inner')
         .droppable({
           activeClass: 'h5p-active',
@@ -820,8 +865,7 @@ H5P.DragQuestion = (function ($) {
           out: function (event, ui) {
             C.setOpacity($(this).removeClass('h5p-over'), 'background', self.backgroundOpacity);
           }
-        })
-        .end();
+        });
 
     C.setOpacity($dropZone.children(), 'background', self.backgroundOpacity);
 
