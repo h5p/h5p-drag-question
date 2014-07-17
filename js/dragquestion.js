@@ -802,6 +802,10 @@ H5P.DragQuestion = (function ($) {
               }
             }
             
+            if (element === undefined) {
+              return;
+            }
+            
             // Check to see if the draggable can be dropped in this zone
             return element.hasDropZone(self.id);
           },
