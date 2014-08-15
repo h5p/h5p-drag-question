@@ -206,9 +206,6 @@
   z-index: 2;
   position: absolute;
 }
-.h5p-dragquestion span.h5p-dropzone {
-  position: relative;
-}
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner {
   border-radius: 0.5em;
@@ -220,11 +217,6 @@
   background: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);
   background: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);
 }
-.h5p-dragquestion span.h5p-dropzone > .h5p-inner {
-  display: inline;
-  border: 0.1em dashed transparent;
-  padding: 0.15em 0.25em;
-}
 
 .h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
   border-radius: 0 0em 0.5em 0.5em;
@@ -233,9 +225,6 @@
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-active {
   padding: 0;
   border: 0.1em dashed #666;
-}
-.h5p-dragquestion span.h5p-dropzone > .h5p-inner.h5p-active {
-  padding: 0.15em 0.25em;
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
