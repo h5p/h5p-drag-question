@@ -86,7 +86,7 @@
                     ]
                   },
                   {
-                    "label": "Dette målområdet kan bare innehalde eit element"
+                    "label": "Dette målområdet kan bare innehalde eit element. Pass på at det bare finnes eit riktig svar for dette målområdet."
                   }
                 ]
               }
