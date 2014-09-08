@@ -217,7 +217,7 @@
                   "name": "single",
                   "type": "boolean",
                   "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                  "default": true,
+                  "default": false,
                   "optional": true
                 }
               ]
