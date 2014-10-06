@@ -48,6 +48,8 @@ H5P.DragQuestion = (function ($) {
     this.blankIsCorrect = true;
     this.displayingSolution = false;
     
+    C.backgroundOpacity = this.options.backgroundOpacity;
+    
     // Create map over correct drop zones for elements
     var task = this.options.question.task;
     this.correctDZs = [];
@@ -128,7 +130,7 @@ H5P.DragQuestion = (function ($) {
       else {
         // Add static element
         $element = this.addElement(element, 'static', i);
-        C.setOpacity($element, 'background', element.backgroundOpacity);
+        C.setOpacity($element, 'background', C.getElementOpacitySetting(element));
         H5P.newRunnable(element.type, this.id, $element);
       }
     }
@@ -168,6 +170,20 @@ H5P.DragQuestion = (function ($) {
     C.setOpacity($element, 'borderColor', opacity);
     C.setOpacity($element, 'boxShadow', opacity);
     C.setOpacity($element, 'background', opacity);
+  };
+  
+  /**
+   * Returns the background opacity that should be set for an element.
+   * 
+   * @param {Object} element
+   * @returns {Number} opacity 0-100
+   */
+  C.getElementOpacitySetting = function (element) {
+    if (C.backgroundOpacity !== undefined && C.backgroundOpacity !== '') {
+      return C.backgroundOpacity;
+    }
+    
+    return element.backgroundOpacity;
   };
 
   /**
@@ -467,7 +483,7 @@ H5P.DragQuestion = (function ($) {
     self.y = element.y;
     self.width = element.width;
     self.height = element.height;
-    self.backgroundOpacity = element.backgroundOpacity;
+    self.backgroundOpacity = C.getElementOpacitySetting(element);
     self.dropZones = element.dropZones;
     self.type = element.type;
     self.multiple = element.multiple;
@@ -716,7 +732,7 @@ H5P.DragQuestion = (function ($) {
         // Nope, we're in another zone
         if (skipVisuals !== true) {
           element.$.addClass('h5p-wrong');
-          C.setElementOpacity(element.$, element.backgroundOpacity);
+          C.setElementOpacity(element.$, C.getElementOpacitySetting(element));
         }
         points--;
       }
@@ -743,7 +759,7 @@ H5P.DragQuestion = (function ($) {
     self.y = dropZone.y;
     self.width = dropZone.width;
     self.height = dropZone.height;
-    self.backgroundOpacity = dropZone.backgroundOpacity;
+    self.backgroundOpacity = C.getElementOpacitySetting(dropZone);
     self.tip = dropZone.tip;
     self.single = dropZone.single;
   }

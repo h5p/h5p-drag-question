@@ -104,6 +104,10 @@
     },
     {
       "label": "Krev inndata fra brukeren før fasit gis."
+    },
+    {
+      "label": "Opasitet for bakgrunn",
+      "description": "Hvis denne verdien er satt, vil den overstyre instillingene til alle elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
     }
   ]
 }
