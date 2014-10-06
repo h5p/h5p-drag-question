@@ -153,9 +153,15 @@ H5P.DragQuestion = (function ($) {
    */
   C.addHover = function ($element, backgroundOpacity) {
     $element.hover(function () {
-      C.setElementOpacity($element, backgroundOpacity);
+      if (!$element.parent().hasClass('h5p-dragging')) {
+        C.setElementOpacity($element, backgroundOpacity);
+      }
     }, function () {
-      C.setElementOpacity($element, backgroundOpacity);
+      if (!$element.parent().hasClass('h5p-dragging')) {
+        setTimeout(function () {
+          C.setElementOpacity($element, backgroundOpacity);
+        }, 1);
+      }
     });
     C.setElementOpacity($element, backgroundOpacity);
   };
@@ -545,6 +551,7 @@ H5P.DragQuestion = (function ($) {
       .appendTo($container)
       .draggable({
         revert: function (dropZone) {
+          $container.removeClass('h5p-dragging');
           var $this = $(this);
           
           $this.removeClass('h5p-dropped').data("uiDraggable").originalPosition = {
@@ -564,6 +571,7 @@ H5P.DragQuestion = (function ($) {
           
           // Send element to the top!
           $this.removeClass('h5p-wrong').detach().appendTo($container);
+          $container.addClass('h5p-dragging');
           C.setElementOpacity($this, self.backgroundOpacity);
         },
         stop: function(event, ui) {
