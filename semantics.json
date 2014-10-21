@@ -155,7 +155,7 @@
                     "em",
                     "del"
                   ]
-                  
+
                 },
                 {
                   "name": "showLabel",
@@ -252,7 +252,7 @@
     "name": "backgroundOpacity",
     "type": "text",
     "label": "Background Opacity",
-    "description": "If this field is set, it will override opacity set on each element. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
+    "description": "If this field is set, it will override opacity set on all drop zones and draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
     "optional": true
   }
 ]
