@@ -1,5 +1,6 @@
 .h5p-dragquestion {
   display: block;
+  background: #fff;
 }
 .h5p-dragquestion > .h5p-inner {
   position: relative;
@@ -97,8 +98,8 @@
   box-shadow: 0em 0em 0.4em rgba(0,0,0,0.5);
   z-index: 3;
   -webkit-user-select: none;
-  -moz-user-select: none; 
-  -ms-user-select: none; 
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .h5p-dragquestion .h5p-draggable:hover {
   border: 0.1em solid #ceb8d2;
@@ -154,50 +155,20 @@
   background: linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
 }
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
-  font-family: H5PFontAwesome4;
-  font-size: 1.5em;
-  font-weight: bold;
-  position: absolute;
-  right: 0.42em;
-  top: 0.42em;
-}
-
-.h5p-dragquestion .h5p-dropped.h5p-wrong:before {
-  content: "";
-  height: 1em;
-  width: 1em; 
-  border-radius: 50%;
-  background: #e6ced1;
-  position: absolute;
-  right: 0.42em;
-  top: 0.42em;
-}
-
-.h5p-dragquestion .h5p-dropped.h5p-correct:before {
-  content: "";
-  height: 1em;
-  width: 1em; 
-  border-radius: 50%;
-  background: #d1e2ce;
-  position: absolute;
-  right: 0.42em;
-  top: 0.42em;
-}
-
-.h5p-dragquestion .h5p-dropped.h5p-correct:after {
   font-family: 'H5PFontAwesome4';
+  font-size: 1em;
+  font-weight: normal;
   position: absolute;
-  right: 0.52em;
-  top: 0.35em;
-  font-size: 0.9em;
+  right: 0;
+  top: 0.1em;
+  padding: 0 0.2em;
+  background: inherit;
+}
+.h5p-dragquestion .h5p-dropped.h5p-correct:after {
   content: "\f00c";
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong:after {
-  font-family: 'H5PFontAwesome4';
-  position: absolute;
-  right: 0.53em;
-  top: 0.28em;
   content: "\f00d";
 }
 

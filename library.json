@@ -1,15 +1,15 @@
 {
   "title": "Drag and drop question",
-  "description": "Drag and drop question type",
+  "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 55,
+  "patchVersion": 67,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 1
+    "minorVersion": 2
   },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",

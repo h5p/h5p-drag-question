@@ -123,6 +123,14 @@
                   "step": 5,
                   "default": 100,
                   "optional": true
+                },
+                {
+                  "name": "multiple",
+                  "type": "boolean",
+                  "label": "Infinite number of element instances",
+                  "description": "Clones this element so that it can be dragged to multiple drop zones.",
+                  "default": false,
+                  "optional": true
                 }
               ]
             }
@@ -139,7 +147,15 @@
                 {
                   "name": "label",
                   "type": "text",
-                  "label": "Label"
+                  "widget": "html",
+                  "label": "Label",
+                  "enterMode": "div",
+                  "tags": [
+                    "strong",
+                    "em",
+                    "del"
+                  ]
+
                 },
                 {
                   "name": "showLabel",
@@ -196,6 +212,13 @@
                       "optional": true
                     }
                   ]
+                },
+                {
+                  "name": "single",
+                  "type": "boolean",
+                  "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
+                  "default": false,
+                  "optional": true
                 }
               ]
             }
@@ -223,6 +246,13 @@
     "name": "showSolutionsRequiresInput",
     "type": "boolean",
     "default": true,
+    "optional": true
+  },
+  {
+    "name": "backgroundOpacity",
+    "type": "text",
+    "label": "Background opacity for draggables",
+    "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
     "optional": true
   }
 ]
