@@ -153,6 +153,14 @@
   background: -webkit-linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
   background: linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
 }
+.h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
+  font-family: H5PFontAwesome4;
+  font-size: 1.5em;
+  font-weight: bold;
+  position: absolute;
+  right: 0.42em;
+  top: 0.42em;
+}
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong:before {
   content: "";
