@@ -195,6 +195,7 @@ H5P.DragQuestion = (function ($) {
     this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
       if (that.getAnswerGiven()) {
         that.showSolutions();
+        that.showScore();
         if (that.options.postUserStatistics === true) {
           H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
         }
@@ -284,6 +285,7 @@ H5P.DragQuestion = (function ($) {
     if (!this.answered && this.blankIsCorrect) {
       this.points = this.weight;
     }
+    this.rawPoints = this.points;
     if (this.options.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
@@ -354,6 +356,19 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.getAnswerGiven = function () {
     return !this.options.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
+  };
+
+  /**
+   * Shows the score to the user when the score button i pressed.
+   */
+  C.prototype.showScore = function () {
+    if (this.$score === undefined) {
+      this.$score = $('<div/>', {
+        'class': 'h5p-score'
+      }).prependTo(this.$container);
+    }
+
+    this.$score.text(this.rawPoints + '/' + this.calculateMaxScore());
   };
 
   /**

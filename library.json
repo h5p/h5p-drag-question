@@ -3,7 +3,7 @@
   "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 69,
+  "patchVersion": 70,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Amendor AS",

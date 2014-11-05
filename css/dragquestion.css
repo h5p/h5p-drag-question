@@ -2,6 +2,10 @@
   display: block;
   background: #fff;
 }
+.h5p-dragquestion p {
+  font-size: inherit;
+  line-height: inherit;
+}
 .h5p-dragquestion > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
@@ -235,4 +239,10 @@
   right: 0.15em;
   bottom: 0;
   font-size: 0.8em;
+}
+
+.h5p-dragquestion .h5p-score {
+  position: absolute;
+  right: 1em;
+  bottom: 3.5em;
 }
