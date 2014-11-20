@@ -19,7 +19,7 @@ H5P.DragQuestion = (function ($) {
     this.$ = $(this);
     this.id = id;
     this.options = $.extend(true, {}, {
-      scoreShow: 'Show score',
+      scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Try again',
       question: {
