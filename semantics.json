@@ -228,9 +228,9 @@
     ]
   },
   {
-    "name": "enableTryAgain",
+    "name": "enableRetryButton",
     "type": "boolean",
-    "label": "Enable Retry button",
+    "label": "Enable \"Retry\" button",
     "default": true,
     "optional": true
   },
