@@ -117,12 +117,8 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add show score button
-    if (this.options.displaySolutionsButton === true) {
-      this.addSolutionButton();
-    }
-    if (this.options.enableRetryButton) {
-      this.addRetryButton();
-    }
+    this.addSolutionButton();
+    this.addRetryButton();
 
     var $element, task = this.options.question.task;
 
