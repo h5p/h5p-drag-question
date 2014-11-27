@@ -2,8 +2,8 @@
   {
     "name": "scoreShow",
     "type": "text",
-    "label": "Check answer button",
-    "default": "Check",
+    "label": "Show score button",
+    "default": "Show score",
     "common": true
   },
   {
@@ -228,9 +228,9 @@
     ]
   },
   {
-    "name": "enableRetryButton",
+    "name": "enableTryAgain",
     "type": "boolean",
-    "label": "Enable \"Retry\" button",
+    "label": "Enable Retry button",
     "default": true,
     "optional": true
   },

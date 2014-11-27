@@ -19,7 +19,7 @@ H5P.DragQuestion = (function ($) {
     this.$ = $(this);
     this.id = id;
     this.options = $.extend(true, {}, {
-      scoreShow: 'Check',
+      scoreShow: 'Show score',
       correct: 'Solution',
       tryAgain: 'Retry',
       question: {
@@ -34,7 +34,7 @@ H5P.DragQuestion = (function ($) {
           dropZones: []
         }
       },
-      enableRetryButton: true,
+      enableTryAgain: true,
       preventResize: false,
       displaySolutionsButton: true,
       postUserStatistics: (H5P.postUserStatistics === true),
@@ -117,8 +117,12 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add show score button
-    this.addSolutionButton();
-    this.addRetryButton();
+    if (this.options.displaySolutionsButton === true) {
+      this.addSolutionButton();
+    }
+    if (this.options.enableRetryButton) {
+      this.addRetryButton();
+    }
 
     var $element, task = this.options.question.task;
 
@@ -315,7 +319,7 @@ H5P.DragQuestion = (function ($) {
         continue;
       }
 
-      if (this.options.enableRetryButton === false) {
+      if (this.options.enableTryAgain === false) {
         draggable.disable();
       }
 
@@ -336,7 +340,7 @@ H5P.DragQuestion = (function ($) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
 
-    if (this._$solutionButton !== undefined && (this.options.enableRetryButton === false || this.points === this.getMaxScore())) {
+    if (this._$solutionButton !== undefined && (this.options.enableTryAgain === false || this.points === this.getMaxScore())) {
       // Max score reached, or the user cannot try again.
       this._$solutionButton.hide();
     }
