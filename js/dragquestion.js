@@ -262,7 +262,6 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showSolutions = function (skipVisuals) {
     this.points = 0;
-    this.rawPoints = 0;
 
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
@@ -276,7 +275,6 @@ H5P.DragQuestion = (function ($) {
 
       // Find out where we are.
       this.points += draggable.results(skipVisuals, this.correctDZs[i]);
-      this.rawPoints += draggable.rawPoints;
     }
 
     if (skipVisuals !== true) this.displayingSolution = true;
@@ -287,6 +285,7 @@ H5P.DragQuestion = (function ($) {
     if (!this.answered && this.blankIsCorrect) {
       this.points = this.weight;
     }
+    this.rawPoints = this.points;
     if (this.options.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
@@ -303,6 +302,10 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.calculateMaxScore = function () {
+    if (this.blankIsCorrect) {
+      return this.weight;
+    }
+
     var max = 0;
     var elements = this.options.question.task.elements;
     for (var i = 0; i < elements.length; i++) {
@@ -318,11 +321,6 @@ H5P.DragQuestion = (function ($) {
       else {
         max++;
       }
-    }
-
-    this.rawMax = max;
-    if (this.blankIsCorrect) {
-      return this.weight;
     }
 
     return max;
@@ -370,7 +368,7 @@ H5P.DragQuestion = (function ($) {
       }).prependTo(this.$container);
     }
 
-    this.$score.text(this.rawPoints + '/' + this.rawMax);
+    this.$score.text(this.rawPoints + '/' + this.calculateMaxScore());
   };
 
   /**
@@ -704,7 +702,6 @@ H5P.DragQuestion = (function ($) {
   Draggable.prototype.results = function (skipVisuals, solutions) {
     var self = this;
     var i, j, element, dropZone, correct, points = 0;
-    self.rawPoints = 0;
 
     if (solutions === undefined) {
       // We should not be anywhere.
@@ -739,7 +736,6 @@ H5P.DragQuestion = (function ($) {
             C.setElementOpacity(element.$, self.backgroundOpacity);
           }
           correct = true;
-          self.rawPoints++;
           points++;
           break;
         }
