@@ -136,6 +136,7 @@
 }
 .h5p-dragquestion .h5p-draggable.ui-state-disabled {
   opacity: 1;
+  cursor: default;
 }
 .h5p-dragquestion .h5p-draggable p {
   margin: 0;
