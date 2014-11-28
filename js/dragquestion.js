@@ -34,19 +34,19 @@ H5P.DragQuestion = (function ($) {
           dropZones: []
         }
       },
-      enableRetry: true,
-      preventResize: false,
-      displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true),
-      singlePoint: true,
-      showSolutionsRequiresInput: true
+      behaviour: {
+        enableRetry: true,
+        preventResize: false,
+        singlePoint: true,
+        showSolutionsRequiresInput: true
+      },
+      postUserStatistics: (H5P.postUserStatistics === true)
     }, options);
 
     this.draggables = [];
     this.dropZones = [];
     this.answered = false;
     this.blankIsCorrect = true;
-    this.displayingSolution = false;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
@@ -109,7 +109,6 @@ H5P.DragQuestion = (function ($) {
   C.prototype.attach = function ($container) {
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
-    this.displayingSolution = false;
 
     this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
     if (this.options.question.settings.background !== undefined) {
@@ -143,7 +142,7 @@ H5P.DragQuestion = (function ($) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
 
-    if (this.options.preventResize !== false) {
+    if (this.options.behaviour.preventResize !== false) {
       this.$.trigger('resize');
     }
   };
@@ -312,7 +311,7 @@ H5P.DragQuestion = (function ($) {
         continue;
       }
 
-      if (this.options.enableRetry === false) {
+      if (this.options.behaviour.enableRetry === false) {
         draggable.disable();
       }
 
@@ -327,17 +326,17 @@ H5P.DragQuestion = (function ($) {
     if (!this.answered && this.blankIsCorrect) {
       this.points = this.weight;
     }
-    if (this.options.singlePoint) {
+    if (this.options.behaviour.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
 
     this._$solutionButton.hide();
 
-    if (this.options.enableRetry) {
+    if (this.options.behaviour.enableRetry) {
       this._$retryButton.show();
     }
 
-    if (this._$solutionButton !== undefined && (this.options.enableRetry === false || this.points === this.getMaxScore())) {
+    if (this._$solutionButton !== undefined && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
       // Max score reached, or the user cannot try again.
       this._$retryButton.hide();
     }
@@ -420,7 +419,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.getMaxScore = function () {
-    return (this.options.singlePoint ? this.weight : this.calculateMaxScore());
+    return (this.options.behaviour.singlePoint ? this.weight : this.calculateMaxScore());
   };
 
   /**
@@ -443,7 +442,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Boolean}
    */
   C.prototype.getAnswerGiven = function () {
-    return !this.options.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
+    return !this.options.behaviour.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
   };
 
   /**
