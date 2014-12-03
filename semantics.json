@@ -228,6 +228,13 @@
     ]
   },
   {
+    "name": "backgroundOpacity",
+    "type": "text",
+    "label": "Background opacity for draggables",
+    "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
+    "optional": true
+  },
+  {
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",
@@ -253,13 +260,6 @@
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true,
-        "optional": true
-      },
-      {
-        "name": "backgroundOpacity",
-        "type": "text",
-        "label": "Background opacity for draggables",
-        "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
         "optional": true
       }
     ]
