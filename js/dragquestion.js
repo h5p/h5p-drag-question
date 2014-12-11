@@ -311,9 +311,8 @@ H5P.DragQuestion = (function ($) {
         continue;
       }
 
-      if (this.options.behaviour.enableRetry === false) {
-        draggable.disable();
-      }
+      //Disable all draggables in check mode.
+      draggable.disable();
 
       // Find out where we are.
       this.points += draggable.results(skipVisuals, this.correctDZs[i]);
