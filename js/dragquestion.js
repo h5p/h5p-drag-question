@@ -428,8 +428,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Points
    */
   C.prototype.getScore = function () {
-    // TODO: Refactor. This function shouldn't rely on showSolutions
-    this.showSolutions(true);
+    this.showAllSolutions(true);
     var points = this.points;
     delete this.points;
     return points;
