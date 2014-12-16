@@ -2,8 +2,8 @@
   {
     "name": "scoreShow",
     "type": "text",
-    "label": "Show score button",
-    "default": "Show score",
+    "label": "Check answer button",
+    "default": "Check",
     "common": true
   },
   {
@@ -228,31 +228,40 @@
     ]
   },
   {
-    "name": "enableTryAgain",
-    "type": "boolean",
-    "label": "Enable Retry button",
-    "default": true,
-    "optional": true
-  },
-  {
-    "name": "singlePoint",
-    "type": "boolean",
-    "label": "Give one point for the whole task",
-    "description": "Disable to give one point for each draggable that is placed correctly.",
-    "default": true
-  },
-  {
-    "label": "Require user input before the solution can be viewed",
-    "name": "showSolutionsRequiresInput",
-    "type": "boolean",
-    "default": true,
-    "optional": true
-  },
-  {
     "name": "backgroundOpacity",
     "type": "text",
     "label": "Background opacity for draggables",
     "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
     "optional": true
+  },
+  {
+    "name": "behaviour",
+    "type": "group",
+    "label": "Behavioural settings.",
+    "description": "These options will let you control how the task behaves.",
+    "optional": true,
+    "fields": [
+      {
+        "name": "enableRetry",
+        "type": "boolean",
+        "label": "Enable \"Retry\"",
+        "default": true,
+        "optional": true
+      },
+      {
+        "name": "singlePoint",
+        "type": "boolean",
+        "label": "Give one point for the whole task",
+        "description": "Disable to give one point for each draggable that is placed correctly.",
+        "default": true
+      },
+      {
+        "label": "Require user input before the solution can be viewed",
+        "name": "showSolutionsRequiresInput",
+        "type": "boolean",
+        "default": true,
+        "optional": true
+      }
+    ]
   }
 ]

@@ -50,7 +50,7 @@
   background: linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%);
 }
 
-.h5p-dragquestion .h5p-button.h5p-try-again:before {
+.h5p-dragquestion .h5p-button.h5p-retry-button:before {
   font-family: 'H5PFontAwesome4';
   content: "\f01e";
   margin-right: 0.5em;
@@ -58,7 +58,7 @@
 
 .h5p-dragquestion .h5p-button:before {
   font-family: 'H5PFontAwesome4';
-  content: "\f06e";
+  content: "\f058";
   margin-right: 0.5em;
 }
 
@@ -136,6 +136,7 @@
 }
 .h5p-dragquestion .h5p-draggable.ui-state-disabled {
   opacity: 1;
+  cursor: default;
 }
 .h5p-dragquestion .h5p-draggable p {
   margin: 0;

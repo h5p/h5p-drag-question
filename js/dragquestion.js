@@ -19,7 +19,7 @@ H5P.DragQuestion = (function ($) {
     this.$ = $(this);
     this.id = id;
     this.options = $.extend(true, {}, {
-      scoreShow: 'Show score',
+      scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
       question: {
@@ -34,19 +34,19 @@ H5P.DragQuestion = (function ($) {
           dropZones: []
         }
       },
-      enableTryAgain: true,
-      preventResize: false,
-      displaySolutionsButton: true,
-      postUserStatistics: (H5P.postUserStatistics === true),
-      singlePoint: true,
-      showSolutionsRequiresInput: true
+      behaviour: {
+        enableRetry: true,
+        preventResize: false,
+        singlePoint: true,
+        showSolutionsRequiresInput: true
+      },
+      postUserStatistics: (H5P.postUserStatistics === true)
     }, options);
 
     this.draggables = [];
     this.dropZones = [];
     this.answered = false;
     this.blankIsCorrect = true;
-    this.displayingSolution = false;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
@@ -109,7 +109,6 @@ H5P.DragQuestion = (function ($) {
   C.prototype.attach = function ($container) {
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
-    this.displayingSolution = false;
 
     this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
     if (this.options.question.settings.background !== undefined) {
@@ -117,12 +116,8 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add show score button
-    if (this.options.displaySolutionsButton === true) {
-      this.addSolutionButton();
-    }
-    if (this.options.enableRetryButton) {
-      this.addRetryButton();
-    }
+    this.addSolutionButton();
+    this.addRetryButton();
 
     var $element, task = this.options.question.task;
 
@@ -147,7 +142,7 @@ H5P.DragQuestion = (function ($) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
 
-    if (this.options.preventResize !== false) {
+    if (this.options.behaviour.preventResize !== false) {
       this.$.trigger('resize');
     }
   };
@@ -197,11 +192,8 @@ H5P.DragQuestion = (function ($) {
 
     this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
       if (that.getAnswerGiven()) {
-        that.showSolutions();
+        that.showAllSolutions();
         that.showScore();
-        if (that.options.enableRetryButton) {
-          that._$retryButton.show();
-        }
         if (that.options.postUserStatistics === true) {
           H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
         }
@@ -305,12 +297,13 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Display the correct solution for the input boxes.
-   * Used in contracts.
+   * Shows the correct solutions on the boxes and disables input and buttons depending on settings.
    * @public
+   * @params {Boolean} skipVisuals Skip visual animations.
    */
-  C.prototype.showSolutions = function (skipVisuals) {
+  C.prototype.showAllSolutions = function (skipVisuals) {
     this.points = 0;
+    this.rawPoints = 0;
 
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
@@ -318,15 +311,13 @@ H5P.DragQuestion = (function ($) {
         continue;
       }
 
-      if (this.options.enableTryAgain === false) {
-        draggable.disable();
-      }
+      //Disable all draggables in check mode.
+      draggable.disable();
 
       // Find out where we are.
       this.points += draggable.results(skipVisuals, this.correctDZs[i]);
+      this.rawPoints += draggable.rawPoints;
     }
-
-    if (skipVisuals !== true) this.displayingSolution = true;
 
     if (this.points < 0) {
       this.points = 0;
@@ -334,15 +325,30 @@ H5P.DragQuestion = (function ($) {
     if (!this.answered && this.blankIsCorrect) {
       this.points = this.weight;
     }
-    this.rawPoints = this.points;
-    if (this.options.singlePoint) {
+    if (this.options.behaviour.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
 
-    if (this._$solutionButton !== undefined && (this.options.enableTryAgain === false || this.points === this.getMaxScore())) {
-      // Max score reached, or the user cannot try again.
-      this._$solutionButton.hide();
+    this._$solutionButton.hide();
+
+    if (this.options.behaviour.enableRetry) {
+      this._$retryButton.show();
     }
+
+    if (this._$solutionButton !== undefined && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
+      // Max score reached, or the user cannot try again.
+      this._$retryButton.hide();
+    }
+  };
+
+  /**
+   * Display the correct solutions, hides button and disables input.
+   * Used in contracts.
+   * @public
+   */
+  C.prototype.showSolutions = function () {
+    this.showAllSolutions();
+
     //Hide solution button:
     this._$solutionButton.hide();
     this._$retryButton.hide();
@@ -381,10 +387,6 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.calculateMaxScore = function () {
-    if (this.blankIsCorrect) {
-      return this.weight;
-    }
-
     var max = 0;
     var elements = this.options.question.task.elements;
     for (var i = 0; i < elements.length; i++) {
@@ -402,6 +404,11 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
+    this.rawMax = max;
+    if (this.blankIsCorrect) {
+      return this.weight;
+    }
+
     return max;
   };
 
@@ -411,7 +418,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Max points
    */
   C.prototype.getMaxScore = function () {
-    return (this.options.singlePoint ? this.weight : this.calculateMaxScore());
+    return (this.options.behaviour.singlePoint ? this.weight : this.calculateMaxScore());
   };
 
   /**
@@ -421,8 +428,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Number} Points
    */
   C.prototype.getScore = function () {
-    // TODO: Refactor. This function shouldn't rely on showSolutions
-    this.showSolutions(true);
+    this.showAllSolutions(true);
     var points = this.points;
     delete this.points;
     return points;
@@ -434,7 +440,7 @@ H5P.DragQuestion = (function ($) {
    * @returns {Boolean}
    */
   C.prototype.getAnswerGiven = function () {
-    return !this.options.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
+    return !this.options.behaviour.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
   };
 
   /**
@@ -732,18 +738,37 @@ H5P.DragQuestion = (function ($) {
    */
   Draggable.prototype.resetPosition = function () {
     var self = this;
-    var element = self.element.$;
-    if (element.data("uiDraggable").originalPosition !== undefined) {
-      element.animate({
-        left: element.data("uiDraggable").originalPosition.left,
-        top: element.data("uiDraggable").originalPosition.top
-      });
-      element.removeClass('h5p-wrong');
-      element.removeClass('h5p-correct');
-      element.removeClass('h5p-dropped');
-      delete self.element.dropZone;
-      C.setElementOpacity(element, self.backgroundOpacity);
-    }
+
+    this.elements.forEach(function (draggable) {
+      //If the draggable is in a dropzone reset its' position and feedback.
+      if (draggable.dropZone !== undefined) {
+        var element = draggable.$;
+
+        //Revert the button to initial position and then remove it.
+        if (element.data("uiDraggable").originalPosition !== undefined) {
+          element.animate({
+            left: element.data("uiDraggable").originalPosition.left,
+            top: element.data("uiDraggable").originalPosition.top
+          }, function () {
+            //Remove the draggable if it is an infinity draggable.
+            if (self.multiple) {
+              element.remove();
+              //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
+              if (self.elements.indexOf(draggable) >= 0) {
+                delete self.elements[self.elements.indexOf(draggable)];
+              }
+            }
+          });
+        }
+        element.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+        C.setElementOpacity(element, self.backgroundOpacity);
+      }
+    });
+    // Draggable removed from dropzone.
+    delete self.element.dropZone;
+    // Remove feedback classes from initial element and delete the dropzone.
+    self.element.$.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+    C.setElementOpacity(self.element.$, self.backgroundOpacity);
   };
 
   /**
@@ -820,6 +845,7 @@ H5P.DragQuestion = (function ($) {
   Draggable.prototype.results = function (skipVisuals, solutions) {
     var self = this;
     var i, j, element, dropZone, correct, points = 0;
+    self.rawPoints = 0;
 
     if (solutions === undefined) {
       // We should not be anywhere.
@@ -854,6 +880,7 @@ H5P.DragQuestion = (function ($) {
             C.setElementOpacity(element.$, self.backgroundOpacity);
           }
           correct = true;
+          self.rawPoints++;
           points++;
           break;
         }
