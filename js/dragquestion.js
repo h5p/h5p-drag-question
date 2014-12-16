@@ -453,7 +453,7 @@ H5P.DragQuestion = (function ($) {
       }).prependTo(this.$container);
     }
 
-    this.$score.text(this.rawPoints + '/' + this.rawMax);
+    this.$score.text(this.rawPoints + '/' + this.calculateMaxScore());
   };
 
   /**
@@ -649,7 +649,6 @@ H5P.DragQuestion = (function ($) {
             left: self.x + '%'
           };
           C.setElementOpacity($this, self.backgroundOpacity);
-
           return !dropZone;
         },
         start: function(event, ui) {
