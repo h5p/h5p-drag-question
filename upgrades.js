@@ -7,10 +7,10 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         contentUpgrade: function (parameters, finished) {
           // Moved all behavioural settings into "behaviour" group.
           parameters.behaviour = {
-            enableRetry: parameters.enableTryAgain,
-            preventResize: parameters.preventResize,
-            singlePoint: parameters.singlePoint,
-            showSolutionsRequiresInput: parameters.showSolutionsRequiresInput
+            enableRetry: parameters.enableTryAgain === undefined ? true : parameters.enableTryAgain,
+            preventResize: parameters.preventResize === undefined ? true : parameters.preventResize,
+            singlePoint: parameters.singlePoint === undefined ? true : parameters.singlePoint,
+            showSolutionsRequiresInput: parameters.showSolutionsRequiresInput === undefined ? true : parameters.showSolutionsRequiresInput
           };
           delete parameters.enableTryAgain;
           delete parameters.preventResize;
