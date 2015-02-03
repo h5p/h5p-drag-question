@@ -2,6 +2,10 @@
   display: block;
   background: #fff;
 }
+.h5p-dragquestion p {
+  font-size: inherit;
+  line-height: inherit;
+}
 .h5p-dragquestion > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
@@ -46,7 +50,7 @@
   background: linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%);
 }
 
-.h5p-dragquestion .h5p-button.h5p-try-again:before {
+.h5p-dragquestion .h5p-button.h5p-retry-button:before {
   font-family: 'H5PFontAwesome4';
   content: "\f01e";
   margin-right: 0.5em;
@@ -54,7 +58,7 @@
 
 .h5p-dragquestion .h5p-button:before {
   font-family: 'H5PFontAwesome4';
-  content: "\f06e";
+  content: "\f058";
   margin-right: 0.5em;
 }
 
@@ -132,6 +136,7 @@
 }
 .h5p-dragquestion .h5p-draggable.ui-state-disabled {
   opacity: 1;
+  cursor: default;
 }
 .h5p-dragquestion .h5p-draggable p {
   margin: 0;
@@ -154,6 +159,13 @@
   background: -webkit-linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
   background: linear-gradient(to bottom, rgb(230,206,209) 0%, rgb(230,206,209) 100%);
 }
+.h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropped.h5p-correct {
+  text-align: left;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   font-family: 'H5PFontAwesome4';
   font-size: 1em;
@@ -163,6 +175,10 @@
   top: 0.1em;
   padding: 0 0.2em;
   background: inherit;
+}
+
+.h5p-dragquestion .h5p-draggable.h5p-correct.h5p-text:after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-text:after {
+  background: none;
 }
 .h5p-dragquestion .h5p-dropped.h5p-correct:after {
   content: "\f00c";
@@ -235,4 +251,10 @@
   right: 0.15em;
   bottom: 0;
   font-size: 0.8em;
+}
+
+.h5p-dragquestion .h5p-score {
+  position: absolute;
+  right: 1em;
+  bottom: 3.5em;
 }
