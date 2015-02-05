@@ -3,7 +3,7 @@
   "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
   "minorVersion": 1,
-  "patchVersion": 2,
+  "patchVersion": 3,
   "embedTypes": [
     "iframe"
   ],
