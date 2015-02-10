@@ -162,8 +162,8 @@
 .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropped.h5p-correct {
   text-align: left;
   font-size: 90%;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
 }
 
 .h5p-dragquestion .h5p-draggable.h5p-correct:after, .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
