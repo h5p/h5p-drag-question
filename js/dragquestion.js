@@ -640,9 +640,9 @@ H5P.DragQuestion = (function ($) {
         top: self.y + '%',
         width: self.width + 'em',
         height: self.height + 'em'
-      }
+      },
+      appendTo: $container
     })
-      .appendTo($container)
       .draggable({
         revert: function (dropZone) {
           $container.removeClass('h5p-dragging');
@@ -711,7 +711,7 @@ H5P.DragQuestion = (function ($) {
             }
           }
         }
-      });
+      }).css('position', '');
     self.element = element;
 
     C.addHover(element.$, self.backgroundOpacity);
