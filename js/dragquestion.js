@@ -97,6 +97,7 @@ H5P.DragQuestion = (function ($) {
 
       this.dropZones[i] = new DropZone(dropZone, i);
     }
+    this.on('resize', self.resize, self);
   };
   
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
