@@ -15,7 +15,7 @@ H5P.DragQuestion = (function ($) {
    */
   function C(options, contentId) {
     var self = this;
-    this.contentId = contentId;
+    this.id = this.contentId = contentId;
     H5P.EventDispatcher.call(this);
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
@@ -97,9 +97,10 @@ H5P.DragQuestion = (function ($) {
 
       this.dropZones[i] = new DropZone(dropZone, i);
     }
+    
     this.on('resize', self.resize, self);
   };
-  
+
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
 
@@ -586,7 +587,7 @@ H5P.DragQuestion = (function ($) {
     self.type = element.type;
     self.multiple = element.multiple;
   }
-  
+
   Draggable.prototype = Object.create(H5P.EventDispatcher.prototype);
   Draggable.prototype.constructor = Draggable;
 
@@ -696,7 +697,7 @@ H5P.DragQuestion = (function ($) {
 
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
-            
+
             self.trigger('attempted');
           }
           else {
