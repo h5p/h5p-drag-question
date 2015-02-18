@@ -97,9 +97,9 @@ H5P.DragQuestion = (function ($) {
 
       this.dropZones[i] = new DropZone(dropZone, i);
     }
-    
+
     this.on('resize', self.resize, self);
-  };
+  }
 
   C.prototype = Object.create(H5P.EventDispatcher.prototype);
   C.prototype.constructor = C;
@@ -549,14 +549,24 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
+    var original = $element.css(property);
+
     // Reset css to be sure we're using CSS and not inline values.
     var properties = getProperties(property, '');
     $element.css(properties);
 
+    // Determine prop and assume all props are the same and use the first.
     for (var prop in properties) {
       break;
     }
-    var style = $element.css(prop); // Assume all props are the same and use the first.
+
+    // Get value from css
+    var style = $element.css(prop);
+    if (style === '') {
+      // No value from CSS, fall back to original
+      style = original;
+    }
+
     style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
 
@@ -641,7 +651,11 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
+        backgroundColor: 'rgb(255,255,255)',
+        backgroundImage: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%)',
+        border: '0.1em solid #c6c6c6',
+        boxShadow: '0em 0em 0.4em rgba(0,0,0,0.5)'
       },
       appendTo: $container
     })
@@ -939,10 +953,12 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Prepare inner html
-    var html = '<div class="h5p-inner"></div>';
+    // Style fallback in case we're created before we're attached.
+    var style = ' style="background-color: rgb(224,224,224); background-image: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%); background-image: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);"';
+    var html = '<div class="h5p-inner"' + style + '></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '</div>' + html;
+      html = '<div class="h5p-label"' + style + '>' + self.label + '</div>' + html;
       extraClass = ' h5p-has-label';
     }
 
@@ -953,7 +969,7 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
       },
       html: html
     })
