@@ -13,11 +13,10 @@ H5P.DragQuestion = (function ($) {
    * @param {Object} options Run parameters
    * @param {Number} id Content identification
    */
-  function C(options, id) {
+  function C(options, contentId) {
     var self = this;
-
-    this.$ = $(this);
-    this.id = id;
+    this.id = this.contentId = contentId;
+    H5P.EventDispatcher.call(this);
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
       correct: 'Solution',
@@ -39,8 +38,7 @@ H5P.DragQuestion = (function ($) {
         preventResize: false,
         singlePoint: true,
         showSolutionsRequiresInput: true
-      },
-      postUserStatistics: (H5P.postUserStatistics === true)
+      }
     }, options);
 
     this.draggables = [];
@@ -83,9 +81,9 @@ H5P.DragQuestion = (function ($) {
 
       // Create new draggable instance
       this.draggables[i] = new Draggable(element, i);
-      this.draggables[i].$.on('answered', function () {
+      this.draggables[i].on('attempted', function () {
         self.answered = true;
-        self.$.trigger('h5pQuestionAnswered');
+        self.triggerXAPI('attempted');
       });
     }
 
@@ -99,7 +97,12 @@ H5P.DragQuestion = (function ($) {
 
       this.dropZones[i] = new DropZone(dropZone, i);
     }
-  };
+
+    this.on('resize', self.resize, self);
+  }
+
+  C.prototype = Object.create(H5P.EventDispatcher.prototype);
+  C.prototype.constructor = C;
 
   /**
    * Append field to wrapper.
@@ -142,8 +145,9 @@ H5P.DragQuestion = (function ($) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
 
+
     if (this.options.behaviour.preventResize !== false) {
-      this.$.trigger('resize');
+      this.trigger('resize');
     }
   };
 
@@ -194,9 +198,7 @@ H5P.DragQuestion = (function ($) {
       if (that.getAnswerGiven()) {
         that.showAllSolutions();
         that.showScore();
-        if (that.options.postUserStatistics === true) {
-          H5P.setFinished(that.id, that.getScore(), that.getMaxScore());
-        }
+        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
       }
     });
   };
@@ -547,14 +549,24 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
+    var original = $element.css(property);
+
     // Reset css to be sure we're using CSS and not inline values.
     var properties = getProperties(property, '');
     $element.css(properties);
 
+    // Determine prop and assume all props are the same and use the first.
     for (var prop in properties) {
       break;
     }
-    var style = $element.css(prop); // Assume all props are the same and use the first.
+
+    // Get value from css
+    var style = $element.css(prop);
+    if (style === '') {
+      // No value from CSS, fall back to original
+      style = original;
+    }
+
     style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
 
@@ -571,6 +583,7 @@ H5P.DragQuestion = (function ($) {
    */
   function Draggable(element, id) {
     var self = this;
+    H5P.EventDispatcher.call(this);
 
     self.$ = $(self);
     self.id = id;
@@ -584,6 +597,9 @@ H5P.DragQuestion = (function ($) {
     self.type = element.type;
     self.multiple = element.multiple;
   }
+
+  Draggable.prototype = Object.create(H5P.EventDispatcher.prototype);
+  Draggable.prototype.constructor = Draggable;
 
   /**
    * Insert draggable elements into the given container.
@@ -635,7 +651,11 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
+        backgroundColor: 'rgb(255,255,255)',
+        backgroundImage: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%)',
+        border: '0.1em solid #c6c6c6',
+        boxShadow: '0em 0em 0.4em rgba(0,0,0,0.5)'
       },
       appendTo: $container
     })
@@ -692,7 +712,7 @@ H5P.DragQuestion = (function ($) {
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
 
-            self.$.trigger('answered');
+            self.trigger('attempted');
           }
           else {
             if (self.multiple) {
@@ -933,10 +953,12 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Prepare inner html
-    var html = '<div class="h5p-inner"></div>';
+    // Style fallback in case we're created before we're attached.
+    var style = ' style="background-color: rgb(224,224,224); background-image: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%); background-image: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);"';
+    var html = '<div class="h5p-inner"' + style + '></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '</div>' + html;
+      html = '<div class="h5p-label"' + style + '>' + self.label + '</div>' + html;
       extraClass = ' h5p-has-label';
     }
 
@@ -947,7 +969,7 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
       },
       html: html
     })

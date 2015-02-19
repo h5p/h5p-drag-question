@@ -2,17 +2,17 @@
   "title": "Drag and drop question",
   "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
-  "minorVersion": 1,
-  "patchVersion": 3,
+  "minorVersion": 2,
+  "patchVersion": 0,
   "embedTypes": [
     "iframe"
   ],
   "runnable": 1,
   "fullscreen": 1,
-  "author": "Amendor AS",
+  "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 2
+    "minorVersion": 4
   },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",
@@ -45,7 +45,7 @@
     {
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ],
   "preloadedJs": [
@@ -57,7 +57,7 @@
     {
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ]
 }
