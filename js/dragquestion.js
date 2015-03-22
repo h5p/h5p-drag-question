@@ -23,6 +23,7 @@ H5P.DragQuestion = (function ($) {
       tryAgain: 'Retry',
       question: {
         settings: {
+          questionTitle: 'Drag and drop',
           size: {
             width: 620,
             height: 310
@@ -486,6 +487,10 @@ H5P.DragQuestion = (function ($) {
     }
 
     return info;
+  };
+  
+  C.prototype.getH5PTitle = function() {
+    return H5P.createH5PTitle(this.options.question.settings.questionTitle);
   };
 
   /**

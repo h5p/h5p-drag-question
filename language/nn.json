@@ -18,6 +18,11 @@
           "label": "Innstillinger",
           "fields": [
             {
+              "label": "Spørsmålets tittel",
+              "default": "Dra og slipp",
+              "description": "Brukes i oppsummeringer, statistikk o.l."
+            },
+            {
               "label": "Bakgrunnsbilde",
               "description": "Valgfritt. Velg et bakgrunnsbilde for oppgaven."
             },
