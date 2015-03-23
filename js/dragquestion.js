@@ -15,9 +15,6 @@ H5P.DragQuestion = (function ($) {
    */
   function C(options, contentId, contentData) {
     var self = this;
-    window.top.hm = function () {
-      self.getCurrentState();
-    };
     this.id = this.contentId = contentId;
     H5P.EventDispatcher.call(this);
     this.options = $.extend(true, {}, {
