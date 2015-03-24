@@ -473,6 +473,9 @@ H5P.DragQuestion = (function ($) {
     var state = {answers: []};
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
+      if (draggable === undefined) {
+        continue;
+      }
 
       var draggableAnswers = [];
       for (var j = 0; j < draggable.elements.length; j++) {
