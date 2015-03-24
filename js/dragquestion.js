@@ -499,9 +499,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
-    if (state.answers.length) {
-      return state;
-    }
+    return state;
   };
 
   /**
