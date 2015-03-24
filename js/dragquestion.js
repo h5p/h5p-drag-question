@@ -13,7 +13,7 @@ H5P.DragQuestion = (function ($) {
    * @param {Object} options Run parameters
    * @param {Number} id Content identification
    */
-  function C(options, contentId) {
+  function C(options, contentId, contentData) {
     var self = this;
     this.id = this.contentId = contentId;
     H5P.EventDispatcher.call(this);
@@ -44,7 +44,7 @@ H5P.DragQuestion = (function ($) {
 
     this.draggables = [];
     this.dropZones = [];
-    this.answered = false;
+    this.answered = (contentData && contentData.previousState !== undefined);
     this.blankIsCorrect = true;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
@@ -68,7 +68,6 @@ H5P.DragQuestion = (function ($) {
     // TODO: Initialize elements and drop zones here!
 
     // Add draggable elements
-    var task = this.options.question.task;
     for (var i = 0; i < task.elements.length; i++) {
       var element = task.elements[i];
 
@@ -80,8 +79,14 @@ H5P.DragQuestion = (function ($) {
         element.backgroundOpacity = this.backgroundOpacity;
       }
 
+      // Restore answers from last session
+      var answers;
+      if (contentData && contentData.previousState !== undefined) {
+        answers = contentData.previousState.answers[i];
+      }
+
       // Create new draggable instance
-      this.draggables[i] = new Draggable(element, i);
+      this.draggables[i] = new Draggable(element, i, answers);
       this.draggables[i].on('attempted', function () {
         self.answered = true;
         self.triggerXAPI('attempted');
@@ -145,7 +150,6 @@ H5P.DragQuestion = (function ($) {
     for (var i = 0; i < this.dropZones.length; i++) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
-
 
     if (this.options.behaviour.preventResize !== false) {
       this.trigger('resize');
@@ -460,6 +464,47 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
+   * Packs info about the current state of the task into a object for
+   * serialization.
+   *
+   * @public
+   * @returns {object}
+   */
+  C.prototype.getCurrentState = function () {
+    var state = {answers: []};
+    for (var i = 0; i < this.draggables.length; i++) {
+      var draggable = this.draggables[i];
+      if (draggable === undefined) {
+        continue;
+      }
+
+      var draggableAnswers = [];
+      for (var j = 0; j < draggable.elements.length; j++) {
+        var element = draggable.elements[j];
+        if (element === undefined || element.dropZone === undefined) {
+          continue;
+        }
+
+        // Store position and drop zone.
+        draggableAnswers.push({
+          x: Number(element.position.left.replace('%', '')),
+          y: Number(element.position.top.replace('%', '')),
+          dz: element.dropZone
+        });
+      }
+
+      if (draggableAnswers.length) {
+        // Add answers to state object for storage
+        state.answers[i] = draggableAnswers;
+      }
+    }
+
+    if (state.answers.length) {
+      return state;
+    }
+  };
+
+  /**
    * Gather copyright information for the current content.
    *
    * @returns {H5P.ContentCopyright}
@@ -481,7 +526,7 @@ H5P.DragQuestion = (function ($) {
 
       if (instance.getCopyrights !== undefined) {
         var rights = instance.getCopyrights();
-        rights.setLabel(element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element');
+        rights.setLabel((element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element'));
         info.addContent(rights);
       }
     }
@@ -582,11 +627,12 @@ H5P.DragQuestion = (function ($) {
    * Creates a new draggable instance.
    * Makes it easier to keep track of all instance variables and elements.
    *
-   * @param {type} element
-   * @param {type} id
-   * @returns {_L8.Draggable}
+   * @class
+   * @param {object} element
+   * @param {number} id
+   * @param {array} [answers] from last session
    */
-  function Draggable(element, id) {
+  function Draggable(element, id, answers) {
     var self = this;
     H5P.EventDispatcher.call(this);
 
@@ -601,6 +647,24 @@ H5P.DragQuestion = (function ($) {
     self.dropZones = element.dropZones;
     self.type = element.type;
     self.multiple = element.multiple;
+
+    if (answers) {
+      if (self.multiple) {
+        // Add base element
+        self.elements.push({});
+      }
+
+      // Add answers
+      for (var i = 0; i < answers.length; i++) {
+        self.elements.push({
+          dropZone: answers[i].dz,
+          position: {
+            left: answers[i].x + '%',
+            top: answers[i].y + '%',
+          }
+        });
+      }
+    }
   }
 
   Draggable.prototype = Object.create(H5P.EventDispatcher.prototype);
@@ -703,7 +767,7 @@ H5P.DragQuestion = (function ($) {
             if (self.multiple) {
               // Check that we're the only element here
               for (var i = 0; i < self.elements.length; i++) {
-                if (self.elements[i] !== undefined && self.elements[i].dropZone === addToZone) {
+                if (i !== index && self.elements[i] !== undefined && self.elements[i].dropZone === addToZone) {
                   // Remove element
                   $this.remove();
                   delete self.elements[index];
@@ -734,6 +798,11 @@ H5P.DragQuestion = (function ($) {
         }
       }).css('position', '');
     self.element = element;
+
+    if (element.position) {
+      // Restore last position
+      element.$.css(element.position).addClass('h5p-dropped');
+    }
 
     C.addHover(element.$, self.backgroundOpacity);
     H5P.newRunnable(self.type, contentId, element.$);
@@ -770,21 +839,20 @@ H5P.DragQuestion = (function ($) {
         var element = draggable.$;
 
         //Revert the button to initial position and then remove it.
-        if (element.data("uiDraggable").originalPosition !== undefined) {
-          element.animate({
-            left: element.data("uiDraggable").originalPosition.left,
-            top: element.data("uiDraggable").originalPosition.top
-          }, function () {
-            //Remove the draggable if it is an infinity draggable.
-            if (self.multiple) {
-              element.remove();
-              //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
-              if (self.elements.indexOf(draggable) >= 0) {
-                delete self.elements[self.elements.indexOf(draggable)];
-              }
+        element.animate({
+          left: self.x + '%',
+          top: self.y + '%'
+        }, function () {
+          //Remove the draggable if it is an infinity draggable.
+          if (self.multiple) {
+            element.remove();
+            //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
+            if (self.elements.indexOf(draggable) >= 0) {
+              delete self.elements[self.elements.indexOf(draggable)];
             }
-          });
-        }
+          }
+        });
+
         element.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
         C.setElementOpacity(element, self.backgroundOpacity);
       }
