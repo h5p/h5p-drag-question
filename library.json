@@ -2,8 +2,8 @@
   "title": "Drag and drop question",
   "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
-  "minorVersion": 2,
-  "patchVersion": 1,
+  "minorVersion": 3,
+  "patchVersion": 0,
   "embedTypes": [
     "iframe"
   ],
@@ -12,7 +12,7 @@
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 4
+    "minorVersion": 5
   },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",

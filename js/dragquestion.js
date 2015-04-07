@@ -532,8 +532,8 @@ H5P.DragQuestion = (function ($) {
     return info;
   };
   
-  C.prototype.getH5PTitle = function() {
-    return H5P.createH5PTitle(this.options.question.settings.questionTitle);
+  C.prototype.getTitle = function() {
+    return H5P.createTitle(this.options.question.settings.questionTitle);
   };
 
   /**
