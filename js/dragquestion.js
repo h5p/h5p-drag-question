@@ -89,7 +89,7 @@ H5P.DragQuestion = (function ($) {
       this.draggables[i] = new Draggable(element, i, answers);
       this.draggables[i].on('attempted', function () {
         self.answered = true;
-        self.triggerXAPI('attempted');
+        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'attempted');
       });
     }
 
@@ -319,7 +319,9 @@ H5P.DragQuestion = (function ($) {
       }
 
       //Disable all draggables in check mode.
-      draggable.disable();
+      if (!skipVisuals) {
+        draggable.disable();
+      }
 
       // Find out where we are.
       this.points += draggable.results(skipVisuals, this.correctDZs[i]);
@@ -335,10 +337,11 @@ H5P.DragQuestion = (function ($) {
     if (this.options.behaviour.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
+    if (!skipVisuals) {
+      this._$solutionButton.hide();
+    }
 
-    this._$solutionButton.hide();
-
-    if (this.options.behaviour.enableRetry) {
+    if (this.options.behaviour.enableRetry && !skipVisuals) {
       this._$retryButton.show();
     }
 
@@ -355,7 +358,6 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
-
     //Hide solution button:
     this._$solutionButton.hide();
     this._$retryButton.hide();
