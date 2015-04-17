@@ -531,7 +531,7 @@ H5P.DragQuestion = (function ($) {
 
     return info;
   };
-  
+
   C.prototype.getTitle = function() {
     return H5P.createTitle(this.options.question.settings.questionTitle);
   };
@@ -610,7 +610,7 @@ H5P.DragQuestion = (function ($) {
 
     // Get value from css
     var style = $element.css(prop);
-    if (style === '') {
+    if (style === '' || style === 'none') {
       // No value from CSS, fall back to original
       style = original;
     }
@@ -658,7 +658,7 @@ H5P.DragQuestion = (function ($) {
           dropZone: answers[i].dz,
           position: {
             left: answers[i].x + '%',
-            top: answers[i].y + '%',
+            top: answers[i].y + '%'
           }
         });
       }
@@ -1040,7 +1040,7 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em',
+        height: self.height + 'em'
       },
       html: html
     })
