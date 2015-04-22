@@ -249,8 +249,8 @@ H5P.DragQuestion = (function ($) {
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
-    var width = this.$container.parent()[0].clientWidth;
-    var height = this.$container.parent()[0].clientHeight;
+    var width = this.$container.parent().width();
+    var height = this.$container.parent().height();
 
     if (width / height >= ratio) {
       // Wider
