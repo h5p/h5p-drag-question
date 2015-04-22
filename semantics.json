@@ -32,6 +32,13 @@
         "label": "Settings",
         "fields": [
           {
+            "name": "questionTitle",
+            "type": "text",
+            "label": "The title of this question",
+            "default": "Drag and drop",
+            "description": "Used in summaries, statistics etc."
+          },
+          {
             "name": "background",
             "type": "image",
             "label": "Background image",
