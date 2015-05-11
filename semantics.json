@@ -90,7 +90,7 @@
                   "type": "library",
                   "description": "Choose the type of content you would like to add.",
                   "options": [
-                    "H5P.Text 1.0",
+                    "H5P.AdvancedText 1.0",
                     "H5P.Image 1.0"
                   ]
                 },

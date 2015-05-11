@@ -68,7 +68,7 @@
   z-index: 1;
 }
 
-.h5p-dragquestion .h5p-static.h5p-text {
+.h5p-dragquestion .h5p-static.h5p-advanced-text {
   padding: 0.25em 0.5em;
   border-radius: 0.25em;
 }
@@ -177,7 +177,7 @@
   background: inherit;
 }
 
-.h5p-dragquestion .h5p-draggable.h5p-correct.h5p-text:after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-text:after {
+.h5p-dragquestion .h5p-draggable.h5p-correct.h5p-advanced-text:after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-advanced-text:after {
   background: none;
 }
 .h5p-dragquestion .h5p-dropped.h5p-correct:after {
