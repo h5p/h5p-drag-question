@@ -142,6 +142,9 @@
   margin: 0;
   padding: 0;
 }
+.h5p-dragquestion .h5p-draggable span {
+  line-height: 1em;
+}
 
 .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
   color: #39692e;
