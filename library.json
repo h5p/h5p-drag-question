@@ -2,7 +2,7 @@
   "title": "Drag and drop question",
   "description": "Drag and drop question type supporting many to many relations.",
   "majorVersion": 1,
-  "minorVersion": 3,
+  "minorVersion": 4,
   "patchVersion": 0,
   "embedTypes": [
     "iframe"
@@ -57,7 +57,7 @@
     {
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
-      "minorVersion": 2
+      "minorVersion": 3
     }
   ]
 }

@@ -19,6 +19,32 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
 
           finished(null, parameters);
         }
+      },
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support DQ 1.4.
+       *
+       * Converts H5P.Text elements into H5P.AdvancedText. This is to support
+       * more styling options for text.
+       *
+       * @params {Object} parameters
+       * @params {function} finished
+       */
+      4: function (parameters, finished) {
+        var elements = parameters.question.task.elements;
+
+        // Go through elements
+        for (var i = 0; i < elements.length; i++) {
+          var element = elements[i];
+
+          // Check if element type is text
+          if (element.type && element.type.library &&
+              element.type.library.split(' ')[0] === 'H5P.Text') {
+            element.type.library = 'H5P.AdvancedText 1.0';
+          }
+        }
+
+        finished(null, parameters);
       }
     }
   };
