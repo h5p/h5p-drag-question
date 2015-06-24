@@ -31,19 +31,20 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
        * @params {function} finished
        */
       4: function (parameters, finished) {
-        var elements = parameters.question.task.elements;
+        if (parameters.question !== undefined && parameters.question.task !== undefined && parameters.question.task.elements !== undefined) {
+          var elements = parameters.question.task.elements;
 
-        // Go through elements
-        for (var i = 0; i < elements.length; i++) {
-          var element = elements[i];
+          // Go through elements
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
 
-          // Check if element type is text
-          if (element.type && element.type.library &&
-              element.type.library.split(' ')[0] === 'H5P.Text') {
-            element.type.library = 'H5P.AdvancedText 1.0';
+            // Check if element type is text
+            if (element && element.type && element.type.library &&
+                element.type.library.split(' ')[0] === 'H5P.Text') {
+              element.type.library = 'H5P.AdvancedText 1.0';
+            }
           }
         }
-
         finished(null, parameters);
       }
     }
