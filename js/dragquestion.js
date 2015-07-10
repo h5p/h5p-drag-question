@@ -203,7 +203,7 @@ H5P.DragQuestion = (function ($) {
       if (that.getAnswerGiven()) {
         that.showAllSolutions();
         that.showScore();
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
+        that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
       }
     });
   };
