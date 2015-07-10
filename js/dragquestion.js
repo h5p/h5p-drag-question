@@ -89,7 +89,7 @@ H5P.DragQuestion = (function ($) {
       this.draggables[i] = new Draggable(element, i, answers);
       this.draggables[i].on('attempted', function () {
         self.answered = true;
-        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'attempted');
+        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
     }
 
@@ -781,7 +781,7 @@ H5P.DragQuestion = (function ($) {
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
 
-            self.trigger('attempted');
+            self.trigger('interacted');
           }
           else {
             if (self.multiple) {
