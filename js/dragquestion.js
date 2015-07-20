@@ -116,6 +116,7 @@ H5P.DragQuestion = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.attach = function ($container) {
+    this.setActivityStarted();
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
 
