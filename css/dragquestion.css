@@ -6,7 +6,7 @@
   font-size: inherit;
   line-height: inherit;
 }
-.h5p-dragquestion > .h5p-inner {
+.h5p-dragquestion > .h5p-question-content > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
   background-position: center top;
@@ -14,54 +14,6 @@
   margin: 0 auto;
   overflow: hidden;
 }
-.h5p-dragquestion .h5p-button {
-  position: absolute;
-  bottom: 0.625em;
-  right: 1.225em;
-  cursor: pointer;
-  font-size: 1em;
-  display: inline-block;
-  padding: 0.25em 0.75em;
-  border: 0.1875em solid #fff;
-  border-radius: 0.3125em;
-  cursor: pointer;
-  color: #fff;
-  box-shadow: 0 0 0.5em #999;
-  text-decoration: none;
-  text-align: center;
-  margin: auto;
-
-  background: rgb(100,152,254); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(100,152,254,1) 0%, rgba(4,104,206,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,152,254,1)), color-stop(100%,rgba(4,104,206,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%); /* Opera 11.10+ */
-  background: linear-gradient(top,  rgba(100,152,254,1) 0%,rgba(4,104,206,1) 100%);
-
-  z-index: 4;
-}
-
-.h5p-dragquestion .h5p-button:hover {
-  background: rgb(4,104,206); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(4,104,206,1) 0%, rgba(100,152,254,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(4,104,206,1)), color-stop(100%,rgba(100,152,254,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%); /* Opera 11.10+ */
-  background: linear-gradient(top,  rgba(4,104,206,1) 0%,rgba(100,152,254,1) 100%);
-}
-
-.h5p-dragquestion .h5p-button.h5p-retry-button:before {
-  font-family: 'H5PFontAwesome4';
-  content: "\f01e";
-  margin-right: 0.5em;
-}
-
-.h5p-dragquestion .h5p-button:before {
-  font-family: 'H5PFontAwesome4';
-  content: "\f058";
-  margin-right: 0.5em;
-}
-
 .h5p-dragquestion .h5p-static {
   background: #fff;
   position: absolute;
@@ -254,10 +206,4 @@
   right: 0.15em;
   bottom: 0;
   font-size: 0.8em;
-}
-
-.h5p-dragquestion .h5p-score {
-  position: absolute;
-  right: 1em;
-  bottom: 3.5em;
 }

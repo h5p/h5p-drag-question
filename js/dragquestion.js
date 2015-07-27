@@ -16,7 +16,7 @@ H5P.DragQuestion = (function ($) {
   function C(options, contentId, contentData) {
     var self = this;
     this.id = this.contentId = contentId;
-    H5P.EventDispatcher.call(this);
+    H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
       correct: 'Solution',
@@ -87,7 +87,7 @@ H5P.DragQuestion = (function ($) {
 
       // Create new draggable instance
       this.draggables[i] = new Draggable(element, i, answers);
-      this.draggables[i].on('attempted', function () {
+      this.draggables[i].on('interacted', function () {
         self.answered = true;
         self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
@@ -105,29 +105,43 @@ H5P.DragQuestion = (function ($) {
     }
 
     this.on('resize', self.resize, self);
+    this.on('domChanged', function(event) {
+      if (self.contentId == event.data.contentId) {
+        self.trigger('resize');
+      }
+    });
   }
 
-  C.prototype = Object.create(H5P.EventDispatcher.prototype);
+  C.prototype = Object.create(H5P.Question.prototype);
   C.prototype.constructor = C;
 
+
+  /**
+  * Registers this question type's DOM elements before they are attached.
+  * Called from H5P.Question.
+  */
+ C.prototype.registerDomElements = function () {
+   var self = this;
+
+   // Register task content area
+   self.setContent(self.createQuestionContent());
+   // ... and buttons
+   self.registerButtons();
+ };
+  
   /**
    * Append field to wrapper.
    *
    * @param {jQuery} $container
    */
-  C.prototype.attach = function ($container) {
-    this.setActivityStarted();
+  C.prototype.createQuestionContent = function () {
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
 
-    this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
+    this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
     }
-
-    // Add show score button
-    this.addSolutionButton();
-    this.addRetryButton();
 
     var $element, task = this.options.question.task;
 
@@ -151,11 +165,14 @@ H5P.DragQuestion = (function ($) {
     for (var i = 0; i < this.dropZones.length; i++) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
-
-    if (this.options.behaviour.preventResize !== false) {
-      this.trigger('resize');
-    }
+    return this.$container;
   };
+  
+  C.prototype.registerButtons = function () {
+    // Add show score button
+    this.addSolutionButton();
+    this.addRetryButton();
+  }
 
   /**
    * Makes sure element gets correct opacity when hovered.
@@ -195,12 +212,8 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.addSolutionButton = function () {
     var that = this;
-
-    if (this._$solutionButton !== undefined) {
-      return;
-    }
-
-    this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
+    
+    this.addButton('show-solution', this.options.scoreShow, function () {
       if (that.getAnswerGiven()) {
         that.showAllSolutions();
         that.showScore();
@@ -215,18 +228,12 @@ H5P.DragQuestion = (function ($) {
   C.prototype.addRetryButton = function () {
     var that = this;
 
-    if (this._$retryButton !== undefined) {
-      return;
-    }
-
-    this._$retryButton = $('<button type="button" class="h5p-button h5p-retry-button">' + this.options.tryAgain + '</button>')
-      .appendTo(this.$container)
-      .click(function () {
-        that.resetTask();
-        that._$solutionButton.show();
-        that._$retryButton.hide();
-      })
-      .hide();
+    this.addButton('try-again', this.options.tryAgain, function () {
+      that.resetTask();
+      that.showButton('show-solution');
+      that.hideButton('try-again');
+    });
+    this.hideButton('try-again');
   };
 
   /**
@@ -339,16 +346,16 @@ H5P.DragQuestion = (function ($) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
     if (!skipVisuals) {
-      this._$solutionButton.hide();
+      this.hideButton('show-solution');
     }
 
     if (this.options.behaviour.enableRetry && !skipVisuals) {
-      this._$retryButton.show();
+      this.showButton('try-again');
     }
 
-    if (this._$solutionButton !== undefined && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
+    if (this.hasButton('show-solution') && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
       // Max score reached, or the user cannot try again.
-      this._$retryButton.hide();
+      this.hideButton('try-again');
     }
   };
 
@@ -360,8 +367,8 @@ H5P.DragQuestion = (function ($) {
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
     //Hide solution button:
-    this._$solutionButton.hide();
-    this._$retryButton.hide();
+    this.hideButton('show-solution');
+    this.hideButton('try-again');
 
     //Disable dragging during "solution" mode
     this.disableDraggables();
@@ -385,9 +392,9 @@ H5P.DragQuestion = (function ($) {
     });
 
     //Show solution button
-    this._$solutionButton.show();
-    this._$retryButton.hide();
-    this.showScore();
+    this.showButton('show-solution');
+    this.hideButton('try-again');
+    this.setFeedback();
 
   };
 
@@ -457,13 +464,7 @@ H5P.DragQuestion = (function ($) {
    * Shows the score to the user when the score button i pressed.
    */
   C.prototype.showScore = function () {
-    if (this.$score === undefined) {
-      this.$score = $('<div/>', {
-        'class': 'h5p-score'
-      }).prependTo(this.$container);
-    }
-
-    this.$score.text(this.rawPoints + '/' + this.calculateMaxScore());
+    this.setFeedback(this.rawPoints + '/' + this.calculateMaxScore(), this.rawPoints, this.calculateMaxScore());
   };
 
   /**
