@@ -6,6 +6,12 @@
   font-size: inherit;
   line-height: inherit;
 }
+.h5p-dragquestion > .h5p-question-content {
+  margin: 0;
+}
+.h5p-dragquestion-has-no-background  > .h5p-question-content{
+  border-bottom: 1px solid #eee;
+}
 .h5p-dragquestion > .h5p-question-content > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
@@ -14,6 +20,7 @@
   margin: 0 auto;
   overflow: hidden;
 }
+
 .h5p-dragquestion .h5p-static {
   background: #fff;
   position: absolute;

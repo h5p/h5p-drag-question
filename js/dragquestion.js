@@ -141,6 +141,10 @@ H5P.DragQuestion = (function ($) {
     this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+      this.$questionContainer.addClass('h5p-dragquestion-has-background');
+    }
+    else {
+      this.$questionContainer.addClass('h5p-dragquestion-has-no-background');
     }
 
     var $element, task = this.options.question.task;
