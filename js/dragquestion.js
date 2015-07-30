@@ -21,6 +21,7 @@ H5P.DragQuestion = (function ($) {
       scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
+      feedback: "You got @score of @total points.",
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -468,7 +469,9 @@ H5P.DragQuestion = (function ($) {
    * Shows the score to the user when the score button i pressed.
    */
   C.prototype.showScore = function () {
-    this.setFeedback(this.rawPoints + '/' + this.calculateMaxScore(), this.rawPoints, this.calculateMaxScore());
+    var maxScore = this.calculateMaxScore();
+    var scoreText = this.options.feedback.replace('@score', this.rawPoints).replace('@total', maxScore);
+    this.setFeedback(scoreText, this.rawPoints, this.calculateMaxScore());
   };
 
   /**

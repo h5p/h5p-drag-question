@@ -22,6 +22,14 @@
     "common": true
   },
   {
+    "label": "Feedback text",
+    "name": "feedback",
+    "type": "text",
+    "default": "You got @score of @total points.",
+    "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'",
+    "common": true
+  },
+  {
     "name": "question",
     "type": "group",
     "widget": "wizard",

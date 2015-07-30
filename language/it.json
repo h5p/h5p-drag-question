@@ -10,6 +10,10 @@
       "label": "Testo dell'etichetta Soluzione corretta"
     },
     {
+      "label": "Testo del Feedback",
+      "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
+    },
+    {
       "fields": [
         {
           "label": "Impostazioni",
