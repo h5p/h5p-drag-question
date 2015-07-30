@@ -258,6 +258,10 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.resize = function () {
     // Make sure we use all the height we can get. Needed to scale up.
+    if (this.$container === undefined) {
+      // Not attached yet - nothing to resize....
+      return;
+    }
     this.$container.css('height', '99999px');
 
     var size = this.options.question.settings.size;
