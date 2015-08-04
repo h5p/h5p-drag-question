@@ -129,7 +129,7 @@ H5P.DragQuestion = (function ($) {
    // ... and buttons
    self.registerButtons();
  };
-  
+
   /**
    * Append field to wrapper.
    *
@@ -172,7 +172,7 @@ H5P.DragQuestion = (function ($) {
     }
     return this.$container;
   };
-  
+
   C.prototype.registerButtons = function () {
     // Add show score button
     this.addSolutionButton();
@@ -217,7 +217,7 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.addSolutionButton = function () {
     var that = this;
-    
+
     this.addButton('show-solution', this.options.scoreShow, function () {
       if (that.getAnswerGiven()) {
         that.showAllSolutions();
@@ -276,6 +276,12 @@ H5P.DragQuestion = (function ($) {
     else {
       // Narrower
       height = width / ratio;
+    }
+
+    // No parent size, set defaults
+    if (width <= 0 || height <= 0) {
+      width = size.width;
+      height = size.height;
     }
 
     this.$container.css({
