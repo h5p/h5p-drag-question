@@ -2,6 +2,11 @@
   display: block;
   background: #fff;
 }
+
+html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen {
+  overflow-y: auto;
+}
+
 .h5p-dragquestion p {
   font-size: inherit;
   line-height: inherit;

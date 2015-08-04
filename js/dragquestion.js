@@ -10,6 +10,8 @@ H5P.DragQuestion = (function ($) {
   /**
    * Initialize module.
    *
+   * @class
+   * @extend H5P.Question
    * @param {Object} options Run parameters
    * @param {Number} id Content identification
    */
@@ -111,6 +113,18 @@ H5P.DragQuestion = (function ($) {
         self.trigger('resize');
       }
     });
+
+    this.on('enterFullScreen', function () {
+      if (this.$container) {
+        this.$container.parents('.h5p-content').css('height', '100%');
+      }
+    });
+
+    this.on('exitFullScreen', function () {
+      if (this.$container) {
+        this.$container.parents('.h5p-content').css('height', 'auto');
+      }
+    });
   }
 
   C.prototype = Object.create(H5P.Question.prototype);
@@ -142,10 +156,10 @@ H5P.DragQuestion = (function ($) {
     this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
-      this.$questionContainer.addClass('h5p-dragquestion-has-background');
+      this.getQuestionContainer().addClass('h5p-dragquestion-has-background');
     }
     else {
-      this.$questionContainer.addClass('h5p-dragquestion-has-no-background');
+      this.getQuestionContainer().addClass('h5p-dragquestion-has-no-background');
     }
 
     var $element, task = this.options.question.task;
@@ -177,7 +191,7 @@ H5P.DragQuestion = (function ($) {
     // Add show score button
     this.addSolutionButton();
     this.addRetryButton();
-  }
+  };
 
   /**
    * Makes sure element gets correct opacity when hovered.
@@ -266,22 +280,19 @@ H5P.DragQuestion = (function ($) {
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
-    var width = this.$container.parent().width();
-    var height = this.$container.parent().height();
+    var questionContainer = this.getQuestionContainer();
+    var parentContainer = this.$container.parent();
+    // Use the larger of question container and parent container as basis for resize.
+    var useQuestionContainer = questionContainer.width() > parentContainer.width();
+    var width = useQuestionContainer ? questionContainer.width() : parentContainer.width();
+    var height = useQuestionContainer ? questionContainer.height() : parentContainer.height();
 
-    if (width / height >= ratio) {
-      // Wider
-      width = height * ratio;
-    }
-    else {
-      // Narrower
-      height = width / ratio;
-    }
-
-    // No parent size, set defaults
-    if (width <= 0 || height <= 0) {
+    // Do not scale below min width
+    if (width <= size.width) {
       width = size.width;
       height = size.height;
+    } else {
+      height = width / ratio;
     }
 
     this.$container.css({
