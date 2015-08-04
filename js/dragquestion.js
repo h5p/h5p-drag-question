@@ -754,7 +754,7 @@ H5P.DragQuestion = (function ($) {
         backgroundColor: 'rgb(255,255,255)',
         backgroundImage: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%)',
         border: '0.1em solid #c6c6c6',
-        boxShadow: '0em 0em 0.4em rgba(0,0,0,0.5)'
+        boxShadow: '0em 0em 0.2em rgba(0,0,0,0.2)'
       },
       appendTo: $container
     })
