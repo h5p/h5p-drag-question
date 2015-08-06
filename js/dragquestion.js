@@ -601,9 +601,8 @@ H5P.DragQuestion = (function ($) {
    */
   C.setOpacity = function ($element, property, opacity) {
     if (property === 'background') {
-      // Set both color and gradient.
+      // Set color.
       C.setOpacity($element, 'backgroundColor', opacity);
-      C.setOpacity($element, 'backgroundImage', opacity);
       return;
     }
 
@@ -749,8 +748,7 @@ H5P.DragQuestion = (function ($) {
         top: self.y + '%',
         width: self.width + 'em',
         height: self.height + 'em',
-        backgroundColor: 'rgb(255,255,255)',
-        backgroundImage: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%)',
+        backgroundColor: 'rgb(237,237,237)',
         border: '0.1em solid #c6c6c6'
       },
       appendTo: $container
@@ -1054,7 +1052,7 @@ H5P.DragQuestion = (function ($) {
 
     // Prepare inner html
     // Style fallback in case we're created before we're attached.
-    var style = ' style="background-color: rgb(224,224,224); background-image: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%); background-image: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);"';
+    var style = ' style="background-color: rgb(237,237,237);"';
     var html = '<div class="h5p-inner"' + style + '></div>';
     var extraClass = '';
     if (self.showLabel) {

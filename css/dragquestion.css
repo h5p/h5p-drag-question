@@ -65,9 +65,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   -moz-box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
   box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
 
-  background: rgb(255,255,255);
-  background: -webkit-linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%);
-  background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%);
+  background: rgb(237,237,237);
 
   z-index: 3;
   -webkit-user-select: none;
@@ -75,18 +73,14 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   -ms-user-select: none;
 }
 .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled):hover {
-  border: 0.1em solid #ceb8d2;
+  border: 0.1em solid rgb(212,190,216);
   color: #663366;
-  background: rgb(234,224,236);
-  background: -webkit-linear-gradient(to bottom, rgb(234,224,236) 0%, rgb(212,190,216) 100%);
-  background: linear-gradient(to bottom, rgb(234,224,236) 0%, rgb(212,190,216) 100%);
+  background: rgb(238,228,239);
 }
 .h5p-dragquestion .h5p-draggable.h5p-dropped {
   color: #235e7c;
   border: 0.1em solid #a9c3d0;
-  background: rgb(227,234,238);
-  background: -webkit-linear-gradient(to bottom, rgb(227,234,238) 0%, rgb(203,222,231) 100%);
-  background: linear-gradient(to bottom, rgb(227,234,238) 0%, rgb(203,222,231) 100%);
+  background: #e3eaee;
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
@@ -123,16 +117,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   border: 0.1em solid #9dd8bb;
   box-shadow: none;
   background: #9dd8bb;
-  background: -webkit-linear-gradient(to bottom, #9dd8bb 0%, #9dd8bb 100%);
-  background: linear-gradient(to bottom, #9dd8bb 0%, #9dd8bb 100%);
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong {
   border: 0.1em solid #f7d0d0;
   color: #b71c1c;
   background: #f7d0d0;
-  background: -webkit-linear-gradient(to bottom, #f7d0d0 0%, #f7d0d0 100%);
-  background: linear-gradient(to bottom, #f7d0d0 0%, #f7d0d0 100%);
 }
 .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropped.h5p-correct {
   text-align: left;
@@ -181,8 +171,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   background: rgb(245,245,245);
-  background: -webkit-linear-gradient(rgb(245,245,245) 0%, rgb(238,238,238) 100%);
-  background: linear-gradient(rgb(245,245,245) 0%, rgb(238,238,238) 100%);
 }
 
 .h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
@@ -195,9 +183,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
-  background: rgb(212,190,216);
-  background: -webkit-linear-gradient(to bottom, rgb(212,190,216) 0%, rgb(234,224,236) 100%);
-  background: linear-gradient(to bottom, rgb(212,190,216) 0%, rgb(234,224,236) 100%);
+  background: rgb(234,224,236);
 }
 
 .h5p-dragquestion .h5p-label {
