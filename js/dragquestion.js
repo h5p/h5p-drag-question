@@ -878,14 +878,27 @@ H5P.DragQuestion = (function ($) {
           }
         });
 
-        element.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+        // Reset element style
+        element.removeClass('h5p-wrong')
+          .removeClass('h5p-correct')
+          .removeClass('h5p-dropped')
+          .css({
+            border: '',
+            backgroundColor: ''
+          });
         C.setElementOpacity(element, self.backgroundOpacity);
       }
     });
     // Draggable removed from dropzone.
     delete self.element.dropZone;
-    // Remove feedback classes from initial element and delete the dropzone.
-    self.element.$.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+    // Reset style on initial element and delete the dropzone.
+    self.element.$.removeClass('h5p-wrong')
+      .removeClass('h5p-correct')
+      .removeClass('h5p-dropped')
+      .css({
+        border: '',
+        backgroundColor: ''
+      });
     C.setElementOpacity(self.element.$, self.backgroundOpacity);
   };
 
