@@ -138,8 +138,12 @@ H5P.DragQuestion = (function ($) {
  C.prototype.registerDomElements = function () {
    var self = this;
 
+   // Register introduction section
+   self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+
    // Register task content area
    self.setContent(self.createQuestionContent());
+
    // ... and buttons
    self.registerButtons();
  };
