@@ -742,10 +742,6 @@ H5P.DragQuestion = (function ($) {
       element = self.elements[index];
     }
 
-    console.log("attaching element!");
-    console.log(element);
-    console.log("height");
-    console.log(self.height);
     // Attach element
     element.$ = $('<div/>', {
       class: 'h5p-draggable',
@@ -1079,9 +1075,6 @@ H5P.DragQuestion = (function ($) {
       extraClass = ' h5p-has-label';
     }
 
-    console.log("setting dropzone height");
-    console.log(html);
-    console.log(self.height);
     // Create drop zone element
     var $dropZone = $('<div/>', {
       class: 'h5p-dropzone' + extraClass,
