@@ -283,14 +283,12 @@ H5P.DragQuestion = (function ($) {
     // Use the larger of question container and parent container as basis for resize.
     var useQuestionContainer = questionContainer.width() > parentContainer.width();
     var width = useQuestionContainer ? questionContainer.width() : parentContainer.width();
-    var height = useQuestionContainer ? questionContainer.height() : parentContainer.height();
+    var height = width / ratio;
 
-    // Do not scale below min width
-    if (width <= size.width) {
+    // Set natural size if no parent width
+    if (width <= 0) {
       width = size.width;
       height = size.height;
-    } else {
-      height = width / ratio;
     }
 
     this.$container.css({
@@ -740,6 +738,10 @@ H5P.DragQuestion = (function ($) {
       element = self.elements[index];
     }
 
+    console.log("attaching element!");
+    console.log(element);
+    console.log("height");
+    console.log(self.height);
     // Attach element
     element.$ = $('<div/>', {
       class: 'h5p-draggable',
@@ -1073,6 +1075,9 @@ H5P.DragQuestion = (function ($) {
       extraClass = ' h5p-has-label';
     }
 
+    console.log("setting dropzone height");
+    console.log(html);
+    console.log(self.height);
     // Create drop zone element
     var $dropZone = $('<div/>', {
       class: 'h5p-dropzone' + extraClass,
