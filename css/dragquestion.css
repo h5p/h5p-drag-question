@@ -61,7 +61,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   -moz-box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
   box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
 
-  background: rgb(237,237,237);
+  background: rgb(221,221,221);
 
   z-index: 3;
   -webkit-user-select: none;
@@ -71,12 +71,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
 .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled):hover {
   border: 0.1em solid rgb(212,190,216);
   color: #663366;
-  background: rgb(238,228,239);
+  background: #e4d2e4;
 }
 .h5p-dragquestion .h5p-draggable.h5p-dropped {
-  color: #235e7c;
+  color: #1c4b62;
   border: 0.1em solid #a9c3d0;
-  background: #e3eaee;
+  background: #bcced5;
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
@@ -192,7 +192,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   border-radius: 0.25em 0.25em 0 0;
   position: absolute;
 
-  background: rgb(238,238,238);
+  background: #ddd;
 }
 
 .h5p-dragquestion .h5p-dropzone-answer {

@@ -750,7 +750,7 @@ H5P.DragQuestion = (function ($) {
         top: self.y + '%',
         width: self.width + 'em',
         height: self.height + 'em',
-        backgroundColor: 'rgb(237,237,237)',
+        backgroundColor: 'rgb(221,221,221)',
         border: '0.1em solid #c6c6c6'
       },
       appendTo: $container
@@ -1067,7 +1067,7 @@ H5P.DragQuestion = (function ($) {
 
     // Prepare inner html
     // Style fallback in case we're created before we're attached.
-    var style = ' style="background-color: rgb(237,237,237);"';
+    var style = ' style="background-color: rgb(221,221,221);"';
     var html = '<div class="h5p-inner"' + style + '></div>';
     var extraClass = '';
     if (self.showLabel) {
