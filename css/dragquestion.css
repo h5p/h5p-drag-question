@@ -78,6 +78,9 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   border: 0.1em solid #a9c3d0;
   background: #e3eaee;
 }
+.h5p-dragquestion .h5p-draggable > img {
+  pointer-events: none;
+}
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
   margin: 0.5em 0.5em 0.5em 2.25em;
