@@ -10,9 +10,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
   overflow-x: hidden;
 }
 
-.h5p-dragquestion > .h5p-question-content {
-  margin: 0;
-}
 .h5p-dragquestion-has-no-background  > .h5p-question-content{
   border-bottom: 1px solid #eee;
 }
