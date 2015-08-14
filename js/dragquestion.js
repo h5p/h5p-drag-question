@@ -219,13 +219,12 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Makes element background, border and shadow transparent.
+   * Makes element background transparent.
    *
    * @param {jQuery} $element
    * @param {Number} opacity
    */
   C.setElementOpacity = function ($element, opacity) {
-    C.setOpacity($element, 'borderColor', opacity);
     C.setOpacity($element, 'background', opacity);
   };
 
@@ -569,32 +568,6 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Updates alpha channel for colors in the given style.
-   *
-   * @param {String} style
-   * @param {String} prefix
-   * @param {Number} alpha
-   */
-  C.setAlphas = function (style, prefix, alpha) {
-    var colorStart = style.indexOf(prefix);
-
-    while (colorStart !== -1) {
-      var colorEnd = style.indexOf(')', colorStart);
-      var channels = style.substring(colorStart + prefix.length, colorEnd).split(',');
-
-      // Set alpha channel
-      channels[3] = (channels[3] !== undefined ? parseFloat(channels[3]) * alpha : alpha);
-
-      style = style.substring(0, colorStart) + 'rgba(' + channels.join(',') + style.substring(colorEnd, style.length);
-
-      // Look for more colors
-      colorStart = style.indexOf(prefix, colorEnd);
-    }
-
-    return style;
-  };
-
-  /**
    * Makes element background, border and shadow transparent.
    *
    * @param {jQuery} $element
@@ -602,54 +575,7 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} opacity
    */
   C.setOpacity = function ($element, property, opacity) {
-    if (property === 'background') {
-      // Set color.
-      C.setOpacity($element, 'backgroundColor', opacity);
-      return;
-    }
-
-    opacity = (opacity === undefined ? 1 : opacity / 100);
-
-    // Private. Get css properties objects.
-    function getProperties(property, value) {
-      switch (property) {
-        case 'borderColor':
-          return {
-            borderTopColor: value,
-            borderRightColor: value,
-            borderBottomColor: value,
-            borderLeftColor: value
-          };
-
-        default:
-          var properties = {};
-          properties[property] = value;
-          return properties;
-      }
-    }
-
-    var original = $element.css(property);
-
-    // Reset css to be sure we're using CSS and not inline values.
-    var properties = getProperties(property, '');
-    $element.css(properties);
-
-    // Determine prop and assume all props are the same and use the first.
-    for (var prop in properties) {
-      break;
-    }
-
-    // Get value from css
-    var style = $element.css(prop);
-    if (style === '' || style === 'none') {
-      // No value from CSS, fall back to original
-      style = original;
-    }
-
-    style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
-    style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
-
-    $element.css(getProperties(property, style));
+    $element.css('opacity', opacity / 100);
   };
 
   /**
@@ -749,9 +675,7 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em',
-        backgroundColor: 'rgb(221,221,221)',
-        border: '0.1em solid #c6c6c6'
+        height: self.height + 'em'
       },
       appendTo: $container
     })
@@ -886,7 +810,7 @@ H5P.DragQuestion = (function ($) {
           .removeClass('h5p-dropped')
           .css({
             border: '',
-            backgroundColor: ''
+            background: ''
           });
         C.setElementOpacity(element, self.backgroundOpacity);
       }
@@ -899,7 +823,7 @@ H5P.DragQuestion = (function ($) {
       .removeClass('h5p-dropped')
       .css({
         border: '',
-        backgroundColor: ''
+        background: ''
       });
     C.setElementOpacity(self.element.$, self.backgroundOpacity);
   };
@@ -1066,9 +990,7 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Prepare inner html
-    // Style fallback in case we're created before we're attached.
-    var style = ' style="background-color: rgb(221,221,221);"';
-    var html = '<div class="h5p-inner"' + style + '></div>';
+    var html = '<div class="h5p-inner"></div>';
     var extraClass = '';
     if (self.showLabel) {
       html = '<div class="h5p-label">' + self.label + '</div>' + html;
