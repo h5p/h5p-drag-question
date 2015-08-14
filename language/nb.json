@@ -14,7 +14,7 @@
     },
     {
       "label": "Tilbakemeldinger",
-      "default": "Du fikk @score av @total poeng.",
+      "default": "Du plasserte @score av totalt @total rett.",
       "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {

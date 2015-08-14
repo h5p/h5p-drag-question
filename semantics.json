@@ -25,7 +25,7 @@
     "label": "Feedback text",
     "name": "feedback",
     "type": "text",
-    "default": "You got @score of @total points.",
+    "default": "You placed @score out of @total correct.",
     "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'",
     "common": true
   },

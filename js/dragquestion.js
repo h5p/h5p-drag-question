@@ -23,7 +23,7 @@ H5P.DragQuestion = (function ($) {
       scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
-      feedback: "You got @score of @total points.",
+      feedback: "You placed @score out of @total correct.",
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -234,7 +234,7 @@ H5P.DragQuestion = (function ($) {
   C.prototype.addSolutionButton = function () {
     var that = this;
 
-    this.addButton('show-solution', this.options.scoreShow, function () {
+    this.addButton('check-answer', this.options.scoreShow, function () {
       that.showAllSolutions();
       that.showScore();
       that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
@@ -249,7 +249,7 @@ H5P.DragQuestion = (function ($) {
 
     this.addButton('try-again', this.options.tryAgain, function () {
       that.resetTask();
-      that.showButton('show-solution');
+      that.showButton('check-answer');
       that.hideButton('try-again');
     }, false);
   };
@@ -369,14 +369,14 @@ H5P.DragQuestion = (function ($) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
     if (!skipVisuals) {
-      this.hideButton('show-solution');
+      this.hideButton('check-answer');
     }
 
     if (this.options.behaviour.enableRetry && !skipVisuals) {
       this.showButton('try-again');
     }
 
-    if (this.hasButton('show-solution') && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
+    if (this.hasButton('check-answer') && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
       // Max score reached, or the user cannot try again.
       this.hideButton('try-again');
     }
@@ -390,7 +390,7 @@ H5P.DragQuestion = (function ($) {
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
     //Hide solution button:
-    this.hideButton('show-solution');
+    this.hideButton('check-answer');
     this.hideButton('try-again');
 
     //Disable dragging during "solution" mode
@@ -415,7 +415,7 @@ H5P.DragQuestion = (function ($) {
     });
 
     //Show solution button
-    this.showButton('show-solution');
+    this.showButton('check-answer');
     this.hideButton('try-again');
     this.setFeedback();
 
