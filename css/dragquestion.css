@@ -3,9 +3,7 @@
   background: #fff;
 }
 
-html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen,
-.h5p-interactive-video .h5p-frame.h5p-dragquestion,
-.h5p-interactive-video .h5p-dialog[data-lib="H5P.DragQuestion"] .h5p-dialog-inner {
+html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen {
   overflow-y: auto;
   overflow-x: hidden;
 }

@@ -235,11 +235,9 @@ H5P.DragQuestion = (function ($) {
     var that = this;
 
     this.addButton('show-solution', this.options.scoreShow, function () {
-      if (that.getAnswerGiven()) {
-        that.showAllSolutions();
-        that.showScore();
-        that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
-      }
+      that.showAllSolutions();
+      that.showScore();
+      that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
     });
   };
 
