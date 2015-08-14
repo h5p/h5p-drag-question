@@ -163,7 +163,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen {
   position: relative;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background: #ddd;
+  background: rgb(245, 245, 245);
 }
 
 .h5p-dragquestion .h5p-dropzone.h5p-has-label > .h5p-inner {
