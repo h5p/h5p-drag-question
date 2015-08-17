@@ -283,7 +283,9 @@ H5P.DragQuestion = (function ($) {
     var parentContainer = this.$container.parent();
     // Use the larger of question container and parent container as basis for resize.
     var useQuestionContainer = questionContainer.width() > parentContainer.width();
-    var width = useQuestionContainer ? questionContainer.width() : parentContainer.width();
+    var width = useQuestionContainer ?
+      questionContainer.width() - (parseFloat(parentContainer.css('margin-left').replace('px', '')) + parseFloat(parentContainer.css('margin-right').replace('px', ''))) :
+      parentContainer.width();
     var height = width / ratio;
 
     // Set natural size if no parent width
