@@ -20,6 +20,11 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen {
   overflow: hidden;
 }
 
+.h5p-dragquestion > .h5p-question-content {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .h5p-dragquestion .h5p-static {
   background: #fff;
   position: absolute;
