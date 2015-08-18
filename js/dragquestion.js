@@ -81,7 +81,7 @@ H5P.DragQuestion = (function ($) {
 
       // Restore answers from last session
       var answers;
-      if (contentData && contentData.previousState !== undefined) {
+      if (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers[i] !== undefined) {
         answers = contentData.previousState.answers[i];
       }
 
