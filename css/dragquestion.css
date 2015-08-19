@@ -8,7 +8,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-fullscreen {
   overflow-x: hidden;
 }
 
-.h5p-dragquestion-has-no-background  > .h5p-question-content{
+.h5p-question-content.h5p-dragquestion-has-no-background {
   border-bottom: 1px solid #eee;
 }
 .h5p-dragquestion > .h5p-question-content > .h5p-inner {

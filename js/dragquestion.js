@@ -141,8 +141,14 @@ H5P.DragQuestion = (function ($) {
    // Register introduction section
    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
 
+
+   // Set class if no background
+   var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
+
    // Register task content area
-   self.setContent(self.createQuestionContent());
+   self.setContent(self.createQuestionContent(), {
+     'class': contentClass
+   });
 
    // ... and buttons
    self.registerButtons();
@@ -160,10 +166,6 @@ H5P.DragQuestion = (function ($) {
     this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
-      this.getQuestionContainer().addClass('h5p-dragquestion-has-background');
-    }
-    else {
-      this.getQuestionContainer().addClass('h5p-dragquestion-has-no-background');
     }
 
     var $element, task = this.options.question.task;
