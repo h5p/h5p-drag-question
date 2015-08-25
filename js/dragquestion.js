@@ -17,6 +17,7 @@ H5P.DragQuestion = (function ($) {
    */
   function C(options, contentId, contentData) {
     var self = this;
+    var i;
     this.id = this.contentId = contentId;
     H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
@@ -55,7 +56,7 @@ H5P.DragQuestion = (function ($) {
     // Create map over correct drop zones for elements
     var task = this.options.question.task;
     this.correctDZs = [];
-    for (var i = 0; i < task.dropZones.length; i++) {
+    for (i = 0; i < task.dropZones.length; i++) {
       var correctElements = task.dropZones[i].correctElements;
       for (var j = 0; j < correctElements.length; j++) {
         var correctElement = correctElements[j];
@@ -71,7 +72,7 @@ H5P.DragQuestion = (function ($) {
     // TODO: Initialize elements and drop zones here!
 
     // Add draggable elements
-    for (var i = 0; i < task.elements.length; i++) {
+    for (i = 0; i < task.elements.length; i++) {
       var element = task.elements[i];
 
       if (element.dropZones === undefined || !element.dropZones.length) {
@@ -97,7 +98,7 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Add drop zones
-    for (var i = 0; i < task.dropZones.length; i++) {
+    for (i = 0; i < task.dropZones.length; i++) {
       var dropZone = task.dropZones[i];
 
       if (this.blankIsCorrect && dropZone.correctElements.length) {
@@ -160,6 +161,7 @@ H5P.DragQuestion = (function ($) {
    * @param {jQuery} $container
    */
   C.prototype.createQuestionContent = function () {
+    var i;
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
 
@@ -171,7 +173,7 @@ H5P.DragQuestion = (function ($) {
     var $element, task = this.options.question.task;
 
     // Add elements (static and draggable)
-    for (var i = 0; i < task.elements.length; i++) {
+    for (i = 0; i < task.elements.length; i++) {
       var element = task.elements[i];
 
       if (element.dropZones !== undefined && element.dropZones.length !== 0) {
@@ -187,7 +189,7 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Attach drop zones
-    for (var i = 0; i < this.dropZones.length; i++) {
+    for (i = 0; i < this.dropZones.length; i++) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
     return this.$container;
