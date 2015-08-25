@@ -490,8 +490,8 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
-    var scoreText = this.options.feedback.replace('@score', this.rawPoints).replace('@total', maxScore);
-    this.setFeedback(scoreText, this.rawPoints, this.calculateMaxScore());
+    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+    this.setFeedback(scoreText, this.points, maxScore);
   };
 
   /**
