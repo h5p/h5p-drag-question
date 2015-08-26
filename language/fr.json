@@ -14,6 +14,7 @@
         {
           "label": "Réglages",
           "fields": [
+            {},
             {
               "label": "image de fond",
               "description": "Optionnel. Selectionner une image de fond pour l'activité glisser et déposer."
