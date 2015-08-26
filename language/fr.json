@@ -1,24 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Vérifier bouton réponse",
-      "default": "Vérifier"
+      "label": "Bouton Vérifier"
     },
     {
-      "label": "Réessayer bouton",
-      "default": "Réessayer"
+      "label": "Bouton Réessayer"
     },
     {
-      "label": "Texte solution",
-      "default": "Solution"
+      "label": "Texte solution"
     },
     {
       "fields": [
         {
           "label": "Réglages",
           "fields": [
-            {
-            },
             {
               "label": "image de fond",
               "description": "Optionnel. Selectionner une image de fond pour l'activité glisser et déposer."
@@ -30,7 +25,7 @@
           ]
         },
         {
-          "label": "Tâche",
+          "label": "Tache",
           "description": "Commencer par glisser vos étiquettes.<br/>Suivant, déposer vos étiquettes dans les trous et Vérifier si elles sont dans la zone approppriée.<br/>Fin, corriger vos étiquettes et Vérifier si vous avez la bonne réponse.",
           "fields": [
             {
@@ -39,15 +34,13 @@
               "field": {
                 "label": "Element",
                 "fields": [
-                  {
-                    "description": "Choisissez le contenu que vous voulez ajouer"
-                  },
+                  {},
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Selectionner la zone de dépôt"
+                    "label": "Sélectionner la zone de dépôt"
                   },
                   {
                     "label": "Opacité"
@@ -76,7 +69,7 @@
                   {},
                   {},
                   {
-                    "label": "Selectionner les éléments corrects"
+                    "label": "Sélectionner les éléments corrects"
                   },
                   {
                     "label": "Opacité"
@@ -112,10 +105,10 @@
         },
         {
           "label": "Donner une direction pour l'ensemble de la tâche",
-          "description": "Désactiverpour donner une direction pour chaque étiquette placée correctement."
+          "description": "Désactiver pour donner une direction pour chaque étiquette placée correctement."
         },
         {
-          "label": "L'utilisateur doit entrer la solution avant d'afficher le résultat"
+          "label": "L'utilisateur doit entrer la solution avant d'afficher le résultat."
         }
       ]
     }
