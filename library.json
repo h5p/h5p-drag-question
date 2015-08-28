@@ -1,6 +1,7 @@
 {
   "title": "Drag and Drop",
   "description": "Drag and drop the elements into the correct drop zones.",
+  "contentType": "Question",
   "majorVersion": 1,
   "minorVersion": 4,
   "patchVersion": 1,
