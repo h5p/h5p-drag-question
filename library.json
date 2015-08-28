@@ -1,6 +1,6 @@
 {
-  "title": "Drag and drop question",
-  "description": "Drag and drop question type supporting many to many relations.",
+  "title": "Drag and Drop",
+  "description": "Drag and drop the elements into the correct drop zones.",
   "majorVersion": 1,
   "minorVersion": 4,
   "patchVersion": 1,
