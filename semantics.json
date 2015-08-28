@@ -43,7 +43,7 @@
             "name": "questionTitle",
             "type": "text",
             "label": "The title of this question",
-            "default": "Drag and drop",
+            "default": "Drag and Drop",
             "description": "Used in summaries, statistics etc."
           },
           {
