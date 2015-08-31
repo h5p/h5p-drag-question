@@ -48,7 +48,7 @@ H5P.DragQuestion = (function ($) {
 
     this.draggables = [];
     this.dropZones = [];
-    this.answered = (contentData && contentData.previousState !== undefined);
+    this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
     this.blankIsCorrect = true;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
@@ -407,6 +407,7 @@ H5P.DragQuestion = (function ($) {
   C.prototype.resetTask = function () {
     this.points = 0;
     this.rawPoints = 0;
+    this.answered = false;
 
     //Enables Draggables
     this.enableDraggables();
