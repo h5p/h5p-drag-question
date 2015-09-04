@@ -10,17 +10,21 @@ H5P.DragQuestion = (function ($) {
   /**
    * Initialize module.
    *
+   * @class
+   * @extend H5P.Question
    * @param {Object} options Run parameters
    * @param {Number} id Content identification
    */
   function C(options, contentId, contentData) {
     var self = this;
+    var i;
     this.id = this.contentId = contentId;
-    H5P.EventDispatcher.call(this);
+    H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
+      feedback: "You placed @score out of @total correct.",
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -44,7 +48,7 @@ H5P.DragQuestion = (function ($) {
 
     this.draggables = [];
     this.dropZones = [];
-    this.answered = (contentData && contentData.previousState !== undefined);
+    this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
     this.blankIsCorrect = true;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
@@ -52,7 +56,7 @@ H5P.DragQuestion = (function ($) {
     // Create map over correct drop zones for elements
     var task = this.options.question.task;
     this.correctDZs = [];
-    for (var i = 0; i < task.dropZones.length; i++) {
+    for (i = 0; i < task.dropZones.length; i++) {
       var correctElements = task.dropZones[i].correctElements;
       for (var j = 0; j < correctElements.length; j++) {
         var correctElement = correctElements[j];
@@ -68,7 +72,7 @@ H5P.DragQuestion = (function ($) {
     // TODO: Initialize elements and drop zones here!
 
     // Add draggable elements
-    for (var i = 0; i < task.elements.length; i++) {
+    for (i = 0; i < task.elements.length; i++) {
       var element = task.elements[i];
 
       if (element.dropZones === undefined || !element.dropZones.length) {
@@ -87,14 +91,14 @@ H5P.DragQuestion = (function ($) {
 
       // Create new draggable instance
       this.draggables[i] = new Draggable(element, i, answers);
-      this.draggables[i].on('attempted', function () {
+      this.draggables[i].on('interacted', function () {
         self.answered = true;
-        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'attempted');
+        self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
     }
 
     // Add drop zones
-    for (var i = 0; i < task.dropZones.length; i++) {
+    for (i = 0; i < task.dropZones.length; i++) {
       var dropZone = task.dropZones[i];
 
       if (this.blankIsCorrect && dropZone.correctElements.length) {
@@ -105,33 +109,71 @@ H5P.DragQuestion = (function ($) {
     }
 
     this.on('resize', self.resize, self);
+    this.on('domChanged', function(event) {
+      if (self.contentId == event.data.contentId) {
+        self.trigger('resize');
+      }
+    });
+
+    this.on('enterFullScreen', function () {
+      if (this.$container) {
+        this.$container.parents('.h5p-content').css('height', '100%');
+      }
+    });
+
+    this.on('exitFullScreen', function () {
+      if (this.$container) {
+        this.$container.parents('.h5p-content').css('height', 'auto');
+      }
+    });
   }
 
-  C.prototype = Object.create(H5P.EventDispatcher.prototype);
+  C.prototype = Object.create(H5P.Question.prototype);
   C.prototype.constructor = C;
+
+
+  /**
+  * Registers this question type's DOM elements before they are attached.
+  * Called from H5P.Question.
+  */
+ C.prototype.registerDomElements = function () {
+   var self = this;
+
+   // Register introduction section
+   self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+
+
+   // Set class if no background
+   var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
+
+   // Register task content area
+   self.setContent(self.createQuestionContent(), {
+     'class': contentClass
+   });
+
+   // ... and buttons
+   self.registerButtons();
+ };
 
   /**
    * Append field to wrapper.
    *
    * @param {jQuery} $container
    */
-  C.prototype.attach = function ($container) {
+  C.prototype.createQuestionContent = function () {
+    var i;
     // If reattaching, we no longer show solution. So forget that we
     // might have done so before.
 
-    this.$container = $container.addClass('h5p-dragquestion').html('<div class="h5p-inner"></div>').children();
+    this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
     }
 
-    // Add show score button
-    this.addSolutionButton();
-    this.addRetryButton();
-
     var $element, task = this.options.question.task;
 
     // Add elements (static and draggable)
-    for (var i = 0; i < task.elements.length; i++) {
+    for (i = 0; i < task.elements.length; i++) {
       var element = task.elements[i];
 
       if (element.dropZones !== undefined && element.dropZones.length !== 0) {
@@ -147,13 +189,16 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Attach drop zones
-    for (var i = 0; i < this.dropZones.length; i++) {
+    for (i = 0; i < this.dropZones.length; i++) {
       this.dropZones[i].appendTo(this.$container, this.draggables);
     }
+    return this.$container;
+  };
 
-    if (this.options.behaviour.preventResize !== false) {
-      this.trigger('resize');
-    }
+  C.prototype.registerButtons = function () {
+    // Add show score button
+    this.addSolutionButton();
+    this.addRetryButton();
   };
 
   /**
@@ -178,14 +223,12 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Makes element background, border and shadow transparent.
+   * Makes element background transparent.
    *
    * @param {jQuery} $element
    * @param {Number} opacity
    */
   C.setElementOpacity = function ($element, opacity) {
-    C.setOpacity($element, 'borderColor', opacity);
-    C.setOpacity($element, 'boxShadow', opacity);
     C.setOpacity($element, 'background', opacity);
   };
 
@@ -195,16 +238,10 @@ H5P.DragQuestion = (function ($) {
   C.prototype.addSolutionButton = function () {
     var that = this;
 
-    if (this._$solutionButton !== undefined) {
-      return;
-    }
-
-    this._$solutionButton = $('<button type="button" class="h5p-button">' + this.options.scoreShow + '</button>').appendTo(this.$container).click(function () {
-      if (that.getAnswerGiven()) {
-        that.showAllSolutions();
-        that.showScore();
-        that.triggerXAPICompleted(that.getScore(), that.getMaxScore());
-      }
+    this.addButton('check-answer', this.options.scoreShow, function () {
+      that.showAllSolutions();
+      that.showScore();
+      that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
     });
   };
 
@@ -214,18 +251,11 @@ H5P.DragQuestion = (function ($) {
   C.prototype.addRetryButton = function () {
     var that = this;
 
-    if (this._$retryButton !== undefined) {
-      return;
-    }
-
-    this._$retryButton = $('<button type="button" class="h5p-button h5p-retry-button">' + this.options.tryAgain + '</button>')
-      .appendTo(this.$container)
-      .click(function () {
-        that.resetTask();
-        that._$solutionButton.show();
-        that._$retryButton.hide();
-      })
-      .hide();
+    this.addButton('try-again', this.options.tryAgain, function () {
+      that.resetTask();
+      that.showButton('check-answer');
+      that.hideButton('try-again');
+    }, false);
   };
 
   /**
@@ -245,20 +275,23 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.resize = function () {
     // Make sure we use all the height we can get. Needed to scale up.
+    if (this.$container === undefined) {
+      // Not attached yet - nothing to resize....
+      return;
+    }
     this.$container.css('height', '99999px');
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
-    var width = this.$container.parent().width();
-    var height = this.$container.parent().height();
+    var parentContainer = this.$container.parent();
+    // Use the larger of question container and parent container as basis for resize.
+    var width = parentContainer.width() - parseFloat(parentContainer.css('margin-left')) - parseFloat(parentContainer.css('margin-right'));
+    var height = width / ratio;
 
-    if (width / height >= ratio) {
-      // Wider
-      width = height * ratio;
-    }
-    else {
-      // Narrower
-      height = width / ratio;
+    // Set natural size if no parent width
+    if (width <= 0) {
+      width = size.width;
+      height = size.height;
     }
 
     this.$container.css({
@@ -338,16 +371,16 @@ H5P.DragQuestion = (function ($) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
     if (!skipVisuals) {
-      this._$solutionButton.hide();
+      this.hideButton('check-answer');
     }
 
     if (this.options.behaviour.enableRetry && !skipVisuals) {
-      this._$retryButton.show();
+      this.showButton('try-again');
     }
 
-    if (this._$solutionButton !== undefined && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
+    if (this.hasButton('check-answer') && (this.options.behaviour.enableRetry === false || this.points === this.getMaxScore())) {
       // Max score reached, or the user cannot try again.
-      this._$retryButton.hide();
+      this.hideButton('try-again');
     }
   };
 
@@ -359,8 +392,8 @@ H5P.DragQuestion = (function ($) {
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
     //Hide solution button:
-    this._$solutionButton.hide();
-    this._$retryButton.hide();
+    this.hideButton('check-answer');
+    this.hideButton('try-again');
 
     //Disable dragging during "solution" mode
     this.disableDraggables();
@@ -374,6 +407,7 @@ H5P.DragQuestion = (function ($) {
   C.prototype.resetTask = function () {
     this.points = 0;
     this.rawPoints = 0;
+    this.answered = false;
 
     //Enables Draggables
     this.enableDraggables();
@@ -384,9 +418,9 @@ H5P.DragQuestion = (function ($) {
     });
 
     //Show solution button
-    this._$solutionButton.show();
-    this._$retryButton.hide();
-    this.showScore();
+    this.showButton('check-answer');
+    this.hideButton('try-again');
+    this.setFeedback();
 
   };
 
@@ -456,13 +490,9 @@ H5P.DragQuestion = (function ($) {
    * Shows the score to the user when the score button i pressed.
    */
   C.prototype.showScore = function () {
-    if (this.$score === undefined) {
-      this.$score = $('<div/>', {
-        'class': 'h5p-score'
-      }).prependTo(this.$container);
-    }
-
-    this.$score.text(this.rawPoints + '/' + this.calculateMaxScore());
+    var maxScore = this.calculateMaxScore();
+    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+    this.setFeedback(scoreText, this.points, maxScore);
   };
 
   /**
@@ -539,32 +569,6 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Updates alpha channel for colors in the given style.
-   *
-   * @param {String} style
-   * @param {String} prefix
-   * @param {Number} alpha
-   */
-  C.setAlphas = function (style, prefix, alpha) {
-    var colorStart = style.indexOf(prefix);
-
-    while (colorStart !== -1) {
-      var colorEnd = style.indexOf(')', colorStart);
-      var channels = style.substring(colorStart + prefix.length, colorEnd).split(',');
-
-      // Set alpha channel
-      channels[3] = (channels[3] !== undefined ? parseFloat(channels[3]) * alpha : alpha);
-
-      style = style.substring(0, colorStart) + 'rgba(' + channels.join(',') + style.substring(colorEnd, style.length);
-
-      // Look for more colors
-      colorStart = style.indexOf(prefix, colorEnd);
-    }
-
-    return style;
-  };
-
-  /**
    * Makes element background, border and shadow transparent.
    *
    * @param {jQuery} $element
@@ -572,55 +576,7 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} opacity
    */
   C.setOpacity = function ($element, property, opacity) {
-    if (property === 'background') {
-      // Set both color and gradient.
-      C.setOpacity($element, 'backgroundColor', opacity);
-      C.setOpacity($element, 'backgroundImage', opacity);
-      return;
-    }
-
-    opacity = (opacity === undefined ? 1 : opacity / 100);
-
-    // Private. Get css properties objects.
-    function getProperties(property, value) {
-      switch (property) {
-        case 'borderColor':
-          return {
-            borderTopColor: value,
-            borderRightColor: value,
-            borderBottomColor: value,
-            borderLeftColor: value
-          };
-
-        default:
-          var properties = {};
-          properties[property] = value;
-          return properties;
-      }
-    }
-
-    var original = $element.css(property);
-
-    // Reset css to be sure we're using CSS and not inline values.
-    var properties = getProperties(property, '');
-    $element.css(properties);
-
-    // Determine prop and assume all props are the same and use the first.
-    for (var prop in properties) {
-      break;
-    }
-
-    // Get value from css
-    var style = $element.css(prop);
-    if (style === '' || style === 'none') {
-      // No value from CSS, fall back to original
-      style = original;
-    }
-
-    style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
-    style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
-
-    $element.css(getProperties(property, style));
+    $element.css('opacity', opacity / 100);
   };
 
   /**
@@ -720,11 +676,7 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em',
-        backgroundColor: 'rgb(255,255,255)',
-        backgroundImage: 'linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(224,224,224) 100%)',
-        border: '0.1em solid #c6c6c6',
-        boxShadow: '0em 0em 0.4em rgba(0,0,0,0.5)'
+        height: self.height + 'em'
       },
       appendTo: $container
     })
@@ -781,7 +733,7 @@ H5P.DragQuestion = (function ($) {
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
 
-            self.trigger('attempted');
+            self.trigger('interacted');
           }
           else {
             if (self.multiple) {
@@ -853,14 +805,27 @@ H5P.DragQuestion = (function ($) {
           }
         });
 
-        element.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+        // Reset element style
+        element.removeClass('h5p-wrong')
+          .removeClass('h5p-correct')
+          .removeClass('h5p-dropped')
+          .css({
+            border: '',
+            background: ''
+          });
         C.setElementOpacity(element, self.backgroundOpacity);
       }
     });
     // Draggable removed from dropzone.
     delete self.element.dropZone;
-    // Remove feedback classes from initial element and delete the dropzone.
-    self.element.$.removeClass('h5p-wrong').removeClass('h5p-correct').removeClass('h5p-dropped');
+    // Reset style on initial element and delete the dropzone.
+    self.element.$.removeClass('h5p-wrong')
+      .removeClass('h5p-correct')
+      .removeClass('h5p-dropped')
+      .css({
+        border: '',
+        background: ''
+      });
     C.setElementOpacity(self.element.$, self.backgroundOpacity);
   };
 
@@ -1026,12 +991,10 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Prepare inner html
-    // Style fallback in case we're created before we're attached.
-    var style = ' style="background-color: rgb(224,224,224); background-image: -webkit-linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%); background-image: linear-gradient(to bottom, rgb(224,224,224) 0%, rgb(255,255,255) 100%);"';
-    var html = '<div class="h5p-inner"' + style + '></div>';
+    var html = '<div class="h5p-inner"></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label"' + style + '>' + self.label + '</div>' + html;
+      html = '<div class="h5p-label">' + self.label + '</div>' + html;
       extraClass = ' h5p-has-label';
     }
 

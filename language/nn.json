@@ -13,6 +13,11 @@
       "default": "Korrekt"
     },
     {
+      "label": "Tilbakemeldingar",
+      "default": "Du plasserte @score av totalt @total rett.",
+      "description": "Tekstleg tilbakemelding, tilgjengelege variablar: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
+    },
+    {
       "fields": [
         {
           "label": "Innstillinger",

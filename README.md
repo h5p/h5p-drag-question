@@ -1,8 +1,9 @@
 H5P Drag Question
 ==========
 
+Drag and drop the elements into the correct drop zones.
 Test your users with drag and drop tasks.
-Can be used in question sets.
+Can be used in Question Sets, Course Presentations and Interactive Videos.
 
 ## License
 
