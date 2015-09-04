@@ -157,8 +157,6 @@ H5P.DragQuestion = (function ($) {
 
   /**
    * Append field to wrapper.
-   *
-   * @param {jQuery} $container
    */
   C.prototype.createQuestionContent = function () {
     var i;
