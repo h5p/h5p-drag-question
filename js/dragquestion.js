@@ -110,7 +110,7 @@ H5P.DragQuestion = (function ($) {
 
     this.on('resize', self.resize, self);
     this.on('domChanged', function(event) {
-      if (self.contentId == event.data.contentId) {
+      if (self.contentId === event.data.contentId) {
         self.trigger('resize');
       }
     });
@@ -157,8 +157,6 @@ H5P.DragQuestion = (function ($) {
 
   /**
    * Append field to wrapper.
-   *
-   * @param {jQuery} $container
    */
   C.prototype.createQuestionContent = function () {
     var i;
@@ -229,6 +227,8 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} opacity
    */
   C.setElementOpacity = function ($element, opacity) {
+    C.setOpacity($element, 'borderColor', opacity);
+    C.setOpacity($element, 'boxShadow', opacity);
     C.setOpacity($element, 'background', opacity);
   };
 
@@ -576,7 +576,85 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} opacity
    */
   C.setOpacity = function ($element, property, opacity) {
-    $element.css('opacity', opacity / 100);
+    if (property === 'background') {
+      // Set both color and gradient.
+      C.setOpacity($element, 'backgroundColor', opacity);
+      C.setOpacity($element, 'backgroundImage', opacity);
+      return;
+    }
+
+    opacity = (opacity === undefined ? 1 : opacity / 100);
+
+    // Private. Get css properties objects.
+    function getProperties(property, value) {
+      switch (property) {
+        case 'borderColor':
+          return {
+            borderTopColor: value,
+            borderRightColor: value,
+            borderBottomColor: value,
+            borderLeftColor: value
+          };
+
+        default:
+          var properties = {};
+          properties[property] = value;
+          return properties;
+      }
+    }
+
+    var original = $element.css(property);
+
+    // Reset css to be sure we're using CSS and not inline values.
+    var properties = getProperties(property, '');
+    $element.css(properties);
+
+    // Determine prop and assume all props are the same and use the first.
+    for (var prop in properties) {
+      break;
+    }
+
+    // Get value from css
+    var style = $element.css(prop);
+    if (style === '' || style === 'none') {
+      // No value from CSS, fall back to original
+      style = original;
+    }
+
+    style = C.setAlphas(style, 'rgba(', opacity); // Update rgba
+    style = C.setAlphas(style, 'rgb(', opacity); // Convert rgb
+
+    $element.css(getProperties(property, style));
+  };
+
+  /**
+   * Updates alpha channel for colors in the given style.
+   *
+   * @param {String} style
+   * @param {String} prefix
+   * @param {Number} alpha
+   */
+  C.setAlphas = function (style, prefix, alpha) {
+    // Style undefined
+    if (!style) {
+      return;
+    }
+    var colorStart = style.indexOf(prefix);
+
+    while (colorStart !== -1) {
+      var colorEnd = style.indexOf(')', colorStart);
+      var channels = style.substring(colorStart + prefix.length, colorEnd).split(',');
+
+      // Set alpha channel
+      channels[3] = (channels[3] !== undefined ? parseFloat(channels[3]) * alpha : alpha);
+
+      style = style.substring(0, colorStart) + 'rgba(' + channels.join(',') + style.substring(colorEnd, style.length);
+
+      // Look for more colors
+      colorStart = style.indexOf(prefix, colorEnd);
+    }
+
+    return style;
   };
 
   /**
@@ -758,6 +836,11 @@ H5P.DragQuestion = (function ($) {
 
     C.addHover(element.$, self.backgroundOpacity);
     H5P.newRunnable(self.type, contentId, element.$);
+
+    // Update opacity when element is attached.
+    setTimeout(function () {
+      C.setElementOpacity(element.$, self.backgroundOpacity);
+    }, 0);
   };
 
   /**
@@ -1055,12 +1138,16 @@ H5P.DragQuestion = (function ($) {
         })
         .end();
 
-    C.setOpacity($dropZone.children(), 'background', self.backgroundOpacity);
-
     // Add tip after setOpacity(), so this does not get background opacity:
     if (self.tip !== undefined && self.tip.trim().length) {
       $dropZone.append(H5P.JoubelUI.createTip(self.tip));
     }
+
+    // Set element opacity when element has been appended
+    setTimeout(function () {
+      C.setOpacity($dropZone.children('.h5p-label'), 'background', self.backgroundOpacity);
+      C.setOpacity($dropZone.children('.h5p-inner'), 'background', self.backgroundOpacity);
+    }, 0);
   };
 
   return C;
