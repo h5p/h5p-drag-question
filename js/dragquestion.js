@@ -635,6 +635,10 @@ H5P.DragQuestion = (function ($) {
    * @param {Number} alpha
    */
   C.setAlphas = function (style, prefix, alpha) {
+    // Style undefined
+    if (!style) {
+      return;
+    }
     var colorStart = style.indexOf(prefix);
 
     while (colorStart !== -1) {
