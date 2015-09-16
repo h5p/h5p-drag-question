@@ -370,6 +370,7 @@ H5P.DragQuestion = (function ($) {
     if (this.options.behaviour.singlePoint) {
       this.points = (this.points === this.calculateMaxScore() ? 1 : 0);
     }
+
     if (!skipVisuals) {
       this.hideButton('check-answer');
     }
@@ -431,6 +432,7 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.calculateMaxScore = function () {
     var max = 0;
+
     var elements = this.options.question.task.elements;
     for (var i = 0; i < elements.length; i++) {
       var correctDropZones = this.correctDZs[i];
@@ -491,6 +493,9 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
+    if (this.options.behaviour.singlePoint) {
+      maxScore = 1;
+    }
     var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
     this.setFeedback(scoreText, this.points, maxScore);
   };
