@@ -51,7 +51,7 @@
     {
       "machineName": "H5P.Question",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     }
   ],
   "preloadedJs": [
