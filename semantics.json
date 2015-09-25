@@ -224,6 +224,8 @@
                       "name": "tip",
                       "label": "Tip text",
                       "type": "text",
+                      "widget": "html",
+                      "tags": ["p", "br", "strong", "em"],
                       "optional": true
                     }
                   ]
