@@ -239,6 +239,7 @@ H5P.DragQuestion = (function ($) {
     var that = this;
 
     this.addButton('check-answer', this.options.scoreShow, function () {
+      that.answered = true;
       that.showAllSolutions();
       that.showScore();
       that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
