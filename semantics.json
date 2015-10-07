@@ -22,6 +22,14 @@
     "common": true
   },
   {
+    "label": "Feedback text",
+    "name": "feedback",
+    "type": "text",
+    "default": "You placed @score out of @total correct.",
+    "description": "Feedback text, variables available: @score and @total. Example: 'You placed @score out of @total correct'",
+    "common": true
+  },
+  {
     "name": "question",
     "type": "group",
     "widget": "wizard",
@@ -35,7 +43,7 @@
             "name": "questionTitle",
             "type": "text",
             "label": "The title of this question",
-            "default": "Drag and drop",
+            "default": "Drag and Drop",
             "description": "Used in summaries, statistics etc."
           },
           {
@@ -90,7 +98,7 @@
                   "type": "library",
                   "description": "Choose the type of content you would like to add.",
                   "options": [
-                    "H5P.AdvancedText 1.0",
+                    "H5P.AdvancedText 1.1",
                     "H5P.Image 1.0"
                   ]
                 },

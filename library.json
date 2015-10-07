@@ -1,9 +1,10 @@
 {
-  "title": "Drag and drop question",
-  "description": "Drag and drop question type supporting many to many relations.",
+  "title": "Drag and Drop",
+  "description": "Drag and drop the elements into the correct drop zones.",
+  "contentType": "Question",
   "majorVersion": 1,
-  "minorVersion": 4,
-  "patchVersion": 2,
+  "minorVersion": 5,
+  "patchVersion": 0,
   "embedTypes": [
     "iframe"
   ],
@@ -12,7 +13,7 @@
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 5
+    "minorVersion": 6
   },
   "license": "cc-by-sa",
   "machineName": "H5P.DragQuestion",
@@ -23,19 +24,9 @@
   ],
   "preloadedDependencies": [
     {
-      "machineName": "H5P.Text",
-      "majorVersion": 1,
-      "minorVersion": 0
-    },
-    {
-      "machineName": "H5P.Image",
-      "majorVersion": 1,
-      "minorVersion": 0
-    },
-    {
       "machineName": "FontAwesome",
       "majorVersion": 4,
-      "minorVersion": 1
+      "minorVersion": 3
     },
     {
       "machineName": "jQuery.ui",
@@ -44,6 +35,11 @@
     },
     {
       "machineName": "H5P.JoubelUI",
+      "majorVersion": 1,
+      "minorVersion": 2
+    },
+    {
+      "machineName": "H5P.Question",
       "majorVersion": 1,
       "minorVersion": 1
     }
@@ -57,7 +53,7 @@
     {
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
-      "minorVersion": 3
+      "minorVersion": 4
     }
   ]
 }
