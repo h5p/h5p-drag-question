@@ -126,6 +126,15 @@ H5P.DragQuestion = (function ($) {
         this.$container.parents('.h5p-content').css('height', 'auto');
       }
     });
+
+    // Resize on orientation change
+    $(window).on('orientationchange', function () {
+
+      // Wait for dom elements
+      setTimeout(function () {
+        self.trigger('resize');
+      }, 100);
+    });
   }
 
   C.prototype = Object.create(H5P.Question.prototype);
@@ -285,7 +294,7 @@ H5P.DragQuestion = (function ($) {
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
     var parentContainer = this.$container.parent();
-    // Use the larger of question container and parent container as basis for resize.
+    // Use parent container as basis for resize.
     var width = parentContainer.width() - parseFloat(parentContainer.css('margin-left')) - parseFloat(parentContainer.css('margin-right'));
     var height = width / ratio;
 
