@@ -177,7 +177,7 @@ H5P.DragQuestion = (function ($) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
     }
 
-    var $element, task = this.options.question.task;
+    var task = this.options.question.task;
 
     // Add elements (static and draggable)
     for (i = 0; i < task.elements.length; i++) {
@@ -189,9 +189,14 @@ H5P.DragQuestion = (function ($) {
       }
       else {
         // Add static element
-        $element = this.addElement(element, 'static', i);
-        C.setOpacity($element, 'background', element.backgroundOpacity);
+        var $element = this.addElement(element, 'static', i);
         H5P.newRunnable(element.type, this.id, $element);
+        var timedOutOpacity = function($el, el) {
+          setTimeout(function () {
+            C.setOpacity($el, 'background', el.backgroundOpacity);
+          }, 0);
+        };
+        timedOutOpacity($element, element);
       }
     }
 
@@ -597,7 +602,7 @@ H5P.DragQuestion = (function ($) {
       C.setOpacity($element, 'backgroundImage', opacity);
       return;
     }
-
+    
     opacity = (opacity === undefined ? 1 : opacity / 100);
 
     // Private. Get css properties objects.
