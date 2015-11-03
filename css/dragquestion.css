@@ -73,10 +73,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled):hover {
-  border: 0.1em solid rgb(212, 190, 216);
-  background: #edd6e9;
-}
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover {
+   border: 0.1em solid rgb(212, 190, 216);
+   background: #edd6e9;
+ }
 .h5p-dragquestion .h5p-draggable.h5p-dropped {
   color: #1a4473;
   border: 0.1em solid #a9c3d0;

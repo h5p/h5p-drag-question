@@ -221,12 +221,14 @@ H5P.DragQuestion = (function ($) {
    */
   C.addHover = function ($element, backgroundOpacity) {
     $element.hover(function () {
+      $element.addClass('h5p-draggable-hover');
       if (!$element.parent().hasClass('h5p-dragging')) {
         C.setElementOpacity($element, backgroundOpacity);
       }
     }, function () {
       if (!$element.parent().hasClass('h5p-dragging')) {
         setTimeout(function () {
+          $element.removeClass('h5p-draggable-hover');
           C.setElementOpacity($element, backgroundOpacity);
         }, 1);
       }
@@ -602,7 +604,7 @@ H5P.DragQuestion = (function ($) {
       C.setOpacity($element, 'backgroundImage', opacity);
       return;
     }
-    
+
     opacity = (opacity === undefined ? 1 : opacity / 100);
 
     // Private. Get css properties objects.
