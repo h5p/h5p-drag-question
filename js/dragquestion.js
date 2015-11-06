@@ -116,24 +116,17 @@ H5P.DragQuestion = (function ($) {
     });
 
     this.on('enterFullScreen', function () {
-      if (this.$container) {
-        this.$container.parents('.h5p-content').css('height', '100%');
+      if (self.$container) {
+        self.$container.parents('.h5p-content').css('height', '100%');
+        self.trigger('resize');
       }
     });
 
     this.on('exitFullScreen', function () {
-      if (this.$container) {
-        this.$container.parents('.h5p-content').css('height', 'auto');
-      }
-    });
-
-    // Resize on orientation change
-    $(window).on('orientationchange', function () {
-
-      // Wait for dom elements
-      setTimeout(function () {
+      if (self.$container) {
+        self.$container.parents('.h5p-content').css('height', 'auto');
         self.trigger('resize');
-      }, 100);
+      }
     });
   }
 
@@ -162,6 +155,10 @@ H5P.DragQuestion = (function ($) {
 
    // ... and buttons
    self.registerButtons();
+
+   setTimeout(function () {
+     self.trigger('resize');
+   }, 200);
  };
 
   /**
@@ -290,19 +287,53 @@ H5P.DragQuestion = (function ($) {
   /**
    * Set correct height of container
    */
-  C.prototype.resize = function () {
+  C.prototype.resize = function (e) {
+    var self = this;
     // Make sure we use all the height we can get. Needed to scale up.
     if (this.$container === undefined) {
       // Not attached yet - nothing to resize....
       return;
     }
-    this.$container.css('height', '99999px');
+
+    // Check if decreasing iframe size
+    var decreaseSize = e && e.data && e.data.second;
+    if (!decreaseSize) {
+      this.$container.css('height', '99999px');
+      self.$container.parents('.h5p-standalone.h5p-dragquestion').css('width', '');
+    }
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
     var parentContainer = this.$container.parent();
     // Use parent container as basis for resize.
     var width = parentContainer.width() - parseFloat(parentContainer.css('margin-left')) - parseFloat(parentContainer.css('margin-right'));
+
+    // Check if we need to apply semi full screen fix.
+    var $semiFullScreen = self.$container.parents('.h5p-standalone.h5p-dragquestion.h5p-semi-fullscreen');
+    if ($semiFullScreen.length) {
+      // Reset semi fullscreen width
+      $semiFullScreen.css('width', '');
+
+      // Decrease iframe size
+      if (!decreaseSize) {
+        self.$container.css('width', '10px');
+        $semiFullScreen.css('width', '');
+
+        // Trigger changes
+        setTimeout(function () {
+          self.trigger('resize', {decreaseSize: true});
+        }, 200);
+      }
+
+      // Set width equal to iframe parent width, since iframe content has not been update yet.
+      var $iframe = $(window.frameElement);
+      if ($iframe) {
+        var $iframeParent = $iframe.parent();
+        width = $iframeParent.width();
+        $semiFullScreen.css('width', width + 'px');
+      }
+    }
+
     var height = width / ratio;
 
     // Set natural size if no parent width
