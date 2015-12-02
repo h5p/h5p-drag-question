@@ -25,8 +25,8 @@
     "label": "Feedback text",
     "name": "feedback",
     "type": "text",
-    "default": "You placed @score out of @total correct.",
-    "description": "Feedback text, variables available: @score and @total. Example: 'You placed @score out of @total correct'",
+    "default": "You got @score of @total points.",
+    "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
     "common": true
   },
   {
@@ -224,6 +224,8 @@
                       "name": "tip",
                       "label": "Tip text",
                       "type": "text",
+                      "widget": "html",
+                      "tags": ["p", "br", "strong", "em"],
                       "optional": true
                     }
                   ]

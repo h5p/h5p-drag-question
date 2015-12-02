@@ -14,7 +14,11 @@
         {
           "label": "Réglages",
           "fields": [
-            {},
+            {
+              "label": "The title of this question",
+              "default": "Drag and Drop",
+              "description": "Used in summaries, statistics etc."
+            },
             {
               "label": "image de fond",
               "description": "Optionnel. Selectionner une image de fond pour l'activité glisser et déposer."

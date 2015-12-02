@@ -84,7 +84,7 @@ H5P.DragQuestion = (function ($) {
       }
 
       // Restore answers from last session
-      var answers;
+      var answers = null;
       if (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers[i] !== undefined) {
         answers = contentData.previousState.answers[i];
       }
@@ -116,14 +116,16 @@ H5P.DragQuestion = (function ($) {
     });
 
     this.on('enterFullScreen', function () {
-      if (this.$container) {
-        this.$container.parents('.h5p-content').css('height', '100%');
+      if (self.$container) {
+        self.$container.parents('.h5p-content').css('height', '100%');
+        self.trigger('resize');
       }
     });
 
     this.on('exitFullScreen', function () {
-      if (this.$container) {
-        this.$container.parents('.h5p-content').css('height', 'auto');
+      if (self.$container) {
+        self.$container.parents('.h5p-content').css('height', 'auto');
+        self.trigger('resize');
       }
     });
   }
@@ -153,6 +155,10 @@ H5P.DragQuestion = (function ($) {
 
    // ... and buttons
    self.registerButtons();
+
+   setTimeout(function () {
+     self.trigger('resize');
+   }, 200);
  };
 
   /**
@@ -168,7 +174,7 @@ H5P.DragQuestion = (function ($) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
     }
 
-    var $element, task = this.options.question.task;
+    var task = this.options.question.task;
 
     // Add elements (static and draggable)
     for (i = 0; i < task.elements.length; i++) {
@@ -180,9 +186,14 @@ H5P.DragQuestion = (function ($) {
       }
       else {
         // Add static element
-        $element = this.addElement(element, 'static', i);
-        C.setOpacity($element, 'background', element.backgroundOpacity);
+        var $element = this.addElement(element, 'static', i);
         H5P.newRunnable(element.type, this.id, $element);
+        var timedOutOpacity = function($el, el) {
+          setTimeout(function () {
+            C.setOpacity($el, 'background', el.backgroundOpacity);
+          }, 0);
+        };
+        timedOutOpacity($element, element);
       }
     }
 
@@ -207,12 +218,14 @@ H5P.DragQuestion = (function ($) {
    */
   C.addHover = function ($element, backgroundOpacity) {
     $element.hover(function () {
+      $element.addClass('h5p-draggable-hover');
       if (!$element.parent().hasClass('h5p-dragging')) {
         C.setElementOpacity($element, backgroundOpacity);
       }
     }, function () {
       if (!$element.parent().hasClass('h5p-dragging')) {
         setTimeout(function () {
+          $element.removeClass('h5p-draggable-hover');
           C.setElementOpacity($element, backgroundOpacity);
         }, 1);
       }
@@ -239,7 +252,6 @@ H5P.DragQuestion = (function ($) {
     var that = this;
 
     this.addButton('check-answer', this.options.scoreShow, function () {
-      that.answered = true;
       that.showAllSolutions();
       that.showScore();
       that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
@@ -274,19 +286,53 @@ H5P.DragQuestion = (function ($) {
   /**
    * Set correct height of container
    */
-  C.prototype.resize = function () {
+  C.prototype.resize = function (e) {
+    var self = this;
     // Make sure we use all the height we can get. Needed to scale up.
     if (this.$container === undefined) {
       // Not attached yet - nothing to resize....
       return;
     }
-    this.$container.css('height', '99999px');
+
+    // Check if decreasing iframe size
+    var decreaseSize = e && e.data && e.data.decreaseSize;
+    if (!decreaseSize) {
+      this.$container.css('height', '99999px');
+      self.$container.parents('.h5p-standalone.h5p-dragquestion').css('width', '');
+    }
 
     var size = this.options.question.settings.size;
     var ratio = size.width / size.height;
     var parentContainer = this.$container.parent();
-    // Use the larger of question container and parent container as basis for resize.
+    // Use parent container as basis for resize.
     var width = parentContainer.width() - parseFloat(parentContainer.css('margin-left')) - parseFloat(parentContainer.css('margin-right'));
+
+    // Check if we need to apply semi full screen fix.
+    var $semiFullScreen = self.$container.parents('.h5p-standalone.h5p-dragquestion.h5p-semi-fullscreen');
+    if ($semiFullScreen.length) {
+      // Reset semi fullscreen width
+      $semiFullScreen.css('width', '');
+
+      // Decrease iframe size
+      if (!decreaseSize) {
+        self.$container.css('width', '10px');
+        $semiFullScreen.css('width', '');
+
+        // Trigger changes
+        setTimeout(function () {
+          self.trigger('resize', {decreaseSize: true});
+        }, 200);
+      }
+
+      // Set width equal to iframe parent width, since iframe content has not been update yet.
+      var $iframe = $(window.frameElement);
+      if ($iframe) {
+        var $iframeParent = $iframe.parent();
+        width = $iframeParent.width();
+        $semiFullScreen.css('width', width + 'px');
+      }
+    }
+
     var height = width / ratio;
 
     // Set natural size if no parent width
