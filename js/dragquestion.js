@@ -138,28 +138,28 @@ H5P.DragQuestion = (function ($) {
   * Registers this question type's DOM elements before they are attached.
   * Called from H5P.Question.
   */
- C.prototype.registerDomElements = function () {
-   var self = this;
+  C.prototype.registerDomElements = function () {
+    var self = this;
 
-   // Register introduction section
-   self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    // Register introduction section
+    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
 
 
-   // Set class if no background
-   var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
+    // Set class if no background
+    var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
 
-   // Register task content area
-   self.setContent(self.createQuestionContent(), {
-     'class': contentClass
-   });
+    // Register task content area
+    self.setContent(self.createQuestionContent(), {
+      'class': contentClass
+    });
 
-   // ... and buttons
-   self.registerButtons();
+    // ... and buttons
+    self.registerButtons();
 
-   setTimeout(function () {
-     self.trigger('resize');
-   }, 200);
- };
+    setTimeout(function () {
+      self.trigger('resize');
+    }, 200);
+  };
 
   /**
    * Append field to wrapper.
