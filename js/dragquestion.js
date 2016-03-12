@@ -160,6 +160,91 @@ H5P.DragQuestion = (function ($) {
       self.trigger('resize');
     }, 200);
   };
+  
+  /**
+   * Add the question itselt to the definition part of an xAPIEvent
+   */
+  C.prototype.addQuestionToXAPI = function(xAPIEvent) {
+    var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    definition.description = {
+      // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
+      'en-US': $('<div>' + this.options.question.settings.questionTitle + '</div>').text()
+    };
+    definition.type = 'http://adlnet.gov/expapi/activities/cmi.interaction';
+    definition.interactionType = 'matching';
+
+    // Add sources, i.e. draggables
+    definition.source = [];
+    for (var i = 0; i < this.options.question.task.elements.length; i++) {
+      var el = this.options.question.task.elements[i];
+      if (el.dropZones && el.dropZones.length) {
+        var desc = el.type.params.alt ? el.type.params.alt : el.type.params.text;
+        
+        definition.source.push({
+          'id': i,
+          'description': {
+            // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
+            'en-US': $('<div>' + desc + '</div>').text()
+          }
+        });
+      }
+    }
+    
+    // Add targets, i.e. drop zones, and the correct response pattern.
+    definition.correctResponsesPattern = [''];
+    definition.target = [];
+    var firstCorrectPair = true;
+    for (var i = 0; i < this.options.question.task.dropZones.length; i++) {
+      definition.target.push({
+        'id': i,
+        'description': {
+          // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
+          'en-US': $('<div>' + this.options.question.task.dropZones[i].label + '</div>').text()
+        }
+      });
+      if (this.options.question.task.dropZones[i].correctElements) {
+        for (var j = 0; j < this.options.question.task.dropZones[i].correctElements.length; j++) {
+          if (!firstCorrectPair) {
+            definition.correctResponsesPattern += '[,]';
+          }
+          definition.correctResponsesPattern += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
+          firstCorrectPair = false;
+        }
+      }
+    }
+  };
+  
+  /**
+   * Add the response part to an xAPI event
+   *
+   * @param {H5P.XAPIEvent} xAPIEvent
+   *  The xAPI event we will add a response to
+   */
+  C.prototype.addResponseToXAPI = function(xAPIEvent) {
+    var maxScore = this.getMaxScore();
+    var score = this.getScore();
+    var success = score == maxScore ? true : false;
+    xAPIEvent.setScoredResult(score, maxScore, this, true, success);
+    var response = '';
+    var firstPair = true;
+    // State system will be rewritten to use xAPI, but until it does we convert
+    // the state to xAPI here...
+    var state = this.getCurrentState();
+    if (state.answers !== undefined) {
+      for (var i = 0; i < state.answers.length; i++) {
+        if (state.answers[i] !== undefined) {       
+          for (var j = 0; j < state.answers[i].length; j++) {
+            if (!firstPair) {
+              response += '[,]';
+            }
+            response += state.answers[i][j].dz + '[.]' + i;
+            firstPair = false;
+          }
+        }
+      }
+    }
+    xAPIEvent.data.statement.result.response = response;
+  };
 
   /**
    * Append field to wrapper.
@@ -254,7 +339,10 @@ H5P.DragQuestion = (function ($) {
     this.addButton('check-answer', this.options.scoreShow, function () {
       that.showAllSolutions();
       that.showScore();
-      that.triggerXAPIScored(that.getScore(), that.getMaxScore(), 'answered');
+      var xAPIEvent = that.createXAPIEventTemplate('answered');
+      that.addQuestionToXAPI(xAPIEvent);
+      that.addResponseToXAPI(xAPIEvent);
+      that.trigger(xAPIEvent);
     });
   };
 
