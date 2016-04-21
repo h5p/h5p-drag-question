@@ -24,7 +24,7 @@ H5P.DragQuestion = (function ($) {
       scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
-      feedback: "You placed @score out of @total correct.",
+      feedback: '@score of @total points',
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -160,7 +160,7 @@ H5P.DragQuestion = (function ($) {
       self.trigger('resize');
     }, 200);
   };
-  
+
   /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
@@ -179,7 +179,7 @@ H5P.DragQuestion = (function ($) {
       var el = this.options.question.task.elements[i];
       if (el.dropZones && el.dropZones.length) {
         var desc = el.type.params.alt ? el.type.params.alt : el.type.params.text;
-        
+
         definition.source.push({
           'id': i,
           'description': {
@@ -189,7 +189,7 @@ H5P.DragQuestion = (function ($) {
         });
       }
     }
-    
+
     // Add targets, i.e. drop zones, and the correct response pattern.
     definition.correctResponsesPattern = [''];
     definition.target = [];
@@ -213,7 +213,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
   };
-  
+
   /**
    * Add the response part to an xAPI event
    *
@@ -232,7 +232,7 @@ H5P.DragQuestion = (function ($) {
     var state = this.getCurrentState();
     if (state.answers !== undefined) {
       for (var i = 0; i < state.answers.length; i++) {
-        if (state.answers[i] !== undefined) {       
+        if (state.answers[i] !== undefined) {
           for (var j = 0; j < state.answers[i].length; j++) {
             if (!firstPair) {
               response += '[,]';
