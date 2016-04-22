@@ -9,7 +9,7 @@
     "iframe"
   ],
   "runnable": 1,
-  "fullscreen": 1,
+  "fullscreen": 0,
   "author": "Joubel AS",
   "coreApi": {
     "majorVersion": 1,
