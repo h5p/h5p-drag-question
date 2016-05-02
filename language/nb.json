@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Vis svar knappen",
-      "default": "Vis svar"
+      "label": "Sjekk-knappen",
+      "default": "Sjekk"
     },
     {
       "label": "«Prøv igjen»-knapp",
@@ -10,11 +10,11 @@
     },
     {
       "label": "Ledetekst for riktig svar i fasiten",
-      "default": "Korrekt"
+      "default": "Rett"
     },
     {
       "label": "Tilbakemeldinger",
-      "default": "Du plasserte @score av totalt @total rett.",
+      "default": "@score av @total poeng",
       "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {
