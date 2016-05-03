@@ -30,6 +30,14 @@
     "common": true
   },
   {
+    "label": "Score explanation  text",
+    "name": "scoreExplanation",
+    "type": "text",
+    "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+    "common": true,
+    "optional": true
+  },
+  {
     "name": "question",
     "type": "group",
     "widget": "wizard",
@@ -271,6 +279,13 @@
         "label": "Give one point for the whole task",
         "description": "Disable to give one point for each draggable that is placed correctly.",
         "default": true
+      },
+      {
+        "name": "enableScoreExplanation",
+        "type": "boolean",
+        "label": "Enable score explanation",
+        "default": true,
+        "optional": true
       },
       {
         "label": "Require user input before the solution can be viewed",
