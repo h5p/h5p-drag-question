@@ -181,7 +181,7 @@ H5P.DragQuestion = (function ($) {
         var desc = el.type.params.alt ? el.type.params.alt : el.type.params.text;
 
         definition.source.push({
-          'id': i,
+          'id': '' + i,
           'description': {
             // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
             'en-US': $('<div>' + desc + '</div>').text()
@@ -196,7 +196,7 @@ H5P.DragQuestion = (function ($) {
     var firstCorrectPair = true;
     for (var i = 0; i < this.options.question.task.dropZones.length; i++) {
       definition.target.push({
-        'id': i,
+        'id': '' + i,
         'description': {
           // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
           'en-US': $('<div>' + this.options.question.task.dropZones[i].label + '</div>').text()
@@ -205,9 +205,9 @@ H5P.DragQuestion = (function ($) {
       if (this.options.question.task.dropZones[i].correctElements) {
         for (var j = 0; j < this.options.question.task.dropZones[i].correctElements.length; j++) {
           if (!firstCorrectPair) {
-            definition.correctResponsesPattern += '[,]';
+            definition.correctResponsesPattern[0] += '[,]';
           }
-          definition.correctResponsesPattern += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
+          definition.correctResponsesPattern[0] += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
           firstCorrectPair = false;
         }
       }
