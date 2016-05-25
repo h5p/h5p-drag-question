@@ -1,119 +1,115 @@
 {
   "semantics": [
     {
-      "label": "Bouton Vérifier"
+      "label": "Übungsbild",
+      "description": "Ein Optionales Bild, welches über der Aufgabe gezeigt wird."
     },
     {
-      "label": "Bouton Réessayer"
+      "label": "Beschreibung",
+      "description": "Informationen, wie der Benutzer auf die Aufgaben reagieren soll."
     },
     {
-      "label": "Texte solution"
+      "label": "Textblöcke",
+      "entity": "Textblock",
+      "field": {
+        "label": "Textzeile",
+        "description": "Die Lücken sind mit einem Stern (*) vor und hinter dem Wort oder Satz markiert. Die möglichen Antworten sind durch einen Schrägstrich (/) getrennt. Ein Tipp wird mit dem Doppelpunkt (:) gefolgt von der Hilfe hinzugefügt. Beispiel: H5P Übungen können einfach mit einem *Browser/Web-Browser:Ein tool zum im Internet zu surfen* benutzt werden."
+      }
     },
     {
+      "label": "Bewertung",
+      "default": "@score von @total Punkten",
+      "description": "Feedback erlaubt die Benutzung von Variablen: @score und @total. Beispiel: 'Du hast @score von @total möglichen Punkten bekommen.'"
+    },
+    {
+      "label": "Text für die Schaltfläche \"Lösung anzeigen\"",
+      "default": "Lösung anzeigen"
+    },
+    {
+      "label": "Text für die Schaltfläche \"wiederholen\"",
+      "default": "noch einmal"
+    },
+    {
+      "label": "Text für die Schaltfläche \"Überprüfen\"",
+      "default": "überprüfen"
+    },
+    {
+      "label": "Text für die Schaltfläche \"Es ist nicht alles fertig\"",
+      "default": "Alle Felder müssen ausgefüllt sein."
+    },
+    {
+      "label": "Einstellungen.",
+      "description": "Wie soll sich der Aufgabentyp verhalten?",
       "fields": [
         {
-          "label": "Réglages",
-          "fields": [
-            {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
-            },
-            {
-              "label": "image de fond",
-              "description": "Optionnel. Selectionner une image de fond pour l'activité glisser et déposer."
-            },
-            {
-              "label": "Taille",
-              "description": "Specifier la largeur (en px) de la zone de jeu."
-            }
-          ]
+          "label": "\"wiederholen\" - Taste aktivieren"
         },
         {
-          "label": "Tache",
-          "description": "Commencer par glisser vos étiquettes.<br/>Suivant, déposer vos étiquettes dans les trous et Vérifier si elles sont dans la zone approppriée.<br/>Fin, corriger vos étiquettes et Vérifier si vous avez la bonne réponse.",
-          "fields": [
-            {
-              "label": "Elements",
-              "entity": "element",
-              "field": {
-                "label": "Element",
-                "fields": [
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Sélectionner la zone de dépôt"
-                  },
-                  {
-                    "label": "Opacité"
-                  },
-                  {
-                    "label": "Infinite number of element instances",
-                    "description": "Cloner l'élement  de façon à ce qu'il corresponde à plusieurs zones."
-                  }
-                ]
-              }
-            },
-            {
-              "label": "Zones de dépôt",
-              "entity": "Zones de dépôt",
-              "field": {
-                "label": "Zone de dépôt",
-                "fields": [
-                  {
-                    "label": "Etiquette"
-                  },
-                  {
-                    "label": "Montrer l'étiquette"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Sélectionner les éléments corrects"
-                  },
-                  {
-                    "label": "Opacité"
-                  },
-                  {
-                    "label": "Conseil",
-                    "fields": [
-                      {
-                        "label": "Texte de conseil"
-                      }
-                    ]
-                  },
-                  {
-                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément. Soyez sur qu'il n'existe qu'une seule bonne réponse pour cette zone."
-                  }
-                ]
-              }
-            }
-          ]
+          "label": "\"Lösung anzeigen\" - Taste aktivieren"
+        },
+        {
+          "label": "Feedback geben, sobald der Benutzer Antworten gegeben hat."
+        },
+        {
+          "label": "Groß-/Kleinschreibung",
+          "description": "Es wird genau diese Schreibweise erwartet"
+        },
+        {
+          "label": "Um die Lösung zu sehen müssen alle Felder ausgefüllt werden."
+        },
+        {
+          "label": "Die Eingabefelder auf einer eigenen Zeile darstellen."
+        },
+        {
+          "label": "Deaktivieren des Zooms für Fragebilder"
+        },
+        {
+          "label": "Benutzer-Dialog für  \"Antwort zeigen\"."
+        },
+        {
+          "label": "Benutzer-Dialog für  \"Wiederholen\"."
         }
       ]
     },
     {
-      "label": "Opacité des étiquettes",
-      "description": "Si ce champ est correct, cela accentuera l'opacité de toutes les étiquettes. Doit être un nombre compris entre 0 and 100, où 0 signifie complète transparence and 100 signifie très opaque"
-    },
-    {
-      "label": "Options générales.",
-      "description": "Cette option vous donnera le contrôle de la tâche.",
+      "label": "Benutzer-Dialog",
       "fields": [
         {
-          "label": "Activer \"Réessayer\""
+          "label": "Header-Text",
+          "default": "Fertig ?"
         },
         {
-          "label": "Donner une direction pour l'ensemble de la tâche",
-          "description": "Désactiver pour donner une direction pour chaque étiquette placée correctement."
+          "label": "Body-Text",
+          "default": "Wirklich beenden ?"
         },
         {
-          "label": "L'utilisateur doit entrer la solution avant d'afficher le résultat."
+          "label": "Abbrechen Text",
+          "default": "Abbruch"
+        },
+        {
+          "label": "Bestätigungs Text",
+          "default": "Bestätigen"
+        }
+      ]
+    },
+    {
+      "label": "Wiederholungs-Dialog",
+      "fields": [
+        {
+          "label": "Header-Text",
+          "default": "Wiederholen ?"
+        },
+        {
+          "label": "Body-Text",
+          "default": "Sicher wiederholen?"
+        },
+        {
+          "label": "Abbrechen Text",
+          "default": "Abbruch"
+        },
+        {
+          "label": "Bestätigen Text",
+          "default": "Bestätigen"
         }
       ]
     }
