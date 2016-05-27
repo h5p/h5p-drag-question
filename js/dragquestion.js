@@ -528,6 +528,7 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
+    this.showScore();
     //Hide solution button:
     this.hideButton('check-answer');
     this.hideButton('try-again');
