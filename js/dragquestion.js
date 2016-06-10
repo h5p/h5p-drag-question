@@ -22,9 +22,9 @@ H5P.DragQuestion = (function ($) {
     H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
-      correct: 'Solution',
+      correct: 'Show solution',
       tryAgain: 'Retry',
-      feedback: '@score of @total points',
+      feedback: 'You got @score of @total points',
       question: {
         settings: {
           questionTitle: 'Drag and drop',
