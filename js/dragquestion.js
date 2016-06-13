@@ -481,6 +481,10 @@ H5P.DragQuestion = (function ($) {
     this.points = 0;
     this.rawPoints = 0;
 
+    // One correct point for each "no solution" dropzone
+    this.points += this.dropZones.length - this.correctDZs.length;
+    this.rawPoints += this.dropZones.length - this.correctDZs.length;
+
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
       if (draggable === undefined) {
@@ -588,7 +592,7 @@ H5P.DragQuestion = (function ($) {
 
     this.rawMax = max;
     if (this.blankIsCorrect) {
-      return this.weight;
+      return this.dropZones.length - this.correctDZs.length;
     }
 
     return max;
