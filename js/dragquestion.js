@@ -22,9 +22,9 @@ H5P.DragQuestion = (function ($) {
     H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
-      correct: 'Solution',
+      correct: 'Show solution',
       tryAgain: 'Retry',
-      feedback: '@score of @total points',
+      feedback: 'You got @score of @total points',
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -181,7 +181,7 @@ H5P.DragQuestion = (function ($) {
         var desc = el.type.params.alt ? el.type.params.alt : el.type.params.text;
 
         definition.source.push({
-          'id': i,
+          'id': '' + i,
           'description': {
             // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
             'en-US': $('<div>' + desc + '</div>').text()
@@ -196,7 +196,7 @@ H5P.DragQuestion = (function ($) {
     var firstCorrectPair = true;
     for (var i = 0; i < this.options.question.task.dropZones.length; i++) {
       definition.target.push({
-        'id': i,
+        'id': '' + i,
         'description': {
           // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
           'en-US': $('<div>' + this.options.question.task.dropZones[i].label + '</div>').text()
@@ -205,9 +205,9 @@ H5P.DragQuestion = (function ($) {
       if (this.options.question.task.dropZones[i].correctElements) {
         for (var j = 0; j < this.options.question.task.dropZones[i].correctElements.length; j++) {
           if (!firstCorrectPair) {
-            definition.correctResponsesPattern += '[,]';
+            definition.correctResponsesPattern[0] += '[,]';
           }
-          definition.correctResponsesPattern += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
+          definition.correctResponsesPattern[0] += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
           firstCorrectPair = false;
         }
       }
@@ -337,6 +337,7 @@ H5P.DragQuestion = (function ($) {
     var that = this;
 
     this.addButton('check-answer', this.options.scoreShow, function () {
+      that.answered = true;
       that.showAllSolutions();
       that.showScore();
       var xAPIEvent = that.createXAPIEventTemplate('answered');
@@ -472,6 +473,29 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
+   * Get amount of empty drop zones.
+   *
+   * @param {number} totalDropZones Total drop zones in question
+   * @param {Array} correctDZs Correct drop zones for draggables
+   * @return {number} Amount of empty drop zones in question
+   */
+  C.prototype.getDropzoneWithoutAnswer = function (totalDropZones, correctDZs) {
+    //Index of correctDZs is the draggable, and value is the drop zone it belongs to
+    var correctDropZones = [];
+    correctDZs.forEach(function (draggable) {
+      if (draggable.length) {
+        draggable.forEach(function (dropZone) {
+          if (correctDropZones.indexOf(dropZone) < 0) {
+            correctDropZones.push(dropZone);
+          }
+        });
+      }
+    });
+
+    return totalDropZones - correctDropZones.length;
+  };
+
+  /**
    * Shows the correct solutions on the boxes and disables input and buttons depending on settings.
    * @public
    * @params {Boolean} skipVisuals Skip visual animations.
@@ -479,6 +503,11 @@ H5P.DragQuestion = (function ($) {
   C.prototype.showAllSolutions = function (skipVisuals) {
     this.points = 0;
     this.rawPoints = 0;
+
+    // One correct point for each "no solution" dropzone
+    var emptyDropzones = this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    this.points += emptyDropzones;
+    this.rawPoints += emptyDropzones;
 
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
@@ -527,6 +556,7 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
+    this.showScore();
     //Hide solution button:
     this.hideButton('check-answer');
     this.hideButton('try-again');
@@ -586,7 +616,7 @@ H5P.DragQuestion = (function ($) {
 
     this.rawMax = max;
     if (this.blankIsCorrect) {
-      return this.weight;
+      return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
     }
 
     return max;
