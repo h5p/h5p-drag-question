@@ -1,5 +1,4 @@
 var H5P = H5P || {};
-
 /**
  * DragQuestion module.
  *
@@ -24,7 +23,7 @@ H5P.DragQuestion = (function ($) {
       scoreShow: 'Check',
       correct: 'Solution',
       tryAgain: 'Retry',
-      feedback: '@score of @total points',
+      feedback: "You placed @score out of @total correct.",
       question: {
         settings: {
           questionTitle: 'Drag and drop',
@@ -1138,7 +1137,7 @@ H5P.DragQuestion = (function ($) {
             element.$.addClass('h5p-wrong');
             C.setElementOpacity(element.$, self.backgroundOpacity);
           }
-          points--;
+          // points--;
         }
       }
       return points;
@@ -1173,7 +1172,7 @@ H5P.DragQuestion = (function ($) {
           element.$.addClass('h5p-wrong');
           C.setElementOpacity(element.$, self.backgroundOpacity);
         }
-        points--;
+        // points--;
       }
     }
 
