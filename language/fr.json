@@ -13,10 +13,10 @@
       "default": "Voir la correction"
     },
     {
-    "label": "Appréciation finale",
-    "default": "Vous avez obtenu @score point(s) sur @total",
-    "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
-  },
+      "label": "Appréciation finale",
+      "default": "Vous avez obtenu @score point(s) sur @total",
+      "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
+    },
     {
       "fields": [
         {
