@@ -750,6 +750,7 @@ H5P.DragQuestion = (function ($) {
       // Set both color and gradient.
       C.setOpacity($element, 'backgroundColor', opacity);
       C.setOpacity($element, 'backgroundImage', opacity);
+      $element.css('opacity', opacity);
       return;
     }
 
