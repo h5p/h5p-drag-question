@@ -17,7 +17,7 @@ H5P.DragQuestion = (function ($) {
    */
   function C(options, contentId, contentData) {
     var self = this;
-    var i;
+    var i, j;
     this.id = this.contentId = contentId;
     H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
@@ -53,12 +53,17 @@ H5P.DragQuestion = (function ($) {
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
+    // List of drop zones that has no elements, i.e. not used for the task
+    var dropZonesWithoutElements = [];
+
     // Create map over correct drop zones for elements
     var task = this.options.question.task;
     this.correctDZs = [];
     for (i = 0; i < task.dropZones.length; i++) {
+      dropZonesWithoutElements.push(true); // All true by default
+
       var correctElements = task.dropZones[i].correctElements;
-      for (var j = 0; j < correctElements.length; j++) {
+      for (j = 0; j < correctElements.length; j++) {
         var correctElement = correctElements[j];
         if (this.correctDZs[correctElement] === undefined) {
           this.correctDZs[correctElement] = [];
@@ -68,8 +73,6 @@ H5P.DragQuestion = (function ($) {
     }
 
     this.weight = 1;
-
-    // TODO: Initialize elements and drop zones here!
 
     // Add draggable elements
     for (i = 0; i < task.elements.length; i++) {
@@ -95,11 +98,22 @@ H5P.DragQuestion = (function ($) {
         self.answered = true;
         self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
+
+      for (j = 0; j < element.dropZones.length; j++) {
+        dropZonesWithoutElements[element.dropZones[j]] = false;
+      }
     }
+
+    // Create a count to subtrack from score
+    this.numDropZonesWithoutElements = 0;
 
     // Add drop zones
     for (i = 0; i < task.dropZones.length; i++) {
       var dropZone = task.dropZones[i];
+
+      if (dropZonesWithoutElements[i] === true) {
+        this.numDropZonesWithoutElements += 1;
+      }
 
       if (this.blankIsCorrect && dropZone.correctElements.length) {
         this.blankIsCorrect = false;
@@ -492,7 +506,7 @@ H5P.DragQuestion = (function ($) {
       }
     });
 
-    return totalDropZones - correctDropZones.length;
+    return totalDropZones - correctDropZones.length - this.numDropZonesWithoutElements;
   };
 
   /**
