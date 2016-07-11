@@ -1,13 +1,21 @@
 {
   "semantics": [
     {
-      "label": "Bouton Vérifier"
+      "label": "Bouton \"Vérifier\"",
+      "default": "Vérifier"
     },
     {
-      "label": "Bouton Réessayer"
+      "label": "Bouton \"Recommencer\"",
+      "default": "Recommencer"
     },
     {
-      "label": "Texte solution"
+      "label": "Bouton \"Voir la correction\"",
+      "default": "Voir la correction"
+    },
+    {
+      "label": "Appréciation finale",
+      "default": "Vous avez obtenu @score point(s) sur @total",
+      "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
     },
     {
       "fields": [
@@ -15,51 +23,53 @@
           "label": "Réglages",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label": "Titre de cette question",
+              "default": "Glisser-déposer",
+              "description": "Utilisé dans les résumés, statistiques, etc."
             },
             {
-              "label": "image de fond",
-              "description": "Optionnel. Selectionner une image de fond pour l'activité glisser et déposer."
+              "label": "Image d'arrière-plan",
+              "description": "Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
             },
             {
-              "label": "Taille",
-              "description": "Specifier la largeur (en px) de la zone de jeu."
+              "label": "Taille de l'activité",
+              "description": "Spécifiez la largeur (en px) de l'activité'."
             }
           ]
         },
         {
-          "label": "Tache",
-          "description": "Commencer par glisser vos étiquettes.<br/>Suivant, déposer vos étiquettes dans les trous et Vérifier si elles sont dans la zone approppriée.<br/>Fin, corriger vos étiquettes et Vérifier si vous avez la bonne réponse.",
+          "label": "Consigne",
+          "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Eléments",
+              "entity": "élément",
               "field": {
-                "label": "Element",
+                "label": "Elément",
                 "fields": [
-                  {},
+                  {
+                    "description": "Sélectionnez le type de contenu que vous souhaitez ajouter."
+                  },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Sélectionner la zone de dépôt"
+                    "label": "Sélectionnez les zones de dépôt"
                   },
                   {
-                    "label": "Opacité"
+                    "label": "Opacité du fond"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Cloner l'élement  de façon à ce qu'il corresponde à plusieurs zones."
+                    "label": "Nombre illimité d'instances pour cet élément",
+                    "description": "Cloner cet élément de sorte qu'il puisse être déposé dans plusieurs zones."
                   }
                 ]
               }
             },
             {
               "label": "Zones de dépôt",
-              "entity": "Zones de dépôt",
+              "entity": "Zone de dépôt",
               "field": {
                 "label": "Zone de dépôt",
                 "fields": [
@@ -74,21 +84,21 @@
                   {},
                   {},
                   {
-                    "label": "Sélectionner les éléments corrects"
+                    "label": "Sélectionnez les éléments qui devront être correctement placés dans cette zone"
                   },
                   {
                     "label": "Opacité"
                   },
                   {
-                    "label": "Conseil",
+                    "label": "Indice",
                     "fields": [
                       {
-                        "label": "Texte de conseil"
+                        "label": "Texte de l'indice"
                       }
                     ]
                   },
                   {
-                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément. Soyez sur qu'il n'existe qu'une seule bonne réponse pour cette zone."
+                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément. Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone."
                   }
                 ]
               }
@@ -99,21 +109,21 @@
     },
     {
       "label": "Opacité des étiquettes",
-      "description": "Si ce champ est correct, cela accentuera l'opacité de toutes les étiquettes. Doit être un nombre compris entre 0 and 100, où 0 signifie complète transparence and 100 signifie très opaque"
+      "description": "Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
     },
     {
       "label": "Options générales.",
-      "description": "Cette option vous donnera le contrôle de la tâche.",
+      "description": "Cette option vous permet de paramétrer le déroulement de l'exercice.",
       "fields": [
         {
-          "label": "Activer \"Réessayer\""
+          "label": "Activer le bouton \"Recommencer\""
         },
         {
-          "label": "Donner une direction pour l'ensemble de la tâche",
-          "description": "Désactiver pour donner une direction pour chaque étiquette placée correctement."
+          "label": "Donner un point pour l'ensemble de l'exercice",
+          "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
         },
         {
-          "label": "L'utilisateur doit entrer la solution avant d'afficher le résultat."
+          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
         }
       ]
     }
