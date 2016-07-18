@@ -378,8 +378,8 @@ H5P.DragQuestion = (function ($) {
   C.prototype.resize = function (e) {
     var self = this;
     // Make sure we use all the height we can get. Needed to scale up.
-    if (this.$container === undefined) {
-      // Not attached yet - nothing to resize....
+    if (this.$container === undefined || !this.$container.is(':visible')) {
+      // Not yet attached or visible – not possible to resize correctly
       return;
     }
 
