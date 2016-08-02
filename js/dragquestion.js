@@ -612,6 +612,12 @@ H5P.DragQuestion = (function ($) {
   C.prototype.calculateMaxScore = function () {
     var max = 0;
 
+    if (this.blankIsCorrect) {
+      return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    }
+
+    max += this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+
     var elements = this.options.question.task.elements;
     for (var i = 0; i < elements.length; i++) {
       var correctDropZones = this.correctDZs[i];
@@ -626,11 +632,6 @@ H5P.DragQuestion = (function ($) {
       else {
         max++;
       }
-    }
-
-    this.rawMax = max;
-    if (this.blankIsCorrect) {
-      return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
     }
 
     return max;
