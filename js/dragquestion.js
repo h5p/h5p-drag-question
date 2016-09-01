@@ -669,14 +669,19 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Shows the score to the user when the score button i pressed.
+   * Shows the score to the user when the score button is pressed.
+   * Modified by SUPRIYA RAJGOPAL on 1Sep16 to show (in)correct feedback depending on the points scored
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
     if (this.options.behaviour.singlePoint) {
       maxScore = 1;
     }
-    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+	var scoreText;
+	if(this.points == maxScore)
+		scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+	else
+		scoreText = this.options.incorrect_feedback.replace('@score', this.points).replace('@total', maxScore);
     this.setFeedback(scoreText, this.points, maxScore);
   };
 
