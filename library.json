@@ -3,8 +3,8 @@
   "description": "Drag and drop the elements into the correct drop zones.",
   "contentType": "Question",
   "majorVersion": 1,
-  "minorVersion": 6,
-  "patchVersion": 2,
+  "minorVersion": 7,
+  "patchVersion": 0,
   "embedTypes": [
     "iframe"
   ],
@@ -53,7 +53,7 @@
     {
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
-      "minorVersion": 4
+      "minorVersion": 5
     }
   ]
 }
