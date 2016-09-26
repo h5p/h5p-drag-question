@@ -31,7 +31,8 @@ H5P.DragQuestion = (function ($) {
           size: {
             width: 620,
             height: 310
-          }
+          },
+          dropZoneHighlighting: 'dragging'
         },
         task: {
           elements: [],
@@ -94,6 +95,14 @@ H5P.DragQuestion = (function ($) {
 
       // Create new draggable instance
       this.draggables[i] = new Draggable(element, i, answers);
+      if (self.options.question.settings.dropZoneHighlighting === 'dragging') {
+        this.draggables[i].on('drag', function () {
+          self.$container.addClass('h5p-dq-highlight-dz');
+        });
+        this.draggables[i].on('dropped', function (event) {
+          self.$container.removeClass('h5p-dq-highlight-dz');
+        });
+      }
       this.draggables[i].on('interacted', function () {
         self.answered = true;
         self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
@@ -160,11 +169,20 @@ H5P.DragQuestion = (function ($) {
 
 
     // Set class if no background
-    var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
+    var classes = '';
+    if (this.options.question.settings.background !== undefined) {
+      classes += 'h5p-dragquestion-has-no-background';
+    }
+    if (self.options.question.settings.dropZoneHighlighting === 'always' ) {
+      if (classes) {
+        classes += ' ';
+      }
+      classes += 'h5p-dq-highlight-dz-always';
+    }
 
     // Register task content area
     self.setContent(self.createQuestionContent(), {
-      'class': contentClass
+      'class': classes
     });
 
     // ... and buttons
@@ -959,6 +977,9 @@ H5P.DragQuestion = (function ($) {
             left: self.x + '%'
           };
           C.setElementOpacity($this, self.backgroundOpacity);
+
+          self.trigger('dropped');
+
           return !dropZone;
         },
         start: function(event, ui) {
@@ -973,6 +994,8 @@ H5P.DragQuestion = (function ($) {
           $this.removeClass('h5p-wrong').detach().appendTo($container);
           $container.addClass('h5p-dragging');
           C.setElementOpacity($this, self.backgroundOpacity);
+
+          self.trigger('drag');
         },
         stop: function(event, ui) {
           var $this = $(this);
@@ -1001,7 +1024,6 @@ H5P.DragQuestion = (function ($) {
 
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
-
             self.trigger('interacted');
           }
           else {

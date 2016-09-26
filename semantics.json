@@ -74,6 +74,28 @@
                 "type": "number"
               }
             ]
+          },
+          {
+            "name": "dropZoneHighlighting",
+            "type": "select",
+            "label": "Drop Zone Highlighting",
+            "optional": true,
+            "description": "Choose when to highlight drop zones.",
+            "default": "dragging",
+            "options": [
+              {
+                "value": "dragging",
+                "label": "When dragging (default)"
+              },
+              {
+                "value": "always",
+                "label": "Always"
+              },
+              {
+                "value": "never",
+                "label": "Never"
+              }
+            ]
           }
         ]
       },
