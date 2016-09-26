@@ -62,6 +62,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   text-align: center;
   padding: 0.3em 0.3em;
   line-height: 1.25em;
+
   -webkit-box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
   -moz-box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
   box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
@@ -72,6 +73,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover {
    border: 0.1em solid rgb(212, 190, 216);
