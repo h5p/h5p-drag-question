@@ -268,7 +268,7 @@
                   "optional": true
                 },
                 {
-                  "name": "enabled",
+                  "name": "autoAlign",
                   "type": "boolean",
                   "label": "Enable Auto-Align",
                   "description": "Will auto-align all draggables dropped in this zone.",
