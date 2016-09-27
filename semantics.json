@@ -85,7 +85,7 @@
             "options": [
               {
                 "value": "dragging",
-                "label": "When dragging (default)"
+                "label": "When dragging"
               },
               {
                 "value": "always",
@@ -96,6 +96,14 @@
                 "label": "Never"
               }
             ]
+          },
+          {
+            "name": "autoAlignSpacing",
+            "type": "number",
+            "label": "Spacing for Auto-Align (in px)",
+            "min": 0,
+            "default": 2,
+            "optional": true
           }
         ]
       },
@@ -257,6 +265,13 @@
                   "type": "boolean",
                   "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
                   "default": false,
+                  "optional": true
+                },
+                {
+                  "name": "enabled",
+                  "type": "boolean",
+                  "label": "Enable Auto-Align",
+                  "description": "Will auto-align all draggables dropped in this zone.",
                   "optional": true
                 }
               ]
