@@ -174,8 +174,7 @@
                   "type": "boolean",
                   "label": "Infinite number of element instances",
                   "description": "Clones this element so that it can be dragged to multiple drop zones.",
-                  "default": false,
-                  "optional": true
+                  "default": false
                 }
               ]
             }
@@ -264,15 +263,13 @@
                   "name": "single",
                   "type": "boolean",
                   "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                  "default": false,
-                  "optional": true
+                  "default": false
                 },
                 {
                   "name": "autoAlign",
                   "type": "boolean",
                   "label": "Enable Auto-Align",
-                  "description": "Will auto-align all draggables dropped in this zone.",
-                  "optional": true
+                  "description": "Will auto-align all draggables dropped in this zone."
                 }
               ]
             }
@@ -299,8 +296,7 @@
         "name": "enableRetry",
         "type": "boolean",
         "label": "Enable \"Retry\"",
-        "default": true,
-        "optional": true
+        "default": true
       },
       {
         "name": "singlePoint",
@@ -313,8 +309,7 @@
         "label": "Require user input before the solution can be viewed",
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
-        "default": true,
-        "optional": true
+        "default": true
       }
     ]
   }
