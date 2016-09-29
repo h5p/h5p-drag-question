@@ -1026,6 +1026,10 @@ H5P.DragQuestion = (function ($) {
               for (var i = 0; i < self.elements.length; i++) {
                 if (i !== index && self.elements[i] !== undefined && self.elements[i].dropZone === addToZone) {
                   // Remove element
+                  if (self.elements[index].dropZone !== undefined) {
+                    // Leaving old drop zone!
+                    self.trigger('leavingDropZone', element);
+                  }
                   $this.remove();
                   delete self.elements[index];
                   return;
@@ -1033,6 +1037,10 @@ H5P.DragQuestion = (function ($) {
               }
             }
 
+            if (element.dropZone !== undefined) {
+              // Leaving old drop zone!
+              self.trigger('leavingDropZone', element);
+            }
             element.dropZone = addToZone;
 
             $this.addClass('h5p-dropped');
