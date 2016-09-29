@@ -79,7 +79,6 @@
             "name": "dropZoneHighlighting",
             "type": "select",
             "label": "Drop Zone Highlighting",
-            "optional": true,
             "description": "Choose when to highlight drop zones.",
             "default": "dragging",
             "options": [
