@@ -109,7 +109,7 @@ H5P.DragQuestion = (function ($) {
         self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
       draggable.on('leavingDropZone', function (event) {
-        self.dropZones[event.data.dropZone].removeDraggable(event.data.$);
+        self.dropZones[event.data.dropZone].removeAlignable(event.data.$);
       });
 
       this.draggables[i] = draggable;
@@ -1310,7 +1310,7 @@ H5P.DragQuestion = (function ($) {
     self.tip = dropZone.tip;
     self.single = dropZone.single;
     self.autoAlignEnabled = dropZone.autoAlign;
-    self.draggables = [];
+    self.alignables = [];
   }
 
   /**
@@ -1381,8 +1381,8 @@ H5P.DragQuestion = (function ($) {
 
             if (self.autoAlignEnabled) {
               if (self.getIndexOf(ui.draggable) === -1) {
-                // Add to draggables
-                self.draggables.push(ui.draggable);
+                // Add to alignables
+                self.alignables.push(ui.draggable);
               }
 
               // Trigger alignment
@@ -1411,16 +1411,16 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Find index of given draggable
+   * Find index of given alignable
    *
-   * @param {jQuery} $draggable
+   * @param {jQuery} $alignable
    * @return {number}
    */
-  DropZone.prototype.getIndexOf = function ($draggable) {
+  DropZone.prototype.getIndexOf = function ($alignable) {
     var self = this;
 
-    for (var i = 0; i < self.draggables.length; i++) {
-      if (self.draggables[i][0] === $draggable[0]) {
+    for (var i = 0; i < self.alignables.length; i++) {
+      if (self.alignables[i][0] === $alignable[0]) {
         return i;
       }
     }
@@ -1429,22 +1429,22 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Remove draggable
+   * Remove alignable
    *
-   * @param {jQuery} $draggable
+   * @param {jQuery} $alignable
    */
-  DropZone.prototype.removeDraggable = function ($draggable) {
+  DropZone.prototype.removeAlignable = function ($alignable) {
     var self = this;
 
-    // Find draggable index
-    var index = self.getIndexOf($draggable);
+    // Find alignable index
+    var index = self.getIndexOf($alignable);
     if (index !== -1) {
 
-      // Remove draggable
-      self.draggables.splice(index, 1);
+      // Remove alignable
+      self.alignables.splice(index, 1);
 
       if (self.autoAlignTimer === undefined) {
-        // Schedule re-aligment of draggables left
+        // Schedule re-aligment of alignables left
         self.autoAlignTimer = setTimeout(function () {
           delete self.autoAlignTimer;
           self.autoAlign();
@@ -1454,7 +1454,7 @@ H5P.DragQuestion = (function ($) {
   }
 
   /**
-   * Auto-align draggable elements inside drop zone.
+   * Auto-align alignable elements inside drop zone.
    */
   DropZone.prototype.autoAlign = function () {
     var self = this;
@@ -1490,8 +1490,8 @@ H5P.DragQuestion = (function ($) {
     // Set height for the active row of elements
     var currentRowHeight = 0;
 
-    // Current draggable element and it's size
-    var $draggable, draggableSize;
+    // Current alignable element and it's size
+    var $alignable, alignableSize;
 
     /**
      * Helper doing the actual positioning of the element + recalculating
@@ -1501,33 +1501,33 @@ H5P.DragQuestion = (function ($) {
      */
     var alignElement = function () {
       // Position element at current spot
-      $draggable.css({
+      $alignable.css({
         left: pos.x + '%',
         top: pos.y + '%'
       });
 
       // Update horizontal space left + next position
-      var spaceDiffX = (draggableSize.width + self.autoAlignEnabled.spacing);
+      var spaceDiffX = (alignableSize.width + self.autoAlignEnabled.spacing);
       spaceLeft.x -= spaceDiffX;
       pos.x += (spaceDiffX / containerSize.width) * 100;
 
       // Keep track of the highest element in this row
-      var spaceDiffY = (draggableSize.height + self.autoAlignEnabled.spacing);
+      var spaceDiffY = (alignableSize.height + self.autoAlignEnabled.spacing);
       if (spaceDiffY > currentRowHeight) {
         currentRowHeight = spaceDiffY;
       }
     };
 
-    // Try to order and align the draggables inside the drop zone
+    // Try to order and align the alignables inside the drop zone
     // (in the order they were added)
-    for (var i = 0; i < self.draggables.length; i++) {
+    for (var i = 0; i < self.alignables.length; i++) {
 
-      // Determine draggable size
-      $draggable = self.draggables[i];
-      draggableSize = $draggable[0].getBoundingClientRect();
+      // Determine alignable size
+      $alignable = self.alignables[i];
+      alignableSize = $alignable[0].getBoundingClientRect();
 
       // Try to fit on the current row
-      if (spaceLeft.x >= draggableSize.width) {
+      if (spaceLeft.x >= alignableSize.width) {
         alignElement();
       }
       else {
