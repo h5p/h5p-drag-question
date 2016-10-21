@@ -176,7 +176,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   height: 100%;
   position: relative;
   box-sizing: border-box;
-  border: 2px dashed #c6c6c6;
   -moz-box-sizing: border-box;
   background: rgb(245, 245, 245);
 }
