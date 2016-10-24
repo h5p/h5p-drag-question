@@ -22,22 +22,6 @@
     "common": true
   },
   {
-    "label": "Correct feedback text",
-    "name": "feedback",
-    "type": "text",
-    "default": "You got @score of @total points",
-    "description": "Feedback text when correct answer is given, variables available: @score and @total. Example: 'You got @score of @total points.'",
-    "common": false
-  },
-  {
-    "label": "Incorrect feedback text",
-    "name": "incorrect_feedback",
-    "type": "text",
-    "default": "Sorry, this answer is incorrect",
-    "description": "Feedback text when incorrect answer is given, variables available: @score and @total.'",
-    "common": false
-  },
-  {
     "name": "question",
     "type": "group",
     "widget": "wizard",
@@ -251,6 +235,20 @@
         ]
       }
     ]
+  },
+  {
+    "label": "Correct feedback text",
+    "name": "feedback",
+    "type": "text",
+    "default": "You got @score of @total points",
+    "description": "Feedback text when correct answer is given, variables available: @score and @total. Example: 'You got @score of @total points.'"
+  },
+  {
+    "label": "Incorrect feedback text",
+    "name": "incorrectFeedback",
+    "type": "text",
+    "default": "You got @score of @total points",
+    "description": "Feedback text when incorrect answer is given, variables available: @score and @total.'"
   },
   {
     "name": "backgroundOpacity",
