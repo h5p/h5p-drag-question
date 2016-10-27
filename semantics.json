@@ -18,14 +18,14 @@
     "name": "correct",
     "type": "text",
     "label": "Correct solution label text",
-    "default": "Solution",
+    "default": "Show solution",
     "common": true
   },
   {
     "label": "Feedback text",
     "name": "feedback",
     "type": "text",
-    "default": "@score of @total points",
+    "default": "You got @score of @total points",
     "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
     "common": true
   },
@@ -74,6 +74,35 @@
                 "type": "number"
               }
             ]
+          },
+          {
+            "name": "dropZoneHighlighting",
+            "type": "select",
+            "label": "Drop Zone Highlighting",
+            "description": "Choose when to highlight drop zones.",
+            "default": "dragging",
+            "options": [
+              {
+                "value": "dragging",
+                "label": "When dragging"
+              },
+              {
+                "value": "always",
+                "label": "Always"
+              },
+              {
+                "value": "never",
+                "label": "Never"
+              }
+            ]
+          },
+          {
+            "name": "autoAlignSpacing",
+            "type": "number",
+            "label": "Spacing for Auto-Align (in px)",
+            "min": 0,
+            "default": 2,
+            "optional": true
           }
         ]
       },
@@ -144,8 +173,7 @@
                   "type": "boolean",
                   "label": "Infinite number of element instances",
                   "description": "Clones this element so that it can be dragged to multiple drop zones.",
-                  "default": false,
-                  "optional": true
+                  "default": false
                 }
               ]
             }
@@ -234,8 +262,13 @@
                   "name": "single",
                   "type": "boolean",
                   "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                  "default": false,
-                  "optional": true
+                  "default": false
+                },
+                {
+                  "name": "autoAlign",
+                  "type": "boolean",
+                  "label": "Enable Auto-Align",
+                  "description": "Will auto-align all draggables dropped in this zone."
                 }
               ]
             }
@@ -262,8 +295,7 @@
         "name": "enableRetry",
         "type": "boolean",
         "label": "Enable \"Retry\"",
-        "default": true,
-        "optional": true
+        "default": true
       },
       {
         "name": "singlePoint",
@@ -276,8 +308,7 @@
         "label": "Require user input before the solution can be viewed",
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
-        "default": true,
-        "optional": true
+        "default": true
       }
     ]
   }
