@@ -228,8 +228,8 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .h5p-question-feedback .joubel-tip-container {
   position: relative;
-  top: -0.8em;
-  right: 0.em;
+  top: initial;
+  right: initial;
   font-size: 1em;
 }
 
