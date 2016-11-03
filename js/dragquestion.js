@@ -17,21 +17,23 @@ H5P.DragQuestion = (function ($) {
    */
   function C(options, contentId, contentData) {
     var self = this;
-    var i;
+    var i, j;
     this.id = this.contentId = contentId;
     H5P.Question.call(self, 'dragquestion');
     this.options = $.extend(true, {}, {
       scoreShow: 'Check',
-      correct: 'Solution',
+      correct: 'Show solution',
       tryAgain: 'Retry',
-      feedback: "You placed @score out of @total correct.",
+      feedback: 'You got @score of @total points',
       question: {
         settings: {
           questionTitle: 'Drag and drop',
           size: {
             width: 620,
             height: 310
-          }
+          },
+          dropZoneHighlighting: 'dragging',
+          autoAlignSpacing: 2
         },
         task: {
           elements: [],
@@ -53,12 +55,17 @@ H5P.DragQuestion = (function ($) {
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
+    // List of drop zones that has no elements, i.e. not used for the task
+    var dropZonesWithoutElements = [];
+
     // Create map over correct drop zones for elements
     var task = this.options.question.task;
     this.correctDZs = [];
     for (i = 0; i < task.dropZones.length; i++) {
+      dropZonesWithoutElements.push(true); // All true by default
+
       var correctElements = task.dropZones[i].correctElements;
-      for (var j = 0; j < correctElements.length; j++) {
+      for (j = 0; j < correctElements.length; j++) {
         var correctElement = correctElements[j];
         if (this.correctDZs[correctElement] === undefined) {
           this.correctDZs[correctElement] = [];
@@ -68,8 +75,6 @@ H5P.DragQuestion = (function ($) {
     }
 
     this.weight = 1;
-
-    // TODO: Initialize elements and drop zones here!
 
     // Add draggable elements
     for (i = 0; i < task.elements.length; i++) {
@@ -90,19 +95,50 @@ H5P.DragQuestion = (function ($) {
       }
 
       // Create new draggable instance
-      this.draggables[i] = new Draggable(element, i, answers);
-      this.draggables[i].on('interacted', function () {
+      var draggable = new Draggable(element, i, answers);
+      if (self.options.question.settings.dropZoneHighlighting === 'dragging') {
+        draggable.on('drag', function () {
+          self.$container.addClass('h5p-dq-highlight-dz');
+        });
+        draggable.on('dropped', function (event) {
+          self.$container.removeClass('h5p-dq-highlight-dz');
+        });
+      }
+      draggable.on('interacted', function () {
         self.answered = true;
         self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
       });
+      draggable.on('leavingDropZone', function (event) {
+        self.dropZones[event.data.dropZone].removeAlignable(event.data.$);
+      });
+
+      this.draggables[i] = draggable;
+
+      for (j = 0; j < element.dropZones.length; j++) {
+        dropZonesWithoutElements[element.dropZones[j]] = false;
+      }
     }
+
+    // Create a count to subtrack from score
+    this.numDropZonesWithoutElements = 0;
 
     // Add drop zones
     for (i = 0; i < task.dropZones.length; i++) {
       var dropZone = task.dropZones[i];
 
+      if (dropZonesWithoutElements[i] === true) {
+        this.numDropZonesWithoutElements += 1;
+      }
+
       if (this.blankIsCorrect && dropZone.correctElements.length) {
         this.blankIsCorrect = false;
+      }
+
+      if (dropZone.autoAlign) {
+        dropZone.autoAlign = {
+          spacing: self.options.question.settings.autoAlignSpacing,
+          size: self.options.question.settings.size
+        };
       }
 
       this.dropZones[i] = new DropZone(dropZone, i);
@@ -146,11 +182,20 @@ H5P.DragQuestion = (function ($) {
 
 
     // Set class if no background
-    var contentClass = this.options.question.settings.background !== undefined ? '' : 'h5p-dragquestion-has-no-background';
+    var classes = '';
+    if (this.options.question.settings.background !== undefined) {
+      classes += 'h5p-dragquestion-has-no-background';
+    }
+    if (self.options.question.settings.dropZoneHighlighting === 'always' ) {
+      if (classes) {
+        classes += ' ';
+      }
+      classes += 'h5p-dq-highlight-dz-always';
+    }
 
     // Register task content area
     self.setContent(self.createQuestionContent(), {
-      'class': contentClass
+      'class': classes
     });
 
     // ... and buttons
@@ -160,7 +205,7 @@ H5P.DragQuestion = (function ($) {
       self.trigger('resize');
     }, 200);
   };
-  
+
   /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
@@ -179,9 +224,9 @@ H5P.DragQuestion = (function ($) {
       var el = this.options.question.task.elements[i];
       if (el.dropZones && el.dropZones.length) {
         var desc = el.type.params.alt ? el.type.params.alt : el.type.params.text;
-        
+
         definition.source.push({
-          'id': i,
+          'id': '' + i,
           'description': {
             // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
             'en-US': $('<div>' + desc + '</div>').text()
@@ -189,14 +234,14 @@ H5P.DragQuestion = (function ($) {
         });
       }
     }
-    
+
     // Add targets, i.e. drop zones, and the correct response pattern.
     definition.correctResponsesPattern = [''];
     definition.target = [];
     var firstCorrectPair = true;
     for (var i = 0; i < this.options.question.task.dropZones.length; i++) {
       definition.target.push({
-        'id': i,
+        'id': '' + i,
         'description': {
           // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
           'en-US': $('<div>' + this.options.question.task.dropZones[i].label + '</div>').text()
@@ -205,15 +250,15 @@ H5P.DragQuestion = (function ($) {
       if (this.options.question.task.dropZones[i].correctElements) {
         for (var j = 0; j < this.options.question.task.dropZones[i].correctElements.length; j++) {
           if (!firstCorrectPair) {
-            definition.correctResponsesPattern += '[,]';
+            definition.correctResponsesPattern[0] += '[,]';
           }
-          definition.correctResponsesPattern += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
+          definition.correctResponsesPattern[0] += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
           firstCorrectPair = false;
         }
       }
     }
   };
-  
+
   /**
    * Add the response part to an xAPI event
    *
@@ -232,7 +277,7 @@ H5P.DragQuestion = (function ($) {
     var state = this.getCurrentState();
     if (state.answers !== undefined) {
       for (var i = 0; i < state.answers.length; i++) {
-        if (state.answers[i] !== undefined) {       
+        if (state.answers[i] !== undefined) {
           for (var j = 0; j < state.answers[i].length; j++) {
             if (!firstPair) {
               response += '[,]';
@@ -337,6 +382,7 @@ H5P.DragQuestion = (function ($) {
     var that = this;
 
     this.addButton('check-answer', this.options.scoreShow, function () {
+      that.answered = true;
       that.showAllSolutions();
       that.showScore();
       var xAPIEvent = that.createXAPIEventTemplate('answered');
@@ -377,8 +423,8 @@ H5P.DragQuestion = (function ($) {
   C.prototype.resize = function (e) {
     var self = this;
     // Make sure we use all the height we can get. Needed to scale up.
-    if (this.$container === undefined) {
-      // Not attached yet - nothing to resize....
+    if (this.$container === undefined || !this.$container.is(':visible')) {
+      // Not yet attached or visible – not possible to resize correctly
       return;
     }
 
@@ -472,6 +518,29 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
+   * Get amount of empty drop zones.
+   *
+   * @param {number} totalDropZones Total drop zones in question
+   * @param {Array} correctDZs Correct drop zones for draggables
+   * @return {number} Amount of empty drop zones in question
+   */
+  C.prototype.getDropzoneWithoutAnswer = function (totalDropZones, correctDZs) {
+    //Index of correctDZs is the draggable, and value is the drop zone it belongs to
+    var correctDropZones = [];
+    correctDZs.forEach(function (draggable) {
+      if (draggable.length) {
+        draggable.forEach(function (dropZone) {
+          if (correctDropZones.indexOf(dropZone) < 0) {
+            correctDropZones.push(dropZone);
+          }
+        });
+      }
+    });
+
+    return totalDropZones - correctDropZones.length - this.numDropZonesWithoutElements;
+  };
+
+  /**
    * Shows the correct solutions on the boxes and disables input and buttons depending on settings.
    * @public
    * @params {Boolean} skipVisuals Skip visual animations.
@@ -479,6 +548,11 @@ H5P.DragQuestion = (function ($) {
   C.prototype.showAllSolutions = function (skipVisuals) {
     this.points = 0;
     this.rawPoints = 0;
+
+    // One correct point for each "no solution" dropzone
+    var emptyDropzones = this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    this.points += emptyDropzones;
+    this.rawPoints += emptyDropzones;
 
     for (var i = 0; i < this.draggables.length; i++) {
       var draggable = this.draggables[i];
@@ -527,6 +601,7 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.showSolutions = function () {
     this.showAllSolutions();
+    this.showScore();
     //Hide solution button:
     this.hideButton('check-answer');
     this.hideButton('try-again');
@@ -568,6 +643,12 @@ H5P.DragQuestion = (function ($) {
   C.prototype.calculateMaxScore = function () {
     var max = 0;
 
+    if (this.blankIsCorrect) {
+      return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    }
+
+    max += this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+
     var elements = this.options.question.task.elements;
     for (var i = 0; i < elements.length; i++) {
       var correctDropZones = this.correctDZs[i];
@@ -582,11 +663,6 @@ H5P.DragQuestion = (function ($) {
       else {
         max++;
       }
-    }
-
-    this.rawMax = max;
-    if (this.blankIsCorrect) {
-      return this.weight;
     }
 
     return max;
@@ -721,6 +797,12 @@ H5P.DragQuestion = (function ($) {
       // Set both color and gradient.
       C.setOpacity($element, 'backgroundColor', opacity);
       C.setOpacity($element, 'backgroundImage', opacity);
+      if (!opacity) {
+        $element.css({
+          "background-color": "rgba(245, 245, 245, 0)",
+          "background-image": "none"
+        });
+      }
       return;
     }
 
@@ -909,6 +991,9 @@ H5P.DragQuestion = (function ($) {
             left: self.x + '%'
           };
           C.setElementOpacity($this, self.backgroundOpacity);
+
+          self.trigger('dropped');
+
           return !dropZone;
         },
         start: function(event, ui) {
@@ -923,6 +1008,8 @@ H5P.DragQuestion = (function ($) {
           $this.removeClass('h5p-wrong').detach().appendTo($container);
           $container.addClass('h5p-dragging');
           C.setElementOpacity($this, self.backgroundOpacity);
+
+          self.trigger('drag');
         },
         stop: function(event, ui) {
           var $this = $(this);
@@ -940,6 +1027,10 @@ H5P.DragQuestion = (function ($) {
               for (var i = 0; i < self.elements.length; i++) {
                 if (i !== index && self.elements[i] !== undefined && self.elements[i].dropZone === addToZone) {
                   // Remove element
+                  if (self.elements[index].dropZone !== undefined && self.elements[index].dropZone !== addToZone) {
+                    // Leaving old drop zone!
+                    self.trigger('leavingDropZone', element);
+                  }
                   $this.remove();
                   delete self.elements[index];
                   return;
@@ -947,22 +1038,31 @@ H5P.DragQuestion = (function ($) {
               }
             }
 
+            if (element.dropZone !== undefined && element.dropZone !== addToZone) {
+              // Leaving old drop zone!
+              self.trigger('leavingDropZone', element);
+            }
             element.dropZone = addToZone;
 
             $this.addClass('h5p-dropped');
             C.setElementOpacity($this, self.backgroundOpacity);
-
             self.trigger('interacted');
           }
           else {
             if (self.multiple) {
               // Remove element
+              if (self.elements[index].dropZone !== undefined) {
+                self.trigger('leavingDropZone', self.elements[index]);
+              }
               $this.remove();
               delete self.elements[index];
             }
             else {
               // Reset position and drop zone.
-              delete element.dropZone;
+              if (element.dropZone !== undefined) {
+                self.trigger('leavingDropZone', element);
+                delete element.dropZone;
+              }
               delete element.position;
             }
           }
@@ -1021,6 +1121,9 @@ H5P.DragQuestion = (function ($) {
         }, function () {
           //Remove the draggable if it is an infinity draggable.
           if (self.multiple) {
+            if (element.dropZone !== undefined) {
+              self.trigger('leavingDropZone', element);
+            }
             element.remove();
             //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
             if (self.elements.indexOf(draggable) >= 0) {
@@ -1040,9 +1143,14 @@ H5P.DragQuestion = (function ($) {
         C.setElementOpacity(element, self.backgroundOpacity);
       }
     });
+
     // Draggable removed from dropzone.
-    delete self.element.dropZone;
-    // Reset style on initial element and delete the dropzone.
+    if (self.element.dropZone !== undefined) {
+      self.trigger('leavingDropZone', self.element);
+      delete self.element.dropZone;
+    }
+
+    // Reset style on initial element
     self.element.$.removeClass('h5p-wrong')
       .removeClass('h5p-correct')
       .removeClass('h5p-dropped')
@@ -1202,6 +1310,8 @@ H5P.DragQuestion = (function ($) {
     self.backgroundOpacity = dropZone.backgroundOpacity;
     self.tip = dropZone.tip;
     self.single = dropZone.single;
+    self.autoAlignEnabled = dropZone.autoAlign;
+    self.alignables = [];
   }
 
   /**
@@ -1223,7 +1333,7 @@ H5P.DragQuestion = (function ($) {
     }
 
     // Create drop zone element
-    var $dropZone = $('<div/>', {
+    self.$dropZone = $('<div/>', {
       class: 'h5p-dropzone' + extraClass,
       css: {
         left: self.x + '%',
@@ -1269,6 +1379,16 @@ H5P.DragQuestion = (function ($) {
             var $this = $(this);
             C.setOpacity($this.removeClass('h5p-over'), 'background', self.backgroundOpacity);
             ui.draggable.data('addToZone', self.id);
+
+            if (self.autoAlignEnabled) {
+              if (self.getIndexOf(ui.draggable) === -1) {
+                // Add to alignables
+                self.alignables.push(ui.draggable);
+              }
+
+              // Trigger alignment
+              self.autoAlign();
+            }
           },
           over: function (event, ui) {
             C.setOpacity($(this).addClass('h5p-over'), 'background', self.backgroundOpacity);
@@ -1281,14 +1401,158 @@ H5P.DragQuestion = (function ($) {
 
     // Add tip after setOpacity(), so this does not get background opacity:
     if (self.tip !== undefined && self.tip.trim().length) {
-      $dropZone.append(H5P.JoubelUI.createTip(self.tip));
+      self.$dropZone.append(H5P.JoubelUI.createTip(self.tip));
     }
 
     // Set element opacity when element has been appended
     setTimeout(function () {
-      C.setOpacity($dropZone.children('.h5p-label'), 'background', self.backgroundOpacity);
-      C.setOpacity($dropZone.children('.h5p-inner'), 'background', self.backgroundOpacity);
+      C.setOpacity(self.$dropZone.children('.h5p-label'), 'background', self.backgroundOpacity);
+      C.setOpacity(self.$dropZone.children('.h5p-inner'), 'background', self.backgroundOpacity);
     }, 0);
+  };
+
+  /**
+   * Find index of given alignable
+   *
+   * @param {jQuery} $alignable
+   * @return {number}
+   */
+  DropZone.prototype.getIndexOf = function ($alignable) {
+    var self = this;
+
+    for (var i = 0; i < self.alignables.length; i++) {
+      if (self.alignables[i][0] === $alignable[0]) {
+        return i;
+      }
+    }
+
+    return -1
+  };
+
+  /**
+   * Remove alignable
+   *
+   * @param {jQuery} $alignable
+   */
+  DropZone.prototype.removeAlignable = function ($alignable) {
+    var self = this;
+
+    // Find alignable index
+    var index = self.getIndexOf($alignable);
+    if (index !== -1) {
+
+      // Remove alignable
+      self.alignables.splice(index, 1);
+
+      if (self.autoAlignTimer === undefined) {
+        // Schedule re-aligment of alignables left
+        self.autoAlignTimer = setTimeout(function () {
+          delete self.autoAlignTimer;
+          self.autoAlign();
+        }, 1);
+      }
+    }
+  }
+
+  /**
+   * Auto-align alignable elements inside drop zone.
+   */
+  DropZone.prototype.autoAlign = function () {
+    var self = this;
+
+    // Determine container size in order to calculate percetages
+    var containerSize = self.$dropZone.parent()[0].getBoundingClientRect();
+
+    // Calcuate borders and spacing values in percetage
+    var spacing = {
+      x: (self.autoAlignEnabled.spacing / self.autoAlignEnabled.size.width) * 100,
+      y: (self.autoAlignEnabled.spacing / self.autoAlignEnabled.size.height) * 100
+    };
+
+    // Determine coordinates for first 'spot'
+    var pos = {
+      x: self.x + spacing.x,
+      y: self.y + spacing.y
+    };
+
+    // Determine space inside drop zone
+    var dropZoneSize = self.$dropZone[0].getBoundingClientRect();
+    var space = {
+      x: dropZoneSize.width - (spacing.x * 2),
+      y: dropZoneSize.height - (spacing.y * 2)
+    };
+
+    // Set current space left inside drop zone
+    var spaceLeft = {
+      x: space.x,
+      y: space.y
+    };
+
+    // Set height for the active row of elements
+    var currentRowHeight = 0;
+
+    // Current alignable element and it's size
+    var $alignable, alignableSize;
+
+    /**
+     * Helper doing the actual positioning of the element + recalculating
+     * next position and space left.
+     *
+     * @private
+     */
+    var alignElement = function () {
+      // Position element at current spot
+      $alignable.css({
+        left: pos.x + '%',
+        top: pos.y + '%'
+      });
+
+      // Update horizontal space left + next position
+      var spaceDiffX = (alignableSize.width + self.autoAlignEnabled.spacing);
+      spaceLeft.x -= spaceDiffX;
+      pos.x += (spaceDiffX / containerSize.width) * 100;
+
+      // Keep track of the highest element in this row
+      var spaceDiffY = (alignableSize.height + self.autoAlignEnabled.spacing);
+      if (spaceDiffY > currentRowHeight) {
+        currentRowHeight = spaceDiffY;
+      }
+    };
+
+    // Try to order and align the alignables inside the drop zone
+    // (in the order they were added)
+    for (var i = 0; i < self.alignables.length; i++) {
+
+      // Determine alignable size
+      $alignable = self.alignables[i];
+      alignableSize = $alignable[0].getBoundingClientRect();
+
+      // Try to fit on the current row
+      if (spaceLeft.x >= alignableSize.width) {
+        alignElement();
+      }
+      else {
+        // Did not fit, try next row
+
+        // Reset X values
+        spaceLeft.x = space.x;
+        pos.x = self.x + spacing.x;
+
+        // Bump Y values
+        if (currentRowHeight) {
+          // Update Y space and position according to previous row height
+          spaceLeft.y -= currentRowHeight;
+          pos.y += (currentRowHeight / containerSize.height) * 100;
+
+          // Reset
+          currentRowHeight = 0;
+        }
+        if (spaceLeft.y <= 0) {
+          return; // No more vertical space left, stop all aliging
+        }
+        alignElement();
+      }
+    }
   };
 
   return C;

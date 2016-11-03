@@ -1,54 +1,90 @@
 {
   "semantics": [
     {
-      "label": "Pulsante Controlla risposta"
+      "englishLabel": "Check answer button",
+      "label": "Pulsante Controlla risposta",
+      "englishDefault": "Check"
     },
     {
-      "label": "Pulsante Riprova"
+      "englishLabel": "Retry button",
+      "label": "Pulsante Riprova",
+      "englishDefault": "Retry"
     },
     {
-      "label": "Testo dell'etichetta Soluzione corretta"
+      "englishLabel": "Correct solution label text",
+      "label": "Testo dell'etichetta Soluzione corretta",
+      "englishDefault": "Show solution"
     },
     {
+      "englishLabel": "Feedback text",
       "label": "Testo del Feedback",
+      "englishDefault": "You got @score of @total points",
+      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
       "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
     },
     {
       "fields": [
         {
+          "englishLabel": "Settings",
           "label": "Impostazioni",
           "fields": [
             {
+              "englishLabel": "The title of this question",
               "label": "The title of this question",
+              "englishDefault": "Drag and Drop",
               "default": "Drag and Drop",
+              "englishDescription": "Used in summaries, statistics etc.",
               "description": "Used in summaries, statistics etc."
             },
             {
+              "englishLabel": "Background image",
               "label": "Immagine di sfondo",
+              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
               "description": "Opzionale. Selezionare un'immagine da utilizzare come sfondo per il vostro compito drag and drop."
             },
             {
+              "englishLabel": "Task size",
               "label": "Dimensione attività",
-              "description": "Specifare quanto larga (in px) l'area di gioco dovrebbe essere.",
-              "default": {},
-              "fields": [
-                {},
-                {}
+              "englishDescription": "Specify how large (in px) the play area should be.",
+              "description": "Specifare quanto larga (in px) l'area di gioco dovrebbe essere."
+            },
+            {
+              "englishLabel": "Drop Zone Highlighting",
+              "englishDescription": "Choose when to highlight drop zones.",
+              "options": [
+                {
+                  "englishLabel": "When dragging"
+                },
+                {
+                  "englishLabel": "Always"
+                },
+                {
+                  "englishLabel": "Never"
+                }
               ]
+            },
+            {
+              "englishLabel": "Spacing for Auto-Align (in px)"
             }
           ]
         },
         {
+          "englishLabel": "Task",
           "label": "Attività",
+          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Iniziate mettendo le zone di trascinamento.<br/>Successivamente, posizionate gli elementi trascinabili e mettete la spunta sulle relative aree di rilascio.<br/>Infine, modificate nuovamente la zona di rilascio e mettete la spunta sulle risposte corrette.",
           "fields": [
             {
+              "englishLabel": "Elements",
               "label": "Elementi",
+              "englishEntity": "element",
               "entity": "elemento",
               "field": {
+                "englishLabel": "Element",
                 "label": "Elemento",
                 "fields": [
                   {
+                    "englishDescription": "Choose the type of content you would like to add.",
                     "description": "Scegliere il tipo di contenuto che si desidera aggiungere."
                   },
                   {},
@@ -56,28 +92,37 @@
                   {},
                   {},
                   {
+                    "englishLabel": "Select drop zones",
                     "label": "Selezionare zona di rilascio"
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Opacità Sfondo"
                   },
                   {
+                    "englishLabel": "Infinite number of element instances",
                     "label": "Numero infinito di istanze di elementi",
+                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
                     "description": "Clonare questo elemento in modo che possa essere trascinato su più zone di trascinamento."
                   }
                 ]
               }
             },
             {
+              "englishLabel": "Drop Zones",
               "label": "Zone di rilascio",
+              "englishEntity": "Drop Zone",
               "entity": "Zona di rilascio",
               "field": {
+                "englishLabel": "Drop Zone",
                 "label": "Zona di rilascio",
                 "fields": [
                   {
+                    "englishLabel": "Label",
                     "label": "Etichetta"
                   },
                   {
+                    "englishLabel": "Show label",
                     "label": "Mostra etichetta"
                   },
                   {},
@@ -85,21 +130,30 @@
                   {},
                   {},
                   {
+                    "englishLabel": "Select correct elements",
                     "label": "Selezionare gli elementi corretti"
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Opacità Sfondo"
                   },
                   {
+                    "englishLabel": "Tip",
                     "label": "Suggerimento",
                     "fields": [
                       {
+                        "englishLabel": "Tip text",
                         "label": "Testo di suggerimento"
                       }
                     ]
                   },
                   {
+                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
                     "label": "Questa zona di rilascio può contenere un solo elemento. Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio."
+                  },
+                  {
+                    "englishLabel": "Enable Auto-Align",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -109,21 +163,29 @@
       ]
     },
     {
+      "englishLabel": "Background opacity for draggables",
       "label": "Opacità Sfondo per elementi trascinabili",
+      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
       "description": "Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
     },
     {
+      "englishLabel": "Behavioural settings.",
       "label": "Impostazioni esecuzione",
+      "englishDescription": "These options will let you control how the task behaves.",
       "description": "Queste opzioni consentono di controllare l'andamento del compito.",
       "fields": [
         {
+          "englishLabel": "Enable \"Retry\"",
           "label": "Abilita \"Riprova\""
         },
         {
+          "englishLabel": "Give one point for the whole task",
           "label": "Assegna un punto per il completamento del compito",
+          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
           "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
         }
       ]

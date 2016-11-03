@@ -1,80 +1,138 @@
 {
   "semantics": [
     {
-      "label": "Vis svar knappen",
-      "default": "Vis svar"
+      "englishLabel": "Check answer button",
+      "label": "Sjekk-knappen",
+      "englishDefault": "Check",
+      "default": "Sjekk"
     },
     {
+      "englishLabel": "Retry button",
       "label": "«Prøv igjen»-knapp",
+      "englishDefault": "Retry",
       "default": "Prøv igjen"
     },
     {
+      "englishLabel": "Correct solution label text",
       "label": "Ledetekst for riktig svar i fasiten",
-      "default": "Korrekt"
+      "englishDefault": "Show solution",
+      "default": "Rett"
     },
     {
+      "englishLabel": "Feedback text",
       "label": "Tilbakemeldingar",
-      "default": "Du plasserte @score av totalt @total rett.",
+      "englishDefault": "You got @score of @total points",
+      "default": "@score av @total poeng",
+      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
       "description": "Tekstleg tilbakemelding, tilgjengelege variablar: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {
       "fields": [
         {
+          "englishLabel": "Settings",
           "label": "Innstillinger",
           "fields": [
             {
+              "englishLabel": "The title of this question",
               "label": "Spørsmålets tittel",
+              "englishDefault": "Drag and Drop",
               "default": "Dra og slipp",
+              "englishDescription": "Used in summaries, statistics etc.",
               "description": "Brukes i oppsummeringer, statistikk o.l."
             },
             {
+              "englishLabel": "Background image",
               "label": "Bakgrunnsbilde",
+              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
               "description": "Valgfritt. Velg et bakgrunnsbilde for oppgaven."
             },
             {
+              "englishLabel": "Task size",
               "label": "Oppgavens størrelse",
+              "englishDescription": "Specify how large (in px) the play area should be.",
               "description": "Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i."
+            },
+            {
+              "englishLabel": "Drop Zone Highlighting",
+              "label": "Slippsonefremheving",
+              "englishDescription": "Choose when to highlight drop zones.",
+              "description": "Velg når slippsoner skal fremheves",
+              "options": [
+                {
+                  "englishLabel": "When dragging",
+                  "label": "Når man drar"
+                },
+                {
+                  "englishLabel": "Always",
+                  "label": "Alltid"
+                },
+                {
+                  "englishLabel": "Never",
+                  "label": "Aldri"
+                }
+              ]
+            },
+            {
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "Mellomrom for automatisk justering (i piksler)"
             }
           ]
         },
         {
+          "englishLabel": "Task",
           "label": "Oppgave",
+          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Begynn med å plassere målområder.<br/>Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br/>Til slutt redigeres målområdene igjen for å angi fasit.",
           "fields": [
             {
+              "englishLabel": "Elements",
               "label": "Elementer",
+              "englishEntity": "element",
               "entity": "element",
               "field": {
+                "englishLabel": "Element",
                 "label": "Element",
                 "fields": [
-                  {},
+                  {
+                    "englishDescription": "Choose the type of content you would like to add.",
+                    "description": "Velg typen innhald du vil legge til."
+                  },
                   {},
                   {},
                   {},
                   {},
                   {
+                    "englishLabel": "Select drop zones",
                     "label": "Velg målområder"
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Opasitet for bakgrunn"
                   },
                   {
+                    "englishLabel": "Infinite number of element instances",
                     "label": "Uendelig antall instanser av elementet",
+                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
                     "description": "Klon dette elementet slik at det kan dras til flere målområder."
                   }
                 ]
               }
             },
             {
+              "englishLabel": "Drop Zones",
               "label": "Målområder",
+              "englishEntity": "Drop Zone",
               "entity": "målområde",
               "field": {
+                "englishLabel": "Drop Zone",
                 "label": "Målområde",
                 "fields": [
                   {
+                    "englishLabel": "Label",
                     "label": "Tittel"
                   },
                   {
+                    "englishLabel": "Show label",
                     "label": "Vis tittel"
                   },
                   {},
@@ -82,21 +140,32 @@
                   {},
                   {},
                   {
+                    "englishLabel": "Select correct elements",
                     "label": "Velg riktige elementer"
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Opasitet for bakgrunn"
                   },
                   {
+                    "englishLabel": "Tip",
                     "label": "Tips",
                     "fields": [
                       {
+                        "englishLabel": "Tip text",
                         "label": "Tipstekst"
                       }
                     ]
                   },
                   {
-                    "label": "Dette målområdet kan bare innehalde eit element. Pass på at det bare finnes eit riktig svar for dette målområdet."
+                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
+                    "label": "Dette målområdet kan bare inneholde et element. Pass på at det bare finnes ett riktig svar for dette målområdet."
+                  },
+                  {
+                    "englishLabel": "Enable Auto-Align",
+                    "label": "Automatisk justering",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
+                    "description": "Vil automatisk justere alle elementer plassert i denne sonen."
                   }
                 ]
               }
@@ -106,21 +175,29 @@
       ]
     },
     {
+      "englishLabel": "Background opacity for draggables",
       "label": "Bakgrunnsopasitet på flyttbare elementer",
+      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
       "description": "Hvis denne verdien er satt, vil den overstyre instillingene til alle flyttbare elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
     },
     {
+      "englishLabel": "Behavioural settings.",
       "label": "Innstillinger for oppgave-oppførsel",
+      "englishDescription": "These options will let you control how the task behaves.",
       "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields": [
         {
+          "englishLabel": "Enable \"Retry\"",
           "label": "Aktiver \"Prøv igjen\"-knapp"
         },
         {
+          "englishLabel": "Give one point for the whole task",
           "label": "Gje eitt poeng for heile oppgåva",
+          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Slå av for å gje eitt poeng for kvart draobjekt som er plassert korrekt."
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
           "label": "Krev inndata fra brukeren før fasit gis."
         }
       ]
