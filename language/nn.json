@@ -27,6 +27,12 @@
       "description": "Tekstleg tilbakemelding, tilgjengelege variablar: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {
+      "englishLabel": "Score explanation text",
+      "label": "Poeng forklaring",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
+    },
+    {
       "fields": [
         {
           "englishLabel": "Settings",
@@ -195,6 +201,10 @@
           "label": "Gje eitt poeng for heile oppgåva",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Slå av for å gje eitt poeng for kvart draobjekt som er plassert korrekt."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Vis poeng-forklaring"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",

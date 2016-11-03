@@ -30,7 +30,7 @@
     "common": true
   },
   {
-    "label": "Score explanation  text",
+    "label": "Score explanation text",
     "name": "scoreExplanation",
     "type": "text",
     "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
