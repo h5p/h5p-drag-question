@@ -734,6 +734,10 @@ H5P.DragQuestion = (function ($) {
           continue;
         }
 
+        // Verify that draggables actually has its correct positions
+        // (could have been chaged by auto-align without being updated in draggable)
+        element.position = C.positionToPercentage(this.$container, element.$);
+
         // Store position and drop zone.
         draggableAnswers.push({
           x: Number(element.position.left.replace('%', '')),
@@ -1402,6 +1406,18 @@ H5P.DragQuestion = (function ($) {
     // Add tip after setOpacity(), so this does not get background opacity:
     if (self.tip !== undefined && self.tip.trim().length) {
       self.$dropZone.append(H5P.JoubelUI.createTip(self.tip));
+    }
+
+    if (self.autoAlignEnabled) {
+      draggables.forEach(function (draggable) {
+        var dragEl = draggable.element.$;
+
+        // Add to alignables
+        if (draggable.isInDropZone(self.id) && self.getIndexOf(dragEl) === -1) {
+          self.alignables.push(dragEl);
+        }
+      });
+      self.autoAlign();
     }
 
     // Set element opacity when element has been appended
