@@ -207,10 +207,37 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
+   * Get xAPI data.
+   * Contract used by report rendering engine.
+   *
+   * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
+   *
+   * @return {Object} xAPI data
+   */
+  C.prototype.getXAPIData = function () {
+    var xAPIEvent = this.createXAPIEventTemplate('answered');
+    this.addQuestionToXAPI(xAPIEvent);
+    this.addResponseToXAPI(xAPIEvent);
+    return {
+      statement: xAPIEvent.data.statement
+    }
+  };
+
+  /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
   C.prototype.addQuestionToXAPI = function(xAPIEvent) {
     var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    $.extend(definition, this.getXAPIDefinition());
+  };
+
+  /**
+   * Get object definition for xAPI statement.
+   *
+   * @return {Object} xAPI object definition
+   */
+  C.prototype.getXAPIDefinition = function () {
+    var definition = {};
     definition.description = {
       // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
       'en-US': $('<div>' + this.options.question.settings.questionTitle + '</div>').text()
@@ -257,6 +284,8 @@ H5P.DragQuestion = (function ($) {
         }
       }
     }
+
+    return definition;
   };
 
   /**
@@ -270,8 +299,18 @@ H5P.DragQuestion = (function ($) {
     var score = this.getScore();
     var success = score == maxScore ? true : false;
     xAPIEvent.setScoredResult(score, maxScore, this, true, success);
+    xAPIEvent.data.statement.result.response = this.getUserXAPIResponse();
+  };
+
+  /**
+   * Get what the user has answered encoded as an xAPI response pattern
+   *
+   * @return {string} xAPI encoded user response pattern
+   */
+  C.prototype.getUserXAPIResponse = function () {
     var response = '';
     var firstPair = true;
+
     // State system will be rewritten to use xAPI, but until it does we convert
     // the state to xAPI here...
     var state = this.getCurrentState();
@@ -288,7 +327,8 @@ H5P.DragQuestion = (function ($) {
         }
       }
     }
-    xAPIEvent.data.statement.result.response = response;
+
+    return response;
   };
 
   /**
