@@ -308,27 +308,45 @@ H5P.DragQuestion = (function ($) {
    * @return {string} xAPI encoded user response pattern
    */
   C.prototype.getUserXAPIResponse = function () {
-    var response = '';
-    var firstPair = true;
-
-    // State system will be rewritten to use xAPI, but until it does we convert
-    // the state to xAPI here...
-    var state = this.getCurrentState();
-    if (state.answers !== undefined) {
-      for (var i = 0; i < state.answers.length; i++) {
-        if (state.answers[i] !== undefined) {
-          for (var j = 0; j < state.answers[i].length; j++) {
-            if (!firstPair) {
-              response += '[,]';
-            }
-            response += state.answers[i][j].dz + '[.]' + i;
-            firstPair = false;
-          }
-        }
-      }
+    var answers = this.getUserAnswers();
+    if (!answers) {
+      return response;
     }
 
-    return response;
+    return answers
+      .filter(function (answerMapping) {
+        return answerMapping.elements.length;
+      })
+      .map(function (answerMapping, index) {
+        return answerMapping.elements
+          .filter(function (element) {
+            return element.dropZone !== undefined;
+          }).map(function (element) {
+            return element.dropZone + '[.]' + index;
+          }).join('[,]');
+      }).filter(function (pattern) {
+        return pattern !== undefined && pattern !== '';
+      }).join('[,]');
+  };
+
+  /**
+   * Returns user answers
+   */
+  C.prototype.getUserAnswers = function () {
+    return this.draggables.map(function (draggable, index) {
+      return {
+        index: index,
+        draggable: draggable
+      };
+    }).filter(function (draggableMapping) {
+      return draggableMapping.draggable !== undefined &&
+        draggableMapping.draggable.elements;
+    }).map(function (draggableMapping) {
+      return {
+        index: draggableMapping.index,
+        elements: draggableMapping.draggable.elements
+      }
+    });
   };
 
   /**
