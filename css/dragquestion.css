@@ -221,7 +221,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .joubel-tip-container {
   position: absolute;
-  right: 0.15em;
+  right: 0.5em;
   bottom: 0;
   font-size: 0.8em;
 }
