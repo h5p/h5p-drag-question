@@ -27,12 +27,6 @@
       "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
     },
     {
-      "englishLabel": "Score explanation text",
-      "label": "Score explanation text",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
-    },
-    {
       "fields": [
         {
           "englishLabel": "Settings",
@@ -60,27 +54,26 @@
             },
             {
               "englishLabel": "Drop Zone Highlighting",
-              "label": "Drop Zone Highlighting",
+			  "label": "Mise en évidence de la zone de dépôt",
               "englishDescription": "Choose when to highlight drop zones.",
-              "description": "Choose when to highlight drop zones.",
+			  "description": "Choisissez quand mettre en évidence la zone de dépôt.",
               "options": [
                 {
                   "englishLabel": "When dragging",
-                  "label": "When dragging"
+				  "label": "Lors du déplacement des éléments"
                 },
                 {
                   "englishLabel": "Always",
-                  "label": "Always"
+				  "label": "Toujours"
                 },
                 {
                   "englishLabel": "Never",
-                  "label": "Never"
+				  "label": "Jamais"
                 }
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)",
-              "label": "Spacing for Auto-Align (in px)"
+              "englishLabel": "Spacing for Auto-Align (in px)"
             }
           ]
         },
@@ -169,9 +162,9 @@
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
-                    "label": "Enable Auto-Align",
+					"label": "Activer l'alignement automatique des éléments déplacés",
                     "englishDescription": "Will auto-align all draggables dropped in this zone.",
-                    "description": "Will auto-align all draggables dropped in this zone."
+					"description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
                   }
                 ]
               }
@@ -201,10 +194,6 @@
           "label": "Donner un point pour l'ensemble de l'exercice",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
-        },
-        {
-          "englishLabel": "Enable score explanation",
-          "label": "Enable score explanation"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",
