@@ -254,6 +254,7 @@
                   "name": "tip",
                   "type": "group",
                   "label": "Tip",
+				  "importance": "low",
                   "optional": true,
                   "fields": [
                     {
