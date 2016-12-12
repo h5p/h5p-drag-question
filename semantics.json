@@ -3,6 +3,7 @@
     "name": "scoreShow",
     "type": "text",
     "label": "Check answer button",
+    "importance": "low",
     "default": "Check",
     "common": true
   },
@@ -10,6 +11,7 @@
     "name": "tryAgain",
     "type": "text",
     "label": "Retry button",
+    "importance": "low",
     "default": "Retry",
     "common": true,
     "optional": true
@@ -18,11 +20,13 @@
     "name": "correct",
     "type": "text",
     "label": "Correct solution label text",
+    "importance": "low",
     "default": "Show solution",
     "common": true
   },
   {
     "label": "Feedback text",
+    "importance": "low",
     "name": "feedback",
     "type": "text",
     "default": "You got @score of @total points",
@@ -31,6 +35,7 @@
   },
   {
     "label": "Score explanation text",
+    "importance": "low",
     "name": "scoreExplanation",
     "type": "text",
     "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
@@ -39,6 +44,7 @@
   },
   {
     "name": "question",
+    "importance": "high",
     "type": "group",
     "widget": "wizard",
     "fields": [
@@ -46,11 +52,13 @@
         "name": "settings",
         "type": "group",
         "label": "Settings",
+        "importance": "high",
         "fields": [
           {
             "name": "questionTitle",
             "type": "text",
             "label": "The title of this question",
+            "importance": "high",
             "default": "Drag and Drop",
             "description": "Used in summaries, statistics etc."
           },
@@ -58,6 +66,7 @@
             "name": "background",
             "type": "image",
             "label": "Background image",
+            "importance": "low",
             "optional": true,
             "description": "Optional. Select an image to use as background for your drag and drop task."
           },
@@ -66,6 +75,7 @@
             "type": "group",
             "widget": "dimensions",
             "label": "Task size",
+            "importance": "low",
             "description": "Specify how large (in px) the play area should be.",
             "default": {
               "width": 620,
@@ -87,6 +97,7 @@
             "name": "dropZoneHighlighting",
             "type": "select",
             "label": "Drop Zone Highlighting",
+            "importance": "low",
             "description": "Choose when to highlight drop zones.",
             "default": "dragging",
             "options": [
@@ -108,6 +119,7 @@
             "name": "autoAlignSpacing",
             "type": "number",
             "label": "Spacing for Auto-Align (in px)",
+            "importance": "low",
             "min": 0,
             "default": 2,
             "optional": true
@@ -119,21 +131,25 @@
         "type": "group",
         "widget": "dragQuestion",
         "label": "Task",
+        "importance": "high",
         "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
         "fields": [
           {
             "name": "elements",
             "type": "list",
             "label": "Elements",
+            "importance": "high",
             "entity": "element",
             "field": {
               "type": "group",
               "label": "Element",
+              "importance": "high",
               "fields": [
                 {
                   "name": "type",
                   "type": "library",
                   "description": "Choose the type of content you would like to add.",
+                  "importance": "medium",
                   "options": [
                     "H5P.AdvancedText 1.1",
                     "H5P.Image 1.0"
@@ -164,12 +180,14 @@
                   "type": "select",
                   "widget": "dynamicCheckboxes",
                   "label": "Select drop zones",
+                  "importance": "high",
                   "multiple": true
                 },
                 {
                   "name": "backgroundOpacity",
                   "type": "number",
                   "label": "Background Opacity",
+                  "importance": "low",
                   "min": 0,
                   "max": 100,
                   "step": 5,
@@ -180,6 +198,7 @@
                   "name": "multiple",
                   "type": "boolean",
                   "label": "Infinite number of element instances",
+                  "importance": "low",
                   "description": "Clones this element so that it can be dragged to multiple drop zones.",
                   "default": false
                 }
@@ -190,16 +209,19 @@
             "name": "dropZones",
             "type": "list",
             "label": "Drop Zones",
+            "importance": "high",
             "entity": "Drop Zone",
             "field": {
               "type": "group",
               "label": "Drop Zone",
+              "importance": "high",
               "fields": [
                 {
                   "name": "label",
                   "type": "text",
                   "widget": "html",
                   "label": "Label",
+                  "importance": "medium",
                   "enterMode": "div",
                   "tags": [
                     "strong",
@@ -211,7 +233,8 @@
                 {
                   "name": "showLabel",
                   "type": "boolean",
-                  "label": "Show label"
+                  "label": "Show label",
+                  "importance": "low"
                 },
                 {
                   "name": "x",
@@ -238,12 +261,14 @@
                   "type": "select",
                   "widget": "dynamicCheckboxes",
                   "label": "Select correct elements",
+                  "importance": "low",
                   "multiple": true
                 },
                 {
                   "name": "backgroundOpacity",
                   "type": "number",
                   "label": "Background Opacity",
+                  "importance": "low",
                   "min": 0,
                   "max": 100,
                   "step": 5,
@@ -254,12 +279,13 @@
                   "name": "tip",
                   "type": "group",
                   "label": "Tip",
-				  "importance": "low",
+                  "importance": "low",
                   "optional": true,
                   "fields": [
                     {
                       "name": "tip",
                       "label": "Tip text",
+                      "importance": "low",
                       "type": "text",
                       "widget": "html",
                       "tags": ["p", "br", "strong", "em"],
@@ -271,12 +297,14 @@
                   "name": "single",
                   "type": "boolean",
                   "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
+                  "importance": "low",
                   "default": false
                 },
                 {
                   "name": "autoAlign",
                   "type": "boolean",
                   "label": "Enable Auto-Align",
+                  "importance": "low",
                   "description": "Will auto-align all draggables dropped in this zone."
                 }
               ]
@@ -290,6 +318,7 @@
     "name": "backgroundOpacity",
     "type": "text",
     "label": "Background opacity for draggables",
+    "importance": "low",
     "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
     "optional": true
   },
@@ -297,6 +326,7 @@
     "name": "behaviour",
     "type": "group",
     "label": "Behavioural settings.",
+    "importance": "low",
     "description": "These options will let you control how the task behaves.",
     "optional": true,
     "fields": [
@@ -304,12 +334,14 @@
         "name": "enableRetry",
         "type": "boolean",
         "label": "Enable \"Retry\"",
+        "importance": "low",
         "default": true
       },
       {
         "name": "singlePoint",
         "type": "boolean",
         "label": "Give one point for the whole task",
+        "importance": "low",
         "description": "Disable to give one point for each draggable that is placed correctly.",
         "default": true
       },
@@ -317,11 +349,13 @@
         "name": "enableScoreExplanation",
         "type": "boolean",
         "label": "Enable score explanation",
+        "importance": "low",
         "default": true,
         "optional": true
       },
       {
         "label": "Require user input before the solution can be viewed",
+        "importance": "low",
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true
