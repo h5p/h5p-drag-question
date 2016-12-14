@@ -27,6 +27,12 @@
       "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
     },
     {
+      "englishLabel": "Score explanation text",
+      "label": "Texte d'explication du score",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
+    },
+    {
       "fields": [
         {
           "englishLabel": "Settings",
@@ -73,7 +79,8 @@
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)"
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "L'espacement utilisé lors de l'alignement automatique (en px)"
             }
           ]
         },
