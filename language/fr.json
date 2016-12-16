@@ -62,7 +62,8 @@
               "englishLabel": "Drop Zone Highlighting",
 			  "label": "Mise en évidence de la zone de dépôt",
               "englishDescription": "Choose when to highlight drop zones.",
-			  "description": "Choisissez quand mettre en évidence la zone de dépôt.",
+              "default": "dragging",
+              "description": "Choisissez quand mettre en évidence la zone de dépôt.",
               "options": [
                 {
                   "englishLabel": "When dragging",
@@ -201,6 +202,10 @@
           "label": "Donner un point pour l'ensemble de l'exercice",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Activer les explications du score"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",
