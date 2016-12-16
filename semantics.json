@@ -228,7 +228,6 @@
                     "em",
                     "del"
                   ]
-
                 },
                 {
                   "name": "showLabel",
@@ -288,7 +287,12 @@
                       "importance": "low",
                       "type": "text",
                       "widget": "html",
-                      "tags": ["p", "br", "strong", "em"],
+                      "tags": [
+                        "p",
+                        "br",
+                        "strong",
+                        "em"
+                      ],
                       "optional": true
                     }
                   ]
