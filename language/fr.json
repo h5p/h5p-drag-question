@@ -60,22 +60,22 @@
             },
             {
               "englishLabel": "Drop Zone Highlighting",
-			  "label": "Mise en évidence de la zone de dépôt",
+              "label": "Mise en évidence de la zone de dépôt",
               "englishDescription": "Choose when to highlight drop zones.",
               "default": "dragging",
               "description": "Choisissez quand mettre en évidence la zone de dépôt.",
               "options": [
                 {
                   "englishLabel": "When dragging",
-				  "label": "Lors du déplacement des éléments"
+                  "label": "Lors du déplacement des éléments"
                 },
                 {
                   "englishLabel": "Always",
-				  "label": "Toujours"
+                  "label": "Toujours"
                 },
                 {
                   "englishLabel": "Never",
-				  "label": "Jamais"
+                  "label": "Jamais"
                 }
               ]
             },
@@ -170,9 +170,9 @@
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
-					"label": "Activer l'alignement automatique des éléments déplacés",
+                    "label": "Activer l'alignement automatique des éléments déplacés",
                     "englishDescription": "Will auto-align all draggables dropped in this zone.",
-					"description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
+                    "description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
                   }
                 ]
               }
