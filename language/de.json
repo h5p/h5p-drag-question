@@ -61,8 +61,7 @@
               ]
             },
             {
-              "label": "Abstand für das Auto-Anordnen (in px)",
-              "default": 2
+              "label": "Abstand für das Auto-Anordnen (in px)"
             }
           ]
         },
@@ -87,13 +86,11 @@
                     "label": "Wähle die \"Drop Zones\""
                   },
                   {
-                    "label": "Hintergrunddeckkraft",
-                    "default": 100
+                    "label": "Hintergrunddeckkraft"
                   },
                   {
                     "label": "Unbegrenzte Anzahl an Element-Instanzen",
-                    "description": "Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann.",
-                    "default": false
+                    "description": "Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann."
                   }
                 ]
               }
@@ -118,8 +115,7 @@
                     "label": "Wähle korrekte Elemente"
                   },
                   {
-                    "label": "Hintergrunddeckkraft",
-                    "default": 100
+                    "label": "Hintergrunddeckkraft"
                   },
                   {
                     "label": "Hinweis",
@@ -130,8 +126,7 @@
                     ]
                   },
                   {
-                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten. Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt.",
-                    "default": false
+                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten. Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt."
                   },
                   {
                     "label": "Auto-Anordnen einschalten",
@@ -153,21 +148,17 @@
       "description": "Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
       "fields": [
         {
-          "label": "Aktivieren des \"Wiederholen\"-Buttons",
-          "default": true
+          "label": "Aktivieren des \"Wiederholen\"-Buttons"
         },
         {
           "label": "Gib einen Punkt für die gesamte Aufgabe",
-          "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben.",
-          "default": true
+          "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },
         {
-          "label": "Erklärung für die Punkte einschalten",
-          "default": true
+          "label": "Erklärung für die Punkte einschalten"
         },
         {
-          "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann",
-          "default": true
+          "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
         }
       ]
     }
