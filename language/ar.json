@@ -164,8 +164,10 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "هذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط. تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",

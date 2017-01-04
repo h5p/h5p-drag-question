@@ -300,7 +300,8 @@
                 {
                   "name": "single",
                   "type": "boolean",
-                  "label": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
+                  "label": "This drop zone can only contain one element",
+                  "description": "Make sure there is only one correct answer for this dropzone",
                   "importance": "low",
                   "default": false
                 },
@@ -329,7 +330,7 @@
   {
     "name": "behaviour",
     "type": "group",
-    "label": "Behavioural settings.",
+    "label": "Behavioural settings",
     "importance": "low",
     "description": "These options will let you control how the task behaves.",
     "optional": true,

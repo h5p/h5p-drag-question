@@ -126,7 +126,8 @@
                     ]
                   },
                   {
-                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten. Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt."
+                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten",
+                    "description": "Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt"
                   },
                   {
                     "label": "Auto-Anordnen einschalten",

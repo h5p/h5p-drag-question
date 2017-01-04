@@ -162,8 +162,10 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "Dette målområdet kan bare inneholde et element. Pass på at det bare finnes ett riktig svar for dette målområdet."
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Dette målområdet kan bare inneholde et element",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Pass på at det bare finnes ett riktig svar for dette målområdet"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",

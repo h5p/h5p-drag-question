@@ -164,8 +164,10 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "Questa zona di rilascio può contenere un solo elemento. Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio."
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Questa zona di rilascio può contenere un solo elemento",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
