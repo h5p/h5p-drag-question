@@ -24,7 +24,7 @@
       "englishDefault": "You got @score of @total points",
       "default": "Vous avez obtenu @score point(s) sur @total",
       "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
-      "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
+      "description": "Texte du feedback final. Les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
     },
     {
       "englishLabel": "Score explanation text",
@@ -54,9 +54,9 @@
             },
             {
               "englishLabel": "Task size",
-              "label": "Taille de l'activité",
+              "label": "Taille de la zone de l'activité",
               "englishDescription": "Specify how large (in px) the play area should be.",
-              "description": "Spécifiez la largeur (en px) de l'activité'."
+              "description": "Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité."
             },
             {
               "englishLabel": "Drop Zone Highlighting",
@@ -67,7 +67,7 @@
               "options": [
                 {
                   "englishLabel": "When dragging",
-                  "label": "Lors du déplacement des éléments"
+                  "label": "Lors du glisser-déposer"
                 },
                 {
                   "englishLabel": "Always",
@@ -81,13 +81,13 @@
             },
             {
               "englishLabel": "Spacing for Auto-Align (in px)",
-              "label": "L'espacement utilisé lors de l'alignement automatique (en px)"
+              "label": "Marge pour l'alignement automatique (en pixels)"
             }
           ]
         },
         {
           "englishLabel": "Task",
-          "label": "Consigne",
+          "label": "Éléments de l'activité",
           "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
           "fields": [
@@ -140,7 +140,7 @@
                   },
                   {
                     "englishLabel": "Show label",
-                    "label": "Montrer l'étiquette"
+                    "label": "Afficher l'étiquette"
                   },
                   {},
                   {},
