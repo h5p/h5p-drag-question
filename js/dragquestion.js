@@ -766,7 +766,8 @@ H5P.DragQuestion = (function ($) {
       maxScore = 1;
     }
     var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
-    this.setFeedback(scoreText, this.points, maxScore);
+    var helpText = this.options.behaviour.enableScoreExplanation ? this.options.scoreExplanation : false;
+    this.setFeedback(scoreText, this.points, maxScore, undefined, helpText);
   };
 
   /**

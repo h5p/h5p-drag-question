@@ -3,22 +3,34 @@
     {
       "englishLabel": "Check answer button",
       "label": "تحقق زر الإجابة",
-      "englishDefault": "Check"
+      "englishDefault": "Check",
+      "default": "Check"
     },
     {
       "englishLabel": "Retry button",
       "label": "زر إعادة المحاولة",
-      "englishDefault": "Retry"
+      "englishDefault": "Retry",
+      "default": "Retry"
     },
     {
       "englishLabel": "Correct solution label text",
       "label": "تسمية الحل الصحيح النص",
-      "englishDefault": "Show solution"
+      "englishDefault": "Show solution",
+      "default": "Show solution"
     },
     {
       "englishLabel": "Feedback text",
+      "label": "Feedback text",
       "englishDefault": "You got @score of @total points",
-      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
+      "default": "You got @score of @total points",
+      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
+      "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
+    },
+    {
+      "englishLabel": "Score explanation text",
+      "label": "Score explanation text",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields": [
@@ -28,8 +40,11 @@
           "fields": [
             {
               "englishLabel": "The title of this question",
+              "label": "The title of this question",
               "englishDefault": "Drag and Drop",
-              "englishDescription": "Used in summaries, statistics etc."
+              "default": "Drag and Drop",
+              "englishDescription": "Used in summaries, statistics etc.",
+              "description": "Used in summaries, statistics etc."
             },
             {
               "englishLabel": "Background image",
@@ -45,21 +60,27 @@
             },
             {
               "englishLabel": "Drop Zone Highlighting",
+              "label": "Drop Zone Highlighting",
               "englishDescription": "Choose when to highlight drop zones.",
+              "description": "Choose when to highlight drop zones.",
               "options": [
                 {
-                  "englishLabel": "When dragging"
+                  "englishLabel": "When dragging",
+                  "label": "When dragging"
                 },
                 {
-                  "englishLabel": "Always"
+                  "englishLabel": "Always",
+                  "label": "Always"
                 },
                 {
-                  "englishLabel": "Never"
+                  "englishLabel": "Never",
+                  "label": "Never"
                 }
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)"
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "Spacing for Auto-Align (in px)"
             }
           ]
         },
@@ -143,12 +164,16 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "هذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط. تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
-                    "englishDescription": "Will auto-align all draggables dropped in this zone."
+                    "label": "Enable Auto-Align",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
+                    "description": "Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -178,6 +203,10 @@
           "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Enable score explanation"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",

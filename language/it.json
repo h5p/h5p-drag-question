@@ -3,24 +3,34 @@
     {
       "englishLabel": "Check answer button",
       "label": "Pulsante Controlla risposta",
-      "englishDefault": "Check"
+      "englishDefault": "Check",
+      "default": "Check"
     },
     {
       "englishLabel": "Retry button",
       "label": "Pulsante Riprova",
-      "englishDefault": "Retry"
+      "englishDefault": "Retry",
+      "default": "Retry"
     },
     {
       "englishLabel": "Correct solution label text",
       "label": "Testo dell'etichetta Soluzione corretta",
-      "englishDefault": "Show solution"
+      "englishDefault": "Show solution",
+      "default": "Show solution"
     },
     {
       "englishLabel": "Feedback text",
       "label": "Testo del Feedback",
       "englishDefault": "You got @score of @total points",
+      "default": "You got @score of @total points",
       "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
       "description": "Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
+    },
+    {
+      "englishLabel": "Score explanation text",
+      "label": "Score explanation text",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields": [
@@ -50,21 +60,27 @@
             },
             {
               "englishLabel": "Drop Zone Highlighting",
+              "label": "Drop Zone Highlighting",
               "englishDescription": "Choose when to highlight drop zones.",
+              "description": "Choose when to highlight drop zones.",
               "options": [
                 {
-                  "englishLabel": "When dragging"
+                  "englishLabel": "When dragging",
+                  "label": "When dragging"
                 },
                 {
-                  "englishLabel": "Always"
+                  "englishLabel": "Always",
+                  "label": "Always"
                 },
                 {
-                  "englishLabel": "Never"
+                  "englishLabel": "Never",
+                  "label": "Never"
                 }
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)"
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "Spacing for Auto-Align (in px)"
             }
           ]
         },
@@ -148,12 +164,16 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "Questa zona di rilascio può contenere un solo elemento. Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio."
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Questa zona di rilascio può contenere un solo elemento",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
-                    "englishDescription": "Will auto-align all draggables dropped in this zone."
+                    "label": "Enable Auto-Align",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
+                    "description": "Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -183,6 +203,10 @@
           "label": "Assegna un punto per il completamento del compito",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Enable score explanation"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",

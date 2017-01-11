@@ -1,0 +1,167 @@
+{
+  "semantics": [
+    {
+      "label": "Beschriftung für den \"Überprüfen\"-Button",
+      "default": "Überprüfen"
+    },
+    {
+      "label": "Beschriftung für den \"Wiederholen\"-Button",
+      "default": "Wiederholen"
+    },
+    {
+      "label": "Beschriftung für den \"Lösung anzeigen\"-Button",
+      "default": "Lösung anzeigen"
+    },
+    {
+      "label": "Rückmeldungstext",
+      "default": "Du hast @score von @total Punkten",
+      "description": "Rückmeldungstext, verfügbare Variablen: @score und @total. Beispiel: 'Du hast @score von @total möglichen Punkten.'"
+    },
+    {
+      "label": "Erklärung für die Punkte",
+      "default": "Richtige Antworten geben +1 Punkte. Bei falschen Antworten gibt es -1 Punkt. Die kleinstmögliche Punktzahl ist 0."
+    },
+    {
+      "fields": [
+        {
+          "label": "Einstellungen",
+          "fields": [
+            {
+              "label": "Der Titel dieser Frage",
+              "default": "Drag and Drop",
+              "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
+            },
+            {
+              "label": "Hintergrundbild",
+              "description": "Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
+            },
+            {
+              "label": "Aufgabengröße",
+              "description": "Gib anm wie breit (in px) das Feld sein soll.",
+              "default": {},
+              "fields": [
+                {},
+                {}
+              ]
+            },
+            {
+              "label": "\"Drop Zone\"-Aufleuchten",
+              "description": "Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
+              "default": "dragging",
+              "options": [
+                {
+                  "label": "Beim Ziehen"
+                },
+                {
+                  "label": "Immer"
+                },
+                {
+                  "label": "Nie"
+                }
+              ]
+            },
+            {
+              "label": "Abstand für das Auto-Anordnen (in px)"
+            }
+          ]
+        },
+        {
+          "label": "Aufgabe",
+          "description": "Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
+          "fields": [
+            {
+              "label": "Elemente",
+              "entity": "element",
+              "field": {
+                "label": "Element",
+                "fields": [
+                  {
+                    "description": "Wähle den Inhaltstyp, den du hinzufügen möchtest."
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": "Wähle die \"Drop Zones\""
+                  },
+                  {
+                    "label": "Hintergrunddeckkraft"
+                  },
+                  {
+                    "label": "Unbegrenzte Anzahl an Element-Instanzen",
+                    "description": "Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann."
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Drop Zones",
+              "entity": "Drop Zone",
+              "field": {
+                "label": "Drop Zone",
+                "fields": [
+                  {
+                    "label": "Beschriftung"
+                  },
+                  {
+                    "label": "Zeige Beschriftung"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": "Wähle korrekte Elemente"
+                  },
+                  {
+                    "label": "Hintergrunddeckkraft"
+                  },
+                  {
+                    "label": "Hinweis",
+                    "fields": [
+                      {
+                        "label": "Hinweistext"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten",
+                    "description": "Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt"
+                  },
+                  {
+                    "label": "Auto-Anordnen einschalten",
+                    "description": "Ordnet alle beweglichen Elemente automatisch innerhalb der \"Drop Zone\" an."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Hintergrunddeckkraft für bewegliche Elemente",
+      "description": "Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
+    },
+    {
+      "label": "Verhaltenseinstellungen.",
+      "description": "Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
+      "fields": [
+        {
+          "label": "Aktivieren des \"Wiederholen\"-Buttons"
+        },
+        {
+          "label": "Gib einen Punkt für die gesamte Aufgabe",
+          "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
+        },
+        {
+          "label": "Erklärung für die Punkte einschalten"
+        },
+        {
+          "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
+        }
+      ]
+    }
+  ]
+}
