@@ -27,7 +27,7 @@
       "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {
-      "label": "Poeng forklaring",
+      "label": "Poengforklaring",
       "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
     },
     {

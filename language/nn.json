@@ -28,7 +28,7 @@
     },
     {
       "englishLabel": "Score explanation text",
-      "label": "Poeng forklaring",
+      "label": "Poengforklaring",
       "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
       "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
     },
