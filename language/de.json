@@ -160,6 +160,12 @@
         },
         {
           "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
+        },
+        {
+          "englishLabel": "Keep Correct Answers",
+          "label": "Keep Correct Answers",
+          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
+          "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry."
         }
       ]
     }

@@ -6,6 +6,10 @@ var H5P = H5P || {};
  * @param {jQuery} $
  */
 H5P.DragQuestion = (function ($) {
+ //Set global variables; see http://stackoverflow.com/a/2895772.
+  window.my_globals = {
+    correctDZs : 0
+  };
 
   /**
    * Initialize module.
@@ -74,6 +78,7 @@ H5P.DragQuestion = (function ($) {
       }
     }
 
+    correctDZs = this.correctDZs;
     this.weight = 1;
 
     // Add draggable elements
@@ -680,10 +685,17 @@ H5P.DragQuestion = (function ($) {
 
     //Enables Draggables
     this.enableDraggables();
-
+    keepCorrectAnswers = this.options.behaviour.keepCorrectAnswers;
     //Reset position and feedback.
     this.draggables.forEach(function (draggable) {
-      draggable.resetPosition();
+    /**
+     * If keepCorrectAnswers option selected, then do not reset correctly dropped draggables.
+     * TODO incorrectly dropped draggables with infinite/multiple drop zones do not reset, please fix!
+    */
+      result = draggable.results(true, this.correctDZs[draggable.id]);
+      if (!keepCorrectAnswers || result < 0) {
+        draggable.resetPosition();
+      }
     });
 
     //Show solution button

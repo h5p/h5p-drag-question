@@ -211,6 +211,12 @@
         {
           "englishLabel": "Require user input before the solution can be viewed",
           "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
+        },
+        {
+          "englishLabel": "Keep Correct Answers",
+          "label": "Keep Correct Answers",
+          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
+          "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry."
         }
       ]
     }
