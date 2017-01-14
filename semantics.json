@@ -364,6 +364,13 @@
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true
+      },
+      {
+        "label": "Apply penalties",
+        "name": "applyPenalties",
+        "type": "boolean",
+        "description": "Apply penalties for elements dropped in the wrong drop zones",
+        "default": true
       }
     ]
   }
