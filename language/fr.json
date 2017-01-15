@@ -212,6 +212,12 @@
         {
           "englishLabel": "Require user input before the solution can be viewed",
           "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+        },
+        {
+          "englishLabel": "Apply penalties",
+          "label": "Appliquer des pénalités",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
         }
       ]
     }

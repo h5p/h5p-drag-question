@@ -160,6 +160,12 @@
         },
         {
           "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
+        },
+        {
+          "englishLabel": "Apply penalties",
+          "label": "Apply penalties",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Apply penalties for elements dropped in the wrong drop zones."
         }
       ]
     }
