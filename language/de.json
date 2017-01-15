@@ -191,7 +191,7 @@
     },
     {
       "englishLabel": "Behavioural settings.",
-      "label": "Verhaltenseinstellungen.",
+      "label": "Verhaltenseinstellungen",
       "englishDescription": "These options will let you control how the task behaves.",
       "description": "Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
       "fields": [
@@ -215,9 +215,9 @@
         },
         {
           "englishLabel": "Keep Correct Answers",
-          "label": "Keep Correct Answers",
+          "label": "Richtige Antworten beibehalten",
           "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
-          "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry."
+          "description": "Anwählen, um bei einem Wiederholungsversuch bereits richtig sortierte Elemente in der KORREKTEN \"Drop Zone\" zu lassen."
         }
       ]
     }
