@@ -1,81 +1,107 @@
 {
   "semantics": [
     {
+      "englishLabel": "Check answer button",
       "label": "Beschriftung für den \"Überprüfen\"-Button",
+      "englishDefault": "Check",
       "default": "Überprüfen"
     },
     {
+      "englishLabel": "Retry button",
       "label": "Beschriftung für den \"Wiederholen\"-Button",
+      "englishDefault": "Retry",
       "default": "Wiederholen"
     },
     {
+      "englishLabel": "Correct solution label text",
       "label": "Beschriftung für den \"Lösung anzeigen\"-Button",
+      "englishDefault": "Show solution",
       "default": "Lösung anzeigen"
     },
     {
+      "englishLabel": "Feedback text",
       "label": "Rückmeldungstext",
+      "englishDefault": "You got @score of @total points",
       "default": "Du hast @score von @total Punkten",
+      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
       "description": "Rückmeldungstext, verfügbare Variablen: @score und @total. Beispiel: 'Du hast @score von @total möglichen Punkten.'"
     },
     {
+      "englishLabel": "Score explanation text",
       "label": "Erklärung für die Punkte",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
       "default": "Richtige Antworten geben +1 Punkte. Bei falschen Antworten gibt es -1 Punkt. Die kleinstmögliche Punktzahl ist 0."
     },
     {
       "fields": [
         {
+          "englishLabel": "Settings",
           "label": "Einstellungen",
           "fields": [
             {
+              "englishLabel": "The title of this question",
               "label": "Der Titel dieser Frage",
+              "englishDefault": "Drag and Drop",
               "default": "Drag and Drop",
+              "englishDescription": "Used in summaries, statistics etc.",
               "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
             {
+              "englishLabel": "Background image",
               "label": "Hintergrundbild",
+              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
               "description": "Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
             },
             {
+              "englishLabel": "Task size",
               "label": "Aufgabengröße",
+              "englishDescription": "Specify how large (in px) the play area should be.",
               "description": "Gib anm wie breit (in px) das Feld sein soll.",
-              "default": {},
-              "fields": [
-                {},
-                {}
-              ]
             },
             {
+              "englishLabel": "Drop Zone Highlighting",
               "label": "\"Drop Zone\"-Aufleuchten",
+              "englishDescription": "Choose when to highlight drop zones.",
               "description": "Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
               "default": "dragging",
               "options": [
                 {
+                  "englishLabel": "When dragging",
                   "label": "Beim Ziehen"
                 },
                 {
+                  "englishLabel": "Always",
                   "label": "Immer"
                 },
                 {
+                  "englishLabel": "Never",
                   "label": "Nie"
                 }
               ]
             },
             {
+              "englishLabel": "Spacing for Auto-Align (in px)",
               "label": "Abstand für das Auto-Anordnen (in px)"
             }
           ]
         },
         {
+          "englishLabel": "Task",
           "label": "Aufgabe",
+          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
           "fields": [
             {
+              "englishLabel": "Elements",
               "label": "Elemente",
+              "englishEntity": "element",
               "entity": "element",
               "field": {
+                "englishLabel": "Element",
                 "label": "Element",
                 "fields": [
                   {
+                    "englishDescription": "Choose the type of content you would like to add.",
                     "description": "Wähle den Inhaltstyp, den du hinzufügen möchtest."
                   },
                   {},
@@ -83,28 +109,37 @@
                   {},
                   {},
                   {
+                    "englishLabel": "Select drop zones",
                     "label": "Wähle die \"Drop Zones\""
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Hintergrunddeckkraft"
                   },
                   {
+                    "englishLabel": "Infinite number of element instances",
                     "label": "Unbegrenzte Anzahl an Element-Instanzen",
+                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
                     "description": "Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann."
                   }
                 ]
               }
             },
             {
+              "englishLabel": "Drop Zones",
               "label": "Drop Zones",
+              "englishEntity": "Drop Zone",
               "entity": "Drop Zone",
               "field": {
+                "englishLabel": "Drop Zone",
                 "label": "Drop Zone",
                 "fields": [
                   {
+                    "englishLabel": "Label",
                     "label": "Beschriftung"
                   },
                   {
+                    "englishLabel": "Show label",
                     "label": "Zeige Beschriftung"
                   },
                   {},
@@ -112,25 +147,33 @@
                   {},
                   {},
                   {
+                    "englishLabel": "Select correct elements",
                     "label": "Wähle korrekte Elemente"
                   },
                   {
+                    "englishLabel": "Background Opacity",
                     "label": "Hintergrunddeckkraft"
                   },
                   {
+                    "englishLabel": "Tip",
                     "label": "Hinweis",
                     "fields": [
                       {
+                        "englishLabel": "Tip text",
                         "label": "Hinweistext"
                       }
                     ]
                   },
                   {
+                    "englishLabel": "This drop zone can only contain one element",
                     "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
                     "description": "Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt"
                   },
                   {
+                    "englishLabel": "Enable Auto-Align",
                     "label": "Auto-Anordnen einschalten",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
                     "description": "Ordnet alle beweglichen Elemente automatisch innerhalb der \"Drop Zone\" an."
                   }
                 ]
@@ -141,24 +184,33 @@
       ]
     },
     {
+      "englishLabel": "Background opacity for draggables",
       "label": "Hintergrunddeckkraft für bewegliche Elemente",
+      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
       "description": "Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
     },
     {
+      "englishLabel": "Behavioural settings.",
       "label": "Verhaltenseinstellungen.",
+      "englishDescription": "These options will let you control how the task behaves.",
       "description": "Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
       "fields": [
         {
+          "englishLabel": "Enable \"Retry\"",
           "label": "Aktivieren des \"Wiederholen\"-Buttons"
         },
         {
+          "englishLabel": "Give one point for the whole task",
           "label": "Gib einen Punkt für die gesamte Aufgabe",
+          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },
         {
+          "englishLabel": "Enable score explanation",
           "label": "Erklärung für die Punkte einschalten"
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
           "label": "Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
         },
         {
