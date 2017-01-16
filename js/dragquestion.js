@@ -6,10 +6,6 @@ var H5P = H5P || {};
  * @param {jQuery} $
  */
 H5P.DragQuestion = (function ($) {
- //Set global variables; see http://stackoverflow.com/a/2895772.
-  window.my_globals = {
-    correctDZs : 0
-  };
 
   /**
    * Initialize module.
