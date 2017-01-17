@@ -54,7 +54,9 @@ H5P.DragQuestion = (function ($) {
     this.blankIsCorrect = true;
 
     this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
-
+    this.overrideBorderColor = (this.options.overrideBorderColor === "rgba(255, 255, 255, 0)") ? undefined : this.options.overrideBorderColor;
+    this.backgroundColor = (this.options.question.settings.backgroundColor === "rgba(255, 255, 255, 0)") ? undefined : this.options.question.settings.backgroundColor;
+    this.backgroundOpacityDropZones = this.options.backgroundOpacityDropZones;
     // List of drop zones that has no elements, i.e. not used for the task
     var dropZonesWithoutElements = [];
 
@@ -71,6 +73,12 @@ H5P.DragQuestion = (function ($) {
           this.correctDZs[correctElement] = [];
         }
         this.correctDZs[correctElement].push(i);
+      }
+      if (this.overrideBorderColor !== undefined) {
+        task.dropZones[i].bordercolor = this.overrideBorderColor;
+      }
+      if (this.backgroundOpacityDropZones !== undefined) {
+        task.dropZones[i].backgroundOpacity = this.backgroundOpacityDropZones;
       }
     }
 
@@ -360,6 +368,8 @@ H5P.DragQuestion = (function ($) {
     this.$container = $('<div class="h5p-inner"></div>');
     if (this.options.question.settings.background !== undefined) {
       this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+    } else if (this.backgroundColor !== undefined) {
+      this.$container.css('background-color', this.backgroundColor);
     }
 
     var task = this.options.question.task;
@@ -1374,6 +1384,7 @@ H5P.DragQuestion = (function ($) {
     self.single = dropZone.single;
     self.autoAlignEnabled = dropZone.autoAlign;
     self.alignables = [];
+    self.dropzonebordercolor = dropZone.bordercolor;
   }
 
   /**
@@ -1390,7 +1401,7 @@ H5P.DragQuestion = (function ($) {
     var html = '<div class="h5p-inner"></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '</div>' + html;
+      html = '<div class="h5p-label" style="color:' + self.dropzonebordercolor + ';">' + self.label + '</div>' + html;
       extraClass = ' h5p-has-label';
     }
 
@@ -1401,7 +1412,8 @@ H5P.DragQuestion = (function ($) {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
+        "border-color": self.dropzonebordercolor
       },
       html: html
     })
@@ -1463,7 +1475,7 @@ H5P.DragQuestion = (function ($) {
 
     // Add tip after setOpacity(), so this does not get background opacity:
     if (self.tip !== undefined && self.tip.trim().length) {
-      self.$dropZone.append(H5P.JoubelUI.createTip(self.tip));
+      self.$dropZone.append(H5P.JoubelUI.createTip(self.tip).css('color', self.dropzonebordercolor));
     }
 
     if (self.autoAlignEnabled) {
