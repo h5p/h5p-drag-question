@@ -27,6 +27,10 @@
       "description": "Tekstlig tilbakemelding, tilgjengelige variabler: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
     },
     {
+      "label": "Poengforklaring",
+      "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
+    },
+    {
       "fields": [
         {
           "englishLabel": "Settings",
@@ -158,8 +162,10 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "Dette målområdet kan bare inneholde et element. Pass på at det bare finnes ett riktig svar for dette målområdet."
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Dette målområdet kan bare inneholde et element",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Pass på at det bare finnes ett riktig svar for dette målområdet"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
@@ -195,6 +201,9 @@
           "label": "Gi ett poeng for hele oppgaven",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Slå av for å gi ett poeng for hvert draobjekt som er plassert korrekt."
+        },
+        {
+          "label": "Vis poeng-forklaring"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",

@@ -24,7 +24,13 @@
       "englishDefault": "You got @score of @total points",
       "default": "Vous avez obtenu @score point(s) sur @total",
       "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
-      "description": "Appréciation finale, les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
+      "description": "Texte du feedback final. Les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
+    },
+    {
+      "englishLabel": "Score explanation text",
+      "label": "Texte d'explication du score",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
     },
     {
       "fields": [
@@ -48,33 +54,40 @@
             },
             {
               "englishLabel": "Task size",
-              "label": "Taille de l'activité",
+              "label": "Taille de la zone de l'activité",
               "englishDescription": "Specify how large (in px) the play area should be.",
-              "description": "Spécifiez la largeur (en px) de l'activité'."
+              "description": "Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité."
             },
             {
               "englishLabel": "Drop Zone Highlighting",
+              "label": "Mise en évidence de la zone de dépôt",
               "englishDescription": "Choose when to highlight drop zones.",
+              "default": "dragging",
+              "description": "Choisissez quand mettre en évidence la zone de dépôt.",
               "options": [
                 {
-                  "englishLabel": "When dragging"
+                  "englishLabel": "When dragging",
+                  "label": "Lors du glisser-déposer"
                 },
                 {
-                  "englishLabel": "Always"
+                  "englishLabel": "Always",
+                  "label": "Toujours"
                 },
                 {
-                  "englishLabel": "Never"
+                  "englishLabel": "Never",
+                  "label": "Jamais"
                 }
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)"
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "Marge pour l'alignement automatique (en pixels)"
             }
           ]
         },
         {
           "englishLabel": "Task",
-          "label": "Consigne",
+          "label": "Éléments de l'activité",
           "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
           "fields": [
@@ -127,7 +140,7 @@
                   },
                   {
                     "englishLabel": "Show label",
-                    "label": "Montrer l'étiquette"
+                    "label": "Afficher l'étiquette"
                   },
                   {},
                   {},
@@ -152,12 +165,16 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément. Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone."
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
-                    "englishDescription": "Will auto-align all draggables dropped in this zone."
+                    "label": "Activer l'alignement automatique des éléments déplacés",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
+                    "description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
                   }
                 ]
               }
@@ -187,6 +204,10 @@
           "label": "Donner un point pour l'ensemble de l'exercice",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Activer les explications du score"
         },
         {
           "englishLabel": "Require user input before the solution can be viewed",
