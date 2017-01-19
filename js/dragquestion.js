@@ -198,6 +198,47 @@ H5P.DragQuestion = (function ($) {
       'class': classes
     });
 
+    // First we check if full screen is supported
+    if (H5P.canHasFullScreen !== false && this.options.question.settings.enableFullScreen) {
+
+      // We create a function that is used to enter or
+      // exit full screen when our button is pressed
+      var $myContainer = this.$container;
+      var self = this; // Keep track of H5P instance as 'self'
+      var toggleFullScreen = function () {
+        if (H5P.isFullscreen) {
+          H5P.exitFullScreen($myContainer);
+        }
+        else {
+          H5P.fullScreen($myContainer.parent().parent(), self); // 'self' instead of 'this'
+        }
+      };
+
+    // Create full screen button
+      $fullScreenButton = $('<div/>', {
+        'class': 'h5p-my-fullscreen-button-enter',
+        title: this.options.localize.fullscreen,
+        role: 'button',
+        tabindex: 0,
+        on: {
+          click: toggleFullScreen
+        },
+        prependTo: this.$container.parent()
+      });
+
+      // Respond to enter full screen event
+      this.on('enterFullScreen', function () {
+        $fullScreenButton.attr('class', 'h5p-my-fullscreen-button-exit');
+        $fullScreenButton.attr('title', this.options.localize.exitFullscreen);
+      });
+
+      // Respond to exit full screen event
+      this.on('exitFullScreen', function () {
+        $fullScreenButton.attr('class', 'h5p-my-fullscreen-button-enter');
+        $fullScreenButton.attr('title', this.options.localize.fullscreen);
+      });
+    }
+
     // ... and buttons
     self.registerButtons();
 
