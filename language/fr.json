@@ -212,6 +212,12 @@
         {
           "englishLabel": "Require user input before the solution can be viewed",
           "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+        },
+        {
+          "englishLabel": "Keep Correct Answers",
+          "label": "Conserver les réponses correctes",
+          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
+          "description": "Cochez cette option pour conserver les étiquettes correctement déposées dans les zones de dépôt lorsque l'utilisateur clique le bouton 'Recommencer'."
         }
       ]
     }

@@ -364,6 +364,14 @@
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true
+      },
+      {
+        "label": "Keep Correct Answers",
+        "importance": "low",
+        "name": "keepCorrectAnswers",
+        "type": "boolean",
+        "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry",
+        "default": false
       }
     ]
   }
