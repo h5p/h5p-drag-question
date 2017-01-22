@@ -208,6 +208,12 @@
         {
           "englishLabel": "Require user input before the solution can be viewed",
           "label": "Krev inndata fra brukeren før fasit gis."
+        },
+        {
+          "englishLabel": "Apply penalties",
+          "label": "Apply penalties",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Apply penalties for elements dropped in the wrong drop zones."
         }
       ]
     }

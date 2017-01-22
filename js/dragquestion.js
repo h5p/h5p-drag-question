@@ -44,7 +44,8 @@ H5P.DragQuestion = (function ($) {
         enableRetry: true,
         preventResize: false,
         singlePoint: true,
-        showSolutionsRequiresInput: true
+        showSolutionsRequiresInput: true,
+		applyPenalties: true
       }
     }, options);
 
@@ -743,9 +744,10 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.getScore = function () {
     this.showAllSolutions(true);
-    var points = this.points;
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
     delete this.points;
-    return points;
+    delete this.rawPoints;
+    return actualPoints;
   };
 
   /**
@@ -765,7 +767,8 @@ H5P.DragQuestion = (function ($) {
     if (this.options.behaviour.singlePoint) {
       maxScore = 1;
     }
-    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
+    var scoreText = this.options.feedback.replace('@score', actualPoints).replace('@total', maxScore);
     var helpText = this.options.behaviour.enableScoreExplanation ? this.options.scoreExplanation : false;
     this.setFeedback(scoreText, this.points, maxScore, undefined, helpText);
   };
