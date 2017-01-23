@@ -47,6 +47,12 @@
               "description": "Brukes i oppsummeringer, statistikk o.l."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Show Title",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Huk av dette alternativet, hvis du ikke ønsker å vise tittelen. Tittelen vil bare vises for oppsummeringer, statistikk osv."
+            },
+            {
               "englishLabel": "Background image",
               "label": "Bakgrunnsbilde",
               "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
