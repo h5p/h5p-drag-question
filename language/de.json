@@ -32,6 +32,12 @@
               "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Show Title",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+            },
+            {
               "label": "Hintergrundbild",
               "description": "Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
             },

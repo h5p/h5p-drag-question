@@ -28,6 +28,7 @@ H5P.DragQuestion = (function ($) {
       question: {
         settings: {
           questionTitle: 'Drag and drop',
+          showTitle: true,
           size: {
             width: 620,
             height: 310
@@ -178,7 +179,9 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Register introduction section
-    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    if (self.options.question.settings.showTitle) {
+      self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    }
 
 
     // Set class if no background

@@ -47,6 +47,12 @@
               "description": "Utilisé dans les résumés, statistiques, etc."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Afficher le titre",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
+            },
+            {
               "englishLabel": "Background image",
               "label": "Image d'arrière-plan",
               "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",

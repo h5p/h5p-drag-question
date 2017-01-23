@@ -63,6 +63,14 @@
             "description": "Used in summaries, statistics etc."
           },
           {
+            "name": "showTitle",
+            "type": "boolean",
+            "label": "Show Title",
+            "importance": "low",
+            "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+            "default": true
+          },
+          {
             "name": "background",
             "type": "image",
             "label": "Background image",
