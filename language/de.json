@@ -43,7 +43,7 @@
             },
             {
               "label": "Aufgabengröße",
-              "description": "Gib anm wie breit (in px) das Feld sein soll.",
+              "description": "Gib an, wie breit (in px) das Feld sein soll.",
               "default": {},
               "fields": [
                 {},
