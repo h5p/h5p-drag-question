@@ -45,7 +45,7 @@ H5P.DragQuestion = (function ($) {
         preventResize: false,
         singlePoint: true,
         showSolutionsRequiresInput: true,
-		applyPenalties: true
+        applyPenalties: true
       }
     }, options);
 
@@ -760,7 +760,7 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Shows the score to the user when the score button i pressed.
+   * Shows the score to the user when the score button is pressed.
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
@@ -769,8 +769,8 @@ H5P.DragQuestion = (function ($) {
     }
     var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
     var scoreText = this.options.feedback.replace('@score', actualPoints).replace('@total', maxScore);
-    var helpText = this.options.behaviour.enableScoreExplanation ? this.options.scoreExplanation : false;
-    this.setFeedback(scoreText, this.points, maxScore, undefined, helpText);
+    var helpText = (this.options.behaviour.enableScoreExplanation && this.options.behaviour.applyPenalties) ? this.options.scoreExplanation : false;
+    this.setFeedback(scoreText, actualPoints, maxScore, undefined, helpText);
   };
 
   /**

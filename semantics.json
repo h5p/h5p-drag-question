@@ -354,6 +354,7 @@
         "name": "enableScoreExplanation",
         "type": "boolean",
         "label": "Enable score explanation",
+        "description": "Score explanation will be displayed to user when checking their answers if the 'Apply penalties' option has been selected.",
         "importance": "low",
         "default": true,
         "optional": true
@@ -371,6 +372,15 @@
         "type": "boolean",
         "description": "Apply penalties for elements dropped in the wrong drop zones",
         "default": true
+      },
+      {
+        "name": "enableScoreExplanation",
+        "type": "boolean",
+        "label": "Enable score explanation",
+        "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+        "importance": "low",
+        "default": true,
+        "optional": true
       }
     ]
   }
