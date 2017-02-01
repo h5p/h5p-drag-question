@@ -351,15 +351,6 @@
         "default": true
       },
       {
-        "name": "enableScoreExplanation",
-        "type": "boolean",
-        "label": "Enable score explanation",
-        "description": "Score explanation will be displayed to user when checking their answers if the 'Apply penalties' option has been selected.",
-        "importance": "low",
-        "default": true,
-        "optional": true
-      },
-      {
         "label": "Require user input before the solution can be viewed",
         "importance": "low",
         "name": "showSolutionsRequiresInput",
