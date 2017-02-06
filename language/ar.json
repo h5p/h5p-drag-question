@@ -205,24 +205,24 @@
           "label": "تفعيل \"إعادة المحاولة \""
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
+          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+        },
+        {
           "englishLabel": "Give one point for the whole task",
           "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
         },
         {
-          "englishLabel": "Enable score explanation",
-          "label": "Enable score explanation"
-        },
-        {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
-        },
-        {
           "englishLabel": "Apply penalties",
           "label": "Apply penalties",
           "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
           "description": "Apply penalties for elements dropped in the wrong drop zones."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Enable score explanation"
         }
       ]
     }
