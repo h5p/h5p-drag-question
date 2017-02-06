@@ -359,19 +359,27 @@
         "default": true
       },
       {
-        "name": "enableScoreExplanation",
-        "type": "boolean",
-        "label": "Enable score explanation",
-        "importance": "low",
-        "default": true,
-        "optional": true
-      },
-      {
         "label": "Require user input before the solution can be viewed",
         "importance": "low",
         "name": "showSolutionsRequiresInput",
         "type": "boolean",
         "default": true
+      },
+      {
+        "label": "Apply penalties",
+        "name": "applyPenalties",
+        "type": "boolean",
+        "description": "Apply penalties for elements dropped in the wrong drop zones",
+        "default": true
+      },
+      {
+        "name": "enableScoreExplanation",
+        "type": "boolean",
+        "label": "Enable score explanation",
+        "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+        "importance": "low",
+        "default": true,
+        "optional": true
       }
     ]
   }
