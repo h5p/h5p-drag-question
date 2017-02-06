@@ -217,6 +217,12 @@
         {
           "englishLabel": "Require user input before the solution can be viewed",
           "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+        },
+        {
+          "englishLabel": "Apply penalties",
+          "label": "Apply penalties",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Apply penalties for elements dropped in the wrong drop zones."
         }
       ]
     }
