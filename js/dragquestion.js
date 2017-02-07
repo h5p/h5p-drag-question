@@ -28,6 +28,7 @@ H5P.DragQuestion = (function ($) {
       question: {
         settings: {
           questionTitle: 'Drag and drop',
+          showTitle: true,
           size: {
             width: 620,
             height: 310
@@ -44,7 +45,8 @@ H5P.DragQuestion = (function ($) {
         enableRetry: true,
         preventResize: false,
         singlePoint: true,
-        showSolutionsRequiresInput: true
+        showSolutionsRequiresInput: true,
+        applyPenalties: true
       }
     }, options);
 
@@ -178,7 +180,9 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Register introduction section
-    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    if (self.options.question.settings.showTitle) {
+      self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    }
 
 
     // Set class if no background
@@ -743,9 +747,10 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.getScore = function () {
     this.showAllSolutions(true);
-    var points = this.points;
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
     delete this.points;
-    return points;
+    delete this.rawPoints;
+    return actualPoints;
   };
 
   /**
@@ -758,16 +763,17 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Shows the score to the user when the score button i pressed.
+   * Shows the score to the user when the score button is pressed.
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
     if (this.options.behaviour.singlePoint) {
       maxScore = 1;
     }
-    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
-    var helpText = this.options.behaviour.enableScoreExplanation ? this.options.scoreExplanation : false;
-    this.setFeedback(scoreText, this.points, maxScore, undefined, helpText);
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
+    var scoreText = this.options.feedback.replace('@score', actualPoints).replace('@total', maxScore);
+    var helpText = (this.options.behaviour.enableScoreExplanation && this.options.behaviour.applyPenalties) ? this.options.scoreExplanation : false;
+    this.setFeedback(scoreText, actualPoints, maxScore, undefined, helpText);
   };
 
   /**
