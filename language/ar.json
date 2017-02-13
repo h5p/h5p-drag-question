@@ -47,6 +47,12 @@
               "description": "Used in summaries, statistics etc."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Show Title",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+            },
+            {
               "englishLabel": "Background image",
               "label": "صورة الخلفية",
               "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
@@ -164,8 +170,10 @@
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element. Make sure there is only one correct answer for this dropzone.",
-                    "label": "هذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط. تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
                   },
                   {
                     "englishLabel": "Enable Auto-Align",
@@ -197,18 +205,24 @@
           "label": "تفعيل \"إعادة المحاولة \""
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
+          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+        },
+        {
           "englishLabel": "Give one point for the whole task",
           "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
         },
         {
-          "englishLabel": "Enable score explanation",
-          "label": "Enable score explanation"
+          "englishLabel": "Apply penalties",
+          "label": "Apply penalties",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Apply penalties for elements dropped in the wrong drop zones."
         },
         {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+          "englishLabel": "Enable score explanation",
+          "label": "Enable score explanation"
         }
       ]
     }
