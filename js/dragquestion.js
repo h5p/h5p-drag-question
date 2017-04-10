@@ -27,6 +27,7 @@ H5P.DragQuestion = (function ($) {
       question: {
         settings: {
           questionTitle: 'Drag and drop',
+          showTitle: true,
           size: {
             width: 620,
             height: 310
@@ -43,7 +44,8 @@ H5P.DragQuestion = (function ($) {
         enableRetry: true,
         preventResize: false,
         singlePoint: true,
-        showSolutionsRequiresInput: true
+        showSolutionsRequiresInput: true,
+        applyPenalties: true
       }
     }, options);
 
@@ -177,7 +179,9 @@ H5P.DragQuestion = (function ($) {
     var self = this;
 
     // Register introduction section
-    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    if (self.options.question.settings.showTitle) {
+      self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    }
 
 
     // Set class if no background
@@ -206,10 +210,37 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
+   * Get xAPI data.
+   * Contract used by report rendering engine.
+   *
+   * @see contract at {@link https://h5p.org/documentation/developers/contracts#guides-header-6}
+   *
+   * @return {Object} xAPI data
+   */
+  C.prototype.getXAPIData = function () {
+    var xAPIEvent = this.createXAPIEventTemplate('answered');
+    this.addQuestionToXAPI(xAPIEvent);
+    this.addResponseToXAPI(xAPIEvent);
+    return {
+      statement: xAPIEvent.data.statement
+    }
+  };
+
+  /**
    * Add the question itselt to the definition part of an xAPIEvent
    */
   C.prototype.addQuestionToXAPI = function(xAPIEvent) {
     var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
+    $.extend(definition, this.getXAPIDefinition());
+  };
+
+  /**
+   * Get object definition for xAPI statement.
+   *
+   * @return {Object} xAPI object definition
+   */
+  C.prototype.getXAPIDefinition = function () {
+    var definition = {};
     definition.description = {
       // Remove tags, must wrap in div tag because jQuery 1.9 will crash if the string isn't wrapped in a tag.
       'en-US': $('<div>' + this.options.question.settings.questionTitle + '</div>').text()
@@ -256,6 +287,8 @@ H5P.DragQuestion = (function ($) {
         }
       }
     }
+
+    return definition;
   };
 
   /**
@@ -269,25 +302,54 @@ H5P.DragQuestion = (function ($) {
     var score = this.getScore();
     var success = score == maxScore ? true : false;
     xAPIEvent.setScoredResult(score, maxScore, this, true, success);
-    var response = '';
-    var firstPair = true;
-    // State system will be rewritten to use xAPI, but until it does we convert
-    // the state to xAPI here...
-    var state = this.getCurrentState();
-    if (state.answers !== undefined) {
-      for (var i = 0; i < state.answers.length; i++) {
-        if (state.answers[i] !== undefined) {
-          for (var j = 0; j < state.answers[i].length; j++) {
-            if (!firstPair) {
-              response += '[,]';
-            }
-            response += state.answers[i][j].dz + '[.]' + i;
-            firstPair = false;
-          }
-        }
-      }
+    xAPIEvent.data.statement.result.response = this.getUserXAPIResponse();
+  };
+
+  /**
+   * Get what the user has answered encoded as an xAPI response pattern
+   *
+   * @return {string} xAPI encoded user response pattern
+   */
+  C.prototype.getUserXAPIResponse = function () {
+    var answers = this.getUserAnswers();
+    if (!answers) {
+      return response;
     }
-    xAPIEvent.data.statement.result.response = response;
+
+    return answers
+      .filter(function (answerMapping) {
+        return answerMapping.elements.length;
+      })
+      .map(function (answerMapping, index) {
+        return answerMapping.elements
+          .filter(function (element) {
+            return element.dropZone !== undefined;
+          }).map(function (element) {
+            return element.dropZone + '[.]' + index;
+          }).join('[,]');
+      }).filter(function (pattern) {
+        return pattern !== undefined && pattern !== '';
+      }).join('[,]');
+  };
+
+  /**
+   * Returns user answers
+   */
+  C.prototype.getUserAnswers = function () {
+    return this.draggables.map(function (draggable, index) {
+      return {
+        index: index,
+        draggable: draggable
+      };
+    }).filter(function (draggableMapping) {
+      return draggableMapping.draggable !== undefined &&
+        draggableMapping.draggable.elements;
+    }).map(function (draggableMapping) {
+      return {
+        index: draggableMapping.index,
+        elements: draggableMapping.draggable.elements
+      }
+    });
   };
 
   /**
@@ -684,9 +746,10 @@ H5P.DragQuestion = (function ($) {
    */
   C.prototype.getScore = function () {
     this.showAllSolutions(true);
-    var points = this.points;
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
     delete this.points;
-    return points;
+    delete this.rawPoints;
+    return actualPoints;
   };
 
   /**
@@ -699,15 +762,17 @@ H5P.DragQuestion = (function ($) {
   };
 
   /**
-   * Shows the score to the user when the score button i pressed.
+   * Shows the score to the user when the score button is pressed.
    */
   C.prototype.showScore = function () {
     var maxScore = this.calculateMaxScore();
     if (this.options.behaviour.singlePoint) {
       maxScore = 1;
     }
-    var scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
-    this.setFeedback(scoreText, this.points, maxScore);
+    var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
+    var scoreText = this.options.feedback.replace('@score', actualPoints).replace('@total', maxScore);
+    var helpText = (this.options.behaviour.enableScoreExplanation && this.options.behaviour.applyPenalties) ? this.options.scoreExplanation : false;
+    this.setFeedback(scoreText, actualPoints, maxScore, undefined, helpText);
   };
 
   /**
@@ -731,6 +796,10 @@ H5P.DragQuestion = (function ($) {
         if (element === undefined || element.dropZone === undefined) {
           continue;
         }
+
+        // Verify that draggables actually has its correct positions
+        // (could have been chaged by auto-align without being updated in draggable)
+        element.position = C.positionToPercentage(this.$container, element.$);
 
         // Store position and drop zone.
         draggableAnswers.push({
@@ -1400,6 +1469,18 @@ H5P.DragQuestion = (function ($) {
     // Add tip after setOpacity(), so this does not get background opacity:
     if (self.tip !== undefined && self.tip.trim().length) {
       self.$dropZone.append(H5P.JoubelUI.createTip(self.tip));
+    }
+
+    if (self.autoAlignEnabled) {
+      draggables.forEach(function (draggable) {
+        var dragEl = draggable.element.$;
+
+        // Add to alignables
+        if (draggable.isInDropZone(self.id) && self.getIndexOf(dragEl) === -1) {
+          self.alignables.push(dragEl);
+        }
+      });
+      self.autoAlign();
     }
 
     // Set element opacity when element has been appended
