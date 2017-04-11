@@ -45,7 +45,7 @@ H5P.DragQuestion = (function ($) {
         preventResize: false,
         singlePoint: true,
         showSolutionsRequiresInput: true,
-        applyPenalties: true
+        applyPenalties: false
       }
     }, options);
 
