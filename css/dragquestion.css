@@ -240,3 +240,40 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   margin-left: 1em;
   margin-right: 1em;
 }
+
+/* Full screen button styling */
+.h5p-dragquestion .h5p-my-fullscreen-button-enter,
+.h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  cursor: pointer;
+  font-size: 1.5em;
+  outline: none;
+  color: #1a73d9;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-enter {
+  line-height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  text-indent: 0.4em;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  line-height: 2em;
+  width: 2.2em;
+  height: 2.2em;
+  text-indent: 0.25em;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-enter:before {
+  font-family: 'H5PFontAwesome4';
+  content: "\f065";
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-exit:before {
+  font-family: 'H5PFontAwesome4';
+  content: "\f066";
+  font-size: 2em;
+}
