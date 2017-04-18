@@ -88,6 +88,12 @@
             {
               "englishLabel": "Spacing for Auto-Align (in px)",
               "label": "Marge pour l'alignement automatique (en pixels)"
+            },
+            {
+              "englishLabel": "Enable FullScreen",
+              "label": "Activer le bouton Plein écran",
+              "englishDescription": "Check this option to enable the full screen button.",
+              "description": "Cochez cette option pour autoriser le mode Plein écran."
             }
           ]
         },
@@ -224,6 +230,24 @@
         {
           "englishLabel": "Enable score explanation",
           "label": "Activer les explications du score"
+        }
+      ]
+    },
+    {
+      "englishLabel": "Localize",
+      "label": "Traductions",
+      "fields": [
+        {
+          "englishLabel": "Fullscreen label",
+          "label": "Texte du titre pour le bouton Plein écran",
+          "englishDefault": "Fullscreen",
+          "default": "Plein écran"
+        },
+        {
+          "englishLabel": "Exit fullscreen label",
+          "label": "Texte du titre pour le bouton Quitter le plein écran",
+          "englishDefault": "Exit fullscreen",
+          "default": "Quitter le plein écran"
         }
       ]
     }
