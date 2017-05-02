@@ -1,5 +1,4 @@
 var H5P = H5P || {};
-
 /**
  * DragQuestion module.
  *
@@ -46,7 +45,7 @@ H5P.DragQuestion = (function ($) {
         preventResize: false,
         singlePoint: true,
         showSolutionsRequiresInput: true,
-        applyPenalties: true
+        applyPenalties: false
       }
     }, options);
 
@@ -1356,7 +1355,7 @@ H5P.DragQuestion = (function ($) {
             element.$.addClass('h5p-wrong');
             C.setElementOpacity(element.$, self.backgroundOpacity);
           }
-          points--;
+          // points--;
         }
       }
       return points;
@@ -1391,7 +1390,7 @@ H5P.DragQuestion = (function ($) {
           element.$.addClass('h5p-wrong');
           C.setElementOpacity(element.$, self.backgroundOpacity);
         }
-        points--;
+        // points--;
       }
     }
 
