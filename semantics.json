@@ -131,6 +131,14 @@
             "min": 0,
             "default": 2,
             "optional": true
+          },
+          {
+            "name": "enableFullScreen",
+            "label": "Enable FullScreen",
+            "importance": "low",
+            "type": "boolean",
+            "description": "Check this option to enable the full screen button.",
+            "default": false
           }
         ]
       },
@@ -380,6 +388,26 @@
         "importance": "low",
         "default": true,
         "optional": true
+      }
+    ]
+  },
+  {
+    "name": "localize",
+    "type": "group",
+    "label": "Localize",
+    "common": true,
+    "fields": [
+      {
+        "name": "fullscreen",
+        "type": "text",
+        "label": "Fullscreen label",
+        "default": "Fullscreen"
+      },
+      {
+        "name": "exitFullscreen",
+        "type": "text",
+        "label": "Exit fullscreen label",
+        "default": "Exit fullscreen"
       }
     ]
   }
