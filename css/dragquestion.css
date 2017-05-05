@@ -251,6 +251,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   position: absolute;
   right: 10px;
   top: 10px;
+  z-index: 1;
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-enter {
