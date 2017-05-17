@@ -47,6 +47,12 @@
               "description": "Used in summaries, statistics etc."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Show Title",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+            },
+            {
               "englishLabel": "Background image",
               "label": "صورة الخلفية",
               "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
@@ -199,24 +205,30 @@
           "label": "تفعيل \"إعادة المحاولة \""
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
+          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+        },
+        {
           "englishLabel": "Give one point for the whole task",
           "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
         },
         {
+          "englishLabel": "Apply penalties",
+          "label": "Apply penalties",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones.",
+          "description": "Apply penalties for elements dropped in the wrong drop zones."
+        },
+        {
           "englishLabel": "Enable score explanation",
           "label": "Enable score explanation"
         },
         {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
-        },
-        {
           "englishLabel": "Keep Correct Answers",
           "label": "Keep Correct Answers",
-          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
-          "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry."
+          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry",
+          "description": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry"
         }
       ]
     }

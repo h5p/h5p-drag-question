@@ -47,6 +47,12 @@
               "description": "Utilisé dans les résumés, statistiques, etc."
             },
             {
+              "englishLabel": "Show Title",
+              "label": "Afficher le titre",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
+            },
+            {
               "englishLabel": "Background image",
               "label": "Image d'arrière-plan",
               "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
@@ -82,6 +88,12 @@
             {
               "englishLabel": "Spacing for Auto-Align (in px)",
               "label": "Marge pour l'alignement automatique (en pixels)"
+            },
+            {
+              "englishLabel": "Enable FullScreen",
+              "label": "Activer le bouton Plein écran",
+              "englishDescription": "Check this option to enable the full screen button.",
+              "description": "Cochez cette option pour autoriser le mode Plein écran."
             }
           ]
         },
@@ -200,24 +212,50 @@
           "label": "Activer le bouton \"Recommencer\""
         },
         {
+          "englishLabel": "Require user input before the solution can be viewed",
+          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+        },
+        {
           "englishLabel": "Give one point for the whole task",
           "label": "Donner un point pour l'ensemble de l'exercice",
           "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
         },
         {
-          "englishLabel": "Enable score explanation",
-          "label": "Activer les explications du score"
+          "englishLabel": "Apply penalties",
+          "label": "Appliquer des pénalités",
+          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score.",
+          "description": "Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
         },
         {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+          "englishLabel": "Enable score explanation",
+          "label": "Activer les explications du score",
+          "englishDescription": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "description": "Afficher une explication du score lorsque l'utilisateur vérifie ses réponses (si l'option 'Appliquer des pénalités' a été choisie)."
         },
         {
           "englishLabel": "Keep Correct Answers",
           "label": "Conserver les réponses correctes",
-          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry.",
-          "description": "Cochez cette option pour conserver les étiquettes correctement déposées dans les zones de dépôt lorsque l'utilisateur clique le bouton 'Recommencer'."
+          "englishDescription": "Check this option if you want to keep the draggable elements dropped in the CORRECT drop zones upon Retry",
+          "description": "Cochez cette option si vous voulez conserver les éléments correctement déposés lorsque l'utilisateur recommence l'exercice."
+        }
+      ]
+    },
+    {
+      "englishLabel": "Localize",
+      "label": "Traductions",
+      "fields": [
+        {
+          "englishLabel": "Fullscreen label",
+          "label": "Texte du titre pour le bouton Plein écran",
+          "englishDefault": "Fullscreen",
+          "default": "Plein écran"
+        },
+        {
+          "englishLabel": "Exit fullscreen label",
+          "label": "Texte du titre pour le bouton Quitter le plein écran",
+          "englishDefault": "Exit fullscreen",
+          "default": "Quitter le plein écran"
         }
       ]
     }
