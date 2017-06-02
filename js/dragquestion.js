@@ -42,6 +42,7 @@ H5P.DragQuestion = (function ($) {
         }
       },
       behaviour: {
+        enableCheck: true,
         enableRetry: true,
         preventResize: false,
         singlePoint: true,
@@ -484,15 +485,17 @@ H5P.DragQuestion = (function ($) {
   C.prototype.addSolutionButton = function () {
     var that = this;
 
-    this.addButton('check-answer', this.options.scoreShow, function () {
-      that.answered = true;
-      that.showAllSolutions();
-      that.showScore();
-      var xAPIEvent = that.createXAPIEventTemplate('answered');
-      that.addQuestionToXAPI(xAPIEvent);
-      that.addResponseToXAPI(xAPIEvent);
-      that.trigger(xAPIEvent);
-    });
+    if (this.options.behaviour.enableCheck) {
+      this.addButton('check-answer', this.options.scoreShow, function () {
+        that.answered = true;
+        that.showAllSolutions();
+        that.showScore();
+        var xAPIEvent = that.createXAPIEventTemplate('answered');
+        that.addQuestionToXAPI(xAPIEvent);
+        that.addResponseToXAPI(xAPIEvent);
+        that.trigger(xAPIEvent);
+      });
+    }
   };
 
   /**
