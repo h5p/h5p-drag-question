@@ -17,6 +17,11 @@
   },
   "license": "MIT",
   "machineName": "H5P.DragQuestion",
+  "preloadedJs": [
+    {
+      "path": "h5p-drag-question.js"
+    }
+  ],
   "preloadedCss": [
     {
       "path": "css/dragquestion.css"
@@ -42,11 +47,6 @@
       "machineName": "H5P.Question",
       "majorVersion": 1,
       "minorVersion": 2
-    }
-  ],
-  "preloadedJs": [
-    {
-      "path": "js/dragquestion.js"
     }
   ],
   "editorDependencies": [
