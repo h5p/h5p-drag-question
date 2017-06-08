@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/h5p/h5p-drag-question#readme",
   "devDependencies": {
-    "webpack": "^3.0.0-rc.1"
+    "webpack": "^3.0.0-rc.1",
+    "h5p-lib-controls": "0.0.2"
   }
 }
