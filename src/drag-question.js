@@ -56,82 +56,15 @@ function C(options, contentId, contentData) {
 
   this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
-  // Prepare ARIA components
-  var ariaDrag = new AriaDrag();
-  var ariaDrop = new AriaDrop();
-  var dragControls = new Controls([new UIKeyboard(), ariaDrag]);
-  var dropControls = new Controls([new UIKeyboard(), ariaDrop]);
-
-  // Keep track of current selected draggable (selected via keyboard)
-  var selected;
-
-  /**
-   * @private
-   */
-  var deselect = function () {
-    selected.draggable.trigger('dragend');
-    selected.element.$.removeClass('h5p-draggable-hover');
-    C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
-
-    for (var i = 0; i < self.dropZones.length; i++) {
-      self.dropZones[i].dehighlight();
-    }
-    selected = undefined;
-  };
-
-  // Handle draggable selected through keyboard
-  dragControls.on('select', function (event) {
-    var result = elementToDraggable(self.draggables, event.element);
-    if (selected) {
-      // De-select
-      deselect();
-      return;
-    }
-    selected = result;
-
-    // Select
-    selected.element.$.addClass('h5p-draggable-hover');
-    C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
-    selected.draggable.trigger('dragstart', selected.draggable.copyElement(selected.element) ? 'copy' : 'move');
-
-    // Figure out which drop zones will accept this draggable
-    for (var i = 0; i < self.dropZones.length; i++) {
-      if (self.dropZones[i].accepts(selected.draggable)) {
-        self.dropZones[i].highlight();
-        // TODO: Update dragControls elements ?
-      }
-    }
-  });
-
-  // Handle dropzone selected through keyboard
-  dropControls.on('select', function (event) {
-    if (!selected) {
-      return;
-    }
-    var dropZone = elementToDropZone(self.dropZones, event.element);
-
-    // Add draggable to drop zone
-    selected.draggable.addToDropZone(selected.index, selected.element, dropZone.id);
-
-    if (dropZone.getIndexOf(selected.element.$) === -1) {
-      // Add to alignables
-      dropZone.alignables.push(selected.element.$);
-    }
-
-    // Trigger alignment
-    dropZone.autoAlign();
-
-    // Reset selected
-    selected.element.$[0].setAttribute('aria-grabbed', 'false');
-    deselect();
-  });
+  // Initialize controls for good a11y
+  var controls = getControls(self.draggables, self.dropZones);
 
   /**
    * @private
    */
   var setDropEffect = function (effect) {
-    for (var i = 0; i < dropControls.elements.length; i++) {
-      dropControls.elements[i].setAttribute('aria-dropeffect', effect);
+    for (var i = 0; i < controls.drop.elements.length; i++) {
+      controls.drop.elements[i].setAttribute('aria-dropeffect', effect);
     }
   };
 
@@ -178,20 +111,18 @@ function C(options, contentId, contentData) {
     var draggable = new Draggable(element, i, answers);
     var highlightDropZones = (self.options.question.settings.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
-      dragControls.addElement(event.data);
+      controls.drag.addElement(event.data);
     });
     draggable.on('elementremove', function (event) {
-      dragControls.removeElement(event.data);
+      controls.drag.removeElement(event.data);
     });
     draggable.on('dragstart', function (event) {
-      console.log('dragstart');
       if (highlightDropZones) {
         self.$container.addClass('h5p-dq-highlight-dz');
       }
       setDropEffect(event.data);
     });
     draggable.on('dragend', function (event) {
-      console.log('dragend');
       if (highlightDropZones) {
         self.$container.removeClass('h5p-dq-highlight-dz');
       }
@@ -234,7 +165,7 @@ function C(options, contentId, contentData) {
 
     this.dropZones[i] = new DropZone(dropZone, i);
     this.dropZones[i].on('elementadd', function (event) {
-      dropControls.addElement(event.data);
+      controls.drop.addElement(event.data);
     });
   }
 
@@ -263,11 +194,10 @@ function C(options, contentId, contentData) {
 C.prototype = Object.create(H5P.Question.prototype);
 C.prototype.constructor = C;
 
-
 /**
-* Registers this question type's DOM elements before they are attached.
-* Called from H5P.Question.
-*/
+ * Registers this question type's DOM elements before they are attached.
+ * Called from H5P.Question.
+ */
 C.prototype.registerDomElements = function () {
   var self = this;
 
@@ -1079,6 +1009,89 @@ C.setAlphas = function (style, prefix, alpha) {
   }
 
   return style;
+};
+
+/**
+ * Initialize controls to improve a11y.
+ * @private
+ * @param {Draggable[]} draggables
+ * @param {DropZone[]} dropZones
+ * @param {Object}
+ */
+var getControls = function (draggables, dropZones) {
+  // Initialize controls components
+  var controls = {
+    drag: new Controls([new UIKeyboard(), new AriaDrag()]),
+    drop: new Controls([new UIKeyboard(), new AriaDrop()])
+  };
+
+  // Keep track of current selected draggable (selected via keyboard)
+  var selected;
+
+  /**
+   * @private
+   */
+  var deselect = function () {
+    selected.draggable.trigger('dragend');
+    selected.element.$.removeClass('h5p-draggable-hover');
+    C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
+
+    for (var i = 0; i < dropZones.length; i++) {
+      dropZones[i].dehighlight();
+    }
+    selected = undefined;
+  };
+
+  // TODO: Use select-before to prevent select
+
+  // Handle draggable selected through keyboard
+  controls.drag.on('select', function (event) {
+    var result = elementToDraggable(draggables, event.element);
+    if (selected) {
+      // De-select
+      deselect();
+      return;
+    }
+    selected = result;
+
+    // Select
+    selected.element.$.addClass('h5p-draggable-hover');
+    C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
+    selected.draggable.trigger('dragstart', selected.draggable.copyElement(selected.element) ? 'copy' : 'move');
+
+    // Figure out which drop zones will accept this draggable
+    for (var i = 0; i < dropZones.length; i++) {
+      if (dropZones[i].accepts(selected.draggable)) {
+        dropZones[i].highlight();
+        // TODO: Update controls.drop elements ?
+      }
+    }
+  });
+
+  // Handle dropzone selected through keyboard
+  controls.drop.on('select', function (event) {
+    if (!selected) {
+      return;
+    }
+    var dropZone = elementToDropZone(dropZones, event.element);
+
+    // Add draggable to drop zone
+    selected.draggable.addToDropZone(selected.index, selected.element, dropZone.id);
+
+    if (dropZone.getIndexOf(selected.element.$) === -1) {
+      // Add to alignables
+      dropZone.alignables.push(selected.element.$);
+    }
+
+    // Trigger alignment
+    dropZone.autoAlign();
+
+    // Reset selected
+    selected.element.$[0].setAttribute('aria-grabbed', 'false');
+    deselect();
+  });
+
+  return controls;
 };
 
 /**
