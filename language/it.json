@@ -225,6 +225,22 @@
           "label": "Enable score explanation"
         }
       ]
+    },
+    {
+      "englishLabel": "Grabbable prefix",
+      "englishDefault": "Grabbable {num} of {total}"
+    },
+    {
+      "englishLabel": "Grabbable suffix",
+      "englishDefault": "Placed in dropzone {num}"
+    },
+    {
+      "englishLabel": "Dropzone prefix",
+      "englishDefault": "Dropzone {num} of {total}"
+    },
+    {
+      "englishLabel": "No dropzone selection label",
+      "englishDefault": "No dropzone"
     }
   ]
 }

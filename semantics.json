@@ -410,5 +410,37 @@
         "default": "Exit fullscreen"
       }
     ]
+  },
+  {
+    "name": "grabbablePrefix",
+    "type": "text",
+    "label": "Grabbable prefix",
+    "importance": "low",
+    "default": "Grabbable {num} of {total}",
+    "common": true
+  },
+  {
+    "name": "grabbableSuffix",
+    "type": "text",
+    "label": "Grabbable suffix",
+    "importance": "low",
+    "default": "Placed in dropzone {num}",
+    "common": true
+  },
+  {
+    "name": "dropzonePrefix",
+    "type": "text",
+    "label": "Dropzone prefix",
+    "importance": "low",
+    "default": "Dropzone {num} of {total}",
+    "common": true
+  },
+  {
+    "name": "noDropzone",
+    "type": "text",
+    "label": "No dropzone selection label",
+    "importance": "low",
+    "default": "No dropzone",
+    "common": true
   }
 ]

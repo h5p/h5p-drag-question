@@ -225,6 +225,30 @@
           "label": "Vis poeng-forklaring"
         }
       ]
+    },
+    {
+      "englishLabel": "Grabbable prefix",
+      "label": "Draobjektprefiks",
+      "englishDefault": "Grabbable {num} of {total}",
+      "default": "Draobjekt {num} av {total}"
+    },
+    {
+      "englishLabel": "Grabbable suffix",
+      "label": "Draobjektsuffiks",
+      "englishDefault": "Placed in dropzone {num}",
+      "default": "Plassert i slippsone {num}"
+    },
+    {
+      "englishLabel": "Dropzone prefix",
+      "label": "Slippsoneprefiks",
+      "englishDefault": "Dropzone {num} of {total}",
+      "default": "Slippsone {num} av {total}"
+    },
+    {
+      "englishLabel": "No dropzone selection label",
+      "label": "Ingen slippsone valg-merkelapp",
+      "englishDefault": "No dropzone",
+      "default": "Ingen slippsone"
     }
   ]
 }

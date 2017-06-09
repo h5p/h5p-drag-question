@@ -24,6 +24,10 @@ function C(options, contentId, contentData) {
     correct: 'Show solution',
     tryAgain: 'Retry',
     feedback: 'You got @score of @total points',
+    grabbablePrefix: 'Grabbable {num} of {total}',
+    grabbableSuffix: 'Placed in dropzone {num}',
+    dropzonePrefix: 'Dropzone {num} of {total}',
+    noDropzone: 'No dropzone',
     question: {
       settings: {
         questionTitle: 'Drag and drop',
@@ -56,8 +60,10 @@ function C(options, contentId, contentData) {
 
   this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
+  self.$noDropZone = $('<div class="h5p-dq-no-dz"><div class="h5p-hidden-read">' + self.options.noDropzone + '.</div></div>');
+
   // Initialize controls for good a11y
-  var controls = getControls(self.draggables, self.dropZones);
+  var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
 
   /**
    * @private
@@ -90,6 +96,10 @@ function C(options, contentId, contentData) {
   this.weight = 1;
 
   // Add draggable elements
+  var grabbablel10n = {
+    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.length),
+    suffix: self.options.grabbableSuffix,
+  };
   for (i = 0; i < task.elements.length; i++) {
     var element = task.elements[i];
 
@@ -108,13 +118,17 @@ function C(options, contentId, contentData) {
     }
 
     // Create new draggable instance
-    var draggable = new Draggable(element, i, answers);
+    var draggable = new Draggable(element, i, answers, grabbablel10n);
     var highlightDropZones = (self.options.question.settings.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
     });
     draggable.on('elementremove', function (event) {
       controls.drag.removeElement(event.data);
+    });
+    draggable.on('focus', function (event) {
+      controls.drag.setTabbable(event.data);
+      event.data.focus();
     });
     draggable.on('dragstart', function (event) {
       if (highlightDropZones) {
@@ -146,6 +160,10 @@ function C(options, contentId, contentData) {
   // Create a count to subtrack from score
   this.numDropZonesWithoutElements = 0;
 
+  var dropzonel10n = {
+    prefix: self.options.dropzonePrefix.replace('{total}', task.dropZones.length)
+  };
+
   // Add drop zones
   for (i = 0; i < task.dropZones.length; i++) {
     var dropZone = task.dropZones[i];
@@ -163,10 +181,7 @@ function C(options, contentId, contentData) {
       size: self.options.question.settings.size
     };
 
-    this.dropZones[i] = new DropZone(dropZone, i);
-    this.dropZones[i].on('elementadd', function (event) {
-      controls.drop.addElement(event.data);
-    });
+    this.dropZones[i] = new DropZone(dropZone, i, dropzonel10n);
   }
 
   this.on('resize', self.resize, self);
@@ -451,6 +466,9 @@ C.prototype.createQuestionContent = function () {
       timedOutOpacity($element, element);
     }
   }
+
+  // Attach invisible 'reset' drop zone for keyboard users
+  this.$noDropZone.appendTo(this.$container);
 
   // Attach drop zones
   for (i = 0; i < this.dropZones.length; i++) {
@@ -1018,7 +1036,7 @@ C.setAlphas = function (style, prefix, alpha) {
  * @param {DropZone[]} dropZones
  * @param {Object}
  */
-var getControls = function (draggables, dropZones) {
+var getControls = function (draggables, dropZones, noDropzone) {
   // Initialize controls components
   var controls = {
     drag: new Controls([new UIKeyboard(), new AriaDrag()]),
@@ -1036,13 +1054,32 @@ var getControls = function (draggables, dropZones) {
     selected.element.$.removeClass('h5p-draggable-hover');
     C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
 
+    if (controls.drop.elements.indexOf(noDropzone) !== -1) {
+      controls.drop.removeElement(noDropzone);
+    }
     for (var i = 0; i < dropZones.length; i++) {
-      dropZones[i].dehighlight();
+      var dropZone = dropZones[i];
+
+      // Remove highlighting
+      dropZone.dehighlight();
+
+      if (controls.drop.elements.indexOf(dropZone.$dropZone[0]) !== -1) {
+        controls.drop.removeElement(dropZone.$dropZone[0]);
+      }
+    }
+
+    if (selected.element.$.is(':visible')) {
+      // Put focus back on element after deselecting
+      selected.element.$.focus();
+    }
+    else {
+      // Put focus on next draggable element
+      var $next = selected.draggable.elements[selected.draggable.elements.length - 1].$;
+      controls.drag.setTabbable($next[0]);
+      $next.focus();
     }
     selected = undefined;
   };
-
-  // TODO: Use select-before to prevent select
 
   // Handle draggable selected through keyboard
   controls.drag.on('select', function (event) {
@@ -1059,12 +1096,35 @@ var getControls = function (draggables, dropZones) {
     C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
     selected.draggable.trigger('dragstart', selected.draggable.copyElement(selected.element) ? 'copy' : 'move');
 
+    if (selected.element.dropZone !== undefined) {
+      // Add special drop zone to reset
+      controls.drop.addElement(noDropzone);
+
+      // Position at element position
+      noDropzone.style.left = selected.draggable.x + '%';
+      noDropzone.style.top = selected.draggable.y + '%';
+      noDropzone.style.width = selected.draggable.width + 'em';
+      noDropzone.style.height = selected.draggable.height + 'em';
+    }
+
     // Figure out which drop zones will accept this draggable
+    var $first;
     for (var i = 0; i < dropZones.length; i++) {
-      if (dropZones[i].accepts(selected.draggable)) {
-        dropZones[i].highlight();
-        // TODO: Update controls.drop elements ?
+      var dropZone = dropZones[i];
+
+      if (dropZone.accepts(selected.draggable)) {
+        dropZone.highlight();
+        controls.drop.addElement(dropZone.$dropZone[0]);
+        if (!$first || selected.element.dropZone === dropZone.id) {
+          $first = dropZone.$dropZone;
+        }
+
       }
+    }
+    if ($first) {
+      // Focus the first drop zone after selecting a draggable
+      controls.drop.setTabbable($first[0])
+      $first.focus();
     }
   });
 
@@ -1073,7 +1133,30 @@ var getControls = function (draggables, dropZones) {
     if (!selected) {
       return;
     }
+    if (event.element === noDropzone) {
+      // Reset position
+
+      selected.element.reset();
+      if (!selected.draggable.multiple) {
+        selected.element.$.css({
+          left: selected.draggable.x + '%',
+          top: selected.draggable.y + '%',
+          width: selected.draggable.width + 'em',
+          height: selected.draggable.height + 'em'
+        });
+        selected.draggable.updatePlacement(selected.element);
+      }
+      deselect();
+      return;
+    }
+
     var dropZone = elementToDropZone(dropZones, event.element);
+
+    var copyElement = selected.draggable.copyElement(selected.element);
+    if (copyElement) {
+      // Leave a new element for next drag
+      selected.element.clone();
+    }
 
     // Add draggable to drop zone
     selected.draggable.addToDropZone(selected.index, selected.element, dropZone.id);
@@ -1137,8 +1220,9 @@ var elementToDropZone = function (dropZones, element) {
  * @param {object} element
  * @param {number} id
  * @param {array} [answers] from last session
+ * @param {string[]} l10n
  */
-function Draggable(element, id, answers) {
+function Draggable(element, id, answers, l10n) {
   var self = this;
   H5P.EventDispatcher.call(this);
 
@@ -1153,6 +1237,7 @@ function Draggable(element, id, answers) {
   self.dropZones = element.dropZones;
   self.type = element.type;
   self.multiple = element.multiple;
+  self.l10n = l10n;
 
   if (answers) {
     if (self.multiple) {
@@ -1210,7 +1295,26 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
   var element;
   if (index === null) {
     // Create new element
-    element = {};
+    element = {
+      clone: function () {
+        self.attachElement(null, $container, contentId);
+      },
+      reset: function () {
+        if (element.dropZone !== undefined) {
+          // Let everyone know we're leaving the drop zone
+          self.trigger('leavingDropZone', element);
+          delete element.dropZone;
+        }
+
+        if (self.multiple) {
+          // Remove element
+          element.$.remove();
+          delete self.elements[index];
+          self.trigger('elementremove', element.$[0]);
+        }
+        delete element.position;
+      }
+    };
     self.elements.push(element);
     index = self.elements.length - 1;
   }
@@ -1230,16 +1334,19 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
     },
     appendTo: $container
   })
+    .on('click', function () {
+      self.trigger('focus', this);
+    })
     .draggable({
       revert: function (dropZone) {
         $container.removeClass('h5p-dragging');
         var $this = $(this);
 
-        $this.removeClass('h5p-dropped').data("uiDraggable").originalPosition = {
+        $this.data("uiDraggable").originalPosition = {
           top: self.y + '%',
           left: self.x + '%'
         };
-        C.setElementOpacity($this, self.backgroundOpacity);
+        self.updatePlacement(element);
         $this[0].setAttribute('aria-grabbed', 'false');
 
         self.trigger('dragend');
@@ -1252,7 +1359,7 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
         var copyElement = self.copyElement(element);
         if (copyElement) {
           // Leave a new element for next drag
-          self.attachElement(null, $container, contentId);
+          element.clone();
         }
 
         // Send element to the top!
@@ -1261,7 +1368,11 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
         C.setElementOpacity($this, self.backgroundOpacity);
         this.setAttribute('aria-grabbed', 'true');
 
-        self.trigger('dragstart', copyElement ? 'copy' : 'move');
+        self.trigger('focus', this);
+        self.trigger('dragstart', {
+          element: this,
+          effect: copyElement ? 'copy' : 'move'
+        });
       },
       stop: function(event, ui) {
         var $this = $(this);
@@ -1273,27 +1384,10 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
         var addToZone = $this.data('addToZone');
         if (addToZone !== undefined) {
           $this.removeData('addToZone');
-
           self.addToDropZone(index, element, addToZone);
         }
         else {
-          if (self.multiple) {
-            // Remove element
-            if (self.elements[index].dropZone !== undefined) {
-              self.trigger('leavingDropZone', self.elements[index]);
-            }
-            $this.remove();
-            delete self.elements[index];
-            self.trigger('elementremove', this);
-          }
-          else {
-            // Reset position and drop zone.
-            if (element.dropZone !== undefined) {
-              self.trigger('leavingDropZone', element);
-              delete element.dropZone;
-            }
-            delete element.position;
-          }
+          element.reset();
         }
       }
     }).css('position', '');
@@ -1301,11 +1395,15 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
 
   if (element.position) {
     // Restore last position
-    element.$.css(element.position).addClass('h5p-dropped');
+    element.$.css(element.position);
+    self.updatePlacement(element);
   }
 
   C.addHover(element.$, self.backgroundOpacity);
   H5P.newRunnable(self.type, contentId, element.$);
+
+  // Add prefix for good a11y
+  $('<div class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '.</div>').prependTo(element.$);
 
   // Update opacity when element is attached.
   setTimeout(function () {
@@ -1315,7 +1413,26 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
   self.trigger('elementadd', element.$[0]);
 };
 
+/**
+ * Determine if element should be copied when tragging, i.e. infinity instances.
+ *
+ * @param {Object} element
+ * @returns {boolean}
+ */
+Draggable.prototype.removeElement = function (element) {
+  if (selected.element.dropZone !== undefined) {
+    // Let everyone know we're leaving the drop zone
+    selected.draggable.trigger('leavingDropZone', selected.element);
+  }
 
+  if (selected.draggable.multiple) {
+    // Remove element
+    selected.element.remove();
+    delete selected.draggable.elements[selected.index];
+    selected.draggable.trigger('elementremove', selected.element);
+  }
+  delete element.position;
+};
 
 /**
  * Determine if element should be copied when tragging, i.e. infinity instances.
@@ -1378,11 +1495,39 @@ Draggable.prototype.addToDropZone = function (index, element, addToZone) {
     self.trigger('leavingDropZone', element);
   }
   element.dropZone = addToZone;
-  element.$.addClass('h5p-dropped');
-  C.setElementOpacity(element.$, self.backgroundOpacity);
+  self.updatePlacement(element);
 
   self.trigger('interacted');
 };
+
+/**
+ * Update the visuals to match the position of the element
+ */
+Draggable.prototype.updatePlacement = function (element) {
+  if (element.$suffix) {
+    // Always remove old a11y text. (drop zone may have changed)
+    element.$suffix.remove();
+  }
+
+  if (element.dropZone !== undefined) {
+    element.$.addClass('h5p-dropped');
+    C.setElementOpacity(element.$, self.backgroundOpacity);
+
+    // Add suffix for good a11y
+    element.$suffix = $('<div class="h5p-hidden-read">. ' + (this.l10n.suffix.replace('{num}', element.dropZone + 1)) + '.</div>').appendTo(element.$);
+  }
+  else {
+    element.$
+      .removeClass('h5p-dropped')
+      .removeClass('h5p-wrong')
+      .removeClass('h5p-correct')
+      .css({
+        border: '',
+        background: ''
+      });
+    C.setElementOpacity(element.$, self.backgroundOpacity);
+  }
+}
 
 /**
  * Resets the position of the draggable to its' original position.
@@ -1415,14 +1560,7 @@ Draggable.prototype.resetPosition = function () {
       });
 
       // Reset element style
-      element.removeClass('h5p-wrong')
-        .removeClass('h5p-correct')
-        .removeClass('h5p-dropped')
-        .css({
-          border: '',
-          background: ''
-        });
-      C.setElementOpacity(element, self.backgroundOpacity);
+      self.updatePlacement(draggable);
     }
   });
 
@@ -1433,14 +1571,8 @@ Draggable.prototype.resetPosition = function () {
   }
 
   // Reset style on initial element
-  self.element.$.removeClass('h5p-wrong')
-    .removeClass('h5p-correct')
-    .removeClass('h5p-dropped')
-    .css({
-      border: '',
-      background: ''
-    });
-  C.setElementOpacity(self.element.$, self.backgroundOpacity);
+  // Reset element style
+  self.updatePlacement(self.element);
 };
 
 /**
@@ -1488,9 +1620,13 @@ Draggable.prototype.disable = function () {
   var self = this;
 
   for (var i = 0; i < self.elements.length; i++) {
-    if (self.elements[i] !== undefined) {
-      self.elements[i].$.draggable('disable');
+    var element = self.elements[i];
+    if (!element) {
+      continue;
     }
+
+    element.$.draggable('disable');
+    self.trigger('elementremove', element.$[0]);
   }
 };
 
@@ -1502,9 +1638,13 @@ Draggable.prototype.enable = function () {
   var self = this;
 
   for (var i = 0; i < self.elements.length; i++) {
-    if (self.elements[i] !== undefined) {
-      self.elements[i].$.draggable('enable');
+    var element = self.elements[i];
+    if (!element) {
+      continue;
     }
+
+    element.$.draggable('enable');
+    self.trigger('elementadd', element.$[0]);
   }
 };
 
@@ -1578,9 +1718,10 @@ Draggable.prototype.results = function (skipVisuals, solutions) {
  *
  * @param {Object} dropZone
  * @param {Number} id
+ * @param {string[]} l10n
  * @returns {_L8.DropZone}
  */
-function DropZone(dropZone, id) {
+function DropZone(dropZone, id, l10n) {
   var self = this;
   H5P.EventDispatcher.call(self);
 
@@ -1596,6 +1737,7 @@ function DropZone(dropZone, id) {
   self.single = dropZone.single;
   self.autoAlignEnabled = dropZone.autoAlign;
   self.alignables = [];
+  self.l10n = l10n;
 }
 
 /**
@@ -1608,13 +1750,14 @@ function DropZone(dropZone, id) {
 DropZone.prototype.appendTo = function ($container, draggables) {
   var self = this;
 
-  // Prepare inner html
+  // Prepare inner html with prefix for good a11y
   var html = '<div class="h5p-inner"></div>';
   var extraClass = '';
   if (self.showLabel) {
     html = '<div class="h5p-label">' + self.label + '</div>' + html;
     extraClass = ' h5p-has-label';
   }
+  html = '<div class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '.</div>' + html;
 
   // Create drop zone element
   self.$dropZone = $('<div/>', {
@@ -1643,7 +1786,6 @@ DropZone.prototype.appendTo = function ($container, draggables) {
           var $this = $(this);
           C.setOpacity($this.removeClass('h5p-over'), 'background', self.backgroundOpacity);
           ui.draggable.data('addToZone', self.id);
-
 
           if (self.getIndexOf(ui.draggable) === -1) {
             // Add to alignables
@@ -1708,8 +1850,6 @@ DropZone.prototype.appendTo = function ($container, draggables) {
     C.setOpacity(self.$dropZone.children('.h5p-label'), 'background', self.backgroundOpacity);
     C.setOpacity(self.$dropZone.children('.h5p-inner'), 'background', self.backgroundOpacity);
   }, 0);
-
-  self.trigger('elementadd', self.$dropZone[0]);
 };
 
 /**
