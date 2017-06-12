@@ -66,7 +66,10 @@ function C(options, contentId, contentData) {
   var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
 
   /**
+   * Update the drop effect for all drop zones accepting this draggable.
+   *
    * @private
+   * @param {string} effect
    */
   var setDropEffect = function (effect) {
     for (var i = 0; i < controls.drop.elements.length; i++) {
@@ -1030,11 +1033,13 @@ C.setAlphas = function (style, prefix, alpha) {
 };
 
 /**
- * Initialize controls to improve a11y.
+ * Initialize controls to improve a11Y.
+ *
  * @private
  * @param {Draggable[]} draggables
  * @param {DropZone[]} dropZones
- * @param {Object}
+ * @param {Element} noDropzone
+ * @return {Object<string, Controls>}
  */
 var getControls = function (draggables, dropZones, noDropzone) {
   // Initialize controls components
@@ -1047,6 +1052,8 @@ var getControls = function (draggables, dropZones, noDropzone) {
   var selected;
 
   /**
+   * De-selects the currently selected draggable element.
+   *
    * @private
    */
   var deselect = function () {
@@ -1094,7 +1101,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
     // Select
     selected.element.$.addClass('h5p-draggable-hover');
     C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
-    selected.draggable.trigger('dragstart', selected.draggable.copyElement(selected.element) ? 'copy' : 'move');
+    selected.draggable.trigger('dragstart', selected.draggable.mustCopyElement(selected.element) ? 'copy' : 'move');
 
     if (selected.element.dropZone !== undefined) {
       // Add special drop zone to reset
@@ -1123,7 +1130,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
     }
     if ($first) {
       // Focus the first drop zone after selecting a draggable
-      controls.drop.setTabbable($first[0])
+      controls.drop.setTabbable($first[0]);
       $first.focus();
     }
   });
@@ -1152,8 +1159,8 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
     var dropZone = elementToDropZone(dropZones, event.element);
 
-    var copyElement = selected.draggable.copyElement(selected.element);
-    if (copyElement) {
+    var mustCopyElement = selected.draggable.mustCopyElement(selected.element);
+    if (mustCopyElement) {
       // Leave a new element for next drag
       selected.element.clone();
     }
@@ -1195,7 +1202,7 @@ var elementToDraggable = function (draggables, element) {
       return result;
     }
   }
-}
+};
 
 /**
  * Find draggable instance from element
@@ -1210,17 +1217,17 @@ var elementToDropZone = function (dropZones, element) {
       return dropZones[i];
     }
   }
-}
+};
 
 /**
  * Creates a new draggable instance.
  * Makes it easier to keep track of all instance variables and elements.
  *
  * @class
- * @param {object} element
+ * @param {Object} element
  * @param {number} id
- * @param {array} [answers] from last session
- * @param {string[]} l10n
+ * @param {Array} [answers] from last session
+ * @param {Object.<string, string>} l10n
  */
 function Draggable(element, id, answers, l10n) {
   var self = this;
@@ -1356,8 +1363,8 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
       start: function(event, ui) {
         var $this = $(this);
 
-        var copyElement = self.copyElement(element);
-        if (copyElement) {
+        var mustCopyElement = self.mustCopyElement(element);
+        if (mustCopyElement) {
           // Leave a new element for next drag
           element.clone();
         }
@@ -1371,7 +1378,7 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
         self.trigger('focus', this);
         self.trigger('dragstart', {
           element: this,
-          effect: copyElement ? 'copy' : 'move'
+          effect: mustCopyElement ? 'copy' : 'move'
         });
       },
       stop: function(event, ui) {
@@ -1440,7 +1447,7 @@ Draggable.prototype.removeElement = function (element) {
  * @param {Object} element
  * @returns {boolean}
  */
-Draggable.prototype.copyElement = function (element) {
+Draggable.prototype.mustCopyElement = function (element) {
   return (this.multiple && element.dropZone === undefined);
 };
 
@@ -1463,10 +1470,11 @@ Draggable.prototype.hasDropZone = function (id) {
 };
 
 /**
- * Check if this element can be dragged to the given drop zone.
+ * Places the draggable element in the given drop zone.
  *
- * @param {Number} id
- * @returns {Boolean}
+ * @param {number} index Internal element index
+ * @param {Object} element
+ * @param {number} addToZone Dropzone index
  */
 Draggable.prototype.addToDropZone = function (index, element, addToZone) {
   var self = this;
@@ -1527,7 +1535,7 @@ Draggable.prototype.updatePlacement = function (element) {
       });
     C.setElementOpacity(element.$, self.backgroundOpacity);
   }
-}
+};
 
 /**
  * Resets the position of the draggable to its' original position.
@@ -1621,12 +1629,11 @@ Draggable.prototype.disable = function () {
 
   for (var i = 0; i < self.elements.length; i++) {
     var element = self.elements[i];
-    if (!element) {
-      continue;
-    }
 
-    element.$.draggable('disable');
-    self.trigger('elementremove', element.$[0]);
+    if (element) {
+      element.$.draggable('disable');
+      self.trigger('elementremove', element.$[0]);
+    }
   }
 };
 
@@ -1639,12 +1646,11 @@ Draggable.prototype.enable = function () {
 
   for (var i = 0; i < self.elements.length; i++) {
     var element = self.elements[i];
-    if (!element) {
-      continue;
-    }
 
-    element.$.draggable('enable');
-    self.trigger('elementadd', element.$[0]);
+    if (element) {
+      element.$.draggable('enable');
+      self.trigger('elementadd', element.$[0]);
+    }
   }
 };
 
@@ -2001,13 +2007,13 @@ DropZone.prototype.autoAlign = function () {
  */
 DropZone.prototype.highlight = function () {
   this.$dropZone.children('.h5p-inner').addClass('h5p-active');
-}
+};
 
 /**
  * De-highlight the current drop zone
  */
 DropZone.prototype.dehighlight = function () {
   this.$dropZone.children('.h5p-inner').removeClass('h5p-active');
-}
+};
 
 H5P.DragQuestion = C;
