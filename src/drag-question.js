@@ -1541,7 +1541,7 @@ Draggable.prototype.updatePlacement = function (element) {
         border: '',
         background: ''
       });
-    C.setElementOpacity(element.$, self.backgroundOpacity);
+    C.setElementOpacity(element.$, this.backgroundOpacity);
   }
 };
 
