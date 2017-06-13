@@ -60,7 +60,7 @@ function C(options, contentId, contentData) {
 
   this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
 
-  self.$noDropZone = $('<div class="h5p-dq-no-dz"><div class="h5p-hidden-read">' + self.options.noDropzone + '.</div></div>');
+  self.$noDropZone = $('<div class="h5p-dq-no-dz"><span class="h5p-hidden-read">' + self.options.noDropzone + '. </span></div>');
 
   // Initialize controls for good a11y
   var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
@@ -459,7 +459,7 @@ C.prototype.createQuestionContent = function () {
       // Add static element
       var $element = this.addElement(element, 'static', i);
       H5P.newRunnable(element.type, this.id, $element);
-      var timedOutOpacity = function($el, el) {
+      var timedOutOpacity = function ($el, el) {
         setTimeout(function () {
           C.setOpacity($el, 'background', el.backgroundOpacity);
         }, 0);
@@ -1408,7 +1408,10 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
   H5P.newRunnable(self.type, contentId, element.$);
 
   // Add prefix for good a11y
-  $('<div class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '.</div>').prependTo(element.$);
+  $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '. </span>').prependTo(element.$);
+
+  // Add suffix for good a11y
+  $('<span class="h5p-hidden-read">. </span>').appendTo(element.$);
 
   // Update opacity when element is attached.
   setTimeout(function () {
@@ -1520,7 +1523,7 @@ Draggable.prototype.updatePlacement = function (element) {
     C.setElementOpacity(element.$, self.backgroundOpacity);
 
     // Add suffix for good a11y
-    element.$suffix = $('<div class="h5p-hidden-read">. ' + (this.l10n.suffix.replace('{num}', element.dropZone + 1)) + '.</div>').appendTo(element.$);
+    element.$suffix = $('<span class="h5p-hidden-read">' + (this.l10n.suffix.replace('{num}', element.dropZone + 1)) + '. </span>').appendTo(element.$);
   }
   else {
     element.$
@@ -1655,9 +1658,9 @@ Draggable.prototype.enable = function () {
 /**
  * Calculate score for this draggable.
  *
- * @param {Boolean} skipVisuals
+ * @param {boolean} skipVisuals
  * @param {Array} solutions
- * @returns {Number}
+ * @returns {number}
  */
 Draggable.prototype.results = function (skipVisuals, solutions) {
   var self = this;
@@ -1671,8 +1674,7 @@ Draggable.prototype.results = function (skipVisuals, solutions) {
       if (element !== undefined && element.dropZone !== undefined) {
         // ... but we are!
         if (skipVisuals !== true) {
-          element.$.addClass('h5p-wrong');
-          C.setElementOpacity(element.$, self.backgroundOpacity);
+          self.markElement(element, 'wrong');
         }
         points--;
       }
@@ -1693,8 +1695,7 @@ Draggable.prototype.results = function (skipVisuals, solutions) {
       if (element.dropZone === solutions[j]) {
         // Yepp!
         if (skipVisuals !== true) {
-          element.$.addClass('h5p-correct').draggable('disable');
-          C.setElementOpacity(element.$, self.backgroundOpacity);
+          self.markElement(element, 'correct');
         }
         correct = true;
         self.rawPoints++;
@@ -1706,14 +1707,29 @@ Draggable.prototype.results = function (skipVisuals, solutions) {
     if (!correct) {
       // Nope, we're in another zone
       if (skipVisuals !== true) {
-        element.$.addClass('h5p-wrong');
-        C.setElementOpacity(element.$, self.backgroundOpacity);
+        self.markElement(element, 'wrong');
       }
       points--;
     }
   }
 
   return points;
+};
+
+/**
+ * Marks given element as either correct or wrong
+ *
+ * @param {Object} element
+ * @param {string} status 'correct' or 'wrong'
+ */
+Draggable.prototype.markElement = function (element, status) {
+  var $elementResult = $('<span/>', {
+    'class': 'h5p-hidden-read',
+    html: status + ' answer. ' // TODO l10n
+  });
+  element.$suffix = element.$suffix.add($elementResult);
+  element.$.addClass('h5p-' + status).append($elementResult);
+  C.setElementOpacity(element.$, this.backgroundOpacity);
 };
 
 /**
@@ -1758,10 +1774,10 @@ DropZone.prototype.appendTo = function ($container, draggables) {
   var html = '<div class="h5p-inner"></div>';
   var extraClass = '';
   if (self.showLabel) {
-    html = '<div class="h5p-label">' + self.label + '</div>' + html;
+    html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read">. </span></div>' + html;
     extraClass = ' h5p-has-label';
   }
-  html = '<div class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '.</div>' + html;
+  html = '<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '. </span>' + html;
 
   // Create drop zone element
   self.$dropZone = $('<div/>', {
@@ -1838,9 +1854,9 @@ DropZone.prototype.appendTo = function ($container, draggables) {
   });
   if ($tip instanceof H5P.jQuery) {
     // Create wrapper for tip
-    $('<div/>', {
+    $('<span/>', {
       'class': 'h5p-dq-tipwrap',
-      'aria-label': '. Tip available', // TODO l10n
+      'aria-label': 'Tip available. ', // TODO l10n
       'append': $tip,
       'appendTo': self.$dropZone
     });
