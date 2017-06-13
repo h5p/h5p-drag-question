@@ -303,7 +303,7 @@ C.prototype.getXAPIData = function () {
   this.addResponseToXAPI(xAPIEvent);
   return {
     statement: xAPIEvent.data.statement
-  }
+  };
 };
 
 /**
@@ -428,7 +428,7 @@ C.prototype.getUserAnswers = function () {
     return {
       index: draggableMapping.index,
       elements: draggableMapping.draggable.elements
-    }
+    };
   });
 };
 
@@ -1830,11 +1830,20 @@ DropZone.prototype.appendTo = function ($container, draggables) {
     }
 
     return true;
-  }
+  };
 
   // Add tip after setOpacity(), so this does not get background opacity:
-  if (self.tip !== undefined && self.tip.trim().length) {
-    self.$dropZone.append(H5P.JoubelUI.createTip(self.tip));
+  var $tip = H5P.JoubelUI.createTip(self.tip, {
+    tipLabel: 'Show tip' // TODO l10n
+  });
+  if ($tip instanceof H5P.jQuery) {
+    // Create wrapper for tip
+    $('<div/>', {
+      'class': 'h5p-dq-tipwrap',
+      'aria-label': '. Tip available', // TODO l10n
+      'append': $tip,
+      'appendTo': self.$dropZone
+    });
   }
 
   if (self.autoAlignEnabled) {
@@ -1871,7 +1880,7 @@ DropZone.prototype.getIndexOf = function ($alignable) {
     }
   }
 
-  return -1
+  return -1;
 };
 
 /**
@@ -1897,7 +1906,7 @@ DropZone.prototype.removeAlignable = function ($alignable) {
       }, 1);
     }
   }
-}
+};
 
 /**
  * Auto-align alignable elements inside drop zone.
