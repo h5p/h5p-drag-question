@@ -128,6 +128,10 @@ function C(options, contentId, contentData) {
     });
     draggable.on('elementremove', function (event) {
       controls.drag.removeElement(event.data);
+      if (event.data.getAttribute('aria-grabbed') === 'true') {
+        controls.drag.firesEvent('select', event.data);
+        event.data.removeAttribute('aria-grabbed');
+      }
     });
     draggable.on('focus', function (event) {
       controls.drag.setTabbable(event.data);
@@ -1151,6 +1155,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
         });
         selected.draggable.updatePlacement(selected.element);
       }
+      selected.element.$[0].setAttribute('aria-grabbed', 'false');
       deselect();
       return;
     }
