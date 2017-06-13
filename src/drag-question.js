@@ -1065,6 +1065,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
     if (controls.drop.elements.indexOf(noDropzone) !== -1) {
       controls.drop.removeElement(noDropzone);
+      noDropzone.style.display = 'none';
     }
     for (var i = 0; i < dropZones.length; i++) {
       var dropZone = dropZones[i];
@@ -1109,6 +1110,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
     controls.drop.addElement(noDropzone);
 
     // Position at element position
+    noDropzone.style.display = 'block';
     noDropzone.style.left = selected.draggable.x + '%';
     noDropzone.style.top = selected.draggable.y + '%';
     noDropzone.style.width = selected.draggable.width + 'em';
