@@ -28,6 +28,10 @@ function C(options, contentId, contentData) {
     grabbableSuffix: 'Placed in dropzone {num}',
     dropzonePrefix: 'Dropzone {num} of {total}',
     noDropzone: 'No dropzone',
+    tipLabel: 'Show tip',
+    tipAvailable: 'Tip available',
+    correctAnswer: 'Correct answer',
+    wrongAnswer: 'Wrong answer',
     question: {
       settings: {
         questionTitle: 'Drag and drop',
@@ -102,6 +106,8 @@ function C(options, contentId, contentData) {
   var grabbablel10n = {
     prefix: self.options.grabbablePrefix.replace('{total}', task.elements.length),
     suffix: self.options.grabbableSuffix,
+    correctAnswer: self.options.correctAnswer,
+    wrongAnswer: self.options.wrongAnswer
   };
   for (i = 0; i < task.elements.length; i++) {
     var element = task.elements[i];
@@ -168,7 +174,9 @@ function C(options, contentId, contentData) {
   this.numDropZonesWithoutElements = 0;
 
   var dropzonel10n = {
-    prefix: self.options.dropzonePrefix.replace('{total}', task.dropZones.length)
+    prefix: self.options.dropzonePrefix.replace('{total}', task.dropZones.length),
+    tipLabel: self.options.tipLabel,
+    tipAvailable: self.options.tipAvailable
   };
 
   // Add drop zones
@@ -1732,7 +1740,7 @@ Draggable.prototype.results = function (skipVisuals, solutions) {
 Draggable.prototype.markElement = function (element, status) {
   var $elementResult = $('<span/>', {
     'class': 'h5p-hidden-read',
-    html: status + ' answer. ' // TODO l10n
+    html: this.l10n[status + 'Answer'] + '. '
   });
   element.$suffix = element.$suffix.add($elementResult);
   element.$.addClass('h5p-' + status).append($elementResult);
@@ -1857,13 +1865,13 @@ DropZone.prototype.appendTo = function ($container, draggables) {
 
   // Add tip after setOpacity(), so this does not get background opacity:
   var $tip = H5P.JoubelUI.createTip(self.tip, {
-    tipLabel: 'Show tip' // TODO l10n
+    tipLabel: self.l10n.tipLabel
   });
   if ($tip instanceof H5P.jQuery) {
     // Create wrapper for tip
     $('<span/>', {
       'class': 'h5p-dq-tipwrap',
-      'aria-label': 'Tip available. ', // TODO l10n
+      'aria-label': self.l10n.tipAvailable + '. ',
       'append': $tip,
       'appendTo': self.$dropZone
     });

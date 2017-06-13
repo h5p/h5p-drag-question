@@ -249,6 +249,30 @@
       "label": "Ingen slippsone valg-merkelapp",
       "englishDefault": "No dropzone",
       "default": "Ingen slippsone"
+    },
+    {
+      "englishLabel": "Label for show tip button",
+      "label": "Merkelapp for vis-tips-knappen",
+      "englishDefault": "Show tip",
+      "default": "Vis tips"
+    },
+    {
+      "englishLabel": "Label for tip available",
+      "label": "Merkelapp for tips tilgjengeleg",
+      "englishDefault": "Tip available",
+      "default": "Tips tilgjengelig"
+    },
+    {
+      "englishLabel": "Label for correct answer",
+      "label": "Merkelapp for korrekt svar",
+      "englishDefault": "Correct answer",
+      "default": "Korrekt svar"
+    },
+    {
+      "englishLabel": "Label for incorrect answer",
+      "label": "Merkelapp for feil svar",
+      "englishDefault": "Wrong answer",
+      "default": "Feil svar"
     }
   ]
 }

@@ -190,6 +190,22 @@
     {
       "englishLabel": "No dropzone selection label",
       "englishDefault": "No dropzone"
+    },
+    {
+      "englishLabel": "Label for show tip button",
+      "englishDefault": "Show tip"
+    },
+    {
+      "englishLabel": "Label for tip available",
+      "englishDefault": "Tip available"
+    },
+    {
+      "englishLabel": "Label for correct answer",
+      "englishDefault": "Correct answer"
+    },
+    {
+      "englishLabel": "Label for incorrect answer",
+      "englishDefault": "Wrong answer"
     }
   ]
 }

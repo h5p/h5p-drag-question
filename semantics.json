@@ -442,5 +442,37 @@
     "importance": "low",
     "default": "No dropzone",
     "common": true
+  },
+  {
+    "name": "tipLabel",
+    "type": "text",
+    "label": "Label for show tip button",
+    "importance": "low",
+    "default": "Show tip",
+    "common": true
+  },
+  {
+    "name": "tipAvailable",
+    "type": "text",
+    "label": "Label for tip available",
+    "importance": "low",
+    "default": "Tip available",
+    "common": true
+  },
+  {
+    "name": "correctAnswer",
+    "type": "text",
+    "label": "Label for correct answer",
+    "importance": "low",
+    "default": "Correct answer",
+    "common": true
+  },
+  {
+    "name": "wrongAnswer",
+    "type": "text",
+    "label": "Label for incorrect answer",
+    "importance": "low",
+    "default": "Wrong answer",
+    "common": true
   }
 ]
