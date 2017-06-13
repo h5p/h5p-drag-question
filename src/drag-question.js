@@ -1101,16 +1101,14 @@ var getControls = function (draggables, dropZones, noDropzone) {
     C.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
     selected.draggable.trigger('dragstart', selected.draggable.mustCopyElement(selected.element) ? 'copy' : 'move');
 
-    if (selected.element.dropZone !== undefined) {
-      // Add special drop zone to reset
-      controls.drop.addElement(noDropzone);
+    // Add special drop zone to reset
+    controls.drop.addElement(noDropzone);
 
-      // Position at element position
-      noDropzone.style.left = selected.draggable.x + '%';
-      noDropzone.style.top = selected.draggable.y + '%';
-      noDropzone.style.width = selected.draggable.width + 'em';
-      noDropzone.style.height = selected.draggable.height + 'em';
-    }
+    // Position at element position
+    noDropzone.style.left = selected.draggable.x + '%';
+    noDropzone.style.top = selected.draggable.y + '%';
+    noDropzone.style.width = selected.draggable.width + 'em';
+    noDropzone.style.height = selected.draggable.height + 'em';
 
     // Figure out which drop zones will accept this draggable
     var $first;
@@ -1141,7 +1139,9 @@ var getControls = function (draggables, dropZones, noDropzone) {
     if (event.element === noDropzone) {
       // Reset position
 
-      selected.element.reset();
+      if (selected.element.dropZone !== undefined) {
+        selected.element.reset();
+      }
       if (!selected.draggable.multiple) {
         selected.element.$.css({
           left: selected.draggable.x + '%',
