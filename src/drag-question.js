@@ -247,19 +247,17 @@ C.prototype.registerDomElements = function () {
 
     // We create a function that is used to enter or
     // exit full screen when our button is pressed
-    var $myContainer = this.$container;
-    var self = this; // Keep track of H5P instance as 'self'
     var toggleFullScreen = function () {
       if (H5P.isFullscreen) {
-        H5P.exitFullScreen($myContainer);
+        H5P.exitFullScreen(self.$container);
       }
       else {
-        H5P.fullScreen($myContainer.parent().parent(), self); // 'self' instead of 'this'
+        H5P.fullScreen(self.$container.parent().parent(), self);
       }
     };
 
-  // Create full screen button
-    $fullScreenButton = $('<div/>', {
+    // Create full screen button
+    var $fullScreenButton = $('<div/>', {
       'class': 'h5p-my-fullscreen-button-enter',
       title: this.options.localize.fullscreen,
       role: 'button',
