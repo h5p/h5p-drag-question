@@ -275,7 +275,13 @@ C.prototype.registerDomElements = function () {
       role: 'button',
       tabindex: 0,
       on: {
-        click: toggleFullScreen
+        click: toggleFullScreen,
+        keypress: function (event) {
+          if (event.which === 13 || event.which === 32) {
+            toggleFullScreen();
+            event.preventDefault();
+          }
+        }
       },
       prependTo: this.$container.parent()
     });
