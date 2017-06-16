@@ -24,6 +24,7 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
+    "h5p-lib-controls": "0.0.4",
     "webpack": "^3.0.0-rc.1"
   }
 }

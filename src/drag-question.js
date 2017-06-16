@@ -1063,6 +1063,8 @@ var getControls = function (draggables, dropZones, noDropzone) {
     drag: new Controls([new UIKeyboard(), new AriaDrag()]),
     drop: new Controls([new UIKeyboard(), new AriaDrop()])
   };
+  controls.drag.useNegativeTabIndex();
+  controls.drop.useNegativeTabIndex();
 
   // Keep track of current selected draggable (selected via keyboard)
   var selected;
