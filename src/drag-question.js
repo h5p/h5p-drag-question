@@ -1352,6 +1352,8 @@ Draggable.prototype.attachElement = function (index, $container, contentId) {
   // Attach element
   element.$ = $('<div/>', {
     class: 'h5p-draggable',
+    tabindex: '-1',
+    role: 'button',
     css: {
       left: self.x + '%',
       top: self.y + '%',
@@ -1803,6 +1805,9 @@ DropZone.prototype.appendTo = function ($container, draggables) {
   // Create drop zone element
   self.$dropZone = $('<div/>', {
     class: 'h5p-dropzone' + extraClass,
+    tabindex: '-1',
+    role: 'button',
+    'aria-disabled': true,
     css: {
       left: self.x + '%',
       top: self.y + '%',
@@ -2057,14 +2062,14 @@ DropZone.prototype.autoAlign = function () {
  * Highlight the current drop zone
  */
 DropZone.prototype.highlight = function () {
-  this.$dropZone.children('.h5p-inner').addClass('h5p-active');
+  this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-active');
 };
 
 /**
  * De-highlight the current drop zone
  */
 DropZone.prototype.dehighlight = function () {
-  this.$dropZone.children('.h5p-inner').removeClass('h5p-active');
+  this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-active');
 };
 
 H5P.DragQuestion = C;
