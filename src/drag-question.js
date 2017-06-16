@@ -1839,7 +1839,13 @@ DropZone.prototype.appendTo = function ($container, draggables) {
           C.setOpacity($(this).removeClass('h5p-over'), 'background', self.backgroundOpacity);
         }
       })
-      .end();
+      .end()
+    .focus(function () {
+      $tip.attr('tabindex', '0');
+    })
+    .blur(function () {
+      $tip.attr('tabindex', '-1');
+    });
 
   /**
    * Help determine if the drop zone can accept this draggable
@@ -1865,7 +1871,8 @@ DropZone.prototype.appendTo = function ($container, draggables) {
 
   // Add tip after setOpacity(), so this does not get background opacity:
   var $tip = H5P.JoubelUI.createTip(self.tip, {
-    tipLabel: self.l10n.tipLabel
+    tipLabel: self.l10n.tipLabel,
+    tabcontrol: true
   });
   if ($tip instanceof H5P.jQuery) {
     // Create wrapper for tip
