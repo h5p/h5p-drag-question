@@ -1854,10 +1854,14 @@ DropZone.prototype.appendTo = function ($container, draggables) {
       })
       .end()
     .focus(function () {
-      $tip.attr('tabindex', '0');
+      if ($tip instanceof H5P.jQuery) {
+        $tip.attr('tabindex', '0');
+      }
     })
     .blur(function () {
-      $tip.attr('tabindex', '-1');
+      if ($tip instanceof H5P.jQuery) {
+        $tip.attr('tabindex', '-1');
+      }
     });
 
   /**
