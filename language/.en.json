@@ -243,6 +243,38 @@
           "default": "Exit fullscreen"
         }
       ]
+    },
+    {
+      "englishLabel": "Grabbable prefix",
+      "englishDefault": "Grabbable {num} of {total}"
+    },
+    {
+      "englishLabel": "Grabbable suffix",
+      "englishDefault": "Placed in dropzone {num}"
+    },
+    {
+      "englishLabel": "Dropzone prefix",
+      "englishDefault": "Dropzone {num} of {total}"
+    },
+    {
+      "englishLabel": "No dropzone selection label",
+      "englishDefault": "No dropzone"
+    },
+    {
+      "englishLabel": "Label for show tip button",
+      "englishDefault": "Show tip"
+    },
+    {
+      "englishLabel": "Label for tip available",
+      "englishDefault": "Tip available"
+    },
+    {
+      "englishLabel": "Label for correct answer",
+      "englishDefault": "Correct answer"
+    },
+    {
+      "englishLabel": "Label for incorrect answer",
+      "englishDefault": "Wrong answer"
     }
   ]
 }
