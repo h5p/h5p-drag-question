@@ -227,6 +227,24 @@
       ]
     },
     {
+      "englishLabel": "Localize",
+      "label": "Localize",
+      "fields": [
+        {
+          "englishLabel": "Fullscreen label",
+          "label": "Fullscreen label",
+          "englishDefault": "Fullscreen",
+          "default": "Fullscreen"
+        },
+        {
+          "englishLabel": "Exit fullscreen label",
+          "label": "Exit fullscreen label",
+          "englishDefault": "Exit fullscreen",
+          "default": "Exit fullscreen"
+        }
+      ]
+    },
+    {
       "englishLabel": "Grabbable prefix",
       "englishDefault": "Grabbable {num} of {total}"
     },
