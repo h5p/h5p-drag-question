@@ -1189,6 +1189,12 @@ var getControls = function (draggables, dropZones, noDropzone) {
     // Add draggable to drop zone
     selected.draggable.addToDropZone(selected.index, selected.element, dropZone.id);
 
+    // Set position in case DZ is full (auto align doesn't work)
+    selected.element.$.css({
+      left: dropZone.x + '%',
+      top: dropZone.y + '%',
+    });
+
     if (dropZone.getIndexOf(selected.element.$) === -1) {
       // Add to alignables
       dropZone.alignables.push(selected.element.$);
