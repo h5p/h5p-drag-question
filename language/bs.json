@@ -1,0 +1,248 @@
+{
+  "semantics": [
+    {
+      "englishLabel": "Check answer button",
+      "label": "Provjeri dugme odgovora",
+      "englishDefault": "Check",
+      "default": "Provjeri"
+    },
+    {
+      "englishLabel": "Retry button",
+      "label": "Dugme ponovnog pokušaja",
+      "englishDefault": "Retry",
+      "default": "Ponovi"
+    },
+    {
+      "englishLabel": "Correct solution label text",
+      "label": "Tekst oznake ispravnog rješenja",
+      "englishDefault": "Show solution",
+      "default": "Prikaži rješenje"
+    },
+    {
+      "englishLabel": "Feedback text",
+      "label": "Feedback tekst",
+      "englishDefault": "You got @score of @total points",
+      "default": "Osvojili ste @score od @total bodova",
+      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
+      "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
+    },
+    {
+      "englishLabel": "Score explanation text",
+      "label": "Tekst opisa rezultata",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Ispravan odgovor daje +1 bod. Pogrešan odgovor daje -1 bod. Najmanji mogući rezultat je 0."
+    },
+    {
+      "fields": [
+        {
+          "englishLabel": "Settings",
+          "label": "Podešavanja",
+          "fields": [
+            {
+              "englishLabel": "The title of this question",
+              "label": "Naziv ovog pitanja",
+              "englishDefault": "Drag and Drop",
+              "default": "Uzmi i spusti",
+              "englishDescription": "Used in summaries, statistics etc.",
+              "description": "Koristi se u sažecima, statistikama, itd.."
+            },
+            {
+              "englishLabel": "Show Title",
+              "label": "Pokaži naziv",
+              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
+            },
+            {
+              "englishLabel": "Background image",
+              "label": "Slika pozadine",
+              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
+              "description": "Opcionalno. Odaberi neku sliku koja će služiti kao pozadina za zadatak 'Uzmi i spusti'."
+            },
+            {
+              "englishLabel": "Task size",
+              "label": "Dimenzije zadatka",
+              "englishDescription": "Specify how large (in px) the play area should be.",
+              "description": "Odredi koliko veliki prostor (u pixelima) treba biti"
+            },
+            {
+              "englishLabel": "Drop Zone Highlighting",
+              "label": "Naglašavanje zone za spustanje",
+              "englishDescription": "Choose when to highlight drop zones.",
+              "description": "Odaberi kada će se zona za spustanje naglasiti.",
+              "options": [
+                {
+                  "englishLabel": "When dragging",
+                  "label": "Kada se uzima"
+                },
+                {
+                  "englishLabel": "Always",
+                  "label": "Uvijek"
+                },
+                {
+                  "englishLabel": "Never",
+                  "label": "Nikad"
+                }
+              ]
+            },
+            {
+              "englishLabel": "Spacing for Auto-Align (in px)",
+              "label": "Određivanje prostora za automatsko poravnanje (u pixelima)"
+            },
+            {
+              "englishLabel": "Enable FullScreen",
+              "label": "Omogući cijeli ekran",
+              "englishDescription": "Check this option to enable the full screen button.",
+              "description": "Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
+            }
+          ]
+        },
+        {
+          "englishLabel": "Task",
+          "label": "Zadatak",
+          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "Počni sa određivanjem zona za spustanje.<br/>Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br/>Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
+          "fields": [
+            {
+              "englishLabel": "Elements",
+              "label": "Elementi",
+              "englishEntity": "element",
+              "entity": "element",
+              "field": {
+                "englishLabel": "Element",
+                "label": "Element",
+                "fields": [
+                  {
+                    "englishDescription": "Choose the type of content you would like to add.",
+                    "description": "Odaberi vrstu sadržaja koju želiš dodati."
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "englishLabel": "Select drop zones",
+                    "label": "Označi zone za spustanje"
+                  },
+                  {
+                    "englishLabel": "Background Opacity",
+                    "label": "Pozadinsko zamućenje"
+                  },
+                  {
+                    "englishLabel": "Infinite number of element instances",
+                    "label": "Neograničen broj elemenata",
+                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
+                    "description": "Klonira ovaj element kako bi mogao biti spušten na višestruke zone."
+                  }
+                ]
+              }
+            },
+            {
+              "englishLabel": "Drop Zones",
+              "label": "Zone za spustanje",
+              "englishEntity": "Drop Zone",
+              "entity": "Drop Zone",
+              "field": {
+                "englishLabel": "Drop Zone",
+                "label": "Zona za spustanje",
+                "fields": [
+                  {
+                    "englishLabel": "Label",
+                    "label": "Oznaka"
+                  },
+                  {
+                    "englishLabel": "Show label",
+                    "label": "Pokaži oznaku"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "englishLabel": "Select correct elements",
+                    "label": "Označi ispravne elemente"
+                  },
+                  {
+                    "englishLabel": "Background Opacity",
+                    "label": "Pozadinska zamućenost"
+                  },
+                  {
+                    "englishLabel": "Tip",
+                    "label": "Savjet",
+                    "fields": [
+                      {
+                        "englishLabel": "Tip text",
+                        "label": "Tekst savjeta"
+                      }
+                    ]
+                  },
+                  {
+                    "englishLabel": "This drop zone can only contain one element",
+                    "label": "Ova zona za spustanje može sadržavati samo jedan element",
+                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
+                    "description": "Budi siguran da ima samo jedan tačan odgovor za ovu zonu za spustanje"
+                  },
+                  {
+                    "englishLabel": "Enable Auto-Align",
+                    "label": "Omogući automatsko poravnanje",
+                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
+                    "description": "Automatsko poravnanje za sve u ovoj zoni."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "englishLabel": "Background opacity for draggables",
+      "label": "Pozadinska zamućenost za elemente za uzimanje",
+      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
+      "description": "Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
+    },
+    {
+      "englishLabel": "Behavioural settings",
+      "label": "Podešavanje ponašanja",
+      "englishDescription": "These options will let you control how the task behaves.",
+      "description": "Ova opcija će omogućiti kontrolu kako će se zadatak ponašati.",
+      "fields": [
+        {
+          "englishLabel": "Enable \"Retry\"",
+          "label": "Omogući \"Ponovi\""
+        },
+        {
+          "englishLabel": "Give one point for the whole task",
+          "label": "Daje jedan bod za cijeli zadatak",
+          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
+          "description": "Onemogući kako bi dao bod za svaki tačano postavljeni element."
+        },
+        {
+          "englishLabel": "Enable score explanation",
+          "label": "Omogući objašnjenje rezultata"
+        },
+        {
+          "englishLabel": "Require user input before the solution can be viewed",
+          "label": "Zahtjeva korisničko učešće prije nego rezultat bude vidljiv"
+        }
+      ]
+    },
+    {
+      "englishLabel": "Localize",
+      "label": "Lokaliziraj",
+      "fields": [
+        {
+          "englishLabel": "Fullscreen label",
+          "label": "Oznaka za cijeli ekran",
+          "englishDefault": "Fullscreen",
+          "default": "Cijeli ekran"
+        },
+        {
+          "englishLabel": "Exit fullscreen label",
+          "label": "Oznaka za izlazak iz cijelog ekrana",
+          "englishDefault": "Exit fullscreen",
+          "default": "Izađi iz cijelog ekrana"
+        }
+      ]
+    }
+  ]
+}
