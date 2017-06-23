@@ -57,7 +57,6 @@
             {
               "label":"Drop Zone Highlighting",
               "description":"Choose when to highlight drop zones.",
-              "default":"dragging",
               "options":[
                 {
                   "label":"When dragging"
@@ -85,7 +84,6 @@
           "fields":[
             {
               "label":"Elements",
-              "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
