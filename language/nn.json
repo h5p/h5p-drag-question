@@ -57,7 +57,6 @@
             {
               "label":"Slippsonefremheving",
               "description":"Velg når slippsoner skal fremheves",
-              "default":"dragging",
               "options":[
                 {
                   "label":"Når man drar"
@@ -85,7 +84,6 @@
           "fields":[
             {
               "label":"Elementer",
-              "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
