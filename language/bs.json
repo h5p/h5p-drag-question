@@ -57,7 +57,6 @@
             {
               "label":"Naglašavanje zone za spustanje",
               "description":"Odaberi kada će se zona za spustanje naglasiti.",
-              "default":"dragging",
               "options":[
                 {
                   "label":"Kada se uzima"
@@ -85,7 +84,6 @@
           "fields":[
             {
               "label":"Elementi",
-              "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
