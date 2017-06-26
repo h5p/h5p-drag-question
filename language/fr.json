@@ -57,6 +57,7 @@
             {
               "label":"Mise en évidence de la zone de dépôt",
               "description":"Choisissez quand mettre en évidence la zone de dépôt.",
+              "default":"dragging",
               "options":[
                 {
                   "label":"Lors du glisser-déposer"
@@ -84,6 +85,7 @@
           "fields":[
             {
               "label":"Eléments",
+              "entity":"element",
               "field":{
                 "label":"Elément",
                 "fields":[
