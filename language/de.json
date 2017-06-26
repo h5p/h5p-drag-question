@@ -57,6 +57,7 @@
             {
               "label":"\"Drop Zone\"-Aufleuchten",
               "description":"Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
+              "default":"dragging",
               "options":[
                 {
                   "label":"Beim Ziehen"
@@ -84,6 +85,7 @@
           "fields":[
             {
               "label":"Elemente",
+              "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
