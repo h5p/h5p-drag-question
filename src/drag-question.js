@@ -23,7 +23,6 @@ function C(options, contentId, contentData) {
     scoreShow: 'Check',
     correct: 'Show solution',
     tryAgain: 'Retry',
-    feedback: 'You got @score of @total points',
     grabbablePrefix: 'Grabbable {num} of {total}',
     grabbableSuffix: 'Placed in dropzone {num}',
     dropzonePrefix: 'Dropzone {num} of {total}',
@@ -48,6 +47,13 @@ function C(options, contentId, contentData) {
         dropZones: []
       }
     },
+    overallFeedback: [
+      {
+        'from': 0,
+        'to': 100,
+        'feedback': 'You got @score of @total points'
+      }
+    ],
     behaviour: {
       enableRetry: true,
       preventResize: false,
@@ -871,7 +877,7 @@ C.prototype.showScore = function () {
     maxScore = 1;
   }
   var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
-  var scoreText = this.options.feedback.replace('@score', actualPoints).replace('@total', maxScore);
+  var scoreText = H5P.Question.determineOverallFeedback(this.options.overallFeedback, actualPoints / maxScore).replace('@score', actualPoints).replace('@total', maxScore);
   var helpText = (this.options.behaviour.enableScoreExplanation && this.options.behaviour.applyPenalties) ? this.options.scoreExplanation : false;
   this.setFeedback(scoreText, actualPoints, maxScore, undefined, helpText);
 };

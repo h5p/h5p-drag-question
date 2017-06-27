@@ -46,6 +46,31 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
           }
         }
         finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Drag Question 1.11
+       *
+       * Move old feedback message to the new overall feedback system.
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      11: function (parameters, finished) {
+        if (parameters && parameters.feedback) {
+          parameters.overallFeedback = [
+            {
+              'from': 0,
+              'to': 100,
+              'feedback': parameters.feedback
+            }
+          ];
+
+          delete parameters.feedback;
+        }
+
+        finished(null, parameters);
       }
     }
   };
