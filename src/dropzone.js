@@ -1,6 +1,6 @@
 import DragUtils from './drag-utils';
 
-var $ = H5P.jQuery;
+const $ = H5P.jQuery;
 
 export default class DropZone {
 
@@ -25,7 +25,7 @@ export default class DropZone {
     self.width = dropZone.width;
     self.height = dropZone.height;
     self.backgroundOpacity = dropZone.backgroundOpacity;
-    self.tip = dropZone.tip;
+    self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignEnabled = dropZone.autoAlign;
     self.alignables = [];
