@@ -75,7 +75,7 @@ export default class DropZone {
             var result = DragUtils.elementToDraggable(draggables, element);
 
             // Figure out if the drop zone will accept the draggable
-            return self.accepts(result.draggable);
+            return self.accepts(result.draggable, draggables);
           },
           drop: function (event, ui) {
             var $this = $(this);
@@ -148,7 +148,7 @@ export default class DropZone {
   /**
    * Help determine if the drop zone can accept this draggable
    */
-  accepts(draggable) {
+  accepts(draggable, draggables) {
     var self = this;
     if (!draggable.hasDropZone(self.id)) {
       // Doesn't belong in this drop zone
