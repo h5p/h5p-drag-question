@@ -173,6 +173,10 @@
         {
           "label": "Enable score explanation",
           "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label": "Keep correct answers",
+          "description": "Check this option if you want to keep the draggable elements dropped in the correct drop zones after pressing 'Retry'."
         }
       ]
     },

@@ -732,6 +732,7 @@ C.prototype.showSolutions = function () {
  * @public
  */
 C.prototype.resetTask = function () {
+  var self = this;
   this.points = 0;
   this.rawPoints = 0;
   this.answered = false;
@@ -739,16 +740,24 @@ C.prototype.resetTask = function () {
   //Enables Draggables
   this.enableDraggables();
 
-  //Reset position and feedback.
+  //Only reset position and feedback if we are not keeping the correct answers.
   this.draggables.forEach(function (draggable) {
-    draggable.resetPosition();
+    if (self.options.behaviour.keepCorrectAnswers) {
+      console.log('in');
+      var points = draggable.results(true, self.correctDZs[draggable.id]);
+      if (points < 0) {
+        draggable.resetPosition();
+      }
+    }
+    else {
+      draggable.resetPosition();
+    }
   });
 
   //Show solution button
   this.showButton('check-answer');
   this.hideButton('try-again');
   this.setFeedback();
-
 };
 
 /**

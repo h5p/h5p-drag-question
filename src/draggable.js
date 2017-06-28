@@ -207,7 +207,7 @@ export default class Draggable extends H5P.EventDispatcher {
   }
 
   /**
-   * Determine if element should be copied when tragging, i.e. infinity instances.
+   * Determine if element should be copied when dragging, i.e. infinity instances.
    *
    * @param {Object} element
    * @returns {boolean}

@@ -388,6 +388,14 @@
         "importance": "low",
         "default": true,
         "optional": true
+      },
+      {
+        "name": "keepCorrectAnswers",
+        "type": "boolean",
+        "label": "Keep correct answers",
+        "description": "Check this option if you want to keep the draggable elements dropped in the correct drop zones after pressing 'Retry'.",
+        "importance": "low",
+        "default": false
       }
     ]
   },
