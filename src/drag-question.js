@@ -542,7 +542,7 @@ C.prototype.addExplanation = function () {
     };
 
     // Don't run this code if feedback is not configured;
-    if (feedback.correct === undefined && feedback.correct === undefined) {
+    if (feedback.correct === undefined && feedback.incorrect === undefined) {
       return;
     }
 
