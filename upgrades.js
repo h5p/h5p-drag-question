@@ -46,6 +46,33 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
           }
         }
         finished(null, parameters);
+      },
+      /**
+       * For dropzones:
+       * Moving tip from a single element group to a group consisting of tip + feedback
+       */
+      11: function (parameters, finished) {
+        if (parameters.question !== undefined &&
+            parameters.question.task !== undefined &&
+            parameters.question.task.dropZones !== undefined ) {
+
+          var dropZones = parameters.question.task.dropZones;
+          for (var i = 0; i < dropZones.length; i++) {
+            var dropZone = dropZones[i];
+            var tip = (dropZone !== undefined && dropZone.tip !== undefined && typeof dropZone.tip === 'string') ? dropZone.tip : '';
+
+            // Create the new group-structure
+            delete dropZone.tip;
+            dropZone.tipsAndFeedback = {
+              tip: tip,
+              feedbackOnCorrect: '',
+              feedbackOnIncorrect: ''
+            }
+
+          }
+        }
+
+        finished(null, parameters);
       }
     }
   };

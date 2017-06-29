@@ -1,6 +1,6 @@
 import DragUtils from './drag-utils';
 
-var $ = H5P.jQuery;
+const $ = H5P.jQuery;
 
 export default class Draggable extends H5P.EventDispatcher {
   /**
@@ -209,6 +209,25 @@ export default class Draggable extends H5P.EventDispatcher {
   }
 
   /**
+   * Set feedback for a draggable.
+   * @param {string} feedback
+   * @param {number} dropZoneId
+   */
+  setFeedback(feedback, dropZoneId) {
+    this.elements.forEach(element => {
+      if (element.dropZone === dropZoneId) {
+        if (element.$feedback === undefined) {
+          element.$feedback = $('<span>', {
+            'class': 'h5p-hidden-read',
+            appendTo: element.$
+          });
+        }
+        element.$feedback.text(feedback);
+      }
+    });
+  }
+
+  /**
    * Determine if element should be copied when tragging, i.e. infinity instances.
    *
    * @param {Object} element
@@ -332,6 +351,12 @@ export default class Draggable extends H5P.EventDispatcher {
     var self = this;
 
     this.elements.forEach(function (draggable) {
+
+      if (draggable.$feedback) {
+        draggable.$feedback.remove();
+        delete draggable.$feedback;
+      }
+
       //If the draggable is in a dropzone reset its' position and feedback.
       if (draggable.dropZone !== undefined) {
         var element = draggable.$;
