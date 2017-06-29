@@ -148,10 +148,18 @@
                     "label":"Pozadinska zamućenost"
                   },
                   {
-                    "label":"Savjet",
+                    "label":"Tips and feedback",
                     "fields":[
                       {
                         "label":"Tekst savjeta"
+                      },
+                      {
+                        "label":"Message displayed on correct match",
+                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label":"Message displayed on incorrect match",
+                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
@@ -242,6 +250,10 @@
     {
       "label":"Label for incorrect answer",
       "default":"Wrong answer"
+    },
+    {
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Feedback"
     }
   ]
 }
