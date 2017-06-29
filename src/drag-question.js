@@ -530,7 +530,6 @@ C.prototype.addSolutionButton = function () {
  */
 C.prototype.addExplanation = function () {
   const task = this.options.question.task;
-  var self = this;
 
   let explanations = [];
 
@@ -558,7 +557,7 @@ C.prototype.addExplanation = function () {
           placedDraggables[draggable.id] = {
             instance: draggable,
             correct: correctElements.indexOf("" + draggable.id) !== -1
-          }
+          };
         }
       });
     });

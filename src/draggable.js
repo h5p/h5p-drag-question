@@ -206,6 +206,11 @@ export default class Draggable extends H5P.EventDispatcher {
     self.trigger('elementadd', element.$[0]);
   }
 
+  /**
+   * Set feedback for a draggable.
+   * @param {string} feedback
+   * @param {number} dropZoneId
+   */
   setFeedback(feedback, dropZoneId) {
     this.elements.forEach(element => {
       if (element.dropZone === dropZoneId) {
