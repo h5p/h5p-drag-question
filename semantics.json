@@ -291,9 +291,9 @@
                   "optional": true
                 },
                 {
-                  "name": "tip",
+                  "name": "tipsAndFeedback",
                   "type": "group",
-                  "label": "Tip",
+                  "label": "Tips and feedback",
                   "importance": "low",
                   "optional": true,
                   "fields": [
@@ -309,6 +309,22 @@
                         "strong",
                         "em"
                       ],
+                      "optional": true
+                    },
+                    {
+                      "name": "feedbackOnCorrect",
+                      "type": "text",
+                      "label": "Message displayed on correct match",
+                      "importance": "low",
+                      "description": "Message will appear below the task on \"check\" if correct droppable is matched.",
+                      "optional": true
+                    },
+                    {
+                      "name": "feedbackOnIncorrect",
+                      "type": "text",
+                      "label": "Message displayed on incorrect match",
+                      "importance": "low",
+                      "description": "Message will appear below the task on \"check\" if the match is incorrect.",
                       "optional": true
                     }
                   ]
@@ -481,6 +497,14 @@
     "label": "Label for incorrect answer",
     "importance": "low",
     "default": "Wrong answer",
+    "common": true
+  },
+  {
+    "name": "feedbackHeader",
+    "type": "text",
+    "label": "Header for panel containing feedback for correct/incorrect answers",
+    "importance": "low",
+    "default": "Feedback",
     "common": true
   }
 ]
