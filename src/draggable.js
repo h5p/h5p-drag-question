@@ -83,26 +83,7 @@ export default class Draggable extends H5P.EventDispatcher {
     var element;
     if (index === null) {
       // Create new element
-      element = {
-        clone: function () {
-          self.attachElement(null, $container, contentId);
-        },
-        reset: function () {
-          if (element.dropZone !== undefined) {
-            // Let everyone know we're leaving the drop zone
-            self.trigger('leavingDropZone', element);
-            delete element.dropZone;
-          }
-
-          if (self.multiple) {
-            // Remove element
-            element.$.remove();
-            delete self.elements[index];
-            self.trigger('elementremove', element.$[0]);
-          }
-          delete element.position;
-        }
-      };
+      element = {};
       self.elements.push(element);
       index = self.elements.length - 1;
     }
@@ -110,6 +91,27 @@ export default class Draggable extends H5P.EventDispatcher {
       // Get old element
       element = self.elements[index];
     }
+
+    $.extend(element, {
+      clone: function () {
+        self.attachElement(null, $container, contentId);
+      },
+      reset: function () {
+        if (element.dropZone !== undefined) {
+          // Let everyone know we're leaving the drop zone
+          self.trigger('leavingDropZone', element);
+          delete element.dropZone;
+        }
+
+        if (self.multiple) {
+          // Remove element
+          element.$.remove();
+          delete self.elements[index];
+          self.trigger('elementremove', element.$[0]);
+        }
+        delete element.position;
+      }
+    });
 
     // Attach element
     element.$ = $('<div/>', {
