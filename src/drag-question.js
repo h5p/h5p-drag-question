@@ -743,10 +743,15 @@ C.prototype.resetTask = function () {
   //Only reset position and feedback if we are not keeping the correct answers.
   this.draggables.forEach(function (draggable) {
     if (self.options.behaviour.keepCorrectAnswers) {
-      console.log('in');
-      var points = draggable.results(true, self.correctDZs[draggable.id]);
-      if (points < 0) {
+
+      // Reset everything if all are correct
+      if (self.getScore() === self.getMaxScore()) {
         draggable.resetPosition();
+      }
+
+      // Otherwise, reset selectively
+      else {
+        draggable.resetPositionOfIncorrects(self.correctDZs[draggable.id]);
       }
     }
     else {

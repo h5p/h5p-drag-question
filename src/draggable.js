@@ -365,8 +365,68 @@ export default class Draggable extends H5P.EventDispatcher {
     }
 
     // Reset style on initial element
-    // Reset element style
     self.updatePlacement(self.element);
+  }
+
+  /**
+   * Same funcitonality as resetPosition but checks each
+   * element if it's in the correct dropzone. Used to keep correct
+   * answers on retry.
+   *
+   * @param  {Array} correctDZs
+   */
+  resetPositionOfIncorrects(correctDZs) {
+    var self = this;
+    var oneIsCorrect = false;
+
+    this.elements.forEach(function (draggable) {
+
+      //If the draggable is in a dropzone reset its' position and feedback.
+      if (draggable.dropZone !== undefined) {
+
+        // stop if draggable is in the right DZ
+        if ($.inArray(draggable.dropZone, correctDZs) !== -1) {
+          oneIsCorrect = true;
+          return;
+        }
+
+        var element = draggable.$;
+
+        //Revert the button to initial position and then remove it.
+        element.animate({
+          left: self.x + '%',
+          top: self.y + '%'
+        }, function () {
+          //Remove the draggable if it is an infinity draggable.
+          if (self.multiple) {
+            if (element.dropZone !== undefined) {
+              self.trigger('leavingDropZone', element);
+            }
+            element.remove();
+            //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
+            if (self.elements.indexOf(draggable) >= 0) {
+              delete self.elements[self.elements.indexOf(draggable)];
+            }
+            self.trigger('elementremove', element[0]);
+          }
+        });
+
+        // Reset element style
+        self.updatePlacement(draggable);
+      }
+    });
+
+    // If none of the elements are in their correct dropzones, reset and restyle the initial element
+    if (oneIsCorrect === false) {
+      // Draggable removed from dropzone.
+      if (self.element.dropZone !== undefined) {
+        self.trigger('leavingDropZone', self.element);
+        delete self.element.dropZone;
+      }
+
+      // Reset style on initial element
+      self.updatePlacement(self.element);
+    }
   }
 
   /**
