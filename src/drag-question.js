@@ -536,8 +536,8 @@ C.prototype.addExplanation = function () {
   // Go through all dropzones, and find answers:
   task.dropZones.forEach((dropZone, dropZoneId) => {
     const feedback = {
-      correct: dropZone.tipsAndFeedback.feedbackOnCorrect,
-      incorrect: dropZone.tipsAndFeedback.feedbackOnIncorrect
+      correct: quotesToChars(dropZone.tipsAndFeedback.feedbackOnCorrect),
+      incorrect: quotesToChars(dropZone.tipsAndFeedback.feedbackOnIncorrect)
     };
 
     // Don't run this code if feedback is not configured;
@@ -977,7 +977,15 @@ C.prototype.getTitle = function() {
   return H5P.createTitle(this.options.question.settings.questionTitle);
 };
 
-
+/**
+ * Convert quotation marks from HTML entitiy names
+ *
+ * @param {string} string
+ * @return {string}
+ */
+var quotesToChars = function (string) {
+  return string === undefined ? string : string.replace(/&#039;/g, "'").replace(/&quot;/g, '"');
+};
 
 /**
  * Initialize controls to improve a11Y.
