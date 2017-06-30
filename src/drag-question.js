@@ -7,7 +7,7 @@ import DragUtils from './drag-utils';
 import DropZone from './dropzone';
 import Draggable from './draggable';
 
-var $ = H5P.jQuery;
+const $ = H5P.jQuery;
 
 /**
  * Constructor
@@ -36,6 +36,7 @@ function C(options, contentId, contentData) {
     tipAvailable: 'Tip available',
     correctAnswer: 'Correct answer',
     wrongAnswer: 'Wrong answer',
+    feedbackHeader: 'Feedback',
     question: {
       settings: {
         questionTitle: 'Drag and drop',
@@ -516,11 +517,81 @@ C.prototype.addSolutionButton = function () {
     that.answered = true;
     that.showAllSolutions();
     that.showScore();
+    that.addExplanation();
     var xAPIEvent = that.createXAPIEventTemplate('answered');
     that.addQuestionToXAPI(xAPIEvent);
     that.addResponseToXAPI(xAPIEvent);
     that.trigger(xAPIEvent);
   });
+};
+
+/**
+ * Add explanation/feedback (the part on the bottom part)
+ */
+C.prototype.addExplanation = function () {
+  const task = this.options.question.task;
+  var self = this;
+
+  let explanations = [];
+
+  // Go through all dropzones, and find answers:
+  task.dropZones.forEach((dropZone, dropZoneId) => {
+    const feedback = {
+      correct: dropZone.tipsAndFeedback.feedbackOnCorrect,
+      incorrect: dropZone.tipsAndFeedback.feedbackOnIncorrect
+    };
+
+    // Don't run this code if feedback is not configured;
+    if (feedback.correct === undefined && feedback.incorrect === undefined) {
+      return;
+    }
+
+    // Index for correct draggables
+    const correctElements = dropZone.correctElements;
+
+    // Find all dragables placed on this dropzone:
+    let placedDraggables = {}
+    this.draggables.forEach(draggable => {
+      draggable.elements.forEach(dz => {
+        if (dz.dropZone == dropZoneId) {
+          // Save reference to draggable, and mark it as correct/incorrect
+          placedDraggables[draggable.id] = {
+            instance: draggable,
+            correct: correctElements.indexOf("" + draggable.id) !== -1
+          }
+        }
+      });
+    });
+
+    // Go through each placed draggable
+    Object.keys(placedDraggables).forEach(draggableId => {
+      const draggable = placedDraggables[draggableId];
+      const draggableLabel = DragUtils.strip(draggable.instance.type.params.alt || draggable.instance.type.params.text) || '?';
+      const dropZoneLabel = DragUtils.strip(dropZone.label);
+
+      if (draggable.correct && feedback.correct) {
+        explanations.push({
+          correct: dropZoneLabel + ' + ' + draggableLabel,
+          text: feedback.correct
+        });
+
+        draggable.instance.setFeedback(feedback.correct, dropZoneId);
+      }
+      else if (!draggable.correct && feedback.incorrect) {
+        explanations.push({
+          correct: dropZoneLabel + ' + ',
+          wrong: draggableLabel,
+          text: feedback.incorrect
+        });
+
+        draggable.instance.setFeedback(feedback.incorrect, dropZoneId);
+      }
+    });
+  });
+
+  if (explanations.length !== 0) {
+    this.setExplanation(explanations, this.options.feedbackHeader);
+  }
 };
 
 /**
@@ -763,6 +834,7 @@ C.prototype.resetTask = function () {
   this.showButton('check-answer');
   this.hideButton('try-again');
   this.setFeedback();
+  this.setExplanation();
 };
 
 /**

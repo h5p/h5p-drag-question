@@ -179,4 +179,16 @@ export default class DragUtils {
     });
     DragUtils.setElementOpacity($element, backgroundOpacity);
   }
+
+  /**
+   * Stripping away html tags
+   *
+   * @param {string} html
+   * @return {string}
+   */
+  static strip(html) {
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
 }
