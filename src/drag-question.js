@@ -238,7 +238,8 @@ C.prototype.registerDomElements = function () {
 
   // Register introduction section
   if (self.options.question.settings.showTitle) {
-    self.setIntroduction('<p>' + self.options.question.settings.questionTitle + '</p>');
+    self.$introduction = $('<p class="h5p-dragquestion-introduction" tabindex="-1">' + self.options.question.settings.questionTitle + '</p>');
+    self.setIntroduction(self.$introduction);
   }
 
 
@@ -522,6 +523,10 @@ C.prototype.addSolutionButton = function () {
     that.addQuestionToXAPI(xAPIEvent);
     that.addResponseToXAPI(xAPIEvent);
     that.trigger(xAPIEvent);
+
+    // Focus top of task for better focus and read-speaker flow
+    var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
+    $nextFocus.focus();
   });
 };
 

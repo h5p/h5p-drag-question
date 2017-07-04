@@ -280,3 +280,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-dq-no-dz {
   position: absolute;
 }
+
+.h5p-dragquestion .h5p-dragquestion-introduction {
+  outline: none;
+}
