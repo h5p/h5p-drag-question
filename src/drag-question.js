@@ -47,13 +47,7 @@ function C(options, contentId, contentData) {
         dropZones: []
       }
     },
-    overallFeedback: [
-      {
-        'from': 0,
-        'to': 100,
-        'feedback': 'You got @score of @total points'
-      }
-    ],
+    overallFeedback: [],
     behaviour: {
       enableRetry: true,
       preventResize: false,
