@@ -46,10 +46,10 @@ export default class DropZone {
     var html = '<div class="h5p-inner"></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read">. </span></div>' + html;
+      html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read"></span></div>' + html;
       extraClass = ' h5p-has-label';
     }
-    html = '<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '. </span>' + html;
+    html = '<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '</span>' + html;
 
     // Create drop zone element
     self.$dropZone = $('<div/>', {
