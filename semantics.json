@@ -464,7 +464,7 @@
     "type": "text",
     "label": "Label for show tip button",
     "importance": "low",
-    "default": "Show tip",
+    "default": "Show tip.",
     "common": true
   },
   {

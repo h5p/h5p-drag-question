@@ -120,7 +120,7 @@ export default class DropZone {
       // Create wrapper for tip
       $('<span/>', {
         'class': 'h5p-dq-tipwrap',
-        'aria-label': self.l10n.tipAvailable + '. ',
+        'aria-label': self.l10n.tipAvailable,
         'append': $tip,
         'appendTo': self.$dropZone
       });

@@ -215,7 +215,7 @@
     },
     {
       "label": "Label for show tip button",
-      "default": "Show tip"
+      "default": "Show tip."
     },
     {
       "label": "Label for tip available",

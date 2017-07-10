@@ -32,7 +32,7 @@ function C(options, contentId, contentData) {
     grabbableSuffix: 'Placed in dropzone {num}.',
     dropzonePrefix: 'Dropzone {num} of {total}.',
     noDropzone: 'No dropzone',
-    tipLabel: 'Show tip',
+    tipLabel: 'Show tip.',
     tipAvailable: 'Tip available',
     correctAnswer: 'Correct answer',
     wrongAnswer: 'Wrong answer',
