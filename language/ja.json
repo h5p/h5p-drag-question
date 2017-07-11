@@ -1,20 +1,20 @@
 {
   "semantics":[
     {
-      "label":"Check answer button",
-      "default":"Check"
+      "label":"答えをチェックするボタン",
+      "default":"チェック"
     },
     {
-      "label":"Retry button",
-      "default":"Retry"
+      "label":"リトライボタン",
+      "default":"リトライ"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Show solution"
+      "label":"正解ラベルのテキスト",
+      "default":"正解を表示"
     },
     {
-      "label":"Feedback text",
-      "default":"You got @score of @total points",
+      "label":"フィードバックテキスト",
+      "default":"@score / @total 獲得",
       "description":"Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
     },
     {
