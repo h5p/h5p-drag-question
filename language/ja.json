@@ -155,7 +155,7 @@
                       },
                       {
                         "label":"正解に一致した時に表示されるメッセージ",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "description":"正解のドロップに一致した場合、 「チェック」 したタスクの下に、メッセージが表示されます。"
                       },
                       {
                         "label":"不正解に一致した時に表示されるメッセージ",
