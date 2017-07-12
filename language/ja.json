@@ -180,14 +180,14 @@
     },
     {
       "label":"ドラッグするものの背景の不透明度",
-      "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+      "description":"このフィールドを設定すると、すべてのドラッグ要素に設定された不透明度を上書きします。これは 0と100 の間の数値をとり、0は完全な透明、100は透明度がないことを意味します。"
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"動作設定",
+      "description":"これらのオプションでタスクがどのように動作するかを制御できます。",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"「リトライ」を有効化"
         },
         {
           "label":"Require user input before the solution can be viewed"
