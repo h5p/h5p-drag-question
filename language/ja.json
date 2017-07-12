@@ -29,19 +29,19 @@
             {
               "label":"この質問のタイトル",
               "default":"ドラッグ ＆ ドロップ",
-              "description":"Used in summaries, statistics etc."
+              "description":"概要や統計などで用いられます。"
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"タイトルを表示",
+              "description":"このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
             },
             {
-              "label":"Background image",
-              "description":"Optional. Select an image to use as background for your drag and drop task."
+              "label":"背景画像",
+              "description":"オプションです。ドラッグ & ドロップするときの背景として使う画像を選んで下さい。"
             },
             {
-              "label":"Task size",
-              "description":"Specify how large (in px) the play area should be.",
+              "label":"タスクのサイズ",
+              "description":"再生領域をサイズ (px) で指定します。",
               "default":{
                 
               },
