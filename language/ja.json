@@ -84,13 +84,13 @@
           "description":"ドロップゾーンを配置して開始します。 <br/> 次に、ドロップ可能な要素を配置し、対応するドロップゾーンにチェックマークをつけます。 <br/> 最後に、ドロップゾーンを再度編集して正解にチェックマークをつけます。",
           "fields":[
             {
-              "label":"Elements",
-              "entity":"element",
+              "label":"要素",
+              "entity":"要素",
               "field":{
-                "label":"Element",
+                "label":"要素",
                 "fields":[
                   {
-                    "description":"Choose the type of content you would like to add."
+                    "description":"追加するコンテンツのタイプを選択します。"
                   },
                   {
                     
@@ -105,10 +105,10 @@
                     
                   },
                   {
-                    "label":"Select drop zones"
+                    "label":"ドロップゾーンを選択"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"背景の不透明度"
                   },
                   {
                     "label":"Infinite number of element instances",
