@@ -55,12 +55,12 @@
               ]
             },
             {
-              "label":"Drop Zone Highlighting",
-              "description":"Choose when to highlight drop zones.",
+              "label":"ドロップゾーンをハイライト",
+              "description":"いつドロップゾーンをハイライトするかを選択してください。",
               "default":"dragging",
               "options":[
                 {
-                  "label":"When dragging"
+                  "label":"ドラッグ中"
                 },
                 {
                   "label":"Always"
