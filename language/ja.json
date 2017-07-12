@@ -10,7 +10,7 @@
     },
     {
       "label":"正解ラベルのテキスト",
-      "default":"正解を表示"
+      "default":"解を表示"
     },
     {
       "label":"フィードバックテキスト",
@@ -190,7 +190,7 @@
           "label":"「リトライ」を有効化"
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"解を表示する前にユーザーの入力が必要"
         },
         {
           "label":"Give one point for the whole task",
