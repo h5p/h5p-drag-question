@@ -159,17 +159,17 @@
                       },
                       {
                         "label":"不正解に一致した時に表示されるメッセージ",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "description":"一致が不正解の場合、 「チェック」 したタスクの下に、メッセージが表示されます。"
                       }
                     ]
                   },
                   {
-                    "label":"This drop zone can only contain one element",
-                    "description":"Make sure there is only one correct answer for this dropzone"
+                    "label":"このドロップゾーンには一つの要素のみ含めることができます。",
+                    "description":"このドロップゾーンに一つだけの正解があることを確認してください。"
                   },
                   {
-                    "label":"Enable Auto-Align",
-                    "description":"Will auto-align all draggables dropped in this zone."
+                    "label":"自動整列を有効化",
+                    "description":"すべてのドロップするものをこのゾーンで自動整列します。"
                   }
                 ]
               }
@@ -179,7 +179,7 @@
       ]
     },
     {
-      "label":"Background opacity for draggables",
+      "label":"ドラッグするものの背景の不透明度",
       "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
     },
     {
