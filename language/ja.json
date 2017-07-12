@@ -220,15 +220,15 @@
       ]
     },
     {
-      "label":"Grabbable prefix",
-      "default":"Grabbable {num} of {total}"
+      "label":"ドラッグ要素の接頭語",
+      "default":"ドラッグ {num} / {total}"
     },
     {
-      "label":"Grabbable suffix",
+      "label":"ドラッグ要素の接尾語",
       "default":"ドロップゾーンに配置 {num}"
     },
     {
-      "label":"Dropzone prefix",
+      "label":"ドロップゾーンの接頭語",
       "default":"ドロップゾーン {num} / {total}"
     },
     {
