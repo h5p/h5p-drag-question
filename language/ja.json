@@ -15,20 +15,20 @@
     {
       "label":"フィードバックテキスト",
       "default":"@score / @total 獲得",
-      "description":"Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
+      "description":"フィードバック テキスト、利用可能な変数: @score と @total 。 例: ' @score / @total 獲得。 '"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"スコア説明用テキスト",
+      "default":"正解の場合 +1 点を与えます。不正解では -1 点となります。最低点は 0 点です。"
     },
     {
       "fields":[
         {
-          "label":"Settings",
+          "label":"設定",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
+              "label":"この質問のタイトル",
+              "default":"ドラッグ ＆ ドロップ",
               "description":"Used in summaries, statistics etc."
             },
             {
