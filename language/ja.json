@@ -225,30 +225,30 @@
     },
     {
       "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}"
+      "default":"ドロップゾーンに配置 {num}"
     },
     {
       "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}"
+      "default":"ドロップゾーン {num} / {total}"
     },
     {
-      "label":"No dropzone selection label",
-      "default":"No dropzone"
+      "label":"ドロップゾーン選択ラベル無し",
+      "default":"ドロップゾーン無し"
     },
     {
-      "label":"Label for show tip button",
-      "default":"Show tip"
+      "label":"ヒント表示ボタンのラベル",
+      "default":"ヒントを表示"
     },
     {
-      "label":"Label for tip available",
-      "default":"Tip available"
+      "label":"利用可能なヒントのラベル",
+      "default":"ヒント利用可能"
     },
     {
-      "label":"Label for correct answer",
-      "default":"Correct answer"
+      "label":"正解のラベル",
+      "default":"正解"
     },
     {
-      "label":"Label for incorrect answer",
+      "label":"不正解のラベル",
       "default":"まちがった解答"
     },
     {
