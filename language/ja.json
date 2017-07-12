@@ -111,26 +111,23 @@
                     "label":"背景の不透明度"
                   },
                   {
-                    "label":"Infinite number of element instances",
-                    "description":"Clones this element so that it can be dragged to multiple drop zones."
+                    "label":"要素数無制限",
+                    "description":"この要素を複製して、複数のドロップゾーンにドラッグできるようにします。"
                   }
                 ]
               }
             },
             {
-              "label":"Drop Zones",
-              "entity":"Drop Zone",
+              "label":"ドロップゾーン",
+              "entity":"ドロップゾーン",
               "field":{
-                "label":"Drop Zone",
+                "label":"ドロップゾーン",
                 "fields":[
                   {
-                    "label":"Label"
+                    "label":"ラベル"
                   },
                   {
-                    "label":"Show label"
-                  },
-                  {
-                    
+                    "label":"ラベルを表示"
                   },
                   {
                     
@@ -142,23 +139,26 @@
                     
                   },
                   {
-                    "label":"Select correct elements"
+                    
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"正解の要素を選択"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"背景の不透明度"
+                  },
+                  {
+                    "label":"ヒントとフィードバック",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"ヒントのテキスト"
                       },
                       {
-                        "label":"Message displayed on correct match",
+                        "label":"正解に一致した時に表示されるメッセージ",
                         "description":"Message will appear below the task on \"check\" if correct droppable is matched."
                       },
                       {
-                        "label":"Message displayed on incorrect match",
+                        "label":"不正解に一致した時に表示されるメッセージ",
                         "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
