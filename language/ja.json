@@ -71,17 +71,17 @@
               ]
             },
             {
-              "label":"Spacing for Auto-Align (in px)"
+              "label":"自動整列の間隔 (px)"
             },
             {
-              "label":"Enable FullScreen",
-              "description":"Check this option to enable the full screen button."
+              "label":"全画面表示を有効化",
+              "description":"フルスクリーンボタンを有効にするにはこのオプションをオンにしてください。"
             }
           ]
         },
         {
-          "label":"Task",
-          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label":"タスク",
+          "description":"ドロップゾーンを配置して開始します。 <br/> 次に、ドロップ可能な要素を配置し、対応するドロップゾーンにチェックマークをつけます。 <br/> 最後に、ドロップゾーンを再度編集して正解にチェックマークをつけます。",
           "fields":[
             {
               "label":"Elements",
