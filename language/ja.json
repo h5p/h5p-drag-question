@@ -249,11 +249,11 @@
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"まちがった解答"
     },
     {
-      "label":"Header for panel containing feedback for correct/incorrect answers",
-      "default":"Feedback"
+      "label":"正解/不正解のフィードバックを含むパネルのヘッダー",
+      "default":"フィードバック"
     }
   ]
 }
