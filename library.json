@@ -54,6 +54,11 @@
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
       "minorVersion": 9
+    },
+    {
+      "machineName": "H5PEditor.RangeList",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }

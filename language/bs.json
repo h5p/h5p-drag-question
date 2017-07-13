@@ -16,12 +16,7 @@
       "default": "Prikaži rješenje"
     },
     {
-      "label": "Feedback tekst",
-      "englishDefault": "You got @score of @total points",
-      "default": "Osvojili ste @score od @total bodova",
-      "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
-    },
-    {
+      "englishLabel": "Score explanation text",
       "label": "Tekst opisa rezultata",
       "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
       "default": "Ispravan odgovor daje +1 bod. Pogrešan odgovor daje -1 bod. Najmanji mogući rezultat je 0."
@@ -153,6 +148,33 @@
       "description": "Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
     },
     {
+      "englishLabel": "Overall Feedback",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "englishPlaceholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "englishLabel": "Behavioural settings",
       "label": "Podešavanje ponašanja",
       "description": "Ova opcija će omogućiti kontrolu kako će se zadatak ponašati.",
       "fields": [

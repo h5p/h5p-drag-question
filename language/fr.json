@@ -16,12 +16,7 @@
       "default": "Voir la correction"
     },
     {
-      "label": "Appréciation finale",
-      "englishDefault": "You got @score of @total points",
-      "default": "Vous avez obtenu @score point(s) sur @total",
-      "description": "Texte du feedback final. Les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
-    },
-    {
+      "englishLabel": "Score explanation text",
       "label": "Texte d'explication du score",
       "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
       "default": "Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
@@ -154,6 +149,33 @@
       "description": "Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
     },
     {
+      "englishLabel": "Overall Feedback",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "englishPlaceholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "englishLabel": "Behavioural settings.",
       "label": "Options générales.",
       "description": "Cette option vous permet de paramétrer le déroulement de l'exercice.",
       "fields": [

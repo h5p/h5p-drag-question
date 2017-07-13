@@ -20,6 +20,7 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
           finished(null, parameters);
         }
       },
+
       /**
        * Asynchronous content upgrade hook.
        * Upgrades content parameters to support DQ 1.4.
@@ -47,11 +48,33 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         }
         finished(null, parameters);
       },
+
       /**
-       * For dropzones:
-       * Moving tip from a single element group to a group consisting of tip + feedback
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Drag Question 1.11
+       *
+       * 1. Move old feedback message to the new overall feedback system.
+       * 2. Group tip with feedback
+       *
+       * @param {object} parameters
+       * @param {function} finished
        */
       11: function (parameters, finished) {
+
+        // Move old feedback message to the new overall feedback system.
+        if (parameters && parameters.feedback) {
+          parameters.overallFeedback = [
+            {
+              'from': 0,
+              'to': 100,
+              'feedback': parameters.feedback
+            }
+          ];
+
+          delete parameters.feedback;
+        }
+
+        // Group tip with feedback
         if (parameters.question !== undefined &&
             parameters.question.task !== undefined &&
             parameters.question.task.dropZones !== undefined ) {
@@ -67,13 +90,14 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
               tip: tip,
               feedbackOnCorrect: '',
               feedbackOnIncorrect: ''
-            }
-
+            };
           }
         }
 
+        // Done
         finished(null, parameters);
       }
+
     }
   };
 })(H5P.jQuery);
