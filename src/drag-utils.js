@@ -11,7 +11,7 @@ export default class DragUtils {
     DragUtils.setOpacity($element, 'borderColor', opacity);
     DragUtils.setOpacity($element, 'boxShadow', opacity);
     DragUtils.setOpacity($element, 'background', opacity);
-  };
+  }
 
   /**
    * Makes element background, border and shadow transparent.

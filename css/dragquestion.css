@@ -56,7 +56,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable {
   border-radius: 0.25em;
   border: 0.1em solid #c6c6c6;
-  overflow: hidden;
   cursor: pointer;
   position: absolute;
   text-align: center;

@@ -472,9 +472,10 @@ export default class Draggable extends H5P.EventDispatcher {
    *
    * @param {boolean} skipVisuals
    * @param {Array} solutions
+   * @param {H5P.Question.ScorePoints} scorePoints
    * @returns {number}
    */
-  results(skipVisuals, solutions) {
+  results(skipVisuals, solutions, scorePoints) {
     var self = this;
     var i, j, element, dropZone, correct, points = 0;
     self.rawPoints = 0;
@@ -486,7 +487,7 @@ export default class Draggable extends H5P.EventDispatcher {
         if (element !== undefined && element.dropZone !== undefined) {
           // ... but we are!
           if (skipVisuals !== true) {
-            self.markElement(element, 'wrong');
+            self.markElement(element, 'wrong', scorePoints);
           }
           points--;
         }
@@ -507,7 +508,7 @@ export default class Draggable extends H5P.EventDispatcher {
         if (element.dropZone === solutions[j]) {
           // Yepp!
           if (skipVisuals !== true) {
-            self.markElement(element, 'correct');
+            self.markElement(element, 'correct', scorePoints);
           }
           correct = true;
           self.rawPoints++;
@@ -519,7 +520,7 @@ export default class Draggable extends H5P.EventDispatcher {
       if (!correct) {
         // Nope, we're in another zone
         if (skipVisuals !== true) {
-          self.markElement(element, 'wrong');
+          self.markElement(element, 'wrong', scorePoints);
         }
         points--;
       }
@@ -533,12 +534,16 @@ export default class Draggable extends H5P.EventDispatcher {
    *
    * @param {Object} element
    * @param {string} status 'correct' or 'wrong'
+   * @param {H5P.Question.ScorePoints} scorePoints
    */
-  markElement(element, status) {
+  markElement(element, status, scorePoints) {
     var $elementResult = $('<span/>', {
       'class': 'h5p-hidden-read',
       html: this.l10n[status + 'Answer'] + '. '
     });
+    if (scorePoints) {
+      $elementResult = $elementResult.add(scorePoints.getElement(status === 'correct'));
+    }
     element.$suffix = element.$suffix.add($elementResult);
     element.$.addClass('h5p-' + status).append($elementResult);
     DragUtils.setElementOpacity(element.$, this.backgroundOpacity);

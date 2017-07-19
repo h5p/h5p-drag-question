@@ -452,6 +452,14 @@
         "importance": "low",
         "default": true,
         "optional": true
+      },
+      {
+        "name": "showScorePoints",
+        "type": "boolean",
+        "label": "Show score points",
+        "description": "Show points earned for each answer.",
+        "importance": "low",
+        "default": true
       }
     ]
   },
