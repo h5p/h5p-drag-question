@@ -27,7 +27,6 @@ export default class DragUtils {
       DragUtils.setOpacity($element, 'backgroundImage', opacity);
       if (!opacity) {
         $element.css({
-          "background-color": "rgba(245, 245, 245, 0)",
           "background-image": "none"
         });
       }
