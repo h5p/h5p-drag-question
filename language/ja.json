@@ -203,6 +203,10 @@
         {
           "label":"得点説明を有効化",
           "description":"（「ペナルティを適用する」オプションが選択されている 場合）答えをチェックするとき、得点の説明をユーザーに表示します。"
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer."
         }
       ]
     },
