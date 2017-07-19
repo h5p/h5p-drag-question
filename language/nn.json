@@ -203,6 +203,10 @@
         {
           "label":"Vis poeng-forklaring",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer."
         }
       ]
     },
