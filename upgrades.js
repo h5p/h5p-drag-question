@@ -111,7 +111,7 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
         parameters.behaviour.dropZoneHighlighting = parameters.question.settings.dropZoneHighlighting;
         parameters.behaviour.autoAlignSpacing = parameters.question.settings.autoAlignSpacing;
-        parameters.behaviours.enableFullScreen = parameters.question.settings.enableFullScreen;
+        parameters.behaviour.enableFullScreen = parameters.question.settings.enableFullScreen;
 
         delete parameters.backgroundOpacity;
         delete parameters.question.settings.dropZoneHighlighting;
