@@ -91,23 +91,6 @@
                 "type": "number"
               }
             ]
-          },
-          {
-            "name": "autoAlignSpacing",
-            "type": "number",
-            "label": "Spacing for Auto-Align (in px)",
-            "importance": "low",
-            "min": 0,
-            "default": 2,
-            "optional": true
-          },
-          {
-            "name": "enableFullScreen",
-            "label": "Enable FullScreen",
-            "importance": "low",
-            "type": "boolean",
-            "description": "Check this option to enable the full screen button.",
-            "default": false
           }
         ]
       },
@@ -452,6 +435,23 @@
             "label": "Never"
           }
         ]
+      },
+      {
+        "name": "autoAlignSpacing",
+        "type": "number",
+        "label": "Spacing for Auto-Align (in px)",
+        "importance": "low",
+        "min": 0,
+        "default": 2,
+        "optional": true
+      },
+      {
+        "name": "enableFullScreen",
+        "label": "Enable FullScreen",
+        "importance": "low",
+        "type": "boolean",
+        "description": "Check this option to enable the full screen button.",
+        "default": false
       }
     ]
   },

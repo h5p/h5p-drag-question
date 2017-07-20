@@ -43,8 +43,7 @@ function C(options, contentId, contentData) {
         size: {
           width: 620,
           height: 310
-        },
-        autoAlignSpacing: 2
+        }
       },
       task: {
         elements: [],
@@ -58,7 +57,8 @@ function C(options, contentId, contentData) {
       singlePoint: true,
       showSolutionsRequiresInput: true,
       applyPenalties: true,
-      dropZoneHighlighting: 'dragging'
+      dropZoneHighlighting: 'dragging',
+      autoAlignSpacing: 2
     }
   }, options);
 
@@ -70,6 +70,8 @@ function C(options, contentId, contentData) {
   this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
   self.$noDropZone = $('<div class="h5p-dq-no-dz" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '. </span></div>');
+
+console.log(this.options);
 
   // Initialize controls for good a11y
   var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
@@ -198,7 +200,7 @@ function C(options, contentId, contentData) {
     }
 
     dropZone.autoAlign = {
-      spacing: self.options.question.settings.autoAlignSpacing,
+      spacing: self.options.behaviour.autoAlignSpacing,
       size: self.options.question.settings.size
     };
 
@@ -262,7 +264,7 @@ C.prototype.registerDomElements = function () {
   });
 
   // First we check if full screen is supported
-  if (H5P.canHasFullScreen !== false && this.options.question.settings.enableFullScreen) {
+  if (H5P.canHasFullScreen !== false && this.options.behaviour.enableFullScreen) {
 
     // We create a function that is used to enter or
     // exit full screen when our button is pressed
