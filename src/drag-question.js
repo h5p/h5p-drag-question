@@ -44,7 +44,6 @@ function C(options, contentId, contentData) {
           width: 620,
           height: 310
         },
-        dropZoneHighlighting: 'dragging',
         autoAlignSpacing: 2
       },
       task: {
@@ -58,7 +57,8 @@ function C(options, contentId, contentData) {
       preventResize: false,
       singlePoint: true,
       showSolutionsRequiresInput: true,
-      applyPenalties: true
+      applyPenalties: true,
+      dropZoneHighlighting: 'dragging'
     }
   }, options);
 
@@ -67,7 +67,7 @@ function C(options, contentId, contentData) {
   this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
   this.blankIsCorrect = true;
 
-  this.backgroundOpacity = (this.options.backgroundOpacity === undefined || this.options.backgroundOpacity.trim() === '') ? undefined : this.options.backgroundOpacity;
+  this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
   self.$noDropZone = $('<div class="h5p-dq-no-dz" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '. </span></div>');
 
@@ -133,7 +133,8 @@ function C(options, contentId, contentData) {
 
     // Create new draggable instance
     var draggable = new Draggable(element, i, answers, grabbablel10n);
-    var highlightDropZones = (self.options.question.settings.dropZoneHighlighting === 'dragging');
+    //var highlightDropZones = (self.options.question.settings.dropZoneHighlighting === 'dragging');
+    var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
     });
@@ -248,7 +249,7 @@ C.prototype.registerDomElements = function () {
   if (this.options.question.settings.background !== undefined) {
     classes += 'h5p-dragquestion-has-no-background';
   }
-  if (self.options.question.settings.dropZoneHighlighting === 'always' ) {
+  if (self.options.behaviour.dropZoneHighlighting === 'always' ) {
     if (classes) {
       classes += ' ';
     }

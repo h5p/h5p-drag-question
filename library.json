@@ -3,7 +3,7 @@
   "description": "Drag and drop the elements into the correct drop zones.",
   "contentType": "Question",
   "majorVersion": 1,
-  "minorVersion": 11,
+  "minorVersion": 12,
   "patchVersion": 0,
   "embedTypes": [
     "iframe"

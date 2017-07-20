@@ -96,6 +96,29 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
 
         // Done
         finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Drag Question 1.12
+       *
+       * Move backgroundOpacity into behaviour
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      12: function (parameters, finished) {
+        parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
+        parameters.behaviour.dropZoneHighlighting = parameters.question.settings.dropZoneHighlighting;
+
+        //var output = '';
+        //for (var property in parameters) {
+        //  output += property + ': ' + parameters[property]+'; ' + '\n';
+       // }
+
+        //console.log(output);
+
+        finished(null, parameters);
       }
 
     }
