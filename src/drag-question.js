@@ -135,7 +135,6 @@ console.log(this.options);
 
     // Create new draggable instance
     var draggable = new Draggable(element, i, answers, grabbablel10n);
-    //var highlightDropZones = (self.options.question.settings.dropZoneHighlighting === 'dragging');
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
