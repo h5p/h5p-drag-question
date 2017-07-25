@@ -747,7 +747,7 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   this.rawPoints += emptyDropzones;
 
   var scorePoints;
-  if (!skipVisuals && this.options.behaviour.showScorePoints) {
+  if (!skipVisuals && this.options.behaviour.showScorePoints && !this.options.behaviour.singlePoint) {
     scorePoints = new H5P.Question.ScorePoints();
   }
 
