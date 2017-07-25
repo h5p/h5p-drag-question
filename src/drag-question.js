@@ -198,6 +198,7 @@ function C(options, contentId, contentData) {
     }
 
     dropZone.autoAlign = {
+      enabled: dropZone.autoAlign,
       spacing: self.options.question.settings.autoAlignSpacing,
       size: self.options.question.settings.size
     };

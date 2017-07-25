@@ -27,7 +27,7 @@ export default class DropZone {
     self.backgroundOpacity = dropZone.backgroundOpacity;
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
-    self.autoAlignEnabled = dropZone.autoAlign;
+    self.autoAlignable = dropZone.autoAlign;
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -87,7 +87,7 @@ export default class DropZone {
               self.alignables.push(ui.draggable);
             }
 
-            if (self.autoAlignEnabled) {
+            if (self.autoAlignable.enabled) {
               // Trigger alignment
               self.autoAlign();
             }
@@ -126,15 +126,15 @@ export default class DropZone {
       });
     }
 
-    if (self.autoAlignEnabled) {
-      draggables.forEach(function (draggable) {
-        var dragEl = draggable.element.$;
+    draggables.forEach(function (draggable) {
+      var dragEl = draggable.element.$;
 
-        // Add to alignables
-        if (draggable.isInDropZone(self.id) && self.getIndexOf(dragEl) === -1) {
-          self.alignables.push(dragEl);
-        }
-      });
+      // Add to alignables
+      if (draggable.isInDropZone(self.id) && self.getIndexOf(dragEl) === -1) {
+        self.alignables.push(dragEl);
+      }
+    });
+    if (self.autoAlignable.enabled) {
       self.autoAlign();
     }
 
@@ -222,8 +222,8 @@ export default class DropZone {
 
     // Calcuate borders and spacing values in percetage
     var spacing = {
-      x: (self.autoAlignEnabled.spacing / self.autoAlignEnabled.size.width) * 100,
-      y: (self.autoAlignEnabled.spacing / self.autoAlignEnabled.size.height) * 100
+      x: (self.autoAlignable.spacing / self.autoAlignable.size.width) * 100,
+      y: (self.autoAlignable.spacing / self.autoAlignable.size.height) * 100
     };
 
     // Determine coordinates for first 'spot'
@@ -265,12 +265,12 @@ export default class DropZone {
       });
 
       // Update horizontal space left + next position
-      var spaceDiffX = (alignableSize.width + self.autoAlignEnabled.spacing);
+      var spaceDiffX = (alignableSize.width + self.autoAlignable.spacing);
       spaceLeft.x -= spaceDiffX;
       pos.x += (spaceDiffX / containerSize.width) * 100;
 
       // Keep track of the highest element in this row
-      var spaceDiffY = (alignableSize.height + self.autoAlignEnabled.spacing);
+      var spaceDiffY = (alignableSize.height + self.autoAlignable.spacing);
       if (spaceDiffY > currentRowHeight) {
         currentRowHeight = spaceDiffY;
       }
