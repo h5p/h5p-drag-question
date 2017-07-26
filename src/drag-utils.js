@@ -25,11 +25,6 @@ export default class DragUtils {
       // Set both color and gradient.
       DragUtils.setOpacity($element, 'backgroundColor', opacity);
       DragUtils.setOpacity($element, 'backgroundImage', opacity);
-      if (!opacity) {
-        $element.css({
-          "background-image": "none"
-        });
-      }
       return;
     }
 
