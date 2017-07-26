@@ -55,6 +55,7 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
        *
        * 1. Move old feedback message to the new overall feedback system.
        * 2. Group tip with feedback
+       * 3. Do not show the new score points for old content being upgraded.
        *
        * @param {object} parameters
        * @param {function} finished
@@ -93,6 +94,12 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
             };
           }
         }
+
+        // Hide score points for old content
+        if (!parameters.behaviour) {
+          parameters.behaviour = {};
+        }
+        parameters.behaviour.showScorePoints = false;
 
         // Done
         finished(null, parameters);

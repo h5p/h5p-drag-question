@@ -56,7 +56,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable {
   border-radius: 0.25em;
   border: 0.1em solid #c6c6c6;
-  overflow: hidden;
   cursor: pointer;
   position: absolute;
   text-align: center;
@@ -139,21 +138,17 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable.h5p-correct:after,
 .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   font-family: 'H5PFontAwesome4';
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: normal;
   position: absolute;
-  right: 0;
-  top: 0.1em;
-  padding: 0 0.2em;
+  right: 0.1em;
+  bottom: 0;
   background: inherit;
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   border-radius: 0.25em;
-}
-
-/* Align feedback to text */
-.h5p-dragquestion .h5p-draggable.h5p-advanced-text:after {
-  line-height: 1.75;
+  line-height: 1;
+  padding: 0.15em 0 0 0.2em;
 }
 
 .h5p-dragquestion .h5p-draggable.h5p-correct.h5p-advanced-text:after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-advanced-text:after {
@@ -283,4 +278,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .h5p-dragquestion-introduction {
   outline: none;
+}
+
+.h5p-dragquestion .h5p-question-plus-one,
+.h5p-dragquestion .h5p-question-minus-one {
+  width: 1.25em;
+  height: calc(1.25em * 0.638297872);
+  top: -0.15em;
+  right: -0.15em;
 }

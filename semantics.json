@@ -452,6 +452,14 @@
         "type": "boolean",
         "description": "Check this option to enable the full screen button.",
         "default": false
+      },
+      {
+        "name": "showScorePoints",
+        "type": "boolean",
+        "label": "Show score points",
+        "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled.",
+        "importance": "low",
+        "default": true
       }
     ]
   },

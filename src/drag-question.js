@@ -58,7 +58,8 @@ function C(options, contentId, contentData) {
       showSolutionsRequiresInput: true,
       applyPenalties: true,
       dropZoneHighlighting: 'dragging',
-      autoAlignSpacing: 2
+      autoAlignSpacing: 2,
+      showScorePoints: true
     }
   }, options);
 
@@ -197,6 +198,7 @@ function C(options, contentId, contentData) {
     }
 
     dropZone.autoAlign = {
+      enabled: dropZone.autoAlign,
       spacing: self.options.behaviour.autoAlignSpacing,
       size: self.options.question.settings.size
     };
@@ -554,7 +556,7 @@ C.prototype.addExplanation = function () {
     const correctElements = dropZone.correctElements;
 
     // Find all dragables placed on this dropzone:
-    let placedDraggables = {}
+    let placedDraggables = {};
     this.draggables.forEach(draggable => {
       draggable.elements.forEach(dz => {
         if (dz.dropZone == dropZoneId) {
@@ -745,6 +747,11 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   this.points += emptyDropzones;
   this.rawPoints += emptyDropzones;
 
+  var scorePoints;
+  if (!skipVisuals && this.options.behaviour.showScorePoints && !this.options.behaviour.singlePoint) {
+    scorePoints = new H5P.Question.ScorePoints();
+  }
+
   for (var i = 0; i < this.draggables.length; i++) {
     var draggable = this.draggables[i];
     if (draggable === undefined) {
@@ -757,7 +764,7 @@ C.prototype.showAllSolutions = function (skipVisuals) {
     }
 
     // Find out where we are.
-    this.points += draggable.results(skipVisuals, this.correctDZs[i]);
+    this.points += draggable.results(skipVisuals, this.correctDZs[i], scorePoints);
     this.rawPoints += draggable.rawPoints;
   }
 
