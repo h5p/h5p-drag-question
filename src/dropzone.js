@@ -310,7 +310,7 @@ export default class DropZone {
         alignElement();
       }
     }
-  };
+  }
 
   /**
    * Highlight the current drop zone
