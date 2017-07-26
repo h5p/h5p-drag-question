@@ -543,8 +543,8 @@ C.prototype.addExplanation = function () {
   // Go through all dropzones, and find answers:
   task.dropZones.forEach((dropZone, dropZoneId) => {
     const feedback = {
-      correct: quotesToChars(dropZone.tipsAndFeedback.feedbackOnCorrect),
-      incorrect: quotesToChars(dropZone.tipsAndFeedback.feedbackOnIncorrect)
+      correct: dropZone.tipsAndFeedback.feedbackOnCorrecty,
+      incorrect: dropZone.tipsAndFeedback.feedbackOnIncorrect
     };
 
     // Don't run this code if feedback is not configured;
@@ -578,7 +578,7 @@ C.prototype.addExplanation = function () {
       if (draggable.correct && feedback.correct) {
         explanations.push({
           correct: dropZoneLabel + ' + ' + draggableLabel,
-          text: feedback.correct
+          html: feedback.correct
         });
 
         draggable.instance.setFeedback(feedback.correct, dropZoneId);
@@ -587,7 +587,7 @@ C.prototype.addExplanation = function () {
         explanations.push({
           correct: dropZoneLabel + ' + ',
           wrong: draggableLabel,
-          text: feedback.incorrect
+          html: feedback.incorrect
         });
 
         draggable.instance.setFeedback(feedback.incorrect, dropZoneId);
@@ -987,16 +987,6 @@ C.prototype.getCopyrights = function () {
 
 C.prototype.getTitle = function() {
   return H5P.createTitle(this.options.question.settings.questionTitle);
-};
-
-/**
- * Convert quotation marks from HTML entitiy names
- *
- * @param {string} string
- * @return {string}
- */
-var quotesToChars = function (string) {
-  return string === undefined ? string : string.replace(/&#039;/g, "'").replace(/&quot;/g, '"');
 };
 
 /**

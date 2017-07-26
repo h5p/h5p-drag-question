@@ -222,7 +222,7 @@ export default class Draggable extends H5P.EventDispatcher {
             appendTo: element.$
           });
         }
-        element.$feedback.text(feedback);
+        element.$feedback.html(feedback);
       }
     });
   }
