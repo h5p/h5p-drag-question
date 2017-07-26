@@ -56,6 +56,7 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
        * 1. Move old feedback message to the new overall feedback system.
        * 2. Group tip with feedback
        * 3. Do not show the new score points for old content being upgraded.
+       * 4. Relocate fields in the editor
        *
        * @param {object} parameters
        * @param {function} finished
@@ -101,30 +102,19 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         }
         parameters.behaviour.showScorePoints = false;
 
-        // Done
-        finished(null, parameters);
-      },
-
-      /**
-       * Asynchronous content upgrade hook.
-       * Upgrades content parameters to support Drag Question 1.12
-       *
-       * Move fields into behaviour and delete the old values
-       *
-       * @param {object} parameters
-       * @param {function} finished
-       */
-      12: function (parameters, finished) {
+        // Move fields into behaviour and remove the old values
         parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
-        parameters.behaviour.dropZoneHighlighting = parameters.question.settings.dropZoneHighlighting;
-        parameters.behaviour.autoAlignSpacing = parameters.question.settings.autoAlignSpacing;
-        parameters.behaviour.enableFullScreen = parameters.question.settings.enableFullScreen;
-
         delete parameters.backgroundOpacity;
-        delete parameters.question.settings.dropZoneHighlighting;
-        delete parameters.question.settings.autoAlignSpacing;
-        delete parameters.question.settings.enableFullScreen;
+        if (parameters.question !== undefined && parameters.question.settings !== undefined) {
+          parameters.behaviour.dropZoneHighlighting = parameters.question.settings.dropZoneHighlighting;
+          parameters.behaviour.autoAlignSpacing = parameters.question.settings.autoAlignSpacing;
+          parameters.behaviour.enableFullScreen = parameters.question.settings.enableFullScreen;
+          delete parameters.question.settings.dropZoneHighlighting;
+          delete parameters.question.settings.autoAlignSpacing;
+          delete parameters.question.settings.enableFullScreen;
+        }
 
+        // Done
         finished(null, parameters);
       }
 
