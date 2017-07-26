@@ -543,10 +543,9 @@ C.prototype.addExplanation = function () {
   // Go through all dropzones, and find answers:
   task.dropZones.forEach((dropZone, dropZoneId) => {
     const feedback = {
-      correct: dropZone.tipsAndFeedback.feedbackOnCorrecty,
+      correct: dropZone.tipsAndFeedback.feedbackOnCorrect,
       incorrect: dropZone.tipsAndFeedback.feedbackOnIncorrect
     };
-
     // Don't run this code if feedback is not configured;
     if (feedback.correct === undefined && feedback.incorrect === undefined) {
       return;
@@ -578,7 +577,7 @@ C.prototype.addExplanation = function () {
       if (draggable.correct && feedback.correct) {
         explanations.push({
           correct: dropZoneLabel + ' + ' + draggableLabel,
-          html: feedback.correct
+          text: feedback.correct
         });
 
         draggable.instance.setFeedback(feedback.correct, dropZoneId);
@@ -587,7 +586,7 @@ C.prototype.addExplanation = function () {
         explanations.push({
           correct: dropZoneLabel + ' + ',
           wrong: draggableLabel,
-          html: feedback.incorrect
+          text: feedback.incorrect
         });
 
         draggable.instance.setFeedback(feedback.incorrect, dropZoneId);
