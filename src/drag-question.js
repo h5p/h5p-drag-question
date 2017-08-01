@@ -828,7 +828,7 @@ C.prototype.resetTask = function () {
   //Show solution button
   this.showButton('check-answer');
   this.hideButton('try-again');
-  this.setFeedback();
+  this.removeFeedback();
   this.setExplanation();
 };
 
