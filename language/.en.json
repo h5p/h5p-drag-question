@@ -1,118 +1,89 @@
 {
   "semantics": [
     {
-      "englishLabel": "Check answer button",
       "label": "Check answer button",
-      "englishDefault": "Check",
       "default": "Check"
     },
     {
-      "englishLabel": "Retry button",
       "label": "Retry button",
-      "englishDefault": "Retry",
       "default": "Retry"
     },
     {
-      "englishLabel": "Correct solution label text",
       "label": "Correct solution label text",
-      "englishDefault": "Show solution",
       "default": "Show solution"
     },
     {
-      "englishLabel": "Feedback text",
       "label": "Feedback text",
-      "englishDefault": "You got @score of @total points",
       "default": "You got @score of @total points",
-      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
       "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
     },
     {
-      "englishLabel": "Score explanation text",
       "label": "Score explanation text",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
       "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields": [
         {
-          "englishLabel": "Settings",
           "label": "Settings",
           "fields": [
             {
-              "englishLabel": "The title of this question",
               "label": "The title of this question",
-              "englishDefault": "Drag and Drop",
               "default": "Drag and Drop",
-              "englishDescription": "Used in summaries, statistics etc.",
               "description": "Used in summaries, statistics etc."
             },
             {
-              "englishLabel": "Show Title",
               "label": "Show Title",
-              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
               "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "englishLabel": "Background image",
               "label": "Background image",
-              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
               "description": "Optional. Select an image to use as background for your drag and drop task."
             },
             {
-              "englishLabel": "Task size",
               "label": "Task size",
-              "englishDescription": "Specify how large (in px) the play area should be.",
-              "description": "Specify how large (in px) the play area should be."
+              "description": "Specify how large (in px) the play area should be.",
+              "default": {},
+              "fields": [
+                {},
+                {}
+              ]
             },
             {
-              "englishLabel": "Drop Zone Highlighting",
               "label": "Drop Zone Highlighting",
-              "englishDescription": "Choose when to highlight drop zones.",
               "description": "Choose when to highlight drop zones.",
+              "default": "dragging",
               "options": [
                 {
-                  "englishLabel": "When dragging",
                   "label": "When dragging"
                 },
                 {
-                  "englishLabel": "Always",
                   "label": "Always"
                 },
                 {
-                  "englishLabel": "Never",
                   "label": "Never"
                 }
               ]
             },
             {
-              "englishLabel": "Spacing for Auto-Align (in px)",
               "label": "Spacing for Auto-Align (in px)"
             },
             {
-              "englishLabel": "Enable FullScreen",
               "label": "Enable FullScreen",
-              "englishDescription": "Check this option to enable the full screen button.",
               "description": "Check this option to enable the full screen button."
             }
           ]
         },
         {
-          "englishLabel": "Task",
           "label": "Task",
-          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
-              "englishLabel": "Elements",
               "label": "Elements",
-              "englishEntity": "element",
               "entity": "element",
               "field": {
-                "englishLabel": "Element",
                 "label": "Element",
                 "fields": [
                   {
-                    "englishDescription": "Choose the type of content you would like to add.",
                     "description": "Choose the type of content you would like to add."
                   },
                   {},
@@ -120,37 +91,28 @@
                   {},
                   {},
                   {
-                    "englishLabel": "Select drop zones",
                     "label": "Select drop zones"
                   },
                   {
-                    "englishLabel": "Background Opacity",
                     "label": "Background Opacity"
                   },
                   {
-                    "englishLabel": "Infinite number of element instances",
                     "label": "Infinite number of element instances",
-                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
                     "description": "Clones this element so that it can be dragged to multiple drop zones."
                   }
                 ]
               }
             },
             {
-              "englishLabel": "Drop Zones",
               "label": "Drop Zones",
-              "englishEntity": "Drop Zone",
               "entity": "Drop Zone",
               "field": {
-                "englishLabel": "Drop Zone",
                 "label": "Drop Zone",
                 "fields": [
                   {
-                    "englishLabel": "Label",
                     "label": "Label"
                   },
                   {
-                    "englishLabel": "Show label",
                     "label": "Show label"
                   },
                   {},
@@ -158,33 +120,33 @@
                   {},
                   {},
                   {
-                    "englishLabel": "Select correct elements",
                     "label": "Select correct elements"
                   },
                   {
-                    "englishLabel": "Background Opacity",
                     "label": "Background Opacity"
                   },
                   {
-                    "englishLabel": "Tip",
-                    "label": "Tip",
+                    "label": "Tips and feedback",
                     "fields": [
                       {
-                        "englishLabel": "Tip text",
                         "label": "Tip text"
+                      },
+                      {
+                        "label": "Message displayed on correct match",
+                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label": "Message displayed on incorrect match",
+                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element",
                     "label": "This drop zone can only contain one element",
-                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
                     "description": "Make sure there is only one correct answer for this dropzone"
                   },
                   {
-                    "englishLabel": "Enable Auto-Align",
                     "label": "Enable Auto-Align",
-                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
                     "description": "Will auto-align all draggables dropped in this zone."
                   }
                 ]
@@ -195,54 +157,85 @@
       ]
     },
     {
-      "englishLabel": "Background opacity for draggables",
       "label": "Background opacity for draggables",
-      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
       "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
     },
     {
-      "englishLabel": "Behavioural settings",
       "label": "Behavioural settings",
-      "englishDescription": "These options will let you control how the task behaves.",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "englishLabel": "Enable \"Retry\"",
           "label": "Enable \"Retry\""
         },
         {
-          "englishLabel": "Give one point for the whole task",
+          "label": "Require user input before the solution can be viewed"
+        },
+        {
           "label": "Give one point for the whole task",
-          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
           "description": "Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "englishLabel": "Enable score explanation",
-          "label": "Enable score explanation"
+          "label": "Apply penalties",
+          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "Require user input before the solution can be viewed"
+          "label": "Enable score explanation",
+          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label": "Show score points",
+          "description": "Show points earned for each answer."
         }
       ]
     },
     {
-      "englishLabel": "Localize",
       "label": "Localize",
       "fields": [
         {
-          "englishLabel": "Fullscreen label",
           "label": "Fullscreen label",
-          "englishDefault": "Fullscreen",
           "default": "Fullscreen"
         },
         {
-          "englishLabel": "Exit fullscreen label",
           "label": "Exit fullscreen label",
-          "englishDefault": "Exit fullscreen",
           "default": "Exit fullscreen"
         }
       ]
+    },
+    {
+      "label": "Grabbable prefix",
+      "default": "Grabbable {num} of {total}"
+    },
+    {
+      "label": "Grabbable suffix",
+      "default": "Placed in dropzone {num}"
+    },
+    {
+      "label": "Dropzone prefix",
+      "default": "Dropzone {num} of {total}"
+    },
+    {
+      "label": "No dropzone selection label",
+      "default": "No dropzone"
+    },
+    {
+      "label": "Label for show tip button",
+      "default": "Show tip"
+    },
+    {
+      "label": "Label for tip available",
+      "default": "Tip available"
+    },
+    {
+      "label": "Label for correct answer",
+      "default": "Correct answer"
+    },
+    {
+      "label": "Label for incorrect answer",
+      "default": "Wrong answer"
+    },
+    {
+      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "default": "Feedback"
     }
   ]
 }

@@ -13,11 +13,6 @@
       "default": "Lösung anzeigen"
     },
     {
-      "label": "Rückmeldungstext",
-      "default": "Du hast @score von @total Punkten",
-      "description": "Rückmeldungstext, verfügbare Variablen: @score und @total. Beispiel: 'Du hast @score von @total möglichen Punkten.'"
-    },
-    {
       "label": "Erklärung für die Punkte",
       "default": "Richtige Antworten geben +1 Punkte. Bei falschen Antworten gibt es -1 Punkt. Die kleinstmögliche Punktzahl ist 0."
     },
@@ -32,9 +27,7 @@
               "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
             {
-              "englishLabel": "Show Title",
               "label": "Titel anzeigen",
-              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
               "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
             },
             {
@@ -151,6 +144,32 @@
       "description": "Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
     },
     {
+      "englishLabel": "Overall Feedback",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "englishPlaceholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "label": "Verhaltenseinstellungen.",
       "description": "Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
       "fields": [
@@ -165,15 +184,52 @@
           "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },
         {
-          "englishLabel": "Apply penalties",
           "label": "Strafpunkte vergeben",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score.",
-          "englishDescription": "Aktiviert Strafpunkte für Elemente, die in die falsche \"Drop Zone\" gelegt wurden. Diese Option muss aktiviert werden, wenn ein Element in mehrere \"Drop Zones\" sortiert werden kann oder es nur eine \"Drop Zone\" gibt. Andernfalls können Lernende alle Elemente in alle \"Drop Zones\" ziehen und damit volle Punktzahl erreichen."
+          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
           "label": "Erklärung für die Punkte einschalten"
         }
       ]
+    },
+    {
+      "label": "Localize",
+      "fields": [
+        {
+          "label": "Fullscreen label",
+          "englishDefault": "Fullscreen",
+          "default": "Fullscreen"
+        },
+        {
+          "label": "Exit fullscreen label",
+          "englishDefault": "Exit fullscreen",
+          "default": "Exit fullscreen"
+        }
+      ]
+    },
+    {
+      "englishDefault": "Grabbable {num} of {total}"
+    },
+    {
+      "englishDefault": "Placed in dropzone {num}"
+    },
+    {
+      "englishDefault": "Dropzone {num} of {total}"
+    },
+    {
+      "englishDefault": "No dropzone"
+    },
+    {
+      "englishDefault": "Show tip"
+    },
+    {
+      "englishDefault": "Tip available"
+    },
+    {
+      "englishDefault": "Correct answer"
+    },
+    {
+      "englishDefault": "Wrong answer"
     }
   ]
 }

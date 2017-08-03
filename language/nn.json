@@ -19,14 +19,6 @@
       "default": "Rett"
     },
     {
-      "englishLabel": "Feedback text",
-      "label": "Tilbakemeldingar",
-      "englishDefault": "You got @score of @total points",
-      "default": "@score av @total poeng",
-      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
-      "description": "Tekstleg tilbakemelding, tilgjengelege variablar: @score og @total. Eksempel: 'Du fikk @score av @total poeng.'"
-    },
-    {
       "englishLabel": "Score explanation text",
       "label": "Poengforklaring",
       "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
@@ -195,6 +187,39 @@
       "description": "Hvis denne verdien er satt, vil den overstyre instillingene til alle flyttbare elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
     },
     {
+      "englishLabel": "Overall Feedback",
+      "label": "Samlet tilbakemelding",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default",
+              "label": "Standard"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "label": "Definer tilpasset tilbakemelding for et poengområde",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description": "For eksempel: 0-20% Dårlig poengsum, 21-91% Gjennomsnittlig poengsum, 91-100% Stor poengsum!\nTilgjengelige variabler: @score og @total. For eksempel: 'Du fikk @score av @total mulige poeng'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range",
+                "label": "Poengområde"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "label": "Tilbakemelding for definert poengområde",
+                "englishPlaceholder": "Fill in the feedback",
+                "placeholder": "Fyll inn tilbakemeldingen"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "englishLabel": "Behavioural settings.",
       "label": "Innstillinger for oppgave-oppførsel",
       "englishDescription": "These options will let you control how the task behaves.",
@@ -225,6 +250,72 @@
           "label": "Vis poeng-forklaring"
         }
       ]
+    },
+    {
+      "englishLabel": "Localize",
+      "label": "Localize",
+      "fields": [
+        {
+          "englishLabel": "Fullscreen label",
+          "label": "Fullscreen label",
+          "englishDefault": "Fullscreen",
+          "default": "Fullskjerm"
+        },
+        {
+          "englishLabel": "Exit fullscreen label",
+          "label": "Exit fullscreen label",
+          "englishDefault": "Exit fullscreen",
+          "default": "Forlat fullskjerm"
+        }
+      ]
+    },
+    {
+      "englishLabel": "Grabbable prefix",
+      "label": "Draobjektprefiks",
+      "englishDefault": "Grabbable {num} of {total}",
+      "default": "Draobjekt {num} av {total}"
+    },
+    {
+      "englishLabel": "Grabbable suffix",
+      "label": "Draobjektsuffiks",
+      "englishDefault": "Placed in dropzone {num}",
+      "default": "Plassert i slippsone {num}"
+    },
+    {
+      "englishLabel": "Dropzone prefix",
+      "label": "Slippsoneprefiks",
+      "englishDefault": "Dropzone {num} of {total}",
+      "default": "Slippsone {num} av {total}"
+    },
+    {
+      "englishLabel": "No dropzone selection label",
+      "label": "Ingen slippsone valg-merkelapp",
+      "englishDefault": "No dropzone",
+      "default": "Ingen slippsone"
+    },
+    {
+      "englishLabel": "Label for show tip button",
+      "label": "Merkelapp for vis-tips-knappen",
+      "englishDefault": "Show tip",
+      "default": "Vis tips"
+    },
+    {
+      "englishLabel": "Label for tip available",
+      "label": "Merkelapp for tips tilgjengeleg",
+      "englishDefault": "Tip available",
+      "default": "Tips tilgjengelig"
+    },
+    {
+      "englishLabel": "Label for correct answer",
+      "label": "Merkelapp for korrekt svar",
+      "englishDefault": "Correct answer",
+      "default": "Korrekt svar"
+    },
+    {
+      "englishLabel": "Label for incorrect answer",
+      "label": "Merkelapp for feil svar",
+      "englishDefault": "Wrong answer",
+      "default": "Feil svar"
     }
   ]
 }

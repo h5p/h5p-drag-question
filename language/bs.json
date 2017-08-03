@@ -1,0 +1,212 @@
+{
+  "semantics": [
+    {
+      "label": "Provjeri dugme odgovora",
+      "englishDefault": "Check",
+      "default": "Provjeri"
+    },
+    {
+      "label": "Dugme ponovnog pokušaja",
+      "englishDefault": "Retry",
+      "default": "Ponovi"
+    },
+    {
+      "label": "Tekst oznake ispravnog rješenja",
+      "englishDefault": "Show solution",
+      "default": "Prikaži rješenje"
+    },
+    {
+      "englishLabel": "Score explanation text",
+      "label": "Tekst opisa rezultata",
+      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "default": "Ispravan odgovor daje +1 bod. Pogrešan odgovor daje -1 bod. Najmanji mogući rezultat je 0."
+    },
+    {
+      "fields": [
+        {
+          "label": "Podešavanja",
+          "fields": [
+            {
+              "label": "Naziv ovog pitanja",
+              "englishDefault": "Drag and Drop",
+              "default": "Uzmi i spusti",
+              "description": "Koristi se u sažecima, statistikama, itd.."
+            },
+            {
+              "label": "Pokaži naziv",
+              "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
+            },
+            {
+              "label": "Slika pozadine",
+              "description": "Opcionalno. Odaberi neku sliku koja će služiti kao pozadina za zadatak 'Uzmi i spusti'."
+            },
+            {
+              "label": "Dimenzije zadatka",
+              "description": "Odredi koliko veliki prostor (u pixelima) treba biti"
+            },
+            {
+              "label": "Naglašavanje zone za spustanje",
+              "description": "Odaberi kada će se zona za spustanje naglasiti.",
+              "options": [
+                {
+                  "label": "Kada se uzima"
+                },
+                {
+                  "label": "Uvijek"
+                },
+                {
+                  "label": "Nikad"
+                }
+              ]
+            },
+            {
+              "label": "Određivanje prostora za automatsko poravnanje (u pixelima)"
+            },
+            {
+              "label": "Omogući cijeli ekran",
+              "description": "Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
+            }
+          ]
+        },
+        {
+          "label": "Zadatak",
+          "description": "Počni sa određivanjem zona za spustanje.<br/>Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br/>Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
+          "fields": [
+            {
+              "label": "Elementi",
+              "entity": "element",
+              "field": {
+                "label": "Element",
+                "fields": [
+                  {
+                    "description": "Odaberi vrstu sadržaja koju želiš dodati."
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": "Označi zone za spustanje"
+                  },
+                  {
+                    "label": "Pozadinsko zamućenje"
+                  },
+                  {
+                    "label": "Neograničen broj elemenata",
+                    "description": "Klonira ovaj element kako bi mogao biti spušten na višestruke zone."
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Zone za spustanje",
+              "entity": "Drop Zone",
+              "field": {
+                "label": "Zona za spustanje",
+                "fields": [
+                  {
+                    "label": "Oznaka"
+                  },
+                  {
+                    "label": "Pokaži oznaku"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": "Označi ispravne elemente"
+                  },
+                  {
+                    "label": "Pozadinska zamućenost"
+                  },
+                  {
+                    "label": "Savjet",
+                    "fields": [
+                      {
+                        "label": "Tekst savjeta"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Ova zona za spustanje može sadržavati samo jedan element",
+                    "description": "Budi siguran da ima samo jedan tačan odgovor za ovu zonu za spustanje"
+                  },
+                  {
+                    "label": "Omogući automatsko poravnanje",
+                    "description": "Automatsko poravnanje za sve u ovoj zoni."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Pozadinska zamućenost za elemente za uzimanje",
+      "description": "Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
+    },
+    {
+      "englishLabel": "Overall Feedback",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "englishLabel": "Default"
+            }
+          ],
+          "englishLabel": "Define custom feedback for any score range",
+          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "field": {
+            "fields": [
+              {
+                "englishLabel": "Score Range"
+              },
+              {},
+              {
+                "englishLabel": "Feedback for defined score range",
+                "englishPlaceholder": "Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "englishLabel": "Behavioural settings",
+      "label": "Podešavanje ponašanja",
+      "description": "Ova opcija će omogućiti kontrolu kako će se zadatak ponašati.",
+      "fields": [
+        {
+          "label": "Omogući \"Ponovi\""
+        },
+        {
+          "label": "Daje jedan bod za cijeli zadatak",
+          "description": "Onemogući kako bi dao bod za svaki tačano postavljeni element."
+        },
+        {
+          "label": "Omogući objašnjenje rezultata"
+        },
+        {
+          "label": "Zahtjeva korisničko učešće prije nego rezultat bude vidljiv"
+        }
+      ]
+    },
+    {
+      "label": "Lokaliziraj",
+      "fields": [
+        {
+          "label": "Oznaka za cijeli ekran",
+          "englishDefault": "Fullscreen",
+          "default": "Cijeli ekran"
+        },
+        {
+          "label": "Oznaka za izlazak iz cijelog ekrana",
+          "englishDefault": "Exit fullscreen",
+          "default": "Izađi iz cijelog ekrana"
+        }
+      ]
+    }
+  ]
+}

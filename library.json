@@ -3,8 +3,8 @@
   "description": "Drag and drop the elements into the correct drop zones.",
   "contentType": "Question",
   "majorVersion": 1,
-  "minorVersion": 10,
-  "patchVersion": 1,
+  "minorVersion": 11,
+  "patchVersion": 0,
   "embedTypes": [
     "iframe"
   ],
@@ -17,6 +17,11 @@
   },
   "license": "MIT",
   "machineName": "H5P.DragQuestion",
+  "preloadedJs": [
+    {
+      "path": "h5p-drag-question.js"
+    }
+  ],
   "preloadedCss": [
     {
       "path": "css/dragquestion.css"
@@ -44,16 +49,16 @@
       "minorVersion": 2
     }
   ],
-  "preloadedJs": [
-    {
-      "path": "js/dragquestion.js"
-    }
-  ],
   "editorDependencies": [
     {
       "machineName": "H5PEditor.DragQuestion",
       "majorVersion": 1,
-      "minorVersion": 8
+      "minorVersion": 9
+    },
+    {
+      "machineName": "H5PEditor.RangeList",
+      "majorVersion": 1,
+      "minorVersion": 0
     }
   ]
 }
