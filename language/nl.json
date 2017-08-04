@@ -2,15 +2,15 @@
   "semantics":[
     {
       "label":"Check answer button",
-      "default":"Check"
+      "default":"Controleer"
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Opnieuw proberen"
     },
     {
       "label":"Correct solution label text",
-      "default":"Show solution"
+      "default":"Toon oplossing"
     },
     {
       "label":"Score explanation text",
@@ -24,14 +24,14 @@
             {
               "label":"The title of this question",
               "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "description":"Gebruikt in samenvattingen, statistieken, enz."
             },
             {
               "label":"Show Title",
               "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label":"Background image",
+              "label":"Achtergrondafbeelding",
               "description":"Optional. Select an image to use as background for your drag and drop task."
             },
             {
@@ -80,7 +80,7 @@
                     "label":"Select drop zones"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Ondoorzichtigheid achtergrond"
                   },
                   {
                     "label":"Infinite number of element instances",
@@ -117,13 +117,13 @@
                     "label":"Select correct elements"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Ondoorzichtigheid achtergrond"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Tips en feedback",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"Tekst voor tip"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Standaard"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,17 +180,17 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Gedragsinstellingen",
+      "description":"Deze opties bepalen hoe de taak op de input reageert.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"Schakel de knop \"Opnieuw\" in"
         },
         {
           "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Give one point for the whole task",
+          "label":"Geef een punt voor de gehele taak",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Localize",
+      "label":"Localiseren",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"Titel voor \"Volledig scherm\"-knop",
+          "default":"Volledig scherm"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"Titel voor \"Volledig scherm afsluiten\"-knop",
+          "default":"Volledig scherm afsluiten"
         }
       ]
     },
@@ -265,19 +265,19 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"Toon tip"
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Tip beschikbaar"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Juist antwoord"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Onjuist antwoord"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
