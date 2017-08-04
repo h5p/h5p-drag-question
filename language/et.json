@@ -13,11 +13,6 @@
       "default":"Show solution"
     },
     {
-      "label":"Feedback text",
-      "default":"You got @score of @total points",
-      "description":"Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -53,29 +48,6 @@
                   
                 }
               ]
-            },
-            {
-              "label":"Drop Zone Highlighting",
-              "description":"Choose when to highlight drop zones.",
-              "default":"dragging",
-              "options":[
-                {
-                  "label":"When dragging"
-                },
-                {
-                  "label":"Always"
-                },
-                {
-                  "label":"Never"
-                }
-              ]
-            },
-            {
-              "label":"Spacing for Auto-Align (in px)"
-            },
-            {
-              "label":"Enable FullScreen",
-              "description":"Check this option to enable the full screen button."
             }
           ]
         },
@@ -179,8 +151,33 @@
       ]
     },
     {
-      "label":"Background opacity for draggables",
-      "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+      "label":"Overall Feedback",
+      "fields":[
+        {
+          "widgets":[
+            {
+              "label":"Default"
+            }
+          ],
+          "label":"Define custom feedback for any score range",
+          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "entity":"range",
+          "field":{
+            "fields":[
+              {
+                "label":"Score Range"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "label":"Behavioural settings",
@@ -205,8 +202,35 @@
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
+          "label":"Background opacity for draggables",
+          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+        },
+        {
+          "label":"Drop Zone Highlighting",
+          "description":"Choose when to highlight drop zones.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"When dragging"
+            },
+            {
+              "label":"Always"
+            },
+            {
+              "label":"Never"
+            }
+          ]
+        },
+        {
+          "label":"Spacing for Auto-Align (in px)"
+        },
+        {
+          "label":"Enable FullScreen",
+          "description":"Check this option to enable the full screen button."
+        },
+        {
           "label":"Show score points",
-          "description":"Show points earned for each answer."
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
