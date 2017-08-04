@@ -13,11 +13,6 @@
       "default":"Show solution"
     },
     {
-      "label":"Testo del Feedback",
-      "default":"You got @score of @total points",
-      "description":"Testo del Feedback (Riscontro), variabili consentite: @score e @total. Esempio: 'Hai ottenuto il punteggio @score su @total punti possibili.'"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -53,29 +48,6 @@
                   
                 }
               ]
-            },
-            {
-              "label":"Drop Zone Highlighting",
-              "description":"Choose when to highlight drop zones.",
-              "default":"dragging",
-              "options":[
-                {
-                  "label":"When dragging"
-                },
-                {
-                  "label":"Always"
-                },
-                {
-                  "label":"Never"
-                }
-              ]
-            },
-            {
-              "label":"Spacing for Auto-Align (in px)"
-            },
-            {
-              "label":"Enable FullScreen",
-              "description":"Check this option to enable the full screen button."
             }
           ]
         },
@@ -85,7 +57,7 @@
           "fields":[
             {
               "label":"Elementi",
-              "entity":"element",
+              "entity":"elemento",
               "field":{
                 "label":"Elemento",
                 "fields":[
@@ -148,7 +120,7 @@
                     "label":"Opacità Sfondo"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Suggerimento",
                     "fields":[
                       {
                         "label":"Testo di suggerimento"
@@ -180,51 +152,103 @@
     },
     {
       "label":"Opacità Sfondo per elementi trascinabili",
-      "description":"Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
-    },
-    {
-      "label":"Impostazioni esecuzione",
-      "description":"Queste opzioni consentono di controllare l'andamento del compito.",
       "fields":[
         {
-          "label":"Abilita \"Riprova\""
+          "widgets":[
+            {
+              "label":"Default"
+            }
+          ],
+          "label":"Define custom feedback for any score range",
+          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "entity":"range",
+          "field":{
+            "fields":[
+              {
+                "label":"Score Range"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label":"Behavioural settings",
+      "description":"These options will let you control how the task behaves.",
+      "fields":[
+        {
+          "label":"Enable \"Retry\""
         },
         {
-          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
+          "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Assegna un punto per il completamento del compito",
-          "description":"Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
+          "label":"Give one point for the whole task",
+          "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
           "label":"Apply penalties",
-          "description":"Apply penalties for elements dropped in the wrong drop zones."
+          "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
           "label":"Enable score explanation",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
+          "label":"Background opacity for draggables",
+          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+        },
+        {
+          "label":"Drop Zone Highlighting",
+          "description":"Choose when to highlight drop zones.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"When dragging"
+            },
+            {
+              "label":"Always"
+            },
+            {
+              "label":"Never"
+            }
+          ]
+        },
+        {
+          "label":"Spacing for Auto-Align (in px)"
+        },
+        {
+          "label":"Enable FullScreen",
+          "description":"Check this option to enable the full screen button."
+        },
+        {
           "label":"Show score points",
-          "description":"Show points earned for each answer."
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Impostazioni esecuzione",
       "fields":[
         {
-          "label":"Fullscreen label",
+          "label":"Abilita \"Riprova\"",
           "default":"Fullscreen"
         },
         {
-          "label":"Exit fullscreen label",
+          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata",
           "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "label":"Grabbable prefix",
+      "label":"Localize",
       "default":"Grabbable {num} of {total}"
     },
     {
