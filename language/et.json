@@ -2,15 +2,15 @@
   "semantics":[
     {
       "label":"Check answer button",
-      "default":"Check"
+      "default":"Kontrolli"
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Proovi uuesti"
     },
     {
       "label":"Correct solution label text",
-      "default":"Show solution"
+      "default":"Õige vastus"
     },
     {
       "label":"Score explanation text",
@@ -120,10 +120,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Vihje ja tagasiside",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"Vihje tekst"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -265,19 +265,19 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"Vihje"
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Küsi vihjet"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Õige vastus"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Vale vastus"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
