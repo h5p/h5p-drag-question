@@ -249,23 +249,23 @@
     },
     {
       "label":"Grabbable prefix",
-      "default":"Grabbable {num} of {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"No dropzone selection label",
-      "default":"No dropzone"
+      "default":"No dropzone."
     },
     {
       "label":"Label for show tip button",
-      "default":"Vihje"
+      "default":"Show tip."
     },
     {
       "label":"Label for tip available",
