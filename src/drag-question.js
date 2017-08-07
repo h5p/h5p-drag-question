@@ -27,11 +27,11 @@ function C(options, contentId, contentData) {
     scoreShow: 'Check',
     correct: 'Show solution',
     tryAgain: 'Retry',
-    grabbablePrefix: 'Grabbable {num} of {total}',
-    grabbableSuffix: 'Placed in dropzone {num}',
-    dropzonePrefix: 'Dropzone {num} of {total}',
+    grabbablePrefix: 'Grabbable {num} of {total}.',
+    grabbableSuffix: 'Placed in dropzone {num}.',
+    dropzonePrefix: 'Dropzone {num} of {total}.',
     noDropzone: 'No dropzone',
-    tipLabel: 'Show tip',
+    tipLabel: 'Show tip.',
     tipAvailable: 'Tip available',
     correctAnswer: 'Correct answer',
     wrongAnswer: 'Wrong answer',
@@ -70,7 +70,7 @@ function C(options, contentId, contentData) {
 
   this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
-  self.$noDropZone = $('<div class="h5p-dq-no-dz" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '. </span></div>');
+  self.$noDropZone = $('<div class="h5p-dq-no-dz" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '</span></div>');
 
   // Initialize controls for good a11y
   var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
