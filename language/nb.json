@@ -38,14 +38,14 @@
               "label":"Oppgavens størrelse",
               "description":"Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i.",
               "default":{
-
+                
               },
               "fields":[
                 {
-
+                  
                 },
                 {
-
+                  
                 }
               ]
             }
@@ -65,16 +65,16 @@
                     "description":"Velg typen innhold du vil legge til."
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Velg målområder"
@@ -102,16 +102,16 @@
                     "label":"Vis tittel"
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Velg riktige elementer"
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "label":"Bakgrunnsopasitet på flyttbare elementer",
+      "label":"Samlet tilbakemelding",
       "fields":[
         {
           "widgets":[
@@ -168,7 +168,7 @@
                 "label":"Score Range"
               },
               {
-
+                
               },
               {
                 "label":"Feedback for defined score range",

@@ -38,14 +38,14 @@
               "label":"Taille de la zone de l'activité",
               "description":"Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité.",
               "default":{
-
+                
               },
               "fields":[
                 {
-
+                  
                 },
                 {
-
+                  
                 }
               ]
             }
@@ -65,16 +65,16 @@
                     "description":"Sélectionnez le type de contenu que vous souhaitez ajouter."
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Sélectionnez les zones de dépôt"
@@ -102,16 +102,16 @@
                     "label":"Afficher l'étiquette"
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Sélectionnez les éléments qui devront être correctement placés dans cette zone"
@@ -168,7 +168,7 @@
                 "label":"Score Range"
               },
               {
-
+                
               },
               {
                 "label":"Feedback for defined score range",

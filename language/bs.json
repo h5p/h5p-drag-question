@@ -38,14 +38,14 @@
               "label":"Dimenzije zadatka",
               "description":"Odredi koliko veliki prostor (u pixelima) treba biti",
               "default":{
-
+                
               },
               "fields":[
                 {
-
+                  
                 },
                 {
-
+                  
                 }
               ]
             }
@@ -65,16 +65,16 @@
                     "description":"Odaberi vrstu sadržaja koju želiš dodati."
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Označi zone za spustanje"
@@ -102,16 +102,16 @@
                     "label":"Pokaži oznaku"
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Označi ispravne elemente"
@@ -168,7 +168,7 @@
                 "label":"Score Range"
               },
               {
-
+                
               },
               {
                 "label":"Feedback for defined score range",

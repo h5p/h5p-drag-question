@@ -38,14 +38,14 @@
               "label":"Dimensione attività",
               "description":"Specifare quanto larga (in px) l'area di gioco dovrebbe essere.",
               "default":{
-
+                
               },
               "fields":[
                 {
-
+                  
                 },
                 {
-
+                  
                 }
               ]
             }
@@ -65,16 +65,16 @@
                     "description":"Scegliere il tipo di contenuto che si desidera aggiungere."
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Selezionare zona di rilascio"
@@ -102,16 +102,16 @@
                     "label":"Mostra etichetta"
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
                     "label":"Selezionare gli elementi corretti"
@@ -168,7 +168,7 @@
                 "label":"Score Range"
               },
               {
-
+                
               },
               {
                 "label":"Feedback for defined score range",
