@@ -80,7 +80,7 @@
                     "label":"Označi zone za spustanje"
                   },
                   {
-                    "label":"Pozadinsko zamućenje"
+                    "label":"Pozadinska zamućenost"
                   },
                   {
                     "label":"Neograničen broj elemenata",
@@ -91,7 +91,7 @@
             },
             {
               "label":"Zone za spustanje",
-              "entity":"Drop Zone",
+              "entity":"Zona za spustanje",
               "field":{
                 "label":"Zona za spustanje",
                 "fields":[
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Standard"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,21 +180,21 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Interaktionseinstellungen",
+      "description":"Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"Omogući \"Ponovi\" dugme"
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"Daje jedan bod za cijeli zadatak"
         },
         {
-          "label":"Give one point for the whole task",
+          "label":"Omogući objašnjenje rezultata",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "label":"Apply penalties",
+          "label":"Zahtjeva korisničko učešće prije nego rezultat bude vidljiv",
           "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
@@ -202,31 +202,31 @@
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"Pozadinska zamućenost za elemente za uzimanje",
+          "description":"Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"Naglašavanje zone za spustanje",
+          "description":"Odaberi kada će se zona za spustanje naglasiti.",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Kada se uzima"
             },
             {
-              "label":"Always"
+              "label":"Uvijek"
             },
             {
-              "label":"Never"
+              "label":"Nikad"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Određivanje prostora za automatsko poravnanje (u pixelima)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Omogući cijeli ekran",
+          "description":"Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
         },
         {
           "label":"Show score points",
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Podešavanje ponašanja",
+      "label":"Lokaliziraj",
       "fields":[
         {
-          "label":"Omogući \"Ponovi\"",
-          "default":"Fullscreen"
+          "label":"Oznaka za cijeli ekran",
+          "default":"Cijeli ekran"
         },
         {
-          "label":"Daje jedan bod za cijeli zadatak",
-          "default":"Exit fullscreen"
+          "label":"Oznaka za izlazak iz cijelog ekrana",
+          "default":"Izađi iz cijelog ekrana"
         }
       ]
     },
@@ -269,7 +269,7 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Savjet dostupan"
     },
     {
       "label":"Label for correct answer",
