@@ -22,7 +22,7 @@
           "label":"Einstellungen",
           "fields":[
             {
-              "label":"Der Titel dieser Frage",
+              "label":"Titel der Frage",
               "default":"Drag and Drop",
               "description":"Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
@@ -57,7 +57,7 @@
           "fields":[
             {
               "label":"Elemente",
-              "entity":"element",
+              "entity":"Element",
               "field":{
                 "label":"Element",
                 "fields":[
@@ -91,9 +91,9 @@
             },
             {
               "label":"Drop Zones",
-              "entity":"Drop Zone",
+              "entity":"Drop-Feld",
               "field":{
-                "label":"Drop Zone",
+                "label":"Drop-Feld",
                 "fields":[
                   {
                     "label":"Beschriftung"
@@ -120,10 +120,10 @@
                     "label":"Hintergrunddeckkraft"
                   },
                   {
-                    "label":"Hinweis",
+                    "label":"Tipps und Rückmeldung",
                     "fields":[
                       {
-                        "label":"Hinweistext"
+                        "label":"Tipp-Text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Vorgabe"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,49 +180,49 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Verhaltenseinstellungen",
+      "description":"Diese Optionen bestimmen, wie die Aufgabe auf Eingaben reagiert.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"\"Wiederholen\" ermöglichen"
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
         },
         {
-          "label":"Give one point for the whole task",
-          "description":"Disable to give one point for each draggable that is placed correctly."
+          "label":"Einen Punkt für die ganze Aufgabe vergeben",
+          "description":"Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },
         {
-          "label":"Apply penalties",
+          "label":"Strafpunkte vergeben",
           "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label":"Enable score explanation",
+          "label":"Erklärung für die Punkte einschalten",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"Hintergrunddeckkraft für bewegliche Elemente",
+          "description":"Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"\"Drop Zone\"-Aufleuchten",
+          "description":"Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Beim Ziehen"
             },
             {
-              "label":"Always"
+              "label":"Immer"
             },
             {
-              "label":"Never"
+              "label":"Nie"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Abstand für das Auto-Anordnen (in px)"
         },
         {
           "label":"Enable FullScreen",
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Verhaltenseinstellungen.",
+      "label":"Sprache anpassen",
       "fields":[
         {
-          "label":"Aktivieren des \"Wiederholen\"-Buttons",
-          "default":"Fullscreen"
+          "label":"Beschriftung für \"Vollbild\"",
+          "default":"Vollbildmodus"
         },
         {
-          "label":"Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann",
-          "default":"Exit fullscreen"
+          "label":"Beschriftung für \"Vollbild beenden\"",
+          "default":"Vollbild beenden"
         }
       ]
     },
@@ -265,23 +265,23 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"Tipp anzeigen"
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Tipp verfügbar"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Richtige Antwort"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Falsche Antwort"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
-      "default":"Feedback"
+      "default":"Rückmeldung"
     }
   ]
 }
