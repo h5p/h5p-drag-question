@@ -6,11 +6,11 @@
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Reintentar"
     },
     {
       "label":"Correct solution label text",
-      "default":"Show solution"
+      "default":"Mostrar solución"
     },
     {
       "label":"Score explanation text",
@@ -24,7 +24,7 @@
             {
               "label":"The title of this question",
               "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "description":"Utilizado en extractos, estadísticas, etc."
             },
             {
               "label":"Show Title",
@@ -80,7 +80,7 @@
                     "label":"Select drop zones"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Opacidad del fondo"
                   },
                   {
                     "label":"Infinite number of element instances",
@@ -96,7 +96,7 @@
                 "label":"Drop Zone",
                 "fields":[
                   {
-                    "label":"Label"
+                    "label":"Etiqueta"
                   },
                   {
                     "label":"Show label"
@@ -117,7 +117,7 @@
                     "label":"Select correct elements"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Opacidad del fondo"
                   },
                   {
                     "label":"Tips and feedback",
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Predeterminado"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "label":"Behavioural settings",
+      "label":"Ajustes de comportamiento",
       "description":"These options will let you control how the task behaves.",
       "fields":[
         {
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Localize",
+      "label":"Localizar",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"Etiqueta de mostrar en pantalla completa",
+          "default":"Pantalla completa"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"Etiqueta de salir de pantalla completa",
+          "default":"Salir de Pantalla completa"
         }
       ]
     },
