@@ -38,6 +38,7 @@
               "label":"Aufgabengröße",
               "description":"Gib an, wie breit (in px) das Feld sein soll.",
               "default":{
+<<<<<<< HEAD
                 
               },
               "fields":[
@@ -46,6 +47,16 @@
                 },
                 {
                   
+=======
+
+              },
+              "fields":[
+                {
+
+                },
+                {
+
+>>>>>>> master
                 }
               ]
             }
@@ -65,6 +76,7 @@
                     "description":"Wähle den Inhaltstyp, den du hinzufügen möchtest."
                   },
                   {
+<<<<<<< HEAD
                     
                   },
                   {
@@ -75,6 +87,18 @@
                   },
                   {
                     
+=======
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+
+>>>>>>> master
                   },
                   {
                     "label":"Wähle die \"Drop Zones\""
@@ -102,6 +126,7 @@
                     "label":"Zeige Beschriftung"
                   },
                   {
+<<<<<<< HEAD
                     
                   },
                   {
@@ -112,6 +137,18 @@
                   },
                   {
                     
+=======
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+
+>>>>>>> master
                   },
                   {
                     "label":"Wähle korrekte Elemente"
@@ -168,7 +205,11 @@
                 "label":"Score Range"
               },
               {
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> master
               },
               {
                 "label":"Feedback for defined score range",
