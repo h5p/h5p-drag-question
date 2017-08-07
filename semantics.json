@@ -489,7 +489,7 @@
     "type": "text",
     "label": "Grabbable prefix",
     "importance": "low",
-    "default": "Grabbable {num} of {total}",
+    "default": "Grabbable {num} of {total}.",
     "common": true
   },
   {
@@ -497,7 +497,7 @@
     "type": "text",
     "label": "Grabbable suffix",
     "importance": "low",
-    "default": "Placed in dropzone {num}",
+    "default": "Placed in dropzone {num}.",
     "common": true
   },
   {
@@ -505,7 +505,7 @@
     "type": "text",
     "label": "Dropzone prefix",
     "importance": "low",
-    "default": "Dropzone {num} of {total}",
+    "default": "Dropzone {num} of {total}.",
     "common": true
   },
   {
@@ -513,7 +513,7 @@
     "type": "text",
     "label": "No dropzone selection label",
     "importance": "low",
-    "default": "No dropzone",
+    "default": "No dropzone.",
     "common": true
   },
   {
@@ -521,7 +521,7 @@
     "type": "text",
     "label": "Label for show tip button",
     "importance": "low",
-    "default": "Show tip",
+    "default": "Show tip.",
     "common": true
   },
   {

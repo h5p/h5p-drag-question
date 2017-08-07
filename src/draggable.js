@@ -195,10 +195,10 @@ export default class Draggable extends H5P.EventDispatcher {
     H5P.newRunnable(self.type, contentId, element.$);
 
     // Add prefix for good a11y
-    $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '. </span>').prependTo(element.$);
+    $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '</span>').prependTo(element.$);
 
     // Add suffix for good a11y
-    $('<span class="h5p-hidden-read">. </span>').appendTo(element.$);
+    $('<span class="h5p-hidden-read"></span>').appendTo(element.$);
 
     // Update opacity when element is attached.
     setTimeout(function () {
