@@ -2,15 +2,15 @@
   "semantics":[
     {
       "label":"Check answer button",
-      "default":"Check"
+      "default":"Kontrol et"
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Yeniden dene"
     },
     {
       "label":"Correct solution label text",
-      "default":"Show solution"
+      "default":"Çözümü göster"
     },
     {
       "label":"Score explanation text",
@@ -120,10 +120,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"İpuçları ve geri bildirim",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"İpucu metni"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Varsayılan"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,8 +180,8 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Davranış ayarları",
+      "description":"Bu seçenekler aktivitenin çalışma şeklini denetlemenize izin verir.",
       "fields":[
         {
           "label":"Enable \"Retry\""
@@ -190,7 +190,7 @@
           "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Give one point for the whole task",
+          "label":"Bütün aktivite için bir puan verin",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
@@ -265,19 +265,19 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"İpucu göster"
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Mevcut ipucu"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Doğru cevap"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Yanlış cevap"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
