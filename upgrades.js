@@ -100,7 +100,6 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         if (!parameters.behaviour) {
           parameters.behaviour = {};
         }
-        parameters.behaviour.showScorePoints = false;
 
         // Move fields into behaviour and remove the old values
         parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
