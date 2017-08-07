@@ -10,7 +10,7 @@
     },
     {
       "label":"Bouton \"Voir la correction\"",
-      "default":"Voir la correction"
+      "default":"Voir la solution"
     },
     {
       "label":"Texte d'explication du score",
@@ -22,9 +22,9 @@
           "label":"Réglages",
           "fields":[
             {
-              "label":"Titre de cette question",
+              "label":"Titre de la question",
               "default":"Glisser-déposer",
-              "description":"Utilisé dans les résumés, statistiques, etc."
+              "description":"Utilisée dans les résumés, statistiques, etc."
             },
             {
               "label":"Afficher le titre",
@@ -80,7 +80,7 @@
                     "label":"Sélectionnez les zones de dépôt"
                   },
                   {
-                    "label":"Opacité du fond"
+                    "label":"Opacité"
                   },
                   {
                     "label":"Nombre illimité d'instances pour cet élément",
@@ -120,10 +120,10 @@
                     "label":"Opacité"
                   },
                   {
-                    "label":"Indice",
+                    "label":"Aides et commentaires",
                     "fields":[
                       {
-                        "label":"Texte de l'indice"
+                        "label":"Indice"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +156,7 @@
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Par défaut"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,53 +180,53 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Options générales.",
+      "description":"Ces options vous permettent de contrôler le déroulement de l'activité.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"Activer le bouton \"Recommencer\""
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
         },
         {
-          "label":"Give one point for the whole task",
-          "description":"Disable to give one point for each draggable that is placed correctly."
+          "label":"Donner un point par activité",
+          "description":"Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
         },
         {
-          "label":"Apply penalties",
-          "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label":"Appliquer des pénalités",
+          "description":"Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
         },
         {
-          "label":"Enable score explanation",
+          "label":"Activer les explications du score",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"Opacité des étiquettes",
+          "description":"Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"Mise en évidence de la zone de dépôt",
+          "description":"Choisissez quand mettre en évidence la zone de dépôt.",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Lors du glisser-déposer"
             },
             {
-              "label":"Always"
+              "label":"Toujours"
             },
             {
-              "label":"Never"
+              "label":"Jamais"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Marge pour l'alignement automatique (en pixels)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Activer le bouton Plein écran",
+          "description":"Cochez cette option pour autoriser le mode Plein écran."
         },
         {
           "label":"Show score points",
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Options générales.",
+      "label":"Traductions",
       "fields":[
         {
-          "label":"Activer le bouton \"Recommencer\"",
-          "default":"Fullscreen"
+          "label":"Texte du titre pour le bouton Plein écran",
+          "default":"Plein écran"
         },
         {
-          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction.",
-          "default":"Exit fullscreen"
+          "label":"Texte du titre pour le bouton Quitter le plein écran",
+          "default":"Quitter le plein écran"
         }
       ]
     },
@@ -265,23 +265,23 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"Montrer l'indice"
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Indice disponible"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Bonne réponse"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Réponse incorrecte"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
-      "default":"Feedback"
+      "default":"Commentaire de retour"
     }
   ]
 }
