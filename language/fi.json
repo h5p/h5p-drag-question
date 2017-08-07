@@ -6,7 +6,7 @@
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Yritä uudelleen"
     },
     {
       "label":"Correct solution label text",
@@ -80,7 +80,7 @@
                     "label":"Select drop zones"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
                     "label":"Infinite number of element instances",
@@ -117,7 +117,7 @@
                     "label":"Select correct elements"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
                     "label":"Tips and feedback",
@@ -235,15 +235,15 @@
       ]
     },
     {
-      "label":"Localize",
+      "label":"Muokkaa",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"\"Koko ruutu\"-painikkeen teksti",
+          "default":"Koko ruutu"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"\"Poistu koko ruudun tilasta\"-painikkeen teksti",
+          "default":"Poistu kokoruudun tilasta"
         }
       ]
     },
