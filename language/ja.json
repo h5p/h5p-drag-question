@@ -249,23 +249,23 @@
     },
     {
       "label":"ドラッグ要素の接頭語",
-      "default":"ドラッグ {num} / {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"ドラッグ要素の接尾語",
-      "default":"ドロップゾーンに配置 {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"ドロップゾーンの接頭語",
-      "default":"ドロップゾーン {num} / {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"ドロップゾーン選択ラベル無し",
-      "default":"ドロップゾーン無し"
+      "default":"No dropzone."
     },
     {
       "label":"ヒント表示ボタンのラベル",
-      "default":"ヒントを表示"
+      "default":"Show tip."
     },
     {
       "label":"利用可能なヒントのラベル",
