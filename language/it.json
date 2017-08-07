@@ -1,136 +1,147 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Pulsante Controlla risposta",
-      "englishDefault": "Check",
-      "default": "Check"
+      "label":"Pulsante Controlla risposta",
+      "default":"Verifica"
     },
     {
-      "label": "Pulsante Riprova",
-      "englishDefault": "Retry",
-      "default": "Retry"
+      "label":"Pulsante Riprova",
+      "default":"Riprova"
     },
     {
-      "label": "Testo dell'etichetta Soluzione corretta",
-      "englishDefault": "Show solution",
-      "default": "Show solution"
+      "label":"Testo dell'etichetta Soluzione corretta",
+      "default":"Mostra la soluzione"
     },
     {
-      "englishLabel": "Score explanation text",
-      "label": "Score explanation text",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Score explanation text",
+      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
-      "fields": [
+      "fields":[
         {
-          "label": "Impostazioni",
-          "fields": [
+          "label":"Impostazioni",
+          "fields":[
             {
-              "label": "The title of this question",
-              "englishDefault": "Drag and Drop",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label":"The title of this question",
+              "default":"Drag and Drop",
+              "description":"Used in summaries, statistics etc."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Show Title",
+              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label": "Immagine di sfondo",
-              "description": "Opzionale. Selezionare un'immagine da utilizzare come sfondo per il vostro compito drag and drop."
+              "label":"Immagine di sfondo",
+              "description":"Opzionale. Selezionare un'immagine da utilizzare come sfondo per il vostro compito drag and drop."
             },
             {
-              "label": "Dimensione attività",
-              "description": "Specifare quanto larga (in px) l'area di gioco dovrebbe essere."
-            },
-            {
-              "label": "Drop Zone Highlighting",
-              "description": "Choose when to highlight drop zones.",
-              "options": [
+              "label":"Dimensione attività",
+              "description":"Specifare quanto larga (in px) l'area di gioco dovrebbe essere.",
+              "default":{
+
+              },
+              "fields":[
                 {
-                  "label": "When dragging"
+
                 },
                 {
-                  "label": "Always"
-                },
-                {
-                  "label": "Never"
+
                 }
               ]
-            },
-            {
-              "label": "Spacing for Auto-Align (in px)"
             }
           ]
         },
         {
-          "label": "Attività",
-          "description": "Iniziate mettendo le zone di trascinamento.<br/>Successivamente, posizionate gli elementi trascinabili e mettete la spunta sulle relative aree di rilascio.<br/>Infine, modificate nuovamente la zona di rilascio e mettete la spunta sulle risposte corrette.",
-          "fields": [
+          "label":"Attività",
+          "description":"Iniziate mettendo le zone di trascinamento.<br/>Successivamente, posizionate gli elementi trascinabili e mettete la spunta sulle relative aree di rilascio.<br/>Infine, modificate nuovamente la zona di rilascio e mettete la spunta sulle risposte corrette.",
+          "fields":[
             {
-              "label": "Elementi",
-              "entity": "elemento",
-              "field": {
-                "label": "Elemento",
-                "fields": [
+              "label":"Elementi",
+              "entity":"elemento",
+              "field":{
+                "label":"Elemento",
+                "fields":[
                   {
-                    "description": "Scegliere il tipo di contenuto che si desidera aggiungere."
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Selezionare zona di rilascio"
+                    "description":"Scegliere il tipo di contenuto che si desidera aggiungere."
                   },
                   {
-                    "label": "Opacità Sfondo"
+
                   },
                   {
-                    "label": "Numero infinito di istanze di elementi",
-                    "description": "Clonare questo elemento in modo che possa essere trascinato su più zone di trascinamento."
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"Selezionare zona di rilascio"
+                  },
+                  {
+                    "label":"Opacità Sfondo"
+                  },
+                  {
+                    "label":"Numero infinito di istanze di elementi",
+                    "description":"Clonare questo elemento in modo che possa essere trascinato su più zone di trascinamento."
                   }
                 ]
               }
             },
             {
-              "label": "Zone di rilascio",
-              "entity": "Zona di rilascio",
-              "field": {
-                "label": "Zona di rilascio",
-                "fields": [
+              "label":"Zone di rilascio",
+              "entity":"Zona di rilascio",
+              "field":{
+                "label":"Zona di rilascio",
+                "fields":[
                   {
-                    "label": "Etichetta"
+                    "label":"Etichetta"
                   },
                   {
-                    "label": "Mostra etichetta"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Selezionare gli elementi corretti"
+                    "label":"Mostra etichetta"
                   },
                   {
-                    "label": "Opacità Sfondo"
+
                   },
                   {
-                    "label": "Suggerimento",
-                    "fields": [
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"Selezionare gli elementi corretti"
+                  },
+                  {
+                    "label":"Opacità Sfondo"
+                  },
+                  {
+                    "label":"Suggerimento",
+                    "fields":[
                       {
-                        "label": "Testo di suggerimento"
+                        "label":"Testo del suggerimento"
+                      },
+                      {
+                        "label":"Message displayed on correct match",
+                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label":"Message displayed on incorrect match",
+                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
                   {
-                    "label": "Questa zona di rilascio può contenere un solo elemento",
-                    "description": "Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
+                    "label":"Questa zona di rilascio può contenere un solo elemento",
+                    "description":"Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label":"Enable Auto-Align",
+                    "description":"Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -140,29 +151,28 @@
       ]
     },
     {
-      "label": "Opacità Sfondo per elementi trascinabili",
-      "description": "Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
-    },
-    {
-      "englishLabel": "Overall Feedback",
-      "fields": [
+      "label":"Opacità Sfondo per elementi trascinabili",
+      "fields":[
         {
-          "widgets": [
+          "widgets":[
             {
-              "englishLabel": "Default"
+              "label":"Predefinito"
             }
           ],
-          "englishLabel": "Define custom feedback for any score range",
-          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
-          "field": {
-            "fields": [
+          "label":"Define custom feedback for any score range",
+          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "entity":"range",
+          "field":{
+            "fields":[
               {
-                "englishLabel": "Score Range"
+                "label":"Score Range"
               },
-              {},
               {
-                "englishLabel": "Feedback for defined score range",
-                "englishPlaceholder": "Fill in the feedback"
+
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
               }
             ]
           }
@@ -170,67 +180,108 @@
       ]
     },
     {
-      "englishLabel": "Behavioural settings.",
-      "label": "Impostazioni esecuzione",
-      "description": "Queste opzioni consentono di controllare l'andamento del compito.",
-      "fields": [
+      "label":"Impostazioni esecuzione",
+      "description":"Queste opzioni consentono di controllare l'andamento del compito.",
+      "fields":[
         {
-          "label": "Abilita \"Riprova\""
+          "label":"Abilita \"Riprova\""
         },
         {
-          "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
+          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
         },
         {
-          "label": "Assegna un punto per il completamento del compito",
-          "description": "Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
+          "label":"Assegna un punto per il completamento del compito",
+          "description":"Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones."
+          "label":"Apply penalties",
+          "description":"Apply penalties for elements dropped in the wrong drop zones."
         },
         {
-          "label": "Enable score explanation"
+          "label":"Enable score explanation",
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label":"Opacità Sfondo per elementi trascinabili",
+          "description":"Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
+        },
+        {
+          "label":"Drop Zone Highlighting",
+          "description":"Choose when to highlight drop zones.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"When dragging"
+            },
+            {
+              "label":"Always"
+            },
+            {
+              "label":"Never"
+            }
+          ]
+        },
+        {
+          "label":"Spacing for Auto-Align (in px)"
+        },
+        {
+          "label":"Enable FullScreen",
+          "description":"Check this option to enable the full screen button."
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
     {
-      "label": "Localize",
-      "fields": [
+      "label":"Localizzazione",
+      "fields":[
         {
-          "label": "Fullscreen label",
-          "englishDefault": "Fullscreen",
-          "default": "Fullscreen"
+          "label":"Etichetta Schermo intero",
+          "default":"Fullscreen"
         },
         {
-          "label": "Exit fullscreen label",
-          "englishDefault": "Exit fullscreen",
-          "default": "Exit fullscreen"
+          "label":"Esci da Schermo intero",
+          "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "englishDefault": "Grabbable {num} of {total}"
+      "label":"Localize",
+      "default":"Grabbable {num} of {total}"
     },
     {
-      "englishDefault": "Placed in dropzone {num}"
+      "label":"Grabbable suffix",
+      "default":"Placed in dropzone {num}"
     },
     {
-      "englishDefault": "Dropzone {num} of {total}"
+      "label":"Dropzone prefix",
+      "default":"Dropzone {num} of {total}"
     },
     {
-      "englishDefault": "No dropzone"
+      "label":"No dropzone selection label",
+      "default":"No dropzone"
     },
     {
-      "englishDefault": "Show tip"
+      "label":"Label for show tip button",
+      "default":"Visualizza suggerimento"
     },
     {
-      "englishDefault": "Tip available"
+      "label":"Label for tip available",
+      "default":"Suggerimento disponibile"
     },
     {
-      "englishDefault": "Correct answer"
+      "label":"Label for correct answer",
+      "default":"Risposta corretta"
     },
     {
-      "englishDefault": "Wrong answer"
+      "label":"Label for incorrect answer",
+      "default":"Risposta sbagliata"
+    },
+    {
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Feedback"
     }
   ]
 }

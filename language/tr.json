@@ -1,129 +1,129 @@
 {
   "semantics":[
     {
-      "label":"Provjeri dugme odgovora",
-      "default":"Provjeri"
+      "label":"Check answer button",
+      "default":"Kontrol et"
     },
     {
-      "label":"Dugme ponovnog pokušaja",
-      "default":"Ponovi"
+      "label":"Retry button",
+      "default":"Yeniden dene"
     },
     {
-      "label":"Tekst oznake ispravnog rješenja",
-      "default":"Prikaži rješenje"
+      "label":"Correct solution label text",
+      "default":"Çözümü göster"
     },
     {
-      "label":"Tekst opisa rezultata",
-      "default":"Ispravan odgovor daje +1 bod. Pogrešan odgovor daje -1 bod. Najmanji mogući rezultat je 0."
+      "label":"Score explanation text",
+      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields":[
         {
-          "label":"Podešavanja",
+          "label":"Settings",
           "fields":[
             {
-              "label":"Naziv ovog pitanja",
-              "default":"Uzmi i spusti",
-              "description":"Koristi se u sažecima, statistikama, itd.."
+              "label":"The title of this question",
+              "default":"Drag and Drop",
+              "description":"Used in summaries, statistics etc."
             },
             {
-              "label":"Pokaži naziv",
-              "description":"Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
+              "label":"Show Title",
+              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label":"Slika pozadine",
-              "description":"Opcionalno. Odaberi neku sliku koja će služiti kao pozadina za zadatak 'Uzmi i spusti'."
+              "label":"Background image",
+              "description":"Optional. Select an image to use as background for your drag and drop task."
             },
             {
-              "label":"Dimenzije zadatka",
-              "description":"Odredi koliko veliki prostor (u pixelima) treba biti",
+              "label":"Task size",
+              "description":"Specify how large (in px) the play area should be.",
               "default":{
-
+                
               },
               "fields":[
                 {
-
+                  
                 },
                 {
-
+                  
                 }
               ]
             }
           ]
         },
         {
-          "label":"Zadatak",
-          "description":"Počni sa određivanjem zona za spustanje.<br/>Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br/>Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
+          "label":"Task",
+          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields":[
             {
-              "label":"Elementi",
+              "label":"Elements",
               "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
                   {
-                    "description":"Odaberi vrstu sadržaja koju želiš dodati."
+                    "description":"Choose the type of content you would like to add."
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-                    "label":"Označi zone za spustanje"
+                    "label":"Select drop zones"
                   },
                   {
-                    "label":"Pozadinska zamućenost"
+                    "label":"Background Opacity"
                   },
                   {
-                    "label":"Neograničen broj elemenata",
-                    "description":"Klonira ovaj element kako bi mogao biti spušten na višestruke zone."
+                    "label":"Infinite number of element instances",
+                    "description":"Clones this element so that it can be dragged to multiple drop zones."
                   }
                 ]
               }
             },
             {
-              "label":"Zone za spustanje",
-              "entity":"Zona za spustanje",
+              "label":"Drop Zones",
+              "entity":"Drop Zone",
               "field":{
-                "label":"Zona za spustanje",
+                "label":"Drop Zone",
                 "fields":[
                   {
-                    "label":"Oznaka"
+                    "label":"Label"
                   },
                   {
-                    "label":"Pokaži oznaku"
+                    "label":"Show label"
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-
+                    
                   },
                   {
-                    "label":"Označi ispravne elemente"
+                    "label":"Select correct elements"
                   },
                   {
-                    "label":"Pozadinska zamućenost"
+                    "label":"Background Opacity"
                   },
                   {
-                    "label":"Savjet",
+                    "label":"İpuçları ve geri bildirim",
                     "fields":[
                       {
-                        "label":"Tekst savjeta"
+                        "label":"İpucu metni"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -136,12 +136,12 @@
                     ]
                   },
                   {
-                    "label":"Ova zona za spustanje može sadržavati samo jedan element",
-                    "description":"Budi siguran da ima samo jedan tačan odgovor za ovu zonu za spustanje"
+                    "label":"This drop zone can only contain one element",
+                    "description":"Make sure there is only one correct answer for this dropzone"
                   },
                   {
-                    "label":"Omogući automatsko poravnanje",
-                    "description":"Automatsko poravnanje za sve u ovoj zoni."
+                    "label":"Enable Auto-Align",
+                    "description":"Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -151,12 +151,12 @@
       ]
     },
     {
-      "label":"Pozadinska zamućenost za elemente za uzimanje",
+      "label":"Overall Feedback",
       "fields":[
         {
           "widgets":[
             {
-              "label":"Standard"
+              "label":"Varsayılan"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -168,7 +168,7 @@
                 "label":"Score Range"
               },
               {
-
+                
               },
               {
                 "label":"Feedback for defined score range",
@@ -180,21 +180,21 @@
       ]
     },
     {
-      "label":"Interaktionseinstellungen",
-      "description":"Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
+      "label":"Davranış ayarları",
+      "description":"Bu seçenekler aktivitenin çalışma şeklini denetlemenize izin verir.",
       "fields":[
         {
-          "label":"Omogući \"Ponovi\" dugme"
+          "label":"Enable \"Retry\""
         },
         {
-          "label":"Daje jedan bod za cijeli zadatak"
+          "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Omogući objašnjenje rezultata",
+          "label":"Bütün aktivite için bir puan verin",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "label":"Zahtjeva korisničko učešće prije nego rezultat bude vidljiv",
+          "label":"Apply penalties",
           "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
@@ -202,31 +202,31 @@
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"Pozadinska zamućenost za elemente za uzimanje",
-          "description":"Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
+          "label":"Background opacity for draggables",
+          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
         },
         {
-          "label":"Naglašavanje zone za spustanje",
-          "description":"Odaberi kada će se zona za spustanje naglasiti.",
+          "label":"Drop Zone Highlighting",
+          "description":"Choose when to highlight drop zones.",
           "default":"dragging",
           "options":[
             {
-              "label":"Kada se uzima"
+              "label":"When dragging"
             },
             {
-              "label":"Uvijek"
+              "label":"Always"
             },
             {
-              "label":"Nikad"
+              "label":"Never"
             }
           ]
         },
         {
-          "label":"Određivanje prostora za automatsko poravnanje (u pixelima)"
+          "label":"Spacing for Auto-Align (in px)"
         },
         {
-          "label":"Omogući cijeli ekran",
-          "description":"Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
+          "label":"Enable FullScreen",
+          "description":"Check this option to enable the full screen button."
         },
         {
           "label":"Show score points",
@@ -235,20 +235,20 @@
       ]
     },
     {
-      "label":"Lokaliziraj",
+      "label":"Localize",
       "fields":[
         {
-          "label":"Oznaka za cijeli ekran",
-          "default":"Cijeli ekran"
+          "label":"Fullscreen label",
+          "default":"Fullscreen"
         },
         {
-          "label":"Oznaka za izlazak iz cijelog ekrana",
-          "default":"Izađi iz cijelog ekrana"
+          "label":"Exit fullscreen label",
+          "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "label":"Lokaliziraj",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}"
     },
     {
@@ -265,19 +265,19 @@
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"İpucu göster"
     },
     {
       "label":"Label for tip available",
-      "default":"Savjet dostupan"
+      "default":"Mevcut ipucu"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Doğru cevap"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Yanlış cevap"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",

@@ -1,141 +1,147 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Bouton \"Vérifier\"",
-      "englishDefault": "Check",
-      "default": "Vérifier"
+      "label":"Bouton \"Vérifier\"",
+      "default":"Vérifier"
     },
     {
-      "label": "Bouton \"Recommencer\"",
-      "englishDefault": "Retry",
-      "default": "Recommencer"
+      "label":"Bouton \"Recommencer\"",
+      "default":"Recommencer"
     },
     {
-      "label": "Bouton \"Voir la correction\"",
-      "englishDefault": "Show solution",
-      "default": "Voir la correction"
+      "label":"Bouton \"Voir la correction\"",
+      "default":"Voir la solution"
     },
     {
-      "englishLabel": "Score explanation text",
-      "label": "Texte d'explication du score",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
-      "default": "Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
+      "label":"Texte d'explication du score",
+      "default":"Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
     },
     {
-      "fields": [
+      "fields":[
         {
-          "label": "Réglages",
-          "fields": [
+          "label":"Réglages",
+          "fields":[
             {
-              "label": "Titre de cette question",
-              "englishDefault": "Drag and Drop",
-              "default": "Glisser-déposer",
-              "description": "Utilisé dans les résumés, statistiques, etc."
+              "label":"Titre de la question",
+              "default":"Glisser-déposer",
+              "description":"Utilisée dans les résumés, statistiques, etc."
             },
             {
-              "label": "Afficher le titre",
-              "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
+              "label":"Afficher le titre",
+              "description":"Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
             },
             {
-              "label": "Image d'arrière-plan",
-              "description": "Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
+              "label":"Image d'arrière-plan",
+              "description":"Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
             },
             {
-              "label": "Taille de la zone de l'activité",
-              "description": "Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité."
-            },
-            {
-              "label": "Mise en évidence de la zone de dépôt",
-              "default": "dragging",
-              "description": "Choisissez quand mettre en évidence la zone de dépôt.",
-              "options": [
+              "label":"Taille de la zone de l'activité",
+              "description":"Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité.",
+              "default":{
+
+              },
+              "fields":[
                 {
-                  "label": "Lors du glisser-déposer"
+
                 },
                 {
-                  "label": "Toujours"
-                },
-                {
-                  "label": "Jamais"
+
                 }
               ]
-            },
-            {
-              "label": "Marge pour l'alignement automatique (en pixels)"
-            },
-            {
-              "label": "Activer le bouton Plein écran",
-              "description": "Cochez cette option pour autoriser le mode Plein écran."
             }
           ]
         },
         {
-          "label": "Éléments de l'activité",
-          "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
-          "fields": [
+          "label":"Éléments de l'activité",
+          "description":"Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
+          "fields":[
             {
-              "label": "Eléments",
-              "entity": "élément",
-              "field": {
-                "label": "Elément",
-                "fields": [
+              "label":"Eléments",
+              "entity":"élément",
+              "field":{
+                "label":"Elément",
+                "fields":[
                   {
-                    "description": "Sélectionnez le type de contenu que vous souhaitez ajouter."
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Sélectionnez les zones de dépôt"
+                    "description":"Sélectionnez le type de contenu que vous souhaitez ajouter."
                   },
                   {
-                    "label": "Opacité du fond"
+
                   },
                   {
-                    "label": "Nombre illimité d'instances pour cet élément",
-                    "description": "Cloner cet élément de sorte qu'il puisse être déposé dans plusieurs zones."
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"Sélectionnez les zones de dépôt"
+                  },
+                  {
+                    "label":"Opacité"
+                  },
+                  {
+                    "label":"Nombre illimité d'instances pour cet élément",
+                    "description":"Cloner cet élément de sorte qu'il puisse être déposé dans plusieurs zones."
                   }
                 ]
               }
             },
             {
-              "label": "Zones de dépôt",
-              "entity": "Zone de dépôt",
-              "field": {
-                "label": "Zone de dépôt",
-                "fields": [
+              "label":"Zones de dépôt",
+              "entity":"Zone de dépôt",
+              "field":{
+                "label":"Zone de dépôt",
+                "fields":[
                   {
-                    "label": "Etiquette"
+                    "label":"Etiquette"
                   },
                   {
-                    "label": "Afficher l'étiquette"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "Sélectionnez les éléments qui devront être correctement placés dans cette zone"
+                    "label":"Afficher l'étiquette"
                   },
                   {
-                    "label": "Opacité"
+
                   },
                   {
-                    "label": "Indice",
-                    "fields": [
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"Sélectionnez les éléments qui devront être correctement placés dans cette zone"
+                  },
+                  {
+                    "label":"Opacité"
+                  },
+                  {
+                    "label":"Aides et commentaires",
+                    "fields":[
                       {
-                        "label": "Texte de l'indice"
+                        "label":"Indice"
+                      },
+                      {
+                        "label":"Message displayed on correct match",
+                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label":"Message displayed on incorrect match",
+                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
                   {
-                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément",
-                    "description": "Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone"
+                    "label":"Cette zone de dépôt ne peut contenir qu'un seul élément",
+                    "description":"Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone"
                   },
                   {
-                    "label": "Activer l'alignement automatique des éléments déplacés",
-                    "description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
+                    "label":"Activer l'alignement automatique des éléments déplacés",
+                    "description":"Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
                   }
                 ]
               }
@@ -145,29 +151,28 @@
       ]
     },
     {
-      "label": "Opacité des étiquettes",
-      "description": "Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
-    },
-    {
-      "englishLabel": "Overall Feedback",
-      "fields": [
+      "label":"Opacité des étiquettes",
+      "fields":[
         {
-          "widgets": [
+          "widgets":[
             {
-              "englishLabel": "Default"
+              "label":"Par défaut"
             }
           ],
-          "englishLabel": "Define custom feedback for any score range",
-          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
-          "field": {
-            "fields": [
+          "label":"Define custom feedback for any score range",
+          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "entity":"range",
+          "field":{
+            "fields":[
               {
-                "englishLabel": "Score Range"
+                "label":"Score Range"
               },
-              {},
               {
-                "englishLabel": "Feedback for defined score range",
-                "englishPlaceholder": "Fill in the feedback"
+
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
               }
             ]
           }
@@ -175,67 +180,108 @@
       ]
     },
     {
-      "englishLabel": "Behavioural settings.",
-      "label": "Options générales.",
-      "description": "Cette option vous permet de paramétrer le déroulement de l'exercice.",
-      "fields": [
+      "label":"Options générales.",
+      "description":"Ces options vous permettent de contrôler le déroulement de l'activité.",
+      "fields":[
         {
-          "label": "Activer le bouton \"Recommencer\""
+          "label":"Activer le bouton \"Recommencer\""
         },
         {
-          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
         },
         {
-          "label": "Donner un point pour l'ensemble de l'exercice",
-          "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
+          "label":"Donner un point par activité",
+          "description":"Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
         },
         {
-          "label": "Appliquer des pénalités",
-          "description": "Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
+          "label":"Appliquer des pénalités",
+          "description":"Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
         },
         {
-          "label": "Activer les explications du score"
+          "label":"Activer les explications du score",
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label":"Opacité des étiquettes",
+          "description":"Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
+        },
+        {
+          "label":"Mise en évidence de la zone de dépôt",
+          "description":"Choisissez quand mettre en évidence la zone de dépôt.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"Lors du glisser-déposer"
+            },
+            {
+              "label":"Toujours"
+            },
+            {
+              "label":"Jamais"
+            }
+          ]
+        },
+        {
+          "label":"Marge pour l'alignement automatique (en pixels)"
+        },
+        {
+          "label":"Activer le bouton Plein écran",
+          "description":"Cochez cette option pour autoriser le mode Plein écran."
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
     {
-      "label": "Traductions",
-      "fields": [
+      "label":"Traductions",
+      "fields":[
         {
-          "label": "Texte du titre pour le bouton Plein écran",
-          "englishDefault": "Fullscreen",
-          "default": "Plein écran"
+          "label":"Texte du titre pour le bouton Plein écran",
+          "default":"Plein écran"
         },
         {
-          "label": "Texte du titre pour le bouton Quitter le plein écran",
-          "englishDefault": "Exit fullscreen",
-          "default": "Quitter le plein écran"
+          "label":"Texte du titre pour le bouton Quitter le plein écran",
+          "default":"Quitter le plein écran"
         }
       ]
     },
     {
-      "englishDefault": "Grabbable {num} of {total}"
+      "label":"Traductions",
+      "default":"Grabbable {num} of {total}"
     },
     {
-      "englishDefault": "Placed in dropzone {num}"
+      "label":"Grabbable suffix",
+      "default":"Placed in dropzone {num}"
     },
     {
-      "englishDefault": "Dropzone {num} of {total}"
+      "label":"Dropzone prefix",
+      "default":"Dropzone {num} of {total}"
     },
     {
-      "englishDefault": "No dropzone"
+      "label":"No dropzone selection label",
+      "default":"No dropzone"
     },
     {
-      "englishDefault": "Show tip"
+      "label":"Label for show tip button",
+      "default":"Montrer l'indice"
     },
     {
-      "englishDefault": "Tip available"
+      "label":"Label for tip available",
+      "default":"Indice disponible"
     },
     {
-      "englishDefault": "Correct answer"
+      "label":"Label for correct answer",
+      "default":"Bonne réponse"
     },
     {
-      "englishDefault": "Wrong answer"
+      "label":"Label for incorrect answer",
+      "default":"Réponse incorrecte"
+    },
+    {
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Commentaire de retour"
     }
   ]
 }

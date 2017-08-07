@@ -1,136 +1,147 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "تحقق زر الإجابة",
-      "englishDefault": "Check",
-      "default": "Check"
+      "label":"تحقق زر الإجابة",
+      "default":"Check"
     },
     {
-      "label": "زر إعادة المحاولة",
-      "englishDefault": "Retry",
-      "default": "Retry"
+      "label":"زر إعادة المحاولة",
+      "default":"إعادة المحاولة"
     },
     {
-      "label": "تسمية الحل الصحيح النص",
-      "englishDefault": "Show solution",
-      "default": "Show solution"
+      "label":"تسمية الحل الصحيح النص",
+      "default":"مشاهدة الحل"
     },
     {
-      "englishLabel": "Score explanation text",
-      "label": "Score explanation text",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Score explanation text",
+      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
-      "fields": [
+      "fields":[
         {
-          "label": "الإعدادات",
-          "fields": [
+          "label":"الإعدادات",
+          "fields":[
             {
-              "label": "The title of this question",
-              "englishDefault": "Drag and Drop",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label":"The title of this question",
+              "default":"Drag and Drop",
+              "description":"Used in summaries, statistics etc."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Show Title",
+              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label": "صورة الخلفية",
-              "description": "اختياري. اختر الصورة التي تريد استخدامها كخلفية لنشاط اسحب والقي"
+              "label":"صورة الخلفية",
+              "description":"اختياري. اختر الصورة التي تريد استخدامها كخلفية لنشاط اسحب والقي"
             },
             {
-              "label": "حجم النشاط",
-              "description": "حدد حجم النشاط بالبيكسل في منطقة اللعبة"
-            },
-            {
-              "label": "Drop Zone Highlighting",
-              "description": "Choose when to highlight drop zones.",
-              "options": [
+              "label":"حجم النشاط",
+              "description":"حدد حجم النشاط بالبيكسل في منطقة اللعبة",
+              "default":{
+
+              },
+              "fields":[
                 {
-                  "label": "When dragging"
+
                 },
                 {
-                  "label": "Always"
-                },
-                {
-                  "label": "Never"
+
                 }
               ]
-            },
-            {
-              "label": "Spacing for Auto-Align (in px)"
             }
           ]
         },
         {
-          "label": "النشاط",
-          "description": "ابدأ بوضع مناطق إسقاط العناصر الكلمة او الصورة.بعد ذالك قم بوضع الكلمة او الصروة ثم تحقق من اختيار المناطق المناسبة. اخيرا، تحرر من منطقة اسقاط العناصر الكلمة او الصورة مرة أخرى وتحقق من ان الإجابات صحيحة",
-          "fields": [
+          "label":"النشاط",
+          "description":"ابدأ بوضع مناطق إسقاط العناصر الكلمة او الصورة.بعد ذالك قم بوضع الكلمة او الصروة ثم تحقق من اختيار المناطق المناسبة. اخيرا، تحرر من منطقة اسقاط العناصر الكلمة او الصورة مرة أخرى وتحقق من ان الإجابات صحيحة",
+          "fields":[
             {
-              "label": "العناصر",
-              "entity": "العنصر",
-              "field": {
-                "label": "العنصر",
-                "fields": [
+              "label":"العناصر",
+              "entity":"العنصر",
+              "field":{
+                "label":"العنصر",
+                "fields":[
                   {
-                    "description": "اختيار نوع المحتوى الذي تريد إضافته"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "اختر مكان الاسقاط"
+                    "description":"اختيار نوع المحتوى الذي تريد إضافته"
                   },
                   {
-                    "label": "شفافية الخلفية"
+
                   },
                   {
-                    "label": "عدد غير محدود من حالات العنصر",
-                    "description": "استنساخ هذا العنصر بحيث يمكن سحبها إلى مناطق متعددة الاسقاط"
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"اختر مكان الاسقاط"
+                  },
+                  {
+                    "label":"شفافية الخلفية"
+                  },
+                  {
+                    "label":"عدد غير محدود من حالات العنصر",
+                    "description":"استنساخ هذا العنصر بحيث يمكن سحبها إلى مناطق متعددة الاسقاط"
                   }
                 ]
               }
             },
             {
-              "label": "مناطق الاسقاط",
-              "entity": "منطقة الاسقاط",
-              "field": {
-                "label": "منطقة الاسقاط",
-                "fields": [
+              "label":"مناطق الاسقاط",
+              "entity":"منطقة الاسقاط",
+              "field":{
+                "label":"منطقة الاسقاط",
+                "fields":[
                   {
-                    "label": "التسمية"
+                    "label":"التسمية"
                   },
                   {
-                    "label": "مشاهدة التسمية"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "label": "تحديد العناصر الصحيحة"
+                    "label":"مشاهدة التسمية"
                   },
                   {
-                    "label": "شفافية الخلفية"
+
                   },
                   {
-                    "label": "تلميح",
-                    "fields": [
+
+                  },
+                  {
+
+                  },
+                  {
+
+                  },
+                  {
+                    "label":"تحديد العناصر الصحيحة"
+                  },
+                  {
+                    "label":"شفافية الخلفية"
+                  },
+                  {
+                    "label":"تلميح",
+                    "fields":[
                       {
-                        "label": "نص التلميح"
+                        "label":"نص التلميح"
+                      },
+                      {
+                        "label":"Message displayed on correct match",
+                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label":"Message displayed on incorrect match",
+                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
                   {
-                    "label": "ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
-                    "description": "تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "label":"ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
+                    "description":"تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label":"Enable Auto-Align",
+                    "description":"Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -140,29 +151,28 @@
       ]
     },
     {
-      "label": "شفافية خلفية العناصر",
-      "description": "إذا تم تعيين هذا المجال، فإنه سيتم تجاوز شفافية جميع العناصر قابلة للسحب. هذا الرقم ينبغي أن يكون رقم بين ٠ و ١٠٠، حيث ٠ تعني الشفافية الكاملة و ١٠٠ يعني عدم وجود الشفافية"
-    },
-    {
-      "englishLabel": "Overall Feedback",
-      "fields": [
+      "label":"شفافية خلفية العناصر",
+      "fields":[
         {
-          "widgets": [
+          "widgets":[
             {
-              "englishLabel": "Default"
+              "label":"الافتراضي"
             }
           ],
-          "englishLabel": "Define custom feedback for any score range",
-          "englishDescription": "Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
-          "field": {
-            "fields": [
+          "label":"Define custom feedback for any score range",
+          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "entity":"range",
+          "field":{
+            "fields":[
               {
-                "englishLabel": "Score Range"
+                "label":"Score Range"
               },
-              {},
               {
-                "englishLabel": "Feedback for defined score range",
-                "englishPlaceholder": "Fill in the feedback"
+
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
               }
             ]
           }
@@ -170,67 +180,108 @@
       ]
     },
     {
-      "englishLabel": "Behavioural settings.",
-      "label": "حساسية الاجابة",
-      "description": "يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب",
-      "fields": [
+      "label":"إعدادت النشاط",
+      "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب",
+      "fields":[
         {
-          "label": "تفعيل \"إعادة المحاولة \""
+          "label":"تمكين زر \"إعادة المحاولة\""
         },
         {
-          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+          "label":"تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
         },
         {
-          "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
-          "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
+          "label":"إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
+          "description":"تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones."
+          "label":"Apply penalties",
+          "description":"Apply penalties for elements dropped in the wrong drop zones."
         },
         {
-          "label": "Enable score explanation"
+          "label":"Enable score explanation",
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+        },
+        {
+          "label":"شفافية خلفية العناصر",
+          "description":"إذا تم تعيين هذا المجال، فإنه سيتم تجاوز شفافية جميع العناصر قابلة للسحب. هذا الرقم ينبغي أن يكون رقم بين ٠ و ١٠٠، حيث ٠ تعني الشفافية الكاملة و ١٠٠ يعني عدم وجود الشفافية"
+        },
+        {
+          "label":"Drop Zone Highlighting",
+          "description":"Choose when to highlight drop zones.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"When dragging"
+            },
+            {
+              "label":"Always"
+            },
+            {
+              "label":"Never"
+            }
+          ]
+        },
+        {
+          "label":"Spacing for Auto-Align (in px)"
+        },
+        {
+          "label":"Enable FullScreen",
+          "description":"Check this option to enable the full screen button."
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
     {
-      "label": "Localize",
-      "fields": [
+      "label":"تحديد الموقع",
+      "fields":[
         {
-          "label": "Fullscreen label",
-          "englishDefault": "Fullscreen",
-          "default": "Fullscreen"
+          "label":"تسمية لملء الشاشة",
+          "default":"Fullscreen"
         },
         {
-          "label": "Exit fullscreen label",
-          "englishDefault": "Exit fullscreen",
-          "default": "Exit fullscreen"
+          "label":"تسمية خروج ملء الشاشة",
+          "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "englishDefault": "Grabbable {num} of {total}"
+      "label":"Localize",
+      "default":"Grabbable {num} of {total}"
     },
     {
-      "englishDefault": "Placed in dropzone {num}"
+      "label":"Grabbable suffix",
+      "default":"Placed in dropzone {num}"
     },
     {
-      "englishDefault": "Dropzone {num} of {total}"
+      "label":"Dropzone prefix",
+      "default":"Dropzone {num} of {total}"
     },
     {
-      "englishDefault": "No dropzone"
+      "label":"No dropzone selection label",
+      "default":"No dropzone"
     },
     {
-      "englishDefault": "Show tip"
+      "label":"Label for show tip button",
+      "default":"Show tip"
     },
     {
-      "englishDefault": "Tip available"
+      "label":"Label for tip available",
+      "default":"Tip available"
     },
     {
-      "englishDefault": "Correct answer"
+      "label":"Label for correct answer",
+      "default":"Correct answer"
     },
     {
-      "englishDefault": "Wrong answer"
+      "label":"Label for incorrect answer",
+      "default":"Wrong answer"
+    },
+    {
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Feedback"
     }
   ]
 }
