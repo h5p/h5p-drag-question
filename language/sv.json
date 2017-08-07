@@ -6,7 +6,7 @@
     },
     {
       "label":"Retry button",
-      "default":"Retry"
+      "default":"Försök på nytt"
     },
     {
       "label":"Correct solution label text",
