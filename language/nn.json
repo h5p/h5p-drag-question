@@ -249,23 +249,23 @@
     },
     {
       "label":"Draobjektprefiks",
-      "default":"Draobjekt {num} av {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"Draobjektsuffiks",
-      "default":"Plassert i slippsone {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"Slippsoneprefiks",
-      "default":"Slippsone {num} av {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"Ingen slippsone valg-merkelapp",
-      "default":"Ingen slippsone"
+      "default":"No dropzone."
     },
     {
       "label":"Merkelapp for vis-tips-knappen",
-      "default":"Vis tips"
+      "default":"Show tip."
     },
     {
       "label":"Merkelapp for tips tilgjengeleg",
