@@ -127,11 +127,11 @@
                       },
                       {
                         "label":"Messaggio visualizzato su corrispondenza corretta",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "description":"Su \"Verifica\", un messaggio sarà visualizzato sotto il compito in caso di rilascio corretto"
                       },
                       {
-                        "label":"Message displayed on incorrect match",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "label":"Messaggio visualizzato su corrispondenza non corretta",
+                        "description":"Su \"Verifica\", sarà visualizzato un messaggio sotto il compito se la corrispondenza non è corretta"
                       }
                     ]
                   },
@@ -140,8 +140,8 @@
                     "description":"Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
-                    "label":"Enable Auto-Align",
-                    "description":"Will auto-align all draggables dropped in this zone."
+                    "label":"Abilita auto-allineamento",
+                    "description":"Auto-allineerà tutti gli elementi trascinabili rilasciati in quest'area"
                   }
                 ]
               }
@@ -159,8 +159,8 @@
               "label":"Predefinito"
             }
           ],
-          "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "label":"Definisci un feedback personalizzato per ogni intervallo di punteggio",
+          "description":"Esempio: 0-20%, cattivo punteggio; 21-91% punteggio media; 91-100% ottimo punteggio! Variabili disponibili: @score e @total. Esempio: 'Hai ottenuto @score di @total punti possibili'",
           "entity":"range",
           "field":{
             "fields":[
@@ -276,11 +276,11 @@
       "default":"Risposta corretta"
     },
     {
-      "label":"Label for incorrect answer",
+      "label":"Etichetta per risposta errata",
       "default":"Risposta sbagliata"
     },
     {
-      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "label":"Intestazione di pannello contenente i feedback per risposte corrette/errate",
       "default":"Feedback"
     }
   ]
