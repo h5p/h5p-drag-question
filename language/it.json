@@ -13,8 +13,8 @@
       "default":"Mostra la soluzione"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Testo di spiegazione del punteggio",
+      "default":"Le risposte corrette danno 1 punto. Le risposte sbagliate tolgono 1 punto. Il punteggio più basso possibile è 0."
     },
     {
       "fields":[
@@ -22,12 +22,12 @@
           "label":"Impostazioni",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "label":"Il titolo di questa domanda",
+              "default":"Trascina e rilascia",
+              "description":"Usato in riepiloghi, statistiche ecc."
             },
             {
-              "label":"Show Title",
+              "label":"Mostra Titolo",
               "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
