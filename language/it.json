@@ -126,7 +126,7 @@
                         "label":"Testo del suggerimento"
                       },
                       {
-                        "label":"Message displayed on correct match",
+                        "label":"Messaggio visualizzato su corrispondenza corretta",
                         "description":"Message will appear below the task on \"check\" if correct droppable is matched."
                       },
                       {
