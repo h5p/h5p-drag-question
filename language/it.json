@@ -140,8 +140,8 @@
                     "description":"Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
-                    "label":"Abilita auto-allineamento",
-                    "description":"Auto-allineerà tutti gli elementi trascinabili rilasciati in quest'area"
+                    "label":"Abilita allineamento automatico",
+                    "description":"Allineerà automaticamente tutti gli elementi trascinabili rilasciati in quest'area"
                   }
                 ]
               }
@@ -161,18 +161,18 @@
           ],
           "label":"Definisci un feedback personalizzato per ogni intervallo di punteggio",
           "description":"Esempio: 0-20%, cattivo punteggio; 21-91% punteggio media; 91-100% ottimo punteggio! Variabili disponibili: @score e @total. Esempio: 'Hai ottenuto @score di @total punti possibili'",
-          "entity":"range",
+          "entity":"Intervallo",
           "field":{
             "fields":[
               {
-                "label":"Score Range"
+                "label":"Intervallo di punteggio"
               },
               {
                 
               },
               {
-                "label":"Feedback for defined score range",
-                "placeholder":"Fill in the feedback"
+                "label":"Feedback per un intervallo di punteggio definito",
+                "placeholder":"Compila il feedback"
               }
             ]
           }
@@ -194,43 +194,43 @@
           "description":"Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
         },
         {
-          "label":"Apply penalties",
+          "label":"Applica penalità",
           "description":"Apply penalties for elements dropped in the wrong drop zones."
         },
         {
-          "label":"Enable score explanation",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label":"Attiva la spiegazione del punteggio",
+          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità')."
         },
         {
           "label":"Opacità Sfondo per elementi trascinabili",
           "description":"Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
-          "default":"dragging",
+          "label":"Evidenziazione della zona di rilascio",
+          "description":"Scegli quando evidenziare le zone di rilascio",
+          "default":"trascinare",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Durante il trascinamento"
             },
             {
-              "label":"Always"
+              "label":"Sempre"
             },
             {
-              "label":"Never"
+              "label":"Mai"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Spaziatura per allineamento automatico (in px)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Attiva schermo intero",
+          "description":"Seleziona questa opzione per attivare il pulsante schermo intero"
         },
         {
-          "label":"Show score points",
-          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label":"Visualizza punteggio",
+          "description":"Visualizza i punti guadagnati per ogni risposta. Non disponibile quando è attivata l'opzione 'Assegnare un punto per l'intera attività'."
         }
       ]
     },
@@ -239,11 +239,11 @@
       "fields":[
         {
           "label":"Etichetta Schermo intero",
-          "default":"Fullscreen"
+          "default":"Schermo intero"
         },
         {
           "label":"Esci da Schermo intero",
-          "default":"Exit fullscreen"
+          "default":"Esci da schermo intero"
         }
       ]
     },
@@ -264,15 +264,15 @@
       "default":"No dropzone."
     },
     {
-      "label":"Label for show tip button",
-      "default":"Show tip."
+      "label":"Etichetta per il pulsante \"Mostra suggerimento\"",
+      "default":"Mostra suggerimento"
     },
     {
-      "label":"Label for tip available",
+      "label":"Etichetta per suggerimento disponibile",
       "default":"Suggerimento disponibile"
     },
     {
-      "label":"Label for correct answer",
+      "label":"Etichetta per risposta corretta",
       "default":"Risposta corretta"
     },
     {
