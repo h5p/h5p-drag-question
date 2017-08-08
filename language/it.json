@@ -28,7 +28,7 @@
             },
             {
               "label":"Mostra Titolo",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "description":"Deseleziona questa opzione se non vuoi che questo titolo sia visualizzato. Il titolo sarà visualizzato solo in sintesi, statistiche ecc."
             },
             {
               "label":"Immagine di sfondo",
