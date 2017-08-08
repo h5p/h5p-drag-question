@@ -249,19 +249,19 @@
     },
     {
       "label":"Localize",
-      "default":"Grabbable {num} of {total}."
+      "default":"A disposizione {num} di {total}."
     },
     {
-      "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}."
+      "label":"Suffisso per afferrabile",
+      "default":"Posizionato nella zona di rilascio {num}."
     },
     {
-      "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}."
+      "label":"Prefisso della zona di rilascio",
+      "default":"Rilasciabili {num} di {total}."
     },
     {
-      "label":"No dropzone selection label",
-      "default":"No dropzone."
+      "label":"Nessuna etichetta di selezione della zona di rilascio",
+      "default":"Nessuna zona di rilascio"
     },
     {
       "label":"Etichetta per il pulsante \"Mostra suggerimento\"",
