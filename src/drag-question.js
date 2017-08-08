@@ -25,7 +25,6 @@ function C(options, contentId, contentData) {
   H5P.Question.call(self, 'dragquestion');
   this.options = $.extend(true, {}, {
     scoreShow: 'Check',
-    correct: 'Show solution',
     tryAgain: 'Retry',
     grabbablePrefix: 'Grabbable {num} of {total}.',
     grabbableSuffix: 'Placed in dropzone {num}.',
