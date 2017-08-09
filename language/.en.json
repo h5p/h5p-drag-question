@@ -9,10 +9,6 @@
       "default": "Retry"
     },
     {
-      "label": "Correct solution label text",
-      "default": "Show solution"
-    },
-    {
       "label": "Feedback text",
       "default": "You got @score of @total points",
       "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'"
