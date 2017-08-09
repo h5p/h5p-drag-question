@@ -935,7 +935,9 @@ C.prototype.getCurrentState = function () {
 
       // Verify that draggables actually has its correct positions
       // (could have been chaged by auto-align without being updated in draggable)
-      element.position = DragUtils.positionToPercentage(this.$container, element.$);
+      if (element.$) {
+        element.position = DragUtils.positionToPercentage(this.$container, element.$);
+      }
 
       // Store position and drop zone.
       draggableAnswers.push({
