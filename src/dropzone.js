@@ -71,8 +71,23 @@ export default class DropZone {
           activeClass: 'h5p-active',
           tolerance: 'intersect',
           accept: function (element) {
+            /**
+             * Functional note:
+             * This will fire every time a draggable is starting to get dragged, globally
+             * for all initialized drop zones  <-> draggables. That means in a compound H5P this
+             * function will fire for all Drag Questions within that compound content type,
+             * no matter if it is at a different timestamp, already completed or otherwise
+             * intuitively would be disabled. This can lead to some unexpected behaviour if you
+             * don't take this into consideration.
+             */
+
             // Find draggable element belongs to
             var result = DragUtils.elementToDraggable(draggables, element);
+
+            // Found no Draggable that the element belongs to. Don't accept it.
+            if (!result) {
+              return false;
+            }
 
             // Figure out if the drop zone will accept the draggable
             return self.accepts(result.draggable, draggables);
