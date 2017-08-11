@@ -80,7 +80,7 @@ function C(options, contentId, contentData) {
    * @private
    * @param {string} effect
    */
-  var setDropEffect = function (effect) {
+  var setDropEffect = function (effect) {
     for (var i = 0; i < controls.drop.elements.length; i++) {
       controls.drop.elements[i].setAttribute('aria-dropeffect', effect);
     }
@@ -154,7 +154,7 @@ function C(options, contentId, contentData) {
       }
       setDropEffect(event.data);
     });
-    draggable.on('dragend', function (event) {
+    draggable.on('dragend', function () {
       if (highlightDropZones) {
         self.$container.removeClass('h5p-dq-highlight-dz');
       }
@@ -374,7 +374,7 @@ C.prototype.getXAPIDefinition = function () {
   definition.correctResponsesPattern = [''];
   definition.target = [];
   var firstCorrectPair = true;
-  for (var i = 0; i < this.options.question.task.dropZones.length; i++) {
+  for (i = 0; i < this.options.question.task.dropZones.length; i++) {
     definition.target.push({
       'id': '' + i,
       'description': {
@@ -418,7 +418,7 @@ C.prototype.addResponseToXAPI = function(xAPIEvent) {
 C.prototype.getUserXAPIResponse = function () {
   var answers = this.getUserAnswers();
   if (!answers) {
-    return response;
+    return '';
   }
 
   return answers
@@ -630,7 +630,7 @@ C.prototype.resize = function (e) {
   var self = this;
   // Make sure we use all the height we can get. Needed to scale up.
   if (this.$container === undefined || !this.$container.is(':visible')) {
-    // Not yet attached or visible – not possible to resize correctly
+    // Not yet attached or visible – not possible to resize correctly
     return;
   }
 

@@ -92,10 +92,10 @@ export default class DropZone {
               self.autoAlign();
             }
           },
-          over: function (event, ui) {
+          over: function () {
             DragUtils.setOpacity($(this).addClass('h5p-over'), 'background', self.backgroundOpacity);
           },
-          out: function (event, ui) {
+          out: function () {
             DragUtils.setOpacity($(this).removeClass('h5p-over'), 'background', self.backgroundOpacity);
           }
         })
@@ -196,7 +196,7 @@ export default class DropZone {
 
     // Find alignable index
     var index = self.getIndexOf($alignable);
-    if (index !== -1) {
+    if (index !== -1) {
 
       // Remove alignable
       self.alignables.splice(index, 1);
