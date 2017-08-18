@@ -9,10 +9,6 @@
       "default":"Opnieuw proberen"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Toon oplossing"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -24,14 +20,14 @@
             {
               "label":"The title of this question",
               "default":"Drag and Drop",
-              "description":"Gebruikt in samenvattingen, statistieken, enz."
+              "description":"Used in summaries, statistics etc."
             },
             {
               "label":"Show Title",
               "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label":"Achtergrondafbeelding",
+              "label":"Background image",
               "description":"Optional. Select an image to use as background for your drag and drop task."
             },
             {
@@ -80,7 +76,7 @@
                     "label":"Select drop zones"
                   },
                   {
-                    "label":"Ondoorzichtigheid achtergrond"
+                    "label":"Background Opacity"
                   },
                   {
                     "label":"Infinite number of element instances",
@@ -117,13 +113,13 @@
                     "label":"Select correct elements"
                   },
                   {
-                    "label":"Ondoorzichtigheid achtergrond"
+                    "label":"Background Opacity"
                   },
                   {
-                    "label":"Tips en feedback",
+                    "label":"Tips and feedback",
                     "fields":[
                       {
-                        "label":"Tekst voor tip"
+                        "label":"Tip text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +152,7 @@
         {
           "widgets":[
             {
-              "label":"Standaard"
+              "label":"Default"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,17 +176,17 @@
       ]
     },
     {
-      "label":"Gedragsinstellingen",
-      "description":"Deze opties bepalen hoe de taak op de input reageert.",
+      "label":"Behavioural settings",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
-          "label":"Schakel de knop \"Opnieuw\" in"
+          "label":"Enable \"Retry\""
         },
         {
           "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Geef een punt voor de gehele taak",
+          "label":"Give one point for the whole task",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
@@ -235,15 +231,15 @@
       ]
     },
     {
-      "label":"Localiseren",
+      "label":"Localize",
       "fields":[
         {
-          "label":"Titel voor \"Volledig scherm\"-knop",
-          "default":"Volledig scherm"
+          "label":"Fullscreen label",
+          "default":"Fullscreen"
         },
         {
-          "label":"Titel voor \"Volledig scherm afsluiten\"-knop",
-          "default":"Volledig scherm afsluiten"
+          "label":"Exit fullscreen label",
+          "default":"Exit fullscreen"
         }
       ]
     },
@@ -269,15 +265,15 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Tip beschikbaar"
+      "default":"Tip available"
     },
     {
       "label":"Label for correct answer",
-      "default":"Juist antwoord"
+      "default":"Correct answer"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Onjuist antwoord"
+      "default":"Wrong answer"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
