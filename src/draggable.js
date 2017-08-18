@@ -145,7 +145,7 @@ export default class Draggable extends H5P.EventDispatcher {
 
           return !dropZone;
         },
-        start: function(event, ui) {
+        start: function() {
           var $this = $(this);
 
           var mustCopyElement = self.mustCopyElement(element);
@@ -166,7 +166,7 @@ export default class Draggable extends H5P.EventDispatcher {
             effect: mustCopyElement ? 'copy' : 'move'
           });
         },
-        stop: function(event, ui) {
+        stop: function() {
           var $this = $(this);
 
           // Convert position to % to support scaling.
@@ -225,27 +225,6 @@ export default class Draggable extends H5P.EventDispatcher {
         element.$feedback.html(feedback);
       }
     });
-  }
-
-  /**
-   * Determine if element should be copied when tragging, i.e. infinity instances.
-   *
-   * @param {Object} element
-   * @returns {boolean}
-   */
-  removeElement(element) {
-    if (selected.element.dropZone !== undefined) {
-      // Let everyone know we're leaving the drop zone
-      selected.draggable.trigger('leavingDropZone', selected.element);
-    }
-
-    if (selected.draggable.multiple) {
-      // Remove element
-      selected.element.remove();
-      delete selected.draggable.elements[selected.index];
-      selected.draggable.trigger('elementremove', selected.element);
-    }
-    delete element.position;
   }
 
   /**
@@ -477,7 +456,7 @@ export default class Draggable extends H5P.EventDispatcher {
    */
   results(skipVisuals, solutions, scorePoints) {
     var self = this;
-    var i, j, element, dropZone, correct, points = 0;
+    var i, j, element, correct, points = 0;
     self.rawPoints = 0;
 
     if (solutions === undefined) {

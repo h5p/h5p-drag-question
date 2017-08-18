@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.DragQuestion'] = (function ($) {
+H5PUpgrades['H5P.DragQuestion'] = (function () {
   return {
     1: {
       1: {
@@ -100,7 +100,6 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
         if (!parameters.behaviour) {
           parameters.behaviour = {};
         }
-        parameters.behaviour.showScorePoints = false;
 
         // Move fields into behaviour and remove the old values
         parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
@@ -120,4 +119,4 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
 
     }
   };
-})(H5P.jQuery);
+})();

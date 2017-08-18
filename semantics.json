@@ -17,14 +17,6 @@
     "optional": true
   },
   {
-    "name": "correct",
-    "type": "text",
-    "label": "Correct solution label text",
-    "importance": "low",
-    "default": "Show solution",
-    "common": true
-  },
-  {
     "label": "Score explanation text",
     "importance": "low",
     "name": "scoreExplanation",
