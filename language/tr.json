@@ -9,10 +9,6 @@
       "default":"Yeniden dene"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Çözümü göster"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -120,10 +116,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"İpuçları ve geri bildirim",
+                    "label":"Tips and feedback",
                     "fields":[
                       {
-                        "label":"İpucu metni"
+                        "label":"Tip text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +152,7 @@
         {
           "widgets":[
             {
-              "label":"Varsayılan"
+              "label":"Default"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,8 +176,8 @@
       ]
     },
     {
-      "label":"Davranış ayarları",
-      "description":"Bu seçenekler aktivitenin çalışma şeklini denetlemenize izin verir.",
+      "label":"Behavioural settings",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
           "label":"Enable \"Retry\""
@@ -190,7 +186,7 @@
           "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Bütün aktivite için bir puan verin",
+          "label":"Give one point for the whole task",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
@@ -269,15 +265,15 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Mevcut ipucu"
+      "default":"Tip available"
     },
     {
       "label":"Label for correct answer",
-      "default":"Doğru cevap"
+      "default":"Correct answer"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Yanlış cevap"
+      "default":"Wrong answer"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
