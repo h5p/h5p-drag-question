@@ -9,10 +9,6 @@
       "default":"Proovi uuesti"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Õige vastus"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -120,10 +116,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"Vihje ja tagasiside",
+                    "label":"Tips and feedback",
                     "fields":[
                       {
-                        "label":"Vihje tekst"
+                        "label":"Tip text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -269,15 +265,15 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Küsi vihjet"
+      "default":"Tip available"
     },
     {
       "label":"Label for correct answer",
-      "default":"Õige vastus"
+      "default":"Correct answer"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Vale vastus"
+      "default":"Wrong answer"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
