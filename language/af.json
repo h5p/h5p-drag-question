@@ -9,10 +9,6 @@
       "default":"Retry"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Show solution"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
