@@ -9,10 +9,6 @@
       "default":"Tornar-ho a provar"
     },
     {
-      "label":"Correct solution label text",
-      "default":"Mostrar solució"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -31,7 +27,7 @@
               "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label":"Imatge de fons",
+              "label":"Background image",
               "description":"Optional. Select an image to use as background for your drag and drop task."
             },
             {
@@ -120,10 +116,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"Suggerències i informació de retorn",
+                    "label":"Tips and feedback",
                     "fields":[
                       {
-                        "label":"Text de la pista"
+                        "label":"Tip text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +152,7 @@
         {
           "widgets":[
             {
-              "label":"Per defecte"
+              "label":"Default"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,8 +176,8 @@
       ]
     },
     {
-      "label":"Opcions de comportament",
-      "description":"Aquestes opcions et permetran controlar com es comporta la tasca.",
+      "label":"Behavioural settings",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
           "label":"Enable \"Retry\""
@@ -190,7 +186,7 @@
           "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"Donar un punt per la tasca sencera",
+          "label":"Give one point for the whole task",
           "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
@@ -269,15 +265,15 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Pista disponible"
+      "default":"Tip available"
     },
     {
       "label":"Label for correct answer",
-      "default":"Resposta correcta"
+      "default":"Correct answer"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"La resposta no és correcta"
+      "default":"Wrong answer"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
