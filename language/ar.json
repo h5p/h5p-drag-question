@@ -9,17 +9,13 @@
       "default":"إعادة المحاولة"
     },
     {
-      "label":"تسمية الحل الصحيح النص",
-      "default":"مشاهدة الحل"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields":[
         {
-          "label":"الإعدادات",
+          "label":"Settings",
           "fields":[
             {
               "label":"The title of this question",
@@ -31,12 +27,12 @@
               "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
             },
             {
-              "label":"صورة الخلفية",
-              "description":"اختياري. اختر الصورة التي تريد استخدامها كخلفية لنشاط اسحب والقي"
+              "label":"Background image",
+              "description":"Optional. Select an image to use as background for your drag and drop task."
             },
             {
-              "label":"حجم النشاط",
-              "description":"حدد حجم النشاط بالبيكسل في منطقة اللعبة",
+              "label":"Task size",
+              "description":"Specify how large (in px) the play area should be.",
               "default":{
                 
               },
@@ -52,17 +48,17 @@
           ]
         },
         {
-          "label":"النشاط",
-          "description":"ابدأ بوضع مناطق إسقاط العناصر الكلمة او الصورة.بعد ذالك قم بوضع الكلمة او الصروة ثم تحقق من اختيار المناطق المناسبة. اخيرا، تحرر من منطقة اسقاط العناصر الكلمة او الصورة مرة أخرى وتحقق من ان الإجابات صحيحة",
+          "label":"Task",
+          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields":[
             {
-              "label":"العناصر",
-              "entity":"العنصر",
+              "label":"Elements",
+              "entity":"element",
               "field":{
-                "label":"العنصر",
+                "label":"Element",
                 "fields":[
                   {
-                    "description":"اختيار نوع المحتوى الذي تريد إضافته"
+                    "description":"Choose the type of content you would like to add."
                   },
                   {
                     
@@ -77,32 +73,29 @@
                     
                   },
                   {
-                    "label":"اختر مكان الاسقاط"
+                    "label":"Select drop zones"
                   },
                   {
-                    "label":"شفافية الخلفية"
+                    "label":"Background Opacity"
                   },
                   {
-                    "label":"عدد غير محدود من حالات العنصر",
-                    "description":"استنساخ هذا العنصر بحيث يمكن سحبها إلى مناطق متعددة الاسقاط"
+                    "label":"Infinite number of element instances",
+                    "description":"Clones this element so that it can be dragged to multiple drop zones."
                   }
                 ]
               }
             },
             {
-              "label":"مناطق الاسقاط",
-              "entity":"منطقة الاسقاط",
+              "label":"Drop Zones",
+              "entity":"Drop Zone",
               "field":{
-                "label":"منطقة الاسقاط",
+                "label":"Drop Zone",
                 "fields":[
                   {
-                    "label":"التسمية"
+                    "label":"Label"
                   },
                   {
-                    "label":"مشاهدة التسمية"
-                  },
-                  {
-                    
+                    "label":"Show label"
                   },
                   {
                     
@@ -114,16 +107,19 @@
                     
                   },
                   {
-                    "label":"تحديد العناصر الصحيحة"
+                    
                   },
                   {
-                    "label":"شفافية الخلفية"
+                    "label":"Select correct elements"
                   },
                   {
-                    "label":"تلميح",
+                    "label":"Background Opacity"
+                  },
+                  {
+                    "label":"Tips and feedback",
                     "fields":[
                       {
-                        "label":"نص التلميح"
+                        "label":"Tip text"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -136,8 +132,8 @@
                     ]
                   },
                   {
-                    "label":"ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
-                    "description":"تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "label":"This drop zone can only contain one element",
+                    "description":"Make sure there is only one correct answer for this dropzone"
                   },
                   {
                     "label":"Enable Auto-Align",
@@ -151,12 +147,12 @@
       ]
     },
     {
-      "label":"شفافية خلفية العناصر",
+      "label":"Overall Feedback",
       "fields":[
         {
           "widgets":[
             {
-              "label":"الافتراضي"
+              "label":"Default"
             }
           ],
           "label":"Define custom feedback for any score range",
@@ -180,30 +176,30 @@
       ]
     },
     {
-      "label":"إعدادت النشاط",
-      "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب",
+      "label":"Behavioural settings",
+      "description":"These options will let you control how the task behaves.",
       "fields":[
         {
-          "label":"تمكين زر \"إعادة المحاولة\""
+          "label":"Enable \"Retry\""
         },
         {
-          "label":"تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+          "label":"Require user input before the solution can be viewed"
         },
         {
-          "label":"إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
-          "description":"تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
+          "label":"Give one point for the whole task",
+          "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
           "label":"Apply penalties",
-          "description":"Apply penalties for elements dropped in the wrong drop zones."
+          "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
           "label":"Enable score explanation",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"شفافية خلفية العناصر",
-          "description":"إذا تم تعيين هذا المجال، فإنه سيتم تجاوز شفافية جميع العناصر قابلة للسحب. هذا الرقم ينبغي أن يكون رقم بين ٠ و ١٠٠، حيث ٠ تعني الشفافية الكاملة و ١٠٠ يعني عدم وجود الشفافية"
+          "label":"Background opacity for draggables",
+          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
         },
         {
           "label":"Drop Zone Highlighting",
@@ -235,20 +231,20 @@
       ]
     },
     {
-      "label":"تحديد الموقع",
+      "label":"Localize",
       "fields":[
         {
-          "label":"تسمية لملء الشاشة",
+          "label":"Fullscreen label",
           "default":"Fullscreen"
         },
         {
-          "label":"تسمية خروج ملء الشاشة",
+          "label":"Exit fullscreen label",
           "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
