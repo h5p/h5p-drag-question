@@ -9,30 +9,30 @@
       "default":"Wiederholen"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Erklärung für die Punkte",
+      "default":"Richtige Antworten geben +1 Punkte. Bei falschen Antworten gibt es -1 Punkt. Die kleinstmögliche Punktzahl ist 0."
     },
     {
       "fields":[
         {
-          "label":"Settings",
+          "label":"Einstellungen",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "label":"Der Titel der Aufgabe",
+              "default":"Ziehen und Ablegen",
+              "description":"Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Titel anzeigen",
+              "description":"Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
             },
             {
-              "label":"Background image",
-              "description":"Optional. Select an image to use as background for your drag and drop task."
+              "label":"Hintergrundbild",
+              "description":"Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
             },
             {
-              "label":"Task size",
-              "description":"Specify how large (in px) the play area should be.",
+              "label":"Aufgabengröße",
+              "description":"Gib an, wie breit (in px) das Feld sein soll.",
               "default":{
                 
               },
@@ -48,17 +48,17 @@
           ]
         },
         {
-          "label":"Task",
-          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label":"Aufgabe",
+          "description":"Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als Nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
           "fields":[
             {
-              "label":"Elements",
-              "entity":"element",
+              "label":"Elemente",
+              "entity":"Element",
               "field":{
                 "label":"Element",
                 "fields":[
                   {
-                    "description":"Choose the type of content you would like to add."
+                    "description":"Wähle den Inhaltstyp, den du hinzufügen möchtest."
                   },
                   {
                     
@@ -73,32 +73,29 @@
                     
                   },
                   {
-                    "label":"Select drop zones"
+                    "label":"Wähle die \"Drop Zones\""
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Hintergrunddeckkraft"
                   },
                   {
-                    "label":"Infinite number of element instances",
-                    "description":"Clones this element so that it can be dragged to multiple drop zones."
+                    "label":"Unbegrenzte Anzahl an Element-Instanzen",
+                    "description":"Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann."
                   }
                 ]
               }
             },
             {
-              "label":"Drop Zones",
-              "entity":"Drop Zone",
+              "label":"Drop-Feld",
+              "entity":"Drop-Feld",
               "field":{
-                "label":"Drop Zone",
+                "label":"Drop-Feld",
                 "fields":[
                   {
-                    "label":"Label"
+                    "label":"Beschriftung"
                   },
                   {
-                    "label":"Show label"
-                  },
-                  {
-                    
+                    "label":"Zeige Beschriftung"
                   },
                   {
                     
@@ -110,19 +107,22 @@
                     
                   },
                   {
-                    "label":"Select correct elements"
+                    
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Wähle korrekte Elemente"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Hintergrunddeckkraft"
+                  },
+                  {
+                    "label":"Tipps und Rückmeldung",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"Tipp-Text"
                       },
                       {
-                        "label":"Message displayed on correct match",
+                        "label":"Meldung auf korrekte Übereinstimmung",
                         "description":"Message will appear below the task on \"check\" if correct droppable is matched."
                       },
                       {
