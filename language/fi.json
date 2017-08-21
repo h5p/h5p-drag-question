@@ -76,7 +76,7 @@
                     "label":"Select drop zones"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
                     "label":"Infinite number of element instances",
@@ -113,7 +113,7 @@
                     "label":"Select correct elements"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
                     "label":"Tips and feedback",
@@ -156,7 +156,7 @@
             }
           ],
           "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"range",
           "field":{
             "fields":[
@@ -231,15 +231,15 @@
       ]
     },
     {
-      "label":"Localize",
+      "label":"Muokkaa",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"\"Koko ruutu\"-painikkeen teksti",
+          "default":"Koko ruutu"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"\"Poistu koko ruudun tilasta\"-painikkeen teksti",
+          "default":"Poistu kokoruudun tilasta"
         }
       ]
     },
