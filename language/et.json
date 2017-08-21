@@ -116,10 +116,10 @@
                     "label":"Background Opacity"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Vihje ja tagasiside",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"Vihje tekst"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -156,7 +156,7 @@
             }
           ],
           "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"range",
           "field":{
             "fields":[
@@ -265,15 +265,15 @@
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Küsi vihjet"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Õige vastus"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Vale vastus"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
