@@ -9,30 +9,30 @@
       "default":"リトライ"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"得点説明用テキスト",
+      "default":"正解の場合 +1 点を与えます。不正解では -1 点となります。最低得点は 0 点です。"
     },
     {
       "fields":[
         {
-          "label":"Settings",
+          "label":"設定",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "label":"この設問のタイトル",
+              "default":"ドラッグ ＆ ドロップ",
+              "description":"概要や統計などで用いられます。"
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"タイトルを表示",
+              "description":"このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
             },
             {
-              "label":"Background image",
-              "description":"Optional. Select an image to use as background for your drag and drop task."
+              "label":"背景画像",
+              "description":"オプションです。ドラッグ & ドロップするときの背景として使う画像を選んで下さい。"
             },
             {
-              "label":"Task size",
-              "description":"Specify how large (in px) the play area should be.",
+              "label":"タスクのサイズ",
+              "description":"再生領域をサイズ (px) で指定します。",
               "default":{
                 
               },
@@ -48,17 +48,17 @@
           ]
         },
         {
-          "label":"Task",
-          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label":"タスク",
+          "description":"ドロップゾーンを配置して開始します。 <br/> 次に、ドロップ可能な要素を配置し、対応するドロップゾーンにチェックマークをつけます。 <br/> 最後に、ドロップゾーンを再度編集して正解にチェックマークをつけます。",
           "fields":[
             {
-              "label":"Elements",
-              "entity":"element",
+              "label":"要素",
+              "entity":"要素",
               "field":{
-                "label":"Element",
+                "label":"要素",
                 "fields":[
                   {
-                    "description":"Choose the type of content you would like to add."
+                    "description":"追加するコンテンツのタイプを選択します。"
                   },
                   {
                     
@@ -73,32 +73,29 @@
                     
                   },
                   {
-                    "label":"Select drop zones"
+                    "label":"ドロップゾーンを選択"
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"背景の不透明度"
                   },
                   {
-                    "label":"Infinite number of element instances",
-                    "description":"Clones this element so that it can be dragged to multiple drop zones."
+                    "label":"要素数無制限",
+                    "description":"この要素を複製して、複数のドロップゾーンにドラッグできるようにします。"
                   }
                 ]
               }
             },
             {
-              "label":"Drop Zones",
-              "entity":"Drop Zone",
+              "label":"ドロップゾーン",
+              "entity":"ドロップゾーン",
               "field":{
-                "label":"Drop Zone",
+                "label":"ドロップゾーン",
                 "fields":[
                   {
-                    "label":"Label"
+                    "label":"ラベル"
                   },
                   {
-                    "label":"Show label"
-                  },
-                  {
-                    
+                    "label":"ラベルを表示"
                   },
                   {
                     
@@ -110,34 +107,37 @@
                     
                   },
                   {
-                    "label":"Select correct elements"
+                    
                   },
                   {
-                    "label":"Background Opacity"
+                    "label":"正解の要素を選択"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"背景の不透明度"
+                  },
+                  {
+                    "label":"ヒントとフィードバック",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"ヒントのテキスト"
                       },
                       {
-                        "label":"Message displayed on correct match",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label":"正解に一致した時に表示されるメッセージ",
+                        "description":"正解のドロップに一致した場合、 「チェック」 したタスクの下に、メッセージが表示されます。"
                       },
                       {
-                        "label":"Message displayed on incorrect match",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "label":"不正解に一致した時に表示されるメッセージ",
+                        "description":"一致が不正解の場合、 「チェック」 したタスクの下に、メッセージが表示されます。"
                       }
                     ]
                   },
                   {
-                    "label":"This drop zone can only contain one element",
-                    "description":"Make sure there is only one correct answer for this dropzone"
+                    "label":"このドロップゾーンには一つの要素のみ含めることができます。",
+                    "description":"このドロップゾーンに一つだけの正解があることを確認してください。"
                   },
                   {
-                    "label":"Enable Auto-Align",
-                    "description":"Will auto-align all draggables dropped in this zone."
+                    "label":"自動整列を有効化",
+                    "description":"すべてのドロップするものをこのゾーンで自動整列します。"
                   }
                 ]
               }
@@ -147,28 +147,28 @@
       ]
     },
     {
-      "label":"Overall Feedback",
+      "label":"全体のフィードバック",
       "fields":[
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"デフォルト"
             }
           ],
-          "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
-          "entity":"range",
+          "label":"ある得点範囲に対して、カスタムフィードバックを定義します。",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"範囲",
           "field":{
             "fields":[
               {
-                "label":"Score Range"
+                "label":"得点範囲"
               },
               {
                 
               },
               {
-                "label":"Feedback for defined score range",
-                "placeholder":"Fill in the feedback"
+                "label":"定義した得点範囲に対するフィードバック",
+                "placeholder":"フィードバックを記入"
               }
             ]
           }
@@ -176,108 +176,108 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"動作設定",
+      "description":"これらのオプションでタスクがどのように動作するかを制御できます。",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"「リトライ」を有効化"
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"解を表示する前にユーザーの入力が必要"
         },
         {
-          "label":"Give one point for the whole task",
-          "description":"Disable to give one point for each draggable that is placed correctly."
+          "label":"タスク全体に1点を与える",
+          "description":"正しく置かれた各ドロップ要素に1点を与えるのを無効にします。"
         },
         {
-          "label":"Apply penalties",
-          "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label":"ペナルティを適用",
+          "description":"まちがったドロップゾーンに要素がドロップされた場合ペナルティを適用します。同じ要素が複数のドロップゾーンにドロップできるようにするとき、もしくは1つだけのドロップゾーンがあるときにこれを有効にします。これが有効でない場合、学習者はすべてのアイテムをすべてのドロップゾーンにマッチさせれてしまい、満点となってしまいます。"
         },
         {
-          "label":"Enable score explanation",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label":"得点説明を有効化",
+          "description":"（「ペナルティを適用する」オプションが選択されている 場合）答えをチェックするとき、得点の説明をユーザーに表示します。"
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"ドラッグするものの背景の不透明度",
+          "description":"このフィールドを設定すると、すべてのドラッグ要素に設定された不透明度を上書きします。これは 0と100 の間の数値をとり、0は完全な透明、100は透明度がないことを意味します。"
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"ドロップゾーンをハイライト",
+          "description":"いつドロップゾーンをハイライトするかを選択してください。",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"ドラッグ中"
             },
             {
-              "label":"Always"
+              "label":"常時"
             },
             {
-              "label":"Never"
+              "label":"しない"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"自動整列の間隔 (px)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"全画面表示を有効化",
+          "description":"フルスクリーンボタンを有効にするにはこのオプションをオンにしてください。"
         },
         {
-          "label":"Show score points",
+          "label":"得点ポイントを表示",
           "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"ローカライズ",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"フルスクリーンラベル",
+          "default":"フルスクリーン"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"フルスクリーン解除のラベル",
+          "default":"フルスクリーン解除"
         }
       ]
     },
     {
-      "label":"Grabbable prefix",
+      "label":"ドラッグ要素の接頭語",
       "default":"Grabbable {num} of {total}."
     },
     {
-      "label":"Grabbable suffix",
+      "label":"ドラッグ要素の接尾語",
       "default":"Placed in dropzone {num}."
     },
     {
-      "label":"Dropzone prefix",
+      "label":"ドロップゾーンの接頭語",
       "default":"Dropzone {num} of {total}."
     },
     {
-      "label":"No dropzone selection label",
+      "label":"ドロップゾーン選択ラベル無し",
       "default":"No dropzone."
     },
     {
-      "label":"Label for show tip button",
-      "default":"Show tip."
+      "label":"ヒント表示ボタンのラベル",
+      "default":"ヒントを表示"
     },
     {
-      "label":"Label for tip available",
-      "default":"Tip available"
+      "label":"利用可能なヒントのラベル",
+      "default":"ヒント利用可能"
     },
     {
-      "label":"Label for correct answer",
-      "default":"Correct answer"
+      "label":"正解のラベル",
+      "default":"正解 !"
     },
     {
-      "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "label":"不正解のラベル",
+      "default":"まちがえた答え:"
     },
     {
-      "label":"Header for panel containing feedback for correct/incorrect answers",
-      "default":"Feedback"
+      "label":"正解/不正解のフィードバックを含むパネルのヘッダー",
+      "default":"フィードバック"
     }
   ]
 }
