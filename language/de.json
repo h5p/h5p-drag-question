@@ -18,7 +18,7 @@
           "label":"Einstellungen",
           "fields":[
             {
-              "label":"Der Titel der Aufgabe",
+              "label":"Titel der Frage",
               "default":"Ziehen und Ablegen",
               "description":"Wird benutzt in Zusammenfassungen, Statistiken, usw."
             },
@@ -49,7 +49,7 @@
         },
         {
           "label":"Aufgabe",
-          "description":"Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als Nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
+          "description":"Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
           "fields":[
             {
               "label":"Elemente",
@@ -133,7 +133,7 @@
                   },
                   {
                     "label":"Diese \"Drop Zone\" kann nur ein Element beinhalten",
-                    "description":"Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt."
+                    "description":"Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt"
                   },
                   {
                     "label":"Auto-Anordnen einschalten",
@@ -156,7 +156,7 @@
             }
           ],
           "label":"Benutzerdefinierte Rückmeldung für jeden Punkte-Bereich definieren",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"Bereich",
           "field":{
             "fields":[
@@ -176,49 +176,49 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Verhaltenseinstellungen",
+      "description":"Diese Optionen legen fest, wie die Aufgabe auf Eingaben reagiert.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"\"Wiederholen\" zulassen"
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann"
         },
         {
-          "label":"Give one point for the whole task",
-          "description":"Disable to give one point for each draggable that is placed correctly."
+          "label":"Einen Punkt für die ganze Aufgabe vergeben",
+          "description":"Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },
         {
-          "label":"Apply penalties",
+          "label":"Strafpunkte vergeben",
           "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label":"Enable score explanation",
+          "label":"Erklärung für die Punkte einschalten",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"Hintergrunddeckkraft für bewegliche Elemente",
+          "description":"Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"\"Drop Zone\"-Aufleuchten",
+          "description":"Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Beim Ziehen"
             },
             {
-              "label":"Always"
+              "label":"Immer"
             },
             {
-              "label":"Never"
+              "label":"Nie"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Abstand für das Auto-Anordnen (in px)"
         },
         {
           "label":"Enable FullScreen",
@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"Localize",
+      "label":"Verhaltenseinstellungen.",
       "fields":[
         {
-          "label":"Fullscreen label",
-          "default":"Fullscreen"
+          "label":"Aktivieren des \"Wiederholen\"-Buttons",
+          "default":"Vollbildmodus"
         },
         {
-          "label":"Exit fullscreen label",
-          "default":"Exit fullscreen"
+          "label":"Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann",
+          "default":"Vollbild beenden"
         }
       ]
     },
     {
-      "label":"Grabbable prefix",
+      "label":"Localize",
       "default":"Grabbable {num} of {total}."
     },
     {
@@ -260,24 +260,24 @@
       "default":"No dropzone."
     },
     {
-      "label":"Label for show tip button",
+      "label":"Beschriftung für Senden-Schaltfäche",
       "default":"Show tip."
     },
     {
       "label":"Label for tip available",
-      "default":"Tip available"
+      "default":"Tipp verfügbar"
     },
     {
       "label":"Label for correct answer",
-      "default":"Correct answer"
+      "default":"Richtige Antwort"
     },
     {
       "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "default":"Falsche Antwort"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
-      "default":"Feedback"
+      "default":"Rückmeldung"
     }
   ]
 }
