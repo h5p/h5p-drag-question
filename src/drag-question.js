@@ -203,6 +203,29 @@ function C(options, contentId, contentData) {
     };
 
     this.dropZones[i] = new DropZone(dropZone, i, dropzonel10n);
+
+    // Update element internal position when aligned
+    this.dropZones[i].on('elementaligned', function (event) {
+      let $aligned = event.data;
+
+      for (let i = 0; i < self.draggables.length; i++) {
+        let draggable = self.draggables[i];
+        if (!draggable || !draggable.elements || !draggable.elements.length) {
+          continue;
+        }
+
+        for (let j = 0; j < draggable.elements.length; j++) {
+          let element = draggable.elements[j];
+          if (!element || element.$[0] !== $aligned[0]) {
+            continue;
+          }
+
+          // Update position
+          element.position = DragUtils.positionToPercentage(self.$container, element.$);
+          return;
+        }
+      }
+    });
   }
 
   this.on('resize', self.resize, self);
@@ -930,12 +953,6 @@ C.prototype.getCurrentState = function () {
       var element = draggable.elements[j];
       if (element === undefined || element.dropZone === undefined) {
         continue;
-      }
-
-      // Verify that draggables actually has its correct positions
-      // (could have been chaged by auto-align without being updated in draggable)
-      if (element.$) {
-        element.position = DragUtils.positionToPercentage(this.$container, element.$);
       }
 
       // Store position and drop zone.

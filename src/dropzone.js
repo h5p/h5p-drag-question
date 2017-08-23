@@ -278,6 +278,7 @@ export default class DropZone {
         left: pos.x + '%',
         top: pos.y + '%'
       });
+      self.trigger('elementaligned', $alignable);
 
       // Update horizontal space left + next position
       var spaceDiffX = (alignableSize.width + self.autoAlignable.spacing);
