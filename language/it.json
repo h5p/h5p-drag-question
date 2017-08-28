@@ -176,7 +176,7 @@
       ]
     },
     {
-      "label":"Impostazioni esecuzione",
+      "label":"Impostazioni di esecuzione",
       "description":"Queste opzioni consentono di controllare l'andamento del compito.",
       "fields":[
         {
