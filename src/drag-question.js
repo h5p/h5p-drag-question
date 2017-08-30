@@ -53,14 +53,22 @@ function C(options, contentId, contentData) {
     behaviour: {
       enableRetry: true,
       preventResize: false,
-      singlePoint: true,
+      singlePoint: false,
       showSolutionsRequiresInput: true,
       applyPenalties: true,
+      enableScoreExplanation: true,
       dropZoneHighlighting: 'dragging',
       autoAlignSpacing: 2,
       showScorePoints: true
     }
   }, options);
+
+  // If single point is enabled, it makes no sense displaying
+  // the score explanation. Note: In the editor, the score explanation is hidden
+  // by the showWhen widget if singlePoint is enabled
+  if (this.options.behaviour.singlePoint) {
+    this.options.behaviour.enableScoreExplanation = false;
+  }
 
   this.draggables = [];
   this.dropZones = [];
@@ -216,7 +224,7 @@ function C(options, contentId, contentData) {
 
         for (let j = 0; j < draggable.elements.length; j++) {
           let element = draggable.elements[j];
-          if (!element || element.$[0] !== $aligned[0]) {
+          if (!element || element.$[0] !== $aligned[0]) {
             continue;
           }
 
