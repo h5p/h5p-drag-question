@@ -195,7 +195,14 @@
         },
         {
           "label":"Attiva la spiegazione del punteggio",
-          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità')."
+          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità').",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
         },
         {
           "label":"Opacità Sfondo per elementi trascinabili",
