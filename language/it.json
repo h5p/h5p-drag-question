@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"Impostazioni esecuzione",
+      "label":"Localizza",
       "fields":[
         {
-          "label":"Abilita \"Riprova\"",
+          "label":"Etichetta di schermo intero",
           "default":"Schermo intero"
         },
         {
-          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata",
+          "label":"Etichetta di uscita da schermo intero",
           "default":"Esci da schermo intero"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"A disposizione {num} di {total}."
     },
     {
