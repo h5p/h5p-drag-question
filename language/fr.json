@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"Options générales.",
+      "label":"Traduction de l'interface",
       "fields":[
         {
-          "label":"Activer le bouton \"Recommencer\"",
+          "label":"Texte pour ouvrir en plein écran",
           "default":"Plein écran"
         },
         {
           "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction.",
-          "default":"Quitter le plein écran"
+          "default":"Sortir du plein écran"
         }
       ]
     },
     {
-      "label":"Traductions",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
