@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"Verhaltenseinstellungen.",
+      "label":"Sprache anpassen",
       "fields":[
         {
-          "label":"Aktivieren des \"Wiederholen\"-Buttons",
+          "label":"Fullscreen label",
           "default":"Vollbildmodus"
         },
         {
-          "label":"Benutzereingabe erforderlich machen, bevor die Antwort angesehen werden kann",
+          "label":"Exit fullscreen label",
           "default":"Vollbild beenden"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
