@@ -195,7 +195,14 @@
         },
         {
           "label":"Enable score explanation",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
         },
         {
           "label":"شفافية خلفية العناصر",
