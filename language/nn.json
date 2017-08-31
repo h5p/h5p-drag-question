@@ -9,10 +9,6 @@
       "default":"Prøv igjen"
     },
     {
-      "label":"Ledetekst for riktig svar i fasiten",
-      "default":"Fasit"
-    },
-    {
       "label":"Poengforklaring",
       "default":"Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
     },
@@ -160,7 +156,7 @@
             }
           ],
           "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"range",
           "field":{
             "fields":[
@@ -184,7 +180,7 @@
       "description":"Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
       "fields":[
         {
-          "label":"Aktiver \"Prøv igjen\""
+          "label":"Aktiver \"Prøv igjen\"-knapp"
         },
         {
           "label":"Krev inndata fra brukeren før fasit gis."
@@ -235,48 +231,48 @@
       ]
     },
     {
-      "label":"Lokaliser",
+      "label":"Innstillinger for oppgave-oppførsel",
       "fields":[
         {
-          "label":"Tittel for \"Full skjerm\"-knapp",
+          "label":"Aktiver \"Prøv igjen\"-knapp",
           "default":"Fullskjerm"
         },
         {
-          "label":"Tittel for \"Avslutt fullskjerm\"-knapp",
+          "label":"Krev inndata fra brukeren før fasit gis.",
           "default":"Forlat fullskjerm"
         }
       ]
     },
     {
+      "label":"Localize",
+      "default":"Grabbable {num} of {total}."
+    },
+    {
       "label":"Draobjektprefiks",
-      "default":"Draobjekt {num} av {total}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"Draobjektsuffiks",
-      "default":"Plassert i slippsone {num}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"Slippsoneprefiks",
-      "default":"Slippsone {num} av {total}"
+      "default":"No dropzone."
     },
     {
       "label":"Ingen slippsone valg-merkelapp",
-      "default":"Ingen slippsone"
+      "default":"Show tip."
     },
     {
       "label":"Merkelapp for vis-tips-knappen",
-      "default":"Vis tips"
-    },
-    {
-      "label":"Merkelapp for tips tilgjengeleg",
       "default":"Tips tilgjengelig"
     },
     {
-      "label":"Merkelapp for korrekt svar",
+      "label":"Merkelapp for tips tilgjengeleg",
       "default":"Riktig svar"
     },
     {
-      "label":"Merkelapp for feil svar",
+      "label":"Merkelapp for korrekt svar",
       "default":"Galt svar"
     },
     {

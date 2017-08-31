@@ -9,12 +9,8 @@
       "default":"Riprova"
     },
     {
-      "label":"Testo dell'etichetta Soluzione corretta",
-      "default":"Mostra la soluzione"
-    },
-    {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Testo di spiegazione del punteggio",
+      "default":"Le risposte corrette danno 1 punto. Le risposte sbagliate tolgono 1 punto. Il punteggio più basso possibile è 0."
     },
     {
       "fields":[
@@ -22,13 +18,13 @@
           "label":"Impostazioni",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "label":"Il titolo di questa domanda",
+              "default":"Trascina e rilascia",
+              "description":"Usato in riepiloghi, statistiche ecc."
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Mostra Titolo",
+              "description":"Deseleziona questa opzione se non vuoi che questo titolo sia visualizzato. Il titolo sarà visualizzato solo in sintesi, statistiche ecc."
             },
             {
               "label":"Immagine di sfondo",
@@ -120,18 +116,18 @@
                     "label":"Opacità Sfondo"
                   },
                   {
-                    "label":"Suggerimento",
+                    "label":"Suggerimenti e feedback",
                     "fields":[
                       {
                         "label":"Testo del suggerimento"
                       },
                       {
-                        "label":"Message displayed on correct match",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label":"Messaggio visualizzato su corrispondenza corretta",
+                        "description":"Su \"Verifica\", un messaggio sarà visualizzato sotto il compito in caso di rilascio corretto"
                       },
                       {
-                        "label":"Message displayed on incorrect match",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "label":"Messaggio visualizzato su corrispondenza non corretta",
+                        "description":"Su \"Verifica\", sarà visualizzato un messaggio sotto il compito se la corrispondenza non è corretta"
                       }
                     ]
                   },
@@ -140,8 +136,8 @@
                     "description":"Assicurarsi che ci sia una sola risposta corretta per questa zona di rilascio"
                   },
                   {
-                    "label":"Enable Auto-Align",
-                    "description":"Will auto-align all draggables dropped in this zone."
+                    "label":"Abilita allineamento automatico",
+                    "description":"Allineerà automaticamente tutti gli elementi trascinabili rilasciati in quest'area"
                   }
                 ]
               }
@@ -151,7 +147,7 @@
       ]
     },
     {
-      "label":"Opacità Sfondo per elementi trascinabili",
+      "label":"Feedback generale",
       "fields":[
         {
           "widgets":[
@@ -159,20 +155,20 @@
               "label":"Predefinito"
             }
           ],
-          "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
-          "entity":"range",
+          "label":"Definisci un feedback personalizzato per ogni intervallo di punteggio",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"Intervallo",
           "field":{
             "fields":[
               {
-                "label":"Score Range"
+                "label":"Intervallo di punteggio"
               },
               {
                 
               },
               {
-                "label":"Feedback for defined score range",
-                "placeholder":"Fill in the feedback"
+                "label":"Feedback per un intervallo di punteggio definito",
+                "placeholder":"Compila il feedback"
               }
             ]
           }
@@ -180,107 +176,107 @@
       ]
     },
     {
-      "label":"Impostazioni esecuzione",
+      "label":"Impostazioni di esecuzione",
       "description":"Queste opzioni consentono di controllare l'andamento del compito.",
       "fields":[
         {
-          "label":"Abilita \"Riprova\""
+          "label":"Attiva \"Riprova\""
         },
         {
           "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
         },
         {
-          "label":"Assegna un punto per il completamento del compito",
+          "label":"Assegna un punto per l'intero compito",
           "description":"Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
         },
         {
-          "label":"Apply penalties",
+          "label":"Applica penalità",
           "description":"Apply penalties for elements dropped in the wrong drop zones."
         },
         {
-          "label":"Enable score explanation",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label":"Attiva la spiegazione del punteggio",
+          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità')."
         },
         {
           "label":"Opacità Sfondo per elementi trascinabili",
           "description":"Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
-          "default":"dragging",
+          "label":"Evidenziazione della zona di rilascio",
+          "description":"Scegli quando evidenziare le zone di rilascio",
+          "default":"trascinare",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Durante il trascinamento"
             },
             {
-              "label":"Always"
+              "label":"Sempre"
             },
             {
-              "label":"Never"
+              "label":"Mai"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Spaziatura per allineamento automatico (in px)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Attiva schermo intero",
+          "description":"Seleziona questa opzione per attivare il pulsante schermo intero"
         },
         {
-          "label":"Show score points",
-          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label":"Visualizza punteggio",
+          "description":"Visualizza i punti guadagnati per ogni risposta. Non disponibile quando è attivata l'opzione 'Assegnare un punto per l'intera attività'."
         }
       ]
     },
     {
-      "label":"Localizzazione",
+      "label":"Impostazioni esecuzione",
       "fields":[
         {
-          "label":"Etichetta Schermo intero",
-          "default":"Fullscreen"
+          "label":"Abilita \"Riprova\"",
+          "default":"Schermo intero"
         },
         {
-          "label":"Esci da Schermo intero",
-          "default":"Exit fullscreen"
+          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata",
+          "default":"Esci da schermo intero"
         }
       ]
     },
     {
       "label":"Localize",
-      "default":"Grabbable {num} of {total}"
+      "default":"A disposizione {num} di {total}."
     },
     {
-      "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}"
+      "label":"Suffisso per afferrabile",
+      "default":"Posizionato nella zona di rilascio {num}."
     },
     {
-      "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}"
+      "label":"Prefisso della zona di rilascio",
+      "default":"Rilasciabili {num} di {total}."
     },
     {
-      "label":"No dropzone selection label",
-      "default":"No dropzone"
+      "label":"Nessuna etichetta di selezione della zona di rilascio",
+      "default":"Nessuna zona di rilascio"
     },
     {
-      "label":"Label for show tip button",
-      "default":"Visualizza suggerimento"
+      "label":"Etichetta per il pulsante \"Mostra suggerimento\"",
+      "default":"Mostra suggerimento"
     },
     {
-      "label":"Label for tip available",
+      "label":"Etichetta per suggerimento disponibile",
       "default":"Suggerimento disponibile"
     },
     {
-      "label":"Label for correct answer",
+      "label":"Etichetta per risposta corretta",
       "default":"Risposta corretta"
     },
     {
-      "label":"Label for incorrect answer",
+      "label":"Etichetta per risposta errata",
       "default":"Risposta sbagliata"
     },
     {
-      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "label":"Intestazione di pannello contenente i feedback per risposte corrette/errate",
       "default":"Feedback"
     }
   ]

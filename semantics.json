@@ -381,7 +381,7 @@
         "label": "Give one point for the whole task",
         "importance": "low",
         "description": "Disable to give one point for each draggable that is placed correctly.",
-        "default": true
+        "default": false
       },
       {
         "label": "Apply penalties",
@@ -397,7 +397,16 @@
         "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
         "importance": "low",
         "default": true,
-        "optional": true
+        "optional": true,
+        "widget": "showWhen",
+        "showWhen": {
+          "rules": [
+            {
+              "field": "singlePoint",
+              "equals": false
+            }
+          ]
+        }
       },
       {
         "name": "backgroundOpacity",

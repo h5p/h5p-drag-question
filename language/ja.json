@@ -9,10 +9,6 @@
       "default":"リトライ"
     },
     {
-      "label":"正解ラベルのテキスト",
-      "default":"解を表示"
-    },
-    {
       "label":"得点説明用テキスト",
       "default":"正解の場合 +1 点を与えます。不正解では -1 点となります。最低得点は 0 点です。"
     },
@@ -160,7 +156,7 @@
             }
           ],
           "label":"ある得点範囲に対して、カスタムフィードバックを定義します。",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"範囲",
           "field":{
             "fields":[
@@ -249,19 +245,19 @@
     },
     {
       "label":"ドラッグ要素の接頭語",
-      "default":"ドラッグ {num} / {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"ドラッグ要素の接尾語",
-      "default":"ドロップゾーンに配置 {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"ドロップゾーンの接頭語",
-      "default":"ドロップゾーン {num} / {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"ドロップゾーン選択ラベル無し",
-      "default":"ドロップゾーン無し"
+      "default":"No dropzone."
     },
     {
       "label":"ヒント表示ボタンのラベル",

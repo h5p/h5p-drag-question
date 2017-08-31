@@ -9,10 +9,6 @@
       "default":"Recommencer"
     },
     {
-      "label":"Bouton \"Voir la correction\"",
-      "default":"Voir la solution"
-    },
-    {
       "label":"Texte d'explication du score",
       "default":"Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
     },
@@ -160,7 +156,7 @@
             }
           ],
           "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"range",
           "field":{
             "fields":[
@@ -181,7 +177,7 @@
     },
     {
       "label":"Options générales.",
-      "description":"Ces options vous permettent de contrôler le déroulement de l'activité.",
+      "description":"Ces options vous permettent de contrôler le déroulement de vos activités.",
       "fields":[
         {
           "label":"Activer le bouton \"Recommencer\""
@@ -235,37 +231,37 @@
       ]
     },
     {
-      "label":"Traductions",
+      "label":"Options générales.",
       "fields":[
         {
-          "label":"Texte du titre pour le bouton Plein écran",
+          "label":"Activer le bouton \"Recommencer\"",
           "default":"Plein écran"
         },
         {
-          "label":"Texte du titre pour le bouton Quitter le plein écran",
+          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction.",
           "default":"Quitter le plein écran"
         }
       ]
     },
     {
       "label":"Traductions",
-      "default":"Grabbable {num} of {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"No dropzone selection label",
-      "default":"No dropzone"
+      "default":"No dropzone."
     },
     {
       "label":"Label for show tip button",
-      "default":"Montrer l'indice"
+      "default":"Show tip."
     },
     {
       "label":"Label for tip available",

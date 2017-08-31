@@ -9,10 +9,6 @@
       "default":"إعادة المحاولة"
     },
     {
-      "label":"تسمية الحل الصحيح النص",
-      "default":"مشاهدة الحل"
-    },
-    {
       "label":"Score explanation text",
       "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
@@ -160,7 +156,7 @@
             }
           ],
           "label":"Define custom feedback for any score range",
-          "description":"Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!\nAvailable variables: @score and @total. Example: 'You got @score of @total possible points'",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
           "entity":"range",
           "field":{
             "fields":[
@@ -181,10 +177,10 @@
     },
     {
       "label":"إعدادت النشاط",
-      "description":"يتأكد من إجابة المستخدم بأن تكون بالضبط نفس الجواب",
+      "description":"وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
       "fields":[
         {
-          "label":"تمكين زر \"إعادة المحاولة\""
+          "label":"تمكين \"إعادة المحاولة \""
         },
         {
           "label":"تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
@@ -235,37 +231,37 @@
       ]
     },
     {
-      "label":"تحديد الموقع",
+      "label":"حساسية الاجابة",
       "fields":[
         {
-          "label":"تسمية لملء الشاشة",
+          "label":"تفعيل \"إعادة المحاولة \"",
           "default":"Fullscreen"
         },
         {
-          "label":"تسمية خروج ملء الشاشة",
+          "label":"تتطلب إدخال المستخدم قبل أن يتم عرضه الحل",
           "default":"Exit fullscreen"
         }
       ]
     },
     {
       "label":"Localize",
-      "default":"Grabbable {num} of {total}"
+      "default":"Grabbable {num} of {total}."
     },
     {
       "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}"
+      "default":"Placed in dropzone {num}."
     },
     {
       "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}"
+      "default":"Dropzone {num} of {total}."
     },
     {
       "label":"No dropzone selection label",
-      "default":"No dropzone"
+      "default":"No dropzone."
     },
     {
       "label":"Label for show tip button",
-      "default":"Show tip"
+      "default":"Show tip."
     },
     {
       "label":"Label for tip available",
