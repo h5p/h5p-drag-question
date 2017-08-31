@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"Innstillinger for oppgave-oppførsel",
+      "label":"Lokaliser",
       "fields":[
         {
-          "label":"Aktiver \"Prøv igjen\"-knapp",
+          "label":"Tittel for \"Full skjerm\"-knapp",
           "default":"Fullskjerm"
         },
         {
-          "label":"Krev inndata fra brukeren før fasit gis.",
+          "label":"Tittel for \"Avslutt fullskjerm\"-knapp",
           "default":"Forlat fullskjerm"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Draobjektprefiks",
       "default":"Grabbable {num} of {total}."
     },
     {
@@ -252,7 +252,7 @@
       "default":"Placed in dropzone {num}."
     },
     {
-      "label":"Draobjektsuffiks",
+      "label":"Målområdeprefiks",
       "default":"Dropzone {num} of {total}."
     },
     {
@@ -260,7 +260,7 @@
       "default":"No dropzone."
     },
     {
-      "label":"Ingen slippsone valg-merkelapp",
+      "label":"Etikett for knappen Vis tips",
       "default":"Show tip."
     },
     {

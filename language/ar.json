@@ -231,20 +231,20 @@
       ]
     },
     {
-      "label":"حساسية الاجابة",
+      "label":"تحديد الموقع",
       "fields":[
         {
-          "label":"تفعيل \"إعادة المحاولة \"",
+          "label":"تسمية لملء الشاشة",
           "default":"Fullscreen"
         },
         {
-          "label":"تتطلب إدخال المستخدم قبل أن يتم عرضه الحل",
+          "label":"تسمية خروج ملء الشاشة",
           "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
