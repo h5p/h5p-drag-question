@@ -238,7 +238,7 @@
           "default":"Plein écran"
         },
         {
-          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction.",
+          "label":"Texte pour quitter le plein écran",
           "default":"Sortir du plein écran"
         }
       ]
