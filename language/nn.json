@@ -195,7 +195,14 @@
         },
         {
           "label":"Vis poeng-forklaring",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
         },
         {
           "label":"Bakgrunnsopasitet på flyttbare elementer",
@@ -231,36 +238,36 @@
       ]
     },
     {
-      "label":"Innstillinger for oppgave-oppførsel",
+      "label":"Lokaliser",
       "fields":[
         {
-          "label":"Aktiver \"Prøv igjen\"-knapp",
+          "label":"Tittel for \"Full skjerm\"-knapp",
           "default":"Fullskjerm"
         },
         {
-          "label":"Krev inndata fra brukeren før fasit gis.",
+          "label":"Tittel for \"Avslutt fullskjerm\"-knapp",
           "default":"Forlat fullskjerm"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
-      "label":"Draobjektprefiks",
+      "label":"Grabbable suffix",
       "default":"Placed in dropzone {num}."
     },
     {
-      "label":"Draobjektsuffiks",
+      "label":"Dropzone prefix",
       "default":"Dropzone {num} of {total}."
     },
     {
-      "label":"Slippsoneprefiks",
+      "label":"No dropzone selection label",
       "default":"No dropzone."
     },
     {
-      "label":"Ingen slippsone valg-merkelapp",
+      "label":"Label for show tip button",
       "default":"Show tip."
     },
     {
@@ -268,11 +275,11 @@
       "default":"Tips tilgjengelig"
     },
     {
-      "label":"Merkelapp for tips tilgjengeleg",
+      "label":"Merkelapp for korrekt svar",
       "default":"Riktig svar"
     },
     {
-      "label":"Merkelapp for korrekt svar",
+      "label":"Merkelapp for feil svar",
       "default":"Galt svar"
     },
     {

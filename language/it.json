@@ -195,7 +195,14 @@
         },
         {
           "label":"Attiva la spiegazione del punteggio",
-          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità')."
+          "description":"Visualizza una spiegazione del punteggio all'utente quando controlla le sue risposte (se è stata selezionata l'opzione 'Applica penalità').",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
         },
         {
           "label":"Opacità Sfondo per elementi trascinabili",
@@ -231,20 +238,20 @@
       ]
     },
     {
-      "label":"Impostazioni esecuzione",
+      "label":"Localizza",
       "fields":[
         {
-          "label":"Abilita \"Riprova\"",
+          "label":"Etichetta di schermo intero",
           "default":"Schermo intero"
         },
         {
-          "label":"Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata",
+          "label":"Etichetta di uscita da schermo intero",
           "default":"Esci da schermo intero"
         }
       ]
     },
     {
-      "label":"Localize",
+      "label":"Grabbable prefix",
       "default":"A disposizione {num} di {total}."
     },
     {

@@ -195,7 +195,14 @@
         },
         {
           "label":"得点説明を有効化",
-          "description":"（「ペナルティを適用する」オプションが選択されている 場合）答えをチェックするとき、得点の説明をユーザーに表示します。"
+          "description":"（「ペナルティを適用する」オプションが選択されている 場合）答えをチェックするとき、得点の説明をユーザーに表示します。",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
         },
         {
           "label":"ドラッグするものの背景の不透明度",
@@ -238,25 +245,25 @@
           "default":"フルスクリーン"
         },
         {
-          "label":"フルスクリーン解除のラベル",
-          "default":"フルスクリーン解除"
+          "label":"Exit fullscreen label",
+          "default":"Exit fullscreen"
         }
       ]
     },
     {
-      "label":"ドラッグ要素の接頭語",
+      "label":"Grabbable prefix",
       "default":"Grabbable {num} of {total}."
     },
     {
-      "label":"ドラッグ要素の接尾語",
+      "label":"Grabbable suffix",
       "default":"Placed in dropzone {num}."
     },
     {
-      "label":"ドロップゾーンの接頭語",
+      "label":"Dropzone prefix",
       "default":"Dropzone {num} of {total}."
     },
     {
-      "label":"ドロップゾーン選択ラベル無し",
+      "label":"No dropzone selection label",
       "default":"No dropzone."
     },
     {
