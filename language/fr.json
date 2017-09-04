@@ -1,192 +1,143 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "englishLabel": "Check answer button",
-      "label": "Bouton \"Vérifier\"",
-      "englishDefault": "Check",
-      "default": "Vérifier"
+      "label":"Bouton \"Vérifier\"",
+      "default":"Vérifier"
     },
     {
-      "englishLabel": "Retry button",
-      "label": "Bouton \"Recommencer\"",
-      "englishDefault": "Retry",
-      "default": "Recommencer"
+      "label":"Bouton \"Recommencer\"",
+      "default":"Recommencer"
     },
     {
-      "englishLabel": "Correct solution label text",
-      "label": "Bouton \"Voir la correction\"",
-      "englishDefault": "Show solution",
-      "default": "Voir la correction"
+      "label":"Texte d'explication du score",
+      "default":"Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
     },
     {
-      "englishLabel": "Feedback text",
-      "label": "Appréciation finale",
-      "englishDefault": "You got @score of @total points",
-      "default": "Vous avez obtenu @score point(s) sur @total",
-      "englishDescription": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total points.'",
-      "description": "Texte du feedback final. Les variables disponibles sont : @score et @total. (Exemple: 'Tu as @score sur @total points.)'"
-    },
-    {
-      "englishLabel": "Score explanation text",
-      "label": "Texte d'explication du score",
-      "englishDefault": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
-      "default": "Les réponses correctes donnent droit à +1 point. Les réponses incorrectes à -1 point. Le score le plus bas possible est 0."
-    },
-    {
-      "fields": [
+      "fields":[
         {
-          "englishLabel": "Settings",
-          "label": "Réglages",
-          "fields": [
+          "label":"Réglages",
+          "fields":[
             {
-              "englishLabel": "The title of this question",
-              "label": "Titre de cette question",
-              "englishDefault": "Drag and Drop",
-              "default": "Glisser-déposer",
-              "englishDescription": "Used in summaries, statistics etc.",
-              "description": "Utilisé dans les résumés, statistiques, etc."
+              "label":"Titre de la question",
+              "default":"Glisser-déposer",
+              "description":"Utilisée dans les résumés, statistiques, etc."
             },
             {
-              "englishLabel": "Show Title",
-              "label": "Afficher le titre",
-              "englishDescription": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
-              "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
+              "label":"Afficher le titre",
+              "description":"Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
             },
             {
-              "englishLabel": "Background image",
-              "label": "Image d'arrière-plan",
-              "englishDescription": "Optional. Select an image to use as background for your drag and drop task.",
-              "description": "Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
+              "label":"Image d'arrière-plan",
+              "description":"Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
             },
             {
-              "englishLabel": "Task size",
-              "label": "Taille de la zone de l'activité",
-              "englishDescription": "Specify how large (in px) the play area should be.",
-              "description": "Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité."
-            },
-            {
-              "englishLabel": "Drop Zone Highlighting",
-              "label": "Mise en évidence de la zone de dépôt",
-              "englishDescription": "Choose when to highlight drop zones.",
-              "default": "dragging",
-              "description": "Choisissez quand mettre en évidence la zone de dépôt.",
-              "options": [
+              "label":"Taille de la zone de l'activité",
+              "description":"Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité.",
+              "default":{
+                
+              },
+              "fields":[
                 {
-                  "englishLabel": "When dragging",
-                  "label": "Lors du glisser-déposer"
+                  
                 },
                 {
-                  "englishLabel": "Always",
-                  "label": "Toujours"
-                },
-                {
-                  "englishLabel": "Never",
-                  "label": "Jamais"
+                  
                 }
               ]
-            },
-            {
-              "englishLabel": "Spacing for Auto-Align (in px)",
-              "label": "Marge pour l'alignement automatique (en pixels)"
-            },
-            {
-              "englishLabel": "Enable FullScreen",
-              "label": "Activer le bouton Plein écran",
-              "englishDescription": "Check this option to enable the full screen button.",
-              "description": "Cochez cette option pour autoriser le mode Plein écran."
             }
           ]
         },
         {
-          "englishLabel": "Task",
-          "label": "Éléments de l'activité",
-          "englishDescription": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
-          "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
-          "fields": [
+          "label":"Éléments de l'activité",
+          "description":"Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
+          "fields":[
             {
-              "englishLabel": "Elements",
-              "label": "Eléments",
-              "englishEntity": "element",
-              "entity": "élément",
-              "field": {
-                "englishLabel": "Element",
-                "label": "Elément",
-                "fields": [
+              "label":"Eléments",
+              "entity":"élément",
+              "field":{
+                "label":"Elément",
+                "fields":[
                   {
-                    "englishDescription": "Choose the type of content you would like to add.",
-                    "description": "Sélectionnez le type de contenu que vous souhaitez ajouter."
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "englishLabel": "Select drop zones",
-                    "label": "Sélectionnez les zones de dépôt"
+                    "description":"Sélectionnez le type de contenu que vous souhaitez ajouter."
                   },
                   {
-                    "englishLabel": "Background Opacity",
-                    "label": "Opacité du fond"
+                    
                   },
                   {
-                    "englishLabel": "Infinite number of element instances",
-                    "label": "Nombre illimité d'instances pour cet élément",
-                    "englishDescription": "Clones this element so that it can be dragged to multiple drop zones.",
-                    "description": "Cloner cet élément de sorte qu'il puisse être déposé dans plusieurs zones."
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "label":"Sélectionnez les zones de dépôt"
+                  },
+                  {
+                    "label":"Opacité"
+                  },
+                  {
+                    "label":"Nombre illimité d'instances pour cet élément",
+                    "description":"Cloner cet élément de sorte qu'il puisse être déposé dans plusieurs zones."
                   }
                 ]
               }
             },
             {
-              "englishLabel": "Drop Zones",
-              "label": "Zones de dépôt",
-              "englishEntity": "Drop Zone",
-              "entity": "Zone de dépôt",
-              "field": {
-                "englishLabel": "Drop Zone",
-                "label": "Zone de dépôt",
-                "fields": [
+              "label":"Zones de dépôt",
+              "entity":"Zone de dépôt",
+              "field":{
+                "label":"Zone de dépôt",
+                "fields":[
                   {
-                    "englishLabel": "Label",
-                    "label": "Etiquette"
+                    "label":"Etiquette"
                   },
                   {
-                    "englishLabel": "Show label",
-                    "label": "Afficher l'étiquette"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {
-                    "englishLabel": "Select correct elements",
-                    "label": "Sélectionnez les éléments qui devront être correctement placés dans cette zone"
+                    "label":"Afficher l'étiquette"
                   },
                   {
-                    "englishLabel": "Background Opacity",
-                    "label": "Opacité"
+                    
                   },
                   {
-                    "englishLabel": "Tip",
-                    "label": "Indice",
-                    "fields": [
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "label":"Sélectionnez les éléments qui devront être correctement placés dans cette zone"
+                  },
+                  {
+                    "label":"Opacité"
+                  },
+                  {
+                    "label":"Aides et commentaires",
+                    "fields":[
                       {
-                        "englishLabel": "Tip text",
-                        "label": "Texte de l'indice"
+                        "label":"Indice"
+                      },
+                      {
+                        "label":"Message displayed on correct match",
+                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                      },
+                      {
+                        "label":"Message displayed on incorrect match",
+                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
                   },
                   {
-                    "englishLabel": "This drop zone can only contain one element",
-                    "label": "Cette zone de dépôt ne peut contenir qu'un seul élément",
-                    "englishDescription": "Make sure there is only one correct answer for this dropzone",
-                    "description": "Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone"
+                    "label":"Cette zone de dépôt ne peut contenir qu'un seul élément",
+                    "description":"Assurez-vous qu'il n'existe qu'une seule bonne réponse pour cette zone"
                   },
                   {
-                    "englishLabel": "Enable Auto-Align",
-                    "label": "Activer l'alignement automatique des éléments déplacés",
-                    "englishDescription": "Will auto-align all draggables dropped in this zone.",
-                    "description": "Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
+                    "label":"Activer l'alignement automatique des éléments déplacés",
+                    "description":"Les éléments déposés dans cette zone seront automatiquement alignés si cette option est cochée."
                   }
                 ]
               }
@@ -196,60 +147,144 @@
       ]
     },
     {
-      "englishLabel": "Background opacity for draggables",
-      "label": "Opacité des étiquettes",
-      "englishDescription": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
-      "description": "Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
-    },
-    {
-      "englishLabel": "Behavioural settings.",
-      "label": "Options générales.",
-      "englishDescription": "These options will let you control how the task behaves.",
-      "description": "Cette option vous permet de paramétrer le déroulement de l'exercice.",
-      "fields": [
+      "label":"Opacité des étiquettes",
+      "fields":[
         {
-          "englishLabel": "Enable \"Retry\"",
-          "label": "Activer le bouton \"Recommencer\""
-        },
-        {
-          "englishLabel": "Require user input before the solution can be viewed",
-          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
-        },
-        {
-          "englishLabel": "Give one point for the whole task",
-          "label": "Donner un point pour l'ensemble de l'exercice",
-          "englishDescription": "Disable to give one point for each draggable that is placed correctly.",
-          "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
-        },
-        {
-          "englishLabel": "Apply penalties",
-          "label": "Appliquer des pénalités",
-          "englishDescription": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score.",
-          "description": "Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
-        },
-        {
-          "englishLabel": "Enable score explanation",
-          "label": "Activer les explications du score"
+          "widgets":[
+            {
+              "label":"Par défaut"
+            }
+          ],
+          "label":"Define custom feedback for any score range",
+          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity":"range",
+          "field":{
+            "fields":[
+              {
+                "label":"Score Range"
+              },
+              {
+                
+              },
+              {
+                "label":"Feedback for defined score range",
+                "placeholder":"Fill in the feedback"
+              }
+            ]
+          }
         }
       ]
     },
     {
-      "englishLabel": "Localize",
-      "label": "Traductions",
-      "fields": [
+      "label":"Options générales.",
+      "description":"Ces options vous permettent de contrôler le déroulement de vos activités.",
+      "fields":[
         {
-          "englishLabel": "Fullscreen label",
-          "label": "Texte du titre pour le bouton Plein écran",
-          "englishDefault": "Fullscreen",
-          "default": "Plein écran"
+          "label":"Activer le bouton \"Recommencer\""
         },
         {
-          "englishLabel": "Exit fullscreen label",
-          "label": "Texte du titre pour le bouton Quitter le plein écran",
-          "englishDefault": "Exit fullscreen",
-          "default": "Quitter le plein écran"
+          "label":"Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
+        },
+        {
+          "label":"Donner un point par activité",
+          "description":"Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
+        },
+        {
+          "label":"Appliquer des pénalités",
+          "description":"Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
+        },
+        {
+          "label":"Activer les explications du score",
+          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "showWhen":{
+            "rules":[
+              {
+                
+              }
+            ]
+          }
+        },
+        {
+          "label":"Opacité des étiquettes",
+          "description":"Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
+        },
+        {
+          "label":"Mise en évidence de la zone de dépôt",
+          "description":"Choisissez quand mettre en évidence la zone de dépôt.",
+          "default":"dragging",
+          "options":[
+            {
+              "label":"Lors du glisser-déposer"
+            },
+            {
+              "label":"Toujours"
+            },
+            {
+              "label":"Jamais"
+            }
+          ]
+        },
+        {
+          "label":"Marge pour l'alignement automatique (en pixels)"
+        },
+        {
+          "label":"Activer le bouton Plein écran",
+          "description":"Cochez cette option pour autoriser le mode Plein écran."
+        },
+        {
+          "label":"Show score points",
+          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         }
       ]
+    },
+    {
+      "label":"Traduction de l'interface",
+      "fields":[
+        {
+          "label":"Texte pour ouvrir en plein écran",
+          "default":"Plein écran"
+        },
+        {
+          "label":"Texte pour quitter le plein écran",
+          "default":"Sortir du plein écran"
+        }
+      ]
+    },
+    {
+      "label":"Grabbable prefix",
+      "default":"Grabbable {num} of {total}."
+    },
+    {
+      "label":"Grabbable suffix",
+      "default":"Placed in dropzone {num}."
+    },
+    {
+      "label":"Dropzone prefix",
+      "default":"Dropzone {num} of {total}."
+    },
+    {
+      "label":"No dropzone selection label",
+      "default":"No dropzone."
+    },
+    {
+      "label":"Label for show tip button",
+      "default":"Show tip."
+    },
+    {
+      "label":"Label for tip available",
+      "default":"Indice disponible"
+    },
+    {
+      "label":"Label for correct answer",
+      "default":"Bonne réponse"
+    },
+    {
+      "label":"Label for incorrect answer",
+      "default":"Réponse incorrecte"
+    },
+    {
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Commentaire de retour"
     }
   ]
 }

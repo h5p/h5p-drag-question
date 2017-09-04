@@ -1,6 +1,6 @@
 var H5PUpgrades = H5PUpgrades || {};
 
-H5PUpgrades['H5P.DragQuestion'] = (function ($) {
+H5PUpgrades['H5P.DragQuestion'] = (function () {
   return {
     1: {
       1: {
@@ -20,6 +20,7 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
           finished(null, parameters);
         }
       },
+
       /**
        * Asynchronous content upgrade hook.
        * Upgrades content parameters to support DQ 1.4.
@@ -46,7 +47,76 @@ H5PUpgrades['H5P.DragQuestion'] = (function ($) {
           }
         }
         finished(null, parameters);
+      },
+
+      /**
+       * Asynchronous content upgrade hook.
+       * Upgrades content parameters to support Drag Question 1.11
+       *
+       * 1. Move old feedback message to the new overall feedback system.
+       * 2. Group tip with feedback
+       * 3. Do not show the new score points for old content being upgraded.
+       * 4. Relocate fields in the editor
+       *
+       * @param {object} parameters
+       * @param {function} finished
+       */
+      11: function (parameters, finished) {
+
+        // Move old feedback message to the new overall feedback system.
+        if (parameters && parameters.feedback) {
+          parameters.overallFeedback = [
+            {
+              'from': 0,
+              'to': 100,
+              'feedback': parameters.feedback
+            }
+          ];
+
+          delete parameters.feedback;
+        }
+
+        // Group tip with feedback
+        if (parameters.question !== undefined &&
+            parameters.question.task !== undefined &&
+            parameters.question.task.dropZones !== undefined ) {
+
+          var dropZones = parameters.question.task.dropZones;
+          for (var i = 0; i < dropZones.length; i++) {
+            var dropZone = dropZones[i];
+            var tip = (dropZone !== undefined && dropZone.tip !== undefined && typeof dropZone.tip === 'string') ? dropZone.tip : '';
+
+            // Create the new group-structure
+            delete dropZone.tip;
+            dropZone.tipsAndFeedback = {
+              tip: tip,
+              feedbackOnCorrect: '',
+              feedbackOnIncorrect: ''
+            };
+          }
+        }
+
+        // Hide score points for old content
+        if (!parameters.behaviour) {
+          parameters.behaviour = {};
+        }
+
+        // Move fields into behaviour and remove the old values
+        parameters.behaviour.backgroundOpacity = parameters.backgroundOpacity;
+        delete parameters.backgroundOpacity;
+        if (parameters.question !== undefined && parameters.question.settings !== undefined) {
+          parameters.behaviour.dropZoneHighlighting = parameters.question.settings.dropZoneHighlighting;
+          parameters.behaviour.autoAlignSpacing = parameters.question.settings.autoAlignSpacing;
+          parameters.behaviour.enableFullScreen = parameters.question.settings.enableFullScreen;
+          delete parameters.question.settings.dropZoneHighlighting;
+          delete parameters.question.settings.autoAlignSpacing;
+          delete parameters.question.settings.enableFullScreen;
+        }
+
+        // Done
+        finished(null, parameters);
       }
+
     }
   };
-})(H5P.jQuery);
+})();

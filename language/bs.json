@@ -1,38 +1,38 @@
 {
   "semantics":[
     {
-      "label":"Sjekk-knappen",
-      "default":"Sjekk"
+      "label":"Provjeri dugme odgovora",
+      "default":"Provjeri"
     },
     {
-      "label":"«Prøv igjen»-knapp",
-      "default":"Prøv igjen"
+      "label":"Dugme ponovnog pokušaja",
+      "default":"Ponovi"
     },
     {
-      "label":"Poengforklaring",
-      "default":"Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
+      "label":"Tekst opisa rezultata",
+      "default":"Ispravan odgovor daje +1 bod. Pogrešan odgovor daje -1 bod. Najmanji mogući rezultat je 0."
     },
     {
       "fields":[
         {
-          "label":"Innstillinger",
+          "label":"Podešavanja",
           "fields":[
             {
-              "label":"Oppgavetittel",
-              "default":"Dra og slipp",
-              "description":"Brukes blant annet i oppsummeringer og statistikk."
+              "label":"Naziv ovog pitanja",
+              "default":"Uzmi i spusti",
+              "description":"Koristi se u sažecima, statistikama, itd.."
             },
             {
-              "label":"Show Title",
-              "description":"Huk av dette alternativet, hvis du ikke ønsker å vise tittelen. Tittelen vil bare vises for oppsummeringer, statistikk osv."
+              "label":"Pokaži naziv",
+              "description":"Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
             },
             {
-              "label":"Bakgrunnsbilde",
-              "description":"Valgfritt. Velg et bakgrunnsbilde for oppgaven."
+              "label":"Slika pozadine",
+              "description":"Opcionalno. Odaberi neku sliku koja će služiti kao pozadina za zadatak 'Uzmi i spusti'."
             },
             {
-              "label":"Oppgavens størrelse",
-              "description":"Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i.",
+              "label":"Dimenzije zadatka",
+              "description":"Odredi koliko veliki prostor (u pixelima) treba biti",
               "default":{
                 
               },
@@ -48,17 +48,17 @@
           ]
         },
         {
-          "label":"Oppgave",
-          "description":"Begynn med å plassere målområder.<br/>Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br/>Til slutt redigeres målområdene igjen for å angi fasit.",
+          "label":"Zadatak",
+          "description":"Počni sa određivanjem zona za spustanje.<br/>Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br/>Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
           "fields":[
             {
-              "label":"Elementer",
-              "entity":"Element",
+              "label":"Elementi",
+              "entity":"element",
               "field":{
                 "label":"Element",
                 "fields":[
                   {
-                    "description":"Velg typen innhold du vil legge til."
+                    "description":"Odaberi vrstu sadržaja koju želiš dodati."
                   },
                   {
                     
@@ -73,32 +73,29 @@
                     
                   },
                   {
-                    "label":"Velg målområder"
+                    "label":"Označi zone za spustanje"
                   },
                   {
-                    "label":"Opasitet for bakgrunn"
+                    "label":"Pozadinska zamućenost"
                   },
                   {
-                    "label":"Uendelig antall instanser av elementet",
-                    "description":"Klon dette elementet slik at det kan dras til flere målområder."
+                    "label":"Neograničen broj elemenata",
+                    "description":"Klonira ovaj element kako bi mogao biti spušten na višestruke zone."
                   }
                 ]
               }
             },
             {
-              "label":"Målområder",
-              "entity":"Målområde",
+              "label":"Zone za spustanje",
+              "entity":"Zona za spustanje",
               "field":{
-                "label":"Målområde",
+                "label":"Zona za spustanje",
                 "fields":[
                   {
-                    "label":"Tittel"
+                    "label":"Oznaka"
                   },
                   {
-                    "label":"Vis tittel"
-                  },
-                  {
-                    
+                    "label":"Pokaži oznaku"
                   },
                   {
                     
@@ -110,16 +107,19 @@
                     
                   },
                   {
-                    "label":"Velg riktige elementer"
+                    
                   },
                   {
-                    "label":"Opasitet for bakgrunn"
+                    "label":"Označi ispravne elemente"
                   },
                   {
-                    "label":"Tips",
+                    "label":"Pozadinska zamućenost"
+                  },
+                  {
+                    "label":"Savjet",
                     "fields":[
                       {
-                        "label":"Tipstekst"
+                        "label":"Tekst savjeta"
                       },
                       {
                         "label":"Message displayed on correct match",
@@ -132,12 +132,12 @@
                     ]
                   },
                   {
-                    "label":"Dette målområdet kan bare inneholde et element",
-                    "description":"Pass på at det bare finnes ett riktig svar for dette målområdet"
+                    "label":"Ova zona za spustanje može sadržavati samo jedan element",
+                    "description":"Budi siguran da ima samo jedan tačan odgovor za ovu zonu za spustanje"
                   },
                   {
-                    "label":"Automatisk justering",
-                    "description":"Vil automatisk justere alle elementer plassert i denne sonen."
+                    "label":"Omogući automatsko poravnanje",
+                    "description":"Automatsko poravnanje za sve u ovoj zoni."
                   }
                 ]
               }
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "label":"Samlet tilbakemelding",
+      "label":"Pozadinska zamućenost za elemente za uzimanje",
       "fields":[
         {
           "widgets":[
@@ -176,25 +176,25 @@
       ]
     },
     {
-      "label":"Innstillinger for oppgaveoppførsel",
-      "description":"Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
+      "label":"Interaktionseinstellungen",
+      "description":"Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
       "fields":[
         {
-          "label":"Aktiver \"Prøv igjen\"-knapp"
+          "label":"Omogući \"Ponovi\" dugme"
         },
         {
-          "label":"Krev inndata fra brukeren før fasit gis."
+          "label":"Daje jedan bod za cijeli zadatak"
         },
         {
-          "label":"Gi ett poeng for hele oppgaven",
-          "description":"Slå av for å gi ett poeng for hvert draobjekt som er plassert korrekt."
+          "label":"Omogući objašnjenje rezultata",
+          "description":"Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "label":"Apply penalties",
+          "label":"Zahtjeva korisničko učešće prije nego rezultat bude vidljiv",
           "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label":"Vis poeng-forklaring",
+          "label":"Enable score explanation",
           "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
           "showWhen":{
             "rules":[
@@ -205,31 +205,31 @@
           }
         },
         {
-          "label":"Bakgrunnsopasitet på flyttbare elementer",
-          "description":"Hvis denne verdien er satt, vil den overstyre instillingene til alle flyttbare elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
+          "label":"Pozadinska zamućenost za elemente za uzimanje",
+          "description":"Ako je ovo polje određeno onda će biti poništena sva podešavanja o zamuženosti svih drugih elemenata. Ovo treba biti broj od 0 do 100, gdje 0 znači potpuna transparentnost, a 100 znači bez transparentnosti"
         },
         {
-          "label":"Slippsonefremheving",
-          "description":"Velg når slippsoner skal fremheves",
+          "label":"Naglašavanje zone za spustanje",
+          "description":"Odaberi kada će se zona za spustanje naglasiti.",
           "default":"dragging",
           "options":[
             {
-              "label":"Når man drar"
+              "label":"Kada se uzima"
             },
             {
-              "label":"Alltid"
+              "label":"Uvijek"
             },
             {
-              "label":"Aldri"
+              "label":"Nikad"
             }
           ]
         },
         {
-          "label":"Mellomrom for automatisk justering (i piksler)"
+          "label":"Određivanje prostora za automatsko poravnanje (u pixelima)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Omogući cijeli ekran",
+          "description":"Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
         },
         {
           "label":"Show score points",
@@ -238,53 +238,53 @@
       ]
     },
     {
-      "label":"Lokaliser",
+      "label":"Podešavanje ponašanja",
       "fields":[
         {
-          "label":"Tittel for \"Full skjerm\"-knapp",
-          "default":"Fullskjerm"
+          "label":"Omogući \"Ponovi\"",
+          "default":"Cijeli ekran"
         },
         {
-          "label":"Tittel for \"Avslutt fullskjerm\"-knapp",
-          "default":"Forlat fullskjerm"
+          "label":"Daje jedan bod za cijeli zadatak",
+          "default":"Izađi iz cijelog ekrana"
         }
       ]
     },
     {
-      "label":"Draobjektprefiks",
+      "label":"Lokaliziraj",
       "default":"Grabbable {num} of {total}."
     },
     {
-      "label":"Draobjektprefiks",
+      "label":"Grabbable suffix",
       "default":"Placed in dropzone {num}."
     },
     {
-      "label":"Målområdeprefiks",
+      "label":"Dropzone prefix",
       "default":"Dropzone {num} of {total}."
     },
     {
-      "label":"Slippsoneprefiks",
+      "label":"No dropzone selection label",
       "default":"No dropzone."
     },
     {
-      "label":"Etikett for knappen Vis tips",
+      "label":"Label for show tip button",
       "default":"Show tip."
     },
     {
-      "label":"Merkelapp for vis-tips-knappen",
-      "default":"Tips tilgjengelig"
+      "label":"Label for tip available",
+      "default":"Savjet dostupan"
     },
     {
-      "label":"Merkelapp for tips tilgjengelig",
-      "default":"Rett svar"
+      "label":"Label for correct answer",
+      "default":"Correct answer"
     },
     {
-      "label":"Merkelapp for korrekt svar",
-      "default":"Feil svar"
+      "label":"Label for incorrect answer",
+      "default":"Wrong answer"
     },
     {
-      "label":"Merkelapp for feil svar",
-      "default":"Tilbakemelding"
+      "label":"Header for panel containing feedback for correct/incorrect answers",
+      "default":"Feedback"
     }
   ]
 }
