@@ -1,16 +1,16 @@
 {
   "semantics":[
     {
-      "label":"Check answer button",
+      "label":"Controleer antwoord knop",
       "default":"Controleer"
     },
     {
-      "label":"Retry button",
+      "label":"Herbegin knop",
       "default":"Opnieuw proberen"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"verklaring score text",
+      "default":"+1 voor een juist antwoord. -1 voor een fout antwoord. De laagst mogelijke socre is 0."
     },
     {
       "fields":[
@@ -18,21 +18,21 @@
           "label":"Settings",
           "fields":[
             {
-              "label":"The title of this question",
+              "label":"Vraag titel",
               "default":"Drag and Drop",
               "description":"Gebruikt in samenvattingen, statistieken, enz."
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Toon titel",
+              "description":"Uncheck deze optie als je de titel niet wil tonen. De titel zal enkel getoond worden in samenvattingen, statistieken etc."
             },
             {
               "label":"Achtergrondafbeelding",
-              "description":"Optional. Select an image to use as background for your drag and drop task."
+              "description":"Optioneel. Selecteer een afbeelding als achtergrond voor uw drag and drop taak."
             },
             {
-              "label":"Task size",
-              "description":"Specify how large (in px) the play area should be.",
+              "label":"Taak grootte",
+              "description":"Specificieer hoe groot (in px) de taak mag zijn.",
               "default":{
                 
               },
@@ -48,7 +48,7 @@
           ]
         },
         {
-          "label":"Task",
+          "label":"Taak",
           "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields":[
             {
@@ -58,7 +58,7 @@
                 "label":"Element",
                 "fields":[
                   {
-                    "description":"Choose the type of content you would like to add."
+                    "description":"Kies het content type dat je wil toevoegen."
                   },
                   {
                     
@@ -73,14 +73,14 @@
                     
                   },
                   {
-                    "label":"Select drop zones"
+                    "label":"Selecteer drop zones"
                   },
                   {
                     "label":"Ondoorzichtigheid achtergrond"
                   },
                   {
-                    "label":"Infinite number of element instances",
-                    "description":"Clones this element so that it can be dragged to multiple drop zones."
+                    "label":"Oneindig aantal elementen",
+                    "description":"Kopieer dit element zodat het naar verschillende dropzones kan gesleept worden."
                   }
                 ]
               }
@@ -122,18 +122,18 @@
                         "label":"Tekst voor tip"
                       },
                       {
-                        "label":"Message displayed on correct match",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label":"Boodschap die getoond wordt bij de juist match",
+                        "description":"Boodschap verschijnt onder bij \"check\" als drag en drop overeenkomen."
                       },
                       {
-                        "label":"Message displayed on incorrect match",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "label":"Boodschap die getoond wordt bij de foute match",
+                        "description":"Boodschap verschijnt onder bij \"check\" als drag en drop niet overeenkomen."
                       }
                     ]
                   },
                   {
-                    "label":"This drop zone can only contain one element",
-                    "description":"Make sure there is only one correct answer for this dropzone"
+                    "label":"Deze drop zone kan slechts èèn element bevatten",
+                    "description":"Zorg ervoor dat er maar èèn juist antwoord is voor deze drop zone"
                   },
                   {
                     "label":"Enable Auto-Align",
