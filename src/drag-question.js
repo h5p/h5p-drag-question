@@ -8,6 +8,7 @@ import DropZone from './dropzone';
 import Draggable from './draggable';
 
 const $ = H5P.jQuery;
+let numInstances = 0;
 
 /**
  * Constructor
@@ -21,6 +22,7 @@ const $ = H5P.jQuery;
 function C(options, contentId, contentData) {
   var self = this;
   var i, j;
+  numInstances++;
   this.id = this.contentId = contentId;
   H5P.Question.call(self, 'dragquestion');
   this.options = $.extend(true, {}, {
@@ -270,7 +272,7 @@ C.prototype.registerDomElements = function () {
 
   // Register introduction section
   if (self.options.question.settings.showTitle) {
-    self.$introduction = $('<p class="h5p-dragquestion-introduction" tabindex="-1">' + self.options.question.settings.questionTitle + '</p>');
+    self.$introduction = $('<p class="h5p-dragquestion-introduction" id="dq-intro-' + numInstances + '">' + self.options.question.settings.questionTitle + '</p>');
     self.setIntroduction(self.$introduction);
   }
 
@@ -496,7 +498,7 @@ C.prototype.createQuestionContent = function () {
   // If reattaching, we no longer show solution. So forget that we
   // might have done so before.
 
-  this.$container = $('<div class="h5p-inner"></div>');
+  this.$container = $('<div class="h5p-inner" role="application" aria-labelledby="dq-intro-' + numInstances + '"></div>');
   if (this.options.question.settings.background !== undefined) {
     this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
   }
