@@ -1,38 +1,38 @@
 {
   "semantics":[
     {
-      "label":"Check answer button",
-      "default":"Check"
+      "label":"Painikkeen \"Tarkista\" nimi",
+      "default":"Tarkista"
     },
     {
-      "label":"Retry button",
+      "label":"Painikkeen \"Yritä uudelleen\" nimi",
       "default":"Yritä uudelleen"
     },
     {
-      "label":"Score explanation text",
-      "default":"Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label":"Tuloksen selite",
+      "default":"Saat oikeista vastauksista +1 pistettä. Vääristä vastauksista saat -1 pistettä. Pienin mahdollinen tulos on 0."
     },
     {
       "fields":[
         {
-          "label":"Settings",
+          "label":"Asetukset",
           "fields":[
             {
-              "label":"The title of this question",
-              "default":"Drag and Drop",
-              "description":"Used in summaries, statistics etc."
+              "label":"Kysymyksen otsikko",
+              "default":"Raahaa ja pudota",
+              "description":"Käytetään yhteenvedeoissa, tilastoissa jne."
             },
             {
-              "label":"Show Title",
-              "description":"Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label":"Näytä tehtävän otsikko",
+              "description":"Jätä valitsematta, jos et halua otsikkoa näkyviin. Tällöin otsikko näkyy vain yhteenvedoissa, tilastoissa jne."
             },
             {
-              "label":"Background image",
-              "description":"Optional. Select an image to use as background for your drag and drop task."
+              "label":"Taustakuva",
+              "description":"Valinnainen. Valitse taustakuva tehtävälle."
             },
             {
-              "label":"Task size",
-              "description":"Specify how large (in px) the play area should be.",
+              "label":"Tehtäväalueen koko",
+              "description":"Määrittele pikseleissä tehtäväalueen koko.",
               "default":{
                 
               },
@@ -48,17 +48,17 @@
           ]
         },
         {
-          "label":"Task",
-          "description":"Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label":"Tehtävä",
+          "description":"Aloita asettamalla pudotuskohteet.<br/>Seuraavaksi, asettele pudotettavat elementit ja valitse niille halutut kohteet.<br/>Viimeiseksi, muokkaa uudestaan pudotuskohteita ja valitse niille oikeat raahattavat.",
           "fields":[
             {
-              "label":"Elements",
-              "entity":"element",
+              "label":"Elementit",
+              "entity":"elementti",
               "field":{
-                "label":"Element",
+                "label":"Elementti",
                 "fields":[
                   {
-                    "description":"Choose the type of content you would like to add."
+                    "description":"Valitse lisättävä sisältötyyppi."
                   },
                   {
                     
@@ -73,32 +73,29 @@
                     
                   },
                   {
-                    "label":"Select drop zones"
+                    "label":"Valitse pudotuskohteet"
                   },
                   {
                     "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
-                    "label":"Infinite number of element instances",
-                    "description":"Clones this element so that it can be dragged to multiple drop zones."
+                    "label":"Loputon määrä elementin kopioita",
+                    "description":"Kloonaa elementin, jotta sen voi raahata useisiin kohteisiin."
                   }
                 ]
               }
             },
             {
-              "label":"Drop Zones",
-              "entity":"Drop Zone",
+              "label":"Pudotuskohteet",
+              "entity":"Pudotuskohde",
               "field":{
-                "label":"Drop Zone",
+                "label":"Pudotuskohde",
                 "fields":[
                   {
-                    "label":"Label"
+                    "label":"Kohteen kuvaus"
                   },
                   {
-                    "label":"Show label"
-                  },
-                  {
-                    
+                    "label":"Näytä kuvaus"
                   },
                   {
                     
@@ -110,34 +107,37 @@
                     
                   },
                   {
-                    "label":"Select correct elements"
+                    
+                  },
+                  {
+                    "label":"Valitse oikeat elementit"
                   },
                   {
                     "label":"Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
                   },
                   {
-                    "label":"Tips and feedback",
+                    "label":"Vihjeet ja palaute",
                     "fields":[
                       {
-                        "label":"Tip text"
+                        "label":"Vihjeteksti"
                       },
                       {
-                        "label":"Message displayed on correct match",
-                        "description":"Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label":"Palaute oikeille vastauksille",
+                        "description":"Palaute ilmestyy tehtävän alapuolelle, kun klikataan \"Tarkista\", jos pudotettava elementti on oikein."
                       },
                       {
-                        "label":"Message displayed on incorrect match",
-                        "description":"Message will appear below the task on \"check\" if the match is incorrect."
+                        "label":"Palaute väärille vastauksille",
+                        "description":"Palaute ilmestyy tehtävän alapuolelle, kun klikataan \"Tarkista\", jos pudotettava elementti on väärin."
                       }
                     ]
                   },
                   {
-                    "label":"This drop zone can only contain one element",
-                    "description":"Make sure there is only one correct answer for this dropzone"
+                    "label":"Tämä pudotuskohde voi sisältää vain yhden elementin",
+                    "description":"Tälle pudotuskohteelle on vain yksi oikea vastaus"
                   },
                   {
-                    "label":"Enable Auto-Align",
-                    "description":"Will auto-align all draggables dropped in this zone."
+                    "label":"Salli automaattinen kohdistus",
+                    "description":"Kohdistaa pudotetut elementit kohteen kanssa."
                   }
                 ]
               }
@@ -147,28 +147,28 @@
       ]
     },
     {
-      "label":"Overall Feedback",
+      "label":"Yleinen palaute",
       "fields":[
         {
           "widgets":[
             {
-              "label":"Default"
+              "label":"Oletus"
             }
           ],
-          "label":"Define custom feedback for any score range",
-          "description":"Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity":"range",
+          "label":"Määritä muokattu palaute pisterajojen mukaan.",
+          "description":"Klikkaa \"Lisää alue\" painiketta lisätäksesi niin monta pisterajaa kuin tarvit. Esimerkiksi: 0-20% Huono tulos, 21-91% Kelpo tulos, 91-100% Mahtava tulos!",
+          "entity":"alue",
           "field":{
             "fields":[
               {
-                "label":"Score Range"
+                "label":"Pisteraja"
               },
               {
                 
               },
               {
-                "label":"Feedback for defined score range",
-                "placeholder":"Fill in the feedback"
+                "label":"Palaute määritellylle pisterajalle",
+                "placeholder":"Kirjoita palaute"
               }
             ]
           }
@@ -176,26 +176,26 @@
       ]
     },
     {
-      "label":"Behavioural settings",
-      "description":"These options will let you control how the task behaves.",
+      "label":"Yleisasetukset",
+      "description":"Näillä valinnoilla voit ohjailla tehtävän toimintoja.",
       "fields":[
         {
-          "label":"Enable \"Retry\""
+          "label":"Salli painike \"Yritä uudelleen\""
         },
         {
-          "label":"Require user input before the solution can be viewed"
+          "label":"Vaadi vastaus ennen kuin ratkaisun saa nähdä"
         },
         {
-          "label":"Give one point for the whole task",
-          "description":"Disable to give one point for each draggable that is placed correctly."
+          "label":"Anna yksi piste koko tehtävästä",
+          "description":"Jos tämä ei ole valittuna, niin kaikista oikein pudotetuista saa pisteen."
         },
         {
-          "label":"Apply penalties",
-          "description":"Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label":"Rankaise vääristä vastauksista",
+          "description":"Rankaise vääristä pudotuksista. Tämän täytyy olla valittuna siinä tapauksessa, kun sama elementti voidaan pudottaa useisiin kohteisiin, tai kun kohteita on vain yksi. Jos tämä ei ole valittuna, voivat opiskelijat silloin aina saada kaikki oikein."
         },
         {
-          "label":"Enable score explanation",
-          "description":"Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "label":"Salli pisteiden selite",
+          "description":"Näytä pisteiden selite, kun käyttäjä tarkistaa vastauksensa (jos Rankaise vääristä vastauksista on valittuna).",
           "showWhen":{
             "rules":[
               {
@@ -205,35 +205,35 @@
           }
         },
         {
-          "label":"Background opacity for draggables",
-          "description":"If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label":"Raahattavien taustan läpinäkyvyys",
+          "description":"Tämän valitseminen yliajaa raahattavien elementtien läpinäkyvyysasetukset. Tämän pitää olla numeroarvo välillä 0-100, missä 0 tarkoittaa täyttä läpinäkyvyyttä ja 100 ei lainkaan läpinäkyvyyttä."
         },
         {
-          "label":"Drop Zone Highlighting",
-          "description":"Choose when to highlight drop zones.",
+          "label":"Pudotuskohteiden korostus",
+          "description":"Valitse milloin pudotuskohteita korostetaan.",
           "default":"dragging",
           "options":[
             {
-              "label":"When dragging"
+              "label":"Raahattaessa"
             },
             {
-              "label":"Always"
+              "label":"Aina"
             },
             {
-              "label":"Never"
+              "label":"Ei koskaan"
             }
           ]
         },
         {
-          "label":"Spacing for Auto-Align (in px)"
+          "label":"Välistys automaattiselle kohdistukselle (pikseleissä)"
         },
         {
-          "label":"Enable FullScreen",
-          "description":"Check this option to enable the full screen button."
+          "label":"Salli \"Koko ruutu\"",
+          "description":"Valitse salliaksesi \"Koko ruutu\"-painike."
         },
         {
-          "label":"Show score points",
-          "description":"Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label":"Näytä pisteet",
+          "description":"Näytä jokaisesta vastauksesta ansaitut pisteet. Ei käytössä, kun Anna yksi piste koko tehtävästä on valittuna."
         }
       ]
     },
@@ -251,36 +251,36 @@
       ]
     },
     {
-      "label":"Grabbable prefix",
-      "default":"Grabbable {num} of {total}."
+      "label":"Raahattavan etuliite",
+      "default":"Raahattava {num}\/{total}."
     },
     {
-      "label":"Grabbable suffix",
-      "default":"Placed in dropzone {num}."
+      "label":"Raahattavan jälkiliite",
+      "default":"Pudotettu kohteeseen {num}."
     },
     {
-      "label":"Dropzone prefix",
-      "default":"Dropzone {num} of {total}."
+      "label":"Pudotuskohteen etuliite",
+      "default":"Pudotuskohde {num}\/{total}."
     },
     {
-      "label":"No dropzone selection label",
-      "default":"No dropzone."
+      "label":"Ei pudotuskohdetta teksti",
+      "default":"Ei pudotuskohdetta."
     },
     {
-      "label":"Label for show tip button",
-      "default":"Show tip."
+      "label":"Vihjepainikkeen teksti",
+      "default":"Näytä vihje."
     },
     {
-      "label":"Label for tip available",
-      "default":"Tip available"
+      "label":"Vihje saatavilla teksti",
+      "default":"Vihje saatavilla"
     },
     {
-      "label":"Label for correct answer",
-      "default":"Correct answer"
+      "label":"Oikea vastaus",
+      "default":"Oikea vastaus"
     },
     {
-      "label":"Label for incorrect answer",
-      "default":"Wrong answer"
+      "label":"Väärä vastaus",
+      "default":"Väärä vastaus"
     },
     {
       "label":"Header for panel containing feedback for correct/incorrect answers",
