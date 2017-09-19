@@ -1105,7 +1105,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
     for (var i = 0; i < dropZones.length; i++) {
       var dropZone = dropZones[i];
 
-      if (dropZone.accepts(selected.draggable)) {
+      if (dropZone.accepts(selected.draggable, draggables)) {
         dropZone.highlight();
         controls.drop.addElement(dropZone.$dropZone[0]);
         if (!$first || selected.element.dropZone === dropZone.id) {
