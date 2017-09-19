@@ -37,6 +37,8 @@ function C(options, contentId, contentData) {
     correctAnswer: 'Correct answer',
     wrongAnswer: 'Wrong answer',
     feedbackHeader: 'Feedback',
+    scoreBarLabel: 'You got :num out of :total points',
+    scoreExplanationButtonLabel: 'Show score explanation',
     question: {
       settings: {
         questionTitle: 'Drag and drop',
@@ -940,7 +942,7 @@ C.prototype.showScore = function () {
   var actualPoints = (this.options.behaviour.applyPenalties || this.options.behaviour.singlePoint) ? this.points : this.rawPoints;
   var scoreText = H5P.Question.determineOverallFeedback(this.options.overallFeedback, actualPoints / maxScore).replace('@score', actualPoints).replace('@total', maxScore);
   var helpText = (this.options.behaviour.enableScoreExplanation && this.options.behaviour.applyPenalties) ? this.options.scoreExplanation : false;
-  this.setFeedback(scoreText, actualPoints, maxScore, undefined, helpText);
+  this.setFeedback(scoreText, actualPoints, maxScore, this.options.scoreBarLabel, helpText, undefined, this.options.scoreExplanationButtonLabel);
 };
 
 /**
