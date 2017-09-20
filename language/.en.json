@@ -32,12 +32,7 @@
             },
             {
               "label": "Task size",
-              "description": "Specify how large (in px) the play area should be.",
-              "default": {},
-              "fields": [
-                {},
-                {}
-              ]
+              "description": "Specify how large (in px) the play area should be."
             }
           ]
         },
@@ -171,12 +166,7 @@
         },
         {
           "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
-          "showWhen": {
-            "rules": [
-              {}
-            ]
-          }
+          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
           "label": "Background opacity for draggables",
@@ -185,7 +175,6 @@
         {
           "label": "Drop Zone Highlighting",
           "description": "Choose when to highlight drop zones.",
-          "default": "dragging",
           "options": [
             {
               "label": "When dragging"
