@@ -369,6 +369,14 @@
         "default": true
       },
       {
+        "name": "enableCheckButton",
+        "type": "boolean",
+        "label": "Enable \"Check\" button",
+        "importance": "low",
+        "default": true,
+        "optional": true
+      },
+      {
         "label": "Require user input before the solution can be viewed",
         "importance": "low",
         "name": "showSolutionsRequiresInput",

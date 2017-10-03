@@ -56,6 +56,7 @@ function C(options, contentId, contentData) {
     overallFeedback: [],
     behaviour: {
       enableRetry: true,
+      enableCheckButton: true,
       preventResize: false,
       singlePoint: false,
       showSolutionsRequiresInput: true,
@@ -564,6 +565,10 @@ C.prototype.addSolutionButton = function () {
     var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
     $nextFocus.focus();
   });
+
+  if (this.options.behaviour.enableCheckButton === false) {
+    that.hideButton('check-answer');
+  }
 };
 
 /**
@@ -641,7 +646,9 @@ C.prototype.addRetryButton = function () {
 
   this.addButton('try-again', this.options.tryAgain, function () {
     that.resetTask();
-    that.showButton('check-answer');
+    if (that.options.behaviour.enableCheckButton) {
+      that.showButton('check-answer');
+    }
     that.hideButton('try-again');
   }, false);
 };
@@ -860,7 +867,9 @@ C.prototype.resetTask = function () {
   });
 
   //Show solution button
-  this.showButton('check-answer');
+  if (this.options.behaviour.enableCheckButton) {
+    this.showButton('check-answer');
+  }
   this.hideButton('try-again');
   this.removeFeedback();
   this.setExplanation();
