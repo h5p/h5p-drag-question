@@ -540,8 +540,11 @@ C.prototype.createQuestionContent = function () {
 };
 
 C.prototype.registerButtons = function () {
-  // Add show score button
-  this.addSolutionButton();
+  if (this.options.behaviour.enableCheckButton) {
+    // Add show score button
+    this.addSolutionButton();
+  }
+
   this.addRetryButton();
 };
 
@@ -565,10 +568,6 @@ C.prototype.addSolutionButton = function () {
     var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
     $nextFocus.focus();
   });
-
-  if (this.options.behaviour.enableCheckButton === false) {
-    that.hideButton('check-answer');
-  }
 };
 
 /**
@@ -646,9 +645,7 @@ C.prototype.addRetryButton = function () {
 
   this.addButton('try-again', this.options.tryAgain, function () {
     that.resetTask();
-    if (that.options.behaviour.enableCheckButton) {
-      that.showButton('check-answer');
-    }
+    that.showButton('check-answer');
     that.hideButton('try-again');
   }, false);
 };
@@ -819,7 +816,7 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   }
 
   if (!skipVisuals) {
-    this.hideButton('check-answer');
+    this.hideButton('heck-answer');
   }
 
   if (this.options.behaviour.enableRetry && !skipVisuals) {
@@ -867,9 +864,7 @@ C.prototype.resetTask = function () {
   });
 
   //Show solution button
-  if (this.options.behaviour.enableCheckButton) {
-    this.showButton('check-answer');
-  }
+  this.showButton('check-answer');
   this.hideButton('try-again');
   this.removeFeedback();
   this.setExplanation();
