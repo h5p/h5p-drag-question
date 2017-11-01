@@ -816,7 +816,7 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   }
 
   if (!skipVisuals) {
-    this.hideButton('heck-answer');
+    this.hideButton('check-answer');
   }
 
   if (this.options.behaviour.enableRetry && !skipVisuals) {
