@@ -154,6 +154,9 @@
           "label": "Attiva \"Riprova\""
         },
         {
+          "label": "Enable \"Check\" button"
+        },
+        {
           "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
         },
         {
