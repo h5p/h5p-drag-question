@@ -750,7 +750,7 @@ C.prototype.enableDraggables = function () {
  * @param {Array} correctDZs Correct drop zones for draggables
  * @return {number} Amount of empty drop zones in question
  */
-C.prototype.getDropzoneWithoutAnswer = function (totalDropZones, correctDZs) {
+C.prototype.getDropzonesWithoutAnswer = function (totalDropZones, correctDZs) {
   //Index of correctDZs is the draggable, and value is the drop zone it belongs to
   var correctDropZones = [];
   correctDZs.forEach(function (draggable) {
@@ -775,10 +775,12 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   this.points = 0;
   this.rawPoints = 0;
 
-  // One correct point for each "no solution" dropzone
-  var emptyDropzones = this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
-  this.points += emptyDropzones;
-  this.rawPoints += emptyDropzones;
+  // One correct point for each "no solution" dropzone if there are no solutions
+  var emptyDropzones = this.getDropzonesWithoutAnswer(this.dropZones.length, this.correctDZs);
+  if (this.dropZones.length === emptyDropzones) {
+    this.points += emptyDropzones;
+    this.rawPoints += emptyDropzones;
+  }
 
   var scorePoints;
   if (!skipVisuals && this.options.behaviour.showScorePoints && !this.options.behaviour.singlePoint && this.options.behaviour.applyPenalties) {
@@ -875,10 +877,8 @@ C.prototype.calculateMaxScore = function () {
   var max = 0;
 
   if (this.blankIsCorrect) {
-    return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    return this.getDropzonesWithoutAnswer(this.dropZones.length, this.correctDZs);
   }
-
-  max += this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
 
   var elements = this.options.question.task.elements;
   for (var i = 0; i < elements.length; i++) {
