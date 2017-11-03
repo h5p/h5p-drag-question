@@ -56,6 +56,7 @@ function C(options, contentId, contentData) {
     overallFeedback: [],
     behaviour: {
       enableRetry: true,
+      enableCheckButton: true,
       preventResize: false,
       singlePoint: false,
       showSolutionsRequiresInput: true,
@@ -539,8 +540,11 @@ C.prototype.createQuestionContent = function () {
 };
 
 C.prototype.registerButtons = function () {
-  // Add show score button
-  this.addSolutionButton();
+  if (this.options.behaviour.enableCheckButton) {
+    // Add show score button
+    this.addSolutionButton();
+  }
+
   this.addRetryButton();
 };
 
