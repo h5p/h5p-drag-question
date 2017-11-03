@@ -780,10 +780,9 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   this.rawPoints = 0;
 
   // One correct point for each "no solution" dropzone if there are no solutions
-  var emptyDropzones = this.getDropzonesWithoutAnswer(this.dropZones.length, this.correctDZs);
-  if (this.dropZones.length === emptyDropzones) {
-    this.points += emptyDropzones;
-    this.rawPoints += emptyDropzones;
+  if (this.blankIsCorrect) {
+    this.points = 1;
+    this.rawPoints = 1;
   }
 
   var scorePoints;
@@ -881,7 +880,7 @@ C.prototype.calculateMaxScore = function () {
   var max = 0;
 
   if (this.blankIsCorrect) {
-    return this.getDropzonesWithoutAnswer(this.dropZones.length, this.correctDZs);
+    return 1;
   }
 
   var elements = this.options.question.task.elements;
