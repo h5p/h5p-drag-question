@@ -748,29 +748,6 @@ C.prototype.enableDraggables = function () {
 };
 
 /**
- * Get amount of empty drop zones.
- *
- * @param {number} totalDropZones Total drop zones in question
- * @param {Array} correctDZs Correct drop zones for draggables
- * @return {number} Amount of empty drop zones in question
- */
-C.prototype.getDropzonesWithoutAnswer = function (totalDropZones, correctDZs) {
-  //Index of correctDZs is the draggable, and value is the drop zone it belongs to
-  var correctDropZones = [];
-  correctDZs.forEach(function (draggable) {
-    if (draggable.length) {
-      draggable.forEach(function (dropZone) {
-        if (correctDropZones.indexOf(dropZone) < 0) {
-          correctDropZones.push(dropZone);
-        }
-      });
-    }
-  });
-
-  return totalDropZones - correctDropZones.length - this.numDropZonesWithoutElements;
-};
-
-/**
  * Shows the correct solutions on the boxes and disables input and buttons depending on settings.
  * @public
  * @params {Boolean} skipVisuals Skip visual animations.
