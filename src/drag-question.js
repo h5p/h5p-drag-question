@@ -748,29 +748,6 @@ C.prototype.enableDraggables = function () {
 };
 
 /**
- * Get amount of empty drop zones.
- *
- * @param {number} totalDropZones Total drop zones in question
- * @param {Array} correctDZs Correct drop zones for draggables
- * @return {number} Amount of empty drop zones in question
- */
-C.prototype.getDropzoneWithoutAnswer = function (totalDropZones, correctDZs) {
-  //Index of correctDZs is the draggable, and value is the drop zone it belongs to
-  var correctDropZones = [];
-  correctDZs.forEach(function (draggable) {
-    if (draggable.length) {
-      draggable.forEach(function (dropZone) {
-        if (correctDropZones.indexOf(dropZone) < 0) {
-          correctDropZones.push(dropZone);
-        }
-      });
-    }
-  });
-
-  return totalDropZones - correctDropZones.length - this.numDropZonesWithoutElements;
-};
-
-/**
  * Shows the correct solutions on the boxes and disables input and buttons depending on settings.
  * @public
  * @params {Boolean} skipVisuals Skip visual animations.
@@ -779,10 +756,11 @@ C.prototype.showAllSolutions = function (skipVisuals) {
   this.points = 0;
   this.rawPoints = 0;
 
-  // One correct point for each "no solution" dropzone
-  var emptyDropzones = this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
-  this.points += emptyDropzones;
-  this.rawPoints += emptyDropzones;
+  // One correct point for each "no solution" dropzone if there are no solutions
+  if (this.blankIsCorrect) {
+    this.points = 1;
+    this.rawPoints = 1;
+  }
 
   var scorePoints;
   if (!skipVisuals && this.options.behaviour.showScorePoints && !this.options.behaviour.singlePoint && this.options.behaviour.applyPenalties) {
@@ -879,10 +857,8 @@ C.prototype.calculateMaxScore = function () {
   var max = 0;
 
   if (this.blankIsCorrect) {
-    return this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
+    return 1;
   }
-
-  max += this.getDropzoneWithoutAnswer(this.dropZones.length, this.correctDZs);
 
   var elements = this.options.question.task.elements;
   for (var i = 0; i < elements.length; i++) {
