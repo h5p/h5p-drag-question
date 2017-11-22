@@ -190,16 +190,23 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 .h5p-dragquestion .h5p-label {
-  line-height: 1.25em;
-  padding-left: 0.5em;
-  right: 0;
-  left: 0;
+  height: 1.25em;
+  width: 100%;
   bottom: 100%;
   white-space: nowrap;
   border-radius: 0.25em 0.25em 0 0;
   position: absolute;
-
   background: #ddd;
+}
+
+.h5p-dragquestion .h5p-label > div {
+  position: absolute;
+  left: 50%;
+}
+
+.h5p-dragquestion .h5p-label > div > strong {
+  position: relative;
+  left: -50%;
 }
 
 .h5p-dragquestion .h5p-dropzone-answer {
