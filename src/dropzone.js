@@ -220,7 +220,9 @@ export default class DropZone {
         // Schedule re-aligment of alignables left
         self.autoAlignTimer = setTimeout(function () {
           delete self.autoAlignTimer;
-          self.autoAlign();
+          if (self.autoAlignable.enabled) {
+            self.autoAlign();
+          }
         }, 1);
       }
     }
