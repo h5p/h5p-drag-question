@@ -1,116 +1,116 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "檢查答案功能鈕",
+      "default": "檢查"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "重試功能鈕",
+      "default": "重試"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "得分說明",
+      "default": "正確答案將給1分，答錯扣1分。最低分數為0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "設定",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label": "問題標題",
+              "default": "拖曳式圖像配對任務",
+              "description": "將顯示於總結、統計等."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label": "顯示標題",
+              "description": "如果不希望顯示標題時，請取消勾選此選項。標題將只顯示在總結、統計等."
             },
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "背景圖示",
+              "description": "選填，請挑選一張照片做為拖曳式圖像任務的背景圖."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "任務大小",
+              "description": "指定任務區域大小(單位為px)."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "任務",
+          "description": "請先設定任務區域.<br/>接著，設定拖曳元素及相容之任務區域.<br/>最後，編輯任務區域之正確答案.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "元素",
+              "entity": "元素",
               "field": {
-                "label": "Element",
+                "label": "元素",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "選擇您欲新增的內容類型."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "選擇任務區域"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "背景不透明度"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "元素無限化",
+                    "description": "勾選後可使元素能拖曳至多個任務區域."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "任務區域",
+              "entity": "任務區域",
               "field": {
-                "label": "Drop Zone",
+                "label": "任務區域",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "標記名稱"
                   },
                   {
-                    "label": "Show label"
+                    "label": "顯示標記名稱"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "選擇正確的元素"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "背景不透明度"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "提示及回饋",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "提示文字"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "正確選出答案時所顯示的文字訊息",
+                        "description": "當正確選出答案時，訊息內容將顯示在＂檢查＂功能鈕下方."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "未正確選出答案時所顯示的文字訊息",
+                        "description": "當未正確選出答案時，訊息內容將顯示在＂檢查＂功能鈕下方."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "任務區域僅能存放單一元素",
+                    "description": "確認任務區域只能有一個正確答案"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "啟用自動對齊功能",
+                    "description": "將自動對齊任務區域之任一拖曳元素."
                   }
                 ]
               }
@@ -120,26 +120,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "整體回饋",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "預設"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "定義任意分數範圍的回饋",
+          "description": "點擊＂新增範圍＂功能鈕以添加您所需要的範圍. 例如: 0-20% 低分, 21-91% 平均得分, 91-100% 高分!",
+          "entity": "範圍",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "得分範圍"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "回饋定義的得分範圍",
+                "placeholder": "填寫回饋"
               }
             ]
           }
@@ -147,118 +147,118 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "行為設定",
+      "description": "這些選項將可讓您控制任務的行為.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "啟用＂重試＂功能"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "啟用 ＂檢查＂功能鈕"
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "使用者須先作答後才能查看解法"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "給予整個任務1分",
+          "description": "勾選後將取消任一作答皆給1分機制."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "處罰",
+          "description": "答錯時給予處罰。當相同元素能被對應到多任務區域時，或是只有單一對應任務區域時，必須啟用此功能。如果沒有啟用此功能時，使用者能將所有元素對應至所有任務區域，且無論作答狀況皆能獲得完整的分數."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "啟用分數說明",
+          "description": "在檢查答案時，能向使用者顯示分數說明(當有啟用”處罰”功能時)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "背景不透明化設定",
+          "description": "設定不透明度將涵蓋所有可拖曳元素。設定數值為0至100之間的數字，其中0表示完全透明，100表示完全不透明。"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "任務區域顯著標記",
+          "description": "選擇何時強調任務區域.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "拖曳時"
             },
             {
-              "label": "Always"
+              "label": "永遠"
             },
             {
-              "label": "Never"
+              "label": "永不"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "自動對齊間距(單位為px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "啟用全螢幕",
+          "description": "勾選啟用全螢幕顯示切換功能鈕."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "顯示得分",
+          "description": "顯示每個答案所獲得的積分。不適用於啟用＂給予整個任務1分＂."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "在地化",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "全螢幕標題",
+          "default": "全螢幕"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "關閉全螢幕標題",
+          "default": "退出全螢幕"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Grabbable 前述",
+      "default": "Grabbable {total} 的 {num}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Grabbable 末尾附加",
+      "default": "放置於任務區域 {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "任務區域前述",
+      "default": "任務區域 {total} 的 {num}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "未選擇任務區域時顯示名稱",
+      "default": "未選擇任務區域."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "顯示提示功能鈕名稱",
+      "default": "顯示提示."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "顯示可用提示名稱",
+      "default": "可用提示"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "顯示正確答案名稱",
+      "default": "正確答案"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "顯示錯誤答案名稱",
+      "default": "不正確答案"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "正確或錯誤回饋訊息之標題名稱",
+      "default": "回饋"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "閱讀器導讀文字-評分欄",
+      "default": "您得到了:num分，總分:total"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "評分說明功能鈕名稱",
+      "default": "顯示評分說明"
     }
   ]
 }
