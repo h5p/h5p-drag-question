@@ -217,13 +217,11 @@ export default class DropZone {
       // Remove alignable
       self.alignables.splice(index, 1);
 
-      if (self.autoAlignTimer === undefined) {
+      if (self.autoAlignTimer === undefined && self.autoAlignable.enabled) {
         // Schedule re-aligment of alignables left
         self.autoAlignTimer = setTimeout(function () {
           delete self.autoAlignTimer;
-          if (self.autoAlignable.enabled) {
-            self.autoAlign();
-          }
+          self.autoAlign();
         }, 1);
       }
     }
