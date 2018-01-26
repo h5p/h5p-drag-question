@@ -55,6 +55,7 @@ export default class DropZone {
     self.$dropZone = $('<div/>', {
       class: 'h5p-dropzone' + extraClass,
       tabindex: '-1',
+      title: $('<div/>', {html: self.label}).text(),
       role: 'button',
       'aria-disabled': true,
       css: {
@@ -216,7 +217,7 @@ export default class DropZone {
       // Remove alignable
       self.alignables.splice(index, 1);
 
-      if (self.autoAlignTimer === undefined) {
+      if (self.autoAlignTimer === undefined && self.autoAlignable.enabled) {
         // Schedule re-aligment of alignables left
         self.autoAlignTimer = setTimeout(function () {
           delete self.autoAlignTimer;
