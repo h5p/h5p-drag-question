@@ -87,7 +87,8 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   background: #cee0f4;
 }
 .h5p-dragquestion .h5p-draggable > img {
-  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
