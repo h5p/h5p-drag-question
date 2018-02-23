@@ -79,8 +79,10 @@ function C(options, contentId, contentData) {
   this.dropZones = [];
   this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
   this.blankIsCorrect = true;
-
-  this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
+  this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity === '') ? undefined : this.options.behaviour.backgroundOpacity;
+  this.backgroundColor = (this.options.question.settings.backgroundColor === "rgba(255, 255, 255, 0)") ? undefined : this.options.question.settings.backgroundColor;
+  this.backgroundOpacityDropZones = this.options.behaviour.backgroundOpacityDropZones === undefined || this.options.behaviour.backgroundOpacityDropZones === '' ? undefined : this.options.behaviour.backgroundOpacityDropZones;
+  this.overrideBorderColor = (this.options.behaviour.overrideBorderColor === "rgba(0, 0, 0, 0)") ? undefined : this.options.behaviour.overrideBorderColor;
 
   self.$noDropZone = $('<div class="h5p-dq-no-dz" role="button" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '</span></div>');
 
@@ -115,6 +117,9 @@ function C(options, contentId, contentData) {
         this.correctDZs[correctElement] = [];
       }
       this.correctDZs[correctElement].push(i);
+    }
+    if (this.overrideBorderColor !== undefined) {
+      task.dropZones[i].bordercolor = this.overrideBorderColor;
     }
   }
 
@@ -207,6 +212,10 @@ function C(options, contentId, contentData) {
 
     if (this.blankIsCorrect && dropZone.correctElements.length) {
       this.blankIsCorrect = false;
+    }
+
+    if (this.backgroundOpacityDropZones !== undefined) {
+      dropZone.backgroundOpacity = this.backgroundOpacityDropZones;
     }
 
     dropZone.autoAlign = {
@@ -504,6 +513,8 @@ C.prototype.createQuestionContent = function () {
   this.$container = $('<div class="h5p-inner" role="application" aria-labelledby="dq-intro-' + numInstances + '"></div>');
   if (this.options.question.settings.background !== undefined) {
     this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+  } else if (this.backgroundColor !== undefined) {
+    this.$container.css('background-color', this.backgroundColor);
   }
 
   var task = this.options.question.task;

@@ -180,10 +180,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   border-radius: 0 0em 0.25em 0.25em;
 }
 
+/* The border color is now done in the edit interface */
 .h5p-dragquestion .h5p-dq-highlight-dz .h5p-dropzone > .h5p-inner.h5p-active,
 .h5p-dragquestion .h5p-dq-highlight-dz-always .h5p-dropzone > .h5p-inner {
   padding: 0;
-  border: 2px dashed #666;
+  border-style: dashed!important;
+  border-width: 2px;
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
