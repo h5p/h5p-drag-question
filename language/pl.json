@@ -1,63 +1,63 @@
 {
   "semantics": [
     {
-      "label": "Przycisk sprawdzenia odpowiedzi ",
+      "label": "Przycisk sprawdzenia odpowiedzi",
       "default": "Sprawdź"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Przycisk powtórzenia",
+      "default": "Powtórz"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Tekst dodatkowych informacji dotyczących uzyskanego wyniku",
+      "default": "Poprawna odpowiedź to +1 punkt. Niepoprawna odpowiedź to -1 punkt. Najniższy możliwy wynik to 0 punktów."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ustawienia",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label": "Nagłówek zadania",
+              "default": "Przeciągnij i upuść",
+              "description": "Używane w podsumowaniach, statystykach itp."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label": "Pokaż nagłówek",
+              "description": "Odznacz tę opcję jeżeli nie chcesz aby nagłowek zadania był wyświetlany. Nagłowek będzie tylko wyświetlany w podsumowaniach, statystykach itp."
             },
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Zdjęcie w tle",
+              "description": "Opcjonalne. Wybierz zdjęcie, które zostanie użyte jako tło zadania przeciągnij i upuść."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Rozmiar obszaru zadania",
+              "description": "Określ jakiej wielkości (w px) będzie obszar prezentacji zadania."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Zadanie",
+          "description": "Rozpocznik od umieszczenie obszarów do których będą przeciągane odpowiedzi (drop zones).<br/>Następnie umieść przeciągalne elementy i oznacz ich docelowe obszary przeciągania.<br/> Na końcu edytuj obszary przeciągania i zaznacz właściwe dla nich odpowiedzi.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elementy",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Wybierz typ obiektu, który chcesz dodać."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Wybierz obszary przeciągania (drop zones)"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Poziom nieprzezroczystości (opacity)"
                   },
                   {
                     "label": "Infinite number of element instances",
