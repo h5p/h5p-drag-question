@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Przycisk sprawdzenia odpowiedzi ",
+      "default": "Sprawdź"
     },
     {
       "label": "Retry button",
