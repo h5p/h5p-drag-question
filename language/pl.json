@@ -60,57 +60,57 @@
                     "label": "Poziom nieprzezroczystości (opacity)"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Nieskończona liczba instancji elementu",
+                    "description": "Powiela ten element, aby można go było przeciągnąć do wielu obszarów przeciągania."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Obszary przeciągania",
+              "entity": "Obszar przeciągania"
               "field": {
-                "label": "Drop Zone",
+                "label": "Obszar przeciągania",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etykieta"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Pokaż etykietę"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Wybierz poprawne elementy"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Poziom nieprzezroczystości tła (Background Opacity)"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Wskazówki oraz podsumowanie wyników",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Treść wskazówki"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Komunikat wyświetlany przy poprawnym dopasowaniu",
+                        "description": "Komunikat pojawi się pod zadaniem, po wybraniu akcji \"Sprawdź\", jeżeli przeciągnięty został właściwy element."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Komunikat wyświetlany przy niepoprawnym dopasowaniu",
+                        "description": "Komunikat pojawi się pod zadaniem, po wybraniu akcji \"Sprawdź\", jeżeli przeciągnięty został niewłaściwy element."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Ten obszar może zawierać tylko jeden element",
+                    "description": "Upewnij się, że tylko jeden element jest oznaczony jako poprawny dla tego obszaru przeciągania"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Zezwól na automatyczne wyrównywanie",
+                    "description": "Spowoduje automatyczne wyrównywanie elementów w tym obszarze przeciągania."
                   }
                 ]
               }
