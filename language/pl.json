@@ -24,7 +24,7 @@
             },
             {
               "label": "Pokaż nagłówek",
-              "description": "Odznacz tę opcję jeżeli nie chcesz aby nagłowek zadania był wyświetlany. Nagłowek będzie tylko wyświetlany w podsumowaniach, statystykach itp."
+              "description": "Odznacz tę opcję jeżeli nie chcesz aby nagłowek zadania był wyświetlany. Wtedy nagłowek będzie tylko wyświetlany w podsumowaniach, statystykach itp."
             },
             {
               "label": "Zdjęcie w tle",
@@ -148,7 +148,7 @@
     },
     {
       "label": "Ustawienia zachowania",
-      "description": " Te opcje pozwalają kontrolować zachowanie zadania.",
+      "description": "Te opcje pozwalają kontrolować zachowanie zadania.",
       "fields": [
         {
           "label": "Pokazuj przycisk \"Powtórz\""
@@ -161,7 +161,7 @@
         },
         {
           "label": "Przyznaj jeden punkt za całe zadanie",
-          "description": "Zablokuj przyznawanie jednego punktu za każdy poprawnie przeciągnięty element."
+          "description": "Zablokuj przyznawanie po jednym punkcie za każdy poprawnie przeciągnięty element."
         },
         {
           "label": "Stosuj karne punkty",
@@ -173,7 +173,7 @@
         },
         {
           "label": "Poziom nieprzezroczystości tła (Background Opacity) przeciąganych elementów",
-          "description": "Jeżeli to pole jest wypełnione, nadpisuje ono parametr nieprzezroczystości obowiązujący dla wszystkich przeciąganych elementów. Wartość powinna być w przedziale od 0 do 100, gdzie 0 oznacza pełną przezroczystość o 100 oznacza brak przezroczystości"
+          "description": "Jeżeli to pole jest wypełnione, nadpisuje ono parametr nieprzezroczystości obowiązujący dla wszystkich przeciąganych elementów. Wartość powinna być w przedziale od 0 do 100, gdzie 0 oznacza pełną przezroczystość, a 100 oznacza brak przezroczystości"
         },
         {
           "label": "Podświetlanie stref przeciągania",
