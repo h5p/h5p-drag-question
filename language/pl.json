@@ -168,97 +168,97 @@
           "description": "Stosuj karne punkty dla elementów przeciągniętych do niewłaściwych obszarów. Ta opcja musi być zaznaczona, jeżeli ten sam element lub elementy mogą być przeciągnięte do więcej niż jednego obszaru lub jeżeli istnieje tylko jeden obszar przeciągania. Gdy ta opcja nie jest zaznaczona, użytkownicy mogą przeciągnąć wszystkie elementy do wszystkich obszarów i zawsze uzyskać maksymalną liczbę punktów."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Aktywuj dodatkowe informacje o uzyskanym wyniku",
+          "description": "Wyświetla użytkownikom dodatkowe informacje o uzyskanym wyniku, podczas sprawdzania odpowiedzi (jeżeli opcja 'Stosuj karne punkty' jest aktywna)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Poziom nieprzezroczystości tła (Background Opacity) przeciąganych elementów",
+          "description": "Jeżeli to pole jest wypełnione, nadpisuje ono parametr nieprzezroczystości obowiązujący dla wszystkich przeciąganych elementów. Wartość powinna być w przedziale od 0 do 100, gdzie 0 oznacza pełną przezroczystość o 100 oznacza brak przezroczystości"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Podświetlanie stref przeciągania",
+          "description": "Wybierz, kiedy strefy przeciągania powinny być podświetlane.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Podczas przeciągania"
             },
             {
-              "label": "Always"
+              "label": "Zawsze"
             },
             {
-              "label": "Never"
+              "label": "Nigdy"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Marginesy dla opcji automatycznego dopasowania (w px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Zezwalaj na widok pełnego ekranu",
+          "description": "Zaznaczenie tej opcji spowoduje pojawienie się przycisku Pełny ekran."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Pokaż przyznane punkty",
+          "description": "Spowoduje pokazanie punktów przyznanych za każdą z odpowiedzi. Nie jest dostępne gdy opcja 'Przyznaj jeden punkt za całe' jest aktywna."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalizacja",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etykieta pełnego ekranu",
+          "default": "Pełny ekran"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etykieta zamknięcia widoku pełnego ekranu",
+          "default": "Zamknij widok pełnego ekranu"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefiks elementu przeciąganego",
+      "default": "Element {num} z {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufiks elementu przeciąganego",
+      "default": "Umieszczono w obszarze {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefix obszaru przeciągania",
+      "default": "Obszar {num} z {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etykieta braku wybrania obszaru",
+      "default": "Brak wybranego obszaru."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etykieda przycisku pokazującego wskazówki",
+      "default": "Pokaż wskazówki."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etykieta gdy wskazówki są dostępne",
+      "default": "Dostępne są dodatkowe wskazówki"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etykieta dla poprawnej odpowiedzi",
+      "default": "Odpowiedź poprawna"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etykieta dla niepoprawnej odpowiedzi",
+      "default": "Odpowiedź niepoprawna"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Nagłówek sekcji zawierającej podsumowanie poprawnych i niepoprawnych odpowiedzi",
+      "default": "Podsumowanie"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstowy odpowiednik paska wyniku, w przypadku korzystania z systemów czytających tekst",
+      "default": "Twój wynik to :num out z :total points"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Tekstowy odpowiednik przycisku pokazującego przyznane punkty",
+      "default": "Pokaż szczegóły wyniku"
     }
   ]
 }
