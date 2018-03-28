@@ -1,6 +1,13 @@
 var H5PEditor = H5PEditor || {};
 var H5PPresave = H5PPresave || {};
 
+/**
+ * Resolve the presave logic for the content type Drag Question
+ *
+ * @param {object} content
+ * @param finished
+ * @constructor
+ */
 H5PPresave['H5P.DragQuestion'] = function (content, finished) {
   var presave = H5PEditor.Presave;
   var score = 0;
@@ -54,18 +61,34 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
     finished({maxScore: score});
   }
 
+  /**
+   * Check if required parameters is present
+   * @return {boolean}
+   */
   function isContentInValid() {
     return !presave.checkNestedRequirements(content, 'content.question.task');
   }
 
+  /**
+   * Check if tasks has drop zones
+   * @return {boolean}
+   */
   function hasDropZones() {
     return presave.checkNestedRequirements(content, 'content.question.task.dropZones') && Array.isArray(content.question.task.dropZones);
   }
 
+  /**
+   * Check if tasks has elements
+   * @return {boolean}
+   */
   function hasElements() {
     return presave.checkNestedRequirements(content, 'content.question.task.elements') && Array.isArray(content.question.task.elements);
   }
 
+  /**
+   * Check if task should give 1 point as score
+   * @return {boolean}
+   */
   function isSinglePoint() {
     return presave.checkNestedRequirements(content, 'content.behaviour.singlePoint') && content.behaviour.singlePoint === true;
   }
