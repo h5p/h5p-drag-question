@@ -18,15 +18,6 @@
           "label": "Instellingen",
           "fields": [
             {
-              "label": "De titel van deze vraag",
-              "default": "Sleep en plaats",
-              "description": "Gebruikt in samenvattingen, statistieken, enz."
-            },
-            {
-              "label": "Toon titel",
-              "description": "Verwijder het vinkje als je de titel niet wilt tonen. De titel wordt alleen getoond in samenvattingen, statistieken enz."
-            },
-            {
               "label": "Achtergrondafbeelding",
               "description": "Optioneel. Selecteer een afbeelding om als achtergrond te gebruiken voor je sleep en plaats activiteit."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Toon gescoorde punten",
           "description": "Toon verkregen aantal punten voor elk antwoord. Deze mogelijkheid is niet beschikbaar als de 'Geef één punt voor de gehele taak' optie is geactiveerd."
+        },
+        {
+          "label": "Toon titel",
+          "description": "Verwijder het vinkje als je de titel niet wilt tonen. De titel wordt alleen getoond in samenvattingen, statistieken enz."
         }
       ]
     },

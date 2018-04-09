@@ -18,15 +18,6 @@
           "label": "Einstellungen",
           "fields": [
             {
-              "label": "Titel der Frage",
-              "default": "Ziehen und Ablegen",
-              "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
-            },
-            {
-              "label": "Titel anzeigen",
-              "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
-            },
-            {
               "label": "Hintergrundbild",
               "description": "Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Show score points",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "label": "Titel anzeigen",
+          "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
         }
       ]
     },

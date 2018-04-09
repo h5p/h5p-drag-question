@@ -18,15 +18,6 @@
           "label": "الإعدادات",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
-            },
-            {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
-            },
-            {
               "label": "صورة الخلفية",
               "description": "اختياري. اختر الصورة التي تريد استخدامها كخلفية لنشاط اسحب والقي"
             },
@@ -200,6 +191,10 @@
         {
           "label": "Show score points",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
