@@ -43,7 +43,7 @@ function C(options, contentId, contentData) {
     scoreExplanationButtonLabel: 'Show score explanation',
     question: {
       settings: {
-        questionTitle: this.getTitle(),
+        questionTitle: (this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop',
         size: {
           width: 620,
           height: 310
@@ -997,7 +997,7 @@ C.prototype.getCopyrights = function () {
 };
 
 C.prototype.getTitle = function() {
-  return (this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop';
+  return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
 };
 
 /**
