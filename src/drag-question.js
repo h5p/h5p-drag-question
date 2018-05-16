@@ -1114,7 +1114,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
       if (selected.element.dropZone !== undefined) {
         selected.element.reset();
       }
-      if (!selected.draggable.multiple) {
+      if (selected !== undefined) { // Equals draggable.multiple === false
         selected.element.$.css({
           left: selected.draggable.x + '%',
           top: selected.draggable.y + '%',
@@ -1122,9 +1122,9 @@ var getControls = function (draggables, dropZones, noDropzone) {
           height: selected.draggable.height + 'em'
         });
         selected.draggable.updatePlacement(selected.element);
+        selected.element.$[0].setAttribute('aria-grabbed', 'false');
+        deselect();
       }
-      selected.element.$[0].setAttribute('aria-grabbed', 'false');
-      deselect();
       return;
     }
 
