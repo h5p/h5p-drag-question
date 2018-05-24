@@ -1,89 +1,89 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
+      "label": "Controleer antwoord knop",
       "default": "Controleer"
     },
     {
-      "label": "Retry button",
+      "label": "Opnieuw knop",
       "default": "Opnieuw proberen"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Toelichtingstekst op de score",
+      "default": "Juiste antwoorden geven 1 punt. Onjuiste antwoorden geven 1 punt aftrek. De laagst mogelijke score is 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Instellingen",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
+              "label": "De titel van deze vraag",
+              "default": "Sleep en plaats",
               "description": "Gebruikt in samenvattingen, statistieken, enz."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label": "Toon titel",
+              "description": "Verwijder het vinkje als je de titel niet wilt tonen. De titel wordt alleen getoond in samenvattingen, statistieken enz."
             },
             {
               "label": "Achtergrondafbeelding",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "description": "Optioneel. Selecteer een afbeelding om als achtergrond te gebruiken voor je sleep en plaats activiteit."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Formaat opgave",
+              "description": "Specificeer hoe groot (in px) het afbeeldingsgebied moet zijn."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Opgave",
+          "description": "Begin met het bepalen van je neerzetgebieden.<br/>Vervolgens, plaats je de sleepbare onderdelen en markeer je de juiste neerzetgebieden.<br/>Tenslotte, bewerk je het element opnieuw en vink je de juiste neerzetgebieden aan.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elementen",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Kies de soort inhoud, die je wilt toevoegen."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Selecteer de neerzetgebieden"
                   },
                   {
                     "label": "Ondoorzichtigheid achtergrond"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Oneindig aantal elementen",
+                    "description": "Kloon dit element zodat het naar meerdere neerzetgebieden kan worden gesleept."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Neerzetgebieden",
+              "entity": "Neerzetgebied",
               "field": {
-                "label": "Drop Zone",
+                "label": "Neerzetgebied",
                 "fields": [
                   {
                     "label": "Label"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Toon label"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Selecteer de juiste elementen"
                   },
                   {
                     "label": "Ondoorzichtigheid achtergrond"
@@ -95,22 +95,22 @@
                         "label": "Tekst voor tip"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Getoond bericht bij een juiste koppeling",
+                        "description": "Het bericht verschijnt onder de opgave \"controleer\" als er een juiste koppeling is gemaakt."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Getoond bericht bij een onjuiste koppeling",
+                        "description": "Het bericht verschijnt onder de opgave \"controleer\" als er een onjuiste koppeling is gemaakt."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Dit neerzetgebied mag maar 1 element bevatten",
+                    "description": "Zorg ervoor dat er maar 1 juist antwoord voor dit neerzetgebied is"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Activeer automatische uitlijning",
+                    "description": "Automatisch uitlijning is van toepassing op alle sleepbare elementen in het neerzetgebied."
                   }
                 ]
               }
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Algehele Feedback",
       "fields": [
         {
           "widgets": [
@@ -128,18 +128,18 @@
               "label": "Standaard"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definieer aangepaste feedback voor een eigen score reeks",
+          "description": "Druk op  \"Voeg scorereeks toe\" -knop  om zoveel scorereeksen toe te voegen als je nodig hebt. Voorbeeld: 0-20% Slechte score, 21-91% Gemiddelde score, 91-100% Uitstekende score!",
+          "entity": "reeks",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Score reeks"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback voor de gedefinieerde score reeks",
+                "placeholder": "Vul de feedback in"
               }
             ]
           }
@@ -154,52 +154,52 @@
           "label": "Schakel de knop \"Opnieuw\" in"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activeer \"Controleer\" knop"
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Invoer van de gebruiker is vereist voordat de oplossing kan worden getoond"
         },
         {
-          "label": "Geef een punt voor de gehele taak",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Geef één punt voor de gehele taak",
+          "description": "Schakel de optie 1 punt voor elke juist geplaatst element uit."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Sta puntenaftrek toe",
+          "description": "Stap puntenaftrek toe voor elementen die in de verkeerde neerzetgebieden zijn geplaatst. Dit moet worden geactiveerd wanneer dezelfde elementen in meerdere neerzetgebieden kunnen worden geplaatst, of als er maar één neerzetgebied is. Als dit niet geactiveerd is, dan zullen de gebruikers alle elementen in alle neerzetgebieden kunnen plaatsen en het volledige aantal punten ontvangen."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Activeer score toelichting",
+          "description": "Toon een score toelichting aan de gebruiker als deze de antwoorden controleert (als de 'Sta puntenaftrek toe optie is aangevinkt)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Achtergrond transparantie voor elementen",
+          "description": "Als dit veld is ingevuld, dan zal het de transparantie van alle sleepbare elementen overschrijven. Dit moet een getal zijn tussen de 0 en de 100, waarbij 0 volledige doorschijnend is en 100 volledig ondoorzichtig"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Accentuering neerzetgebieden",
+          "description": "Kies wanneer de neerzetgebieden worden geaccentueerd.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Tijdens slepen"
             },
             {
-              "label": "Always"
+              "label": "Altijd"
             },
             {
-              "label": "Never"
+              "label": "Nooit"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Ruimte voor automtisch uitlijnen (in px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Activeer volledig scherm",
+          "description": "Vink deze optie aan om een volledig scherm te activeren."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Toon gescoorde punten",
+          "description": "Toon verkregen aantal punten voor elk antwoord. Deze mogelijkheid is niet beschikbaar als de 'Geef één punt voor de gehele taak' optie is geactiveerd."
         }
       ]
     },
@@ -217,48 +217,48 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Grijpbaar voorvoegsel",
+      "default": "Grijpbaar {num} van {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Grijpbaar achtervoegsel",
+      "default": "Geplaatst in neerzetgebied {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Neergebied voorvoegsel",
+      "default": "Neerzetgebied {num} van {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Selectielabel geen neerzetgebied",
+      "default": "Geen neerzetgebied."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Label voor de toon tip knop",
+      "default": "Toon tip."
     },
     {
-      "label": "Label for tip available",
+      "label": "Label voor de beschikbare tip",
       "default": "Tip beschikbaar"
     },
     {
-      "label": "Label for correct answer",
+      "label": "Label voor het juiste antwoord",
       "default": "Juist antwoord"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "Label voor het onjuiste antwoord",
       "default": "Onjuist antwoord"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Titel voor het onderdeel dat feedback bevat over juiste/ onjuiste antwoorden",
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstuele omschrijving van de de scorebalk voor diegene die gebruik maken van de readspeaker",
+      "default": "Je hebt :num van :total points"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Tekstuele omschrijving van de score uitleg knop",
+      "default": "Toon uitleg score"
     }
   ]
 }
