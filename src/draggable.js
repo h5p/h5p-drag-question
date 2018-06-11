@@ -124,7 +124,8 @@ export default class Draggable extends H5P.EventDispatcher {
         width: self.width + 'em',
         height: self.height + 'em'
       },
-      appendTo: $container
+      appendTo: $container,
+      title: self.type.params.title
     })
       .on('click', function () {
         self.trigger('focus', this);

@@ -86,12 +86,12 @@
                         "label": "Indice"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Message qui apparaît si l'association des éléments est correcte",
+                        "description": "Ce message apparaîtra au-dessous de \"vérifier\" si l'élément est placé correctement."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Message qui apparaît si l'association des éléments est incorrecte",
+                        "description": "Ce message apparaîtra au-dessous de \"vérifier\" si l'élément est placé incorrectement."
                       }
                     ]
                   },
@@ -119,18 +119,18 @@
               "label": "Par défaut"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Définissez le feedback pour chaque intervalle de scores",
+          "description": "Cliquez sur le bouton \"Ajouter Intervalle\" pour ajouter autant d'intervalles de score que vous le souhaitez. Exemple: 0-20% Mauvais score, 21-91% Score moyen, 91-100% Score excellent !",
+          "entity": "intervalle",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Intervalle des scores"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback pour un intervalle de scores défini",
+                "placeholder": "Remplissez le feedback"
               }
             ]
           }
@@ -145,26 +145,26 @@
           "label": "Activer le bouton \"Recommencer\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activer le bouton \"Vérifier\""
         },
         {
           "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
         },
         {
-          "label": "Donner un point par activité",
-          "description": "Désactivez cette option pour attribuer un point pour chaque étiquette correctement placée."
+          "label": "Donner un point pour la question dans sa globalité",
+          "description": "Désactivez cette option pour donner un point pour chaque étiquette correctement placée."
         },
         {
           "label": "Appliquer des pénalités",
-          "description": "Activer cette option pour appliquer des points de pénalité aux éléments déposés dans des zones incorrectes."
+          "description": "Appliquez des pénalités pour les éléments déposés dans les mauvaises zones de dépôt. Cela doit être activé lorsque un ou plusieurs éléments peuvent être déposés dans plusieurs zones de dépôt, ou s'il n'y a qu'une seule zone de dépôt. Si ce n'est pas activé, les apprenants peuvent faire correspondre tous les éléments à toutes les zones de dépôt et toujours recevoir un score complet."
         },
         {
           "label": "Activer les explications du score",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description": "Montrer l'explication du score aux utilisateurs en vérifiant leurs réponses (si l'option 'Appliquer les pénalités' a été séléctionné)."
         },
         {
           "label": "Opacité des étiquettes",
-          "description": "Si vous remplissez ce champ, la valeur d'opacité choisie écrasera l'opacité paramétrée pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
+          "description": "Si vous remplissez ce champ, la valeur d'opacité choisie enlevera la valeur de l'opacité paramétrée avant pour toutes les étiquettes. Cette valeur doit être un nombre compris entre 0 and 100, où 0 correspond à une transparence absolue and 100 à une opacité complète."
         },
         {
           "label": "Mise en évidence de la zone de dépôt",
@@ -189,13 +189,13 @@
           "description": "Cochez cette option pour autoriser le mode Plein écran."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Montrer les points de votre score",
+          "description": "Afficher les points obtenus pour chaque réponse. Indisponible quand l'option 'Donner un point pour la question dans sa globalité' est activée."
         },
         {
-          "label": "Afficher le titre",
-          "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc."
-        }
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+        }        
       ]
     },
     {
@@ -213,47 +213,47 @@
     },
     {
       "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "default": "Eléments déplaçables {num} de {total}."
     },
     {
       "label": "Grabbable suffix",
       "default": "Placed in dropzone {num}."
     },
     {
-      "label": "Dropzone prefix",
+      "label": "Préfix de la zone de Dépôt",
       "default": "Dropzone {num} of {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Pas d'étiquette pour la séléction de la zone de dépôt",
+      "default": "Pas de zone de dépôt."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etiquette pour montrer le bouton d'indice",
+      "default": "Montrer l'indice."
     },
     {
-      "label": "Label for tip available",
+      "label": "Etiquette pour l'indice disponible",
       "default": "Indice disponible"
     },
     {
-      "label": "Label for correct answer",
+      "label": "Etiquette pour une bonne réponse",
       "default": "Bonne réponse"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "Etiquette pour une mauvaise réponse",
       "default": "Réponse incorrecte"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Intitulé de l'espace contenant des feedbacks pour des réponses correctes/incorrectes",
       "default": "Commentaire de retour"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Représentation textuelle du panneau du score pour les utilisateurs des outils de la vocalisation (comme ReadSpeaker)",
+      "default": "Vous avez :num out de :points au total"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Représentation textuelle du bouton de l'explication de votre score",
+      "default": "Montrer l'explication de votre score"
     }
   ]
 }
