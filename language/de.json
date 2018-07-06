@@ -254,11 +254,11 @@
     },
     {
       "label": "Textliche Repräsentation der Punkteleiste für diejenigen, die Readspeaker benutzen",
-      "default": "Du hast :num von :total Punkten erreicht"
+      "default": "Du hast :num von :total Punkten erreicht."
     },
     {
       "label": "Textliche Repräsentation des \"Punkte erklären\"-Buttons",
-      "default": "Zeige Erklärung für die Punkte an"
+      "default": "Zeige Erklärung für die Punkte an."
     }
   ]
 }
