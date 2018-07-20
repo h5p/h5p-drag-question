@@ -18,15 +18,6 @@
           "label": "設定",
           "fields": [
             {
-              "label": "この設問のタイトル",
-              "default": "ドラッグ ＆ ドロップ",
-              "description": "概要や統計などで用いられます。"
-            },
-            {
-              "label": "タイトルを表示",
-              "description": "このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
-            },
-            {
               "label": "背景画像",
               "description": "オプションです。ドラッグ & ドロップするときの背景として使う画像を選んで下さい。"
             },
@@ -200,6 +191,10 @@
         {
           "label": "得点ポイントを表示",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "label": "タイトルを表示",
+          "description": "このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
         }
       ]
     },

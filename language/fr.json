@@ -18,15 +18,6 @@
           "label": "Réglages",
           "fields": [
             {
-              "label": "Titre de la question",
-              "default": "Glisser-déposer",
-              "description": "Utilisée dans les résumés, statistiques, etc."
-            },
-            {
-              "label": "Afficher le titre",
-              "description": "Décochez cette option si vous ne voulez pas que le titre de cette question s'affiche. Ce titre sera quand même affiché dans les résumés, les statistiques, etc. "
-            },
-            {
               "label": "Image d'arrière-plan",
               "description": "Sélectionnez une image d'arrière-plan pour votre activité (facultatif)."
             },
@@ -200,7 +191,11 @@
         {
           "label": "Montrer les points de votre score",
           "description": "Afficher les points obtenus pour chaque réponse. Indisponible quand l'option 'Donner un point pour la question dans sa globalité' est activée."
-        }
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+        }        
       ]
     },
     {

@@ -18,15 +18,6 @@
           "label": "Impostazioni",
           "fields": [
             {
-              "label": "Il titolo di questa domanda",
-              "default": "Trascina e rilascia",
-              "description": "Usato in riepiloghi, statistiche ecc."
-            },
-            {
-              "label": "Mostra Titolo",
-              "description": "Deseleziona questa opzione se non vuoi che questo titolo sia visualizzato. Il titolo sarà visualizzato solo in sintesi, statistiche ecc."
-            },
-            {
               "label": "Immagine di sfondo",
               "description": "Opzionale. Selezionare un'immagine da utilizzare come sfondo per il vostro compito drag and drop."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Visualizza punteggio",
           "description": "Visualizza i punti guadagnati per ogni risposta. Non disponibile quando è attivata l'opzione 'Assegnare un punto per l'intera attività'."
+        },
+        {
+          "label": "Mostra Titolo",
+          "description": "Deseleziona questa opzione se non vuoi che questo titolo sia visualizzato. Il titolo sarà visualizzato solo in sintesi, statistiche ecc."
         }
       ]
     },
