@@ -1,116 +1,116 @@
 {
   "semantics": [
     {
-      "label": "تحقق زر الإجابة",
+      "label": "زر تحقق من الاجابة",
       "default": "Check"
     },
     {
-      "label": "زر إعادة المحاولة",
-      "default": "إعادة المحاولة"
+      "label": "زر اعادة المحاولة",
+      "default": "Retry"
     },
     {
-      "label": "Score explanation text",
+      "label": "نص شرح النتيجة",
       "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields": [
         {
-          "label": "الإعدادات",
+          "label": "الاعدادات",
           "fields": [
             {
-              "label": "The title of this question",
+              "label": "عنوان هذا السؤال",
               "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "description": "مستخدم في الملخصات والإحصاءات وغيرها."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label": "اظهر العنوان",
+              "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. لن يتم عرض العنوان إلا في الملخصات والإحصائيات وغيرها."
             },
             {
               "label": "صورة الخلفية",
-              "description": "اختياري. اختر الصورة التي تريد استخدامها كخلفية لنشاط اسحب والقي"
+              "description": "اختياري. حدد صورة لاستخدامها كخلفية لنشاط السحب والإفلات."
             },
             {
               "label": "حجم النشاط",
-              "description": "حدد حجم النشاط بالبيكسل في منطقة اللعبة"
+              "description": "حدد حجم مساحة اللعب  التي يجب ان تكون ."
             }
           ]
         },
         {
-          "label": "النشاط",
-          "description": "ابدأ بوضع مناطق إسقاط العناصر الكلمة او الصورة.بعد ذالك قم بوضع الكلمة او الصروة ثم تحقق من اختيار المناطق المناسبة. اخيرا، تحرر من منطقة اسقاط العناصر الكلمة او الصورة مرة أخرى وتحقق من ان الإجابات صحيحة",
+          "label": "مهمة",
+          "description": "ابدابتحديد مناطق الافلات خاصتك<br/> ثم ضع العناصر القابلة للافلات خاصتك وتحقق من نقاط الافلات المناسبة.<br/>أخيرًا ، قم بتحرير منطقة الافلات مرة أخرى وتحقق من الإجابات الصحيحة.",
           "fields": [
             {
-              "label": "العناصر",
-              "entity": "العنصر",
+              "label": "عناصر",
+              "entity": "element",
               "field": {
-                "label": "العنصر",
+                "label": "عنصر",
                 "fields": [
                   {
-                    "description": "اختيار نوع المحتوى الذي تريد إضافته"
+                    "description": "اختر نوع المحتوى الذي تريد إضافته."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "اختر مكان الاسقاط"
+                    "label": "حدد مناطق الإفلات"
                   },
                   {
-                    "label": "شفافية الخلفية"
+                    "label": "تعتيم الخلفية"
                   },
                   {
-                    "label": "عدد غير محدود من حالات العنصر",
-                    "description": "استنساخ هذا العنصر بحيث يمكن سحبها إلى مناطق متعددة الاسقاط"
+                    "label": "عدد لانهائي من حالات العنصر",
+                    "description": "استنساخ هذا العنصر بحيث يمكن سحبه إلى مناطق إفلات متعددة."
                   }
                 ]
               }
             },
             {
-              "label": "مناطق الاسقاط",
-              "entity": "منطقة الاسقاط",
+              "label": "مناطق افلات",
+              "entity": "Drop Zone",
               "field": {
-                "label": "منطقة الاسقاط",
+                "label": "منطقة افلات",
                 "fields": [
                   {
-                    "label": "التسمية"
+                    "label": "لافتة"
                   },
                   {
-                    "label": "مشاهدة التسمية"
+                    "label": "لافتة الاظهار"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "تحديد العناصر الصحيحة"
+                    "label": "اختر العناصر الصحيحة"
                   },
                   {
-                    "label": "شفافية الخلفية"
+                    "label": "تعتيم الخلفية"
                   },
                   {
-                    "label": "تلميح",
+                    "label": "تلميحات وملاحظات",
                     "fields": [
                       {
                         "label": "نص التلميح"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "الرسالة المعروضة على التطابق الصحيح",
+                        "description": "ستظهر الرسالة اسفل النشاط على \" تحقق\" في حال تمت مطابقة العناصر التي تم افلاتها بشكل صحيح."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "الرسالة المعروضة على التطابق غير الصحيح",
+                        "description": "ستظهر الرسالة أسفل المهمة على \" تحقق\" إذا كانت المطابقة غير صحيحة."
                       }
                     ]
                   },
                   {
-                    "label": "ذه منطقة الإسقاط يمكن أن تحتوي على عنصر واحد فقط",
-                    "description": "تأكد من وجود واحد فقط الإجابة الصحيحة لهذه المنطقة"
+                    "label": "يمكن أن تحتوي منطقة الإسقاط هذه على عنصر واحد فقط",
+                    "description": "تأكد من وجود إجابة واحدة صحيحة لمنطقة الافلات هذه "
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "تمكين المحاذاة التلقائية",
+                    "description": "ستكون المحاذاة تلقائية لكل العناصر القابلة للافلات في هذه المنطقة."
                   }
                 ]
               }
@@ -120,25 +120,25 @@
       ]
     },
     {
-      "label": "شفافية خلفية العناصر",
+      "label": "الملاحظات اللشاملة",
       "fields": [
         {
           "widgets": [
             {
-              "label": "الافتراضي"
+              "label": "افتراضي"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "تحديد الملاحظات المخصصة من اجل اي مجال نتيجة",
+          "description": "انقر فوق الزر 'إضافة نطاق' لإضافة أكبر عدد ممكن من النطاقات. مثال: 0-20٪ نتيجة سيئة ، 21-91٪ نتيجة متوسطة ، 91-100٪ نتيجة رائعة!",
           "entity": "range",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "مجال النتيجة"
               },
               {},
               {
-                "label": "Feedback for defined score range",
+                "label": "الملاحظات الخاصة بمجال النتيجة المحدد",
                 "placeholder": "Fill in the feedback"
               }
             ]
@@ -147,117 +147,117 @@
       ]
     },
     {
-      "label": "إعدادت النشاط",
-      "description": "وهذه الخيارات تمكنك من التحكم في كيفية سلوك هذا النشاط",
+      "label": "الاعدادات السلوكية",
+      "description": "ستتيح لك هذه الخيارات التحكم في كيفية تصرف المهمة.",
       "fields": [
         {
-          "label": "تمكين \"إعادة المحاولة \""
+          "label": "تمكين \"اعادة المحاولة\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "زر تمكين \" تحقق \""
         },
         {
-          "label": "تتطلب إدخال المستخدم قبل أن يتم عرضه الحل"
+          "label": "يتطلب ان يقوم المستخدم بالادخال قبل أن يتم عرض الحل"
         },
         {
-          "label": "إعطاء نقطة واحدة للقيام بهذه المهمة بأكملها",
-          "description": "تعطيل لإعطاء نقطة واحدة لكل عنصر قابل للسحب التي يتم وضعها بشكل صحيح"
+          "label": "أعط نقطة واحدة للمهمة بأكملها",
+          "description": "تعطيل إعطاء نقطة واحدة لكل العناصر القابلة للسحب التي يتم وضعها بشكل صحيح."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones."
+          "label": "تطبيق العقوبات",
+          "description": "تطبيق العقوبات للعناصر التي تم إسقاطها في مناطق الافلات الخطأ. يجب تمكين هذا عندما يمكن إسقاط نفس العنصر (العناصر) في مناطق إفلات متعددة ، أو في حالة وجود منطقة إسقاط واحدة فقط. إذا لم يتم تمكين ذلك ، فقد يتطابق المتعلمون مع جميع العناصر في جميع المناطق المهملة ويحصلون دائمًا على درجة كاملة."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "تمكين تفسير النتيجة",
+          "description": "عرض شرح النتيجة للمستخدم عند التحقق من إجاباته (إذا تم اختيار خيار 'تطبيق العقوبات')."
         },
         {
-          "label": "شفافية خلفية العناصر",
-          "description": "إذا تم تعيين هذا المجال، فإنه سيتم تجاوز شفافية جميع العناصر قابلة للسحب. هذا الرقم ينبغي أن يكون رقم بين ٠ و ١٠٠، حيث ٠ تعني الشفافية الكاملة و ١٠٠ يعني عدم وجود الشفافية"
+          "label": "تعتيم الخلفية للعناصر القابلة للسحب",
+          "description": "إذا تم تعيين هذا الحقل ، فستتجاوز مجموعة التعتيم على جميع العناصر القابلة للسحب. يجب أن يكون هذا الرقم بين 0 و 100 ، حيث 0 يعني الشفافية الكاملة و 100 يعني عدم الشفافية"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "اضاءة عالية لمناطق الافلات",
+          "description": "اختر متى اضاءة مناطق الافلات تكون عالية.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "عند السحب"
             },
             {
-              "label": "Always"
+              "label": "دائماً"
             },
             {
-              "label": "Never"
+              "label": "ابداً"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "التباعد للمحاذاة التلقائية (بالبكسل)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "تمكين وضع ملء الشاشة",
+          "description": "حدد هذا الخيار لتمكين زر ملء الشاشة."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "إظهار نقاط النتيجة",
+          "description": "عرض النقاط المكتسبة لكل إجابة. غير متاح عند تمكين الخيار 'منح نقطة واحدة للمهمة بالكامل'."
         }
       ]
     },
     {
-      "label": "تحديد الموقع",
+      "label": "التمركز",
       "fields": [
         {
-          "label": "تسمية لملء الشاشة",
+          "label": "لافتة وضع ملء الشاشة",
           "default": "Fullscreen"
         },
         {
-          "label": "تسمية خروج ملء الشاشة",
+          "label": "لافتة الخروج من وضع ملء الشاشة",
           "default": "Exit fullscreen"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
+      "label": "بادئة العناصر القابلة للقبض",
       "default": "Grabbable {num} of {total}."
     },
     {
-      "label": "Grabbable suffix",
+      "label": "لاحقة العناصر القابلة للقبض",
       "default": "Placed in dropzone {num}."
     },
     {
-      "label": "Dropzone prefix",
+      "label": "بادئة مناطق الافلات",
       "default": "Dropzone {num} of {total}."
     },
     {
-      "label": "No dropzone selection label",
+      "label": "لافتة لم يتم اختيار مناطق افلات",
       "default": "No dropzone."
     },
     {
-      "label": "Label for show tip button",
+      "label": "لافتة زر عرض التلميح",
       "default": "Show tip."
     },
     {
-      "label": "Label for tip available",
+      "label": "لافتة للتلميح المتاح",
       "default": "Tip available"
     },
     {
-      "label": "Label for correct answer",
+      "label": "لافتة للاجابة الصحيحة",
       "default": "Correct answer"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "لافتة للاجابة الخاطئة",
       "default": "Wrong answer"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "ترويسة للوحة تحتوي الملاحظات للاجابات الصحيحة وغير الصحيحة",
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
+      "label": "تمثيل نصي لشريط النتيجة لأولئك الذين يستخدمون تقنية تحويل النص الى كلام ",
       "default": "You got :num out of :total points"
     },
     {
-      "label": "Textual representation of the score explanation button",
+      "label": "زر تمثيل نصي لتفسير النتيجة",
       "default": "Show score explanation"
     }
   ]
