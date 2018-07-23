@@ -966,36 +966,6 @@ C.prototype.getCurrentState = function () {
   return state;
 };
 
-/**
- * Gather copyright information for the current content.
- *
- * @returns {H5P.ContentCopyright}
- */
-C.prototype.getCopyrights = function () {
-  var self = this;
-  var info = new H5P.ContentCopyrights();
-
-  var background = self.options.question.settings.background;
-  if (background !== undefined && background.copyright !== undefined) {
-    var image = new H5P.MediaCopyright(background.copyright);
-    image.setThumbnail(new H5P.Thumbnail(H5P.getPath(background.path, self.id), background.width, background.height));
-    info.addMedia(image);
-  }
-
-  for (var i = 0; i < self.options.question.task.elements.length; i++) {
-    var element = self.options.question.task.elements[i];
-    var instance = H5P.newRunnable(element.type, self.id);
-
-    if (instance.getCopyrights !== undefined) {
-      var rights = instance.getCopyrights();
-      rights.setLabel((element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element'));
-      info.addContent(rights);
-    }
-  }
-
-  return info;
-};
-
 C.prototype.getTitle = function() {
   return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
 };
