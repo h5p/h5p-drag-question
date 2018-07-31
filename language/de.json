@@ -165,7 +165,7 @@
         },
         {
           "label": "Strafpunkte vergeben",
-          "description": "Vergibt Strafpunklte für Elemente, die in einer falschen Ablagezone abgelegt werden. Diese Option muss aktiviert werden, wenn verschiedene Elemente in mehrere Ablagezonen gelegt werden können oder es nur eine Ablagezone gibt. Ist dies nicht aktiviert, können Lernende alle Elemente in allen Ablagezonen platzieren und so volle Punktzahl erreichen."
+          "description": "Vergibt Strafpunkte für Elemente, die in einer falschen Ablagezone abgelegt werden. Diese Option muss aktiviert werden, wenn verschiedene Elemente in mehrere Ablagezonen gelegt werden können oder es nur eine Ablagezone gibt. Ist dies nicht aktiviert, können Lernende alle Elemente in allen Ablagezonen platzieren und so volle Punktzahl erreichen."
         },
         {
           "label": "Erklärung für die Punkte einschalten",
