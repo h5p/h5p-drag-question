@@ -168,6 +168,15 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   position: absolute;
 }
 
+.h5p-dragquestion .h5p-dropzone.h5p-label-hidden .h5p-label{
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal;
+}
+
 .h5p-dragquestion .h5p-dropzone > .h5p-inner {
   height: 100%;
   position: relative;

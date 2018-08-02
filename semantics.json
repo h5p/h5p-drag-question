@@ -193,7 +193,8 @@
                   "name": "showLabel",
                   "type": "boolean",
                   "label": "Show label",
-                  "importance": "low"
+                  "importance": "low",
+                  "description": "Even when hidden, this is the alternative text provided for visually impaired users. Make sure you don't give away the answer."
                 },
                 {
                   "name": "x",
