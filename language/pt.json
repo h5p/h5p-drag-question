@@ -1,116 +1,116 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Botão de verificação de resposta",
+      "default": "Verificar"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Botão de tentar de novo",
+      "default": "Repetir"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Texto de explicação da pontuação",
+      "default": "As respostas corretas dão-lhe +1 ponto. As incorretas -1 ponto. A mínima pontuação possível é 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Definições",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label": "O título da questão",
+              "default": "Arrastar e Largar",
+              "description": "Utilizado nos sumários, estatísticas, etc.."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+              "label": "Mostrar título",
+              "description": "Desmarque esta opção se não quiser que este título seja mostrado. O título só será mostrado nos sumários, estatísticas, etc."
             },
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Imagem de fundo",
+              "description": "Opcional. Escolha uma imagem para utilizar como fundo da sua atividade arrastar e largar"
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Tamanho da área",
+              "description": "Especifique (em px) o tamanho da área para esta atividade."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Atividade",
+          "description": "Comece por definir as áreas onde os elementos vão ser largados.<br/>A seguir, coloque os elementos que vão ser arrastados nos zonas apropriadas.<br/>Por fim, edite as zonas onde os elementos serão largados e defina as respostas corretas.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Elementos",
+              "entity": "elemento",
               "field": {
-                "label": "Element",
+                "label": "Elemento",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Escolha o tipo de conteúdo que pretende adicionar."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Selecione as zonas onde vão ser largados os elementos"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Opacidade do fundo"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Número infinito de instâncias de elementos",
+                    "description": "Duplicar este elemento para que possa ser arrastado para múltiplas zonas."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Zonas de largada",
+              "entity": "Zona de largada",
               "field": {
-                "label": "Drop Zone",
+                "label": "Zona de largada",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etiqueta"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Mostrar etiqueta"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Escolha os elementos corretos"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Opacidade do fundo"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Dicas e feedback",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Texto da dica"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Mensagem para correspondência correta",
+                        "description": "A mensagem vai aparecer por baixo da atividade quando \"continuar\", se a correspondência for correta."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Mensagem para correspondência incorreta",
+                        "description": "A mensagem vai aparecer por baixo da atividade quando \"continuar\", se a correspondência for incorreta."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Esta zona de largada só pode conter um elemento",
+                    "description": "Garanta que existe só uma resposta correta para esta zona"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Ativar Auto-alinhamento",
+                    "description": "Alinha automaticamente os elementos arrastados e largados nesta zona."
                   }
                 ]
               }
@@ -120,26 +120,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Feedback Geral",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Por defeito"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Defina o feedback para cada intervalo de resultados",
+          "description": "Clique em \"Adicionar intervalo\" para adicionar quantos intervalos necessitar. Exemplo: 0-20% Insuficiente, 21-91% Razoável, 91-100% Excelente!",
+          "entity": "intervalo",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Intervalo de pontuação"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback por intervalo de pontuação",
+                "placeholder": "Preencha o feedback"
               }
             ]
           }
@@ -147,118 +147,118 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Definições de funcionamento",
+      "description": "Estas opções vão deixá-lo controlar o funcionamento desta atividade.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Ativar \"Repetir\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Ativar o botão \"Verificar\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Requerer resposta do utilizador antes da solução ser mostrada"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Dar um ponto por toda a tarefa",
+          "description": "Desative para atribuir um ponto por cada objeto posicionado corretamente."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Ativar penalizações",
+          "description": "Atribuir penalizações a elementos que sejam largados incorretamente fora das áreas definidas. Esta opção deve ser ativada sempre que seja possível largar o(s) mesmo(s) objeto(s) em múltiplas zonas, ou se só existir uma zona de largada. Se esta opção não estiver ativada, os formandos conseguirão que todos os elementos correspondam a todas as zonas de largada obtendo assim pontuação máxima."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Ativar explicação do resultado",
+          "description": "Mostra a explicação do resultado ao utilizador enquanto este estiver a verificar as suas respostas (se a opção de 'Aplicar Penalizações' estiver selecionada)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Opacidade do fundo para os elementos",
+          "description": "Se este campo estiver definido, o seu valor vai sobrepor-se ao valor da opacidade em todos os elementos. Este valor deve ser um número entre 0 e 100, onde 0 significa completamente transparente e 100 completamente opaco."
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Destaque da zona de largada",
+          "description": "Escolha quando destacar as zonas de largada.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Quando arrastar"
             },
             {
-              "label": "Always"
+              "label": "Sempre"
             },
             {
-              "label": "Never"
+              "label": "Nunca"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Espaçamento para auto-alinhamento (em px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Ativar ecrã completo",
+          "description": "Ative esta opção para mostrar o botão de ecrã completo."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Mostrar pontuação",
+          "description": "Mostra a pontuação para cada resposta. Não disponível quando a opção 'Dar um ponto a toda a atividade' estiver ativada."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Localizar",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etiqueta para ecrã completo",
+          "default": "Ecrã completo"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etiqueta para sair de ecrã completo",
+          "default": "Sair de ecrã completo"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefixo para elemento arrastável",
+      "default": "Elemento {num} de {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufixo para elemento arrastável",
+      "default": "Largado na zona {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefixo da zona de largada",
+      "default": "Zona de largada {num} de {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etiqueta para zona de largada inválida",
+      "default": "Zona de largada inválida."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etiqueta para o botão de mostrar dica",
+      "default": "Mostrar dica."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etiqueta para dica disponível",
+      "default": "Dica disponível"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etiqueta para resposta correta",
+      "default": "Resposta correta"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etiqueta para resposta incorreta",
+      "default": "Resposta incorreta"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Cabeçalho para o painel que contém o feedback de respostas corretas e incorretas",
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Representação textual da barra de pontuação utilizando um conversor de texto para voz",
+      "default": "Você obteve :num pontos num total de :total"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Representação textual do botão de explicação",
+      "default": "Mostrar explicação do resultado"
     }
   ]
 }
