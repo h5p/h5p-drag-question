@@ -461,12 +461,12 @@ C.prototype.getUserXAPIResponse = function () {
     .filter(function (answerMapping) {
       return answerMapping.elements.length;
     })
-    .map(function (answerMapping, index) {
+    .map(function (answerMapping) {
       return answerMapping.elements
         .filter(function (element) {
           return element.dropZone !== undefined;
         }).map(function (element) {
-          return element.dropZone + '[.]' + index;
+          return element.dropZone + '[.]' + answerMapping.index;
         }).join('[,]');
     }).filter(function (pattern) {
       return pattern !== undefined && pattern !== '';
