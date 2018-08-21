@@ -14,7 +14,7 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
   var correctDropZones = [];
 
   if (isContentInvalid()) {
-    throw new presave.exceptions.InvalidContentSemanticsException('Invalid Drag and Drop Error')
+    throw new presave.exceptions.InvalidContentSemanticsException('Invalid Drag and Drop Error');
   }
 
   if (hasDropZones()) {
@@ -39,12 +39,13 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
 
   if (correctDropZones.length === 0 || isSinglePoint()) {
     score = 1;
-  } else if (hasElements()) {
+  }
+  else if (hasElements()) {
     score = content.question.task.elements
       .filter(function (element, index) {
         return Array.isArray(correctDropZones[index]) && correctDropZones.length > 0;
       })
-      .map(function (element, index) {
+      .map(function (element) {
         if (element.multiple === true) {
           return correctDropZones.length;
         }
@@ -57,9 +58,7 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
 
   presave.validateScore(score);
 
-  if (finished) {
-    finished({maxScore: score});
-  }
+  finished({maxScore: score});
 
   /**
    * Check if required parameters is present
