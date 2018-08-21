@@ -13,7 +13,7 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
   var score = 0;
   var correctDropZones = [];
 
-  if (isContentInValid()) {
+  if (isContentInvalid()) {
     throw new presave.exceptions.InvalidContentSemanticsException('Invalid Drag and Drop Error')
   }
 
@@ -65,7 +65,7 @@ H5PPresave['H5P.DragQuestion'] = function (content, finished) {
    * Check if required parameters is present
    * @return {boolean}
    */
-  function isContentInValid() {
+  function isContentInvalid() {
     return !presave.checkNestedRequirements(content, 'content.question.task');
   }
 
