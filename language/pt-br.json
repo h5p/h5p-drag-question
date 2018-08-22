@@ -18,15 +18,6 @@
           "label": "Configurações",
           "fields": [
             {
-              "label": "O título desta questão",
-              "default": "Drag and drop",
-              "description": "Usado em resumos, estatísticas, etc."
-            },
-            {
-              "label": "Mostrar título",
-              "description": "Desmarque esta opção se você não deseja que o título seja exibido. O título será exibido apenas em resumos, estatísticas, etc."
-            },
-            {
               "label": "Imagem de fundo",
               "description": "Opcional. Selecione uma imagem para ser utilizada como fundo de sua tarefa 'arraste e solte'."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Mostrar pontuação",
           "description": "Mostra pontos ganhos para cada questão. Não disponível quando a opção 'Dar um ponto para toda a tarefa' estiver habilitada."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
