@@ -18,15 +18,6 @@
           "label": "الاعدادات",
           "fields": [
             {
-              "label": "عنوان هذا السؤال",
-              "default": "Drag and Drop",
-              "description": "مستخدم في الملخصات والإحصاءات وغيرها."
-            },
-            {
-              "label": "اظهر العنوان",
-              "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. لن يتم عرض العنوان إلا في الملخصات والإحصائيات وغيرها."
-            },
-            {
               "label": "صورة الخلفية",
               "description": "اختياري. حدد صورة لاستخدامها كخلفية لنشاط السحب والإفلات."
             },
@@ -200,6 +191,10 @@
         {
           "label": "إظهار نقاط النتيجة",
           "description": "عرض النقاط المكتسبة لكل إجابة. غير متاح عند تمكين الخيار 'منح نقطة واحدة للمهمة بالكامل'."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },

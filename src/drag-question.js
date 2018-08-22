@@ -24,6 +24,8 @@ function C(options, contentId, contentData) {
   var i, j;
   numInstances++;
   this.id = this.contentId = contentId;
+  this.contentData = contentData;
+
   H5P.Question.call(self, 'dragquestion');
   this.options = $.extend(true, {}, {
     scoreShow: 'Check',
@@ -41,8 +43,7 @@ function C(options, contentId, contentData) {
     scoreExplanationButtonLabel: 'Show score explanation',
     question: {
       settings: {
-        questionTitle: 'Drag and drop',
-        showTitle: true,
+        questionTitle: (this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop',
         size: {
           width: 620,
           height: 310
@@ -64,7 +65,8 @@ function C(options, contentId, contentData) {
       enableScoreExplanation: true,
       dropZoneHighlighting: 'dragging',
       autoAlignSpacing: 2,
-      showScorePoints: true
+      showScorePoints: true,
+      showTitle: false
     }
   }, options);
 
@@ -274,7 +276,7 @@ C.prototype.registerDomElements = function () {
   var self = this;
 
   // Register introduction section
-  if (self.options.question.settings.showTitle) {
+  if (self.options.behaviour.showTitle) {
     self.$introduction = $('<p class="h5p-dragquestion-introduction" id="dq-intro-' + numInstances + '">' + self.options.question.settings.questionTitle + '</p>');
     self.setIntroduction(self.$introduction);
   }
@@ -995,7 +997,7 @@ C.prototype.getCopyrights = function () {
 };
 
 C.prototype.getTitle = function() {
-  return H5P.createTitle(this.options.question.settings.questionTitle);
+  return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
 };
 
 /**

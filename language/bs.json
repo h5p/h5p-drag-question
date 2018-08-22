@@ -18,15 +18,6 @@
           "label": "Podešavanja",
           "fields": [
             {
-              "label": "Naziv ovog pitanja",
-              "default": "Uzmi i spusti",
-              "description": "Koristi se u sažecima, statistikama, itd.."
-            },
-            {
-              "label": "Pokaži naziv",
-              "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
-            },
-            {
               "label": "Slika pozadine",
               "description": "Opcionalno. Odaberi neku sliku koja će služiti kao pozadina za zadatak 'Uzmi i spusti'."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Show score points",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "label": "Pokaži naziv",
+          "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
         }
       ]
     },

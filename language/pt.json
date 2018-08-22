@@ -18,15 +18,6 @@
           "label": "Definições",
           "fields": [
             {
-              "label": "O título da questão",
-              "default": "Arrastar e Largar",
-              "description": "Utilizado nos sumários, estatísticas, etc.."
-            },
-            {
-              "label": "Mostrar título",
-              "description": "Desmarque esta opção se não quiser que este título seja mostrado. O título só será mostrado nos sumários, estatísticas, etc."
-            },
-            {
               "label": "Imagem de fundo",
               "description": "Opcional. Escolha uma imagem para utilizar como fundo da sua atividade arrastar e largar"
             },
@@ -200,6 +191,10 @@
         {
           "label": "Mostrar pontuação",
           "description": "Mostra a pontuação para cada resposta. Não disponível quando a opção 'Dar um ponto a toda a atividade' estiver ativada."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },

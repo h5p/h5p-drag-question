@@ -18,15 +18,6 @@
           "label": "Ustawienia",
           "fields": [
             {
-              "label": "Nagłówek zadania",
-              "default": "Przeciągnij i upuść",
-              "description": "Używane w podsumowaniach, statystykach itp."
-            },
-            {
-              "label": "Pokaż nagłówek",
-              "description": "Odznacz tę opcję jeżeli nie chcesz aby nagłówek zadania był wyświetlany. Wtedy nagłówek będzie tylko wyświetlany w podsumowaniach, statystykach itp."
-            },
-            {
               "label": "Zdjęcie w tle",
               "description": "Opcjonalne. Wybierz zdjęcie, które zostanie użyte jako tło zadania przeciągnij i upuść."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Pokaż przyznane punkty",
           "description": "Spowoduje pokazanie punktów przyznanych za każdą z odpowiedzi. Nie jest dostępne gdy opcja 'Przyznaj jeden punkt za całe' jest aktywna."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },

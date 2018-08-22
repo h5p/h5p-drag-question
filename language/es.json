@@ -18,15 +18,6 @@
           "label": "Settings",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Utilizado en extractos, estadísticas, etc."
-            },
-            {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
-            },
-            {
               "label": "Background image",
               "description": "Optional. Select an image to use as background for your drag and drop task."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Show score points",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
