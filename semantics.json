@@ -95,8 +95,14 @@
                   "description": "Choose the type of content you would like to add.",
                   "importance": "medium",
                   "options": [
-                    "H5P.AdvancedText 1.1",
-                    "H5P.Image 1.0"
+                    {
+                      "name": "H5P.AdvancedText 1.2",
+                      "hascopypaste": false
+                    },
+                    {
+                      "name": "H5P.Image 1.1",
+                      "hascopypaste": false
+                    }
                   ]
                 },
                 {
