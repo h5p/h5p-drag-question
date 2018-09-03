@@ -18,15 +18,6 @@
           "label": "Asetukset",
           "fields": [
             {
-              "label": "Kysymyksen otsikko",
-              "default": "Raahaa ja pudota",
-              "description": "Käytetään yhteenvedeoissa, tilastoissa jne."
-            },
-            {
-              "label": "Näytä tehtävän otsikko",
-              "description": "Jätä valitsematta, jos et halua otsikkoa näkyviin. Tällöin otsikko näkyy vain yhteenvedoissa, tilastoissa jne."
-            },
-            {
               "label": "Taustakuva",
               "description": "Valinnainen. Valitse taustakuva tehtävälle."
             },
@@ -200,6 +191,10 @@
         {
           "label": "Näytä pisteet",
           "description": "Näytä jokaisesta vastauksesta ansaitut pisteet. Ei käytössä, kun Anna yksi piste koko tehtävästä on valittuna."
+        },
+        {
+          "label": "Näytä tehtävän otsikko",
+          "description": "Jätä valitsematta, jos et halua otsikkoa näkyviin. Tällöin otsikko näkyy vain yhteenvedoissa, tilastoissa jne."
         }
       ]
     },

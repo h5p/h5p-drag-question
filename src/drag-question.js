@@ -24,6 +24,8 @@ function C(options, contentId, contentData) {
   var i, j;
   numInstances++;
   this.id = this.contentId = contentId;
+  this.contentData = contentData;
+
   H5P.Question.call(self, 'dragquestion');
   this.options = $.extend(true, {}, {
     scoreShow: 'Check',
@@ -41,8 +43,7 @@ function C(options, contentId, contentData) {
     scoreExplanationButtonLabel: 'Show score explanation',
     question: {
       settings: {
-        questionTitle: 'Drag and drop',
-        showTitle: true,
+        questionTitle: (this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop',
         size: {
           width: 620,
           height: 310
@@ -64,7 +65,8 @@ function C(options, contentId, contentData) {
       enableScoreExplanation: true,
       dropZoneHighlighting: 'dragging',
       autoAlignSpacing: 2,
-      showScorePoints: true
+      showScorePoints: true,
+      showTitle: false
     }
   }, options);
 
@@ -274,7 +276,7 @@ C.prototype.registerDomElements = function () {
   var self = this;
 
   // Register introduction section
-  if (self.options.question.settings.showTitle) {
+  if (self.options.behaviour.showTitle) {
     self.$introduction = $('<p class="h5p-dragquestion-introduction" id="dq-intro-' + numInstances + '">' + self.options.question.settings.questionTitle + '</p>');
     self.setIntroduction(self.$introduction);
   }
@@ -964,38 +966,8 @@ C.prototype.getCurrentState = function () {
   return state;
 };
 
-/**
- * Gather copyright information for the current content.
- *
- * @returns {H5P.ContentCopyright}
- */
-C.prototype.getCopyrights = function () {
-  var self = this;
-  var info = new H5P.ContentCopyrights();
-
-  var background = self.options.question.settings.background;
-  if (background !== undefined && background.copyright !== undefined) {
-    var image = new H5P.MediaCopyright(background.copyright);
-    image.setThumbnail(new H5P.Thumbnail(H5P.getPath(background.path, self.id), background.width, background.height));
-    info.addMedia(image);
-  }
-
-  for (var i = 0; i < self.options.question.task.elements.length; i++) {
-    var element = self.options.question.task.elements[i];
-    var instance = H5P.newRunnable(element.type, self.id);
-
-    if (instance.getCopyrights !== undefined) {
-      var rights = instance.getCopyrights();
-      rights.setLabel((element.dropZones.length ? 'Draggable ' : 'Static ') + (element.type.params.contentName !== undefined ? element.type.params.contentName : 'element'));
-      info.addContent(rights);
-    }
-  }
-
-  return info;
-};
-
 C.prototype.getTitle = function() {
-  return H5P.createTitle(this.options.question.settings.questionTitle);
+  return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
 };
 
 /**
@@ -1114,7 +1086,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
       if (selected.element.dropZone !== undefined) {
         selected.element.reset();
       }
-      if (!selected.draggable.multiple) {
+      if (selected !== undefined) { // Equals draggable.multiple === false
         selected.element.$.css({
           left: selected.draggable.x + '%',
           top: selected.draggable.y + '%',
@@ -1122,9 +1094,9 @@ var getControls = function (draggables, dropZones, noDropzone) {
           height: selected.draggable.height + 'em'
         });
         selected.draggable.updatePlacement(selected.element);
+        selected.element.$[0].setAttribute('aria-grabbed', 'false');
+        deselect();
       }
-      selected.element.$[0].setAttribute('aria-grabbed', 'false');
-      deselect();
       return;
     }
 
