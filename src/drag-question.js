@@ -675,6 +675,12 @@ C.prototype.resize = function (e) {
     return;
   }
 
+  // Update background opacity for dropzones (in case they were not previously
+  // appended)
+  self.dropZones.forEach(function (dropzone) {
+    dropzone.updateBackgroundOpacity();
+  });
+
   // Check if decreasing iframe size
   var decreaseSize = e && e.data && e.data.decreaseSize;
   if (!decreaseSize) {
