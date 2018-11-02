@@ -38,22 +38,6 @@
         "importance": "high",
         "fields": [
           {
-            "name": "questionTitle",
-            "type": "text",
-            "label": "The title of this question",
-            "importance": "high",
-            "default": "Drag and Drop",
-            "description": "Used in summaries, statistics etc."
-          },
-          {
-            "name": "showTitle",
-            "type": "boolean",
-            "label": "Show Title",
-            "importance": "low",
-            "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
-            "default": true
-          },
-          {
             "name": "background",
             "type": "image",
             "label": "Background image",
@@ -111,8 +95,8 @@
                   "description": "Choose the type of content you would like to add.",
                   "importance": "medium",
                   "options": [
-                    "H5P.AdvancedText 1.1",
-                    "H5P.Image 1.0"
+                      "H5P.AdvancedText 1.1",
+                      "H5P.Image 1.1"
                   ]
                 },
                 {
@@ -470,6 +454,14 @@
         "label": "Show score points",
         "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled.",
         "importance": "low",
+        "default": true
+      },
+      {
+        "name": "showTitle",
+        "type": "boolean",
+        "label": "Show Title",
+        "importance": "low",
+        "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
         "default": true
       }
     ]

@@ -115,6 +115,24 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
 
         // Done
         finished(null, parameters);
+      },
+      13: function (parameters, finished, extras) {
+        var metadata = extras.metadata || {};
+        if (parameters.question && parameters.question.settings) {
+          // Set new show title parameter
+          if (parameters.behaviour) {
+            parameters.behaviour.showTitle = parameters.question.settings.showTitle || false;
+          }
+
+          metadata.title = parameters.question.settings.questionTitle || ((extras && extras.metadata) ? extras.metadata.title : undefined);
+
+          // Remove old parameter
+          delete parameters.question.settings.questionTitle;
+          delete parameters.question.settings.showTitle;
+        }
+        extras.metadata = metadata;
+
+        finished(null, parameters, extras);
       }
 
     }

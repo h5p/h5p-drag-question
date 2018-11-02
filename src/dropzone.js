@@ -156,9 +156,16 @@ export default class DropZone {
 
     // Set element opacity when element has been appended
     setTimeout(function () {
-      DragUtils.setOpacity(self.$dropZone.children('.h5p-label'), 'background', self.backgroundOpacity);
-      DragUtils.setOpacity(self.$dropZone.children('.h5p-inner'), 'background', self.backgroundOpacity);
+      self.updateBackgroundOpacity();
     }, 0);
+  }
+
+  /**
+   * Update the background opacity
+   */
+  updateBackgroundOpacity() {
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-label'), 'background', this.backgroundOpacity);
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
   /**

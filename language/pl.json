@@ -1,116 +1,107 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Przycisk sprawdzenia odpowiedzi",
+      "default": "Sprawdź"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Przycisk powtórzenia",
+      "default": "Powtórz"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Tekst dodatkowych informacji dotyczących uzyskanego wyniku",
+      "default": "Poprawna odpowiedź to +1 punkt. Niepoprawna odpowiedź to -1 punkt. Najniższy możliwy wynik to 0 punktów."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ustawienia",
           "fields": [
             {
-              "label": "The title of this question",
-              "default": "Drag and Drop",
-              "description": "Used in summaries, statistics etc."
+              "label": "Zdjęcie w tle",
+              "description": "Opcjonalne. Wybierz zdjęcie, które zostanie użyte jako tło zadania przeciągnij i upuść."
             },
             {
-              "label": "Show Title",
-              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
-            },
-            {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
-            },
-            {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Rozmiar obszaru zadania",
+              "description": "Określ jakiej wielkości (w px) będzie obszar prezentacji zadania."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Zadanie",
+          "description": "Rozpocznij od umieszczenie obszarów do których będą przeciągane odpowiedzi (drop zones).<br/>Następnie umieść przeciągalne elementy i oznacz ich docelowe obszary przeciągania.<br/> Na końcu edytuj obszary przeciągania i zaznacz właściwe dla nich odpowiedzi.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elementy",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Wybierz typ obiektu, który chcesz dodać."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Wybierz obszary przeciągania (drop zones)"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Poziom nieprzezroczystości tła(opacity)"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Nieskończona liczba instancji elementu",
+                    "description": "Powiela ten element, aby można go było przeciągnąć do wielu obszarów przeciągania."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Obszary przeciągania",
+              "entity": "Obszar przeciągania",
               "field": {
-                "label": "Drop Zone",
+                "label": "Obszar przeciągania",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etykieta"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Pokaż etykietę"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Wybierz poprawne elementy"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Poziom nieprzezroczystości tła (Background Opacity)"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Wskazówki oraz podsumowanie wyników",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Treść wskazówki"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Komunikat wyświetlany przy poprawnym dopasowaniu",
+                        "description": "Komunikat pojawi się pod zadaniem, po wybraniu \"Sprawdź\", jeżeli przeciągnięty został właściwy element."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Komunikat wyświetlany przy niepoprawnym dopasowaniu",
+                        "description": "Komunikat pojawi się pod zadaniem, po wybraniu \"Sprawdź\", jeżeli przeciągnięty został niewłaściwy element."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Ten obszar może zawierać tylko jeden element",
+                    "description": "Upewnij się, że tylko jeden element jest oznaczony jako poprawny dla tego obszaru przeciągania"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Zezwól na automatyczne wyrównywanie",
+                    "description": "Spowoduje automatyczne wyrównywanie elementów w tym obszarze przeciągania."
                   }
                 ]
               }
@@ -120,7 +111,7 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Podsumowanie końcowych wyników",
       "fields": [
         {
           "widgets": [
@@ -128,18 +119,18 @@
               "label": "Default"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Określ własne kryteria oceny dla wybranych zakresów",
+          "description": "Użyj przycisku \"Dodaj zakres\" aby dodać taką liczbę zakresów, jaka jest potrzebna. Przykład: 0-20% Słaby wynik, 21-91% Przeciętny wynik, 91-100% Bardzo dobry wynik!",
+          "entity": "zakres",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Zakres wyników"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Komunikat dla danego zakresu",
+                "placeholder": "Wprowadź komunikat"
               }
             ]
           }
@@ -147,118 +138,122 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Ustawienia zachowania",
+      "description": "Te opcje pozwalają kontrolować zachowanie zadania.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Pokazuj przycisk \"Powtórz\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Pokazuj przycisk \"Sprawdź\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Wymagaj podania przez użytkownika rozwiązania przed pokazaniem prawidłowego rozwiązania"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Przyznaj jeden punkt za całe zadanie",
+          "description": "Zablokuj przyznawanie po jednym punkcie za każdy poprawnie przeciągnięty element."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Stosuj karne punkty",
+          "description": "Stosuj karne punkty dla elementów przeciągniętych do niewłaściwych obszarów. Ta opcja musi być zaznaczona, jeżeli ten sam element lub elementy mogą być przeciągnięte do więcej niż jednego obszaru lub jeżeli istnieje tylko jeden obszar przeciągania. Gdy ta opcja nie jest zaznaczona, użytkownicy mogą przeciągnąć wszystkie elementy do wszystkich obszarów i zawsze uzyskać maksymalną liczbę punktów."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Aktywuj dodatkowe informacje o uzyskanym wyniku",
+          "description": "Wyświetla użytkownikom dodatkowe informacje o uzyskanym wyniku, podczas sprawdzania odpowiedzi (jeżeli opcja 'Stosuj karne punkty' jest aktywna)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Poziom nieprzezroczystości tła (Background Opacity) przeciąganych elementów",
+          "description": "Jeżeli to pole jest wypełnione, nadpisuje ono parametr nieprzezroczystości obowiązujący dla wszystkich przeciąganych elementów. Wartość powinna być w przedziale od 0 do 100, gdzie 0 oznacza pełną przezroczystość, a 100 oznacza brak przezroczystości"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Podświetlanie stref przeciągania",
+          "description": "Wybierz, kiedy strefy przeciągania powinny być podświetlane.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Podczas przeciągania"
             },
             {
-              "label": "Always"
+              "label": "Zawsze"
             },
             {
-              "label": "Never"
+              "label": "Nigdy"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Marginesy dla opcji automatycznego dopasowania (w px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Zezwalaj na widok pełnego ekranu",
+          "description": "Zaznaczenie tej opcji spowoduje pojawienie się przycisku Pełny ekran."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Pokaż przyznane punkty",
+          "description": "Spowoduje pokazanie punktów przyznanych za każdą z odpowiedzi. Nie jest dostępne gdy opcja 'Przyznaj jeden punkt za całe' jest aktywna."
+        },
+        {
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalizacja",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etykieta pełnego ekranu",
+          "default": "Pełny ekran"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etykieta zamknięcia widoku pełnego ekranu",
+          "default": "Zamknij widok pełnego ekranu"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefiks elementu przeciąganego",
+      "default": "Element {num} z {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufiks elementu przeciąganego",
+      "default": "Umieszczono w obszarze {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefix obszaru przeciągania",
+      "default": "Obszar {num} z {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etykieta braku wybrania obszaru",
+      "default": "Brak wybranego obszaru."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etykieda przycisku pokazującego wskazówki",
+      "default": "Pokaż wskazówki."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etykieta gdy wskazówki są dostępne",
+      "default": "Dostępne są dodatkowe wskazówki"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etykieta dla poprawnej odpowiedzi",
+      "default": "Odpowiedź poprawna"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etykieta dla niepoprawnej odpowiedzi",
+      "default": "Odpowiedź niepoprawna"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Nagłówek sekcji zawierającej podsumowanie poprawnych i niepoprawnych odpowiedzi",
+      "default": "Podsumowanie"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstowy odpowiednik paska wyniku, w przypadku korzystania z systemów czytających tekst",
+      "default": "Twój wynik to :num out z :total points"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Tekstowy odpowiednik przycisku pokazującego przyznane punkty",
+      "default": "Pokaż szczegóły wyniku"
     }
   ]
 }

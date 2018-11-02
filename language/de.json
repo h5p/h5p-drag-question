@@ -18,15 +18,6 @@
           "label": "Einstellungen",
           "fields": [
             {
-              "label": "Titel der Frage",
-              "default": "Ziehen und Ablegen",
-              "description": "Wird benutzt in Zusammenfassungen, Statistiken, usw."
-            },
-            {
-              "label": "Titel anzeigen",
-              "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
-            },
-            {
               "label": "Hintergrundbild",
               "description": "Optional. Wähle ein Hintergrundbild für die Aufgabe aus."
             },
@@ -38,7 +29,7 @@
         },
         {
           "label": "Aufgabe",
-          "description": "Starte, indem du deine \"Drop Zones\" platzierst.<br/>Als nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen \"Drop Zones\" an.<br/>Zum Schluss wähle in den \"Drop Zones\" die für sie korrekten Elemente aus.",
+          "description": "Starte, indem du deine Ablagezonen platzierst.<br/>Als nächstes platziere die verschiebbaren Elemente und wähle die zugehörigen Ablagezonen an.<br/>Zum Schluss wähle in den Ablagezonen die für sie korrekten Elemente aus.",
           "fields": [
             {
               "label": "Elemente",
@@ -54,23 +45,23 @@
                   {},
                   {},
                   {
-                    "label": "Wähle die \"Drop Zones\""
+                    "label": "Wähle die Ablagezonen"
                   },
                   {
                     "label": "Hintergrunddeckkraft"
                   },
                   {
                     "label": "Unbegrenzte Anzahl an Element-Instanzen",
-                    "description": "Klont dieses Element, so dass es beliebig oft in verschiedene \"Drop Zones\" gezogen werden kann."
+                    "description": "Klont dieses Element, so dass es beliebig oft in verschiedene Ablagezonen gezogen werden kann."
                   }
                 ]
               }
             },
             {
-              "label": "Drop-Feld",
-              "entity": "Drop-Feld",
+              "label": "Ablagezone",
+              "entity": "Ablagezone",
               "field": {
-                "label": "Drop-Feld",
+                "label": "Ablagezone",
                 "fields": [
                   {
                     "label": "Beschriftung"
@@ -105,12 +96,12 @@
                     ]
                   },
                   {
-                    "label": "Diese \"Drop Zone\" kann nur ein Element beinhalten",
-                    "description": "Stelle sicher, dass es nur eine richtige Antwort für diese \"Drop Zone\" gibt"
+                    "label": "Diese Ablagezone kann nur ein Element beinhalten",
+                    "description": "Stelle sicher, dass es nur eine richtige Antwort für diese Ablagezone gibt"
                   },
                   {
                     "label": "Auto-Anordnen einschalten",
-                    "description": "Ordnet alle beweglichen Elemente automatisch innerhalb der \"Drop Zone\" an."
+                    "description": "Ordnet alle beweglichen Elemente automatisch innerhalb der Ablagezone an."
                   }
                 ]
               }
@@ -120,7 +111,7 @@
       ]
     },
     {
-      "label": "Hintergrunddeckkraft für bewegliche Elemente",
+      "label": "Allgemeine Rückmeldung",
       "fields": [
         {
           "widgets": [
@@ -128,18 +119,18 @@
               "label": "Vorgabe"
             }
           ],
-          "label": "Benutzerdefinierte Rückmeldung für jeden Punkte-Bereich definieren",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "Lege Rückmeldungen für einzelne Punktebereiche fest",
+          "description": "Klicke auf den \"Bereich hinzufügen\"-Button, um so viele Bereiche hinzuzufügen, wie du brauchst. Beispiel: 0-20% Schlechte Punktzahl, 21-91% Durchschnittliche Punktzahl, 91-100% Großartige Punktzahl!",
           "entity": "Bereich",
           "field": {
             "fields": [
               {
-                "label": "Punkte-Bereich"
+                "label": "Punktebereich"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Rückmeldung für festgelegte Punktebereiche",
+                "placeholder": "Trage die Rückmeldung ein"
               }
             ]
           }
@@ -165,19 +156,19 @@
         },
         {
           "label": "Strafpunkte vergeben",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "description": "Vergibt Strafpunkte für Elemente, die in einer falschen Ablagezone abgelegt werden. Diese Option muss aktiviert werden, wenn verschiedene Elemente in mehrere Ablagezonen gelegt werden können oder es nur eine Ablagezone gibt. Ist dies nicht aktiviert, können Lernende alle Elemente in allen Ablagezonen platzieren und so volle Punktzahl erreichen."
         },
         {
           "label": "Erklärung für die Punkte einschalten",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description": "Zeige eine Erklärung für die Punkte an, wenn die Lernenden ihre Antworten prüfen (falls \"Strafpunkte vergeben\" aktiviert ist)."
         },
         {
           "label": "Hintergrunddeckkraft für bewegliche Elemente",
           "description": "Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für.alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
         },
         {
-          "label": "\"Drop Zone\"-Aufleuchten",
-          "description": "Wähle, wann die \"Drop Zones\" aufleuchten sollen.",
+          "label": "Ablagezonen aufleuchten lassen",
+          "description": "Wähle, wann die Ablagezonen aufleuchten sollen.",
           "options": [
             {
               "label": "Beim Ziehen"
@@ -194,12 +185,16 @@
           "label": "Abstand für das Auto-Anordnen (in px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Vollbild ermöglichen",
+          "description": "Wähle diese Option an, um einen Vollbild-Button anzuzeigen."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Zeige erreichte Punkte an",
+          "description": "Zeige die erreichten Punkte für jede Antwort an. Nicht verfügbar, wenn die Option \"Einen Punkt für die ganze Aufgabe vergeben\" aktiviert ist."
+        },
+        {
+          "label": "Titel anzeigen",
+          "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
         }
       ]
     },
@@ -207,58 +202,58 @@
       "label": "Sprache anpassen",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Vollbildmodus"
+          "label": "Beschriftung für \"Vollbild\"",
+          "default": "Vollbild"
         },
         {
-          "label": "Exit fullscreen label",
+          "label": "Beschriftung für \"Vollbild beenden\"",
           "default": "Vollbild beenden"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Greifbares Element Präfix",
+      "default": "Greifbares Element {num} von {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Greifbares Element Suffix",
+      "default": "Abgelegt in Ablagezone {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Ablagezone Präfix",
+      "default": "Ablagezone {num} von {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Beschriftung für \"Keine Ablagezone\"",
+      "default": "Keine Ablagezone."
     },
     {
-      "label": "Beschriftung für Senden-Schaltfäche",
-      "default": "Show tip."
+      "label": "Beschriftung für \"Hinweis zeigen\"-Button",
+      "default": "Hinweis zeigen"
     },
     {
-      "label": "Label for tip available",
+      "label": "Beschriftung für \"Tipp verfügbar\"",
       "default": "Tipp verfügbar"
     },
     {
-      "label": "Label for correct answer",
+      "label": "Beschriftung für \"Richtige Antwort\"",
       "default": "Richtige Antwort"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "Beschriftung für \"Falsche Antwort\"",
       "default": "Falsche Antwort"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Kopfzeile für den Abschnitt, der die Rückmeldungen für richtige/falsche Antworten enthält",
       "default": "Rückmeldung"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Textliche Repräsentation der Punkteleiste für diejenigen, die Readspeaker benutzen",
+      "default": "Du hast :num von :total Punkten erreicht."
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Textliche Repräsentation des \"Punkte erklären\"-Buttons",
+      "default": "Zeige Erklärung für die Punkte an."
     }
   ]
 }
