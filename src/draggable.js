@@ -184,7 +184,6 @@ export default class Draggable extends H5P.EventDispatcher {
           }
         }
       }).css('position', '');
-
     self.element = element;
 
     if (element.position) {
