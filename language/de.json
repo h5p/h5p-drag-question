@@ -23,7 +23,7 @@
             },
             {
               "label": "Aufgabengröße",
-              "description": "Gib an, wie breit (in px) das Feld sein soll."
+              "description": "Gib an, wie groß (in Pixeln) das Feld sein soll."
             }
           ]
         },
@@ -45,14 +45,14 @@
                   {},
                   {},
                   {
-                    "label": "Wähle die Ablagezonen"
+                    "label": "Wähle die Ablagezonen, in die das Element gezogen werden kann (inkl. Distraktoren)"
                   },
                   {
                     "label": "Hintergrunddeckkraft"
                   },
                   {
                     "label": "Element kann mehrfach in Ablagezonen gezogen werden",
-                    "description": "Dupliziert dieses Element, so dass es beliebig oft in verschiedene Ablagezonen gezogen werden kann."
+                    "description": "Wenn dieses Element verschoben wird, werden Kopien davon erstellt, so dass es beliebig oft in verschiedene Ablagezonen gezogen werden kann."
                   }
                 ]
               }
@@ -74,7 +74,7 @@
                   {},
                   {},
                   {
-                    "label": "Wähle korrekte Elemente"
+                    "label": "Wähle die in dieser Ablagezone korrekten Elemente"
                   },
                   {
                     "label": "Hintergrunddeckkraft"
@@ -97,11 +97,11 @@
                   },
                   {
                     "label": "Diese Ablagezone kann nur ein Element beinhalten",
-                    "description": "Stelle sicher, dass es nur eine richtige Antwort für diese Ablagezone gibt"
+                    "description": "Stelle oben sicher, dass es nur eine richtige Antwort für diese Ablagezone gibt"
                   },
                   {
-                    "label": "Automatisches Ausrichten einschalten",
-                    "description": "Ordnet alle beweglichen Elemente automatisch innerhalb der Ablagezone an."
+                    "label": "Automatisches Ausrichten aktivieren",
+                    "description": "Alle in einer Ablagezone abgelegten beweglichen Elemente werden automatisch sauber ausgerichtet."
                   }
                 ]
               }
@@ -139,7 +139,7 @@
     },
     {
       "label": "Verhaltenseinstellungen",
-      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
+      "description": "Diese Optionen legen fest, wie die Aufgabe im Detail funktioniert.",
       "fields": [
         {
           "label": "\"Wiederholen\" zulassen"
@@ -148,7 +148,7 @@
           "label": "\"Überprüfen\"-Button anzeigen"
         },
         {
-          "label": "Lernende können Lösung erst anzeigen lassen, wenn eine Antwort eingegeben wurde."
+          "label": "Lernende können die Lösung erst einsehen, wenn sie vorher eine Eingabe gemacht haben"
         },
         {
           "label": "Einen Punkt für die ganze Aufgabe vergeben",
@@ -182,7 +182,7 @@
           ]
         },
         {
-          "label": "Abstand für das automatische Ausrichten (in px)"
+          "label": "Abstand zwischen den Elemente beim automatischen Ausrichten (in px)"
         },
         {
           "label": "Vollbild erlauben",
@@ -248,7 +248,7 @@
       "default": "Rückmeldung"
     },
     {
-      "label": "Anzeigetext des Punktebalkens für Vorlesewerkzeuge (Barrierefreiheit)",
+      "label": "Anzeigetext als Ersatz für den Punktebalke in Vorlesewerkzeugen (Barrierefreiheit)",
       "default": "Du hast :num von :total Punkten erreicht."
     },
     {
