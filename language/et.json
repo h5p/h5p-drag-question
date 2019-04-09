@@ -1,83 +1,83 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
+      "label": "Kontrolli vastust nupp",
       "default": "Kontrolli"
     },
     {
-      "label": "Retry button",
+      "label": "Proovi uuesti nupp",
       "default": "Proovi uuesti"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Punktisummat seletav tekst",
+      "default": "Õiged vastused annavad +1 punkti. Valed vastused annavad -1 punkti. Madalaim võimalik tulemus on 0 punkti."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Seaded",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Taustapilt",
+              "description": "Mittekohustuslik. Vali lohistamisülesande taustaks pilt."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Ülesande suurus",
+              "description": "Määra mänguala suurus pikslites (px)."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Ülesanne",
+          "description": "Alusta sihtkohtade määramisega.<br/>Järgmisena paiguta lohistatavad elemendid ja märgi sobilikud sihtkohad.<br/>Lõpuks märgi sihtkohtade õiged vastused.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elemendid",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Vali lisatava sisu tüüp."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Määra sihtkohad"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Tausta läbipaistvus"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Lõpmatu arv elemendi kloone",
+                    "description": "Paljundab elementi, et seda saaks lohistada mitmetesse sihtkohtadesse."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Sihtkohad",
+              "entity": "Sihtkoht",
               "field": {
-                "label": "Drop Zone",
+                "label": "Sihtkoht",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Silt"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Näita silti"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Vali õiged elemendid"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Tausta läbipaistvus"
                   },
                   {
                     "label": "Vihje ja tagasiside",
@@ -86,22 +86,22 @@
                         "label": "Vihje tekst"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Õige vaste sõnum",
+                        "description": "Sõnumit näidatakse ülesande all \"kontrollimisel\", kui element sobib sihtkohaga."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Mittesobiva vaste sõnum",
+                        "description": "Sõnumit näidatakse ülesande all \"kontrollimisel\", kui element ei sobi sihtkohaga."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Siia sihtkohta mahub vaid üks element",
+                    "description": "Veendu, et sellel sihtkohal on vaid üks õige vastus"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Luba automaatne joondamine",
+                    "description": "Kõik siia sihtkohta lohistatud elemendid joondatakse automaatselt."
                   }
                 ]
               }
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Üldine tagasiside",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Vaikimisi"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Määra tagasiside punktisummade vahemikele",
+          "description": "Vahemike lisamiseks kliki \"Lisa vahemik\" nupul nii mitu korda, kui vaja. Näited: 0-20% halb tulemus, 21-91% keskmine tulemus, 91-100% supertulemus!",
+          "entity": "vahemik",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Punktisummade vahemik"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Määratud punktisummade vahemiku tagasiside",
+                "placeholder": "Sisesta tagasiside"
               }
             ]
           }
@@ -138,122 +138,122 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Käitumisseaded",
+      "description": "Need valikud võimaldavad sul määrata, kuidas ülesanne käitub.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Luba \"Proovi uuesti\" nupp"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Luba \"Kontrolli\" nupp"
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Nõua enne lahenduse näitamist kasutaja sisendit."
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Anna üks punkt kogu ülesande eest",
+          "description": "Keela, kui soovid anda ühe punkti iga õigesti lohistatud elemendi eest."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Määra trahvid",
+          "description": "Määra trahvid valedesse sihtkohtadesse lohistatud elementide eest. Peab olema lubatud, kui sama elementi on võimalik lohistada erinevatesse sihtkohtadesse või kui on vaid üks sihtkoht. Kui see ei ole lubatud, siis võivad õppurid sobitada kõik elemendid kõikide sihtkohtadega ja saada alati täispunktid."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Luba punktisumma selgitused",
+          "description": "Kuva kasutajale tema vastuste kontrollimisel punktisumma selgitus (kui 'Määra trahvid' valik on märgitud)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Tausta läbipaistvus lohistatavatele elementidele",
+          "description": "Märgitud välja puhul kohaldatakse kõigi lohistatavate elementide taustale. Numbrivahemik on 0 (täiesti läbipaistev) kuni 100 (ei paista läbi)."
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Sihtkoha esiletoomine",
+          "description": "Märgi, millal sihtkohad esile tuua",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Lohistamise ajal"
             },
             {
-              "label": "Always"
+              "label": "Alati"
             },
             {
-              "label": "Never"
+              "label": "Mitte kunagi"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Automaatse joondamise vahekaugus pikslites (px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Luba täisekraan",
+          "description": "Märgi see valik täisekraani lubamiseks."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Näita punktisummad",
+          "description": "Näita iga vastuse eest teenitud punkte. Ei ole kasutatav, kui märgitud on 'Anna üks punkt kogu ülesande eest' valik."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Näita pealkirja",
+          "description": "Ära märgi seda valikut, kui ei taha pealkirja näidata. Pealkirja näidatakse ainult kokkuvõtetes, statistikas, jne."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Kohanda",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Täisekraani silt",
+          "default": "Täisekraan"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Välju täisekraanilt silt",
+          "default": "Välju täisekraanilt"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Haaratava eesliide",
+      "default": "Haaratav {num} / {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Haaratava järelliide",
+      "default": "Asetatud sihtkohta {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Sihtkoha eesliide",
+      "default": "Sihtkoht {num} / {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Mitte-sihtkoha valiku silt",
+      "default": "Ei ole sihtkoht."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Vihje näitamise nupu silt",
+      "default": "Näita vihjet."
     },
     {
-      "label": "Label for tip available",
+      "label": "Saadavaloleva vihje silt",
       "default": "Küsi vihjet"
     },
     {
-      "label": "Label for correct answer",
+      "label": "Õige vastuse silt",
       "default": "Õige vastus"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "Vale vastuse silt",
       "default": "Vale vastus"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Õigete/valede vastuste tagasiside paneeli pealkiri",
+      "default": "Tagasiside"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Punktisumma riba tekstiline esitus neile, kes kasutavad tekstilugerit",
+      "default": "Said :num punkti :total punktist"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Punktisumma selgitusnupu tekstiline esitus",
+      "default": "Näita punktisumma selgitust"
     }
   ]
 }
