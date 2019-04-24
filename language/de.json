@@ -248,7 +248,7 @@
       "default": "Rückmeldung"
     },
     {
-      "label": "Anzeigetext als Ersatz für den Punktebalke in Vorlesewerkzeugen (Barrierefreiheit)",
+      "label": "Anzeigetext als Ersatz für den Punktebalken in Vorlesewerkzeugen (Barrierefreiheit)",
       "default": "Du hast :num von :total Punkten erreicht."
     },
     {
