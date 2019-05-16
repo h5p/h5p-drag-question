@@ -86,12 +86,12 @@
                         "label": "Tekst savjeta"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Poruka koja će se prikazati kod ispravnog spajanja",
+                        "description": "Poruka će se pojaviti ispod zadatka na \"provjeri\" ako je spajanje tačno."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Poruka koja će se prikazati kod pogrešnog spajanja",
+                        "description": "Poruka će se pojaviti ispod zadatka na \"provjeri\" ako je spajanje netačno."
                       }
                     ]
                   },
@@ -119,18 +119,18 @@
               "label": "Standard"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definiraj standardnu povratnu informaciju za bilo koji raspon rezultata",
+          "description": "Klikni na dugme \"Dodaj raspon\" i dodaj raspona rezultata koliko je potrebno. Primjer: 0-20% Loše, 21-91% Dobro, 91-100% Odlično!",
+          "entity": "raspon",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Raspon rezultata"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Povratna informacija za definirani raspon rezultata",
+                "placeholder": "Napiši povratnu informaciju"
               }
             ]
           }
@@ -138,14 +138,14 @@
       ]
     },
     {
-      "label": "Interaktionseinstellungen",
-      "description": "Diese Optionen kontrollieren, wie sich die Aufgabe verhält.",
+      "label": "Podešavanje interakcije",
+      "description": "Ova opcija kontrolira kako se zadatak ponaša.",
       "fields": [
         {
-          "label": "Omogući \"Ponovi\" dugme"
+          "label": "Omogući dugme \"Ponovi\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Omogući dugme \"Provjeri\""
         },
         {
           "label": "Daje jedan bod za cijeli zadatak"
@@ -159,7 +159,7 @@
           "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label": "Enable score explanation",
+          "label": "Omogući objašnjenje rezultata",
           "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
@@ -189,11 +189,11 @@
           "description": "Označi ovu opciju kako bi omogućio dugme za cijeli ekran."
         },
         {
-          "label": "Show score points",
+          "label": "Prikaži bodove",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         },
         {
-          "label": "Pokaži naziv",
+          "label": "Prikaži naziv",
           "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
         }
       ]
@@ -217,43 +217,43 @@
     },
     {
       "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "default": "Spušteno na zone za spustanje {num}."
     },
     {
       "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "default": "Zona za spustanje {num} od {total}."
     },
     {
       "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "default": "Nema zone za spustanje."
     },
     {
       "label": "Label for show tip button",
-      "default": "Show tip."
+      "default": "Prikaži savjet."
     },
     {
-      "label": "Label for tip available",
+      "label": "Oznaka da je dostupan savjet",
       "default": "Savjet dostupan"
     },
     {
       "label": "Label for correct answer",
-      "default": "Correct answer"
+      "default": "Ispravan odgovor"
     },
     {
       "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "default": "Pogrešan odgovor"
     },
     {
       "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "default": "Povratna informacija"
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "default": "Postigli ste :num od :total bodova"
     },
     {
       "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "default": "Prikaži opis rezultata"
     }
   ]
 }
