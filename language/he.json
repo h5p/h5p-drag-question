@@ -19,7 +19,7 @@
           "fields": [
             {
               "label": "תמונת רקע",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "description": "נתון לבחירה. בחרו תמונה שתשמש כרקע למשימת הגרירה."
             },
             {
               "label": "גודל המשימה",
@@ -33,12 +33,12 @@
           "fields": [
             {
               "label": "פריטים",
-              "entity": "פריט",
+              "entity": "רכיב",
               "field": {
-                "label": "פריט",
+                "label": "רכיב",
                 "fields": [
                   {
-                    "description": "יש לבחור את סוג התוכן אותו תרצו להוסיף."
+                    "description": "בחרו את סוג התוכן אותו תרצו להוסיף."
                   },
                   {},
                   {},
@@ -64,7 +64,7 @@
                 "label": "אזור יעד",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "תווית"
                   },
                   {
                     "label": "תצוגת תווית"
@@ -74,7 +74,7 @@
                   {},
                   {},
                   {
-                    "label": "בחירת פריט נכון"
+                    "label": "בחירת הפריט הנכון"
                   },
                   {
                     "label": "שקיפות הרקע"
@@ -83,7 +83,7 @@
                     "label": "עצות ומשוב",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "עצה"
                       },
                       {
                         "label": "Message displayed on correct match",
@@ -116,7 +116,7 @@
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "ברירת מחדל"
             }
           ],
           "label": "Define custom feedback for any score range",
