@@ -52,7 +52,7 @@
                   },
                   {
                     "label": "Безкраен брой инстанции на елементи",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "description": "Копира този елемент, така че да може да се плъзга в няколко зони на пускане."
                   }
                 ]
               }
@@ -101,7 +101,7 @@
                   },
                   {
                     "label": "Разреши автоматичното подравняване",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "description": "Автоматично ще подравнява всички елементи за плъзгане, пуснати в тази зона."
                   }
                 ]
               }
@@ -186,7 +186,7 @@
         },
         {
           "label": "Разреши показване на цял екран",
-          "description": "Маркирай тази опция, за да се позволи показването на цял екран."
+          "description": "Маркирайте тази опция, за да се позволи показването на цял екран."
         },
         {
           "label": "Показване на точките от резултата",
@@ -212,16 +212,16 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Префикс на елемент, който може да се хваща",
+      "default": "Елемент за хващане {num} от {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Суфикс на елемент, който може да се хваща",
+      "default": "Поставен в зона за пускане {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Префикс за зоната за пускане",
+      "default": "Зона за пускане {num} от {total}."
     },
     {
       "label": "Няма етикет за избор на зона за поставяне",
