@@ -56,7 +56,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable {
   border-radius: 0.25em;
   border: 0.1em solid #c6c6c6;
-  overflow: hidden;
   cursor: pointer;
   position: absolute;
   text-align: center;
@@ -88,7 +87,8 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   background: #cee0f4;
 }
 .h5p-dragquestion .h5p-draggable > img {
-  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 .h5p-dragquestion .h5p-draggable > ul {
   text-align: left;
@@ -139,21 +139,17 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable.h5p-correct:after,
 .h5p-dragquestion .h5p-draggable.h5p-wrong:after {
   font-family: 'H5PFontAwesome4';
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: normal;
   position: absolute;
-  right: 0;
-  top: 0.1em;
-  padding: 0 0.2em;
+  right: 0.1em;
+  bottom: 0;
   background: inherit;
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   border-radius: 0.25em;
-}
-
-/* Align feedback to text */
-.h5p-dragquestion .h5p-draggable.h5p-advanced-text:after {
-  line-height: 1.75;
+  line-height: 1;
+  padding: 0.15em 0 0 0.2em;
 }
 
 .h5p-dragquestion .h5p-draggable.h5p-correct.h5p-advanced-text:after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-advanced-text:after {
@@ -197,14 +193,19 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-label {
   line-height: 1.25em;
   padding-left: 0.5em;
+  padding-right: 0.5em;
   right: 0;
   left: 0;
   bottom: 100%;
   white-space: nowrap;
   border-radius: 0.25em 0.25em 0 0;
   position: absolute;
-
   background: #ddd;
+}
+
+.h5p-dragquestion .h5p-label > div {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .h5p-dragquestion .h5p-dropzone-answer {
@@ -219,18 +220,11 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   border-radius: 0.25em;
 }
 
-.h5p-dragquestion .joubel-tip-container {
+.h5p-dragquestion .h5p-dropzone .joubel-tip-container {
   position: absolute;
-  right: 0.15em;
+  right: 0.5em;
   bottom: 0;
   font-size: 0.8em;
-}
-
-.h5p-dragquestion .h5p-question-feedback .joubel-tip-container {
-  position: relative;
-  top: initial;
-  right: initial;
-  font-size: 1em;
 }
 
 /* Make sure dragquestion has margins in fullscreen */
@@ -239,4 +233,56 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion.h5p-fullscreen > .h5p-question-introduction {
   margin-left: 1em;
   margin-right: 1em;
+}
+
+/* Full screen button styling */
+.h5p-dragquestion .h5p-my-fullscreen-button-enter,
+.h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #1a73d9;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-enter {
+  line-height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+  text-indent: 0.4em;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  line-height: 2em;
+  width: 2.2em;
+  height: 2.2em;
+  text-indent: 0.25em;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-enter:before {
+  font-family: 'H5PFontAwesome4';
+  content: "\f065";
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-exit:before {
+  font-family: 'H5PFontAwesome4';
+  content: "\f066";
+  font-size: 2em;
+}
+.h5p-dragquestion .h5p-dq-no-dz {
+  position: absolute;
+}
+
+.h5p-dragquestion .h5p-dragquestion-introduction {
+  outline: none;
+}
+
+.h5p-dragquestion .h5p-question-plus-one,
+.h5p-dragquestion .h5p-question-minus-one {
+  width: 1.25em;
+  height: calc(1.25em * 0.638297872);
+  top: -0.15em;
+  right: -0.15em;
 }

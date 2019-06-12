@@ -1,89 +1,89 @@
 {
   "semantics": [
     {
-      "label": "Sjekk-knappen",
-      "default": "Sjekk"
+      "label": "Check answer button",
+      "default": "Check"
     },
     {
-      "label": "«Prøv igjen»-knapp",
-      "default": "Prøv igjen"
+      "label": "Retry button",
+      "default": "Επανάληψη"
     },
     {
-      "label": "Poengforklaring",
-      "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
+      "label": "Score explanation text",
+      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {
       "fields": [
         {
-          "label": "Innstillinger",
+          "label": "Settings",
           "fields": [
             {
-              "label": "Bakgrunnsbilde",
-              "description": "Valgfritt. Velg et bakgrunnsbilde for oppgaven."
+              "label": "Background image",
+              "description": "Optional. Select an image to use as background for your drag and drop task."
             },
             {
-              "label": "Oppgavens størrelse",
-              "description": "Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i."
+              "label": "Task size",
+              "description": "Specify how large (in px) the play area should be."
             }
           ]
         },
         {
-          "label": "Oppgave",
-          "description": "Begynn med å plassere målområder.<br/>Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br/>Til slutt redigeres målområdene igjen for å angi fasit.",
+          "label": "Task",
+          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
-              "label": "Elementer",
-              "entity": "Element",
+              "label": "Elements",
+              "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Velg typen innhold du vil legge til."
+                    "description": "Choose the type of content you would like to add."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Velg målområder"
+                    "label": "Select drop zones"
                   },
                   {
-                    "label": "Opasitet for bakgrunn"
+                    "label": "Background Opacity"
                   },
                   {
-                    "label": "Uendelig antall instanser av elementet",
-                    "description": "Klon dette elementet slik at det kan dras til flere målområder."
+                    "label": "Infinite number of element instances",
+                    "description": "Clones this element so that it can be dragged to multiple drop zones."
                   }
                 ]
               }
             },
             {
-              "label": "Målområder",
-              "entity": "Målområde",
+              "label": "Drop Zones",
+              "entity": "Drop Zone",
               "field": {
-                "label": "Målområde",
+                "label": "Drop Zone",
                 "fields": [
                   {
-                    "label": "Tittel"
+                    "label": "Label"
                   },
                   {
-                    "label": "Vis tittel"
+                    "label": "Show label"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Velg riktige elementer"
+                    "label": "Select correct elements"
                   },
                   {
-                    "label": "Opasitet for bakgrunn"
+                    "label": "Background Opacity"
                   },
                   {
-                    "label": "Tips",
+                    "label": "Tips and feedback",
                     "fields": [
                       {
-                        "label": "Tipstekst"
+                        "label": "Tip text"
                       },
                       {
                         "label": "Message displayed on correct match",
@@ -96,12 +96,12 @@
                     ]
                   },
                   {
-                    "label": "Dette målområdet kan bare inneholde et element",
-                    "description": "Pass på at det bare finnes ett riktig svar for dette målområdet"
+                    "label": "This drop zone can only contain one element",
+                    "description": "Make sure there is only one correct answer for this dropzone"
                   },
                   {
-                    "label": "Automatisk justering",
-                    "description": "Vil automatisk justere alle elementer plassert i denne sonen."
+                    "label": "Enable Auto-Align",
+                    "description": "Will auto-align all draggables dropped in this zone."
                   }
                 ]
               }
@@ -111,12 +111,12 @@
       ]
     },
     {
-      "label": "Samlet tilbakemelding",
+      "label": "Overall Feedback",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Standard"
+              "label": "Default"
             }
           ],
           "label": "Define custom feedback for any score range",
@@ -138,51 +138,51 @@
       ]
     },
     {
-      "label": "Innstillinger for oppgaveoppførsel",
-      "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
+      "label": "Behavioural settings",
+      "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Aktiver \"Prøv igjen\"-knapp"
+          "label": "Enable \"Retry\""
         },
         {
           "label": "Enable \"Check\" button"
         },
         {
-          "label": "Krev inndata fra brukeren før fasit gis."
+          "label": "Require user input before the solution can be viewed"
         },
         {
-          "label": "Gi ett poeng for hele oppgaven",
-          "description": "Slå av for å gi ett poeng for hvert draobjekt som er plassert korrekt."
+          "label": "Give one point for the whole task",
+          "description": "Disable to give one point for each draggable that is placed correctly."
         },
         {
           "label": "Apply penalties",
           "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label": "Vis poeng-forklaring",
+          "label": "Enable score explanation",
           "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label": "Bakgrunnsopasitet på flyttbare elementer",
-          "description": "Hvis denne verdien er satt, vil den overstyre instillingene til alle flyttbare elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
+          "label": "Background opacity for draggables",
+          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
         },
         {
-          "label": "Slippsonefremheving",
-          "description": "Velg når slippsoner skal fremheves",
+          "label": "Drop Zone Highlighting",
+          "description": "Choose when to highlight drop zones.",
           "options": [
             {
-              "label": "Når man drar"
+              "label": "When dragging"
             },
             {
-              "label": "Alltid"
+              "label": "Always"
             },
             {
-              "label": "Aldri"
+              "label": "Never"
             }
           ]
         },
         {
-          "label": "Mellomrom for automatisk justering (i piksler)"
+          "label": "Spacing for Auto-Align (in px)"
         },
         {
           "label": "Enable FullScreen",
@@ -194,58 +194,58 @@
         },
         {
           "label": "Show Title",
-          "description": "Huk av dette alternativet, hvis du ikke ønsker å vise tittelen. Tittelen vil bare vises for oppsummeringer, statistikk osv."
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
     {
-      "label": "Lokaliser",
+      "label": "Localize",
       "fields": [
         {
-          "label": "Tittel for \"Full skjerm\"-knapp",
-          "default": "Fullskjerm"
+          "label": "Fullscreen label",
+          "default": "Fullscreen"
         },
         {
-          "label": "Tittel for \"Avslutt fullskjerm\"-knapp",
-          "default": "Forlat fullskjerm"
+          "label": "Exit fullscreen label",
+          "default": "Exit fullscreen"
         }
       ]
     },
     {
-      "label": "Draobjektprefiks",
+      "label": "Grabbable prefix",
       "default": "Grabbable {num} of {total}."
     },
     {
-      "label": "Draobjektprefiks",
+      "label": "Grabbable suffix",
       "default": "Placed in dropzone {num}."
     },
     {
-      "label": "Målområdeprefiks",
+      "label": "Dropzone prefix",
       "default": "Dropzone {num} of {total}."
     },
     {
-      "label": "Slippsoneprefiks",
+      "label": "No dropzone selection label",
       "default": "No dropzone."
     },
     {
-      "label": "Etikett for knappen Vis tips",
+      "label": "Label for show tip button",
       "default": "Show tip."
     },
     {
-      "label": "Merkelapp for vis-tips-knappen",
-      "default": "Tips tilgjengelig"
+      "label": "Label for tip available",
+      "default": "Tip available"
     },
     {
-      "label": "Merkelapp for tips tilgjengelig",
-      "default": "Rett svar"
+      "label": "Label for correct answer",
+      "default": "Correct answer"
     },
     {
-      "label": "Merkelapp for korrekt svar",
-      "default": "Feil svar"
+      "label": "Label for incorrect answer",
+      "default": "Wrong answer"
     },
     {
-      "label": "Merkelapp for feil svar",
-      "default": "Tilbakemelding"
+      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "default": "Feedback"
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
