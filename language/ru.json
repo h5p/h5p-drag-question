@@ -1,107 +1,107 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Кнопка проверки ответа",
+      "default": "Проверить"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Кнопка повтора",
+      "default": "Повторить"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Текст объяснения оценки",
+      "default": "Правильные ответы дают +1 балл. Неправильные ответы дают -1 балл. Наименьшая возможная оценка - 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Настройки",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Фоновое изображение",
+              "description": "По желанию. Выберите изображение для использования в качестве фона для задачи с перетаскиванием."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Размер задачи",
+              "description": "Укажите, насколько большой (в пикселях) должна быть игровая зона."
             }
           ]
         },
         {
-          "label": "Task",
+          "label": "Задача",
           "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Элементы",
+              "entity": "элемент",
               "field": {
-                "label": "Element",
+                "label": "Элемент",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Выберите тип контента, который вы хотите добавить."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Выберите область размещения"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Непрозрачность фона"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Бесконечное количество экземпляров элемента",
+                    "description": "Клонирует этот элемент, чтобы его можно было перетащить в несколько областей размещения."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Области размещения",
+              "entity": "Область размещения",
               "field": {
-                "label": "Drop Zone",
+                "label": "Область размещения",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Надпись"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Показать надпись"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Выберите правильные элементы"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Непрозрачность фона"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Подсказки и обратная связь",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Текст подсказки"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Сообщение отображаемое при правильном соответствии",
+                        "description": "Сообщение появится под задачей на \"проверить\", если будет сброшен правильный элемент."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Сообшение отображаемое при неправильном соответствии",
+                        "description": "Сообщение появится под задачей на \"проверить\", если будет сброшен неправильный элемент."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Эта область размещения может содержать только один элемент",
+                    "description": "Убедитесь, что есть только один правильный ответ для этой области размещения"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Включить авто-выравнивание",
+                    "description": "Автоматически выравнивает все перетаскиваемые объекты в этой зоне."
                   }
                 ]
               }
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Общая обратная связь",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "По умолчанию"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Определение произвольной обратной связи для каждого диапазона оценок",
+          "description": "Нажмите на кнопку \"Добавить диапазон\" для добавления необходимого количества диапазонов. Пример: 0-20% Плохая оценка, 21-91% Средняя оценка, 91-100% Отличная оценка!",
+          "entity": "дипазон",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Диапазон оценок"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Обратная связь для определенного диапазона оценок",
+                "placeholder": "Заполните обратную связь"
               }
             ]
           }
@@ -138,122 +138,122 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Настройки поведения",
+      "description": "Эти параметры позволят вам контролировать поведение задачи.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Включить кнопку \"Повторить\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Включить кнопку \"Проверить\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Требуется ввод данных пользователем, прежде чем решение может быть просмотрено"
         },
         {
-          "label": "Give one point for the whole task",
+          "label": "Давать один балл за всю задачу",
           "description": "Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Применять штраф",
+          "description": "Применение штрафов за элементы, сброшенные в неправильных областях размещения. Это должно быть включено, когда один и тот же элемент (элементы) может быть сброшен в нескольких областях размещения или если имеется только одна область размещения. Если это не включено, учащиеся смогут сопоставить все элементы со всеми областями размещения и всегда получать полную оценку."
         },
         {
-          "label": "Enable score explanation",
+          "label": "Включить объяснение оценки",
           "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label": "Background opacity for draggables",
+          "label": "Непрозрачность фона при перетаскивании",
           "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
         },
         {
-          "label": "Drop Zone Highlighting",
+          "label": "Подсветка области размещения",
           "description": "Choose when to highlight drop zones.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "При перетаскивании"
             },
             {
-              "label": "Always"
+              "label": "Всегда"
             },
             {
-              "label": "Never"
+              "label": "Никогда"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Отступы при авто-выравнивании (в пиксилях)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Включить полноэкранный ражим",
+          "description": "Отметьте этот параметр, для включения кнопки полноэкранного режима."
         },
         {
-          "label": "Show score points",
+          "label": "Показывать набранные баллы",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         },
         {
-          "label": "Show Title",
+          "label": "Показать заголовок",
           "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Локализация",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Надпись полноэкранного режима",
+          "default": "Полноэкранный режим"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Надпись выхода из полноэкранного режима",
+          "default": "Выйти из полноэкранного режима"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Префикс для захваченных объектов",
+      "default": "Захвачено {num} из {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Суффикс для захваченных объектов",
+      "default": "Помещено в область размещения {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Префикс для области размещения",
+      "default": "Размещено {num} из {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Надпись, если область размещения не выбрана",
+      "default": "Нет области размещения."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Надпись для кнопки показа подсказки",
+      "default": "Показать подсказку."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Надпись для доступной подсказки",
+      "default": "Подсказка доступна"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Надпись для правильного ответа",
+      "default": "Правильный ответ"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Надпись для неправильного ответа",
+      "default": "Неправильный ответ"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Заголовок панели обратной связи для правильных/неправильных ответов",
+      "default": "Обратная связь"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Текстовое отображение шкалы баллов для тех, кто использует озвучку текста",
+      "default": "Вы набрали :num из :total баллов"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Текстовое отображение на кнопке объяснения оценки",
+      "default": "Показать объяснение оценки"
     }
   ]
 }
