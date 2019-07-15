@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Pulsante Controlla risposta",
+      "label": "Pulsante di controllo della risposta",
       "default": "Verifica"
     },
     {
@@ -145,7 +145,7 @@
           "label": "Attiva \"Riprova\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Attiva pulsante \"Verifica\""
         },
         {
           "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
@@ -156,7 +156,7 @@
         },
         {
           "label": "Applica penalità",
-          "description": "Apply penalties for elements dropped in the wrong drop zones."
+          "description": "Applica penalità agli elementi rilasciati nelle zone sbagliate."
         },
         {
           "label": "Attiva la spiegazione del punteggio",
@@ -248,12 +248,12 @@
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Rappresentazione testuale sulla barra del punteggio per chi usa un lettore vocale",
+      "default": "Il tuo punteggio è :num out di :total"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Rappresentazione testuale del pulsante di spiegazione del punteggio",
+      "default": "Mostra spiegazione del punteggio"
     }
   ]
 }

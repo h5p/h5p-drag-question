@@ -1,54 +1,54 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "כפתור בדיקת תשובה",
+      "default": "בדיקה"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "כפתור ניסיון חוזר",
+      "default": "ניסיון חוזר"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "הסבר מילולי לניקוד",
+      "default": "התשובות הנכונות מספקות נקודה אחת (1+). תשובות שגויות מחסירה נקודה (1-). הציון הנמוך ביותר האפשרי הוא 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "הגדרות",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "תמונת רקע",
+              "description": "נתון לבחירה. בחרו תמונה שתשמש כרקע למשימת הגרירה."
             },
             {
-              "label": "Task size",
+              "label": "גודל המשימה",
               "description": "Specify how large (in px) the play area should be."
             }
           ]
         },
         {
-          "label": "Task",
+          "label": "משימה",
           "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "פריטים",
+              "entity": "רכיב",
               "field": {
-                "label": "Element",
+                "label": "רכיב",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "בחרו את סוג התוכן אותו תרצו להוסיף."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "בחירת אזורי יעד"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "שקיפות הרקע"
                   },
                   {
                     "label": "Infinite number of element instances",
@@ -58,32 +58,32 @@
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "אזורי יעד",
+              "entity": "אזורי יעד",
               "field": {
-                "label": "Drop Zone",
+                "label": "אזור יעד",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "תווית"
                   },
                   {
-                    "label": "Show label"
+                    "label": "תצוגת תווית"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "בחירת הפריט הנכון"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "שקיפות הרקע"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "עצות ומשוב",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "עצה"
                       },
                       {
                         "label": "Message displayed on correct match",
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "משוב כללי",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "ברירת מחדל"
             }
           ],
           "label": "Define custom feedback for any score range",
           "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "entity": "טווח",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "טווח ניקוד"
               },
               {},
               {
                 "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "placeholder": "הזנת משוב"
               }
             ]
           }
@@ -138,14 +138,14 @@
       ]
     },
     {
-      "label": "Behavioural settings",
+      "label": "הגדרות התנהגות",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "הפעלת \"ניסיון חוזר\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "הפעלת כפתור \"בדיקה\""
         },
         {
           "label": "Require user input before the solution can be viewed"
@@ -155,29 +155,29 @@
           "description": "Disable to give one point for each draggable that is placed correctly."
         },
         {
-          "label": "Apply penalties",
+          "label": "החלת כנסות",
           "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
         },
         {
-          "label": "Enable score explanation",
+          "label": "תצוגת הסבר לניקוד",
           "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
         },
         {
-          "label": "Background opacity for draggables",
+          "label": "שקיפות רקע לפריטים נגררים",
           "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
         },
         {
-          "label": "Drop Zone Highlighting",
+          "label": "הדגשת אזורי יעד",
           "description": "Choose when to highlight drop zones.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "כאשר גוררים"
             },
             {
-              "label": "Always"
+              "label": "תמיד"
             },
             {
-              "label": "Never"
+              "label": "אף פעם"
             }
           ]
         },
@@ -185,29 +185,29 @@
           "label": "Spacing for Auto-Align (in px)"
         },
         {
-          "label": "Enable FullScreen",
+          "label": "אפשרות למסך־מלא",
           "description": "Check this option to enable the full screen button."
         },
         {
-          "label": "Show score points",
+          "label": "תצוגת ניקוד וציונים",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         },
         {
-          "label": "Show Title",
+          "label": "תצוגת כותרת",
           "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "תרגום מותאם",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "תווית מסך־מלא",
+          "default": "מסך־מלא"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "תווית יציאה ממסך־מלא",
+          "default": "יציאה ממסך־מלא"
         }
       ]
     },
@@ -225,27 +225,27 @@
     },
     {
       "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "default": "אין אזורי יעד."
     },
     {
       "label": "Label for show tip button",
-      "default": "Show tip."
+      "default": "תצוגת עצה."
     },
     {
       "label": "Label for tip available",
-      "default": "Tip available"
+      "default": "עצה זמינה"
     },
     {
       "label": "Label for correct answer",
-      "default": "Correct answer"
+      "default": "תשובה נכונה"
     },
     {
       "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "default": "תשובה שגויה"
     },
     {
       "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "default": "משוב"
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
