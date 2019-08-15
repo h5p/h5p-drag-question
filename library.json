@@ -13,7 +13,7 @@
   "author": "Joubel",
   "coreApi": {
     "majorVersion": 1,
-    "minorVersion": 22
+    "minorVersion": 23
   },
   "license": "MIT",
   "machineName": "H5P.DragQuestion",
