@@ -1,107 +1,107 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Ετικέτα κουμπιού ελέγχου απάντησης",
+      "default": "Έλεγχος"
     },
     {
-      "label": "Retry button",
+      "label": "Ετικέτα κουμπιού νέας προσπάθειας",
       "default": "Επανάληψη"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Κείμενο επεξήγησης βαθμολογίας",
+      "default": "Για κάθε σωστή απάντηση κερδίζεις έναν βαθμό. Για κάθε λάθος απάντηση χάνεις έναν βαθμό. Η χαμηλότερη δυνατή βαθμολογία είναι 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ρυθμίσεις",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Εικόνα φόντου",
+              "description": "Επιλέξτε μια εικόνα ως φόντο για την άσκηση (προαιρετικό)."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Μέγεθος άσκησης",
+              "description": "Προσδιορίστε το απαιτούμενο μέγεθος της περιοχής (σε px)."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Άσκηση",
+          "description": "Αρχικά, προσθέστε περιοχές απόθεσης.<br/>Στη συνέχεια, τοποθετήστε τα συρόμενα στοιχεία και επιλέξτε τις περιοχές απόθεσης.<br/>Τέλος, επεξεργαστείτε την περιοχή απόθεσης ξανά και επιλέξτε τις σωστές απαντήσεις.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Στοιχεία",
+              "entity": "στοιχειου",
               "field": {
-                "label": "Element",
+                "label": "Στοιχείο",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Επιλέξτε τον τύπο περιεχομένου που επιθυμείτε να προσθέσετε."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Επιλέξτε περιοχές απόθεσης"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Διαφάνεια φόντου"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Απεριόριστος αριθμός επαναλήψεων στοιχείου",
+                    "description": "Δημιουργεί αντίγραφα του στοιχείου έτσι ώστε να μπορεί να συρθεί σε πολλαπλές περιοχές απόθεσης."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Περιοχές απόθεσης",
+              "entity": "περιοχης αποθεσης",
               "field": {
-                "label": "Drop Zone",
+                "label": "Περιοχή απόθεσης",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Ετικέτα"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Εμφάνιση ετικέτας"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Επιλέξτε τα σωστά στοιχεία"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Διαφάνεια φόντου"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Επεξηγήσεις και ανατροφοδότηση",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Επεξηγηματικό κείμενο"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Μήνυμα που εμφανίζεται σε σωστή αντιστοίχιση",
+                        "description": "Το μήνυμα εμφανίζεται κάτω από την άσκηση κατά τον \"Έλεγχο\", εάν έχει γίνει σωστή αντιστοίχιση."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Μήνυμα που εμφανίζεται σε λάθος αντιστοίχιση ",
+                        "description": "Το μήνυμα εμφανίζεται κάτω από την άσκηση κατά τον \"Έλεγχο\" εάν έχει γίνει λάθος αντιστοίχιση ."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Αυτή η περιοχή απόθεσης μπορεί να περιέχει μόνο ένα στοιχείο",
+                    "description": "Βεβαιωθείτε ότι υπάρχει μόνο μια σωστή απάντηση για αυτήν την περιοχή απόθεσης."
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Ενεργοποίηση αυτόματης στοίχισης",
+                    "description": "Θα στοιχίσει αυτόματα όλα τα συρόμενα στοιχεία που τοποθετούνται σε αυτή την περιοχή."
                   }
                 ]
               }
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Συνολική ανατροφοδότηση",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Βασικό"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Χαρακτηρισμός κάθε κλίμακας βαθμολογίας",
+          "description": "Κάντε κλικ στο κουμπί \"Προσθήκη κλίμακας\" για να προσθέσετε όσες  κλίμακες ή διαβαθμίσεις επιθυμείτε. Παράδειγμα: 0-20% Χαμηλή βαθμολογία, 21-91% Μέτρια βαθμολογία, 91-100% Εξαιρετική βαθμολογία!",
+          "entity": "κλιμακας",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Βαθμολογία"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Χαρακτηρισμός",
+                "placeholder": "Συμπληρώστε τον χαρακτηρισμό"
               }
             ]
           }
@@ -138,122 +138,122 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Ρυθμίσεις άσκησης",
+      "description": "Αυτές οι ρυθμίσεις σας επιτρέπουν να καθορίσετε τον τρόπο λειτουργίας της άσκησης.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Ενεργοποίηση κουμπιού \"Επανάληψη\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Ενεργοποίηση κουμπιού \"Έλεγχος\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Απαιτείται καταχώριση απάντησης πριν την εμφάνιση της λύσης"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Για ολόκληρη την άσκηση ο χρήστης κερδίζει έναν βαθμό",
+          "description": "Απενεργοποιήστε ώστε για κάθε συρόμενο στοιχείο που τοποθετεί σωστά ο χρήστης να κερδίζει έναν βαθμό."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Αφαίρεση βαθμών",
+          "description": "Αφαιρούνται βαθμοί για στοιχεία που έχουν τοποθετηθεί σε λάθος περιοχή απόθεσης. Αυτή η επιλογή πρέπει να είναι ενεργοποιημένη όταν τα ίδια στοιχεία μπορούν να τοποθετηθούν σε πολλαπλές περιοχές απόθεσης ή εάν υπάρχει μόνο μία περιοχή απόθεσης. Αν αυτή η επιλογή δεν είναι ενεργοποιημένη, οι χρήστες θα μπορούν να τοποθετούν όλα τα στοιχεία σε όλες τις περιοχές απόθεσης και να λαμβάνουν πάντα ολόκληρη τη βαθμολογία."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Ενεργοποίηση επεξήγησης βαθμολογίας",
+          "description": "Εμφάνιση επεξήγησης βαθμολογίας στον χρήστη κατά τον έλεγχο των απαντήσεων (εάν η επιλογή \"Αφαίρεση βαθμών\" έχει ενεργοποιηθεί)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Διαφάνεια φόντου για συρόμενα στοιχεία",
+          "description": "Εάν οριστεί αυτό το πεδίο, θα αντικαταστήσει όλες τις προεπιλεγμένες ρυθμίσεις διαφάνειας στα συρόμενα στοιχεία. Θα πρέπει να οριστεί μια τιμή ανάμεσα σε 0 και 100, όπου το 0 ισοδυναμεί με πλήρη διαφάνεια και το 100 με καθόλου διαφάνεια"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Επισήμανση περιοχής απόθεσης",
+          "description": "Επιλέξτε πότε θα τονίζεται η περιοχή απόθεσης.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Κατά το σύρσιμο"
             },
             {
-              "label": "Always"
+              "label": "Πάντα"
             },
             {
-              "label": "Never"
+              "label": "Ποτέ"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Διάστημα για αυτόματη στοίχιση (σε px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Ενεργοποίηση πλήρους οθόνης",
+          "description": "Επιλέξτε αυτή τη ρύθμιση για να ενεργοποιήσετε το κουμπί πλήρους οθόνης."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Εμφάνιση βαθμολογίας",
+          "description": "Εμφάνιση βαθμών που κερδίζει ο χρήστης για κάθε απάντηση. Δεν είναι διαθέσιμη όταν είναι ενεργοποιημένη η επιλογή \"Για ολόκληρη την άσκηση ο χρήστης κερδίζει έναν βαθμό.\""
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+           "label": "Εμφάνιση τίτλου",
+           "description": "Αποεπιλέξτε αυτή τη ρύθμιση, εάν δεν επιθυμείτε να εμφανίζεται ο τίτλος. Ο τίτλος θα εμφανίζεται μόνο σε συνόψεις, στατιστικά κ.λπ."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Προσαρμογή",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Ετικέτα πλήρους οθόνης",
+          "default": "Πλήρης οθόνη"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Ετικέτα εξόδου από την πλήρη οθόνη",
+          "default": "Έξοδος από την πλήρη οθόνη"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Πρόθεμα συρόμενου στοιχείου",
+      "default": "Συρόμενο στοιχείο {num} από {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Κατάληξη συρόμενου στοιχείου",
+      "default": "Έχει τοποθετηθεί στην περιοχή απόθεσης {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Πρόθεμα περιοχής απόθεσης",
+      "default": "Περιοχή απόθεσης {num} από {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Ετικέτα μη επιλογής περιοχής απόθεσης",
+      "default": "Μη επιλεγμένη περιοχή απόθεσης."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Ετικέτα κουμπιού επεξήγησης ",
+      "default": "Επεξήγηση"
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Ετικέτα για διαθέσιμη επεξήγηση",
+      "default": "Επεξήγηση διαθέσιμη"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Ετικέτα για σωστή απάντηση",
+      "default": "Σωστή απάντηση"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Ετικέτα για λάθος απάντηση",
+      "default": "Λάθος απάντηση"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Επικεφαλίδα πλαισίου με ανατροφοδότηση για σωστές/ λάθος απαντήσεις",
+      "default": "Ανατροφοδότηση"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Κειμενική απόδοση της μπάρας βαθμολογίας για όσους χρησιμοποιούν ακουστική υποβοήθηση",
+      "default": "Συγκεντρώσατε :num από :total βαθμούς"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Κειμενική απόδοση του κουμπιού επεξήγησης βαθμολογίας",
+      "default": "Εμφάνιση επεξήγησης βαθμολογίας"
     }
   ]
 }
