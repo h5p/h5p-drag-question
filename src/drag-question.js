@@ -422,10 +422,25 @@ C.prototype.getXAPIDefinition = function () {
     });
     if (this.options.question.task.dropZones[i].correctElements) {
       for (var j = 0; j < this.options.question.task.dropZones[i].correctElements.length; j++) {
+        /**
+         * NOTE: The editor allows you to turn a draggable that was correct
+         * in a dropzone into a non-draggable, but leaves the non-draggable
+         * associated with the dropzone if it was previously marked as correct
+         * within that dropzone.
+         * Because of this we have to check if the draggable that is marked
+         * as correct within this dropzone can actually be dropped on this
+         * dropzone in the draggable's data.
+         */
+        const task = this.options.question.task;
+        const draggable = task.elements[task.dropZones[i].correctElements[j]];
+        if (!draggable || draggable.dropZones.indexOf(i.toString()) < 0) {
+          continue;
+        }
+
         if (!firstCorrectPair) {
           definition.correctResponsesPattern[0] += '[,]';
         }
-        definition.correctResponsesPattern[0] += i + '[.]' + this.options.question.task.dropZones[i].correctElements[j];
+        definition.correctResponsesPattern[0] += i + '[.]' + task.dropZones[i].correctElements[j];
         firstCorrectPair = false;
       }
     }
