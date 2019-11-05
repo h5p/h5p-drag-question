@@ -170,7 +170,8 @@
                   "tags": [
                     "strong",
                     "em",
-                    "del"
+                    "del",
+                    "code"
                   ]
                 },
                 {
@@ -235,7 +236,8 @@
                         "p",
                         "br",
                         "strong",
-                        "em"
+                        "em",
+                        "code"
                       ],
                       "optional": true
                     },

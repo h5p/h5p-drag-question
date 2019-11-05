@@ -45,7 +45,7 @@
                   {},
                   {},
                   {
-                    "label": "Selezionare zona di rilascio"
+                    "label": "Selezionare una zona di rilascio"
                   },
                   {
                     "label": "Opacità Sfondo"
@@ -120,7 +120,7 @@
             }
           ],
           "label": "Definisci un feedback personalizzato per ogni intervallo di punteggio",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "description": "Clicca sul pulsante \"Aggiungi intervallo\" per agiungere quanti intervalli ti servono. Esempio: 0-20% Cattivo punteggio, 21-91% Punteggio medio, 91-100% Ottimo punteggio!",
           "entity": "Intervallo",
           "field": {
             "fields": [
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
+      "label": "Prefisso per afferrabile",
       "default": "A disposizione {num} di {total}."
     },
     {
