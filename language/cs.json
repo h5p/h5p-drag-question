@@ -1,107 +1,107 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Tlačítko zkontrolovat odpovědi",
+      "default": "Zkontrolovat"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Tlačítko opakovat",
+      "default": "Opakovat"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Text s vysvětlením skóre",
+      "default": "Za správné odpovědi získáte +1 bodu. Za nesprávné odpovědi získáte -1 bod. Nejnižší možné skóre je 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Nastavení",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Obrázek na pozadí",
+              "description": "Volitelné. Vyberte obrázek, který chcete použít jako pozadí pro úkol přetažení."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Velikost úkolu",
+              "description": "Určete, jak velká by měla být plocha úkolu (v px)."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Úkol",
+          "description": "Začněte tím, že umístíte své přetahovací zóny. <br/> Dále umístěte rozevírací prvky a zaškrtněte příslušné zóny přetažení. <br/> Nakonec znovu upravte zónu přetažení a zkontrolujte správné odpovědi.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Prvky",
+              "entity": "prvek",
               "field": {
-                "label": "Element",
+                "label": "Prvek",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Vyberte typ obsahu, který chcete přidat."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Vyberte zóny přetažení"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Průhlednost pozadí"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Nekonečný počet instancí prvků",
+                    "description": "Klonuje tento prvek, takže jej lze přetáhnout do více zón přetažení."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Zóny přetažení",
+              "entity": "Zóna přetažení",
               "field": {
-                "label": "Drop Zone",
+                "label": "Zóna přetažení",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Popisek"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Zobrazit popisek"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Vyberte správné prvky"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Průhlednost pozadí"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Nápovědy a zpětná vazba",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Text nápovědy"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Zpráva zobrazená při správné shodě",
+                        "description": "Zpráva se zobrazí pod úkolem \"Kontrola\", pokud je shoda správná."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Zpráva zobrazená při nesprávné shodě",
+                        "description": "Zpráva se zobrazí pod úkolem \"Kontrola\", pokud  je shoda nesprávná."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Tato zóna přetažení může obsahovat pouze jeden prvek",
+                    "description": "Ujistěte se, že pro tuto zónu existuje pouze jedna správná odpověď"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Povolit automatické vyrovnávání",
+                    "description": "Automaticky zarovná všechny přetahované objekty v této zóně."
                   }
                 ]
               }
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Celková zpětná vazba",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Výchozí"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definujte vlastní zpětnou vazbu pro libovolný rozsah skóre",
+          "description": "Klikněte na tlačítko \"Přidat rozsah\" a přidejte rozsahy podle potřeby. Příklad: 0-20% špatné skóre, 21-91% průměrné skóre, 91-100% výborné skóre!",
+          "entity": "rozsah",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Rozsah skóre"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Zpětná vazba pro definovaný rozsah skóre",
+                "placeholder": "Vyplňte zpětnou vazbu"
               }
             ]
           }
@@ -138,122 +138,122 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Nastavení chování",
+      "description": "Tyto možnosti vám umožní řídit, jak se bude úloha chovat.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Povolit tlačítko \"Opakovat\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Povolit tlačítko \"Kontrola\" "
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Před zobrazením řešení je třeba zadat vstup uživatele"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Jeden bod za celý úkol",
+          "description": "Zakázat udělit jeden bod za každou přesouvanou položku, která je umístěna správně."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Použití sankcí",
+          "description": "Uložte sankce za prvky vyhozené do nesprávných zón přetažení. To musí být povoleno, pokud mohou být stejné prvky rozhozeny do více zón, nebo pokud existuje pouze jedna zóna. Pokud to není povoleno, mohou žáci spojovat všechny položky se všemi zónami uložení a vždy získat plné skóre."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Povolit vysvětlení skóre",
+          "description": "Při kontrole jejich odpovědí zobrazte vysvětlení skóre uživateli (pokud byla vybrána možnost Použít sankce)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Neprůhlednost pozadí při přetahování",
+          "description": "Pokud je toto pole nastaveno, přepíše neprůhlednost nastavenou na všech přesouvaných prvcích. To by mělo být číslo mezi 0 a 100, kde 0 znamená úplnou průhlednost a 100 znamená neprůhlednost"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Zvýraznění zóny přetažení",
+          "description": "Zvolte, kdy zvýraznit zóny přetažení.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Při přetažení"
             },
             {
-              "label": "Always"
+              "label": "Vždy"
             },
             {
-              "label": "Never"
+              "label": "Nikdy"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Mezery při automatickém zarovnání (v px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Povolit celou obrazovku",
+          "description": "Zaškrtnutím této možnosti povolíte tlačítko celé obrazovky."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Zobrazit body",
+          "description": "Zobrazit body získané za každou odpověď. Není k dispozici, pokud je povolena možnost 'Přiřadit jeden bod pro celý úkol'."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Zobrazit nadpis",
+          "description": "Zrušte zaškrtnutí této možnosti, pokud nechcete, aby se tento nadpis zobrazoval. Nadpis se zobrazí pouze v souhrnech, statistikách atd."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Localizace",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Pipisek celá obrazovka",
+          "default": "Celá obrazovka"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Ukončit celou obrazovku",
+          "default": "Ukončit celou obrazovku"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Předpona přetažení",
+      "default": "Přetažení {num} z {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Přípona přetažení",
+      "default": "Umístěno v cílové zóně {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Předpona cílové zóny",
+      "default": "Cílová zóna {num} of {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Popisek bez výběru cílové zóny",
+      "default": "Žádná cílová zóna."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Popisek tlačítka pro zobrazení nápovědy",
+      "default": "Zobrazit nápovědu."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Popisek dostupná nápověda",
+      "default": "Dostupná nápověda"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Popisek pro správnou odpověď",
+      "default": "Správná odpověď"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Popisek pro nesprávnou odpověď",
+      "default": "Nesprávná odpověď"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Záhlaví panelu obsahující zpětnou vazbu pro správné/nesprávné odpovědi",
+      "default": "Zpětná vazba"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Textové znázornění výsledkové lišty pro ty, kteří používají čtecí zařízení",
+      "default": "Získal jste :num z celkem :total bodů"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Textové znázornění tlačítka pro vysvětlení skóre",
+      "default": "Zobrazit vysvětlení skóre"
     }
   ]
 }
