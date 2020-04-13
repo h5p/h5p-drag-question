@@ -1,107 +1,107 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Botón Revisar respuesta",
+      "default": "Revisar"
     },
     {
-      "label": "Retry button",
+      "label": "Botón Reintentar",
       "default": "Reintentar"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Texto explicación puntaje",
+      "default": "Las respuestas correctas dan +1 punto. Respuestas incorrectas dan -1 punto. El puntaje más bajo posible es 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ajustes",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Imagen del fondo",
+              "description": "Opcional. Seleccione una imagen para usar como fondo para su trabajo de arrastrar y soltar."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Tamaño del trabajo",
+              "description": "Especifique que tan grande (en px) debería ser el área de juego."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Trabajo",
+          "description": "Comience clocando sus zonas de caída.<br/>Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br/>Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elementos",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Elija el tipo de contenido que le gustaría añadir."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Seleccione zonas de caída"
                   },
                   {
                     "label": "Opacidad del fondo"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Número infinito de instancias de elementos",
+                    "description": "Clona este elemento para que pueda ser arrastrado a múltiples zonas de caída."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Zonas de Caída",
+              "entity": "Zona de Caída",
               "field": {
-                "label": "Drop Zone",
+                "label": "Zona de Caída",
                 "fields": [
                   {
                     "label": "Etiqueta"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Mostrar etiqueta"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Seleccionar elementos correctos"
                   },
                   {
                     "label": "Opacidad del fondo"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Pistas y realimentación",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Texto de pista"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Mensaje mostrado en coincidencia correcta",
+                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si el soltable correcto es coincidencia."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "ensaje mostrado en coincidencia incorrecta",
+                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si la coincidencia es incorrecta."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Esta zona de caída solamente puede contener un elemento",
+                    "description": "Asegúrese de que solo haya una respuesta correcta para esta zona de caída"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Habilitar Auto-Alinear",
+                    "description": "Auto-alineará todos los arrastrables caídos en esta zona."
                   }
                 ]
               }
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Realimentación general",
       "fields": [
         {
           "widgets": [
@@ -119,18 +119,18 @@
               "label": "Predeterminado"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Definir realimentación personalizada para cualquier rango de puntaje",
+          "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
+          "entity": "rango",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Rango de Puntaje"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Realimentación para rango definido de puntaje",
+                "placeholder": "LLene la realimentación"
               }
             ]
           }
@@ -139,61 +139,61 @@
     },
     {
       "label": "Ajustes de comportamiento",
-      "description": "These options will let you control how the task behaves.",
+      "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Habilitar \"Reintentar\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Habilitar botón \"Revisar\" "
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Requerir entrada del usuario antes de que pueda verse la solución"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Dar un punto por todo el trabajo",
+          "description": "Deshabilitar dar un punto por cada arrastrable que es colocado correctamente."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Aplicar penalización",
+          "description": "Aplicar penalizaciones por elementos caídos en las zonas de caída incorrectas. Esto debe ser habilitado cuando los mismos elementos pueden ser soltados en múltiples zonas de caída, o si solamente hay una zona de caída. Si esto no está habilitado, los estudiantes podrían hacer coincidir todos los ítems a todas las zonas de caída y siempre recibirían un puntaje completo."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Habilitar explicación del puntaje",
+          "description": "Mostrar una explicación del puntaje al usuario al revisar sus respuestas (si la opción para 'Aplicar penalizaciones' ha sido seleccionada)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Opacidad del fondo para arrastrables",
+          "description": "Si este campo está activado, anulará la opacidad configurada en todos los elementos arrastrables. Esto debería ser un número entre 0 y 100, donde 0 significa transparencia completa y 100 significa sin transparencia"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Resaltado de Zona de Caída",
+          "description": "elegir cuando resaltar las zonas de caída.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Al arrastrar"
             },
             {
-              "label": "Always"
+              "label": "Siempre"
             },
             {
-              "label": "Never"
+              "label": "Nunca"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Espaciado para Auto-Alinear (en px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Habilitar pantallaCompleta",
+          "description": "Activar esta opción para habilitar el botón para pantalla completa."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Mostrar puntos delpuntaje",
+          "description": "Mostrar puntos ganados por cada respuesta. No disponible cuando está habilitada la opción para 'Dar un punto para todo el trabajo' ."
         },
         {
-          "label": "Show Title",
+          "label": "Mostrar Título",
           "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
         }
       ]
@@ -212,48 +212,48 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefijo Arrastrable",
+      "default": "Arrastrable {num} de {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufijo Arrastyrable",
+      "default": "Colocado en zona de caída {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefijo zona de caída",
+      "default": "Zona de caída {num} de {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etiqueta selección no es zona de caída",
+      "default": "No es zona de caída."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etiqueta para botón para mostrar pista",
+      "default": "Mostrar pista."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etiqueta para pista disponible",
+      "default": "Pista disponible"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etiqueta para Respuesta correcta",
+      "default": "Respuesta correcta"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etiqueta para Respuesta incorrecta",
+      "default": "Respuesta incorrecta"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
+      "default": "Realimentación"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Representación textual de la barra de puntaje para aquellos que usan un Lector de voz",
+      "default": "Usted obtuvo :num de un total de :total puntos"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Representación textual del botón para explicación del puntaje",
+      "default": "Mostrar explicación del puntaje"
     }
   ]
 }
