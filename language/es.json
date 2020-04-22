@@ -33,9 +33,9 @@
           "fields": [
             {
               "label": "Elementos",
-              "entity": "element",
+              "entity": "elemento",
               "field": {
-                "label": "Element",
+                "label": "Elemento",
                 "fields": [
                   {
                     "description": "Elija el tipo de contenido que le gustaría añadir."
@@ -168,7 +168,7 @@
         },
         {
           "label": "Resaltado de Zona de Caída",
-          "description": "elegir cuando resaltar las zonas de caída.",
+          "description": "Elegir cuando resaltar las zonas de caída.",
           "options": [
             {
               "label": "Al arrastrar"
@@ -194,7 +194,7 @@
         },
         {
           "label": "Mostrar Título",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "description": "Desactivar esta opción si no desea que se muestre este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
         }
       ]
     },
