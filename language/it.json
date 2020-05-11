@@ -38,7 +38,7 @@
                 "label": "Elemento",
                 "fields": [
                   {
-                    "description": "Scegliere il tipo di contenuto che si desidera aggiungere."
+                    "description": "Scegliere il tipo di contenuto che si desidera aggiungere"
                   },
                   {},
                   {},
@@ -87,7 +87,7 @@
                       },
                       {
                         "label": "Messaggio visualizzato su corrispondenza corretta",
-                        "description": "Su \"Verifica\", un messaggio sarà visualizzato sotto il compito in caso di rilascio corretto"
+                        "description": "Su \"Verifica\", in caso di rilascio corretto sarà visualizzato un messaggio sotto il compito"
                       },
                       {
                         "label": "Messaggio visualizzato su corrispondenza non corretta",
@@ -139,7 +139,7 @@
     },
     {
       "label": "Impostazioni di esecuzione",
-      "description": "Queste opzioni consentono di controllare l'andamento del compito.",
+      "description": "Queste opzioni permettono di controllare l'andamento del compito",
       "fields": [
         {
           "label": "Attiva \"Riprova\""
@@ -164,7 +164,7 @@
         },
         {
           "label": "Opacità Sfondo per elementi trascinabili",
-          "description": "Se questo campo è impostato sovrasciverà l'opacità impostata su tutti gli elementi trascinabili. Questo dovrebbe essere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza."
+          "description": "Se questo campo è impostato, il parametro di opacità sarà sovrascritto su tutti gli elementi trascinabili. Tale parametro dovrebbe ricevere un numero compreso tra 0 e 100, dove 0 indica la piena trasparenza e 100 equivale a nessuna trasparenza"
         },
         {
           "label": "Evidenziazione della zona di rilascio",
