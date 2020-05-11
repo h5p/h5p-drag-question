@@ -90,7 +90,7 @@
                         "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si el soltable correcto es coincidencia."
                       },
                       {
-                        "label": "ensaje mostrado en coincidencia incorrecta",
+                        "label": "Mensaje mostrado en coincidencia incorrecta",
                         "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si la coincidencia es incorrecta."
                       }
                     ]
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "label": "Realimentación general",
+      "label": "Retroalimentación general",
       "fields": [
         {
           "widgets": [
@@ -119,7 +119,7 @@
               "label": "Predeterminado"
             }
           ],
-          "label": "Definir realimentación personalizada para cualquier rango de puntaje",
+          "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
           "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
@@ -129,8 +129,8 @@
               },
               {},
               {
-                "label": "Realimentación para rango definido de puntaje",
-                "placeholder": "LLene la realimentación"
+                "label": "Retroalimentación para rango definido de puntaje",
+                "placeholder": "LLene la retroalimentación"
               }
             ]
           }
@@ -194,7 +194,7 @@
         },
         {
           "label": "Mostrar Título",
-          "description": "Desactivar esta opción si no desea que se muestre este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
+          "description": "Desactivar esta opción si no desea mostrar este título. el título solamente será mostrado en resúmenes, estadísticas, etc."
         }
       ]
     },
@@ -244,8 +244,8 @@
       "default": "Respuesta incorrecta"
     },
     {
-      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
-      "default": "Realimentación"
+      "label": "Encabezado para panel que contiene retroalimentación para respuestas correctas/incorrectas",
+      "default": "Retroalimentación"
     },
     {
       "label": "Representación textual de la barra de puntaje para aquellos que usan un Lector de voz",
