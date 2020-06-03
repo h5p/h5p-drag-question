@@ -152,18 +152,18 @@
         },
         {
           "label": "Nalogo oceni z 1 točko kot celoto",
-          "description": "Če je možnost onemogočena, bo udeleženec prejel za vsak pravilno postavbljen element po 1 točko."
+          "description": "Če je možnost onemogočena, bo udeleženec prejel za vsak pravilno postavljen element po 1 točko."
         },
         {
           "label": "Omogoči negativne točke",
-          "description": "Spust elementa v napačno polje prinaša negativne točke. Nastavitev je posebej pomembna v primeru neskončne možnosti izbire posameznega elementa (kloniranja)."
+          "description": "Spust elementa v napačno polje pomeni odbitek točk. Nastavitev je posebej pomembna v primeru neskončne možnosti izbire posameznega elementa (kloniranja)."
         },
         {
           "label": "Omogoči pojasnilo točkovanja",
           "description": "Udeleženci lahko po ogledu rezultatov vidijo pojasnilo točkovanja (npr. nepravilen odgovor se točkuje z -1 točko)."
         },
         {
-          "label": "Določi prekrivnost ozadja elemntov",
+          "label": "Določi prekrivnost ozadja elementov",
           "description": "Nastavitev prekrivnosti ozadja elementov glede na sliko v ozadju (0 pomeni prosojnost, 100 pa popolno prekrivnosti)."
         },
         {
