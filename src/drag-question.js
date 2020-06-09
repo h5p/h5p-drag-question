@@ -177,7 +177,7 @@ function C(options, contentId, contentData) {
     });
     draggable.on('interacted', function () {
       self.answered = true;
-      self.triggerXAPIScored(self.getScore(), self.getMaxScore(), 'interacted');
+      self.triggerXAPI('interacted');
     });
     draggable.on('leavingDropZone', function (event) {
       self.dropZones[event.data.dropZone].removeAlignable(event.data.$);
