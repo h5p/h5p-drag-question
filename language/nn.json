@@ -213,19 +213,19 @@
     },
     {
       "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "default": "Gripbar {num} av {total}."
     },
     {
       "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "default": "Plassert i droppsone {num}."
     },
     {
       "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "default": "Droppsone {num} av {total}."
     },
     {
       "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "default": "Inga droppsone."
     },
     {
       "label": "Label for show tip button",
@@ -233,7 +233,7 @@
     },
     {
       "label": "Merkelapp for vis-tips-knappen",
-      "default": "Tips tilgjengelig"
+      "default": "Tips tilgjengeleg"
     },
     {
       "label": "Merkelapp for korrekt svar",
@@ -249,7 +249,7 @@
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "Du fikk :num av :total points"
+      "default": "Du fekk :num av :total points"
     },
     {
       "label": "Textual representation of the score explanation button",
