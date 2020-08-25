@@ -254,6 +254,14 @@
     {
       "label": "Textual representation of the score explanation button",
       "default": "Vis forklaring for poeng"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

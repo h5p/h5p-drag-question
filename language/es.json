@@ -254,6 +254,14 @@
     {
       "label": "Representación textual del botón para explicación del puntaje",
       "default": "Mostrar explicación del puntaje"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

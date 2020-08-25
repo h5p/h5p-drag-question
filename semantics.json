@@ -575,5 +575,21 @@
     "default": "Show score explanation",
     "importance": "low",
     "common": true
+  },
+  {
+    "name": "a11yCheck",
+    "type": "text",
+    "label": "Assistive technology label for \"Check\" button",
+    "default": "Check",
+    "importance": "low",
+    "common": true
+  },
+  {
+    "name": "a11yRetry",
+    "type": "text",
+    "label": "Assistive technology label for \"Retry\" button",
+    "default": "Retry",
+    "importance": "low",
+    "common": true
   }
 ]

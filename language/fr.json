@@ -195,7 +195,7 @@
         {
           "label": "Show Title",
           "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
-        }        
+        }
       ]
     },
     {
@@ -254,6 +254,14 @@
     {
       "label": "Représentation textuelle du bouton de l'explication de votre score",
       "default": "Montrer l'explication de votre score"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

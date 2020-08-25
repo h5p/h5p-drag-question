@@ -254,6 +254,14 @@
     {
       "label": "Tekstimuotoinen esitys pisteidenselityspainikkeesta",
       "default": "Näytä pisteselvitys"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }

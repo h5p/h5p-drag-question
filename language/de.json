@@ -254,6 +254,14 @@
     {
       "label": "Anzeigetext des \"Punkte erklären\"-Buttons",
       "default": "Zeige Erklärung der Punktevergabe"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check"
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry"
     }
   ]
 }
