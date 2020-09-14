@@ -10,7 +10,7 @@
     },
     {
       "label": "הסבר מילולי לניקוד",
-      "default": "התשובות הנכונות מספקות נקודה אחת (1+). תשובות שגויות מחסירה נקודה (1-). הציון הנמוך ביותר האפשרי הוא 0."
+      "default": "תשובה נכונה מוסיפה נקודה אחת. תשובה שגויה מורידה נקודה אחת. הציון הנמוך ביותר האפשרי הוא 0."
     },
     {
       "fields": [
@@ -23,16 +23,16 @@
             },
             {
               "label": "גודל המשימה",
-              "description": "Specify how large (in px) the play area should be."
+              "description": "ציינו (בפיקסלים) את גודל אזור המשחק."
             }
           ]
         },
         {
           "label": "משימה",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "התחילו במיקום אזורי היעד שלכם.<br/>אחר כך, מקמו את רכיבי הגרירה וסמנו את אזורי היעד המתאימים.<br/>לבסוף, ערכו את אזורי היעד שוב וסמנו את התשובות הנכונות.",
           "fields": [
             {
-              "label": "פריטים",
+              "label": "רכיבים",
               "entity": "רכיב",
               "field": {
                 "label": "רכיב",
@@ -52,7 +52,7 @@
                   },
                   {
                     "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "description": "בחרו ברכיב זה כך שיהיה אפשר לגרור אותו למספר אזורי יעד."
                   }
                 ]
               }
@@ -86,22 +86,22 @@
                         "label": "עצה"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "הודעה מוצגת בהתאמה נכונה",
+                        "description": "ההודעה תופיע מתחת למשימה ב\"בדיקה\" אם רכיב הגרירה הותאם נכונה."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "ההודעה מוצגת בהתאמה לא נכונה",
+                        "description": "ההודעה תופיע מתחת למשימה ב\"בדיקה\" אם ההתאמה אינה נכונה."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "אזור גרירה זה יכול להכיל רכיב אחד בלבד",
+                    "description": "ודאו שישנה רק תשובה נכונה אחת עבור אזור יעד זה"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "אפשרו יישור-אוטומטי",
+                    "description": "יתבצע יישור-אוטומטי על כל רכיבי הגרירה ששוחררו באזור זה."
                   }
                 ]
               }
@@ -119,8 +119,8 @@
               "label": "ברירת מחדל"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "הגדירו משוב מותאם לכל טווח ציונים שהוא",
+          "description": "",
           "entity": "טווח",
           "field": {
             "fields": [
@@ -129,7 +129,7 @@
               },
               {},
               {
-                "label": "Feedback for defined score range",
+                "label": "משוב לטווח ציונים מוגדר",
                 "placeholder": "הזנת משוב"
               }
             ]
@@ -139,7 +139,7 @@
     },
     {
       "label": "הגדרות התנהגות",
-      "description": "These options will let you control how the task behaves.",
+      "description": "אפשרויות אלה יתנו לך לשלוט בהתנהגות המשימה.",
       "fields": [
         {
           "label": "הפעלת \"ניסיון חוזר\""
@@ -148,19 +148,19 @@
           "label": "הפעלת כפתור \"בדיקה\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "ידרש קלט מהמשתמש לפני שהפתרון ניתן לצפייה"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "מעניק נקודה אחת למשימה כולה",
+          "description": ""
         },
         {
           "label": "החלת כנסות",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "description": "החלת עונשים על רכיבים ששוחררו באזורי יעד לא נכונים. זה חייב להתאפשר כאשר אותו(ם) רכיב(ים) יכול(ים) להשתחרר למספר אזורי יעד, או אם יש אזור יעד אחד בלבד. אם זה לא מתאפשר, לומדים רשאים להתאים את כל הפריטים לכל אזורי היעד ותמיד לקבל ניקוד מלא."
         },
         {
           "label": "תצוגת הסבר לניקוד",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description": "הצגת הסבר על הניקוד למשתמש בעת בדיקת תשובות (אם האפשרות \"החלת עונשים\" נבחרה)."
         },
         {
           "label": "שקיפות רקע לפריטים נגררים",
@@ -256,12 +256,12 @@
       "default": "Show score explanation"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check"
+      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"בדיקה\"",
+      "default": "בדיקה"
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry"
+      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"ניסיון חוזר\"",
+      "default": "ניסיון חוזר"
     }
   ]
 }
