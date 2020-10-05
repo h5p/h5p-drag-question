@@ -256,12 +256,12 @@
       "default": "Mostra spiegazione del punteggio"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check"
+      "label": "Etichetta delle tecnologie assistive per il pulsante \"Verifica\"",
+      "default": "Verifica"
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry"
+      "label": "Etichetta delle tecnologie assistive per il pulsante \"Riprova\"",
+      "default": "Riprova"
     }
   ]
 }
