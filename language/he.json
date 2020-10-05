@@ -51,7 +51,7 @@
                     "label": "שקיפות הרקע"
                   },
                   {
-                    "label": "Infinite number of element instances",
+                    "label": "מספר אינסופי של רכיבים",
                     "description": "בחרו ברכיב זה כך שיהיה אפשר לגרור אותו למספר אזורי יעד."
                   }
                 ]
@@ -120,7 +120,7 @@
             }
           ],
           "label": "הגדירו משוב מותאם לכל טווח ציונים שהוא",
-          "description": "",
+          "description": "לחצו על כפתור \"הוסף טווח\" כדי להוסיף טווחים לפי הצורך. לדוגמה: 0-20% ניקוד גרוע, 21-91% ניקוד ממוצע, 91-100% ניקוד מצוין!",
           "entity": "טווח",
           "field": {
             "fields": [
@@ -152,7 +152,7 @@
         },
         {
           "label": "מעניק נקודה אחת למשימה כולה",
-          "description": ""
+          "description": "השבתת מתן נקודה אחת לכל רכיב שהונח במקום הנכון."
         },
         {
           "label": "החלת כנסות",
@@ -164,11 +164,11 @@
         },
         {
           "label": "שקיפות רקע לפריטים נגררים",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "description": "אם לשדה זה נקבע ערך, הוא ידרוס את ערכי השקיפות של כל הרכיבים. הוא צריך להיות מספר בין 0 ו-100, כאשר 0 משמעו שקיפות מלאה ו-100 משמעו שאין שקיפות"
         },
         {
           "label": "הדגשת אזורי יעד",
-          "description": "Choose when to highlight drop zones.",
+          "description": "בחרו מתי להדגיש אזורי יעד.",
           "options": [
             {
               "label": "כאשר גוררים"
@@ -182,19 +182,19 @@
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "ריווח ליישור-אוטומטי (בפיקסלים)"
         },
         {
           "label": "אפשרות למסך־מלא",
-          "description": "Check this option to enable the full screen button."
+          "description": "בחרו אפשרות זאת כדי לאפשר כפתור מסך מלא."
         },
         {
           "label": "תצוגת ניקוד וציונים",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "description": "הצגת נקודות שהרוויחו עבור כל תשובה. לא זמין כאשר האפשרות \"מתן נקודה אחת למשימה כולה\" מופעלת."
         },
         {
           "label": "תצוגת כותרת",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "description": "הורדת סימון מאפשרות זו אם אתם לא רוצים שכותרת זו תוצג. הכותרת תוצג בתקצירים, סטטיסטיקות וכו'."
         }
       ]
     },
@@ -217,30 +217,30 @@
     },
     {
       "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "default": "מונח באזור יעד {num}."
     },
     {
       "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "default": "אזור יעד {num} מתוך {total}."
     },
     {
-      "label": "No dropzone selection label",
+      "label": "אין תווית לבחירת אזור יעד",
       "default": "אין אזורי יעד."
     },
     {
-      "label": "Label for show tip button",
+      "label": "תווית להצגת כפתור עצה",
       "default": "תצוגת עצה."
     },
     {
-      "label": "Label for tip available",
+      "label": "תווית לעצה זמינה",
       "default": "עצה זמינה"
     },
     {
-      "label": "Label for correct answer",
+      "label": "תווית לתשובה נכונה",
       "default": "תשובה נכונה"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "תווית לתשובה לא נכונה",
       "default": "תשובה שגויה"
     },
     {
@@ -248,12 +248,12 @@
       "default": "משוב"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "תצוגה מילולית של סרגל הניקוד לאלה שמשתמשים ב-readspeaker",
+      "default": "קיבלת num: מתוך total: נקודות"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "ייצוג מילולי של כפתור ההסבר לניקוד",
+      "default": "הצגת הסבר לניקוד"
     },
     {
       "label": "תווית טכנולוגיה מסייעת עבור כפתור \"בדיקה\"",
