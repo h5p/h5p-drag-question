@@ -138,6 +138,28 @@
       ]
     },
     {
+      "label": "Audio",
+      "description": "Audio samples",
+      "fields": [
+        {
+          "label": "Pick up",
+          "description": "Audio to play when draggable is picked up."
+        },
+        {
+          "label": "Dropped",
+          "description": "Audio to generally play when draggable is dropped."
+        },
+        {
+          "label": "Dropped correctly",
+          "description": "Audio to play when draggable is dropped on correct dropzone."
+        },
+        {
+          "label": "Dropped wrong",
+          "description": "Audio to play when draggable is dropped on wrong dropzone."
+        }
+      ]
+    },
+    {
       "label": "Nastavení chování",
       "description": "Tyto možnosti vám umožní řídit, jak se bude úloha chovat.",
       "fields": [

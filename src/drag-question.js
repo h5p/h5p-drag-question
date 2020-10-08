@@ -55,6 +55,7 @@ function C(options, contentId, contentData) {
       }
     },
     overallFeedback: [],
+    audio: {},
     behaviour: {
       enableRetry: true,
       enableCheckButton: true,
@@ -83,6 +84,8 @@ function C(options, contentId, contentData) {
   this.dropZones = [];
   this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
   this.blankIsCorrect = true;
+
+  this.audios = {};
 
   this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
@@ -161,6 +164,10 @@ function C(options, contentId, contentData) {
         event.data.removeAttribute('aria-grabbed');
       }
     });
+    draggable.on('pickedUp', () => {
+      this.resetAudios();
+      this.playAudio('pickedUp');
+    });
     draggable.on('focus', function (event) {
       controls.drag.setTabbable(event.data);
       event.data.focus();
@@ -172,6 +179,12 @@ function C(options, contentId, contentData) {
       setDropEffect(event.data);
     });
     draggable.on('dragend', function () {
+      // The special dropped sounds are more important and should not be stopped
+      if (!self.isAudioPlaying(['droppedWrong', 'droppedCorrect'])) {
+        self.resetAudios();
+        self.playAudio('dropped');
+      }
+
       if (highlightDropZones) {
         self.$container.removeClass('h5p-dq-highlight-dz');
       }
@@ -243,6 +256,18 @@ function C(options, contentId, contentData) {
         }
       }
     });
+
+    // React on dropping draggable on dropzone
+    this.dropZones[i].on('dropped', event => {
+      const correctElements = this.options.question.task.dropZones[event.data.dropzoneId].correctElements;
+      this.resetAudios();
+      if (correctElements.indexOf(`${event.data.draggableId}`) !== -1) {
+        this.playAudio('droppedCorrect');
+      }
+      else {
+        this.playAudio('droppedWrong');
+      }
+    })
   }
 
   this.on('resize', self.resize, self);
@@ -555,6 +580,32 @@ C.prototype.createQuestionContent = function () {
   for (i = 0; i < this.dropZones.length; i++) {
     this.dropZones[i].appendTo(this.$container, this.draggables);
   }
+
+  // Create audio
+  for (let type in this.options.audio) {
+    const audio = this.options.audio;
+
+    // Semantics might get other audio options, filter for audio content
+    if (
+      !Array.isArray(audio[type]) ||
+      audio[type].length < 1 ||
+      !audio[type][0].path ||
+      !audio[type][0].mime ||
+      audio[type][0].mime.split('/')[0] !== 'audio'
+    ) {
+      return;
+    }
+
+    // Attach audio elements
+    const player = document.createElement('audio');
+    player.classList.add('h5p-dragquestion-no-display');
+    player.src = H5P.getPath(audio[type][0].path, this.contentId);
+    this.$container.append(player);
+
+    // Track audio elements
+    this.audios[type] = player;
+  }
+
   return this.$container;
 };
 
@@ -999,6 +1050,58 @@ C.prototype.getCurrentState = function () {
 
 C.prototype.getTitle = function() {
   return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
+};
+
+/**
+ * Play audio sample.
+ * @param {string} identifier Identifier for audio.
+ */
+C.prototype.playAudio = function(identifier) {
+  if (!this.$container.closest('.h5p-content').hasClass('using-mouse')) {
+    return; // Don't disturb ARIA
+  }
+
+  if (typeof identifier !== 'string') {
+    return;
+  }
+
+  if (this.audios[identifier]) {
+    this.audios[identifier].play();
+  }
+};
+
+/**
+ * Reset audios.
+ */
+C.prototype.resetAudios = function() {
+  for (let type in this.audios) {
+    this.audios[type].pause();
+    this.audios[type].load();
+  }
+};
+
+/**
+ * Detect whether audio is playing.
+ * @param {string|string[]} checkAudios Limit check to audios with these identifiers.
+ * @return {boolean} True, if audio is playing.
+ */
+C.prototype.isAudioPlaying = function(checkAudios) {
+  if (!Array.isArray(checkAudios)) {
+    checkAudios = [checkAudios];
+  }
+
+  let audioPlaying = false;
+  for (let type in this.audios) {
+    if (checkAudios.length > 0 && checkAudios.indexOf(type) === -1) {
+      continue; // Skip, not interested in that type
+    }
+
+    if (!this.audios[type].paused) {
+      audioPlaying = true;
+      break;
+    }
+  }
+  return audioPlaying
 };
 
 /**
