@@ -145,6 +145,30 @@
                   "importance": "low",
                   "description": "Clones this element so that it can be dragged to multiple drop zones.",
                   "default": false
+                },
+                {
+                  "name": "audio",
+                  "type": "group",
+                  "label": "Audio",
+                  "importance": "low",
+                  "description": "Audio samples",
+                  "optional": true,
+                  "fields": [
+                    {
+                      "name": "pickedUp",
+                      "type": "audio",
+                      "label": "Picked up",
+                      "description": "Custom audio to play when draggable is picked up. Will override general audio setting.",
+                      "importance": "low"
+                    },
+                    {
+                      "name": "dropped",
+                      "type": "audio",
+                      "label": "Dropped",
+                      "description": "Custom Custom audio to play when draggable is dropped. Will override general audio setting.",
+                      "importance": "low"
+                    }
+                  ]
                 }
               ]
             }
@@ -350,7 +374,7 @@
       {
         "name": "pickedUp",
         "type": "audio",
-        "label": "Pick up",
+        "label": "Picked up",
         "description": "Audio to play when draggable is picked up.",
         "importance": "low"
       },

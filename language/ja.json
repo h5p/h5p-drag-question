@@ -53,6 +53,20 @@
                   {
                     "label": "要素数無制限",
                     "description": "この要素を複製して、複数のドロップゾーンにドラッグできるようにします。"
+                  },
+                  {
+                    "label": "Audio",
+                    "description": "Audio samples",
+                    "fields": [
+                      {
+                        "label": "Picked up",
+                        "description": "Audio to play when draggable is picked up."
+                      },
+                      {
+                        "label": "Dropped",
+                        "description": "Custom audio to play when draggable is dropped. Will override general audio setting."
+                      }
+                    ]
                   }
                 ]
               }
@@ -142,7 +156,7 @@
       "description": "Audio samples",
       "fields": [
         {
-          "label": "Pick up",
+          "label": "Picked up",
           "description": "Audio to play when draggable is picked up."
         },
         {

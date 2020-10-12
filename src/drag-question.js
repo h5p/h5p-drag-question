@@ -85,7 +85,8 @@ function C(options, contentId, contentData) {
   this.answered = (contentData && contentData.previousState !== undefined && contentData.previousState.answers !== undefined && contentData.previousState.answers.length);
   this.blankIsCorrect = true;
 
-  this.audios = {};
+  this.players = {};
+  this.audios = [];
 
   this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
@@ -156,6 +157,12 @@ function C(options, contentId, contentData) {
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
+
+      // Track custom audios
+      const customAudios = event.data.querySelectorAll('audio');
+      for (let i = 0; i < customAudios.length; i++) {
+        self.audios.push(customAudios[i]);
+      }
     });
     draggable.on('elementremove', function (event) {
       controls.drag.removeElement(event.data);
@@ -164,9 +171,17 @@ function C(options, contentId, contentData) {
         event.data.removeAttribute('aria-grabbed');
       }
     });
-    draggable.on('pickedUp', () => {
+    draggable.on('pickedUp', (event) => {
+      const currentDraggable = self.draggables[event.data];
+
       this.resetAudios();
-      this.playAudio('pickedUp');
+
+      if (currentDraggable.audios.pickedUp) {
+        currentDraggable.audios.pickedUp.play();
+      }
+      else {
+        this.playAudio(this.players['pickedUp']);
+      }
     });
     draggable.on('focus', function (event) {
       controls.drag.setTabbable(event.data);
@@ -178,11 +193,18 @@ function C(options, contentId, contentData) {
       }
       setDropEffect(event.data);
     });
-    draggable.on('dragend', function () {
+    draggable.on('dragend', function (event) {
       // The special dropped sounds are more important and should not be stopped
       if (!self.isAudioPlaying(['droppedWrong', 'droppedCorrect'])) {
         self.resetAudios();
-        self.playAudio('dropped');
+
+        const currentDraggable = self.draggables[event.data];
+        if (currentDraggable.audios.dropped) {
+          currentDraggable.audios.dropped.play();
+        }
+        else {
+          self.playAudio(self.players['dropped']);
+        }
       }
 
       if (highlightDropZones) {
@@ -262,10 +284,10 @@ function C(options, contentId, contentData) {
       const correctElements = this.options.question.task.dropZones[event.data.dropzoneId].correctElements;
       this.resetAudios();
       if (correctElements.indexOf(`${event.data.draggableId}`) !== -1) {
-        this.playAudio('droppedCorrect');
+        this.playAudio(this.players['droppedCorrect']);
       }
       else {
-        this.playAudio('droppedWrong');
+        this.playAudio(this.players['droppedWrong']);
       }
     })
   }
@@ -603,7 +625,8 @@ C.prototype.createQuestionContent = function () {
     this.$container.append(player);
 
     // Track audio elements
-    this.audios[type] = player;
+    this.players[type] = player;
+    this.audios.push(player);
   }
 
   return this.$container;
@@ -1056,7 +1079,7 @@ C.prototype.getTitle = function() {
  * Play audio sample.
  * @param {string} identifier Identifier for audio.
  */
-C.prototype.playAudio = function(identifier) {
+C.prototype.playAudio2 = function(identifier) {
   if (!this.$container.closest('.h5p-content').hasClass('using-mouse')) {
     return; // Don't disturb ARIA
   }
@@ -1071,13 +1094,29 @@ C.prototype.playAudio = function(identifier) {
 };
 
 /**
+ * Play audio sample.
+ * @param {HTMLElement} audioElement Audio element to be played.
+ */
+C.prototype.playAudio = function (audioElement) {
+  if (!this.$container.closest('.h5p-content').hasClass('using-mouse')) {
+    return; // Don't disturb ARIA
+  }
+
+  if (!audioElement) {
+    return;
+  }
+
+  audioElement.play();
+};
+
+/**
  * Reset audios.
  */
 C.prototype.resetAudios = function() {
-  for (let type in this.audios) {
-    this.audios[type].pause();
-    this.audios[type].load();
-  }
+  this.audios.forEach(audio => {
+    audio.pause();
+    audio.load();
+  });
 };
 
 /**
@@ -1091,12 +1130,12 @@ C.prototype.isAudioPlaying = function(checkAudios) {
   }
 
   let audioPlaying = false;
-  for (let type in this.audios) {
+  for (let type in this.players) {
     if (checkAudios.length > 0 && checkAudios.indexOf(type) === -1) {
       continue; // Skip, not interested in that type
     }
 
-    if (!this.audios[type].paused) {
+    if (!this.players[type].paused) {
       audioPlaying = true;
       break;
     }

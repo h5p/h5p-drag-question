@@ -53,6 +53,20 @@
                   {
                     "label": "Nieskończona liczba instancji elementu",
                     "description": "Powiela ten element, aby można go było przeciągnąć do wielu obszarów przeciągania."
+                  },
+                  {
+                    "label": "Audio",
+                    "description": "Audio samples",
+                    "fields": [
+                      {
+                        "label": "Picked up",
+                        "description": "Custom audio to play when draggable is picked up. Will override general audio setting."
+                      },
+                      {
+                        "label": "Dropped",
+                        "description": "Custom audio to play when draggable is dropped. Will override general audio setting."
+                      }
+                    ]
                   }
                 ]
               }
@@ -142,7 +156,7 @@
       "description": "Audio samples",
       "fields": [
         {
-          "label": "Pick up",
+          "label": "Picked up",
           "description": "Audio to play when draggable is picked up."
         },
         {
