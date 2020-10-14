@@ -256,12 +256,12 @@
       "default": "Show score explanation"
     },
     {
-      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"בדיקה\"",
-      "default": "בדיקה"
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
     },
     {
-      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"ניסיון חוזר\"",
-      "default": "ניסיון חוזר"
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }
