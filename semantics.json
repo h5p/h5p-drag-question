@@ -95,8 +95,8 @@
                   "description": "Choose the type of content you would like to add.",
                   "importance": "medium",
                   "options": [
-                      "H5P.AdvancedText 1.1",
-                      "H5P.Image 1.1"
+                    "H5P.AdvancedText 1.1",
+                    "H5P.Image 1.1"
                   ]
                 },
                 {
@@ -580,7 +580,7 @@
     "name": "a11yCheck",
     "type": "text",
     "label": "Assistive technology label for \"Check\" button",
-    "default": "Check",
+    "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
     "importance": "low",
     "common": true
   },
@@ -588,7 +588,7 @@
     "name": "a11yRetry",
     "type": "text",
     "label": "Assistive technology label for \"Retry\" button",
-    "default": "Retry",
+    "default": "Retry the task. Reset all responses and start the task over again.",
     "importance": "low",
     "common": true
   }

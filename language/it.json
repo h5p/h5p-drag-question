@@ -257,11 +257,11 @@
     },
     {
       "label": "Etichetta delle tecnologie assistive per il pulsante \"Verifica\"",
-      "default": "Verifica"
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
     },
     {
-      "label": "Etichetta delle tecnologie assistive per il pulsante \"Riprova\"",
-      "default": "Riprova"
+      "label": "Etichetta delle tecnologie assistive per il pulsante \"Riprova\",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }
