@@ -349,4 +349,12 @@ export default class DropZone {
   dehighlight() {
     this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-active');
   }
+
+  /**
+   * Invoked when reset task is run. Cleanup any internal states. 
+   */
+  reset() {
+    // Remove alignables
+    this.alignables = [];
+  }
 }

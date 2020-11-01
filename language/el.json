@@ -193,8 +193,8 @@
           "description": "Εμφάνιση βαθμών που κερδίζει ο χρήστης για κάθε απάντηση. Δεν είναι διαθέσιμη όταν είναι ενεργοποιημένη η επιλογή \"Για ολόκληρη την άσκηση ο χρήστης κερδίζει έναν βαθμό.\""
         },
         {
-           "label": "Εμφάνιση τίτλου",
-           "description": "Αποεπιλέξτε αυτή τη ρύθμιση, εάν δεν επιθυμείτε να εμφανίζεται ο τίτλος. Ο τίτλος θα εμφανίζεται μόνο σε συνόψεις, στατιστικά κ.λπ."
+          "label": "Εμφάνιση τίτλου",
+          "description": "Αποεπιλέξτε αυτή τη ρύθμιση, εάν δεν επιθυμείτε να εμφανίζεται ο τίτλος. Ο τίτλος θα εμφανίζεται μόνο σε συνόψεις, στατιστικά κ.λπ."
         }
       ]
     },
@@ -257,11 +257,11 @@
     },
     {
       "label": "Assistive technology label for \"Check\" button",
-      "default": "Check"
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
     },
     {
       "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry"
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }

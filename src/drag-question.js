@@ -862,7 +862,11 @@ C.prototype.resetTask = function () {
   this.rawPoints = 0;
   this.answered = false;
 
-  //Enables Draggables
+  this.dropZones.forEach(function (dropzone) {
+    dropzone.reset();
+  });
+
+  // Enables Draggables
   this.enableDraggables();
 
   //Reset position and feedback.
