@@ -254,6 +254,14 @@
     {
       "label": "Текстово представяне на бутона за обяснение на резултатите",
       "default": "Покажи обяснение на резултата"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }

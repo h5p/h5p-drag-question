@@ -29,7 +29,7 @@
         },
         {
           "label": "Trabajo",
-          "description": "Comience clocando sus zonas de caída.<br/>Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br/>Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
+          "description": "Comience colocando sus zonas de caída.<br/>Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br/>Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
           "fields": [
             {
               "label": "Elementos",
@@ -80,7 +80,7 @@
                     "label": "Opacidad del fondo"
                   },
                   {
-                    "label": "Pistas y realimentación",
+                    "label": "Pistas y retroalimentación",
                     "fields": [
                       {
                         "label": "Texto de pista"
@@ -185,16 +185,16 @@
           "label": "Espaciado para Auto-Alinear (en px)"
         },
         {
-          "label": "Habilitar pantallaCompleta",
+          "label": "Habilitar PantallaCompleta",
           "description": "Activar esta opción para habilitar el botón para pantalla completa."
         },
         {
-          "label": "Mostrar puntos delpuntaje",
+          "label": "Mostrar puntos del puntaje",
           "description": "Mostrar puntos ganados por cada respuesta. No disponible cuando está habilitada la opción para 'Dar un punto para todo el trabajo' ."
         },
         {
           "label": "Mostrar Título",
-          "description": "Desactivar esta opción si no desea mostrar este título. el título solamente será mostrado en resúmenes, estadísticas, etc."
+          "description": "Desactivar esta opción si no desea mostrar este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
         }
       ]
     },
@@ -202,7 +202,7 @@
       "label": "Localizar",
       "fields": [
         {
-          "label": "Etiqueta de mostrar en pantalla completa",
+          "label": "Etiqueta para mostrar en pantalla completa",
           "default": "Pantalla completa"
         },
         {
@@ -216,7 +216,7 @@
       "default": "Arrastrable {num} de {total}."
     },
     {
-      "label": "Sufijo Arrastyrable",
+      "label": "Sufijo Arrastrable",
       "default": "Colocado en zona de caída {num}."
     },
     {
@@ -224,7 +224,7 @@
       "default": "Zona de caída {num} de {total}."
     },
     {
-      "label": "Etiqueta selección no es zona de caída",
+      "label": "Etiqueta para selección que no es zona de caída",
       "default": "No es zona de caída."
     },
     {
@@ -254,6 +254,14 @@
     {
       "label": "Representación textual del botón para explicación del puntaje",
       "default": "Mostrar explicación del puntaje"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }

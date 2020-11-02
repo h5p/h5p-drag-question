@@ -2,15 +2,15 @@
   "semantics": [
     {
       "label": "Check answer button",
-      "default": "Check"
+      "default": "ពិនិត្យចម្លើយ"
     },
     {
       "label": "Retry button",
-      "default": "Retry"
+      "default": "សាកម្តងទៀត"
     },
     {
       "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "default": "ចម្លើយត្រូវបាន ១ ពិន្ទុ។ ចម្លើយមិនត្រឹមត្រូវបាត់បង់ ១ ពិន្ទុ។ ពិន្ទុដែលអាចទាបបំផុតគឺ 0។"
     },
     {
       "fields": [
@@ -64,7 +64,7 @@
                 "label": "Drop Zone",
                 "fields": [
                   {
-                    "label": "Titel"
+                    "label": "Label"
                   },
                   {
                     "label": "Show label"
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "label": "Indstillinger for opgave-opførsel",
+      "label": "Behavioural settings",
       "description": "These options will let you control how the task behaves.",
       "fields": [
         {
@@ -199,61 +199,61 @@
       ]
     },
     {
-      "label": "Lokalisere",
+      "label": "Localize",
       "fields": [
         {
           "label": "Fullscreen label",
-          "default": "Fuldskærm"
+          "default": "ពេញអេក្រង់"
         },
         {
           "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "default": "បិទពេញអេក្រង់"
         }
       ]
     },
     {
       "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "default": "ធាតុអូស {num} ចំណោម {total}។"
     },
     {
       "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "default": "បានដាក់ក្នុងតំបន់ទម្លាក់ {num}។"
     },
     {
       "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "default": "តំបន់ទម្លាក់ {num} ចំណោម {total}."
     },
     {
       "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "default": "មិនមានតំបន់ទម្លាក់"
     },
     {
       "label": "Label for show tip button",
-      "default": "Show tip."
+      "default": "បង្ហាញគន្លឹះ"
     },
     {
       "label": "Label for tip available",
-      "default": "Tip available"
+      "default": "មានគន្លឹះ"
     },
     {
       "label": "Label for correct answer",
-      "default": "Correct answer"
+      "default": "ចម្លើយត្រឹមត្រូវ"
     },
     {
       "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "default": "ចម្លើយខុស"
     },
     {
       "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "default": "មូលវិចារណ៍"
     },
     {
       "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "default": "អ្នកទទួលបានពិន្ទុ :num លើ :total "
     },
     {
       "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "default": "បង្ហាញការបកស្រាយពិន្ទុ"
     },
     {
       "label": "Assistive technology label for \"Check\" button",

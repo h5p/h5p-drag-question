@@ -67,7 +67,9 @@ function C(options, contentId, contentData) {
       autoAlignSpacing: 2,
       showScorePoints: true,
       showTitle: false
-    }
+    },
+    a11yCheck: 'Check',
+    a11yRetry: 'Retry',
   }, options);
 
   // If single point is enabled, it makes no sense displaying
@@ -584,6 +586,8 @@ C.prototype.addSolutionButton = function () {
     // Focus top of task for better focus and read-speaker flow
     var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
     $nextFocus.focus();
+  }, true, {
+    'aria-label': this.options.a11yCheck,
   });
 };
 
@@ -664,7 +668,9 @@ C.prototype.addRetryButton = function () {
     that.resetTask();
     that.showButton('check-answer');
     that.hideButton('try-again');
-  }, false);
+  }, false, {
+    'aria-label': this.options.a11yRetry,
+  });
 };
 
 /**
@@ -856,7 +862,11 @@ C.prototype.resetTask = function () {
   this.rawPoints = 0;
   this.answered = false;
 
-  //Enables Draggables
+  this.dropZones.forEach(function (dropzone) {
+    dropzone.reset();
+  });
+
+  // Enables Draggables
   this.enableDraggables();
 
   //Reset position and feedback.

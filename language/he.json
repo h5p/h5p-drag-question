@@ -10,7 +10,7 @@
     },
     {
       "label": "הסבר מילולי לניקוד",
-      "default": "התשובות הנכונות מספקות נקודה אחת (1+). תשובות שגויות מחסירה נקודה (1-). הציון הנמוך ביותר האפשרי הוא 0."
+      "default": "תשובה נכונה מוסיפה נקודה אחת. תשובה שגויה מורידה נקודה אחת. הציון הנמוך ביותר האפשרי הוא 0."
     },
     {
       "fields": [
@@ -23,16 +23,16 @@
             },
             {
               "label": "גודל המשימה",
-              "description": "Specify how large (in px) the play area should be."
+              "description": "ציינו (בפיקסלים) את גודל אזור המשחק."
             }
           ]
         },
         {
           "label": "משימה",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "התחילו במיקום אזורי היעד שלכם.<br/>אחר כך, מקמו את רכיבי הגרירה וסמנו את אזורי היעד המתאימים.<br/>לבסוף, ערכו את אזורי היעד שוב וסמנו את התשובות הנכונות.",
           "fields": [
             {
-              "label": "פריטים",
+              "label": "רכיבים",
               "entity": "רכיב",
               "field": {
                 "label": "רכיב",
@@ -51,8 +51,8 @@
                     "label": "שקיפות הרקע"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "מספר אינסופי של רכיבים",
+                    "description": "בחרו ברכיב זה כך שיהיה אפשר לגרור אותו למספר אזורי יעד."
                   }
                 ]
               }
@@ -86,22 +86,22 @@
                         "label": "עצה"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "הודעה מוצגת בהתאמה נכונה",
+                        "description": "ההודעה תופיע מתחת למשימה ב\"בדיקה\" אם רכיב הגרירה הותאם נכונה."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "ההודעה מוצגת בהתאמה לא נכונה",
+                        "description": "ההודעה תופיע מתחת למשימה ב\"בדיקה\" אם ההתאמה אינה נכונה."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "אזור גרירה זה יכול להכיל רכיב אחד בלבד",
+                    "description": "ודאו שישנה רק תשובה נכונה אחת עבור אזור יעד זה"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "אפשרו יישור-אוטומטי",
+                    "description": "יתבצע יישור-אוטומטי על כל רכיבי הגרירה ששוחררו באזור זה."
                   }
                 ]
               }
@@ -119,8 +119,8 @@
               "label": "ברירת מחדל"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "הגדירו משוב מותאם לכל טווח ציונים שהוא",
+          "description": "לחצו על כפתור \"הוסף טווח\" כדי להוסיף טווחים לפי הצורך. לדוגמה: 0-20% ניקוד גרוע, 21-91% ניקוד ממוצע, 91-100% ניקוד מצוין!",
           "entity": "טווח",
           "field": {
             "fields": [
@@ -129,7 +129,7 @@
               },
               {},
               {
-                "label": "Feedback for defined score range",
+                "label": "משוב לטווח ציונים מוגדר",
                 "placeholder": "הזנת משוב"
               }
             ]
@@ -139,7 +139,7 @@
     },
     {
       "label": "הגדרות התנהגות",
-      "description": "These options will let you control how the task behaves.",
+      "description": "אפשרויות אלה יתנו לך לשלוט בהתנהגות המשימה.",
       "fields": [
         {
           "label": "הפעלת \"ניסיון חוזר\""
@@ -148,27 +148,27 @@
           "label": "הפעלת כפתור \"בדיקה\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "ידרש קלט מהמשתמש לפני שהפתרון ניתן לצפייה"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "מעניק נקודה אחת למשימה כולה",
+          "description": "השבתת מתן נקודה אחת לכל רכיב שהונח במקום הנכון."
         },
         {
           "label": "החלת כנסות",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "description": "החלת עונשים על רכיבים ששוחררו באזורי יעד לא נכונים. זה חייב להתאפשר כאשר אותו(ם) רכיב(ים) יכול(ים) להשתחרר למספר אזורי יעד, או אם יש אזור יעד אחד בלבד. אם זה לא מתאפשר, לומדים רשאים להתאים את כל הפריטים לכל אזורי היעד ותמיד לקבל ניקוד מלא."
         },
         {
           "label": "תצוגת הסבר לניקוד",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "description": "הצגת הסבר על הניקוד למשתמש בעת בדיקת תשובות (אם האפשרות \"החלת עונשים\" נבחרה)."
         },
         {
           "label": "שקיפות רקע לפריטים נגררים",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "description": "אם לשדה זה נקבע ערך, הוא ידרוס את ערכי השקיפות של כל הרכיבים. הוא צריך להיות מספר בין 0 ו-100, כאשר 0 משמעו שקיפות מלאה ו-100 משמעו שאין שקיפות"
         },
         {
           "label": "הדגשת אזורי יעד",
-          "description": "Choose when to highlight drop zones.",
+          "description": "בחרו מתי להדגיש אזורי יעד.",
           "options": [
             {
               "label": "כאשר גוררים"
@@ -182,19 +182,19 @@
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "ריווח ליישור-אוטומטי (בפיקסלים)"
         },
         {
           "label": "אפשרות למסך־מלא",
-          "description": "Check this option to enable the full screen button."
+          "description": "בחרו אפשרות זאת כדי לאפשר כפתור מסך מלא."
         },
         {
           "label": "תצוגת ניקוד וציונים",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "description": "הצגת נקודות שהרוויחו עבור כל תשובה. לא זמין כאשר האפשרות \"מתן נקודה אחת למשימה כולה\" מופעלת."
         },
         {
           "label": "תצוגת כותרת",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "description": "הורדת סימון מאפשרות זו אם אתם לא רוצים שכותרת זו תוצג. הכותרת תוצג בתקצירים, סטטיסטיקות וכו'."
         }
       ]
     },
@@ -217,30 +217,30 @@
     },
     {
       "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "default": "מונח באזור יעד {num}."
     },
     {
       "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "default": "אזור יעד {num} מתוך {total}."
     },
     {
-      "label": "No dropzone selection label",
+      "label": "אין תווית לבחירת אזור יעד",
       "default": "אין אזורי יעד."
     },
     {
-      "label": "Label for show tip button",
+      "label": "תווית להצגת כפתור עצה",
       "default": "תצוגת עצה."
     },
     {
-      "label": "Label for tip available",
+      "label": "תווית לעצה זמינה",
       "default": "עצה זמינה"
     },
     {
-      "label": "Label for correct answer",
+      "label": "תווית לתשובה נכונה",
       "default": "תשובה נכונה"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "תווית לתשובה לא נכונה",
       "default": "תשובה שגויה"
     },
     {
@@ -248,12 +248,20 @@
       "default": "משוב"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "תצוגה מילולית של סרגל הניקוד לאלה שמשתמשים ב-readspeaker",
+      "default": "קיבלת num: מתוך total: נקודות"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "ייצוג מילולי של כפתור ההסבר לניקוד",
+      "default": "הצגת הסבר לניקוד"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }

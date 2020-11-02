@@ -254,6 +254,14 @@
     {
       "label": "Anzeigetext des \"Punkte erklären\"-Buttons",
       "default": "Zeige Erklärung der Punktevergabe"
+    },
+    {
+      "label": "Beschreibung des \"Überprüfen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
+      "default": "Die Antworten überprüfen. Die Eingaben werden als richtig, falsch oder unbeantwortet markiert."
+    },
+    {
+      "label": "Beschreibung des \"Wiederholen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
+      "default": "Die Aufgabe wiederholen. Alle Versuche werden zurückgesetzt und die Aufgabe wird erneut gestartet."
     }
   ]
 }
