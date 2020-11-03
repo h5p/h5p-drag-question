@@ -68,8 +68,8 @@ function C(options, contentId, contentData) {
       showScorePoints: true,
       showTitle: false
     },
-    a11yCheck: 'Check',
-    a11yRetry: 'Retry',
+    a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
+    a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
   }, options);
 
   // If single point is enabled, it makes no sense displaying
