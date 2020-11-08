@@ -256,12 +256,12 @@
       "default": "Mostrar explicación del puntaje"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Etiqueta de tecnología asistiva para botón \"Revisar\" ",
+      "default": "Revisar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Etiqueta de tecnología asistiva para botón \"Reintentar\" ",
+      "default": "Reintentar el  trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
     }
   ]
 }
