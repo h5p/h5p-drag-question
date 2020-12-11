@@ -1,35 +1,35 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Verificar"
+      "label": "Botó \"Comprova la resposta\"",
+      "default": "Verifica"
     },
     {
-      "label": "Retry button",
-      "default": "Tornar-ho a provar"
+      "label": "Botó \"Torna-ho a provar\"",
+      "default": "Torna-ho a provar"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Text de l’explicació de la puntuació",
+      "default": "Amb les respostes correctes se suma 1 punt. Amb les respostes incorrectes es resta 1 punt. La puntuació més baixa possible és 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Paràmetres",
           "fields": [
             {
               "label": "Imatge de fons",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "description": "Opcional. Seleccioneu una imatge per utilitzar de fons a la tasca d’arrossegar i deixar anar."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Mida de la tasca",
+              "description": "Especifiqueu la mida (en píxels) que ha de tenir l’àrea de reproducció."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Tasca",
+          "description": "Comenceu col·locant les zones on deixar anar.<br/>A continuació, col·loqueu els elements que es poden deixar anar i marqueu les zones on deixar anar corresponents.<br/>Per últim, torneu a editar la zones on deixar anar i marqueu les respostes correctes.",
           "fields": [
             {
               "label": "Elements",
@@ -38,46 +38,46 @@
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Trieu el tipus de contingut que vulgueu afegir."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Seleccioneu les zones on deixar anar"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Opacitat del fons"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Nombre infinit d’instàncies d’elements",
+                    "description": "Clona aquest element perquè es pugui arrossegar a diferents zones per deixar anar."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Zones on deixar anar",
+              "entity": "Zona on deixar anar",
               "field": {
-                "label": "Drop Zone",
+                "label": "Zona on deixar anar",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etiqueta"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Mostra l’etiqueta"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Seleccioneu els elements correctes"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Opacitat del fons"
                   },
                   {
                     "label": "Suggerències i informació de retorn",
@@ -86,22 +86,22 @@
                         "label": "Text de la pista"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Missatge mostrat en la coincidència correcta",
+                        "description": "Missatge que es mostrarà a sota de la tasca, en seleccionar \"Comprova\", si un element es deixar anar correctament."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Missatge mostrat en una coincidència incorrecta",
+                        "description": "Missatge que es mostrarà a sota de la tasca, en seleccionar \"Comprova\", si un element es deixar anar incorrectament."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Aquesta zona on deixar anar només pot contenir un element",
+                    "description": "Comproveu que només hi ha una resposta correcta per a aquesta zona on deixar anar."
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Activa l’alineació automàtica",
+                    "description": "S’alinearan automàticament tots els elements que es puguin arrossegar i que s’hagin deixat en aquesta zona."
                   }
                 ]
               }
@@ -111,26 +111,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Suggeriment general",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Per defecte"
+              "label": "Opció predeterminada"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Defineix una valoració per cada rang de puntuació",
+          "description": "Feu clic al botó \"Afegeix un rang\" per afegir tants rangs com necessiteu. Exemple: 0-20 % per a puntuació baixa, 21-91 % per a puntuació mitjana, 91-100 % per a puntuació excel·lent.",
+          "entity": "rang",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Rang de puntuació"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Retroacció per al rang de puntuació definit",
+                "placeholder": "Introduïu el suggeriment"
               }
             ]
           }
@@ -142,126 +142,126 @@
       "description": "Aquestes opcions et permetran controlar com es comporta la tasca.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Activa \"Torna-ho a provar\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activa el botó \"Comprova\""
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Requereix l’entrada de dades per part de l’usuari abans que es pugui visualitzar la solució"
         },
         {
           "label": "Donar un punt per la tasca sencera",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "description": "Desactiva per donar un punt per a cada arrossegable que es col·loca correctament."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Aplica penalitzacions",
+          "description": "Apliqueu penalitzacions quan els elements es deixin anar en zones incorrectes. Aquesta opció ha d’estar activada quan els mateixos elements es poden deixar anar en diverses zones o si només hi ha una zona on deixar-los anar. Si l’opció no s’activa, els alumnes podran arrossegar tots elements a totes les zones on es pot deixar anar i sempre rebran la puntuació màxima."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Activa l’explicació de les puntuacions",
+          "description": "Quan l’usuari comprovi les seves respostes, mostreu una explicació de la puntuació (sempre que l’opció \"Aplica penalitzacions\" estigui seleccionada)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Opacitat de fons per als elements que es poden arrossegar",
+          "description": "Si s’estableix aquest camp, se substituirà l’opacitat establerta en tots els elements que es poden arrossegar. Ha de ser un número entre 0 i 100, en què 0 significa \"transparència total\" i 100 significa \"sense transparència\"."
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Destacat de la zona on deixar anar",
+          "description": "Trieu quan voleu que es destaquin les zones on es pot deixar anar.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "En arrossegar"
             },
             {
-              "label": "Always"
+              "label": "Sempre"
             },
             {
-              "label": "Never"
+              "label": "Mai"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Espaiat per a l’alineació automàtica (en píxels)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Activa la pantalla completa",
+          "description": "Marqueu aquesta opció per activar el botó de pantalla completa."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Mostra la puntuació",
+          "description": "Mostreu els punts obtinguts amb cada resposta. No està disponible quan l’opció \"Atorga un punt a la tasca sencera\" està activada."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Mostra el títol",
+          "description": "Desactiveu aquesta opció si no voleu que es mostri aquest títol. El títol només es mostrarà en resums, estadístiques, etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Localitza",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etiqueta de pantalla completa",
+          "default": "Pantalla completa"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etiqueta de sortir de la pantalla completa",
+          "default": "Surt de la pantalla completa"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefix dels elements que es poden agafar",
+      "default": "Se’n poden agafar {num} de {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufix dels elements que es poden agafar",
+      "default": "Ubicat a la zona on deixar anar {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefix de la zona on deixar anar",
+      "default": "Zona on deixar anar {num} de {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etiqueta per quan no hi ha cap zona on deixar anar seleccionada",
+      "default": "Cap zona on deixar anar."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etiqueta del botó de mostra el consell",
+      "default": "Mostra el consell."
     },
     {
-      "label": "Label for tip available",
+      "label": "Etiqueta per quan hi ha una pista disponible",
       "default": "Pista disponible"
     },
     {
-      "label": "Label for correct answer",
+      "label": "Etiqueta per a la resposta correcta",
       "default": "Resposta correcta"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "La resposta no és correcta"
+      "label": "Etiqueta per a la resposta incorrecta",
+      "default": "Resposta incorrecta"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Encapçalament per al tauler que conté retroacció per a les respostes correctes/incorrectes",
+      "default": "Retroacció"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Representació textual de la barra de puntuació pera als que utilitzen un altaveu de lectura",
+      "default": "Heu fet :num de :total punts"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Representació textual del botó de l’explicació de la puntuació",
+      "default": "Mostra l’explicació de la puntuació"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Etiqueta de la tecnologia d’assistència per al botó \"Comprova\"",
+      "default": "Comprova les respostes. Les respostes es marcaran com a correctes, incorrectes o sense resposta."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Etiqueta de la tecnologia d’assistència per a l’etiqueta \"Torna-ho a provar\"",
+      "default": "Intenta de nou la tasca. Reajusta totes les respostes i comença la tasca de nou."
     }
   ]
 }
