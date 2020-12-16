@@ -244,7 +244,7 @@
       "default": "Onjuist antwoord"
     },
     {
-      "label": "Titel voor het onderdeel dat feedback bevat over juiste/ onjuiste antwoorden",
+      "label": "Titel voor het onderdeel dat feedback bevat over juiste/onjuiste antwoorden",
       "default": "Feedback"
     },
     {
@@ -256,12 +256,12 @@
       "default": "Toon uitleg score"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Ondersteunende technologie label voor \"Controleer\" knop",
+      "default": "Controleer de antwoorden. De antwoorden worden genmarkeerd als juist, onjuist, of niet-beantwoord."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Ondersteunende technologie label voor \"Opnieuw\" knop",
+      "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
     }
   ]
 }
