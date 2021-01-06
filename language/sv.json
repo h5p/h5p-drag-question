@@ -138,8 +138,8 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Beteende-inställningar",
+      "description": "Dessa val låter dig kontrollera hur uppgiften beter sig.",
       "fields": [
         {
           "label": "Enable \"Retry\""
