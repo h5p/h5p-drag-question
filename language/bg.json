@@ -256,12 +256,12 @@
       "default": "Покажи обяснение на резултата"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Етикет за помощни технологии бутон \"Провери\" ",
+      "default": "Провери отговорите. Отговорите ще бъдат маркирани като правилни, неправилни, или некоректни."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Етикет за помощни технологии бутон \"Опитай отново\" ",
+      "default": "Опитай отново задачата. Всички отговори ще бъдат изчистени и задачата ще може да бъде решена отново."
     }
   ]
 }
