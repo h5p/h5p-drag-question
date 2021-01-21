@@ -29,7 +29,7 @@
         },
         {
           "label": "Zadatak",
-          "description": "Počni sa određivanjem zona za spustanje.<br/>Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br/>Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
+          "description": "Počni sa određivanjem zona za spustanje.<br />Zatim, postavi elemente za spustanje i provjeri odgovarajuće zone za spustanje.<br />Na kraju, uredi ponovo zonu i provjeri tačne odgovore.",
           "fields": [
             {
               "label": "Elementi",

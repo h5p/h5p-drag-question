@@ -29,7 +29,7 @@
         },
         {
           "label": "Zeregina",
-          "description": "Hasi jaregiteko zonak kokatzen.<br/>Ondoren, kokatu elementu arrastagarriak eta markatu jaregiteko zona zuzenak.<br/>Azkenik, edita ezazu berriro jaregiteko zona eta markatu erantzun zuzenak.",
+          "description": "Hasi jaregiteko zonak kokatzen.<br />Ondoren, kokatu elementu arrastagarriak eta markatu jaregiteko zona zuzenak.<br />Azkenik, edita ezazu berriro jaregiteko zona eta markatu erantzun zuzenak.",
           "fields": [
             {
               "label": "Elementuak",

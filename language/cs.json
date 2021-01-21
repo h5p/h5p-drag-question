@@ -29,7 +29,7 @@
         },
         {
           "label": "Úkol",
-          "description": "Začněte tím, že umístíte své přetahovací zóny. <br/> Dále umístěte rozevírací prvky a zaškrtněte příslušné zóny přetažení. <br/> Nakonec znovu upravte zónu přetažení a zkontrolujte správné odpovědi.",
+          "description": "Začněte tím, že umístíte své přetahovací zóny. <br /> Dále umístěte rozevírací prvky a zaškrtněte příslušné zóny přetažení. <br /> Nakonec znovu upravte zónu přetažení a zkontrolujte správné odpovědi.",
           "fields": [
             {
               "label": "Prvky",

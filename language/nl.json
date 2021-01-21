@@ -29,7 +29,7 @@
         },
         {
           "label": "Opgave",
-          "description": "Begin met het bepalen van je neerzetgebieden.<br/>Vervolgens, plaats je de sleepbare onderdelen en markeer je de juiste neerzetgebieden.<br/>Tenslotte, bewerk je het element opnieuw en vink je de juiste neerzetgebieden aan.",
+          "description": "Begin met het bepalen van je neerzetgebieden.<br />Vervolgens, plaats je de sleepbare onderdelen en markeer je de juiste neerzetgebieden.<br />Tenslotte, bewerk je het element opnieuw en vink je de juiste neerzetgebieden aan.",
           "fields": [
             {
               "label": "Elementen",

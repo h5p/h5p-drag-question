@@ -29,7 +29,7 @@
         },
         {
           "label": "Attività",
-          "description": "Iniziate mettendo le zone di trascinamento.<br/>Successivamente, posizionate gli elementi trascinabili e mettete la spunta sulle relative aree di rilascio.<br/>Infine, modificate nuovamente la zona di rilascio e mettete la spunta sulle risposte corrette.",
+          "description": "Iniziate mettendo le zone di trascinamento.<br />Successivamente, posizionate gli elementi trascinabili e mettete la spunta sulle relative aree di rilascio.<br />Infine, modificate nuovamente la zona di rilascio e mettete la spunta sulle risposte corrette.",
           "fields": [
             {
               "label": "Elementi",

@@ -29,7 +29,7 @@
         },
         {
           "label": "Taak",
-          "description": "Begin deur jou valsones te plaas .<br/>Plaas volgende jou valbare elemente en merk die geskikte valsones af.<br/>Laastens, redigeer jou valsones weereens en merk die regte antwoorde.",
+          "description": "Begin deur jou valsones te plaas .<br />Plaas volgende jou valbare elemente en merk die geskikte valsones af.<br />Laastens, redigeer jou valsones weereens en merk die regte antwoorde.",
           "fields": [
             {
               "label": "Elemente",
