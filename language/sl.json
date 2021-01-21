@@ -29,7 +29,7 @@
         },
         {
           "label": "Naloga",
-          "description": "Najbolje je začeti s postavitvijo spustnih polj.<br/>V nadaljevanju se doda elemente, ki jih je potrebno povezati z ustreznimi spustnimi polji.<br/>Na koncu se zgolj še preveri spustna polja in v njih izbrane elemente potrdi kot pravilne odgovore.",
+          "description": "Najbolje je začeti s postavitvijo spustnih polj.<br />V nadaljevanju se doda elemente, ki jih je potrebno povezati z ustreznimi spustnimi polji.<br />Na koncu se zgolj še preveri spustna polja in v njih izbrane elemente potrdi kot pravilne odgovore.",
           "fields": [
             {
               "label": "Elementi",

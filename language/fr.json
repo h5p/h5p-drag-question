@@ -29,7 +29,7 @@
         },
         {
           "label": "Éléments de l'activité",
-          "description": "Commencez par créer vos zones de dépôt.<br/>Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br/>Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
+          "description": "Commencez par créer vos zones de dépôt.<br />Ensuite, créez les étiquettes à glisser en cochant la/les zone(s) où elles pourront être glissées.<br />Enfin, éditez de nouveau vos zones de dépôt et cochez les étiquettes qui devront y être correctement placées.",
           "fields": [
             {
               "label": "Eléments",

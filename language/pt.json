@@ -29,7 +29,7 @@
         },
         {
           "label": "Atividade",
-          "description": "Comece por definir as áreas onde os elementos vão ser largados.<br/>A seguir, coloque os elementos que vão ser arrastados nos zonas apropriadas.<br/>Por fim, edite as zonas onde os elementos serão largados e defina as respostas corretas.",
+          "description": "Comece por definir as áreas onde os elementos vão ser largados.<br />A seguir, coloque os elementos que vão ser arrastados nos zonas apropriadas.<br />Por fim, edite as zonas onde os elementos serão largados e defina as respostas corretas.",
           "fields": [
             {
               "label": "Elementos",
