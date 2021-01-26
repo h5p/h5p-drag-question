@@ -1,0 +1,267 @@
+{
+  "semantics": [
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "fields": [
+        {
+          "label": "",
+          "fields": [
+            {
+              "label": "",
+              "description": ""
+            },
+            {
+              "label": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "label": "",
+          "description": "",
+          "fields": [
+            {
+              "label": "",
+              "entity": "",
+              "field": {
+                "label": "",
+                "fields": [
+                  {
+                    "description": ""
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": ""
+                  },
+                  {
+                    "label": ""
+                  },
+                  {
+                    "label": "",
+                    "description": ""
+                  }
+                ]
+              }
+            },
+            {
+              "label": "",
+              "entity": "",
+              "field": {
+                "label": "",
+                "fields": [
+                  {
+                    "label": ""
+                  },
+                  {
+                    "label": ""
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {
+                    "label": ""
+                  },
+                  {
+                    "label": ""
+                  },
+                  {
+                    "label": "",
+                    "fields": [
+                      {
+                        "label": ""
+                      },
+                      {
+                        "label": "",
+                        "description": ""
+                      },
+                      {
+                        "label": "",
+                        "description": ""
+                      }
+                    ]
+                  },
+                  {
+                    "label": "",
+                    "description": ""
+                  },
+                  {
+                    "label": "",
+                    "description": ""
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "",
+      "fields": [
+        {
+          "widgets": [
+            {
+              "label": ""
+            }
+          ],
+          "label": "",
+          "description": "",
+          "entity": "",
+          "field": {
+            "fields": [
+              {
+                "label": ""
+              },
+              {},
+              {
+                "label": "",
+                "placeholder": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "تنظیمات رفتاری",
+      "description": "این تنظیمات به شما اجازه خواهد داد اینکه چطور تکلیف رفتار می‌کند را کنترل کنید.",
+      "fields": [
+        {
+          "label": ""
+        },
+        {
+          "label": ""
+        },
+        {
+          "label": ""
+        },
+        {
+          "label": "به کل تکلیف یک امتیاز بده",
+          "description": "دادن یک امتیاز را به هر موردی که به مکان درستی کشیده می‌شود غیرفعال کن."
+        },
+        {
+          "label": "جریمه اعمال کن",
+          "description": ""
+        },
+        {
+          "label": "",
+          "description": ""
+        },
+        {
+          "label": "",
+          "description": ""
+        },
+        {
+          "label": "",
+          "description": "",
+          "options": [
+            {
+              "label": ""
+            },
+            {
+              "label": ""
+            },
+            {
+              "label": ""
+            }
+          ]
+        },
+        {
+          "label": ""
+        },
+        {
+          "label": "",
+          "description": ""
+        },
+        {
+          "label": "نمایش امتیازات نمره",
+          "description": "نمایش امتیازات کسب شده برای هر پاسخ. وقتی «به کل تکلیف یک امتیاز بده» فعال است، این گزینه در دسترس نیست."
+        },
+        {
+          "label": "نمایش عنوان",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "label": "",
+      "fields": [
+        {
+          "label": "",
+          "default": ""
+        },
+        {
+          "label": "",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": "شما از ‎:total امتیاز، ‎:num امتیاز دریافت کردید"
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    },
+    {
+      "label": "",
+      "default": ""
+    }
+  ]
+}
