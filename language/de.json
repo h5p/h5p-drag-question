@@ -29,7 +29,7 @@
         },
         {
           "label": "Aufgabe",
-          "description": "Starte, indem du deine Ablagezonen platzierst.<br/>Füge dann die verschiebbaren Elemente hinzu und wähle für jedes aus, in welchen Ablagezonen es grundsätzlich ablegbar sein soll (inkl. Distraktoren).<br/>Wähle zum Schluss in den Ablagezonen die jeweils korrekten Elemente aus.",
+          "description": "Starte, indem du deine Ablagezonen platzierst.<br />Füge dann die verschiebbaren Elemente hinzu und wähle für jedes aus, in welchen Ablagezonen es grundsätzlich ablegbar sein soll (inkl. Distraktoren).<br />Wähle zum Schluss in den Ablagezonen die jeweils korrekten Elemente aus.",
           "fields": [
             {
               "label": "Elemente",

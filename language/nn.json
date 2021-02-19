@@ -29,7 +29,7 @@
         },
         {
           "label": "Oppgave",
-          "description": "Begynn med å plassere målområder.<br/>Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br/>Til slutt redigeres målområdene igjen for å angi fasit.",
+          "description": "Begynn med å plassere målområder.<br />Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br />Til slutt redigeres målområdene igjen for å angi fasit.",
           "fields": [
             {
               "label": "Elementer",

@@ -29,7 +29,7 @@
         },
         {
           "label": "Tarefa",
-          "description": "Comece posicionando suas zonas de largada.<br/>Em seguida, posicione os elementos arrastáveis e marque-os nas zonas de largada apropriadas.<br/>Por último, edite suas zonas de largada novamente e marque as respostas corretas.",
+          "description": "Comece posicionando suas zonas de largada.<br />Em seguida, posicione os elementos arrastáveis e marque-os nas zonas de largada apropriadas.<br />Por último, edite suas zonas de largada novamente e marque as respostas corretas.",
           "fields": [
             {
               "label": "Elementos",

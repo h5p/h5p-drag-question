@@ -29,7 +29,7 @@
         },
         {
           "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
               "label": "Elements",
@@ -174,8 +174,8 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Beteende-inställningar",
+      "description": "Dessa val låter dig kontrollera hur uppgiften beter sig.",
       "fields": [
         {
           "label": "Enable \"Retry\""

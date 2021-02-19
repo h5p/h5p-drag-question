@@ -29,7 +29,7 @@
         },
         {
           "label": "Trabajo",
-          "description": "Comience colocando sus zonas de caída.<br/>Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br/>Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
+          "description": "Comience colocando sus zonas de caída.<br />Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br />Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
           "fields": [
             {
               "label": "Elementos",

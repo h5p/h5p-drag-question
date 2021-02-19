@@ -29,7 +29,7 @@
         },
         {
           "label": "Ülesanne",
-          "description": "Alusta sihtkohtade määramisega.<br/>Järgmisena paiguta lohistatavad elemendid ja märgi sobilikud sihtkohad.<br/>Lõpuks märgi sihtkohtade õiged vastused.",
+          "description": "Alusta sihtkohtade määramisega.<br />Järgmisena paiguta lohistatavad elemendid ja märgi sobilikud sihtkohad.<br />Lõpuks märgi sihtkohtade õiged vastused.",
           "fields": [
             {
               "label": "Elemendid",

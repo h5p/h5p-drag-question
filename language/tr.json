@@ -15,10 +15,10 @@
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ayarlar",
           "fields": [
             {
-              "label": "Background image",
+              "label": "Arkaplan görüntüsü",
               "description": "Optional. Select an image to use as background for your drag and drop task."
             },
             {
@@ -29,7 +29,7 @@
         },
         {
           "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
               "label": "Elements",
@@ -38,7 +38,7 @@
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Eklemek istediğiniz içerik türünü seçiniz."
                   },
                   {},
                   {},
@@ -48,7 +48,7 @@
                     "label": "Select drop zones"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Arkaplan Şeffaflığı"
                   },
                   {
                     "label": "Infinite number of element instances",
@@ -72,10 +72,10 @@
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Bırakma Alanları",
+              "entity": "Bırakma Alanı",
               "field": {
-                "label": "Drop Zone",
+                "label": "Bırakma Alanı",
                 "fields": [
                   {
                     "label": "Label"
@@ -210,10 +210,10 @@
               "label": "When dragging"
             },
             {
-              "label": "Always"
+              "label": "Daima"
             },
             {
-              "label": "Never"
+              "label": "Asla"
             }
           ]
         },

@@ -29,7 +29,7 @@
         },
         {
           "label": "משימה",
-          "description": "התחילו במיקום אזורי היעד שלכם.<br/>אחר כך, מקמו את רכיבי הגרירה וסמנו את אזורי היעד המתאימים.<br/>לבסוף, ערכו את אזורי היעד שוב וסמנו את התשובות הנכונות.",
+          "description": "התחילו במיקום אזורי היעד שלכם.<br />אחר כך, מקמו את רכיבי הגרירה וסמנו את אזורי היעד המתאימים.<br />לבסוף, ערכו את אזורי היעד שוב וסמנו את התשובות הנכונות.",
           "fields": [
             {
               "label": "רכיבים",
@@ -248,15 +248,15 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "תחילית ניתנת לגרירה",
+      "default": "{num} מתוך {total} ניתנים לגרירה."
     },
     {
-      "label": "Grabbable suffix",
+      "label": "סיומת ניתנת לגרירה",
       "default": "מונח באזור יעד {num}."
     },
     {
-      "label": "Dropzone prefix",
+      "label": "אזור יעד תחילית",
       "default": "אזור יעד {num} מתוך {total}."
     },
     {
@@ -280,7 +280,7 @@
       "default": "תשובה שגויה"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "כותרת לפאנל המכיל משוב לתשובות נכונות/לא נכונות",
       "default": "משוב"
     },
     {

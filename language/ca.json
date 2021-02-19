@@ -29,7 +29,7 @@
         },
         {
           "label": "Tasca",
-          "description": "Comenceu col·locant les zones on deixar anar.<br/>A continuació, col·loqueu els elements que es poden deixar anar i marqueu les zones on deixar anar corresponents.<br/>Per últim, torneu a editar la zones on deixar anar i marqueu les respostes correctes.",
+          "description": "Comenceu col·locant les zones on deixar anar.<br />A continuació, col·loqueu els elements que es poden deixar anar i marqueu les zones on deixar anar corresponents.<br />Per últim, torneu a editar la zones on deixar anar i marqueu les respostes correctes.",
           "fields": [
             {
               "label": "Elements",

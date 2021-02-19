@@ -29,7 +29,7 @@
         },
         {
           "label": "Tehtävä",
-          "description": "Aloita asettamalla pudotuskohteet.<br/>Seuraavaksi, asettele pudotettavat elementit ja valitse niille halutut kohteet.<br/>Viimeiseksi, muokkaa uudestaan pudotuskohteita ja valitse niille oikeat raahattavat.",
+          "description": "Aloita asettamalla pudotuskohteet.<br />Seuraavaksi, asettele pudotettavat elementit ja valitse niille halutut kohteet.<br />Viimeiseksi, muokkaa uudestaan pudotuskohteita ja valitse niille oikeat raahattavat.",
           "fields": [
             {
               "label": "Elementit",

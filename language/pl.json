@@ -29,7 +29,7 @@
         },
         {
           "label": "Zadanie",
-          "description": "Rozpocznij od umieszczenie obszarów do których będą przeciągane odpowiedzi (drop zones).<br/>Następnie umieść przeciągalne elementy i oznacz ich docelowe obszary przeciągania.<br/> Na końcu edytuj obszary przeciągania i zaznacz właściwe dla nich odpowiedzi.",
+          "description": "Rozpocznij od umieszczenie obszarów do których będą przeciągane odpowiedzi (drop zones).<br />Następnie umieść przeciągalne elementy i oznacz ich docelowe obszary przeciągania.<br /> Na końcu edytuj obszary przeciągania i zaznacz właściwe dla nich odpowiedzi.",
           "fields": [
             {
               "label": "Elementy",

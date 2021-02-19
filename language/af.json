@@ -1,58 +1,58 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Toets antwoord knoppie",
+      "default": "Toets"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Probeer weer knoppie",
+      "default": "Probeer weer"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Punte verduideliking teks",
+      "default": "Regte antwoord gee +1 punt. Verkeerde antwoord gee -1 punt. Die laagste moontlike telling is 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Instellings",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Agtergrondprent",
+              "description": "Opsioneel. Kies 'n prent om as agtergrond te gebruik vir jou sleep en laat val taak."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Taakgrote",
+              "description": "Spesifiseer hoe groot (in px) die speelarea moet wees."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "label": "Taak",
+          "description": "Begin deur jou valsones te plaas .<br />Plaas volgende jou valbare elemente en merk die geskikte valsones af.<br />Laastens, redigeer jou valsones weereens en merk die regte antwoorde.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elemente",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Kies die soort inhoud wat jy graag wil byvoeg."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Kies valsones"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Deursigtigheid van agtergrond"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Oneindige aantal elementgevalle",
+                    "description": "Kloon hierdie element sodat dit na verskeie valsones gesleep kan word."
                   },
                   {
                     "label": "Audio",
@@ -72,50 +72,50 @@
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Valsones",
+              "entity": "Valsone",
               "field": {
-                "label": "Drop Zone",
+                "label": "Valsone",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etiket"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Wys etiket"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Kies die regte elemente"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Deursigtigheid van agtergrond"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Wenke en terugvoer",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Wenkteks"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Boodskap wat vertoon word met regte paring",
+                        "description": "Boodskap sal onder die taak op \"toets\" verskyn, indien regte valbare item gepaar is."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Boodskap wat vertoon word met verkeerde paring",
+                        "description": "Boodskap wat onder die op \"toets\" verskyn, indien paring verkeerd is."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Hierdie valsone kan net een element bevat",
+                    "description": "Maak seker dat daar net een regte antwoord vir hierdie valsone is"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Aktiveer selfbelyning",
+                    "description": "Sal outomaties alle valbare items in hierdie sone belyn."
                   }
                 ]
               }
@@ -125,26 +125,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Algemene terugvoer",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Verstek"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Bepaal verstekterugvoer vir enige reeks tellings",
+          "description": "Kliek op die \"Voeg reeks by\" knoppie om so veel as moontlik reekse by te voeg. Byvoorbeeld: 0-20% Swak Punt, 21-91% Gemiddelde Punt, 91-100% Uitstekende Punt!",
+          "entity": "reeks",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Telling reeks"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Terugvoer vir gedefinieerde telling reeks",
+                "placeholder": "Vul die terugvoer in"
               }
             ]
           }
@@ -174,130 +174,130 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Gedragsinstellings",
+      "description": "Hierdie keuses laat jou beheer hoe die onderskeie take uitgevoer moet word.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Aktiveer \"Probeer weer\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktiveer \"Toets\" knoppie"
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Vereis gebruiker om iets in te sleutel voordat die antwoord gewys word"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Gee een punt vir die hele taak",
+          "description": "Deaktiveer om een punt vir elke valbare item wat reg geplaas is te gee."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Pas strafmaatreëls toe",
+          "description": "Pas boetes toe vir elemente wat in die verkeerde sones val. Dit moet geaktiveer word as dieselfde element(e) in meerdere valsones kan val, of as daar net een valsone is. As dit nie geaktiveer is nie, kan leerders alle items aanpas by alle valsones en altyd 'n volledige telling kry."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Aktiveer telling verduideliking",
+          "description": "Vertoon 'n verduideliking van telling wanneer gebruiker op antwoord klik (indien die 'Pas strawwe toe' opsie gekies is)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Agtergrond deursigtigheid vir trekbares",
+          "description": "As hierdie veld ingestel is, sal dit die deursigtigheid van alle sleepbare elemente oorheers. Dit moet 'n getal tussen 0 en 100 wees, waar 0 volle deursigtigheid beteken en 100 geen deursigtigheid beteken nie"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Druppelsone-hoogtepunt",
+          "description": "Kies wanneer druppelsones beklemtoon word.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "As jy sleep"
             },
             {
-              "label": "Always"
+              "label": "Altyd"
             },
             {
-              "label": "Never"
+              "label": "Nooit"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Spasiëring vir selfbelyning (in px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Aktiveer Volskerm",
+          "description": "Merk hierdie opsie om die volskermknoppie te aktiveer."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Wys puntetelling",
+          "description": "Toon punte verdien vir elke antwoord. Nie beskikbaar as die opsie 'Gee een punt vir die hele taak' geaktiveer is nie."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Wys titel",
+          "description": "Ontmerk hierdie opsie as jy nie wil hê dat hierdie titel vertoon moet word nie. Die titel sal slegs in opsommings, statistieke ens. vertoon word."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokaliseer",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Volskerm etiket",
+          "default": "Volskerm"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Verlaat volskermetiket",
+          "default": "Verlaat volskerm"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Grypbare voorvoegsel",
+      "default": "Grypbare {num} van {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Grypbare agtervoegsel",
+      "default": "Geplaas in druppelsones {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Druppelsone voorvoegsel",
+      "default": "Druppelsone {num} van{total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Geen valsone gekies etiket",
+      "default": "Geen valsone."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etiket vir die wys wenk knopppie",
+      "default": "Wys wenk."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etiket vir wenk beskikbaar",
+      "default": "Wenk beskikbaar"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etiket vir regte antwoord",
+      "default": "Regte antwoord"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etiket vir verkeerde antwoord",
+      "default": "Verkeerde antwoord"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Opskrif vir paneel met terugvoer vir regte/verkeerde antwoorde",
+      "default": "Terugvoer"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstuele tentoonstelling van die telkaart vir diegene wat 'n spreekleser gebruik",
+      "default": "Jy het :num uit :total punte gekry"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Tekstuele voorstelling van die telling-verduideliking-knoppie",
+      "default": "Wys verduideliking van telling"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Hulptegnologieetiket vir \"Toets\" knoppie",
+      "default": "Toets die antwoorde. Die antwoorde sal as reg gemerk, verkeerd of onbeantwoord gemerk word."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Hulptegnologieetiket vir \"Probeer weer\" knoppie",
+      "default": "Probeer die taak weer. Herstel al die antwoorde en probeer die taak weer van die begin af."
     }
   ]
 }
