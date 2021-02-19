@@ -94,6 +94,13 @@ export default class DropZone {
             return self.accepts(result.draggable, draggables);
           },
           drop: function (event, ui) {
+            // Report dropped element
+            const draggable = DragUtils.elementToDraggable(draggables, ui.draggable);
+            self.trigger('dropped', {
+              draggableId: draggable.draggable.id,
+              dropzoneId: self.id
+            });
+
             var $this = $(this);
             DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', self.backgroundOpacity);
             ui.draggable.data('addToZone', self.id);
@@ -351,7 +358,7 @@ export default class DropZone {
   }
 
   /**
-   * Invoked when reset task is run. Cleanup any internal states. 
+   * Invoked when reset task is run. Cleanup any internal states.
    */
   reset() {
     // Remove alignables
