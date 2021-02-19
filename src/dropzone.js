@@ -28,6 +28,7 @@ export default class DropZone {
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignable = dropZone.autoAlign;
+    self.maxItems = dropZone.maxItems;
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -173,6 +174,12 @@ export default class DropZone {
    */
   accepts(draggable, draggables) {
     var self = this;
+
+    // Check for maxItems
+    if (self.maxItems && self.alignables.length >= self.maxItems) {
+      return false;
+    }
+
     if (!draggable.hasDropZone(self.id)) {
       // Doesn't belong in this drop zone
       return false;

@@ -220,6 +220,16 @@
                   "optional": true
                 },
                 {
+                  "name": "maxItems",
+                  "type": "number",
+                  "label": "Max items",
+                  "importance": "low",
+                  "min": 0,
+                  "max": 100,
+                  "step": 1,
+                  "optional": true
+                },
+                {
                   "name": "tipsAndFeedback",
                   "type": "group",
                   "label": "Tips and feedback",
