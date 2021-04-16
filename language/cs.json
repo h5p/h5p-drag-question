@@ -256,12 +256,12 @@
       "default": "Zobrazit vysvětlení skóre"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Popisek podpůrné technologie pro tlačítko \"Zkontrolovat\"",
+      "default": "Zkontrolovat odpovědi. Odpovědi budou označeny jako správné, nesprávné nebo nezodpovězené."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Popisek podpůrné technologie pro tlačítko \"Opakovat\"",
+      "default": "Zopakovat úkol. Resetovat všechny odpovědi a spustit úlohu znovu."
     }
   ]
 }
