@@ -48,7 +48,7 @@
                     "label": "Seleccione zonas de caída"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Número infinito de instancias de elementos",
@@ -77,7 +77,7 @@
                     "label": "Seleccionar elementos correctos"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Pistas y retroalimentación",
@@ -87,7 +87,7 @@
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia correcta",
-                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si el soltable correcto es coincidencia."
+                        "description": "El mensaje aparecerá debajo del trabajo en \"comprobar\" si el soltable correcto es coincidencia."
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia incorrecta",
@@ -120,7 +120,7 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
-          "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
+          "description": "Hacer clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
@@ -203,11 +203,11 @@
       "fields": [
         {
           "label": "Etiqueta para pantalla completa",
-          "default": "Pantalla completa"
+          "default": "PantallaCompleta"
         },
         {
           "label": "Etiqueta de salir de pantalla completa",
-          "default": "Salir de Pantalla completa"
+          "default": "Salir de PantallaCompleta"
         }
       ]
     },
