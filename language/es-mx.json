@@ -29,7 +29,7 @@
         },
         {
           "label": "Trabajo",
-          "description": "Comience colocando sus zonas de caída.<br />Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br />Finalmente, edite nuevamente su zona de caída y compruebe las respuestas correctas.",
+          "description": "Comience colocando sus zonas de caída.<br />Después, ponga sus elementos soltables y revise las zonas de caída apropiadas.<br />Finalmente, edite nuevamente su zona de caída y revise las respuestas correctas.",
           "fields": [
             {
               "label": "Elementos",
@@ -48,7 +48,7 @@
                     "label": "Seleccione zonas de caída"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Número infinito de instancias de elementos",
@@ -87,7 +87,7 @@
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia correcta",
-                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si el soltable correcto es coincidencia."
+                        "description": "El mensaje aparecerá debajo del trabajo en \"comprobar\" si el soltable correcto es coincidencia."
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia incorrecta",
@@ -120,7 +120,7 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
-          "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
+          "description": "Hacer clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
@@ -194,7 +194,7 @@
         },
         {
           "label": "Mostrar Título",
-          "description": "Desactivar esta opción si no desea mostrar este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
+          "description": "Desactivar esta opción si no desea que se muestre este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
         }
       ]
     },
@@ -203,11 +203,11 @@
       "fields": [
         {
           "label": "Etiqueta para pantalla completa",
-          "default": "Pantalla completa"
+          "default": "PantallaCompleta"
         },
         {
           "label": "Etiqueta de salir de pantalla completa",
-          "default": "Salir de Pantalla completa"
+          "default": "Salir de PantallaCompleta"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "default": "No es zona de caída."
     },
     {
-      "label": "Etiqueta de botón para mostrar pista",
+      "label": "Etiqueta para botón para mostrar pista",
       "default": "Mostrar pista."
     },
     {
@@ -244,12 +244,12 @@
       "default": "Respuesta incorrecta"
     },
     {
-      "label": "Encabezado para panel que contiene retroalimentación para respuestas correctas/incorrectas",
+      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
       "default": "Retroalimentación"
     },
     {
       "label": "Representación textual de la barra de puntaje para aquellos que usan un lector de texto en voz alta",
-      "default": "Usted obtuvo :num de un total de :total puntos"
+      "default": "Obtuvo :num de un total de :total puntos"
     },
     {
       "label": "Representación textual del botón para explicación del puntaje",
