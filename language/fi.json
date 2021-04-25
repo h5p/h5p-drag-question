@@ -256,12 +256,12 @@
       "default": "Näytä pisteselvitys"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Avustavan teknologian otsikko \"Tarkista\"-painikkeelle",
+      "default": "Tarkista tulokset. Vastaukset merkitään joko oikein, väärin tai vastaamatta."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Avustavan teknologian otsikko \"Yritä uudelleen\" -painikkeelle",
+      "default": "Yritä tehtävää uudelleen. Tyhjennä kaikki vastaukset ja aloita tehtävä uudelleen alusta."
     }
   ]
 }
