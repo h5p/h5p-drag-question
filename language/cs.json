@@ -91,7 +91,7 @@
                       },
                       {
                         "label": "Zpráva zobrazená při nesprávné shodě",
-                        "description": "Zpráva se zobrazí pod úkolem \"Kontrola\", pokud  je shoda nesprávná."
+                        "description": "Zpráva se zobrazí pod úkolem \"Kontrola\", pokud je shoda nesprávná."
                       }
                     ]
                   },
@@ -145,7 +145,7 @@
           "label": "Povolit tlačítko \"Opakovat\""
         },
         {
-          "label": "Povolit tlačítko \"Kontrola\" "
+          "label": "Povolit tlačítko \"Kontrola\""
         },
         {
           "label": "Před zobrazením řešení je třeba zadat vstup uživatele"
@@ -160,7 +160,7 @@
         },
         {
           "label": "Povolit vysvětlení skóre",
-          "description": "Při kontrole jejich odpovědí zobrazte vysvětlení skóre uživateli (pokud byla vybrána možnost Použít sankce)."
+          "description": "Při kontrole jejich odpovědí zobrazte vysvětlení skóre uživateli (pokud byla vybrána možnost \"Použít sankce\")."
         },
         {
           "label": "Neprůhlednost pozadí při přetahování",
@@ -190,7 +190,7 @@
         },
         {
           "label": "Zobrazit body",
-          "description": "Zobrazit body získané za každou odpověď. Není k dispozici, pokud je povolena možnost 'Přiřadit jeden bod pro celý úkol'."
+          "description": "Zobrazit body získané za každou odpověď. Není k dispozici, pokud je povolena možnost \"Přiřadit jeden bod pro celý úkol\"."
         },
         {
           "label": "Zobrazit nadpis",
