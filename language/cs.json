@@ -148,9 +148,6 @@
           "label": "Povolit tlačítko \"Kontrola\""
         },
         {
-          "label": "Před zobrazením řešení je třeba zadat vstup uživatele"
-        },
-        {
           "label": "Jeden bod za celý úkol",
           "description": "Zakázat udělit jeden bod za každou přesouvanou položku, která je umístěna správně."
         },

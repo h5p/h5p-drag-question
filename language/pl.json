@@ -148,9 +148,6 @@
           "label": "Pokazuj przycisk \"Sprawdź\""
         },
         {
-          "label": "Wymagaj podania przez użytkownika rozwiązania przed pokazaniem prawidłowego rozwiązania"
-        },
-        {
           "label": "Przyznaj jeden punkt za całe zadanie",
           "description": "Zablokuj przyznawanie po jednym punkcie za każdy poprawnie przeciągnięty element."
         },

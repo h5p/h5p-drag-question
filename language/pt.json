@@ -148,9 +148,6 @@
           "label": "Ativar o botão \"Verificar\""
         },
         {
-          "label": "Requerer resposta do utilizador antes da solução ser mostrada"
-        },
-        {
           "label": "Dar um ponto por toda a tarefa",
           "description": "Desative esta opção para atribuir um ponto por cada objeto posicionado corretamente."
         },

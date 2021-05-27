@@ -148,9 +148,6 @@
           "label": "Enable \"Check\" button"
         },
         {
-          "label": "Krev inndata fra brukeren før fasit gis."
-        },
-        {
           "label": "Gje eitt poeng for heile oppgåva",
           "description": "Slå av for å gje eitt poeng for kvart draobjekt som er plassert korrekt."
         },

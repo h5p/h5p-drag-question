@@ -148,9 +148,6 @@
           "label": "Activeer \"Controleer\" knop"
         },
         {
-          "label": "Invoer van de gebruiker is vereist voordat de oplossing kan worden getoond"
-        },
-        {
           "label": "Geef één punt voor de gehele taak",
           "description": "Schakel de optie 1 punt voor elke juist geplaatst element uit."
         },
