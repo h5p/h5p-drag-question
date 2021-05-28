@@ -148,9 +148,6 @@
           "label": "Activa el botó \"Comprova\""
         },
         {
-          "label": "Requereix l’entrada de dades per part de l’usuari abans que es pugui visualitzar la solució"
-        },
-        {
           "label": "Donar un punt per la tasca sencera",
           "description": "Desactiva per donar un punt per a cada arrossegable que es col·loca correctament."
         },

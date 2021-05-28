@@ -148,9 +148,6 @@
           "label": "Attiva pulsante \"Verifica\""
         },
         {
-          "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
-        },
-        {
           "label": "Assegna un punto per l'intero compito",
           "description": "Disabilitare per assegnare un punto per ogni elemento trascinabile che viene inserito correttamente."
         },

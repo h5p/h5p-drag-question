@@ -148,9 +148,6 @@
           "label": "Activer le bouton \"Vérifier\""
         },
         {
-          "label": "Obliger l'utilisateur à saisir une réponse avant de pouvoir afficher la correction."
-        },
-        {
           "label": "Donner un point pour la question dans sa globalité",
           "description": "Désactivez cette option pour donner un point pour chaque étiquette correctement placée."
         },

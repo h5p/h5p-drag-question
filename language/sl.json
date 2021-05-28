@@ -148,9 +148,6 @@
           "label": "Omogoči gumb \"Preveri\""
         },
         {
-          "label": "Pred ogledom rešitve zahtevaj odgovor"
-        },
-        {
           "label": "Nalogo oceni z 1 točko kot celoto",
           "description": "Če je možnost onemogočena, bo udeleženec prejel za vsak pravilno postavljen element po 1 točko."
         },

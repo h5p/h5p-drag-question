@@ -60,7 +60,6 @@ function C(options, contentId, contentData) {
       enableCheckButton: true,
       preventResize: false,
       singlePoint: false,
-      showSolutionsRequiresInput: true,
       applyPenalties: true,
       enableScoreExplanation: true,
       dropZoneHighlighting: 'dragging',
@@ -941,7 +940,7 @@ C.prototype.getScore = function () {
  * @returns {Boolean}
  */
 C.prototype.getAnswerGiven = function () {
-  return !this.options.behaviour.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
+  return this.answered || this.blankIsCorrect;
 };
 
 /**

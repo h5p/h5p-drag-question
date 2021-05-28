@@ -148,9 +148,6 @@
           "label": "Activar botón \"Comprobar\""
         },
         {
-          "label": "Requirir entrada do usuario antes de poder ver a solución"
-        },
-        {
           "label": "Dar un punto á tarefa completa",
           "description": "Desactiva isto se queres dar un punto por cada elemento arrastrable colocado correctamente."
         },
