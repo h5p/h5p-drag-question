@@ -2,7 +2,7 @@
   "semantics": [
     {
       "label": "Check answer button",
-      "default": "Check"
+      "default": "Провери"
     },
     {
       "label": "Retry button",
