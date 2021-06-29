@@ -148,9 +148,6 @@
           "label": "Habilitar botón \"Comprobar\""
         },
         {
-          "label": "Requerir entrada del usuario antes de que pueda verse la solución"
-        },
-        {
           "label": "Dar un punto por todo el trabajo",
           "description": "Deshabilitar dar un punto por cada arrastrable que es colocado correctamente."
         },

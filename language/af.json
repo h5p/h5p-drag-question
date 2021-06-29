@@ -148,9 +148,6 @@
           "label": "Aktiveer \"Toets\" knoppie"
         },
         {
-          "label": "Vereis gebruiker om iets in te sleutel voordat die antwoord gewys word"
-        },
-        {
           "label": "Gee een punt vir die hele taak",
           "description": "Deaktiveer om een punt vir elke valbare item wat reg geplaas is te gee."
         },

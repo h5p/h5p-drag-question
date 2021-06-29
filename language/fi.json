@@ -148,9 +148,6 @@
           "label": "Salli \"Check\" painike"
         },
         {
-          "label": "Vaadi vastaus ennen kuin ratkaisun saa nähdä"
-        },
-        {
           "label": "Anna yksi piste koko tehtävästä",
           "description": "Jos tämä ei ole valittuna, niin kaikista oikein pudotetuista saa pisteen."
         },

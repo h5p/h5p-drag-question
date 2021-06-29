@@ -148,9 +148,6 @@
           "label": "Enable \"Check\" button"
         },
         {
-          "label": "Require user input before the solution can be viewed"
-        },
-        {
           "label": "Give one point for the whole task",
           "description": "Disable to give one point for each draggable that is placed correctly."
         },

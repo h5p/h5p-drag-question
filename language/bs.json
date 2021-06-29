@@ -148,9 +148,6 @@
           "label": "Omogući dugme \"Provjeri\""
         },
         {
-          "label": "Daje jedan bod za cijeli zadatak"
-        },
-        {
           "label": "Omogući objašnjenje rezultata",
           "description": "Disable to give one point for each draggable that is placed correctly."
         },

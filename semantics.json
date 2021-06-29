@@ -374,13 +374,6 @@
         "optional": true
       },
       {
-        "label": "Require user input before the solution can be viewed",
-        "importance": "low",
-        "name": "showSolutionsRequiresInput",
-        "type": "boolean",
-        "default": true
-      },
-      {
         "name": "singlePoint",
         "type": "boolean",
         "label": "Give one point for the whole task",

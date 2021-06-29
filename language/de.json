@@ -148,9 +148,6 @@
           "label": "\"Überprüfen\"-Button anzeigen"
         },
         {
-          "label": "Lernende können die Lösung erst einsehen, wenn sie vorher eine Eingabe gemacht haben"
-        },
-        {
           "label": "Einen Punkt für die ganze Aufgabe vergeben",
           "description": "Deaktivieren, um für jedes richtig zugeordnete Element einen Punkt zu geben."
         },

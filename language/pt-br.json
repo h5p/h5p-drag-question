@@ -148,9 +148,6 @@
           "label": "Habilitar o botão \"Verificar resposta\""
         },
         {
-          "label": "Requer resposta antes da visualização da solução"
-        },
-        {
           "label": "Dar um ponto para toda a tarefa",
           "description": "Desabilite para dar um ponto para cada arrastável posicionado corretamente."
         },
