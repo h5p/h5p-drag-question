@@ -120,6 +120,11 @@
                   "widget": "none"
                 },
                 {
+                  "name": "transform",
+                  "type": "text",
+                  "widget": "none"
+                },
+                {
                   "name": "dropZones",
                   "type": "select",
                   "widget": "dynamicCheckboxes",
@@ -198,6 +203,11 @@
                 {
                   "name": "width",
                   "type": "number",
+                  "widget": "none"
+                },
+                {
+                  "name": "transform",
+                  "type": "text",
                   "widget": "none"
                 },
                 {

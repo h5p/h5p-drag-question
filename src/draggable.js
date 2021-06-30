@@ -24,6 +24,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.y = element.y;
     self.width = element.width;
     self.height = element.height;
+    self.transform = element.transform;
     self.backgroundOpacity = element.backgroundOpacity;
     self.dropZones = element.dropZones;
     self.type = element.type;
@@ -122,7 +123,8 @@ export default class Draggable extends H5P.EventDispatcher {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
+        transform: self.transform
       },
       appendTo: $container,
       title: self.type.params.title

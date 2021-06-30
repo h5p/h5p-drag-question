@@ -24,6 +24,7 @@ export default class DropZone {
     self.y = dropZone.y;
     self.width = dropZone.width;
     self.height = dropZone.height;
+    self.transform = dropZone.transform;
     self.backgroundOpacity = dropZone.backgroundOpacity;
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
@@ -62,7 +63,8 @@ export default class DropZone {
         left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
-        height: self.height + 'em'
+        height: self.height + 'em',
+        transform: self.transform
       },
       html: html
     })
