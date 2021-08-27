@@ -1,5 +1,5 @@
 {
-  "title": "Drag and Drop",
+  "title": "NDLA Drag and Drop",
   "description": "Drag and drop the elements into the correct drop zones.",
   "contentType": "Question",
   "majorVersion": 1,
@@ -16,7 +16,7 @@
     "minorVersion": 23
   },
   "license": "MIT",
-  "machineName": "H5P.DragQuestion",
+  "machineName": "H5P.NDLADragQuestion",
   "preloadedJs": [
     {
       "path": "h5p-drag-question.js"
@@ -51,7 +51,7 @@
   ],
   "editorDependencies": [
     {
-      "machineName": "H5PEditor.DragQuestion",
+      "machineName": "H5PEditor.NDLADragQuestion",
       "majorVersion": 1,
       "minorVersion": 10
     },
@@ -61,7 +61,7 @@
       "minorVersion": 0
     },
     {
-      "machineName": "H5PEditor.ShowWhen",
+      "machineName": "H5PEditor.NDLAShowWhen",
       "majorVersion": 1,
       "minorVersion": 0
     }
