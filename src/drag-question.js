@@ -1163,4 +1163,4 @@ var getControls = function (draggables, dropZones, noDropzone) {
   return controls;
 };
 
-H5P.DragQuestion = C;
+H5P.NDLADragQuestion = C;
