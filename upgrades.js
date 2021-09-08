@@ -135,7 +135,6 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
         finished(null, parameters, extras);
       },
       14: function (parameters, finished, extras) {
-        const test = parameters;
         const taskParams = parameters.question.task;
         if (taskParams.dropZones && taskParams.elements) {
           const dropZones = taskParams.dropZones;
