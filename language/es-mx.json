@@ -5,6 +5,10 @@
       "default": "Revisar"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Botón Reintentar",
       "default": "Reintentar"
     },

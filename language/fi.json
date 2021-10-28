@@ -5,6 +5,10 @@
       "default": "Tarkista"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Painikkeen \"Yritä uudelleen\" nimi",
       "default": "Yritä uudelleen"
     },

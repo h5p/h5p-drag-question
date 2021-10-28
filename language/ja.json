@@ -5,6 +5,10 @@
       "default": "チェック"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "リトライボタン",
       "default": "リトライ"
     },

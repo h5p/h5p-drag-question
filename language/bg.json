@@ -5,6 +5,10 @@
       "default": "Провери"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Бутон за повторение",
       "default": "Повтори"
     },

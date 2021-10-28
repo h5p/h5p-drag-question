@@ -5,6 +5,10 @@
       "default": "정답 확인"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "재시도 버튼",
       "default": "재시도"
     },
@@ -262,7 +266,6 @@
     {
       "label": "\"Retry\" 버튼의 보조 기술 레이블",
       "default": "재시도하세요. 모든 답변을 초기화하고 새로 시작하세요."
-
     }
   ]
 }
