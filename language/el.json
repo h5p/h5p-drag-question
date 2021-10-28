@@ -5,6 +5,10 @@
       "default": "Έλεγχος"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Ετικέτα κουμπιού νέας προσπάθειας",
       "default": "Επανάληψη"
     },
