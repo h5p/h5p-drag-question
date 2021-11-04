@@ -19,10 +19,10 @@
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Ayarlar",
           "fields": [
             {
-              "label": "Background image",
+              "label": "Arkaplan görüntüsü",
               "description": "Optional. Select an image to use as background for your drag and drop task."
             },
             {
@@ -33,7 +33,7 @@
         },
         {
           "label": "Task",
-          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
           "fields": [
             {
               "label": "Elements",
@@ -42,17 +42,17 @@
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Eklemek istediğiniz içerik türünü seçiniz."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Bırakma alanı seç"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Arkaplan Şeffaflığı"
                   },
                   {
                     "label": "Infinite number of element instances",
@@ -62,10 +62,10 @@
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Bırakma Alanları",
+              "entity": "Bırakma Alanı",
               "field": {
-                "label": "Drop Zone",
+                "label": "Bırakma Alanı",
                 "fields": [
                   {
                     "label": "Label"
@@ -90,11 +90,11 @@
                         "label": "İpucu metni"
                       },
                       {
-                        "label": "Message displayed on correct match",
+                        "label": "Doğru cevapta gösterilecek ileti",
                         "description": "Message will appear below the task on \"check\" if correct droppable is matched."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
+                        "label": "Yanlış cevapta gösterilecek ileti",
                         "description": "Message will appear below the task on \"check\" if the match is incorrect."
                       }
                     ]
@@ -178,10 +178,10 @@
               "label": "When dragging"
             },
             {
-              "label": "Always"
+              "label": "Daima"
             },
             {
-              "label": "Never"
+              "label": "Asla"
             }
           ]
         },
@@ -189,16 +189,16 @@
           "label": "Spacing for Auto-Align (in px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Tam ekranı etkinleştir",
+          "description": "Tam ekran düğmesini etkinleştirmek için bu seçeneği işaretleyiniz."
         },
         {
           "label": "Show score points",
           "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Başlığı göster",
+          "description": "Başlığın gösterilmesini istemiyorsanız bu seçenekteki işareti kaldırınız. Başlık sadece özetlerde,istatistiklerde vb. yerlerde gösterilecektir."
         }
       ]
     },
@@ -207,7 +207,7 @@
       "fields": [
         {
           "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "default": "Tam ekran"
         },
         {
           "label": "Exit fullscreen label",
