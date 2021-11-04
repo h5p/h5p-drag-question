@@ -5,6 +5,10 @@
       "default": "Zkontrolovat"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Tlačítko opakovat",
       "default": "Opakovat"
     },

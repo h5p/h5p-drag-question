@@ -5,6 +5,10 @@
       "default": "Toets"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Probeer weer knoppie",
       "default": "Probeer weer"
     },

@@ -5,6 +5,10 @@
       "default": "Überprüfen"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Beschriftung für den \"Wiederholen\"-Button",
       "default": "Wiederholen"
     },

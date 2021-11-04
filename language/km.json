@@ -5,6 +5,10 @@
       "default": "ពិនិត្យចម្លើយ"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Retry button",
       "default": "សាកម្តងទៀត"
     },

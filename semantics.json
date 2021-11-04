@@ -8,6 +8,14 @@
     "common": true
   },
   {
+    "name": "submit",
+    "type": "text",
+    "label": "Submit answer button",
+    "importance": "low",
+    "default": "Submit",
+    "common": true
+  },
+  {
     "name": "tryAgain",
     "type": "text",
     "label": "Retry button",

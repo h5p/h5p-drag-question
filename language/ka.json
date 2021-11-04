@@ -5,6 +5,10 @@
       "default": "შემოწმება"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "გამეორების ღილაკი",
       "default": "გამეორება"
     },
