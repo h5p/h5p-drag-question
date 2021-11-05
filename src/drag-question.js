@@ -61,7 +61,6 @@ function C(options, contentId, contentData) {
       enableCheckButton: true,
       preventResize: false,
       singlePoint: false,
-      showSolutionsRequiresInput: true,
       applyPenalties: true,
       enableScoreExplanation: true,
       dropZoneHighlighting: 'dragging',
@@ -71,6 +70,7 @@ function C(options, contentId, contentData) {
     },
     a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
     a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
+    submit: 'Submit',
   }, options);
 
   // If single point is enabled, it makes no sense displaying
@@ -667,6 +667,9 @@ C.prototype.addSolutionButton = function () {
     $nextFocus.focus();
   }, true, {
     'aria-label': this.options.a11yCheck,
+  }, {
+    contentData: this.contentData,
+    textIfSubmitting: this.options.submit,
   });
 };
 
@@ -1021,7 +1024,7 @@ C.prototype.getScore = function () {
  * @returns {Boolean}
  */
 C.prototype.getAnswerGiven = function () {
-  return !this.options.behaviour.showSolutionsRequiresInput || this.answered || this.blankIsCorrect;
+  return this.answered || this.blankIsCorrect;
 };
 
 /**

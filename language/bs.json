@@ -5,6 +5,10 @@
       "default": "Provjeri"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Dugme ponovnog pokušaja",
       "default": "Ponovi"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Omogući dugme \"Provjeri\""
-        },
-        {
-          "label": "Daje jedan bod za cijeli zadatak"
         },
         {
           "label": "Omogući objašnjenje rezultata",

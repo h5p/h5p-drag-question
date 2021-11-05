@@ -5,6 +5,10 @@
       "default": "Egiaztatu"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Saiatu berriro botoia",
       "default": "Saiatu berriro"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Gaitu \"Egiaztatu\" botoia"
-        },
-        {
-          "label": "Erabiztzaileak erantzun behar du soluzioa ikusi ahal izateko"
         },
         {
           "label": "Eman puntu bat zeregin osoarentzat",

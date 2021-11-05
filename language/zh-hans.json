@@ -5,6 +5,10 @@
       "default": "检查"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "重试功能钮",
       "default": "重试"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "启用 ＂检查＂功能钮"
-        },
-        {
-          "label": "使用者须先作答后才能查看解法"
         },
         {
           "label": "给予整个任务1分",

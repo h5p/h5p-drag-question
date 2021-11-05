@@ -1,58 +1,62 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Проверите дугме за одговор",
+      "default": "Провери"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Submit answer button",
+      "default": "Submit"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Дугме за поновни покушај",
+      "default": "Врати"
+    },
+    {
+      "label": "Текст објашњења резултата",
+      "default": "Тачни одговори дају +1 поен. Нетачни одговори дају -1 поен. Најнижа могућа оцена је 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Подешавања",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Позадинска слика",
+              "description": "Опционо. Изаберите слику коју ћете користити као позадину за задатак превлачења и испуштања."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Величина",
+              "description": "Наведите колико велико (у пикселима) треба да буде подручје за игру."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
+          "label": "Задатак",
+          "description": "Започните постављањем зона испуштања.<br />Затим поставите елементе који се могу испустити и означите одговарајуће зоне испуштања.<br />На крају, поново уредите своју зону испуштања и означите тачне одговоре.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Елементи",
               "entity": "element",
               "field": {
-                "label": "Element",
+                "label": "Елемент",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Изаберите врсту садржаја који желите да додате."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Изаберите зоне испуштања"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Непрозирност позадине"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Бесконачан број инстанци елемената",
+                    "description": "Клонира овај елемент тако да се може повући у више зона испуштања."
                   },
                   {
                     "label": "Audio",
@@ -72,50 +76,50 @@
               }
             },
             {
-              "label": "Drop Zones",
+              "label": "Зоне испуштања",
               "entity": "Drop Zone",
               "field": {
-                "label": "Drop Zone",
+                "label": "Зона испуштања",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Ознака"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Прикажи ознаку"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Изаберите тачне елементе"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Непрозирност позадине"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Савети и повратне информације",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Текст савета"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Порука приказана на тачном подударању",
+                        "description": "Порука ће се појавити испод задатка на \"провери\" ако се подудара тачно испуштање."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Порука приказана на нетачном подударању",
+                        "description": "Порука ће се појавити испод задатка на \"провери\" ако је подударање нетачно."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Ова зона испуштања може садржати само један елементt",
+                    "description": "Уверите се да постоји само један тачан одговор за ову зону испуштања"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Омогући аутоматско поравнање",
+                    "description": "Да ли ће аутоматски поравнати сви елементи испуштене у овој зони."
                   }
                 ]
               }
@@ -125,16 +129,16 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Укупне повратне информације",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Уобичајено"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "Дефинишите прилагођене повратне информације за било који опсег резултата",
+          "description": "Кликните на \"Додај опсег\" дугме за додавање онолико опсега колико вам је потребно. Пример: 0-20% Лош резултат, 21-91% Просечан резултат, 91-100% Одличан резултат!",
           "entity": "range",
           "field": {
             "fields": [
@@ -143,8 +147,8 @@
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Повратне информације за дефинисани опсег резултата",
+                "placeholder": "Попуните повратне информације"
               }
             ]
           }
@@ -174,130 +178,127 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Поставке понашања",
+      "description": "Ове опције ће вам омогућити да контролишете понашање задатка.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Омогући \"Врати\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Омогући \"Провери\" дугме"
         },
         {
-          "label": "Require user input before the solution can be viewed"
+          "label": "Дајте један поен за цео задатак",
+          "description": "Онемогућите да бисте дали један поен за сваки повучени елемент који је правилно постављен."
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Применити казне",
+          "description": "Примените казне за елементе који су пали у погрешним зонама испуштања. Ово мора бити омогућено када исти елементи могу да се испуштају у више зона испуштања или ако постоји само једна зона испуштања. Ако ово није омогућено, ученици могу да подударају све ставке са свим падним зонама и увек добију пуну оцену."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Омогући објашњење резултата",
+          "description": "Прикажите објашњење резултата кориснику приликом провере њихових одговора (ако је изабрана опција „Примени казне“)."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Непрозирност позадине за повлачење",
+          "description": "Ако је ово поље постављено, оно ће заменити непрозирност постављену на свим елементима који се могу повући. Ово би требало да буде број између 0 и 100, где 0 значи потпуну транспарентност, а 100 значи да нема транспарентности"
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
-        },
-        {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Истицање зоне пада",
+          "description": "Изаберите када желите да истакнете зоне испуштања.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "При вучењу"
             },
             {
-              "label": "Always"
+              "label": "Увек"
             },
             {
-              "label": "Never"
+              "label": "Никад"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Размак за аутоматско поравнање (у пикселима)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Омогући цели екран",
+          "description": "Означите ову опцију да бисте омогућили дугме за цели екран."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Покажи бодове",
+          "description": "Покажите бодове за сваки одговор. Није доступно када је омогућена опција Дај један бод за цео задатак"
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Прикажи наслов",
+          "description": "Опозовите избор ове опције ако не желите да се приказује овај наслов. Наслов ће бити приказан само у резимеима, статистикама итд."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Локализовати",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Ознака целог екрана",
+          "default": "Цео екран"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Изађите из Целог екрана",
+          "default": "Изађи из целог екрана"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Префикс за грабирање",
+      "default": "Grabbable {num} од {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Суфикс за грабирање",
+      "default": "Смештено у зони испуштања {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Префикс зоне испуштања",
+      "default": "Зона испуштања {num} од {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Нема ознаке за одабир зоне испуштања",
+      "default": "Нема зоне испуштања."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Ознака за дугме савета",
+      "default": "Прикажи савет."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Ознака за доступност савета",
+      "default": "Савет доступан"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Ознака за тачан одговор",
+      "default": "Тачан одговор"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Ознака за нетачан одговор",
+      "default": "Погрешан одговор"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Заглавље панела који садржи повратне информације за тачне / нетачне одговоре",
+      "default": "Повратна информација"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Текстуални приказ бодовне траке за оне који користе читач звука",
+      "default": "Освојили сте :num од :total поена"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Текстуални приказ дугмета за објашњење резултата",
+      "default": "Прикажи објашњење резултата"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Ознака помоћне технологије за \"Провери\" дугме",
+      "default": "Проверите одговоре. Одговори ће бити означени као тачни, нетачни или без одговора."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Ознака помоћне технологије за \"Врати\" дугме",
+      "default": "Покушајте поново са задатком. Ресетујте све одговоре и покрените задатак поново."
     }
   ]
 }

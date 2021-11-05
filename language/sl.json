@@ -5,6 +5,10 @@
       "default": "Preveri"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Besedilo za gumb \"Poskusi ponovno\"",
       "default": "Poskusi ponovno"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Omogoči gumb \"Preveri\""
-        },
-        {
-          "label": "Pred ogledom rešitve zahtevaj odgovor"
         },
         {
           "label": "Nalogo oceni z 1 točko kot celoto",

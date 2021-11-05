@@ -5,6 +5,10 @@
       "default": "ពិនិត្យចម្លើយ"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Retry button",
       "default": "សាកម្តងទៀត"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Enable \"Check\" button"
-        },
-        {
-          "label": "Require user input before the solution can be viewed"
         },
         {
           "label": "Give one point for the whole task",

@@ -5,6 +5,10 @@
       "default": "Verificar resposta"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Botão Tentar novamente",
       "default": "Tentar novamente"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Habilitar o botão \"Verificar resposta\""
-        },
-        {
-          "label": "Requer resposta antes da visualização da solução"
         },
         {
           "label": "Dar um ponto para toda a tarefa",

@@ -5,6 +5,10 @@
       "default": "Verifica"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Pulsante Riprova",
       "default": "Riprova"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Attiva pulsante \"Verifica\""
-        },
-        {
-          "label": "Richiedere l'immissione dei dati all'utente prima che la soluzione sia visualizzata"
         },
         {
           "label": "Assegna un punto per l'intero compito",

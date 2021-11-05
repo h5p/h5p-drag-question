@@ -5,6 +5,10 @@
       "default": "チェック"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "リトライボタン",
       "default": "リトライ"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Enable \"Check\" button"
-        },
-        {
-          "label": "解を表示する前にユーザーの入力が必要"
         },
         {
           "label": "タスク全体に1点を与える",

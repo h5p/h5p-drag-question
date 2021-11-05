@@ -5,6 +5,10 @@
       "default": "Toets"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Probeer weer knoppie",
       "default": "Probeer weer"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Aktiveer \"Toets\" knoppie"
-        },
-        {
-          "label": "Vereis gebruiker om iets in te sleutel voordat die antwoord gewys word"
         },
         {
           "label": "Gee een punt vir die hele taak",

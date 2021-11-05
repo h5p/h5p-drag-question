@@ -5,6 +5,10 @@
       "default": "檢查"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "重試功能鈕",
       "default": "重試"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "啟用 ＂檢查＂功能鈕"
-        },
-        {
-          "label": "使用者須先作答後才能查看解法"
         },
         {
           "label": "給予整個任務1分",

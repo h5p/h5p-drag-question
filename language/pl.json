@@ -5,6 +5,10 @@
       "default": "Sprawdź"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Przycisk powtórzenia",
       "default": "Powtórz"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Pokazuj przycisk \"Sprawdź\""
-        },
-        {
-          "label": "Wymagaj podania przez użytkownika rozwiązania przed pokazaniem prawidłowego rozwiązania"
         },
         {
           "label": "Przyznaj jeden punkt za całe zadanie",

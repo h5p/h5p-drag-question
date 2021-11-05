@@ -5,6 +5,10 @@
       "default": "Verifica"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Botó \"Torna-ho a provar\"",
       "default": "Torna-ho a provar"
     },
@@ -111,7 +115,7 @@
                   },
                   {
                     "label": "Aquesta zona on deixar anar només pot contenir un element",
-                    "description": "Comproveu que només hi ha una resposta correcta per a aquesta zona on deixar anar."
+                    "description": "Comproveu que només hi ha una resposta correcta per a aquesta zona on deixar anar"
                   },
                   {
                     "label": "Activa l’alineació automàtica",
@@ -134,7 +138,7 @@
             }
           ],
           "label": "Defineix una valoració per cada rang de puntuació",
-          "description": "Feu clic al botó \"Afegeix un rang\" per afegir tants rangs com necessiteu. Exemple: 0-20 % per a puntuació baixa, 21-91 % per a puntuació mitjana, 91-100 % per a puntuació excel·lent.",
+          "description": "Feu clic al botó \"Afegeix un rang\" per afegir tants rangs com necessiteu. Exemple: 0-20 % per a puntuació baixa, 21-91 % per a puntuació mitjana, 91-100 % per a puntuació excel·lent",
           "entity": "rang",
           "field": {
             "fields": [
@@ -184,9 +188,6 @@
           "label": "Activa el botó \"Comprova\""
         },
         {
-          "label": "Requereix l’entrada de dades per part de l’usuari abans que es pugui visualitzar la solució"
-        },
-        {
           "label": "Donar un punt per la tasca sencera",
           "description": "Desactiva per donar un punt per a cada arrossegable que es col·loca correctament."
         },
@@ -200,7 +201,7 @@
         },
         {
           "label": "Opacitat de fons per als elements que es poden arrossegar",
-          "description": "Si s’estableix aquest camp, se substituirà l’opacitat establerta en tots els elements que es poden arrossegar. Ha de ser un número entre 0 i 100, en què 0 significa \"transparència total\" i 100 significa \"sense transparència\"."
+          "description": "Si s’estableix aquest camp, se substituirà l’opacitat establerta en tots els elements que es poden arrossegar. Ha de ser un número entre 0 i 100, en què 0 significa \"transparència total\" i 100 significa \"sense transparència\""
         },
         {
           "label": "Destacat de la zona on deixar anar",

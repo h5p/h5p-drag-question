@@ -5,6 +5,10 @@
       "default": "Überprüfen"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Beschriftung für den \"Wiederholen\"-Button",
       "default": "Wiederholen"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "\"Überprüfen\"-Button anzeigen"
-        },
-        {
-          "label": "Lernende können die Lösung erst einsehen, wenn sie vorher eine Eingabe gemacht haben"
         },
         {
           "label": "Einen Punkt für die ganze Aufgabe vergeben",

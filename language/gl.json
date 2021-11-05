@@ -5,6 +5,10 @@
       "default": "Comprobar"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Botón reintentar",
       "default": "Reintentar"
     },
@@ -146,9 +150,6 @@
         },
         {
           "label": "Activar botón \"Comprobar\""
-        },
-        {
-          "label": "Requirir entrada do usuario antes de poder ver a solución"
         },
         {
           "label": "Dar un punto á tarefa completa",

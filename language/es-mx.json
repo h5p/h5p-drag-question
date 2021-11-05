@@ -1,21 +1,25 @@
 {
   "semantics": [
     {
-      "label": "Botón Revisar respuesta",
-      "default": "Revisar"
+      "label": "Botón Comprobar respuesta",
+      "default": "Comprobar"
+    },
+    {
+      "label": "Submit answer button",
+      "default": "Submit"
     },
     {
       "label": "Botón Reintentar",
       "default": "Reintentar"
     },
     {
-      "label": "Texto explicación puntaje",
+      "label": "Texto explicación del puntaje",
       "default": "Las respuestas correctas dan +1 punto. Respuestas incorrectas dan -1 punto. El puntaje más bajo posible es 0."
     },
     {
       "fields": [
         {
-          "label": "Ajustes",
+          "label": "Configuraciones",
           "fields": [
             {
               "label": "Imagen del fondo",
@@ -48,11 +52,11 @@
                     "label": "Seleccione zonas de caída"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Número infinito de instancias de elementos",
-                    "description": "Clona este elemento para que pueda ser arrastrado a múltiples zonas de caída."
+                    "description": "Clonar este elemento para que pueda ser arrastrado a múltiples zonas de caída."
                   },
                   {
                     "label": "Audio",
@@ -91,7 +95,7 @@
                     "label": "Seleccionar elementos correctos"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Pistas y retroalimentación",
@@ -101,11 +105,11 @@
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia correcta",
-                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si el soltable correcto es coincidencia."
+                        "description": "El mensaje aparecerá debajo del trabajo en \"comprobar\" si el soltable correcto es coincidencia."
                       },
                       {
                         "label": "Mensaje mostrado en coincidencia incorrecta",
-                        "description": "El mensaje aparecerá debajo del trabajo en \"revisar\" si la coincidencia es incorrecta."
+                        "description": "El mensaje aparecerá debajo del trabajo en \"comprobar\" si la coincidencia es incorrecta."
                       }
                     ]
                   },
@@ -125,7 +129,7 @@
       ]
     },
     {
-      "label": "Retroalimentación general",
+      "label": "Retroalimentación Global",
       "fields": [
         {
           "widgets": [
@@ -134,7 +138,7 @@
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntaje",
-          "description": "Haga clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
+          "description": "Hacer clic en el botón \"Añadir rango\" para añadir cuantos rangos necesite. Ejemplo: 0-20% Mal puntaje, 21-91% Puntaje Promedio, 91-100% ¡Magnífico Puntaje!",
           "entity": "rango",
           "field": {
             "fields": [
@@ -144,7 +148,7 @@
               {},
               {
                 "label": "Retroalimentación para rango definido de puntaje",
-                "placeholder": "LLene la retroalimentación"
+                "placeholder": "Complete la retroalimentación"
               }
             ]
           }
@@ -174,24 +178,21 @@
       ]
     },
     {
-      "label": "Ajustes de comportamiento",
+      "label": "Configuraciones del comportamiento",
       "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
       "fields": [
         {
           "label": "Habilitar \"Reintentar\""
         },
         {
-          "label": "Habilitar botón \"Revisar\" "
-        },
-        {
-          "label": "Requerir entrada del usuario antes de que pueda verse la solución"
+          "label": "Habilitar botón \"Comprobar\""
         },
         {
           "label": "Dar un punto por todo el trabajo",
           "description": "Deshabilitar dar un punto por cada arrastrable que es colocado correctamente."
         },
         {
-          "label": "Aplicar penalización",
+          "label": "Aplicar penalizaciones",
           "description": "Aplicar penalizaciones por elementos caídos en las zonas de caída incorrectas. Esto debe ser habilitado cuando los mismos elementos pueden ser soltados en múltiples zonas de caída, o si solamente hay una zona de caída. Si esto no está habilitado, los estudiantes podrían hacer coincidir todos los ítems a todas las zonas de caída y siempre recibirían un puntaje completo."
         },
         {
@@ -230,7 +231,7 @@
         },
         {
           "label": "Mostrar Título",
-          "description": "Desactivar esta opción si no desea mostrar este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
+          "description": "Desactivar esta opción si no desea que se muestre este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
         }
       ]
     },
@@ -238,21 +239,21 @@
       "label": "Localizar",
       "fields": [
         {
-          "label": "Etiqueta para mostrar en pantalla completa",
-          "default": "Pantalla completa"
+          "label": "Etiqueta para pantalla completa",
+          "default": "PantallaCompleta"
         },
         {
           "label": "Etiqueta de salir de pantalla completa",
-          "default": "Salir de Pantalla completa"
+          "default": "Salir de PantallaCompleta"
         }
       ]
     },
     {
-      "label": "Prefijo Arrastrable",
+      "label": "Prefijo arrastrable",
       "default": "Arrastrable {num} de {total}."
     },
     {
-      "label": "Sufijo Arrastrable",
+      "label": "Sufijo arrastrable",
       "default": "Colocado en zona de caída {num}."
     },
     {
@@ -280,24 +281,24 @@
       "default": "Respuesta incorrecta"
     },
     {
-      "label": "Encabezado para panel que contiene retroalimentación para respuestas correctas/incorrectas",
+      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
       "default": "Retroalimentación"
     },
     {
-      "label": "Representación textual de la barra de puntaje para aquellos que usan un Lector de voz",
-      "default": "Usted obtuvo :num de un total de :total puntos"
+      "label": "Representación textual de la barra de puntaje para aquellos que usan un lector de texto en voz alta",
+      "default": "Obtuvo :num de un total de :total puntos"
     },
     {
       "label": "Representación textual del botón para explicación del puntaje",
       "default": "Mostrar explicación del puntaje"
     },
     {
-      "label": "Etiqueta de tecnología asistiva para botón \"Revisar\" ",
-      "default": "Revisar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
+      "label": "Etiqueta de tecnología asistiva para botón \"Comprobar\"",
+      "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
     },
     {
-      "label": "Etiqueta de tecnología asistiva para botón \"Reintentar\" ",
-      "default": "Reintentar el  trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
+      "label": "Etiqueta de tecnología asistiva para botón \"Reintentar\"",
+      "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
     }
   ]
 }

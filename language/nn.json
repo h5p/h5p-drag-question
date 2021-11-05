@@ -5,6 +5,10 @@
       "default": "Sjekk"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "«Prøv igjen»-knapp",
       "default": "Prøv igjen"
     },
@@ -182,9 +186,6 @@
         },
         {
           "label": "Enable \"Check\" button"
-        },
-        {
-          "label": "Krev inndata fra brukeren før fasit gis."
         },
         {
           "label": "Gje eitt poeng for heile oppgåva",

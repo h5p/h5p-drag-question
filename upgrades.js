@@ -133,8 +133,32 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
         extras.metadata = metadata;
 
         finished(null, parameters, extras);
-      }
+      },
+      14: function (parameters, finished, extras) {
+        const taskParams = parameters.question.task;
+        if (taskParams.dropZones && taskParams.elements) {
+          const dropZones = taskParams.dropZones;
+          // Go through and check if there are any draggables that should not be
+          // there.
+          const draggables = taskParams.elements;
+          dropZones.forEach((dropzone, index) => {
+            dropzone.correctElements = dropzone.correctElements.filter((draggableId) => {
+              // Check for existence first
+              const draggableExists = draggables.length > parseInt(draggableId);
+              if (!draggableExists) {
+                return false;
+              }
 
+              // Check if the draggable can be dropped in the dropzone
+              const draggableParams = draggables[parseInt(draggableId)];
+              const canBeDropped = draggableParams.dropZones.includes(index.toString());
+              return canBeDropped;
+            });
+          });
+        }
+
+        finished(null, parameters, extras);
+      }
     }
   };
 })();
