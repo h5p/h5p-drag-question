@@ -5,6 +5,10 @@
       "default": "Egiaztatu"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Saiatu berriro botoia",
       "default": "Saiatu berriro"
     },

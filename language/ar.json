@@ -5,6 +5,10 @@
       "default": "Check"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "زر اعادة المحاولة",
       "default": "Retry"
     },

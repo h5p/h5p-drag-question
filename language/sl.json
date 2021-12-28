@@ -5,6 +5,10 @@
       "default": "Preveri"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Besedilo za gumb \"Poskusi ponovno\"",
       "default": "Poskusi ponovno"
     },

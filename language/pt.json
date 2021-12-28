@@ -5,6 +5,10 @@
       "default": "Verificar"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Botão de tentar de novo",
       "default": "Repetir"
     },

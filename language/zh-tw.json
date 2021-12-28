@@ -5,6 +5,10 @@
       "default": "檢查"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "重試功能鈕",
       "default": "重試"
     },

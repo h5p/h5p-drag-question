@@ -5,6 +5,10 @@
       "default": "Kontrolli"
     },
     {
+      "label": "Submit answer button",
+      "default": "Submit"
+    },
+    {
       "label": "Proovi uuesti nupp",
       "default": "Proovi uuesti"
     },
