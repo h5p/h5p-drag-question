@@ -12,8 +12,9 @@ export default class Draggable extends H5P.EventDispatcher {
    * @param {number} id
    * @param {Array} [answers] from last session
    * @param {Object.<string, string>} l10n
+   * @param {Array} [dropZones] Dropzones for a draggable
    */
-  constructor(element, id, answers, l10n) {
+  constructor(element, id, answers, l10n, dropZones) {
     super();
     var self = this;
 
@@ -30,6 +31,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.multiple = element.multiple;
     self.l10n = l10n;
     self.audios = element.audio;
+    self.allDropzones = dropZones;
 
     if (answers) {
       if (self.multiple) {
@@ -341,7 +343,18 @@ export default class Draggable extends H5P.EventDispatcher {
       DragUtils.setElementOpacity(element.$, self.backgroundOpacity);
 
       // Add suffix for good a11y
-      element.$suffix = $('<span class="h5p-hidden-read">' + (this.l10n.suffix.replace('{num}', element.dropZone + 1)) + '. </span>').appendTo(element.$);
+
+      // Use dropzone label or dropzone number
+      let dropZoneLabel = this.allDropzones[element.dropZone].label;
+      if (dropZoneLabel) {
+        const labelElement = document.createElement('div');
+        labelElement.innerHTML = dropZoneLabel;
+        dropZoneLabel = labelElement.innerText;
+      }
+      else {
+        dropZoneLabel = element.dropZone + 1;
+      }
+      element.$suffix = $('<span class="h5p-hidden-read">' + (this.l10n.suffix.replace('{num}', dropZoneLabel)) + '</span>').appendTo(element.$);
     }
     else {
       element.$
