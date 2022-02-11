@@ -77,7 +77,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   flex-direction: column;
   justify-content: center;
 }
-.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover {
+.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct) {
    border: 0.1em solid rgb(212, 190, 216);
    background: #edd6e9;
  }
