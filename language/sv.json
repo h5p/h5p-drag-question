@@ -1,8 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Svara-knappen",
+      "default": "Svara"
     },
     {
       "label": "Submit answer button",
@@ -13,99 +13,99 @@
       "default": "Försök på nytt"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Poängförklaringstext",
+      "default": "Korrekta svar ger +1 poäng. Felaktiga svar ger -1 poäng. Lägsta möjliga poäng är 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Inställningar",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Bakgrundsbild",
+              "description": "Valfritt. Välj en bild att använda som bakgrund till din drag-och-släpp-uppgift."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Storlek på uppgift",
+              "description": "Ange hur stor (i px) ytan ska vara."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
+          "label": "Uppgift",
+          "description": "Börja med att placera dina målområden.<br />Placera sen dina drag-och-släppbara element, och markera vilka målområden de ska kunna dras till.<br />Till sist, redigera målområdena igen för att ange de korrekta svaren.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Element",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Välj typ av innehåll som du vill lägga till."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Välj målområden"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Bakgrunds-opacitet"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Oändligt antal instanser av elementet",
+                    "description": "Klonar detta element så att det kan dras till flera målområden."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Målområden",
+              "entity": "Målområde",
               "field": {
-                "label": "Drop Zone",
+                "label": "Målområde",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etikett"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Visa etikett"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Välj korrekta element"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Bakgrunds-opacitet"
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Tips och feedback",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Tipstext"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Meddelande som visas vid korrekt matchning",
+                        "description": "Meddelande kommer att visas under uppgiften när knappen \"svara\" klickas, om korrekt matchning är gjord."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Meddelande kommer att visas när matchningen är felaktig",
+                        "description": "Meddelande kommer att visas under uppgiften när knappen \"svara\" klickas, om matchning är felaktig."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Detta målområde kan bara innehålla ett element",
+                    "description": "Säkerställ att det bara finns ett korrekt svar för detta målområde"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Aktivera automatisk linjering",
+                    "description": "Kommer att automatiskt linjera alla drag-och-släppbara element i detta område."
                   }
                 ]
               }
@@ -115,26 +115,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Generell feedback",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Standard"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Ange anpassad feedback för valfritt poängintervall",
+          "description": "Klicka på knappen \"Lägg till intervall\" för att lägga till så många intervall du behöver. Exempel: 0-20% Inte så bra, 21-91% Medel, 91-100% Jättebra!",
+          "entity": "intervall",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Poängintervall"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback för definierad poängintervall",
+                "placeholder": "Fyll i feedback"
               }
             ]
           }
@@ -146,123 +146,123 @@
       "description": "Dessa val låter dig kontrollera hur uppgiften beter sig.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Aktivera \"Försök igen\""
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktivera \"Svara\"-knappen"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Ge ett poäng för hela uppgiften",
+          "description": "Inaktivera för att ge ett poäng för varje dragbart element som är korrekt placerat."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Tillämpa straff",
+          "description": "Tillämpa straff för element som släpps i felaktiga målområden. Detta måste vara aktiverat när samma element kan släppas i flera målområden, eller om det bara finns ett målområde. Om detta inte är aktiverat, så kan deltagare placera ut alla element i alla målområden och därmed alltid få full poäng."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Aktivera poängförklaring",
+          "description": "Visa en poängförklaring för användaren när denne klickar \"svara\" (om inställningen \"Tillämpa straff\" har valts)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Backgrunds-opacitet för drag-och-släppbara element",
+          "description": "Om värde anges här, så kommer det att användas som opacitet på alla dragbara element. Värdet ska vara mellan 0 och 100, där 0 innebär helt genomskinligt och 100 innebär ingen genomskinlighet."
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Framhävning av målområde",
+          "description": "Välj detta för att framhäva målområden.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "När man drar"
             },
             {
-              "label": "Always"
+              "label": "Alltid"
             },
             {
-              "label": "Never"
+              "label": "Aldrig"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Mellanrum för automatisk justering (i pixlar)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Aktivera fullskärm",
+          "description": "Välj denna inställning för att aktivera fullskärmsknappen."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Visa poäng",
+          "description": "Visa poäng utifrån varje svar. Inte tillgängligt när inställningen \"Ge ett poäng för hela uppgiften\" är vald."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Visa titel",
+          "description": "Bocka ur detta om du vill att din titel inte ska visas. Titeln kommer bara visas i sammanfattningar, statistik, etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalisera",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etikett för knappen \"fullskärm\"",
+          "default": "Fullskärm"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etikett för knappen \"Avsluta fullskärm\"",
+          "default": "Avsluta fullskärm"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefix för dragbar",
+      "default": "Dragbar {num} av {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Suffix för dragbar",
+      "default": "Placerad i målområde {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefix för målområde",
+      "default": "Målområde {num} av {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etikett för inget målområde valt",
+      "default": "Inget målområde."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etikett för knappen \"Visa tips\"",
+      "default": "Visa tips."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etikett för tillgängligt tips",
+      "default": "Tips tillgängligt"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etikett för korrekt svar",
+      "default": "Korrekt svar"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etikett för felaktigt svar",
+      "default": "Felaktigt svar"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Rubrik för panel som visar feedback avseende korrekta/felaktiga svar",
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Textuell visning av poängindikator för de som använder skärmläsare",
+      "default": "Du fick :num av :total poäng"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Textuell visning av knappen som förklarar poäng",
+      "default": "Visa förklaring till poäng"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Etikett för knappen \"Svara\" som används av tillgänglighetshjälpmedel",
+      "default": "Rätta mina svar. Svaren kommer att markeras som korrekta, felaktiga eller ej besvarade."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Etikett för knappen \"Försök igen\" som används av tillgänglighetshjälpmedel",
+      "default": "Starta ett nytt försök. Nollställer alla svar och startar om uppgiften."
     }
   ]
 }
