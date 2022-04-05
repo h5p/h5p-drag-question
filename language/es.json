@@ -5,7 +5,7 @@
       "default": "Comprobar"
     },
     {
-      "label": "Submit answer button",
+      "label": "Botón para enviar respuesta",
       "default": "Submit"
     },
     {
@@ -22,7 +22,7 @@
           "label": "Configuraciones",
           "fields": [
             {
-              "label": "Imagen del fondo",
+              "label": "Imagen de fondo",
               "description": "Opcional. Seleccione una imagen para usar como fondo para su trabajo de arrastrar y soltar."
             },
             {
@@ -81,7 +81,7 @@
                     "label": "Seleccionar elementos correctos"
                   },
                   {
-                    "label": "Opacidad del fondo"
+                    "label": "Opacidad del Fondo"
                   },
                   {
                     "label": "Pistas y retroalimentación",
@@ -245,7 +245,7 @@
       "default": "Respuesta incorrecta"
     },
     {
-      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
+      "label": "Encabezado para panel que contiene retroalimentación para respuestas correctas/incorrectas",
       "default": "Retroalimentación"
     },
     {
