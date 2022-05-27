@@ -262,7 +262,7 @@
     },
     {
       "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "default": "Повторіть завдання. Скиньте всі відповіді та почніть завдання знову."
     }
   ]
 }
