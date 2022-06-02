@@ -142,7 +142,7 @@
       ]
     },
     {
-      "label": "Options générales.",
+      "label": "Behavioural settings",
       "description": "Ces options vous permettent de contrôler le déroulement de vos activités.",
       "fields": [
         {
@@ -200,7 +200,7 @@
       ]
     },
     {
-      "label": "Traduction de l'interface",
+      "label": "Localize",
       "fields": [
         {
           "label": "Texte pour ouvrir en plein écran",
