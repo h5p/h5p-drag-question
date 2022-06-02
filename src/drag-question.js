@@ -2,6 +2,7 @@ import Controls from 'h5p-lib-controls/src/scripts/controls';
 import AriaDrag from 'h5p-lib-controls/src/scripts/aria/drag';
 import AriaDrop from 'h5p-lib-controls/src/scripts/aria/drop';
 import UIKeyboard from 'h5p-lib-controls/src/scripts/ui/keyboard';
+import Mouse from 'h5p-lib-controls/src/scripts/ui/mouse';
 
 import DragUtils from './drag-utils';
 import DropZone from './dropzone';
@@ -1164,8 +1165,8 @@ C.prototype.isAudioPlaying = function(checkAudios) {
 var getControls = function (draggables, dropZones, noDropzone) {
   // Initialize controls components
   var controls = {
-    drag: new Controls([new UIKeyboard(), new AriaDrag()]),
-    drop: new Controls([new UIKeyboard(), new AriaDrop()])
+    drag: new Controls([new UIKeyboard(), new Mouse(), new AriaDrag()]),
+    drop: new Controls([new UIKeyboard(), new Mouse(), new AriaDrop()])
   };
   controls.drag.useNegativeTabIndex();
   controls.drop.useNegativeTabIndex();

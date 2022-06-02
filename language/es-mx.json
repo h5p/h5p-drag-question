@@ -5,7 +5,7 @@
       "default": "Comprobar"
     },
     {
-      "label": "Submit answer button",
+      "label": "Botón para enviar respuesta",
       "default": "Submit"
     },
     {
@@ -265,7 +265,7 @@
       "default": "No es zona de caída."
     },
     {
-      "label": "Etiqueta para botón para mostrar pista",
+      "label": "Etiqueta para mostrar el botón de pista",
       "default": "Mostrar pista."
     },
     {
@@ -281,7 +281,7 @@
       "default": "Respuesta incorrecta"
     },
     {
-      "label": "Encabezado para panel que contiene realimentación para respuestas correctas/incorrectas",
+      "label": "Encabezado para panel que contiene retroalimentación para respuestas correctas/incorrectas",
       "default": "Retroalimentación"
     },
     {

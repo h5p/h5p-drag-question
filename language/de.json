@@ -5,8 +5,8 @@
       "default": "Überprüfen"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Beschriftung des \"Antwort übermitteln\"-Buttons",
+      "default": "Übermitteln"
     },
     {
       "label": "Beschriftung für den \"Wiederholen\"-Button",
@@ -201,7 +201,7 @@
         },
         {
           "label": "Hintergrunddeckkraft für bewegliche Elemente",
-          "description": "Wenn dieses Feld gesetzt ist, wird dadurch die Hintergrunddeckkraft für alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
+          "description": "Wenn dieser Wert gesetzt ist, wird dadurch die Hintergrunddeckkraft für alle beweglichen Elemente überschrieben. Es sollte eine Zahl zwischen 0 und 100 sein, wobei 0 für vollständige Transparenz steht und 100 für keine Transparenz."
         },
         {
           "label": "Ablagezonen aufleuchten lassen",

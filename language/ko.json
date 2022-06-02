@@ -5,8 +5,8 @@
       "default": "정답 확인"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "답 제출 버튼",
+      "default": "제출하기"
     },
     {
       "label": "재시도 버튼",
@@ -26,7 +26,7 @@
               "description": "(선택사항) 끌어서 놓기 작업의 배경으로 사용할 이미지를 선택하십시오."
             },
             {
-              "label": "태스트 영역 크기",
+              "label": "태스크(과제) 영역 크기",
               "description": "과제 영역의 크기(픽셀)를 지정하십시오."
             }
           ]
@@ -178,7 +178,7 @@
       ]
     },
     {
-      "label": "행동 설정",
+      "label": "동작 설정",
       "description": "이 설정은 과제를 해결하는 과정을 통제.",
       "fields": [
         {

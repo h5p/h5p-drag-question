@@ -5,7 +5,7 @@
       "default": "Egiaztatu"
     },
     {
-      "label": "Submit answer button",
+      "label": "Bidali erantzuna botoia",
       "default": "Submit"
     },
     {
@@ -42,7 +42,7 @@
                 "label": "Elementua",
                 "fields": [
                   {
-                    "description": "Hautatu gehitu nahi duzun eduki mota"
+                    "description": "Hautatu gehitu nahi duzun eduki mota."
                   },
                   {},
                   {},
@@ -137,7 +137,7 @@
               "label": "Lehenetsia"
             }
           ],
-          "label": "Definitu feedback pertsonalizatua edozein puntuazio tarterako",
+          "label": "Zehaztu ezazu edozein puntuazio-tarterako feedback pertsonalizatua",
           "description": "Egin klik \"Gehitu tartea\" botoian behar duzun tarte guztiak gehitzeko. Adibidez: 0-%20 Puntuazio txarra, %21-%91 Tarteko puntuazioa, %91-%100 Puntuazio bikaina!",
           "entity": "tartea",
           "field": {
@@ -147,8 +147,8 @@
               },
               {},
               {
-                "label": "Definitutako puntuazio tartearen feedbacka",
-                "placeholder": "Bete feedbackean"
+                "label": "Zehaztutako tartearentzako feedbacka",
+                "placeholder": "Idatzi ezazu feedbacka"
               }
             ]
           }
@@ -178,11 +178,11 @@
       ]
     },
     {
-      "label": "Jokabideko ezarpenak",
-      "description": "Aukera hauen bidez kontrolatu dezakezu zereginaren jokabidea.",
+      "label": "Portaeraren ezarpenak",
+      "description": "Aukera hauek lanaren portaera kontrolatzea ahalbidetzen dizute.",
       "fields": [
         {
-          "label": "Gaitu \"Saiatu berriro\" "
+          "label": "Gaitu \"Saiatu berriro\""
         },
         {
           "label": "Gaitu \"Egiaztatu\" botoia"
@@ -192,7 +192,7 @@
           "description": "Desgaitu emateko puntu bana zuzen kokatzen den arrastagarri bakoitzeko."
         },
         {
-          "label": "Aplikatu zigorrak",
+          "label": "Aplikatu penalizazioak",
           "description": "Aplikatu zigorrak jaregiteko zona okerretan jaregindako elementuengatik. Hau gaitu behar da elementu berdina(k) hainbat jaregiteko zonatan jaregin daitezkeenean, edo jaregiteko zona bakarra dagoenean. Aktibo ez badago, ikasleek parekatu ditzakete elementu guztiak jaregiteko zona guztietan eta jaso puntuazio osoa."
         },
         {
@@ -201,7 +201,7 @@
         },
         {
           "label": "Atzeko planoaren opakutasuna arrastagarrietarako",
-          "description": "Eremu hau ezarrita badago, elementu arrastagarri guztien opakotasuna gainidatziko du. 0 eta 100 bitarteko zenbaki bat izan behar luke, non 0 erabat gardena da eta 100 erabat opakua."
+          "description": "Eremu hau ezarrita badago, elementu arrastagarri guztien opakotasuna gainidatziko du. 0 eta 100 bitarteko zenbaki bat izan behar luke, non 0 erabat gardena da eta 100 erabat opakua"
         },
         {
           "label": "Jaregiteko zona nabarmentzen",
@@ -223,7 +223,7 @@
         },
         {
           "label": "Gaitu Pantaila osoa",
-          "description": "Markatu opzio hau  pantaila osoaren botoia gaitzeko"
+          "description": "Markatu aukera hau pantaila osoaren botoia gaitzeko."
         },
         {
           "label": "Erakutsi puntuazioa",
@@ -236,7 +236,7 @@
       ]
     },
     {
-      "label": "Lokalizatu",
+      "label": "Kokatu",
       "fields": [
         {
           "label": "Pantaila osoa etiketa",
@@ -250,27 +250,27 @@
     },
     {
       "label": "Aurrizki eutsigarria",
-      "default": "{total}  -etik {num} eutsigarri"
+      "default": "{total}-etik {num} eutsigarri."
     },
     {
       "label": "Atzizki eutsigarria",
-      "default": "Jaregiteko zonan jarrita  {num}."
+      "default": "Jaregiteko zonan jarrita {num}."
     },
     {
       "label": "Jaregiteko zonaren aurrizkia",
-      "default": "{total} -etik  {num} . jaregiteko zona ."
+      "default": "{total} -etik {num}. jaregiteko zona."
     },
     {
       "label": "Jaregiteko zona hautatu gabe etiketa",
-      "default": "Jaregiteko zonarik ez dago"
+      "default": "Jaregiteko zonarik ez dago."
     },
     {
       "label": "Argibidea erakutsi botoiaren etiketa",
-      "default": "Erakutsi argibidea"
+      "default": "Erakutsi argibidea."
     },
     {
       "label": "Argibide eskuragarria etiketa",
-      "default": "Argibidea   eskuragarri"
+      "default": "Argibidea eskuragarri"
     },
     {
       "label": "Erantzu zuzenaren etiketa",
@@ -278,7 +278,7 @@
     },
     {
       "label": "Erantzun okerraren etiketa",
-      "default": "Erantzun  okerra"
+      "default": "Erantzun okerra"
     },
     {
       "label": "Erantzun zuzen eta okerren feedback duen panelaren goiburua",
@@ -286,7 +286,7 @@
     },
     {
       "label": "Puntuazio barraren testu bidezko adierazpena irakurgailuarentzat",
-      "default": ":total puntutik lortu duzu  :num "
+      "default": ":total puntutik :num puntu lortu duzu"
     },
     {
       "label": "Puntuazioaren azalpenaren botoiaren testu bidezko azalpena",

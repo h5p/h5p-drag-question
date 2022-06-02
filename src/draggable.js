@@ -142,6 +142,9 @@ export default class Draggable extends H5P.EventDispatcher {
       .on('click', function () {
         self.trigger('focus', this);
       })
+      .on('touchstart', function (e) {
+        e.stopPropagation();
+      })
       .draggable({
         revert: function (dropZone) {
           $container.removeClass('h5p-dragging');
