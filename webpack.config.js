@@ -1,21 +1,26 @@
 var path = require('path');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const libraryName = process.env.npm_package_name;
 
 module.exports = {
-  entry: './src/drag-question.js',
+  mode: nodeEnv,
+  context: path.resolve(__dirname, 'src'),
+  entry: './drag-question.js',
+  devtool: (nodeEnv === 'production') ? undefined : 'inline-source-map',
   output: {
-    filename: 'h5p-drag-question.js',
+    filename: `${libraryName}.js`,
     path: path.resolve(__dirname, '.')
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        }
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       }
-    }]
+    ]
+  },
+  stats: {
+    colors: true
   }
 };
