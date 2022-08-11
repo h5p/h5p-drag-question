@@ -157,112 +157,112 @@
         },
         {
           "label": "Хасах оноо өгөх",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "description": "Буруу уналтын бүсэд унасан элементүүдэд торгууль хэрэглэнэ. Ижил элемент(үүд)-ийг олон уналтын бүсэд буулгах боломжтой эсвэл зөвхөн нэг уналтын бүс байгаа тохиолдолд үүнийг идэвхжүүлэх ёстой. Хэрэв үүнийг идэвхжүүлээгүй бол суралцагчид бүх зүйлийг бүх уналтын бүсэд тааруулж, үргэлж бүтэн оноо авах боломжтой."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Онооны тайлбарыг идэвхжүүлнэ үү",
+          "description": "Хэрэглэгчийн хариултыг шалгахдаа онооны тайлбарыг харуулах (хэрэв \"Торгууль хэрэглэх\" сонголтыг сонгосон бол)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Чирэх боломжтой арын дэвсгэрийн тунгалаг байдал",
+          "description": "Хэрэв энэ талбарыг тохируулсан бол, чирж болох бүх элементүүдийн тунгалаг байдлын тохиргоог хүчингүй болгоно. Энэ нь 0-ээс 100 хүртэлх тоо байх ёстой бөгөөд 0 нь бүрэн ил тод, 100 нь ил тод биш гэсэн үг юм"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Бүсийг тодруулах",
+          "description": "Унах бүсийг хэзээ тодруулахаа сонгоно уу.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Чирэх үед"
             },
             {
-              "label": "Always"
+              "label": "Үргэлж"
             },
             {
-              "label": "Never"
+              "label": "Хэзээ ч үгүй"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Автоматаар зэрэгцүүлэх зай (px-ээр)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Бүтэн дэлгэцийг идэвхжүүлнэ үү",
+          "description": "Бүтэн дэлгэцийн товчлуурыг идэвхжүүлэхийн тулд энэ сонголтыг шалгана уу."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Оноо харуулах",
+          "description": "Хариулт бүрт цуглуулсан оноогоо харуул. \"Бүх даалгаварт нэг оноо өгөх\" сонголтыг идэвхжүүлсэн үед боломжгүй."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Гарчиг харуулах",
+          "description": "Хэрэв та энэ гарчгийг харуулахыг хүсэхгүй байгаа бол энэ сонголтыг арилгана уу. Гарчиг нь зөвхөн хураангуй, статистик гэх мэтээр харагдах болно."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Нутагшуулах",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Бүтэн дэлгэцийн шошго",
+          "default": "Дэлгэц дүүрэн"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Бүтэн дэлгэцээс гарах шошго",
+          "default": "Бүтэн дэлгэцээс гарах"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Авах боломжтой угтвар",
+      "default": "{total}-аас {num} авах боломжтой."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Авах боломжтой дагавар",
+      "default": "{num} унах бүсэд байрлуулсан."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Dropzone угтвар",
+      "default": "{total}-н {num}-г буулгах бүс."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Бүс сонгох шошго байхгүй",
+      "default": "dropzone байхгүй."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Зөвлөгөө харуулах товчлуурын шошго",
+      "default": "Зөвлөгөө харуулах."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Зөвлөмж авах боломжтой",
+      "default": "Зөвлөмж авах боломжтой"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Зөв хариултыг шошго",
+      "default": "Зөв хариулт"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Буруу хариултыг шошго",
+      "default": "Буруу хариулт"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "Зөв/буруу хариултын санал хүсэлтийг агуулсан самбарын толгой хэсэг",
+      "default": "Санал хүсэлт"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Унших чанга яригч ашигладаг хүмүүст зориулсан онооны самбарын текстэн дүрслэл",
+      "default": "Та нийт :total онооноос :num авсан"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Онооны тайлбар товчлуурын текст дүрслэл",
+      "default": "Онооны тайлбарыг харуулах"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "\"Шалгах\" товчлуурын туслах технологийн шошго",
+      "default": "Хариултуудыг шалгана уу. Хариултуудыг зөв, буруу, хариултгүй гэж тэмдэглэнэ."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "\"Дахин оролдох\" товчлуурын туслах технологийн шошго",
+      "default": "Даалгаврыг дахин оролдоно уу. Бүх хариултыг дахин тохируулаад даалгаврыг дахин эхлүүлнэ үү."
     }
   ]
 }
