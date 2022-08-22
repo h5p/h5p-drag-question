@@ -5,7 +5,7 @@
       "default": "Zkontrolovat"
     },
     {
-      "label": "Submit answer button",
+      "label": "Tlačítko odeslání odpovědi",
       "default": "Submit"
     },
     {
@@ -239,7 +239,7 @@
       "label": "Localizace",
       "fields": [
         {
-          "label": "Pipisek celá obrazovka",
+          "label": "Popisek celá obrazovka",
           "default": "Celá obrazovka"
         },
         {

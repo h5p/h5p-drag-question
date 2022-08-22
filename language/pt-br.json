@@ -1,16 +1,16 @@
 {
   "semantics": [
     {
-      "label": "Botão Verificar resposta",
-      "default": "Verificar resposta"
+      "label": "Botão Verificar Resposta",
+      "default": "Verificar"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Botão Enviar resposta",
+      "default": "Enviar"
     },
     {
-      "label": "Botão Tentar novamente",
-      "default": "Tentar novamente"
+      "label": "Botão Tentar Novamente",
+      "default": "Tentar Novamente"
     },
     {
       "label": "Texto de explicação da pontuação",
@@ -33,11 +33,11 @@
         },
         {
           "label": "Tarefa",
-          "description": "Comece posicionando suas zonas de largada.<br />Em seguida, posicione os elementos arrastáveis e marque-os nas zonas de largada apropriadas.<br />Por último, edite suas zonas de largada novamente e marque as respostas corretas.",
+          "description": "Comece posicionando suas zonas de soltura.<br />Em seguida, posicione os elementos arrastáveis e marque-os nas zonas de soltura apropriadas.<br />Por último, edite suas zonas de soltura novamente e marque as respostas corretas.",
           "fields": [
             {
               "label": "Elementos",
-              "entity": "element",
+              "entity": "elemento",
               "field": {
                 "label": "Elemento",
                 "fields": [
@@ -49,14 +49,14 @@
                   {},
                   {},
                   {
-                    "label": "Selecione as zonas de largada"
+                    "label": "Selecione as zonas de soltura"
                   },
                   {
-                    "label": "Opacidade do plano de fundo"
+                    "label": "Opacidade do Plano de Fundo"
                   },
                   {
                     "label": "Número infinito de instâncias do elemento",
-                    "description": "Clona este elemento para que ele possa ser arrastado para múltiplas zonas de largada."
+                    "description": "Clona este elemento para que ele possa ser arrastado para múltiplas zonas de soltura."
                   },
                   {
                     "label": "Audio",
@@ -76,10 +76,10 @@
               }
             },
             {
-              "label": "Zonas de largada",
-              "entity": "Drop Zone",
+              "label": "Zonas de soltura",
+              "entity": "Zona de Soltura",
               "field": {
-                "label": "Zona de largada",
+                "label": "Zona de Soltura",
                 "fields": [
                   {
                     "label": "Rótulo"
@@ -92,10 +92,10 @@
                   {},
                   {},
                   {
-                    "label": "Selecione o(s) elemento(s) correto(s)."
+                    "label": "Selecione o(s) elemento(s) correto(s)"
                   },
                   {
-                    "label": "Opacidade do plano de fundo"
+                    "label": "Opacidade do Plano de Fundo"
                   },
                   {
                     "label": "Dicas e feedback",
@@ -104,22 +104,22 @@
                         "label": "Texto da dica"
                       },
                       {
-                        "label": "Mensagem exibida quando a resposta estiver correta",
-                        "description": "Mensagem aparecerá embaixo da tarefa quando \"Verificar resposta\" for pressionado se a resposta estiver correta."
+                        "label": "Mensagem exibida quando a combinação estiver correta",
+                        "description": "A mensagem aparecerá abaixo da tarefa em \"verificar\" se a zona de soltura combinar."
                       },
                       {
-                        "label": "Mensagem exibida quando a resposta estiver incorreta",
-                        "description": "Mensagem aparecerá embaixo da tarefa quando \"Verificar resposta\" for pressionado se a resposta estiver incorreta."
+                        "label": "Mensagem exibida quando a combinação estiver incorreta",
+                        "description": "A mensagem aparecerá abaixo da tarefa em \"verificar\" se a combinação estiver incorreta."
                       }
                     ]
                   },
                   {
-                    "label": "Esta zona de largada pode possuir apenas um elemento",
-                    "description": "Tenha certeza de que há apenas umas resposta correta para esta zona"
+                    "label": "Esta zona de soltura pode possuir apenas um elemento",
+                    "description": "Certifique-se de que haja apenas uma resposta correta para esta zona de soltura"
                   },
                   {
-                    "label": "Habilitar auto-alinhamento",
-                    "description": "Alinhará automaticamento todos os elementos largados nesta zona."
+                    "label": "Ativar o auto alinhamento",
+                    "description": "Alinhará automaticamente todos os objetos de arrasto deixados nesta zona."
                   }
                 ]
               }
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "label": "Feedback geral",
+      "label": "Feedback Geral",
       "fields": [
         {
           "widgets": [
@@ -137,13 +137,13 @@
               "label": "Padrão"
             }
           ],
-          "label": "Defina feedback customizado para qualquer faixa de pontuação",
-          "description": "Clique no botão \"Adicionar faixa\" para adicionar quantas faixas de pontuação forem necessárias. Exemplo: 0-20% Pontuação ruim, 21-91% Pontuação média, 91-100% Ótima pontuação!",
-          "entity": "range",
+          "label": "Definir feedback personalizado para qualquer faixa de pontuação",
+          "description": "Clique no botão \"Adicionar faixa\" para adicionar tantos intervalos quantos forem necessários. Exemplo: 0-20% Pontuação ruim, 21-91% Pontuação média, 91-100% Pontuação ótima!",
+          "entity": "faixa",
           "field": {
             "fields": [
               {
-                "label": "Faixa de pontuação"
+                "label": "Faixa de Pontuação"
               },
               {},
               {
@@ -182,33 +182,33 @@
       "description": "Estas opções permitirão que você controle como a tarefa se comporta.",
       "fields": [
         {
-          "label": "Habilitar o botão \"Tentar novamente\""
+          "label": "Ativar o botão \"Tentar Novamente\""
         },
         {
-          "label": "Habilitar o botão \"Verificar resposta\""
+          "label": "Ativar o botão \"Verificar\""
         },
         {
           "label": "Dar um ponto para toda a tarefa",
-          "description": "Desabilite para dar um ponto para cada arrastável posicionado corretamente."
+          "description": "Desative para dar um ponto para cada elemento arrastável que for colocado corretamente."
         },
         {
           "label": "Aplicar penalidades",
-          "description": "Aplique penalidades para elementos posicionados em zonas de largada incorretas. Isto deve ser habilitado quando o(s) mesmo(s) elemento(s) pode(m) ser largado(s) em múltiplas zonas, ou se existe apenas uma zona de largada. Se não estiver habilitade, alunos podem arrastar todos os itens para todas as zonas e sempre receber a pontuação total."
+          "description": "Aplicar penalidades para elementos deixados cair nas zonas de soltura erradas. Isto deve ser ativado quando o(s) mesmo(s) elemento(s) puder(em) ser lançado(s) em múltiplas zonas de soltura, ou se houver apenas uma zona de soltura. Se isso não for ativado, os alunos podem combinar todos os itens com todas as zonas de soltura e receber sempre uma pontuação completa."
         },
         {
-          "label": "Habilitar explicação da pontuação",
-          "description": "Exibe uma explicação da pontuação para o usuário quando ele marca suas respostas (se a opção 'Aplicar penalidades' tiver sido selecionada)."
+          "label": "Ativar a explicação da pontuação",
+          "description": "Exibir uma explicação de pontuação para o usuário ao verificar suas respostas (se a opção \"Aplicar penalidades\" tiver sido selecionada)."
         },
         {
-          "label": "Opacidade do plano de fundo para arrastáveis",
-          "description": "Se este campo estiver marcado irá sobrepor as configurações de opacidade para todos os elementos arrastáveis. Deve ser um número entre 0 e 100, onde 0 significa transparência total e 100 significa nenhuma transparência."
+          "label": "Opacidade do plano de fundo para os elementos arrastáveis",
+          "description": "Se este campo estiver marcado irá sobrepor as configurações de opacidade para todos os elementos arrastáveis. Deve ser um número entre 0 e 100, onde 0 significa transparência total e 100 significa nenhuma transparência"
         },
         {
-          "label": "Destacar zonas de largada",
-          "description": "Escolha quando destacar as zonas de largada.",
+          "label": "Destacar as Zonas de Soltura",
+          "description": "Escolha quando destacar as zonas de soltura.",
           "options": [
             {
-              "label": "Quando estiver arrastando"
+              "label": "Ao arrastar"
             },
             {
               "label": "Sempre"
@@ -219,19 +219,19 @@
           ]
         },
         {
-          "label": "Espaçamento para auto-alinhamento (em pixels)"
+          "label": "Espaçamento para auto alinhamento (em pixels)"
         },
         {
-          "label": "Habilitar tela cheia",
-          "description": "Marque esta opção se deseja habilitar o botão de tela cheia."
+          "label": "Ativar Tela Cheia",
+          "description": "Marque esta opção para ativar o botão de Tela Cheia."
         },
         {
-          "label": "Mostrar pontuação",
-          "description": "Mostra pontos ganhos para cada questão. Não disponível quando a opção 'Dar um ponto para toda a tarefa' estiver habilitada."
+          "label": "Mostrar o placar de pontuação",
+          "description": "Mostrar os pontos ganhos para cada resposta. Não disponível quando a opção \"Dar um ponto para toda a tarefa\" estiver ativada."
         },
         {
-          "label": "Exibir título",
-          "description": "Desmarque esta opção se você não deseja que o título seja exibido. O título será exibido apenas em resumos, estatísticas, etc."
+          "label": "Mostrar Título",
+          "description": "Desmarque esta opção se você não quiser que este título seja exibido. O título só será exibido em resumos, estatísticas, etc."
         }
       ]
     },
@@ -239,38 +239,38 @@
       "label": "Localizar",
       "fields": [
         {
-          "label": "Rótulo de tela cheia",
-          "default": "Tela cheia"
+          "label": "Rótulo de Tela Cheia",
+          "default": "Tela Cheia"
         },
         {
-          "label": "Rótulo de sair de tela cheia",
-          "default": "Sair da tela cheia"
+          "label": "Rótulo de Sair da Tela Cheia",
+          "default": "Sair da Tela Cheia"
         }
       ]
     },
     {
-      "label": "Prefixo de arrastável",
-      "default": "Arrastável {num} de {total}."
+      "label": "Prefixo de elemento arrastável",
+      "default": "Elemento Arrastável {num} de {total}."
     },
     {
-      "label": "Sufixo de arrastável",
-      "default": "Posicionado na zona de largada {num}."
+      "label": "Sufixo do elemento arrastável",
+      "default": "Colocado na zona de soltura {num}."
     },
     {
-      "label": "Prefixo de zona de largada",
-      "default": "Zona de largada {num} de {total}."
+      "label": "Prefixo de Zona de Soltura",
+      "default": "Zona de soltura {num} de {total}."
     },
     {
-      "label": "Rótulo de zona de largada não selecionada",
-      "default": "Nenhuma zona de largada selecionada."
+      "label": "Rótulo de zona de soltura não selecionada",
+      "default": "Nenhuma zona de soltura."
     },
     {
-      "label": "Rótulo para botão de mostrar dica",
+      "label": "Rótulo para o botão de Mostrar Dica",
       "default": "Mostrar dica."
     },
     {
-      "label": "Rótulo para dica disponível",
-      "default": "Dica disponível"
+      "label": "Rótulo para Dica Disponível",
+      "default": "Dica Disponível"
     },
     {
       "label": "Rótulo para resposta correta",
@@ -286,19 +286,19 @@
     },
     {
       "label": "Representação textual da barra de pontuação para aqueles que usam leitores de telas",
-      "default": "Você marcou :num de :total pontos"
+      "default": "Você conseguiu :num de :total pontos possíveis"
     },
     {
-      "label": "Representação textual do botão de explicação de pontuação",
+      "label": "Representação textual do botão de explicação da pontuação",
       "default": "Mostrar explicação da pontuação"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Rótulo da tecnologia de assistência para botão \"Verificar\"",
+      "default": "Verifique as respostas. As respostas serão marcadas como corretas, incorretas, ou sem resposta."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Rótulo da tecnologia de assistência para o botão \"Tentar Novamente\"",
+      "default": "Tente realizar a tarefa novamente. Reinicialize todas as respostas e recomece."
     }
   ]
 }

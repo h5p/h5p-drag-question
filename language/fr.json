@@ -27,7 +27,7 @@
             },
             {
               "label": "Taille de la zone de l'activité",
-              "description": "Spécifiez la hauteur et la largeur (en pixels) de la zone de l'activité."
+              "description": "Spécifiez la largeur et la hauteur (en pixels) de la zone de l'activité."
             }
           ]
         },
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "label": "Opacité des étiquettes",
+      "label": "Feedback général",
       "fields": [
         {
           "widgets": [
@@ -236,7 +236,7 @@
       ]
     },
     {
-      "label": "Traduction de l'interface",
+      "label": "Localize",
       "fields": [
         {
           "label": "Texte pour ouvrir en plein écran",

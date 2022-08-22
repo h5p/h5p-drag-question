@@ -262,7 +262,7 @@
     },
     {
       "label": "Pogas \"Mēģināt vēlreiz\" etiķete asistīvajām tehnoloģijām",
-      "default": "Mēģiniet uzdevumu vēlreiz. Dzēst visas iesniegtās atbildes un sākt uzdevumu no sākuma."
+      "default": "Mēģināt uzdevumu vēlreiz. Dzēst visas sniegtās atbildes un sākt uzdevumu vēlreiz."
     }
   ]
 }

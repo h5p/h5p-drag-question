@@ -5,12 +5,12 @@
       "default": "Comprobar"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Botón para enviar resposta",
+      "default": "Enviar"
     },
     {
-      "label": "Botón reintentar",
-      "default": "Reintentar"
+      "label": "Botón tentar de novo",
+      "default": "Tentar de novo"
     },
     {
       "label": "Texto de explicación da puntuación",
@@ -143,10 +143,10 @@
     },
     {
       "label": "Configuración do comportamento",
-      "description": "Estas opcións premitiranche controlar o comportamento da tarefa.",
+      "description": "Estas opcións permitiranche controlar o comportamento da tarefa.",
       "fields": [
         {
-          "label": "Activar \"Reintentar\""
+          "label": "Activar \"Tentar de novo\""
         },
         {
           "label": "Activar botón \"Comprobar\""
@@ -183,7 +183,7 @@
           ]
         },
         {
-          "label": "Espaciado para aliñamento automático (en px)"
+          "label": "Espazado para aliñamento automático (en px)"
         },
         {
           "label": "Permitir Pantalla Completa",
@@ -200,7 +200,7 @@
       ]
     },
     {
-      "label": "Adaptación local",
+      "label": "Localizar",
       "fields": [
         {
           "label": "Etiqueta para pantalla completa",
@@ -254,15 +254,15 @@
     },
     {
       "label": "Representación textual do botón de explicación da puntuación",
-      "default": "Amosar explicación da puntuaciónn"
+      "default": "Amosar explicación da puntuación"
     },
     {
       "label": "Etiqueta do o botón \"Comprobar\" para as tecnoloxías de asistencia",
       "default": "Comproba as respostas. As respostas marcaranse como correctas, incorrectas ou non contestadas."
     },
     {
-      "label": "Etiqueta do o botón \"Reintentar\" para as tecnoloxías de asistencia",
-      "default": "Reintentar a tarefa. Borra todas as respostas e empeza a tarefa de novo."
+      "label": "Etiqueta do o botón \"Tentar de novo\" para as tecnoloxías de asistencia",
+      "default": "Tentar de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
     }
   ]
 }
