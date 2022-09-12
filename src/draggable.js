@@ -2,6 +2,9 @@ import DragUtils from './drag-utils';
 
 const $ = H5P.jQuery;
 
+// Helper to stop propagating events
+const stopPropagation = event => event.stopPropagation();
+
 export default class Draggable extends H5P.EventDispatcher {
   /**
    * Creates a new draggable instance.
@@ -132,12 +135,9 @@ export default class Draggable extends H5P.EventDispatcher {
       .on('click', function () {
         self.trigger('focus', this);
       })
-      .on('touchmove', function (e) {
-        e.stopPropagation();
-      })
-      .on('touchstart', function (e) {
-        e.stopPropagation();
-      })
+      .on('touchmove', stopPropagation)
+      .on('touchstart', stopPropagation)
+      .on('touchend', stopPropagation)
       .draggable({
         revert: function (dropZone) {
           $container.removeClass('h5p-dragging');
