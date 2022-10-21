@@ -1137,6 +1137,14 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
     var dropZone = DragUtils.elementToDropZone(dropZones, event.element);
 
+    // Don't change anything if element is in selected dropzone already
+    if (selected.element.dropZone === dropZone.id) {
+      // Reset selected
+      selected.element.$[0].setAttribute('aria-grabbed', 'false');
+      deselect();
+      return;
+    }
+
     var mustCopyElement = selected.draggable.mustCopyElement(selected.element);
     if (mustCopyElement) {
       // Leave a new element for next drag
