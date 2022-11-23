@@ -287,3 +287,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   top: -0.15em;
   right: -0.15em;
 }
+
+.h5p-dragquestion .h5p-dragquestion-no-display {
+  display: none;
+}

@@ -33,6 +33,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.type = element.type;
     self.multiple = element.multiple;
     self.l10n = l10n;
+    self.audios = element.audio;
     self.allDropzones = dropZones;
 
     if (answers) {
@@ -132,6 +133,15 @@ export default class Draggable extends H5P.EventDispatcher {
       appendTo: $container,
       title: self.type.params.title
     })
+      .on('mousedown', () => {
+        self.trigger('pickedUp', self.id);
+      })
+      .on('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') {
+          return;
+        }
+        self.trigger('pickedUp');
+      })
       .on('click', function () {
         self.trigger('focus', this);
       })
@@ -150,7 +160,7 @@ export default class Draggable extends H5P.EventDispatcher {
           self.updatePlacement(element);
           $this[0].setAttribute('aria-grabbed', 'false');
 
-          self.trigger('dragend');
+          self.trigger('dragend', self.id);
 
           return !dropZone;
         },
@@ -208,6 +218,28 @@ export default class Draggable extends H5P.EventDispatcher {
 
     // Add suffix for good a11y
     $('<span class="h5p-hidden-read"></span>').appendTo(element.$);
+
+    if (self.audios) {
+      ['pickedUp', 'dropped'].forEach(type => {
+        if (
+          !self.audios[type] ||
+          !Array.isArray(self.audios[type]) ||
+          self.audios[type].length < 1 ||
+          !self.audios[type][0].path ||
+          self.audios[type][0].mime.split('/')[0] !== 'audio'
+        ) {
+          return;
+        }
+
+        // Attach audio element
+        const player = document.createElement('audio');
+        player.classList.add('h5p-dragquestion-no-display');
+        player.src = H5P.getPath(self.audios[type][0].path, contentId);
+
+        self.audios[type] = player;
+        element.$.append(self.audios[type]);
+      });
+    }
 
     // Update opacity when element is attached.
     setTimeout(function () {
