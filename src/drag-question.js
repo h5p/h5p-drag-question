@@ -125,9 +125,14 @@ function C(options, contentId, contentData) {
 
   this.weight = 1;
 
-  // Add draggable elements
+  // Not all "draggables" are draggable, some are static w/o dropzones assigned
+  const numberDraggables = task.elements
+    .filter((element) => element.dropZones.length)
+    .length;
+
+    // Add draggable elements
   var grabbablel10n = {
-    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.length),
+    prefix: self.options.grabbablePrefix.replace('{total}', numberDraggables),
     suffix: self.options.grabbableSuffix,
     correctAnswer: self.options.correctAnswer,
     wrongAnswer: self.options.wrongAnswer
