@@ -6,14 +6,14 @@
     },
     {
       "label": "Submit answer button",
-      "default": "Submit"
+      "default": "Beküldés"
     },
     {
       "label": "Retry button",
       "default": "Retry"
     },
     {
-      "label": "Score explanation text",
+      "label": "Pontszámmagyarázó szöveg",
       "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
     },
     {

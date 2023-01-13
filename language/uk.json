@@ -5,7 +5,7 @@
       "default": "Перевірити"
     },
     {
-      "label": "Submit answer button",
+      "label": "Кнопка для відправки відповіді",
       "default": "Submit"
     },
     {
@@ -257,11 +257,11 @@
       "default": "Показати пояснення оцінки"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Позначка допоміжних технологій для кнопки «Перевірити».",
+      "default": "Перевірити відповіді. Відповіді будуть позначені як правильні, неправильні або без відповіді."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
+      "label": "Позначка допоміжних технологій для кнопки «Повторити».",
       "default": "Повторіть завдання. Скиньте всі відповіді та почніть завдання знову."
     }
   ]
