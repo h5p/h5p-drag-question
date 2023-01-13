@@ -195,7 +195,7 @@
         },
         {
           "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. سيتم عرض العنوان فقط في الملخصات والإحصاءات"
         }
       ]
     },
