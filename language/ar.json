@@ -14,7 +14,7 @@
     },
     {
       "label": "نص شرح النتيجة",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "default": "تمنح الإجابات الصحيحة +1 نقطة. تمنح الإجابات الخاطئة -1 نقطة. أقل علامة محتملة هي 0."
     },
     {
       "fields": [
@@ -37,7 +37,7 @@
           "fields": [
             {
               "label": "عناصر",
-              "entity": "element",
+              "entity": "العنصر",
               "field": {
                 "label": "عنصر",
                 "fields": [
@@ -63,7 +63,7 @@
             },
             {
               "label": "مناطق افلات",
-              "entity": "Drop Zone",
+              "entity": "منطقة الإفلات",
               "field": {
                 "label": "منطقة افلات",
                 "fields": [
@@ -125,7 +125,7 @@
           ],
           "label": "تحديد الملاحظات المخصصة من اجل اي مجال نتيجة",
           "description": "انقر فوق الزر 'إضافة نطاق' لإضافة أكبر عدد ممكن من النطاقات. مثال: 0-20٪ نتيجة سيئة ، 21-91٪ نتيجة متوسطة ، 91-100٪ نتيجة رائعة!",
-          "entity": "range",
+          "entity": "المجال",
           "field": {
             "fields": [
               {
@@ -134,7 +134,7 @@
               {},
               {
                 "label": "الملاحظات الخاصة بمجال النتيجة المحدد",
-                "placeholder": "Fill in the feedback"
+                "placeholder": "كتابة الملاحظات"
               }
             ]
           }
@@ -194,8 +194,8 @@
           "description": "عرض النقاط المكتسبة لكل إجابة. غير متاح عند تمكين الخيار 'منح نقطة واحدة للمهمة بالكامل'."
         },
         {
-          "label": "Show Title",
-          "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. سيتم عرض العنوان فقط في الملخصات والإحصاءات"
+          "label": "أظهر العنوان",
+          "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. سيتم عرض العنوان فقط في الملخصات والإحصاءات وما إلى ذلك."
         }
       ]
     },
@@ -204,11 +204,11 @@
       "fields": [
         {
           "label": "لافتة وضع ملء الشاشة",
-          "default": "Fullscreen"
+          "default": "الشاشة الكاملة"
         },
         {
           "label": "لافتة الخروج من وضع ملء الشاشة",
-          "default": "Exit fullscreen"
+          "default": "الخروج من وضع ملء الشاشة"
         }
       ]
     },
@@ -261,8 +261,8 @@
       "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "علامة التكنولوجيا المساعدة لزر \"الإعادة\"",
+      "default": "إعادة المحاولة للمهمة. إعادة ضبط جميع الردود والبدء بالمهمة مرة أخرى."
     }
   ]
 }
