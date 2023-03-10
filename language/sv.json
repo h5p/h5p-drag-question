@@ -5,11 +5,11 @@
       "default": "Svara"
     },
     {
-      "label": "Submit answer button",
+      "label": "Knapp för att skicka in svar",
       "default": "Submit"
     },
     {
-      "label": "Retry button",
+      "label": "\"Försök igen\"-knapp",
       "default": "Försök på nytt"
     },
     {
