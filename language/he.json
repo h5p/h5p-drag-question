@@ -5,7 +5,7 @@
       "default": "בדיקה"
     },
     {
-      "label": "Submit answer button",
+      "label": "כפתור שמירת תשובה",
       "default": "Submit"
     },
     {
@@ -257,12 +257,12 @@
       "default": "הצגת הסבר לניקוד"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"בדיקה\"",
+      "default": "בדקו את התשובות. המענים יסומנו כנכונים, לא נכונים, או ריקים."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "תווית טכנולוגיה מסייעת עבור כפתור \"ניסיון חוזר\"",
+      "default": "ניסיון חדש של המשימה. איפוס כל ניסיונות המענה והתחלה מחדש."
     }
   ]
 }
