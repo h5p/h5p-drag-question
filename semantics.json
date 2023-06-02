@@ -144,6 +144,7 @@
                   "max": 100,
                   "step": 5,
                   "default": 100,
+                  "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible.",
                   "optional": true
                 },
                 {
@@ -225,6 +226,7 @@
                   "max": 100,
                   "step": 5,
                   "default": 100,
+                  "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible.",
                   "optional": true
                 },
                 {
