@@ -125,17 +125,22 @@ function C(options, contentId, contentData) {
 
   this.weight = 1;
 
+  const isDraggable = element => {
+    return !(element.dropZones === undefined || !element.dropZones.length);
+  };
+
   // Add draggable elements
   var grabbablel10n = {
-    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.length),
+    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.filter(isDraggable).length),
     suffix: self.options.grabbableSuffix,
     correctAnswer: self.options.correctAnswer,
     wrongAnswer: self.options.wrongAnswer
   };
+  let draggableNum = 1; // Human readable label (a11y)
   for (i = 0; i < task.elements.length; i++) {
     var element = task.elements[i];
 
-    if (element.dropZones === undefined || !element.dropZones.length) {
+    if (!isDraggable(element)) {
       continue; // Not a draggable
     }
 
@@ -150,7 +155,7 @@ function C(options, contentId, contentData) {
     }
 
     // Create new draggable instance
-    var draggable = new Draggable(element, i, answers, grabbablel10n, task.dropZones);
+    var draggable = new Draggable(element, i, answers, grabbablel10n, task.dropZones, draggableNum++);
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
