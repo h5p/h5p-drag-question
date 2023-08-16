@@ -59,8 +59,6 @@
                     "description": "คลอนองค์ประกอบนี้เพื่อให้สามารถลากไปวางในโซนการวางหลายๆ โซนได้"
                   }
                 ]
-
-
               }
             },
             {
@@ -164,6 +162,40 @@
         {
           "label": "เปิดใช้คำอธิบายคะแนน",
           "description": "แสดงคำอธิบายคะแนนให้ผู้เรียนเห็นหลังจากคำตอบถูกต้องหรือไม่ถูกต้อง"
+        },
+        {
+          "label": "Background opacity for draggables",
+          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+        },
+        {
+          "options": [
+            {
+              "label": "When dragging"
+            },
+            {
+              "label": "Always"
+            },
+            {
+              "label": "Never"
+            }
+          ],
+          "label": "Drop Zone Highlighting",
+          "description": "Choose when to highlight drop zones."
+        },
+        {
+          "label": "Spacing for Auto-Align (in px)"
+        },
+        {
+          "label": "Enable FullScreen",
+          "description": "Check this option to enable the full screen button."
+        },
+        {
+          "label": "Show score points",
+          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+        },
+        {
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+          "label": "Show Title"
         }
       ]
     },
@@ -182,10 +214,12 @@
             {
               "label": "ลองใหม่"
             }
-          ]
+          ],
+          "default": "Fullscreen"
         },
         {
-          "label": "เพิ่มการเรียกใช้หลังจากการกระทำ"
+          "label": "เพิ่มการเรียกใช้หลังจากการกระทำ",
+          "default": "Exit fullscreen"
         }
       ]
     },
@@ -199,7 +233,8 @@
         {
           "label": "ปรับระดับเสียง"
         }
-      ]
+      ],
+      "default": "Grabbable {num} of {total}."
     },
     {
       "label": "การกำหนดสี",
@@ -211,7 +246,52 @@
         {
           "label": "เลือกสีองค์ประกอบ"
         }
-      ]
+      ],
+      "default": "Placed in dropzone {num}."
+    },
+    {
+      "label": "Dropzone prefix",
+      "default": "Dropzone {num} of {total}."
+    },
+    {
+      "label": "No dropzone selection label",
+      "default": "No dropzone."
+    },
+    {
+      "label": "Label for show tip button",
+      "default": "Show tip."
+    },
+    {
+      "label": "Label for tip available",
+      "default": "Tip available"
+    },
+    {
+      "label": "Label for correct answer",
+      "default": "Correct answer"
+    },
+    {
+      "label": "Label for incorrect answer",
+      "default": "Wrong answer"
+    },
+    {
+      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "default": "Feedback"
+    },
+    {
+      "label": "Textual representation of the score bar for those using a readspeaker",
+      "default": "You got :num out of :total points"
+    },
+    {
+      "label": "Textual representation of the score explanation button",
+      "default": "Show score explanation"
+    },
+    {
+      "label": "Assistive technology label for \"Check\" button",
+      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+    },
+    {
+      "label": "Assistive technology label for \"Retry\" button",
+      "default": "Retry the task. Reset all responses and start the task over again."
     }
   ]
 }
