@@ -1,20 +1,20 @@
 {
   "semantics": [
     {
-      "label": "Sjekk-knappen",
+      "label": "Navn på \"Sjekk\"-knapp",
       "default": "Sjekk"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Navn på \"Send inn\"-knapp",
+      "default": "Send inn"
     },
     {
-      "label": "«Prøv igjen»-knapp",
+      "label": "Navn på \"Prøv igjen\"-knapp",
       "default": "Prøv igjen"
     },
     {
       "label": "Poengforklaring",
-      "default": "Korrekt svar gir 1 poeng, galt svar gir -1 poeng. Sum av poeng kan ikke bli negativ."
+      "default": "Riktig svar gir 1 poeng, feil svar gir –1 poeng. Poengsummen kan ikke bli negativ."
     },
     {
       "fields": [
@@ -23,17 +23,17 @@
           "fields": [
             {
               "label": "Bakgrunnsbilde",
-              "description": "Valgfritt. Velg et bakgrunnsbilde for oppgaven."
+              "description": "Legg til et bakgrunnsbilde for oppgaven. (Valgfritt)"
             },
             {
-              "label": "Oppgavens størrelse",
-              "description": "Spesifiser størrelse i piksler som oppgaven vanligvis vil vises i."
+              "label": "Oppgavestørrelse",
+              "description": "Spesifiser størrelsen på oppgavefeltet (i piksler)."
             }
           ]
         },
         {
           "label": "Oppgave",
-          "description": "Begynn med å plassere målområder.<br />Plasser så flyttbare elementer, og merk av hvilke målområder de skal kunne dras til.<br />Til slutt redigeres målområdene igjen for å angi fasit.",
+          "description": "Begynn med å opprette slippsoner.<br />Opprett så flyttbare elementer, og merk av hvilke slippsoner de skal kunne dras til.<br />Rediger til slutt slippsonene igjen ved å merke av elementene som hører til den enkelte slippsonen. Da har du laget fasit.",
           "fields": [
             {
               "label": "Elementer",
@@ -49,23 +49,23 @@
                   {},
                   {},
                   {
-                    "label": "Velg målområder"
+                    "label": "Velg slippsoner"
                   },
                   {
-                    "label": "Opasitet for bakgrunn"
+                    "label": "Gjennomsiktighet for bakgrunn"
                   },
                   {
-                    "label": "Uendelig antall instanser av elementet",
-                    "description": "Klon dette elementet slik at det kan dras til flere målområder."
+                    "label": "Elementet kan dras til slippsoner flere ganger.",
+                    "description": "Kopierer dette elementet slik at det kan dras til flere slippsoner."
                   }
                 ]
               }
             },
             {
-              "label": "Målområder",
-              "entity": "Målområde",
+              "label": "Slippsoner",
+              "entity": "Slippsone",
               "field": {
-                "label": "Målområde",
+                "label": "Slippsone",
                 "fields": [
                   {
                     "label": "Tittel"
@@ -78,34 +78,34 @@
                   {},
                   {},
                   {
-                    "label": "Velg riktige elementer"
+                    "label": "Velg riktige elementer for denne slippsonen"
                   },
                   {
-                    "label": "Opasitet for bakgrunn"
+                    "label": "Gjennomsiktighet for bakgrunn"
                   },
                   {
-                    "label": "Tips",
+                    "label": "Tips og tilbakemelding",
                     "fields": [
                       {
                         "label": "Tipstekst"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Melding ved plassering i riktig slippsone",
+                        "description": "Etter at bruker har valgt \"Sjekk\", vises denne meldinga dersom elementet er plassert i riktig slippsone."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Melding ved plassering i feil slippsone",
+                        "description": "Etter at bruker har valgt \"Sjekk\", vises denne meldinga dersom elementet er plassert i feil slippsone."
                       }
                     ]
                   },
                   {
-                    "label": "Dette målområdet kan bare inneholde et element",
-                    "description": "Pass på at det bare finnes ett riktig svar for dette målområdet"
+                    "label": "Denne slippsonen kan bare inneholde ett element",
+                    "description": "Sørg for at det bare finnes ett riktig svar for denne slippsonen."
                   },
                   {
-                    "label": "Automatisk justering",
-                    "description": "Vil automatisk justere alle elementer plassert i denne sonen."
+                    "label": "Aktiver automatisk justering",
+                    "description": "Vil automatisk justere alle elementer plassert i denne slippsonen."
                   }
                 ]
               }
@@ -115,26 +115,26 @@
       ]
     },
     {
-      "label": "Samlet tilbakemelding",
+      "label": "Tilbakemelding",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Standard"
+              "label": "Standardinnstilling"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Lag tilbakemeldinger for de enkelte poengområdene",
+          "description": "Velg \"Legg til poengområde\"-knappen for å legge til så mange poengområder som du ønsker. Eksempel: 0–90 % Gjør øvinga en gang til! , 91–100 % Bra!",
+          "entity": "Område",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Poengområde"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Tilbakemelding for definert poengområde",
+                "placeholder": "Skriv inn tilbakemelding"
               }
             ]
           }
@@ -142,37 +142,37 @@
       ]
     },
     {
-      "label": "Innstillinger for oppgaveoppførsel",
-      "description": "Disse instillingene lar deg bestemme hvordan oppgavetypen skal oppføre seg.",
+      "label": "Oppgaveinnstillinger",
+      "description": "Disse instillingene lar deg bestemme hvordan oppgaven skal oppføre seg.",
       "fields": [
         {
           "label": "Aktiver \"Prøv igjen\"-knapp"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Aktiver \"Sjekk\"-knapp"
         },
         {
           "label": "Gi ett poeng for hele oppgaven",
-          "description": "Slå av for å gi ett poeng for hvert draobjekt som er plassert korrekt."
+          "description": "Aktiver denne funksjonen bare dersom du ikke ønsker å gi ett poeng for hvert element som er plassert riktig."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Gi minuspoeng",
+          "description": "Gir minuspoeng for elementer som er plassert i feil slippsone. Funksjonen må aktiveres når samme element kan plasseres i flere slippsoner, eller når det bare finnes én slippsone. Dersom funksjonen ikke er aktivert, kan brukeren få maksimal poengsum selv ved tilfeldige valg."
         },
         {
-          "label": "Vis poeng-forklaring",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Vis poengforklaring",
+          "description": "Dersom \"Gi minuspoeng\" er aktivert: Vis poengforklaring når bruker sjekker svar."
         },
         {
-          "label": "Bakgrunnsopasitet på flyttbare elementer",
-          "description": "Hvis denne verdien er satt, vil den overstyre instillingene til alle flyttbare elementer. Feltet skal inneholde verdier fra 0 til 100, hvor 0 betyr full gjennsomsiktighet og 100 betyr ingen gjennomsiktighet"
+          "label": "Gjennomsiktighet på elementer",
+          "description": "Hvis denne verdien er satt, vil den overstyre innstillingene til alle elementer. Feltet skal inneholde verdier fra 0 til 100. 0 betyr full gjennomsiktighet, 100 betyr ingen gjennomsiktighet."
         },
         {
-          "label": "Slippsonefremheving",
-          "description": "Velg når slippsoner skal fremheves",
+          "label": "Slippsoneframheving",
+          "description": "Velg når slippsoner skal framheves.",
           "options": [
             {
-              "label": "Når man drar"
+              "label": "Når elementer flyttes"
             },
             {
               "label": "Alltid"
@@ -183,86 +183,86 @@
           ]
         },
         {
-          "label": "Mellomrom for automatisk justering (i piksler)"
+          "label": "Mellomrom ved automatisk justering (i piksler)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Tillat fullskjermvisning",
+          "description": "Hak av for å vise fullskjermknapp."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Vis poengsum",
+          "description": "Hak av for å vise oppnådde poeng for hvert svar. Ikke tilgjengelig dersom funksjonen \"Gi ett poeng for hele oppgaven\" er aktivert."
         },
         {
-          "label": "Show Title",
-          "description": "Huk av dette alternativet, hvis du ikke ønsker å vise tittelen. Tittelen vil bare vises for oppsummeringer, statistikk osv."
+          "label": "Vis tittel",
+          "description": "Fjern hake hvis du ikke ønsker å vise tittelen. Tittelen vises bare ved oppsummeringer, statistikk osv."
         }
       ]
     },
     {
-      "label": "Lokaliser",
+      "label": "Tilpass språk",
       "fields": [
         {
-          "label": "Tittel for \"Full skjerm\"-knapp",
+          "label": "Navn på \"Fullskjerm\"-knapp",
           "default": "Fullskjerm"
         },
         {
-          "label": "Tittel for \"Avslutt fullskjerm\"-knapp",
-          "default": "Forlat fullskjerm"
+          "label": "Navn på \"Avslutt fullskjerm\"-knapp",
+          "default": "Avslutt fullskjerm"
         }
       ]
     },
     {
-      "label": "Draobjektprefiks",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefiks (nummerering) for flyttbart element",
+      "default": "Flyttbart element {num} av {total}."
     },
     {
-      "label": "Draobjektprefiks",
-      "default": "Placed in dropzone {num}."
+      "label": "Suffiks (informasjon om plassering) for flyttbart element",
+      "default": "Plassert i slippsone {num}."
     },
     {
-      "label": "Målområdeprefiks",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefiks (nummerering) for slippsone",
+      "default": "Slippsone {num} av {total}."
     },
     {
-      "label": "Slippsoneprefiks",
-      "default": "No dropzone."
+      "label": "Tekst for \"Ingen slippsone er valgt\"",
+      "default": "Ingen slippsone."
     },
     {
-      "label": "Etikett for knappen Vis tips",
-      "default": "Show tip."
+      "label": "Navn på \"Vis tips\"-knapp",
+      "default": "Vis tips"
     },
     {
-      "label": "Merkelapp for vis-tips-knappen",
+      "label": "Tekst for \"Tips tilgjengelig\"",
       "default": "Tips tilgjengelig"
     },
     {
-      "label": "Merkelapp for tips tilgjengelig",
-      "default": "Rett svar"
+      "label": "Merkelapp for \"Riktig svar\"",
+      "default": "Riktig svar"
     },
     {
-      "label": "Merkelapp for korrekt svar",
+      "label": "Merkelapp for \"Feil svar\"",
       "default": "Feil svar"
     },
     {
-      "label": "Merkelapp for feil svar",
+      "label": "Tittel på avsnittet som gir bruker tilbakemelding om riktige og feil svar",
       "default": "Tilbakemelding"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Tekstalternativ til resultatlinja for skjermleserbrukere",
+      "default": "Du fikk :num av :total poeng"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Tekstalternativ til \"Poengforklaring\"-knapp",
+      "default": "Vis poengforklaring"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Beskrivelse av \"Sjekk\"-knappen for assisterende teknologi",
+      "default": "Sjekk svar. Svara blir merket som riktig, feil eller ubesvart."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Beskrivelse av \"Prøv igjen\"-knapp (for assisterende teknologi)",
+      "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
     }
   ]
 }
