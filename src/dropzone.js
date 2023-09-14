@@ -55,7 +55,6 @@ export default class DropZone {
     self.$dropZone = $('<div/>', {
       class: 'h5p-dropzone' + extraClass,
       tabindex: '-1',
-      title: self.showLabel ? $('<div/>', {html: self.label}).text() : null,
       role: 'button',
       'aria-disabled': true,
       css: {
