@@ -385,15 +385,17 @@ export default class Draggable extends H5P.EventDispatcher {
       }
     });
 
-    // Draggable removed from dropzone.
-    if (self.element.dropZone !== undefined) {
-      self.trigger('leavingDropZone', self.element);
-      delete self.element.dropZone;
-    }
+    if (self.element) {
+      // Draggable removed from dropzone.
+      if (self.element.dropZone !== undefined) {
+        self.trigger('leavingDropZone', self.element);
+        delete self.element.dropZone;
+      }
 
-    // Reset style on initial element
-    // Reset element style
-    self.updatePlacement(self.element);
+      // Reset style on initial element
+      // Reset element style
+      self.updatePlacement(self.element);
+    }
   }
 
   /**
