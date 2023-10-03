@@ -887,10 +887,12 @@ C.prototype.resetTask = function () {
   } else {
     // Reset actual position values
     for (let i = 0; i < this.draggables.length; i++) {
-      for (let j = 0; j < this.draggables[i].elements.length; j++) {
-        if (this.draggables[i].elements[j] !== undefined) {
-          this.draggables[i].elements[j].dropZone = undefined;
-          this.draggables[i].elements[j].position = undefined;
+      if (this.draggables[i] !== undefined) {
+        for (let j = 0; j < this.draggables[i].elements.length; j++) {
+          if (this.draggables[i].elements[j] !== undefined) {
+            this.draggables[i].elements[j].dropZone = undefined;
+            this.draggables[i].elements[j].position = undefined;
+          }
         }
       }
     }
