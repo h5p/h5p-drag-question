@@ -871,17 +871,30 @@ C.prototype.resetTask = function () {
   this.rawPoints = 0;
   this.answered = false;
 
-  this.dropZones.forEach(function (dropzone) {
-    dropzone.reset();
-  });
-
-  // Enables Draggables
-  this.enableDraggables();
-
-  //Reset position and feedback.
-  this.draggables.forEach(function (draggable) {
-    draggable.resetPosition();
-  });
+  // If DOM loaded - reset it
+  if (this.$container) {
+    this.dropZones.forEach(function (dropzone) {
+      dropzone.reset();
+    });
+  
+    // Enables Draggables
+    this.enableDraggables();
+  
+    //Reset position and feedback.
+    this.draggables.forEach(function (draggable) {
+      draggable.resetPosition();
+    });
+  } else {
+    // Reset actual position values
+    for (let i = 0; i < this.draggables.length; i++) {
+      for (let j = 0; j < this.draggables[i].elements.length; j++) {
+        if (this.draggables[i].elements[j] !== undefined) {
+          this.draggables[i].elements[j].dropZone = undefined;
+          this.draggables[i].elements[j].position = undefined;
+        }
+      }
+    }
+  }
 
   //Show solution button
   this.showButton('check-answer');
