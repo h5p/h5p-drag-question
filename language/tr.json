@@ -5,16 +5,16 @@
       "default": "Kontrol et"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Cevabı gönder düğmesi",
+      "default": "Gönder"
     },
     {
-      "label": "Retry button",
+      "label": "Tekrar dene düğmesi",
       "default": "Yeniden dene"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Puan açıklama metni",
+      "default": "Doğru cevaplar+1 puan verir. Yanlış cevaplar -1 puan verir. Mümkün olan en düşük puan 0'dir."
     },
     {
       "fields": [
@@ -23,23 +23,23 @@
           "fields": [
             {
               "label": "Arkaplan görüntüsü",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "description": "İsteğe bağlı. Sürükle ve bırak göreviniz için arka plan olarak kullanmak üzere bir resim seçin."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Görev boyutu",
+              "description": "Oyun alanının ne kadar büyük (px cinsinden) olması gerektiğini belirtin."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
+          "label": "Görev",
+          "description": "Bırakma bölgelerinizi yerleştirerek başlayın. <br /> İleri, atlayabilecek öğelerinizi yerleştirin ve uygun bırakma bölgelerini kontrol edin. <br /> Son, bırakma bölgenizi tekrar düzenleyin ve doğru yanıtları kontrol edin.",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Ögeler",
+              "entity": "öğe",
               "field": {
-                "label": "Element",
+                "label": "Öge",
                 "fields": [
                   {
                     "description": "Eklemek istediğiniz içerik türünü seçiniz."
@@ -55,8 +55,8 @@
                     "label": "Arkaplan Şeffaflığı"
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Sonsuz sayıda öğe örneği",
+                    "description": "Birden çok bırakma bölgesine sürüklenebilmesi için bu ögeyi klonlar."
                   }
                 ]
               }
@@ -68,20 +68,20 @@
                 "label": "Bırakma Alanı",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Etiket"
                   },
                   {
-                    "label": "Show label"
+                    "label": "Etiketi göster"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Doğru öğeleri seçin"
                   },
                   {
-                    "label": "Background Opacity"
+                    "label": "Arkaplan Şeffaflığı"
                   },
                   {
                     "label": "İpuçları ve geri bildirim",
@@ -91,16 +91,16 @@
                       },
                       {
                         "label": "Doğru cevapta gösterilecek ileti",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "description": "Doğru bırakılabilir öğe eşleşirse 'kontrol et' seçeneğindeki görevin altında mesaj görünür."
                       },
                       {
                         "label": "Yanlış cevapta gösterilecek ileti",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "description": "Eşleşme yanlışsa, görevin altında \"kontrol et\" mesajı görünecektir."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
+                    "label": "Bu bırakma bölgesi yalnızca bir öğe içerebilir",
                     "description": "Make sure there is only one correct answer for this dropzone"
                   },
                   {
@@ -124,8 +124,8 @@
             }
           ],
           "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "description": "İstediğiniz kadar aralık eklemek için \"Aralık ekle\" düğmesini tıklayın. Örnek: %0-20 Kötü puan, %21-91 Ortalama Puan, %91-100 Büyük Puan!",
+          "entity": "aralık",
           "field": {
             "fields": [
               {
@@ -203,12 +203,12 @@
       "label": "Localize",
       "fields": [
         {
-          "label": "Fullscreen label",
+          "label": "Tam ekran etiketi",
           "default": "Tam ekran"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Tam ekrandan çık etiketi",
+          "default": "Tam ekrandan çık"
         }
       ]
     },
@@ -241,7 +241,7 @@
       "default": "Doğru cevap"
     },
     {
-      "label": "Label for incorrect answer",
+      "label": "Yanlış cevap için etiket",
       "default": "Yanlış cevap"
     },
     {
@@ -262,7 +262,7 @@
     },
     {
       "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "default": "Görevi yeniden deneyin. Tüm cevapları sıfırlayın ve görevi yeniden başlatın."
     }
   ]
 }
