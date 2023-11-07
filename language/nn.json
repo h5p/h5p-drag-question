@@ -26,14 +26,14 @@
               "description": "Legg til eit bakgrunnsbilete for oppgåva. (Valfritt)"
             },
             {
-              "label": "Oppgåvestorleik",
+              "label": "Oppgåvefelt",
               "description": "Spesifiser storleiken på oppgåvefeltet (i pikslar)."
             }
           ]
         },
         {
           "label": "Oppgåve",
-          "description": "Start med å plassere sleppsoner.<br />Plasser så flyttbare element, og merk av kva sleppsoner dei skal kunne bli flytta til.<br />Rediger til slutt sleppsonene igjen ved å merke av elementa som høyrer til den enkelte sleppsona. Då har du laga fasit.",
+          "description": "Start med å plassere sleppsoner.<br />Plasser så flyttbare element, og merk av kva sleppsoner dei skal kunne flyttast til.<br />Rediger til slutt sleppsonene igjen ved å merke av elementa som høyrer til den enkelte sleppsona. Då har du laga fasit.",
           "fields": [
             {
               "label": "Element",
@@ -42,7 +42,7 @@
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Velg typen innhald du vil legge til."
+                    "description": "Vel typen innhald du vil legge til."
                   },
                   {},
                   {},
@@ -55,8 +55,8 @@
                     "label": "Gjennomsiktigheit for bakgrunn"
                   },
                   {
-                    "label": "Elementet kan bli flytta til sleppsoner fleire gonger.",
-                    "description": "Kopierer dette elementet slik at det kan bli flytta til fleire sleppsoner."
+                    "label": "Elementet kan flyttast til sleppsoner fleire gonger.",
+                    "description": "Kopierer dette elementet slik at det kan flyttast til fleire sleppsoner."
                   }
                 ]
               }
@@ -91,21 +91,21 @@
                       },
                       {
                         "label": "Melding ved plassering i rett sleppsone",
-                        "description": "Etter at brukar har valt \"Sjekk\", visast denne meldinga dersom elementet er plassert i rett sleppsone."
+                        "description": "Etter at brukar har valt \"Sjekk\", vil denne meldinga visast dersom elementet er plassert i rett sleppsone."
                       },
                       {
                         "label": "Melding ved plassering i feil sleppsone",
-                        "description": "Etter at brukar har valt \"Sjekk\", visast denne meldinga dersom elementet er plassert i feil sleppsone."
+                        "description": "Etter at brukar har valt \"Sjekk\", vil denne meldinga visast dersom elementet er plassert i feil sleppsone."
                       }
                     ]
                   },
                   {
-                    "label": "Denne sleppsona kan berre innehalde eitt element",
+                    "label": "Denne sleppsona kan berre innehalde eitt element.",
                     "description": "Sørg for at det berre finst eitt rett svar for denne sleppsona."
                   },
                   {
                     "label": "Aktiver automatisk justering",
-                    "description": "Vil automatisk justere alle element plasserte i denne sleppsona."
+                    "description": "Vil automatisk justere alle elementa som er plasserte i denne sleppsona"
                   }
                 ]
               }
@@ -124,8 +124,8 @@
             }
           ],
           "label": "Lag tilbakemeldingar for dei enkelte poengområda",
-          "description": "Vel \"Legg til poengområde\"-knappen for å legge til så mange poengområde du vil ha. Døme: 0–20 % Du må nok jobbe meir, 21–40 % Ikkje så verst, 41–80 % Middels resultat, 81–100 % Framifrå resultat!",
-          "entity": "poengområde",
+          "description": "Vel \"Legg til poengområde\"-knappen for å legge til så mange poengområde du vil ha. Døme: 0–00 % Gjer øvinga ein gong til. 91–100 % Dette kan du!",
+          "entity": "Poengområde",
           "field": {
             "fields": [
               {
@@ -143,7 +143,7 @@
     },
     {
       "label": "Oppgåveinnstillingar",
-      "description": "Desse innstillingane lar deg bestemme korleis oppgåvetypen skal oppføre seg.",
+      "description": "Desse innstillingane lar deg bestemme korleis oppgåva skal oppføre seg.",
       "fields": [
         {
           "label": "Aktiver \"Prøv igjen\"-knapp"
@@ -153,11 +153,11 @@
         },
         {
           "label": "Gi eitt poeng for heile oppgåva",
-          "description": "Aktiver denne funksjonen berre dersom du ikkje vil gi eitt poeng for kvart element som er plassert korrekt."
+          "description": "Ikkje aktiver denne om du vil gi eitt poeng for kvart element som er plassert korrekt."
         },
         {
           "label": "Gi minuspoeng",
-          "description": "Gir minuspoeng for element som er plasserte i feil sleppsone. Denne funksjonen må vere aktivert når same element kan bli plassert i fleire sleppsoner, eller når det berre er ei sleppsone. Dersom han ikkje er aktivert i slike tilfelle, kan brukaren få maksimal poengsum sjølv med tilfeldige val."
+          "description": "Gir minuspoeng for element som er plasserte i feil sleppsone. Denne funksjonen må vere aktivert når same element kan bli plassert i fleire sleppsoner, eller når det berre er ei sleppsone. Dersom han ikkje er aktivert, kan brukaren få maksimal poengsum sjølv med tilfeldige val."
         },
         {
           "label": "Vis poengforklaring",
@@ -165,7 +165,7 @@
         },
         {
           "label": "Gjennomsiktigheit på flyttbare element",
-          "description": "Dersom denne verdien er sett, vil han overstyre innstillingane til alle flyttbare element. Feltet skal innehalde verdiar frå 0 til 100, der 0 betyr full gjennomsiktigheit, og 100 betyr inga gjennomsiktigheit."
+          "description": "Dersom denne verdien er sett, vil han overstyre innstillingane til alle flyttbare elementa. Feltet skal innehalde verdiar frå 0 til 100. 0 betyr full gjennomsiktigheit, 100 betyr inga gjennomsiktigheit."
         },
         {
           "label": "Sleppsoneframheving",
@@ -191,11 +191,11 @@
         },
         {
           "label": "Vis poengsum",
-          "description": "Hak av for å vise poeng for kvart svar. Ikkje tilgjengeleg viss \"Gi eitt poeng for heile oppgåva\" er aktivert."
+          "description": "Hak av for å vise oppnådde poeng for kvart svar. Ikkje tilgjengeleg viss funksjonen \"Gi eitt poeng for heile oppgåva\" er aktivert."
         },
         {
           "label": "Vis tittel",
-          "description": "Fjern hake viss du ikkje vil vise tittelen. Tittelen visast berre ved oppsummeringar, statistikk osb."
+          "description": "Fjern hake om du ikkje vil vise tittelen. Tittelen er synleg berre ved oppsummeringar, statistikk osb."
         }
       ]
     },
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "label": "Prefiks (nummerering) av flyttbart element",
+      "label": "Prefiks (nummerering) for flyttbart element",
       "default": "Flyttbart element {num} av {total}."
     },
     {
@@ -249,11 +249,11 @@
       "default": "Tilbakemelding"
     },
     {
-      "label": "Tekstalternativ til resultatlinja for skjermlesarbrukarar",
+      "label": "Tekstalternativ til resultatlinja (for skjermlesar)",
       "default": "Du fekk :num av :total poeng"
     },
     {
-      "label": "Tekstalternativ til \"Poengforklaring\"-knappen",
+      "label": "Tekstalternativ til \"Poengforklaring\"-knapp",
       "default": "Vis poengforklaring"
     },
     {
@@ -262,7 +262,7 @@
     },
     {
       "label": "Beskriving av \"Prøv igjen\"-knappen (for assisterande teknologi)",
-      "default": "Prøv igjen. Alle svar blir nullstilte, og oppgåva startar på nytt."
+      "default": "Prøv igjen. Alle svara blir nullstilte, og oppgåva startar på nytt."
     }
   ]
 }
