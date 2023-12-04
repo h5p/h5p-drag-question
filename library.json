@@ -4,8 +4,10 @@
   "contentType": "Question",
   "majorVersion": 1,
   "minorVersion": 14,
-  "patchVersion": 14,
-  "embedTypes": ["iframe"],
+  "patchVersion": 15,
+  "embedTypes": [
+    "iframe"
+  ],
   "runnable": 1,
   "fullscreen": 0,
   "author": "Joubel",
@@ -65,4 +67,3 @@
     }
   ]
 }
-
