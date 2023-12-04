@@ -17,7 +17,7 @@ export default class Draggable extends H5P.EventDispatcher {
    * @param {Object.<string, string>} l10n
    * @param {Array} [dropZones] Dropzones for a draggable
    */
-  constructor(element, id, answers, l10n, dropZones) {
+  constructor(element, id, answers, l10n, dropZones, draggableNum) {
     super();
     var self = this;
 
@@ -34,6 +34,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.multiple = element.multiple;
     self.l10n = l10n;
     self.allDropzones = dropZones;
+    self.draggableNum = draggableNum;
 
     if (answers) {
       if (self.multiple) {
@@ -204,7 +205,7 @@ export default class Draggable extends H5P.EventDispatcher {
     H5P.newRunnable(self.type, contentId, element.$);
 
     // Add prefix for good a11y
-    $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + '</span>').prependTo(element.$);
+    $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.draggableNum)) + '</span>').prependTo(element.$);
 
     // Add suffix for good a11y
     $('<span class="h5p-hidden-read"></span>').appendTo(element.$);
@@ -384,15 +385,17 @@ export default class Draggable extends H5P.EventDispatcher {
       }
     });
 
-    // Draggable removed from dropzone.
-    if (self.element.dropZone !== undefined) {
-      self.trigger('leavingDropZone', self.element);
-      delete self.element.dropZone;
-    }
+    if (self.element) {
+      // Draggable removed from dropzone.
+      if (self.element.dropZone !== undefined) {
+        self.trigger('leavingDropZone', self.element);
+        delete self.element.dropZone;
+      }
 
-    // Reset style on initial element
-    // Reset element style
-    self.updatePlacement(self.element);
+      // Reset style on initial element
+      // Reset element style
+      self.updatePlacement(self.element);
+    }
   }
 
   /**

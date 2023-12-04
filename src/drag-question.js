@@ -125,17 +125,22 @@ function C(options, contentId, contentData) {
 
   this.weight = 1;
 
+  const isDraggable = element => {
+    return !(element.dropZones === undefined || !element.dropZones.length);
+  };
+
   // Add draggable elements
   var grabbablel10n = {
-    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.length),
+    prefix: self.options.grabbablePrefix.replace('{total}', task.elements.filter(isDraggable).length),
     suffix: self.options.grabbableSuffix,
     correctAnswer: self.options.correctAnswer,
     wrongAnswer: self.options.wrongAnswer
   };
+  let draggableNum = 1; // Human readable label (a11y)
   for (i = 0; i < task.elements.length; i++) {
     var element = task.elements[i];
 
-    if (element.dropZones === undefined || !element.dropZones.length) {
+    if (!isDraggable(element)) {
       continue; // Not a draggable
     }
 
@@ -150,7 +155,7 @@ function C(options, contentId, contentData) {
     }
 
     // Create new draggable instance
-    var draggable = new Draggable(element, i, answers, grabbablel10n, task.dropZones);
+    var draggable = new Draggable(element, i, answers, grabbablel10n, task.dropZones, draggableNum++);
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
       controls.drag.addElement(event.data);
@@ -866,17 +871,32 @@ C.prototype.resetTask = function () {
   this.rawPoints = 0;
   this.answered = false;
 
-  this.dropZones.forEach(function (dropzone) {
-    dropzone.reset();
-  });
-
-  // Enables Draggables
-  this.enableDraggables();
-
-  //Reset position and feedback.
-  this.draggables.forEach(function (draggable) {
-    draggable.resetPosition();
-  });
+  // If DOM loaded - reset it
+  if (this.$container) {
+    this.dropZones.forEach(function (dropzone) {
+      dropzone.reset();
+    });
+  
+    // Enables Draggables
+    this.enableDraggables();
+  
+    //Reset position and feedback.
+    this.draggables.forEach(function (draggable) {
+      draggable.resetPosition();
+    });
+  } else {
+    // Reset actual position values
+    for (let i = 0; i < this.draggables.length; i++) {
+      if (this.draggables[i] !== undefined) {
+        for (let j = 0; j < this.draggables[i].elements.length; j++) {
+          if (this.draggables[i].elements[j] !== undefined) {
+            this.draggables[i].elements[j].dropZone = undefined;
+            this.draggables[i].elements[j].position = undefined;
+          }
+        }
+      }
+    }
+  }
 
   //Show solution button
   this.showButton('check-answer');
