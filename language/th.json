@@ -200,53 +200,24 @@
       ]
     },
     {
-      "label": "กำหนดคำสั่งพื้นฐาน",
+      "label": "Localize",
       "fields": [
         {
-          "label": "เลือกการกระทำ",
-          "fields": [
-            {
-              "label": "ตรวจสอบ"
-            },
-            {
-              "label": "ส่งคำตอบ"
-            },
-            {
-              "label": "ลองใหม่"
-            }
-          ],
+          "label": "Fullscreen label",
           "default": "Fullscreen"
         },
         {
-          "label": "เพิ่มการเรียกใช้หลังจากการกระทำ",
+          "label": "Exit fullscreen label",
           "default": "Exit fullscreen"
         }
       ]
     },
     {
-      "label": "การกำหนดค่าเสียง",
-      "fields": [
-        {
-          "label": "เลือกเสียง",
-          "description": "เลือกเสียงที่ต้องการเล่นเมื่อมีการกระทำที่เกี่ยวข้อง"
-        },
-        {
-          "label": "ปรับระดับเสียง"
-        }
-      ],
+      "label": "Grabbable prefix",
       "default": "Grabbable {num} of {total}."
     },
     {
-      "label": "การกำหนดสี",
-      "fields": [
-        {
-          "label": "เลือกสีพื้นหลัง",
-          "description": "เลือกสีพื้นหลังสำหรับงาน"
-        },
-        {
-          "label": "เลือกสีองค์ประกอบ"
-        }
-      ],
+      "label": "Grabbable suffix",
       "default": "Placed in dropzone {num}."
     },
     {
