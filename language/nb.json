@@ -26,7 +26,7 @@
               "description": "Legg til et bakgrunnsbilde for oppgaven. (Valgfritt)"
             },
             {
-              "label": "Oppgavestørrelse",
+              "label": "Oppgavefelt",
               "description": "Spesifiser størrelsen på oppgavefeltet (i piksler)."
             }
           ]
@@ -100,12 +100,12 @@
                     ]
                   },
                   {
-                    "label": "Denne slippsonen kan bare inneholde ett element",
+                    "label": "Denne slippsonen kan bare inneholde ett element.",
                     "description": "Sørg for at det bare finnes ett riktig svar for denne slippsonen."
                   },
                   {
                     "label": "Aktiver automatisk justering",
-                    "description": "Vil automatisk justere alle elementer plassert i denne slippsonen."
+                    "description": "Vil automatisk justere alle elementene plassert i denne slippsonen"
                   }
                 ]
               }
@@ -124,8 +124,8 @@
             }
           ],
           "label": "Lag tilbakemeldinger for de enkelte poengområdene",
-          "description": "Velg \"Legg til poengområde\"-knappen for å legge til så mange poengområder som du ønsker. Eksempel: 0–90 % Gjør øvinga en gang til! , 91–100 % Bra!",
-          "entity": "Område",
+          "description": "Velg \"Legg til poengområde\"-knappen for å legge til så mange poengområder som du ønsker. Eksempel: 0–90 % Gjør øvinga en gang til. 91–100 % Dette kan du!",
+          "entity": "Poengområde",
           "field": {
             "fields": [
               {
@@ -153,7 +153,7 @@
         },
         {
           "label": "Gi ett poeng for hele oppgaven",
-          "description": "Aktiver denne funksjonen bare dersom du ikke ønsker å gi ett poeng for hvert element som er plassert riktig."
+          "description": "Ikke aktiver denne om du vil gi ett poeng for hvert element som er plassert riktig."
         },
         {
           "label": "Gi minuspoeng",
@@ -164,7 +164,7 @@
           "description": "Dersom \"Gi minuspoeng\" er aktivert: Vis poengforklaring når bruker sjekker svar."
         },
         {
-          "label": "Gjennomsiktighet på elementer",
+          "label": "Gjennomsiktighet på flyttbare elementer",
           "description": "Hvis denne verdien er satt, vil den overstyre innstillingene til alle elementer. Feltet skal inneholde verdier fra 0 til 100. 0 betyr full gjennomsiktighet, 100 betyr ingen gjennomsiktighet."
         },
         {
@@ -225,7 +225,7 @@
       "default": "Slippsone {num} av {total}."
     },
     {
-      "label": "Tekst for \"Ingen slippsone er valgt\"",
+      "label": "Tekst når ingen slippsone er valgt",
       "default": "Ingen slippsone."
     },
     {
@@ -249,7 +249,7 @@
       "default": "Tilbakemelding"
     },
     {
-      "label": "Tekstalternativ til resultatlinja for skjermleserbrukere",
+      "label": "Tekstalternativ til resultatlinja (for skjermleser)",
       "default": "Du fikk :num av :total poeng"
     },
     {
@@ -258,7 +258,7 @@
     },
     {
       "label": "Beskrivelse av \"Sjekk\"-knappen for assisterende teknologi",
-      "default": "Sjekk svar. Svara blir merket som riktig, feil eller ubesvart."
+      "default": "Sjekk svar. Svara blir merka som riktig, feil eller ubesvart."
     },
     {
       "label": "Beskrivelse av \"Prøv igjen\"-knapp (for assisterende teknologi)",
