@@ -876,10 +876,10 @@ C.prototype.resetTask = function () {
     this.dropZones.forEach(function (dropzone) {
       dropzone.reset();
     });
-  
+
     // Enables Draggables
     this.enableDraggables();
-  
+
     //Reset position and feedback.
     this.draggables.forEach(function (draggable) {
       draggable.resetPosition();
@@ -1006,8 +1006,8 @@ C.prototype.getCurrentState = function () {
 
       // Store position and drop zone.
       draggableAnswers.push({
-        x: Number(element.position.left.replace('%', '')),
-        y: Number(element.position.top.replace('%', '')),
+        x: element.position ? Number(element.position.left.replace('%', '')) : null,
+        y: element.position ? Number(element.position.top.replace('%', '')) : null,
         dz: element.dropZone
       });
     }
