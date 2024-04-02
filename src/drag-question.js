@@ -1114,13 +1114,25 @@ var getControls = function (draggables, dropZones, noDropzone) {
     for (var i = 0; i < dropZones.length; i++) {
       var dropZone = dropZones[i];
 
-      if (dropZone.accepts(selected.draggable, draggables)) {
+      /*
+       * Draggable.isInDropzone only compares the draggable number, and
+       * will also return true if the draggable is not in the dropzone but
+       * if there can be infinite instances of the draggable.
+       */
+      const elementInstanceIsInDropZone = (
+        selected.draggable.isInDropZone(dropZone.id) &&
+        event.element !== selected.draggable.element.$[0]
+      );
+
+      if (
+        dropZone.accepts(selected.draggable, draggables) ||
+        elementInstanceIsInDropZone
+      ) {
         dropZone.highlight();
         controls.drop.addElement(dropZone.$dropZone[0]);
         if (!$first || selected.element.dropZone === dropZone.id) {
           $first = dropZone.$dropZone;
         }
-
       }
     }
     if ($first) {
