@@ -714,7 +714,6 @@ C.prototype.resize = function (e) {
   // Check if decreasing iframe size
   var decreaseSize = e && e.data && e.data.decreaseSize;
   if (!decreaseSize) {
-    this.$container.css('height', '99999px');
     self.$container.parents('.h5p-standalone.h5p-dragquestion').css('width', '');
   }
 
