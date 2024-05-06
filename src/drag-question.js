@@ -1085,6 +1085,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
   // Handle draggable selected through keyboard
   controls.drag.on('select', function (event) {
+    controls.drag.removeElement(noDropzone);
     var result = DragUtils.elementToDraggable(draggables, event.element);
     if (selected) {
       // De-select
@@ -1138,6 +1139,9 @@ var getControls = function (draggables, dropZones, noDropzone) {
       // Focus the first drop zone after selecting a draggable
       controls.drop.setTabbable($first[0]);
       $first.focus();
+    }
+    else {
+      controls.drag.addElement(noDropzone);
     }
   });
 
