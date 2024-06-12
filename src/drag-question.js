@@ -714,7 +714,6 @@ C.prototype.resize = function (e) {
   // Check if decreasing iframe size
   var decreaseSize = e && e.data && e.data.decreaseSize;
   if (!decreaseSize) {
-    this.$container.css('height', '99999px');
     self.$container.parents('.h5p-standalone.h5p-dragquestion').css('width', '');
   }
 
@@ -876,10 +875,10 @@ C.prototype.resetTask = function () {
     this.dropZones.forEach(function (dropzone) {
       dropzone.reset();
     });
-  
+
     // Enables Draggables
     this.enableDraggables();
-  
+
     //Reset position and feedback.
     this.draggables.forEach(function (draggable) {
       draggable.resetPosition();
@@ -1006,8 +1005,8 @@ C.prototype.getCurrentState = function () {
 
       // Store position and drop zone.
       draggableAnswers.push({
-        x: Number(element.position.left.replace('%', '')),
-        y: Number(element.position.top.replace('%', '')),
+        x: element.position ? Number(element.position.left.replace('%', '')) : null,
+        y: element.position ? Number(element.position.top.replace('%', '')) : null,
         dz: element.dropZone
       });
     }
@@ -1086,6 +1085,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
   // Handle draggable selected through keyboard
   controls.drag.on('select', function (event) {
+    controls.drag.removeElement(noDropzone);
     var result = DragUtils.elementToDraggable(draggables, event.element);
     if (selected) {
       // De-select
@@ -1114,19 +1114,34 @@ var getControls = function (draggables, dropZones, noDropzone) {
     for (var i = 0; i < dropZones.length; i++) {
       var dropZone = dropZones[i];
 
-      if (dropZone.accepts(selected.draggable, draggables)) {
+      /*
+       * Draggable.isInDropzone only compares the draggable number, and
+       * will also return true if the draggable is not in the dropzone but
+       * if there can be infinite instances of the draggable.
+       */
+      const elementInstanceIsInDropZone = (
+        selected.draggable.isInDropZone(dropZone.id) &&
+        event.element !== selected.draggable.element.$[0]
+      );
+
+      if (
+        dropZone.accepts(selected.draggable, draggables) ||
+        elementInstanceIsInDropZone
+      ) {
         dropZone.highlight();
         controls.drop.addElement(dropZone.$dropZone[0]);
         if (!$first || selected.element.dropZone === dropZone.id) {
           $first = dropZone.$dropZone;
         }
-
       }
     }
     if ($first) {
       // Focus the first drop zone after selecting a draggable
       controls.drop.setTabbable($first[0]);
       $first.focus();
+    }
+    else {
+      controls.drag.addElement(noDropzone);
     }
   });
 
