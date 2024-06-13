@@ -204,6 +204,11 @@ export default class Draggable extends H5P.EventDispatcher {
     DragUtils.addHover(element.$, self.backgroundOpacity);
     H5P.newRunnable(self.type, contentId, element.$);
 
+    // Override image hover and use user defined hover text or none
+    if (self.type.library.indexOf('H5P.Image ') === 0) {
+      element.$.find('img').attr('title', self.type.params.title || '');
+    }
+
     // Add prefix for good a11y
     $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.draggableNum)) + '</span>').prependTo(element.$);
 
