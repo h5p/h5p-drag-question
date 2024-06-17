@@ -158,6 +158,33 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
         }
 
         finished(null, parameters, extras);
+      },
+      /**
+       * Regardless of what alignment was set in the editor, the stylesheet
+       * would always center the text. For not breaking the view of existing
+       * content, set all text to be centered in params - can be changed by
+       * user in the editor after upgrade.
+       */
+      15: function (parameters, finished, extras) {
+        if (Array.isArray(parameters.question.task.elements)) {
+          parameters.question.task.elements =
+            parameters.question.task.elements.map((element) => {
+              if (
+                element.type?.library !== 'H5P.AdvancedText 1.1' ||
+                typeof element.type?.params?.text !== 'string'
+              ) {
+                return element;
+              }
+
+              element.type.params.text = element.type.params.text.replace(
+                /<p[^>]*>/g, '<p style="text-align: center;">'
+              );
+
+              return element;
+            });
+        }
+
+        finished(null, parameters, extras);
       }
     }
   };
