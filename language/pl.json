@@ -52,7 +52,8 @@
                     "label": "Wybierz obszary przeciągania (drop zones)"
                   },
                   {
-                    "label": "Poziom nieprzezroczystości tła(opacity)"
+                    "label": "Poziom nieprzezroczystości tła(opacity)",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Nieskończona liczba instancji elementu",
@@ -68,7 +69,8 @@
                 "label": "Obszar przeciągania",
                 "fields": [
                   {
-                    "label": "Etykieta"
+                    "label": "Etykieta",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Pokaż etykietę"
@@ -81,7 +83,8 @@
                     "label": "Wybierz poprawne elementy"
                   },
                   {
-                    "label": "Poziom nieprzezroczystości tła (Background Opacity)"
+                    "label": "Poziom nieprzezroczystości tła (Background Opacity)",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Wskazówki oraz podsumowanie wyników",

@@ -52,7 +52,8 @@
                     "label": "حدد مناطق الإفلات"
                   },
                   {
-                    "label": "تعتيم الخلفية"
+                    "label": "تعتيم الخلفية",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "عدد لانهائي من حالات العنصر",
@@ -68,7 +69,8 @@
                 "label": "منطقة افلات",
                 "fields": [
                   {
-                    "label": "لافتة"
+                    "label": "لافتة",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "لافتة الاظهار"
@@ -81,7 +83,8 @@
                     "label": "اختر العناصر الصحيحة"
                   },
                   {
-                    "label": "تعتيم الخلفية"
+                    "label": "تعتيم الخلفية",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "تلميحات وملاحظات",

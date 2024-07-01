@@ -52,7 +52,8 @@
                     "label": "Выберите область размещения"
                   },
                   {
-                    "label": "Непрозрачность фона"
+                    "label": "Непрозрачность фона",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Бесконечное количество экземпляров элемента",
@@ -68,7 +69,8 @@
                 "label": "Область размещения",
                 "fields": [
                   {
-                    "label": "Надпись"
+                    "label": "Надпись",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Показать надпись"
@@ -81,7 +83,8 @@
                     "label": "Выберите правильные элементы"
                   },
                   {
-                    "label": "Непрозрачность фона"
+                    "label": "Непрозрачность фона",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Подсказки и обратная связь",

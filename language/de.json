@@ -52,7 +52,8 @@
                     "label": "Wähle die Ablagezonen, in die das Element gezogen werden kann (inkl. Distraktoren)"
                   },
                   {
-                    "label": "Hintergrunddeckkraft"
+                    "label": "Hintergrunddeckkraft",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Element kann mehrfach in Ablagezonen gezogen werden",
@@ -68,7 +69,8 @@
                 "label": "Ablagezone",
                 "fields": [
                   {
-                    "label": "Beschriftung"
+                    "label": "Beschriftung",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Zeige Beschriftung"
@@ -81,7 +83,8 @@
                     "label": "Wähle die in dieser Ablagezone korrekten Elemente"
                   },
                   {
-                    "label": "Hintergrunddeckkraft"
+                    "label": "Hintergrunddeckkraft",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Tipps und Rückmeldung",

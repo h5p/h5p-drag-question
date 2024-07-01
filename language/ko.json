@@ -52,7 +52,8 @@
                     "label": "드롭 영역 선택"
                   },
                   {
-                    "label": "배경 투명도"
+                    "label": "배경 투명도",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "무제한의 인스턴스 항목 수",
@@ -68,7 +69,8 @@
                 "label": "드롭 영역",
                 "fields": [
                   {
-                    "label": "레이블"
+                    "label": "레이블",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "레이블 보이기"
@@ -81,7 +83,8 @@
                     "label": "올바른 요소 선택"
                   },
                   {
-                    "label": "배경 투명도"
+                    "label": "배경 투명도",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "팁과 피드백",

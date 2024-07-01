@@ -175,6 +175,7 @@
                   "widget": "html",
                   "label": "Label",
                   "importance": "medium",
+                  "description": "The label is used by assistive technologies.",
                   "enterMode": "div",
                   "tags": [
                     "strong",

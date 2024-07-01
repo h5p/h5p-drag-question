@@ -52,7 +52,8 @@
                     "label": "Označi zone za spustanje"
                   },
                   {
-                    "label": "Pozadinska zamućenost"
+                    "label": "Pozadinska zamućenost",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Neograničen broj elemenata",
@@ -68,7 +69,8 @@
                 "label": "Zona za spustanje",
                 "fields": [
                   {
-                    "label": "Oznaka"
+                    "label": "Oznaka",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Pokaži oznaku"
@@ -81,7 +83,8 @@
                     "label": "Označi ispravne elemente"
                   },
                   {
-                    "label": "Pozadinska zamućenost"
+                    "label": "Pozadinska zamućenost",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Savjet",

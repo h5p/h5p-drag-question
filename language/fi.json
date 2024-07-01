@@ -52,7 +52,8 @@
                     "label": "Valitse pudotuskohteet"
                   },
                   {
-                    "label": "Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
+                    "label": "Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Loputon määrä elementin kopioita",
@@ -68,7 +69,8 @@
                 "label": "Pudotuskohde",
                 "fields": [
                   {
-                    "label": "Kohteen kuvaus"
+                    "label": "Kohteen kuvaus",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Näytä kuvaus"
@@ -81,7 +83,8 @@
                     "label": "Valitse oikeat elementit"
                   },
                   {
-                    "label": "Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)"
+                    "label": "Taustan läpinäkyvyys 0-100 (0 = läpinäkyvä, 100 = valkoinen)",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Vihjeet ja palaute",

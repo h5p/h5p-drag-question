@@ -52,7 +52,8 @@
                     "label": "Selecciona zonas de solta"
                   },
                   {
-                    "label": "Opacidade do Fondo"
+                    "label": "Opacidade do Fondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Número infinito de aparicións deste elemento",
@@ -68,7 +69,8 @@
                 "label": "Zona de Solta",
                 "fields": [
                   {
-                    "label": "Etiqueta"
+                    "label": "Etiqueta",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Amosar etiqueta"
@@ -81,7 +83,8 @@
                     "label": "Selecciona os elementos correctos"
                   },
                   {
-                    "label": "Opacidade do Fondo"
+                    "label": "Opacidade do Fondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Pistas e retroalimentación",

@@ -52,7 +52,8 @@
                     "label": "Chagua maeneo ya kushuka"
                   },
                   {
-                    "label": "Uangavu wa mandharinyuma"
+                    "label": "Uangavu wa mandharinyuma",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Idadi isiyo na mwisho ya matukio ya vipengele",
@@ -68,7 +69,8 @@
                 "label": "Eneo la Kushuka",
                 "fields": [
                   {
-                    "label": "Lebo"
+                    "label": "Lebo",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Onyesha lebo"
@@ -81,7 +83,8 @@
                     "label": "Chagua vipengele sahihi"
                   },
                   {
-                    "label": "Uangavu wa mandharinyuma"
+                    "label": "Uangavu wa mandharinyuma",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Vidokezo na maoni",

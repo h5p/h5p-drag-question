@@ -52,7 +52,8 @@
                     "label": "Оберіть область розміщення"
                   },
                   {
-                    "label": "Непрозорість тла"
+                    "label": "Непрозорість тла",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Нескінченна кількість екземплярів елемента",
@@ -68,7 +69,8 @@
                 "label": "Область розміщення",
                 "fields": [
                   {
-                    "label": "Надпис"
+                    "label": "Надпис",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Показати надпис"
@@ -81,7 +83,8 @@
                     "label": "Оберіть правильні елементи"
                   },
                   {
-                    "label": "Непрозорість тла"
+                    "label": "Непрозорість тла",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Підказки і зворотній зв'язок",
