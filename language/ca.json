@@ -52,7 +52,8 @@
                     "label": "Seleccioneu les zones on deixar anar"
                   },
                   {
-                    "label": "Opacitat del fons"
+                    "label": "Opacitat del fons",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Nombre infinit d’instàncies d’elements",
@@ -68,7 +69,8 @@
                 "label": "Zona on deixar anar",
                 "fields": [
                   {
-                    "label": "Etiqueta"
+                    "label": "Etiqueta",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Mostra l’etiqueta"
@@ -81,7 +83,8 @@
                     "label": "Seleccioneu els elements correctes"
                   },
                   {
-                    "label": "Opacitat del fons"
+                    "label": "Opacitat del fons",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Suggerències i informació de retorn",

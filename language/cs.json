@@ -52,7 +52,8 @@
                     "label": "Vyberte zóny přetažení"
                   },
                   {
-                    "label": "Průhlednost pozadí"
+                    "label": "Průhlednost pozadí",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Nekonečný počet instancí prvků",
@@ -68,7 +69,8 @@
                 "label": "Zóna přetažení",
                 "fields": [
                   {
-                    "label": "Popisek"
+                    "label": "Popisek",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Zobrazit popisek"
@@ -81,7 +83,8 @@
                     "label": "Vyberte správné prvky"
                   },
                   {
-                    "label": "Průhlednost pozadí"
+                    "label": "Průhlednost pozadí",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Nápovědy a zpětná vazba",

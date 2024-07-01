@@ -52,7 +52,8 @@
                     "label": "Selecteer de neerzetgebieden"
                   },
                   {
-                    "label": "Ondoorzichtigheid achtergrond"
+                    "label": "Ondoorzichtigheid achtergrond",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Oneindig aantal onderdelen",
@@ -68,7 +69,8 @@
                 "label": "Neerzetgebied",
                 "fields": [
                   {
-                    "label": "Label"
+                    "label": "Label",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Toon label"
@@ -81,7 +83,8 @@
                     "label": "Selecteer de juiste onderdelen"
                   },
                   {
-                    "label": "Ondoorzichtigheid achtergrond"
+                    "label": "Ondoorzichtigheid achtergrond",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Tips en feedback",

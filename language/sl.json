@@ -52,7 +52,8 @@
                     "label": "Spustna polja za izbor"
                   },
                   {
-                    "label": "Prekrivnost ozadja,"
+                    "label": "Prekrivnost ozadja,",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Omogoči neskončno možnost izbire elementa (kloniranje)",
@@ -68,7 +69,8 @@
                 "label": "Spustno polje",
                 "fields": [
                   {
-                    "label": "Oznaka"
+                    "label": "Oznaka",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Prikaži oznako"
@@ -81,7 +83,8 @@
                     "label": "Označi pravilne odgovore (elemente)"
                   },
                   {
-                    "label": "Prekrivnost ozadja"
+                    "label": "Prekrivnost ozadja",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Namig in povratna informacija",

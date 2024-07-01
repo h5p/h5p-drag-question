@@ -52,7 +52,8 @@
                     "label": "Hautatu jaregiteko zonak"
                   },
                   {
-                    "label": "Atzeko planoaren opakutasuna"
+                    "label": "Atzeko planoaren opakutasuna",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Elementu sekuentzia kopuru infinitua",
@@ -68,7 +69,8 @@
                 "label": "Jaregiteko zona",
                 "fields": [
                   {
-                    "label": "Etiketa"
+                    "label": "Etiketa",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Erakutsi etiketa"
@@ -81,7 +83,8 @@
                     "label": "Hautatu elementu zuzenak"
                   },
                   {
-                    "label": "Atzeko planoaren opakutasuna"
+                    "label": "Atzeko planoaren opakutasuna",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Argibideak eta feedbackak",
