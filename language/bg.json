@@ -52,7 +52,8 @@
                     "label": "Изберете зони за пускане"
                   },
                   {
-                    "label": "Прозрачност на фона"
+                    "label": "Прозрачност на фона",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Безкраен брой инстанции на елементи",
@@ -68,7 +69,8 @@
                 "label": "Зона за поставяне на елемент",
                 "fields": [
                   {
-                    "label": "Етикет"
+                    "label": "Етикет",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Покажи етикета"
@@ -81,7 +83,8 @@
                     "label": "Изберете коректен елемент"
                   },
                   {
-                    "label": "Непрозрачност на фона"
+                    "label": "Непрозрачност на фона",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Подсказки и обратна връзка",

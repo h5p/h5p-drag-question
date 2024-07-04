@@ -52,7 +52,8 @@
                     "label": "Velg slippsoner"
                   },
                   {
-                    "label": "Gjennomsiktighet for bakgrunn"
+                    "label": "Gjennomsiktighet for bakgrunn",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Elementet kan dras til slippsoner flere ganger.",
@@ -68,7 +69,8 @@
                 "label": "Slippsone",
                 "fields": [
                   {
-                    "label": "Tittel"
+                    "label": "Tittel",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Vis tittel"
@@ -81,7 +83,8 @@
                     "label": "Velg riktige elementer for denne slippsonen"
                   },
                   {
-                    "label": "Gjennomsiktighet for bakgrunn"
+                    "label": "Gjennomsiktighet for bakgrunn",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Tips og tilbakemelding",

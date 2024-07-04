@@ -52,7 +52,8 @@
                     "label": "Kies valsones"
                   },
                   {
-                    "label": "Deursigtigheid van agtergrond"
+                    "label": "Deursigtigheid van agtergrond",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Oneindige aantal elementgevalle",
@@ -68,7 +69,8 @@
                 "label": "Valsone",
                 "fields": [
                   {
-                    "label": "Etiket"
+                    "label": "Etiket",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Wys etiket"
@@ -81,7 +83,8 @@
                     "label": "Kies die regte elemente"
                   },
                   {
-                    "label": "Deursigtigheid van agtergrond"
+                    "label": "Deursigtigheid van agtergrond",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Wenke en terugvoer",

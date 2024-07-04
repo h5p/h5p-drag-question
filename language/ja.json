@@ -52,7 +52,8 @@
                     "label": "ドロップゾーンを選択"
                   },
                   {
-                    "label": "背景の不透明度"
+                    "label": "背景の不透明度",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "要素数無制限",
@@ -68,7 +69,8 @@
                 "label": "ドロップゾーン",
                 "fields": [
                   {
-                    "label": "ラベル"
+                    "label": "ラベル",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "ラベルを表示"
@@ -81,7 +83,8 @@
                     "label": "正解の要素を選択"
                   },
                   {
-                    "label": "背景の不透明度"
+                    "label": "背景の不透明度",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "ヒントとフィードバック",

@@ -52,7 +52,8 @@
                     "label": "Επιλέξτε περιοχές απόθεσης"
                   },
                   {
-                    "label": "Διαφάνεια φόντου"
+                    "label": "Διαφάνεια φόντου",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Απεριόριστος αριθμός επαναλήψεων στοιχείου",
@@ -68,7 +69,8 @@
                 "label": "Περιοχή απόθεσης",
                 "fields": [
                   {
-                    "label": "Ετικέτα"
+                    "label": "Ετικέτα",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Εμφάνιση ετικέτας"
@@ -81,7 +83,8 @@
                     "label": "Επιλέξτε τα σωστά στοιχεία"
                   },
                   {
-                    "label": "Διαφάνεια φόντου"
+                    "label": "Διαφάνεια φόντου",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Επεξηγήσεις και ανατροφοδότηση",

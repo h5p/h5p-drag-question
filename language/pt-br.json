@@ -52,7 +52,8 @@
                     "label": "Selecione as zonas de soltura"
                   },
                   {
-                    "label": "Opacidade do Plano de Fundo"
+                    "label": "Opacidade do Plano de Fundo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Número infinito de instâncias do elemento",
@@ -68,7 +69,8 @@
                 "label": "Zona de Soltura",
                 "fields": [
                   {
-                    "label": "Rótulo"
+                    "label": "Rótulo",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Mostrar rótulo"
@@ -81,7 +83,8 @@
                     "label": "Selecione o(s) elemento(s) correto(s)"
                   },
                   {
-                    "label": "Opacidade do Plano de Fundo"
+                    "label": "Opacidade do Plano de Fundo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Dicas e feedback",

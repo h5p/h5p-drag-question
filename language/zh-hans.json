@@ -52,7 +52,8 @@
                     "label": "选择任务区域"
                   },
                   {
-                    "label": "背景不透明度"
+                    "label": "背景不透明度",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "元素无限化",
@@ -68,7 +69,8 @@
                 "label": "任务区域",
                 "fields": [
                   {
-                    "label": "标记名称"
+                    "label": "标记名称",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "显示标记名称"
@@ -81,7 +83,8 @@
                     "label": "选择正确的元素"
                   },
                   {
-                    "label": "背景不透明度"
+                    "label": "背景不透明度",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "提示及回馈",
