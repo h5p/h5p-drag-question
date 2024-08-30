@@ -29,7 +29,7 @@
     "babel-loader": "^8.2.5",
     "cross-env": "^7.0.3",
     "h5p-lib-controls": "^0.0.15",
-    "webpack": "^5.76.0",
+    "webpack": "^5.94.0",
     "webpack-cli": "^4.10.0"
   }
 }
