@@ -1,24 +1,25 @@
 {
   "semantics": [
     {
-      "default": "Tikrinti",
-      "label": "„Tikrinti atsakymą“ mygtukas"
+      "label": "„Tikrinti atsakymą“ mygtukas",
+      "default": "Tikrinti"
     },
     {
-      "default": "Pateikti",
-      "label": "„Pateikti atsakymą“ mygtukas"
+      "label": "„Pateikti atsakymą“ mygtukas",
+      "default": "Pateikti"
     },
     {
-      "default": "Bandyti dar kartą",
-      "label": "„Bandyti dar kartą“ mygtukas"
+      "label": "„Bandyti dar kartą“ mygtukas",
+      "default": "Bandyti dar kartą"
     },
     {
-      "default": "Teisingas atsakymas +1 balas. Neteisingas atsakymas -1 balas. Mažiausias įvertinimas 0 balų.",
-      "label": "Vertinimo paaiškinimas"
+      "label": "Vertinimo paaiškinimas",
+      "default": "Teisingas atsakymas +1 balas. Neteisingas atsakymas -1 balas. Mažiausias įvertinimas 0 balų."
     },
     {
       "fields": [
         {
+          "label": "Nustatymai",
           "fields": [
             {
               "label": "Fono paveikslėlis",
@@ -28,14 +29,15 @@
               "label": "Užduoties dydis",
               "description": "Nurodykite, kokio dydžio (px) turi būti žaidimo sritis."
             }
-          ],
-          "label": "Nustatymai"
+          ]
         },
         {
           "label": "Užduotis",
+          "description": "Pradėkite žymėdami zonas.<br />Toliau, padėkite metamus elementus ir pažymėkite apytiksles metimo zonas.<br />Pabaigai, redaguokite metimo zonas ir pažymėkite teisingus atsakymus.",
           "fields": [
             {
               "label": "Elementai",
+              "entity": "elementas",
               "field": {
                 "label": "Elementas",
                 "fields": [
@@ -50,23 +52,25 @@
                     "label": "Pasirinkite metimo zonas"
                   },
                   {
-                    "label": "Fono skaidrumas"
+                    "label": "Fono skaidrumas",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Begalinis elementų egzempliorių skaičius",
                     "description": "Klonuokite šį elementą taip, kad būtų galima jį padėti į daugelį metimo zonų."
                   }
                 ]
-              },
-              "entity": "elementas"
+              }
             },
             {
               "label": "Metimo zonos",
+              "entity": "Metimo zona",
               "field": {
                 "label": "Metimo zona",
                 "fields": [
                   {
-                    "label": "Pavadinimas"
+                    "label": "Pavadinimas",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Rodyti pavadinimą"
@@ -79,42 +83,42 @@
                     "label": "Pasirinkite teisingus elementus"
                   },
                   {
-                    "label": "Fono skaidrumas"
+                    "label": "Fono skaidrumas",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
+                    "label": "Patarimai ir atsiliepimai",
                     "fields": [
                       {
                         "label": "Patarimo tekstas"
                       },
                       {
-                        "description": "Pranešimas pasirodys po užduotimi ant \"tikrinti\", jei bus numestas teisingas elementas.",
-                        "label": "Pranešimas rodomas teisingai pasirinkus"
+                        "label": "Pranešimas rodomas teisingai pasirinkus",
+                        "description": "Pranešimas pasirodys po užduotimi ant \"tikrinti\", jei bus numestas teisingas elementas."
                       },
                       {
-                        "description": "Pranešimas pasirodys po užduotimi ant \"tikrinti\", jei numestas netinkamas elementas.",
-                        "label": "Rodomas pranešimas jei neatitinka"
+                        "label": "Rodomas pranešimas jei neatitinka",
+                        "description": "Pranešimas pasirodys po užduotimi ant \"tikrinti\", jei numestas netinkamas elementas."
                       }
-                    ],
-                    "label": "Patarimai ir atsiliepimai"
+                    ]
                   },
                   {
-                    "description": "Įsitikinkite, kad šioje metimo zonoje yra tik vienas teisingas atsakymas",
-                    "label": "Šioje metimo zonoje gali būti tik vienas elementas"
+                    "label": "Šioje metimo zonoje gali būti tik vienas elementas",
+                    "description": "Įsitikinkite, kad šioje metimo zonoje yra tik vienas teisingas atsakymas"
                   },
                   {
-                    "description": "Automatiškai išlygiuoti visus patalpintus šioje zonoje objektus.",
-                    "label": "Įjungti automatinį lygiavimą"
+                    "label": "Įjungti automatinį lygiavimą",
+                    "description": "Automatiškai išlygiuoti visus patalpintus šioje zonoje objektus."
                   }
                 ]
-              },
-              "entity": "Metimo zona"
+              }
             }
-          ],
-          "description": "Pradėkite žymėdami zonas.<br />Toliau, padėkite metamus elementus ir pažymėkite apytiksles metimo zonas.<br />Pabaigai, redaguokite metimo zonas ir pažymėkite teisingus atsakymus."
+          ]
         }
       ]
     },
     {
+      "label": "Bendras atsiliepimas",
       "fields": [
         {
           "widgets": [
@@ -122,7 +126,9 @@
               "label": "Numatytas"
             }
           ],
+          "label": "Nustatykite savo atsiliepimą visiems vertinimo lygiams",
           "description": "Spauskite mygtuką \"Pridėti lygį\" tiek kiek reikia pridėti lygių. Pvz.: 0-20% blogas rezultatas, 21-91% vidutinis rezultatas, 91-100% puikus rezultatas!",
+          "entity": "diapazonas",
           "field": {
             "fields": [
               {
@@ -130,18 +136,16 @@
               },
               {},
               {
-                "placeholder": "Užpildykite atsiliepimą",
-                "label": "Atsiliepimas apibrėžtam balų diapazonui"
+                "label": "Atsiliepimas apibrėžtam balų diapazonui",
+                "placeholder": "Užpildykite atsiliepimą"
               }
             ]
-          },
-          "label": "Nustatykite savo atsiliepimą visiems vertinimo lygiams",
-          "entity": "diapazonas"
+          }
         }
-      ],
-      "label": "Bendras atsiliepimas"
+      ]
     },
     {
+      "label": "Veikimo nustatymai",
       "description": "Šie parametrai padės jums kontroliuoti užduoties veikimą.",
       "fields": [
         {
@@ -151,22 +155,23 @@
           "label": "Įjungti mygtuką „Tikrinti“"
         },
         {
-          "description": "Atjungia galimybę duoti po vieną balą už kiekvieną teisingai užpildytą sritį.",
-          "label": "Duoti vieną balą už visą užduotį"
+          "label": "Duoti vieną balą už visą užduotį",
+          "description": "Atjungia galimybę duoti po vieną balą už kiekvieną teisingai užpildytą sritį."
         },
         {
-          "description": "Nuobaudų taikymas už metamus elementus į neteisingas zonas. Tai turi būti įjungta, kai tas pats elementas gali būti metamas į kelias zonas arba yra tik viena metimo zona. Jei tai nėra įjungta, tada besimokantysis gali bet kurį elementą mesti į bet kurią zoną ir gauti galutinį balą.",
-          "label": "Taikyti nuobaudas"
+          "label": "Taikyti nuobaudas",
+          "description": "Nuobaudų taikymas už metamus elementus į neteisingas zonas. Tai turi būti įjungta, kai tas pats elementas gali būti metamas į kelias zonas arba yra tik viena metimo zona. Jei tai nėra įjungta, tada besimokantysis gali bet kurį elementą mesti į bet kurią zoną ir gauti galutinį balą."
         },
         {
-          "description": "Rodyti vertinimo paaiškinimus tikrinant atsakymus. (Jei pasirinktas nustatymas \"Taikyti nuobaudas\").",
-          "label": "Įjungti vertinimo paaiškinimą"
+          "label": "Įjungti vertinimo paaiškinimą",
+          "description": "Rodyti vertinimo paaiškinimus tikrinant atsakymus. (Jei pasirinktas nustatymas \"Taikyti nuobaudas\")."
         },
         {
-          "description": "Jei šis laukas nustatytas, jis bus taikomas visiems tempiamiems elementams. Turi būti skaičius tarp 0 ir 100, kur 0 reiškia visišką skaidrumą, o 100 reiškia nepermatomą",
-          "label": "Fono skaidrumas pertempimams"
+          "label": "Fono skaidrumas pertempimams",
+          "description": "Jei šis laukas nustatytas, jis bus taikomas visiems tempiamiems elementams. Turi būti skaičius tarp 0 ir 100, kur 0 reiškia visišką skaidrumą, o 100 reiškia nepermatomą"
         },
         {
+          "label": "Metimo zonos paryškinimas",
           "description": "Pasirinkite, kada paryškinti metimo zonas.",
           "options": [
             {
@@ -178,28 +183,27 @@
             {
               "label": "Niekada"
             }
-          ],
-          "label": "Metimo zonos paryškinimas"
+          ]
         },
         {
           "label": "Auto-lygiavimo tarpas (px)"
         },
         {
-          "description": "Pasirinkite šį parametrą, kad įjungtumėte viso ekrano režimą.",
-          "label": "Įjungti viso ekrano režimą"
+          "label": "Įjungti viso ekrano režimą",
+          "description": "Pasirinkite šį parametrą, kad įjungtumėte viso ekrano režimą."
         },
         {
-          "description": "Rodyti balus už kiekvieną atsakymą. Netaikoma, kada nustatytas vertinimas už visą užduotį.",
-          "label": "Rodyti surinktus balus"
+          "label": "Rodyti surinktus balus",
+          "description": "Rodyti balus už kiekvieną atsakymą. Netaikoma, kada nustatytas vertinimas už visą užduotį."
         },
         {
-          "description": "Išjunkite šį parametrą, jei nenorite rodyti pavadinimo. Pavadinimas bus rodomas tik pabaigoje, statistikoje ir t.t.",
-          "label": "Rodyti pavadinimą"
+          "label": "Rodyti pavadinimą",
+          "description": "Išjunkite šį parametrą, jei nenorite rodyti pavadinimo. Pavadinimas bus rodomas tik pabaigoje, statistikoje ir t.t."
         }
-      ],
-      "label": "Veikimo nustatymai"
+      ]
     },
     {
+      "label": "Lokalizacija",
       "fields": [
         {
           "label": "Pavadinimas pilno ekrano režime",
@@ -209,8 +213,7 @@
           "label": "Viso ekrano režimo išjungimo pavadinimas",
           "default": "Išjungti viso ekrano režimą"
         }
-      ],
-      "label": "Lokalizacija"
+      ]
     },
     {
       "label": "Metamų objektų priešdėlis",

@@ -52,7 +52,8 @@
                     "label": "Selezionare una zona di rilascio"
                   },
                   {
-                    "label": "Opacità Sfondo"
+                    "label": "Opacità Sfondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Numero infinito di istanze di elementi",
@@ -68,7 +69,8 @@
                 "label": "Zona di rilascio",
                 "fields": [
                   {
-                    "label": "Etichetta"
+                    "label": "Etichetta",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Mostra etichetta"
@@ -81,7 +83,8 @@
                     "label": "Selezionare gli elementi corretti"
                   },
                   {
-                    "label": "Opacità Sfondo"
+                    "label": "Opacità Sfondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Suggerimenti e feedback",

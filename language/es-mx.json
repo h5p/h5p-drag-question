@@ -52,7 +52,8 @@
                     "label": "Seleccione zonas de caída"
                   },
                   {
-                    "label": "Opacidad del Fondo"
+                    "label": "Opacidad del Fondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Número infinito de instancias de elementos",
@@ -68,7 +69,8 @@
                 "label": "Zona de Caída",
                 "fields": [
                   {
-                    "label": "Etiqueta"
+                    "label": "Etiqueta",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "Mostrar etiqueta"
@@ -81,7 +83,8 @@
                     "label": "Seleccionar elementos correctos"
                   },
                   {
-                    "label": "Opacidad del Fondo"
+                    "label": "Opacidad del Fondo",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "Pistas y retroalimentación",

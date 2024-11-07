@@ -52,7 +52,8 @@
                     "label": "აირჩიეთ განთავსების არე"
                   },
                   {
-                    "label": "ფონის გაუმჭვირვალობა"
+                    "label": "ფონის გაუმჭვირვალობა",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "ელემენტის უსასრულო რაოდენობის ეგზემპლარი",
@@ -68,7 +69,8 @@
                 "label": "განთავსების არე",
                 "fields": [
                   {
-                    "label": "წარწერა"
+                    "label": "წარწერა",
+                    "description": "The label is used by assistive technologies."
                   },
                   {
                     "label": "წარწერის ჩვენება"
@@ -81,7 +83,8 @@
                     "label": "აირჩიეთ სწორი ელემენტები"
                   },
                   {
-                    "label": "ფონის გაუმჭვირვალობა"
+                    "label": "ფონის გაუმჭვირვალობა",
+                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
                   },
                   {
                     "label": "რჩევები და უკუკავშირი",
