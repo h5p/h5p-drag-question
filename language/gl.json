@@ -53,7 +53,7 @@
                   },
                   {
                     "label": "Opacidade do Fondo",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "A redución da opacidade pode resultar nun contraste insuficiente que dificulte a accesibilidade."
                   },
                   {
                     "label": "Número infinito de aparicións deste elemento",
@@ -70,7 +70,7 @@
                 "fields": [
                   {
                     "label": "Etiqueta",
-                    "description": "The label is used by assistive technologies."
+                    "description": "Este etiqueta úsase nas tecnoloxías de asistencia."
                   },
                   {
                     "label": "Amosar etiqueta"
@@ -84,7 +84,7 @@
                   },
                   {
                     "label": "Opacidade do Fondo",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "A redución da opacidade pode resultar nun contraste insuficiente que dificulte a accesibilidade."
                   },
                   {
                     "label": "Pistas e retroalimentación",
