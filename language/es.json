@@ -19,7 +19,7 @@
     {
       "fields": [
         {
-          "label": "Configuración",
+          "label": "Configuraciones",
           "fields": [
             {
               "label": "Imagen de fondo",
@@ -27,7 +27,7 @@
             },
             {
               "label": "Tamaño de la tarea",
-              "description": "Especifica las dimensiones (en px) del área de juego."
+              "description": "Especifique que tan grande (en px) debería ser el área de juego."
             }
           ]
         },
@@ -53,7 +53,7 @@
                   },
                   {
                     "label": "Opacidad del fondo",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "La reducción de la opacidad puede causar un contraste insuficiente y hacer que el contenido no sea accesible."
                   },
                   {
                     "label": "Número infinito de instancias de elementos",
@@ -70,7 +70,7 @@
                 "fields": [
                   {
                     "label": "Etiqueta",
-                    "description": "The label is used by assistive technologies."
+                    "description": "Esta etiqueta se usa en tecnologías de asistencia."
                   },
                   {
                     "label": "Mostrar etiqueta"
@@ -84,7 +84,7 @@
                   },
                   {
                     "label": "Opacidad del Fondo",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "La reducción de la opacidad puede causar un contraste insuficiente y hacer que el contenido no sea accesible."
                   },
                   {
                     "label": "Pistas y retroalimentación",
@@ -123,7 +123,7 @@
         {
           "widgets": [
             {
-              "label": "Por defecto"
+              "label": "Predeterminado"
             }
           ],
           "label": "Definir retroalimentación personalizada para cualquier rango de puntuación",
@@ -132,7 +132,7 @@
           "field": {
             "fields": [
               {
-                "label": "Rango del Puntuación"
+                "label": "Rango de Puntuación"
               },
               {},
               {
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "label": "Configuración del comportamiento",
+      "label": "Configuraciones del comportamiento",
       "description": "Estas opciones le permitirán controlar cómo se comporta la tarea.",
       "fields": [
         {
