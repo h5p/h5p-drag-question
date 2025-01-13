@@ -16,7 +16,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-question-content.h5p-dragquestion-has-no-background {
   border-bottom: 1px solid #eee;
 }
-.h5p-dragquestion > .h5p-question-content > .h5p-inner {
+.h5p-dragquestion .h5p-question-content > .h5p-inner {
   position: relative;
   background-repeat: no-repeat;
   background-position: center top;
@@ -25,7 +25,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   overflow: hidden;
 }
 
-.h5p-dragquestion > .h5p-question-content {
+.h5p-dragquestion .h5p-question-content {
   margin-left: 0;
   margin-right: 0;
 }
