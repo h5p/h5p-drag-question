@@ -544,7 +544,16 @@ C.prototype.createQuestionContent = function () {
     else {
       // Add static element
       var $element = this.addElement(element, 'static', i);
-      H5P.newRunnable(element.type, this.id, $element);
+      const instance = H5P.newRunnable(element.type, this.id, $element);
+
+      // Resize audio button manually, because wrapper uses relative dimensions
+      const libraryName = element.type.library.split(' ')[0];
+      if (libraryName === 'H5P.Audio') {
+        this.on('resize', function () {
+          instance.resize();
+        });
+      }
+
       var timedOutOpacity = function ($el, el) {
         setTimeout(function () {
           DragUtils.setOpacity($el, 'background', el.backgroundOpacity);

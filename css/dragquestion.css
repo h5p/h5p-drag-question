@@ -164,6 +164,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   content: "\f00d";
 }
 
+.h5p-dragquestion .h5p-audio-wrapper {
+  z-index: 3;
+}
+
 .h5p-dragquestion .h5p-dropzone {
   z-index: 2;
   position: absolute;
