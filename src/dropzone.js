@@ -43,11 +43,12 @@ export default class DropZone {
     var self = this;
 
     // Prepare inner html with prefix for good a11y
-    var html = '<div class="h5p-inner"></div>';
+    var html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read"></span></div><div class="h5p-inner"></div>';
     var extraClass = '';
     if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read"></span></div>' + html;
       extraClass = ' h5p-has-label';
+    } else {
+      extraClass = ' h5p-label-hidden';
     }
     html = '<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + (!self.showLabel ? self.label : '') + '</span>' + html;
 
