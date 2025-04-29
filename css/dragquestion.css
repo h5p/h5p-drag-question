@@ -1,4 +1,4 @@
-.h5p-dragquestion {
+.h5p-dragquestion .h5p-question-content {
   --h5p-theme-spacing-xl: calc(3em*0.8);
   --h5p-theme-spacing-l: calc(2em*0.8);
   --h5p-theme-spacing-m: calc(1.5em*0.8);
@@ -11,6 +11,8 @@
   --h5p-theme-font-size-m: 1em;
   --h5p-theme-font-size-s: 0.85em;
 }
+
+//except for h5p-question-evaluation-container and h5p-question-introduction
 
 .h5p-dragquestion .h5p-question-plus-one-container, .h5p-dragquestion .h5p-question-minus-one-container{
   scale: unset;
