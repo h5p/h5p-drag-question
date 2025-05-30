@@ -27,7 +27,7 @@ function C(options, contentId, contentData) {
   this.id = this.contentId = contentId;
   this.contentData = contentData;
 
-  H5P.Question.call(self, 'dragquestion', true);
+  H5P.Question.call(self, 'dragquestion', { theme: true });
   this.options = $.extend(true, {}, {
     scoreShow: 'Check',
     tryAgain: 'Retry',
@@ -597,7 +597,7 @@ C.prototype.addSolutionButton = function () {
   }, {
     contentData: this.contentData,
     textIfSubmitting: this.options.submit,
-    classes: 'h5p-theme-primary-cta h5p-theme-check',
+    icon: 'check',
   });
 };
 
@@ -682,7 +682,8 @@ C.prototype.addRetryButton = function () {
     'aria-label': this.options.a11yRetry,
   },
   {
-    classes: 'h5p-theme-secondary-cta h5p-theme-retry',
+    styleType: 'secondary',
+    icon: 'retry',
   });
 };
 
