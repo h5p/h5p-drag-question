@@ -27,7 +27,7 @@ function C(options, contentId, contentData) {
   this.id = this.contentId = contentId;
   this.contentData = contentData;
 
-  H5P.Question.call(self, 'dragquestion');
+  H5P.Question.call(self, 'dragquestion', { theme: true });
   this.options = $.extend(true, {}, {
     scoreShow: 'Check',
     tryAgain: 'Retry',
@@ -597,6 +597,7 @@ C.prototype.addSolutionButton = function () {
   }, {
     contentData: this.contentData,
     textIfSubmitting: this.options.submit,
+    icon: 'check',
   });
 };
 
@@ -679,6 +680,10 @@ C.prototype.addRetryButton = function () {
     that.hideButton('try-again');
   }, false, {
     'aria-label': this.options.a11yRetry,
+  },
+  {
+    styleType: 'secondary',
+    icon: 'retry',
   });
 };
 
