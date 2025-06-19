@@ -252,12 +252,11 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-dq-highlight-dz .h5p-dropzone > .h5p-inner.h5p-active, .h5p-dragquestion .h5p-dq-highlight-dz-always .h5p-dropzone > .h5p-inner {
   padding: 0;
   border: 2px dashed var(--h5p-theme-main-cta-dark);
-  background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 60%);
   border-style: dashed;
 }
 
 .h5p-dragquestion .h5p-dropzone > .h5p-inner.h5p-over {
-  background: #edd6e9;
+  background: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 60%);
 }
 
 .h5p-dragquestion .h5p-label {
