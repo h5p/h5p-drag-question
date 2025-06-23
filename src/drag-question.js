@@ -317,7 +317,7 @@ C.prototype.registerDomElements = function () {
         H5P.exitFullScreen(self.$container);
       }
       else {
-        H5P.fullScreen(self.$container.parent().parent(), self);
+        H5P.fullScreen(self.$container.parent().parent().parent(), self);
       }
     };
 
