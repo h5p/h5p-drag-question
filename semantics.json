@@ -595,5 +595,13 @@
     "default": "Retry the task. Reset all responses and start the task over again.",
     "importance": "low",
     "common": true
+  },
+  {
+    "name": "dragHandleVisibility",
+    "type": "boolean",
+    "label": "Drag Handle Visibility",
+    "description": "Toggles the visibility of drag handles used to move elements on the canvas",
+    "importance": "low",
+    "default": true
   }
 ]

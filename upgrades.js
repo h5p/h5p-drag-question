@@ -158,6 +158,11 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
         }
 
         finished(null, parameters, extras);
+      },
+      15: function (parameters, finished, extras) {
+        // Do not show new design feature for old content.
+        parameters.dragHandleVisibility = false;
+        finished(null, parameters, extras);
       }
     }
   };
