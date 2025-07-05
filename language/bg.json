@@ -266,6 +266,10 @@
     {
       "label": "Етикет за помощни технологии бутон \"Опитай отново\" ",
       "default": "Опитай отново задачата. Всички отговори ще бъдат изчистени и задачата ще може да бъде решена отново."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

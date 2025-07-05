@@ -266,6 +266,10 @@
     {
       "label": "Etikett för knappen \"Försök igen\" som används av tillgänglighetshjälpmedel",
       "default": "Starta ett nytt försök. Nollställer alla svar och startar om uppgiften."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

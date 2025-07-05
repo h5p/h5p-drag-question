@@ -266,6 +266,10 @@
     {
       "label": "علامة التكنولوجيا المساعدة لزر \"الإعادة\"",
       "default": "إعادة المحاولة للمهمة. إعادة ضبط جميع الردود والبدء بالمهمة مرة أخرى."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

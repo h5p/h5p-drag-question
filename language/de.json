@@ -266,6 +266,10 @@
     {
       "label": "Beschreibung des \"Wiederholen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
       "default": "Die Aufgabe wiederholen. Alle Versuche werden zurückgesetzt und die Aufgabe wird erneut gestartet."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

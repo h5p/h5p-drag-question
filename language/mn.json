@@ -266,6 +266,10 @@
     {
       "label": "\"Дахин оролдох\" товчлуурын туслах технологийн шошго",
       "default": "Даалгаврыг дахин оролдоно уу. Бүх хариултыг дахин тохируулаад даалгаврыг дахин эхлүүлнэ үү."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

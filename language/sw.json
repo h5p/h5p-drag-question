@@ -266,6 +266,10 @@
     {
       "label": "Lebo ya teknolojia ya usaidizi kwa kitufe cha \"Jaribu tena\"",
       "default": "Jaribu tena kazi hiyo. Weka upya majibu yote na uanze kazi tena."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

@@ -266,6 +266,10 @@
     {
       "label": "Descripción para las tecnologías de asistencia del botón \"Intentar de nuevo\"",
       "default": "Vuelve a intentar la tarea. Borra todas tus respuestas y empieza de nuevo."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

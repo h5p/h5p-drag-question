@@ -266,6 +266,10 @@
     {
       "label": "\"გამეორება\"-ის ღილაკის იარლიყი დამხმარე ტექნოლოგიისთვის",
       "default": "დავალების გამეორება. ყველა პასუხის ჩამოყრა და დავალების თავიდან შესრულება."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

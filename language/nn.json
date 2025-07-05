@@ -266,6 +266,10 @@
     {
       "label": "Beskriving av \"Prøv igjen\"-knappen (for assisterande teknologi)",
       "default": "Prøv igjen. Alle svara blir nullstilte, og oppgåva startar på nytt."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

@@ -266,6 +266,10 @@
     {
       "label": "Etiqueta de tecnologia assistiva para botão \"Repetir\"",
       "default": "Repetir a atividade. Apagar todas as respostas e reiniciar a atividade."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

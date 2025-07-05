@@ -266,6 +266,10 @@
     {
       "label": "Assistive technology label for \"Retry\" button",
       "default": "Görevi yeniden deneyin. Tüm cevapları sıfırlayın ve görevi yeniden başlatın."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

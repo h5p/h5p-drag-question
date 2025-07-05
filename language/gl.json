@@ -266,6 +266,10 @@
     {
       "label": "Etiqueta do o botón \"Tentar de novo\" para as tecnoloxías de asistencia",
       "default": "Tentar de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

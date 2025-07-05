@@ -266,6 +266,10 @@
     {
       "label": "\"Berriz saiatu\" botoiaren laguntza-teknologientzako etiketa",
       "default": "Zeregina berriz egiten saiatu. Berrabiarazi erantzun guztiak eta hasi zeregina berriz."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

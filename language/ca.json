@@ -266,6 +266,10 @@
     {
       "label": "Etiqueta de la tecnologia d’assistència per a l’etiqueta \"Torna-ho a provar\"",
       "default": "Intenta de nou la tasca. Reajusta totes les respostes i comença la tasca de nou."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }

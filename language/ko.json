@@ -266,6 +266,10 @@
     {
       "label": "\"Retry\" 버튼의 보조 기술 레이블",
       "default": "재시도하세요. 모든 답변을 초기화하고 새로 시작하세요."
+    },
+    {
+      "label": "Drag Handle Visibility",
+      "description": "Toggles the visibility of drag handles used to move elements on the canvas"
     }
   ]
 }
