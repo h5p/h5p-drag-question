@@ -116,6 +116,16 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   border-radius: var(--h5p-theme-border-radius-small) 0 0 var(--h5p-theme-border-radius-small);
 }
 
+/* Base state: hide handle for images */
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image::before {
+  display: none;
+}
+
+/* Show handle when interacting (hover or keyboard focus) */
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *))::before {
+  display: inline-flex;
+}
+
 .h5p-dragquestion .h5p-draggable:hover {
   border: 0.1em solid var(--h5p-theme-main-cta-base) !important;
 }
