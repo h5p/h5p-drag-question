@@ -268,7 +268,7 @@
       "default": "إعادة المحاولة للمهمة. إعادة ضبط جميع الردود والبدء بالمهمة مرة أخرى."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

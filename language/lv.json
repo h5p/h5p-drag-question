@@ -268,7 +268,7 @@
       "default": "Mēģināt uzdevumu vēlreiz. Dzēst visas sniegtās atbildes un sākt uzdevumu vēlreiz."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

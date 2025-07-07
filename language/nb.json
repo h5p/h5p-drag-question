@@ -268,7 +268,7 @@
       "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

@@ -268,7 +268,7 @@
       "default": "Даалгаврыг дахин оролдоно уу. Бүх хариултыг дахин тохируулаад даалгаврыг дахин эхлүүлнэ үү."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

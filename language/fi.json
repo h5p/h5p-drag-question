@@ -268,7 +268,7 @@
       "default": "Yritä tehtävää uudelleen. Tyhjennä kaikki vastaukset ja aloita tehtävä uudelleen alusta."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

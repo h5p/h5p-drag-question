@@ -268,7 +268,7 @@
       "default": "Bandyti užduotį dar kartą. Atšaukti visus atsakymus ir pradėti užduoti iš naujo."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

@@ -268,7 +268,7 @@
       "default": "დავალების გამეორება. ყველა პასუხის ჩამოყრა და დავალების თავიდან შესრულება."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

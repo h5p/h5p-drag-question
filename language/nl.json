@@ -268,7 +268,7 @@
       "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

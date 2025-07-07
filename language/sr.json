@@ -268,7 +268,7 @@
       "default": "Покушајте поново са задатком. Ресетујте све одговоре и покрените задатак поново."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

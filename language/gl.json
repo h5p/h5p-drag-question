@@ -268,7 +268,7 @@
       "default": "Tentar de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

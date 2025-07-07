@@ -268,7 +268,7 @@
       "default": "Görevi yeniden deneyin. Tüm cevapları sıfırlayın ve görevi yeniden başlatın."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]

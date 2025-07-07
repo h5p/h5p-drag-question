@@ -268,7 +268,7 @@
       "default": "Probeer die taak weer. Herstel al die antwoorde en probeer die taak weer van die begin af."
     },
     {
-      "label": "Drag Handle Visibility",
+      "label": "Drag handle visibility",
       "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
