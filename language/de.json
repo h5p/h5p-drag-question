@@ -268,8 +268,8 @@
       "default": "Die Aufgabe wiederholen. Alle Versuche werden zurückgesetzt und die Aufgabe wird erneut gestartet."
     },
     {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
+      "label": "Sichtbarkeit der Ziehgriffe",
+      "description": "Ändert die Sichtbarkeit der Ziehgriffe, die zum Verschieben von Elementen auf der Leinwand verwendet werden."
     }
   ]
 }
