@@ -201,8 +201,8 @@
           "description": "Décochez cette option si vous ne voulez pas que ce titre soit affiché. Le titre ne sera affiché que dans les résumés, les statistiques, etc."
         },
         {
-          "label": "Drag handle visibility",
-          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
+          "label": "Visibilité des Poignées de Déplacement",
+          "description": "Change l'état de visibilité des poignées permettant de déplacer des éléments sur le canevas"
         }
       ]
     },
