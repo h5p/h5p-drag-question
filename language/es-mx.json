@@ -199,6 +199,10 @@
         {
           "label": "Mostrar Título",
           "description": "Desactivar esta opción si no desea que se muestre este título. El título solamente será mostrado en resúmenes, estadísticas, etc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Etiqueta de tecnología asistiva para botón \"Reintentar\"",
       "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

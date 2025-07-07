@@ -199,6 +199,10 @@
         {
           "label": "Visa titel",
           "description": "Bocka ur detta om du vill att din titel inte ska visas. Titeln kommer bara visas i sammanfattningar, statistik, etc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Etikett för knappen \"Försök igen\" som används av tillgänglighetshjälpmedel",
       "default": "Starta ett nytt försök. Nollställer alla svar och startar om uppgiften."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

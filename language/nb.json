@@ -199,6 +199,10 @@
         {
           "label": "Vis tittel",
           "description": "Fjern hake hvis du ikke ønsker å vise tittelen. Tittelen vises bare ved oppsummeringer, statistikk osv."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Beskrivelse av \"Prøv igjen\"-knapp (for assisterende teknologi)",
       "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

@@ -199,6 +199,10 @@
         {
           "label": "Amosar Título",
           "description": "Desmarca esta opción se non queres que se amose este título. O título amosarase só en resumos, estatísticas, etc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Etiqueta do o botón \"Tentar de novo\" para as tecnoloxías de asistencia",
       "default": "Tentar de novo a tarefa. Borra todas as respostas e empeza a tarefa de novo."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

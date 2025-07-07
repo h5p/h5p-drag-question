@@ -199,6 +199,10 @@
         {
           "label": "제목 표시",
           "description": "이 제목을 표시하지 않으려면 이 옵션의 선택을 취소하십시오. 제목은 요약, 통계 등에만 표시."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "\"Retry\" 버튼의 보조 기술 레이블",
       "default": "재시도하세요. 모든 답변을 초기화하고 새로 시작하세요."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

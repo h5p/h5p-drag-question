@@ -199,6 +199,10 @@
         {
           "label": "Toon titel",
           "description": "Vink deze optie uit als je de titel niet wilt tonen. De titel wordt alleen getoond in samenvattingen, statistieken enz."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Ondersteunende technologie label voor \"Opnieuw\"-knop",
       "default": "Probeer de taak opnieuw. Reset alle antwoorden en start de taak opnieuw."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

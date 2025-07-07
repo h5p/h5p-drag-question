@@ -199,6 +199,10 @@
         {
           "label": "أظهر العنوان",
           "description": "قم بإلغاء تحديد هذا الخيار إذا كنت لا تريد عرض هذا العنوان. سيتم عرض العنوان فقط في الملخصات والإحصاءات وما إلى ذلك."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "علامة التكنولوجيا المساعدة لزر \"الإعادة\"",
       "default": "إعادة المحاولة للمهمة. إعادة ضبط جميع الردود والبدء بالمهمة مرة أخرى."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

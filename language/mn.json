@@ -199,6 +199,10 @@
         {
           "label": "Гарчиг харуулах",
           "description": "Хэрэв та энэ гарчгийг харуулахыг хүсэхгүй байгаа бол энэ сонголтыг арилгана уу. Гарчиг нь зөвхөн хураангуй, статистик гэх мэтээр харагдах болно."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "\"Дахин оролдох\" товчлуурын туслах технологийн шошго",
       "default": "Даалгаврыг дахин оролдоно уу. Бүх хариултыг дахин тохируулаад даалгаврыг дахин эхлүүлнэ үү."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

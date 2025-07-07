@@ -199,6 +199,10 @@
         {
           "label": "Titel anzeigen",
           "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
+        },
+        {
+          "label": "Sichtbarkeit der Ziehgriffe",
+          "description": "Ändert die Sichtbarkeit der Ziehgriffe, die zum Verschieben von Elementen auf der Leinwand verwendet werden."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Beschreibung des \"Wiederholen\"-Buttons (für Hilfsmittel zur Barrierefreiheit)",
       "default": "Die Aufgabe wiederholen. Alle Versuche werden zurückgesetzt und die Aufgabe wird erneut gestartet."
-    },
-    {
-      "label": "Sichtbarkeit der Ziehgriffe",
-      "description": "Ändert die Sichtbarkeit der Ziehgriffe, die zum Verschieben von Elementen auf der Leinwand verwendet werden."
     }
   ]
 }

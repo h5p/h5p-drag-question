@@ -66,12 +66,12 @@ function C(options, contentId, contentData) {
       dropZoneHighlighting: 'dragging',
       autoAlignSpacing: 2,
       showScorePoints: true,
-      showTitle: false
+      showTitle: false,
+      dragHandleVisibility: true
     },
     a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
     a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
-    submit: 'Submit',
-    dragHandleVisibility: true,
+    submit: 'Submit'
   }, options);
 
   // If single point is enabled, it makes no sense displaying
@@ -302,7 +302,7 @@ C.prototype.registerDomElements = function () {
     }
     classes += 'h5p-dq-highlight-dz-always';
   }
-  if (self.options.dragHandleVisibility) {
+  if (self.options.behaviour.dragHandleVisibility) {
     if (classes) {
       classes += ' ';
     }

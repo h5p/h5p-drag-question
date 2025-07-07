@@ -199,6 +199,10 @@
         {
           "label": "Показване на заглавието",
           "description": "Махнете отметката от тази опция, ако не искате заглавието да се показва. То ще се показва само в резюмета, статистически данни и т.н."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Етикет за помощни технологии бутон \"Опитай отново\" ",
       "default": "Опитай отново задачата. Всички отговори ще бъдат изчистени и задачата ще може да бъде решена отново."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

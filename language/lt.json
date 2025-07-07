@@ -199,6 +199,10 @@
         {
           "label": "Rodyti pavadinimą",
           "description": "Išjunkite šį parametrą, jei nenorite rodyti pavadinimo. Pavadinimas bus rodomas tik pabaigoje, statistikoje ir t.t."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Pagalbinis technologinis užrašas \"Bandyti dar kartą\" mygtukui",
       "default": "Bandyti užduotį dar kartą. Atšaukti visus atsakymus ir pradėti užduoti iš naujo."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

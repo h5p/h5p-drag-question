@@ -199,6 +199,10 @@
         {
           "label": "Näytä tehtävän otsikko",
           "description": "Jätä valitsematta, jos et halua otsikkoa näkyviin. Tällöin otsikko näkyy vain yhteenvedoissa, tilastoissa jne."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Avustavan teknologian otsikko \"Yritä uudelleen\" -painikkeelle",
       "default": "Yritä tehtävää uudelleen. Tyhjennä kaikki vastaukset ja aloita tehtävä uudelleen alusta."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

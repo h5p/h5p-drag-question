@@ -199,6 +199,10 @@
         {
           "label": "Başlığı göster",
           "description": "Başlığın gösterilmesini istemiyorsanız bu seçenekteki işareti kaldırınız. Başlık sadece özetlerde,istatistiklerde vb. yerlerde gösterilecektir."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Assistive technology label for \"Retry\" button",
       "default": "Görevi yeniden deneyin. Tüm cevapları sıfırlayın ve görevi yeniden başlatın."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }

@@ -199,6 +199,10 @@
         {
           "label": "Mostrar Título",
           "description": "Desmarque esta opção se você não quiser que este título seja exibido. O título só será exibido em resumos, estatísticas, etc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
@@ -266,10 +270,6 @@
     {
       "label": "Rótulo da tecnologia de assistência para o botão \"Tentar Novamente\"",
       "default": "Tente realizar a tarefa novamente. Reinicialize todas as respostas e recomece."
-    },
-    {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
     }
   ]
 }
