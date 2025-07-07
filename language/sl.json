@@ -199,6 +199,10 @@
         {
           "label": "Prikaži naslov vsebine",
           "description": "Naslov vsebine bo skrit."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

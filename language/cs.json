@@ -199,6 +199,10 @@
         {
           "label": "Zobrazit nadpis",
           "description": "Zrušte zaškrtnutí této možnosti, pokud nechcete, aby se tento nadpis zobrazoval. Nadpis se zobrazí pouze v souhrnech, statistikách atd."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

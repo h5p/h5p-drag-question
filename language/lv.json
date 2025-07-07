@@ -199,6 +199,10 @@
         {
           "label": "Rādīt virsrakstu",
           "description": "Noņemiet šo atzīmi, ja nevēlaties, lai šis virsraksts tiktu rādīts. Virsraksts tiks parādīts tikai kopsavilkumos, statistikā utt."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

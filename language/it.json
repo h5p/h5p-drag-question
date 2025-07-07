@@ -199,6 +199,10 @@
         {
           "label": "Mostra Titolo",
           "description": "Deseleziona questa opzione se non vuoi che questo titolo sia visualizzato. Il titolo sarà visualizzato solo in sintesi, statistiche ecc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

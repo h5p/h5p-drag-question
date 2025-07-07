@@ -199,6 +199,10 @@
         {
           "label": "Näita pealkirja",
           "description": "Ära märgi seda valikut, kui ei taha pealkirja näidata. Pealkirja näidatakse ainult kokkuvõtetes, statistikas, jne."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

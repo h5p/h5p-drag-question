@@ -199,6 +199,10 @@
         {
           "label": "სათაურის ჩვენება",
           "description": "გამორთეთ ეს პარამეტრი თუ არ გინდათ, რომ სათაური გამოჩნდეს. სათაური გამოჩნდება მხოლოდ დავალების ბოლოში, სტატისტიკაში და ა.შ."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

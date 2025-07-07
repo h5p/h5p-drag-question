@@ -199,6 +199,10 @@
         {
           "label": "顯示標題",
           "description": "如果不希望顯示標題時，請取消勾選此選項。標題將只顯示在總結、統計等."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

@@ -199,6 +199,10 @@
         {
           "label": "Прикажи наслов",
           "description": "Опозовите избор ове опције ако не желите да се приказује овај наслов. Наслов ће бити приказан само у резимеима, статистикама итд."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

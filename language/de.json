@@ -199,6 +199,10 @@
         {
           "label": "Titel anzeigen",
           "description": "Deaktiviere diese Option, falls du nicht möchtest, dass der Titel angezeigt wird. Der Titel wird nur in der Zusammenfassung und in Statistiken eingeblendet."
+        },
+        {
+          "label": "Sichtbarkeit der Ziehgriffe",
+          "description": "Ändert die Sichtbarkeit der Ziehgriffe, die zum Verschieben von Elementen auf der Leinwand verwendet werden."
         }
       ]
     },
