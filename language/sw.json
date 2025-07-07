@@ -199,6 +199,10 @@
         {
           "label": "Onyesha Mada",
           "description": "Futa chaguo hili ikiwa hutaki mada hii ionyeshwe. Mada itaonyeshwa tu katika muhtasari, takwimu na kadhalika."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

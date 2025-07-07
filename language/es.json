@@ -199,6 +199,10 @@
         {
           "label": "Mostrar Título",
           "description": "Desactivar esta opción si no quieres que se muestre este título. El título solamente se mostrará en resúmenes, estadísticas, etc."
+        },
+        {
+          "label": "Visibilidad del controlador de arrastre",
+          "description": "Activa la visibilidad de controladores de arrastre utilizada para mover los elementos del área de trabajo."
         }
       ]
     },

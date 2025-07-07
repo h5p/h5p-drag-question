@@ -199,6 +199,10 @@
         {
           "label": "Гарчиг харуулах",
           "description": "Хэрэв та энэ гарчгийг харуулахыг хүсэхгүй байгаа бол энэ сонголтыг арилгана уу. Гарчиг нь зөвхөн хураангуй, статистик гэх мэтээр харагдах болно."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

@@ -469,6 +469,14 @@
         "importance": "low",
         "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
         "default": true
+      },
+      {
+        "name": "dragHandleVisibility",
+        "type": "boolean",
+        "label": "Drag handle visibility",
+        "description": "Toggles the visibility of drag handles used to move elements on the canvas.",
+        "importance": "low",
+        "default": true
       }
     ]
   },
