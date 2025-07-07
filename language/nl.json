@@ -199,6 +199,10 @@
         {
           "label": "Toon titel",
           "description": "Vink deze optie uit als je de titel niet wilt tonen. De titel wordt alleen getoond in samenvattingen, statistieken enz."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

@@ -199,6 +199,10 @@
         {
           "label": "Prikaži naziv",
           "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

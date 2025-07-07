@@ -199,6 +199,10 @@
         {
           "label": "תצוגת כותרת",
           "description": "הורדת סימון מאפשרות זו אם אתם לא רוצים שכותרת זו תוצג. הכותרת תוצג בתקצירים, סטטיסטיקות וכו'."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

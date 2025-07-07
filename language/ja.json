@@ -199,6 +199,10 @@
         {
           "label": "タイトルを表示",
           "description": "このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

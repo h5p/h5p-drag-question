@@ -199,6 +199,10 @@
         {
           "label": "Amosar Título",
           "description": "Desmarca esta opción se non queres que se amose este título. O título amosarase só en resumos, estatísticas, etc."
+        },
+        {
+          "label": "Drag handle visibility",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

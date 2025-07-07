@@ -43,7 +43,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   overflow: hidden;
 }
 
-.h5p-draggable.ui-draggable.ui-draggable-handle:before {
+.h5p-dq-handle .h5p-draggable.ui-draggable.ui-draggable-handle:before {
   display: inline-block;
   position: absolute;
   left: -14px;
@@ -103,7 +103,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   font-weight: bold;
 }
 
-.h5p-dragquestion .h5p-draggable:before {
+.h5p-dragquestion .h5p-dq-handle  .h5p-draggable:before {
   font-family: 'h5p-theme';
   content: "\e90f";
   display: inline-flex;
@@ -114,6 +114,16 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   background-color: color-mix(in srgb, var(--h5p-theme-alternative-dark), transparent 30%);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--h5p-theme-alternative-dark), transparent 30%);
   border-radius: var(--h5p-theme-border-radius-small) 0 0 var(--h5p-theme-border-radius-small);
+}
+
+/* Base state: hide handle for images */
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image::before {
+  display: none;
+}
+
+/* Show handle when interacting (hover or keyboard focus) */
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *))::before {
+  display: inline-flex;
 }
 
 .h5p-dragquestion .h5p-draggable:hover {
