@@ -268,8 +268,8 @@
       "default": "Vuelve a intentar la tarea. Borra todas tus respuestas y empieza de nuevo."
     },
     {
-      "label": "Drag handle visibility",
-      "description": "Toggles the visibility of drag handles used to move elements on the canvas."
+      "label": "Visibilidad del controlador de arrastre",
+      "description": "Activa la visibilidad de controladores de arrastre utilizada para mover los elementos del área de trabajo."
     }
   ]
 }
