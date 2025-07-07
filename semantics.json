@@ -600,7 +600,7 @@
     "name": "dragHandleVisibility",
     "type": "boolean",
     "label": "Drag Handle Visibility",
-    "description": "Toggles the visibility of drag handles used to move elements on the canvas",
+    "description": "Toggles the visibility of drag handles used to move elements on the canvas.",
     "importance": "low",
     "default": true
   }
