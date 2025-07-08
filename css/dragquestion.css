@@ -135,6 +135,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   display: inline-flex;
 }
 
+.h5p-dragquestion:has(.evaluation-mode) {
+  .h5p-dq-handle .h5p-draggable::before {
+    display: none;
+  }
+}
+
 .h5p-dragquestion .h5p-draggable:hover {
   border: 0.1em solid var(--h5p-theme-main-cta-base) !important;
 }
