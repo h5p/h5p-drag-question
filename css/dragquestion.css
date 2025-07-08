@@ -46,9 +46,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dq-handle .h5p-draggable.ui-draggable.ui-draggable-handle:before {
   display: inline-block;
   position: absolute;
-  left: -14px;
+  left: -18px;
   align-content: center;
   font-size: max(1.5vw, 16px);
+  border: inherit;
+  box-shadow: inherit;
+  z-index: -1; /* prevent tab outline of parent being partially covered */
 }
 
 .h5p-dragquestion .h5p-question-content {
@@ -122,6 +125,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 /* Show handle when interacting (hover or keyboard focus) */
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.ui-draggable.ui-draggable-handle:not(.h5p-image),
+.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *)) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *))::before {
   display: inline-flex;
 }
