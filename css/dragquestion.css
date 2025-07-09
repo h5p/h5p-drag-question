@@ -86,7 +86,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable {
   border-radius: var(--h5p-theme-border-radius-medium);
   border: 0.1em solid var(--h5p-theme-alternative-base);
-  cursor: pointer;
   position: absolute;
   text-align: center;
   padding: 0.3em 0.3em;
@@ -104,6 +103,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   display: flex;
   align-items: center;
   font-weight: bold;
+}
+
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-draggable {
+  cursor: pointer;
 }
 
 .h5p-dragquestion .h5p-dq-handle  .h5p-draggable:before {
@@ -125,17 +128,23 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 /* Show handle when interacting (hover or keyboard focus) */
-.h5p-dragquestion .h5p-dq-handle .h5p-draggable.ui-draggable.ui-draggable-handle:not(.h5p-image),
-.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *)) {
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-dq-handle .h5p-draggable.ui-draggable.ui-draggable-handle:not(.h5p-image),
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *)) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.h5p-dragquestion .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *))::before {
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-dq-handle .h5p-draggable.h5p-image:is(.h5p-draggable-hover,:focus:not(.using-mouse *))::before {
   display: inline-flex;
 }
 
-.h5p-dragquestion .h5p-draggable:hover {
+.h5p-dragquestion:has(.evaluation-mode) {
+  .h5p-dq-handle .h5p-draggable::before {
+    display: none;
+  }
+}
+
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-draggable:hover {
   border: 0.1em solid var(--h5p-theme-main-cta-base) !important;
 }
 
@@ -156,7 +165,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   font-size: var(--h5p-theme-font-size-m);
 }
 
-.h5p-dragquestion .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct):not(.h5p-wrong) {
+.h5p-dragquestion:not(:has(.evaluation-mode)) .h5p-draggable:not(.ui-state-disabled).h5p-draggable-hover:not(.h5p-correct):not(.h5p-wrong) {
   border: 0.1em solid rgb(212, 190, 216);
   background: var(--h5p-theme-alternative-dark);
   border-color: var(--h5p-theme-alternative-dark);
