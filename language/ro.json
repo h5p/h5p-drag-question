@@ -1,114 +1,114 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Butonul de verificare a răspunsului",
+      "default": "Verifică"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Butonul de trimitere a răspunsului",
+      "default": "Trimite"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Butonul de reîncercare",
+      "default": "Reîncearcă"
     },
     {
-      "label": "Score explanation text",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "label": "Textul de explicare a punctajului",
+      "default": "Răspunsurile corecte aduc +1 punct. Răspunsurile incorecte scad cu -1 punct. Punctajul minim posibil este 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Setări",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Imagine de fundal",
+              "description": "Opțional. Selectați o imagine pentru a o folosi ca fundal pentru sarcina de tip glisare și plasare."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Dimensiunea sarcinii",
+              "description": "Specificați cât de mare (în px) ar trebui să fie zona de joc."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
+          "label": "Sarcină",
+          "description": "Începeți prin a plasa zonele de plasare.<br />Apoi, plasați elementele glisabile și bifați zonele de plasare corespunzătoare.<br />În final, editați din nou zona de plasare și bifați răspunsurile corecte.",
           "fields": [
             {
-              "label": "Elements",
+              "label": "Elemente",
               "entity": "element",
               "field": {
                 "label": "Element",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Alegeți tipul de conținut pe care doriți să-l adăugați."
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Selectați zonele de plasare"
                   },
                   {
-                    "label": "Background Opacity",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "label": "Opacitate fundal",
+                    "description": "Reducerea opacității poate duce la un contrast insuficient și poate face conținutul inaccesibil."
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Număr infinit de instanțe ale elementului",
+                    "description": "Clonează acest element astfel încât să poată fi glisat în mai multe zone de plasare."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Zone de plasare",
+              "entity": "Zonă de plasare",
               "field": {
-                "label": "Drop Zone",
+                "label": "Zonă de plasare",
                 "fields": [
                   {
-                    "label": "Label",
-                    "description": "The label is used by assistive technologies."
+                    "label": "Etichetă",
+                    "description": "Eticheta este folosită de tehnologiile asistive."
                   },
                   {
-                    "label": "Show label"
+                    "label": "Afișează eticheta"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Selectați elementele corecte"
                   },
                   {
-                    "label": "Background Opacity",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "label": "Opacitate fundal",
+                    "description": "Reducerea opacității poate duce la un contrast insuficient și poate face conținutul inaccesibil."
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Indicii și feedback",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Text indiciu"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "Mesaj afișat la potrivire corectă",
+                        "description": "Mesajul va apărea sub sarcină la apăsarea butonului „verifică” dacă elementul glisabil corect este potrivit."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "Mesaj afișat la potrivire incorectă",
+                        "description": "Mesajul va apărea sub sarcină la apăsarea butonului „verifică” dacă potrivirea este incorectă."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Această zonă de plasare poate conține un singur element",
+                    "description": "Asigurați-vă că există un singur răspuns corect pentru această zonă de plasare"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Activează alinierea automată",
+                    "description": "Va alinia automat toate elementele glisabile plasate în această zonă."
                   }
                 ]
               }
@@ -118,26 +118,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Feedback general",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Implicit"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "label": "Definiți feedback personalizat pentru orice interval de punctaj",
+          "description": "Apăsați butonul „Adaugă interval” pentru a adăuga câte intervale aveți nevoie. Exemplu: 0-20% Punctaj slab, 21-91% Punctaj mediu, 91-100% Punctaj excelent!",
           "entity": "range",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Interval de punctaj"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Feedback pentru intervalul de punctaj definit",
+                "placeholder": "Completați feedback-ul"
               }
             ]
           }
@@ -145,127 +145,127 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Setări de comportament",
+      "description": "Aceste opțiuni vă vor permite să controlați cum se comportă sarcina.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "Activează „Reîncearcă”"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "Activează butonul „Verifică”"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Acordă un singur punct pentru întreaga sarcină",
+          "description": "Dezactivați pentru a acorda un punct pentru fiecare element glisabil care este plasat corect."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Aplică penalizări",
+          "description": "Aplicați penalizări pentru elementele plasate în zonele de plasare greșite. Aceasta trebuie activată atunci când același/aceleași element(e) pot fi plasate în mai multe zone de plasare, sau dacă există o singură zonă de plasare. Dacă aceasta nu este activată, cursanții pot potrivi toate elementele cu toate zonele de plasare și vor primi întotdeauna punctaj maxim."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Activează explicația punctajului",
+          "description": "Afișează o explicație a punctajului utilizatorului atunci când își verifică răspunsurile (dacă opțiunea 'Aplică penalizări' a fost selectată)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Opacitatea fundalului pentru elementele glisabile",
+          "description": "Dacă acest câmp este setat, va suprascrie opacitatea setată pe toate elementele glisabile. Acesta ar trebui să fie un număr între 0 și 100, unde 0 înseamnă transparență totală și 100 înseamnă fără transparență."
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Evidențierea zonei de plasare",
+          "description": "Alegeți când să evidențiați zonele de plasare.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "La glisare"
             },
             {
-              "label": "Always"
+              "label": "Întotdeauna"
             },
             {
-              "label": "Never"
+              "label": "Niciodată"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Spațiere pentru alinierea automată (în px)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Activează modul Ecran complet",
+          "description": "Bifați această opțiune pentru a activa butonul de ecran complet."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Afișează punctele obținute",
+          "description": "Afișează punctele câștigate pentru fiecare răspuns. Nu este disponibil când opțiunea 'Acordă un singur punct pentru întreaga sarcină' este activată."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Afișează titlul",
+          "description": "Debifați această opțiune dacă nu doriți ca acest titlu să fie afișat. Titlul va fi afișat doar în rezumate, statistici etc."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Localizare",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Etichetă ecran complet",
+          "default": "Ecran complet"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Etichetă ieșire din ecran complet",
+          "default": "Ieșire din ecran complet"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Prefix element glisabil",
+      "default": "Element glisabil {num} din {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Sufix element glisabil",
+      "default": "Plasat în zona de plasare {num}."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Prefix zonă de plasare",
+      "default": "Zonă de plasare {num} din {total}."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Etichetă fără selecție de zonă de plasare",
+      "default": "Nicio zonă de plasare."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Etichetă pentru butonul de afișare a indiciului",
+      "default": "Arată indiciu."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Etichetă pentru indiciu disponibil",
+      "default": "Indiciu disponibil"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Etichetă pentru răspuns corect",
+      "default": "Răspuns corect"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Etichetă pentru răspuns incorect",
+      "default": "Răspuns greșit"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "label": "Antet pentru panoul care conține feedback pentru răspunsurile corecte/incorecte",
       "default": "Feedback"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "Reprezentarea textuală a barei de scor pentru cei care folosesc un cititor de ecran",
+      "default": "Ai obținut :num din :total puncte"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "Reprezentarea textuală a butonului de explicație a punctajului",
+      "default": "Arată explicația punctajului"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Etichetă pentru tehnologia asistivă a butonului „Verifică”",
+      "default": "Verifică răspunsurile. Răspunsurile vor fi marcate ca fiind corecte, incorecte sau fără răspuns."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Etichetă pentru tehnologia asistivă a butonului „Reîncearcă”",
+      "default": "Reîncearcă sarcina. Resetează toate răspunsurile și reia sarcina de la început."
     }
   ]
 }
