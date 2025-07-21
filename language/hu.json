@@ -1,114 +1,114 @@
 {
   "semantics": [
     {
-      "label": "Check answer button",
-      "default": "Check"
+      "label": "Válasz ellenőrzése gomb",
+      "default": "Ellenőrzés"
     },
     {
-      "label": "Submit answer button",
-      "default": "Beküldés"
+      "label": "Válasz leadása gomb",
+      "default": "Leadás"
     },
     {
-      "label": "Retry button",
-      "default": "Retry"
+      "label": "Újra gomb",
+      "default": "Újra"
     },
     {
       "label": "Pontszámmagyarázó szöveg",
-      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0."
+      "default": "A helyes válaszok +1 pontot érnek. A helytelen válaszok -1 pontot érnek. Az elérhető legalacsonyabb pontszám 0."
     },
     {
       "fields": [
         {
-          "label": "Settings",
+          "label": "Beállítások",
           "fields": [
             {
-              "label": "Background image",
-              "description": "Optional. Select an image to use as background for your drag and drop task."
+              "label": "Háttérkép",
+              "description": "Opcionális. Válassza ki a háttérként használni kívánt képet a fogd és vidd feladathoz."
             },
             {
-              "label": "Task size",
-              "description": "Specify how large (in px) the play area should be."
+              "label": "Feladat mérete",
+              "description": "Adja meg, hogy mekkora legyen a játéktér (px-ben)."
             }
           ]
         },
         {
-          "label": "Task",
-          "description": "Start by placing your drop zones.<br />Next, place your droppable elements and check off the appropriate drop zones.<br />Last, edit your drop zone again and check off the correct answers.",
+          "label": "Feladat",
+          "description": "Kezdje az elhelyezési zónák megadásával!<br />Ezután hozza létre a mozgatható elemeket, és azoknál adja meg a helyes elhelyezési zónákat!<br />Végül térjen vissza az elhelyezési zónák beállításaihoz, és ott is adja meg a helyes válaszokat!",
           "fields": [
             {
-              "label": "Elements",
-              "entity": "element",
+              "label": "Elemek",
+              "entity": "elem",
               "field": {
-                "label": "Element",
+                "label": "Elem",
                 "fields": [
                   {
-                    "description": "Choose the type of content you would like to add."
+                    "description": "Válassza ki a hozzáadni kívánt tartalom típusát!"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select drop zones"
+                    "label": "Válassza ki az elhelyezési zónákat"
                   },
                   {
-                    "label": "Background Opacity",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "label": "Háttér átlátszósága",
+                    "description": "Az átlátszóság csökkentése ronthat a kontraszton, ami a tartalmat nehezen olvashatóvá teheti."
                   },
                   {
-                    "label": "Infinite number of element instances",
-                    "description": "Clones this element so that it can be dragged to multiple drop zones."
+                    "label": "Végtelen számú elem példány",
+                    "description": "Az elem klónozása, hogy az több elhelyezési zónánál felhasználható legyen."
                   }
                 ]
               }
             },
             {
-              "label": "Drop Zones",
-              "entity": "Drop Zone",
+              "label": "Elhelyezési zónák",
+              "entity": "Elhelyezési zóna",
               "field": {
-                "label": "Drop Zone",
+                "label": "Elhelyezési zóna",
                 "fields": [
                   {
-                    "label": "Label",
-                    "description": "The label is used by assistive technologies."
+                    "label": "Címke",
+                    "description": "A címkét a támogató-segítő eszközök használják."
                   },
                   {
-                    "label": "Show label"
+                    "label": "Címke mutatása"
                   },
                   {},
                   {},
                   {},
                   {},
                   {
-                    "label": "Select correct elements"
+                    "label": "Válassza ki a helyes elemeket"
                   },
                   {
-                    "label": "Background Opacity",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "label": "Háttér átlátszósága",
+                    "description": "Az átlátszóság csökkentése ronthat a kontraszton, ami a tartalmat nehezen olvashatóvá teheti."
                   },
                   {
-                    "label": "Tips and feedback",
+                    "label": "Segítségek és visszajelzés",
                     "fields": [
                       {
-                        "label": "Tip text"
+                        "label": "Segítség szövege"
                       },
                       {
-                        "label": "Message displayed on correct match",
-                        "description": "Message will appear below the task on \"check\" if correct droppable is matched."
+                        "label": "A helyes elhelyezésnél megjelenő üzenet",
+                        "description": "Az üzenet a feladat alatt jelenik meg az „ellenőrzés”-kor, ha a jó helyre került az elem."
                       },
                       {
-                        "label": "Message displayed on incorrect match",
-                        "description": "Message will appear below the task on \"check\" if the match is incorrect."
+                        "label": "A helytelen elhelyezésnél megjelenő üzenet",
+                        "description": "Az üzenet a feladat alatt jelenik meg az „ellenőrzés”-kor, ha az elhelyezés rossz."
                       }
                     ]
                   },
                   {
-                    "label": "This drop zone can only contain one element",
-                    "description": "Make sure there is only one correct answer for this dropzone"
+                    "label": "Ez az elhelyezési csak egy elemet tartalmazhat",
+                    "description": "Győződjön meg róla, hogy csak egy helyes válasz van erre a zónára"
                   },
                   {
-                    "label": "Enable Auto-Align",
-                    "description": "Will auto-align all draggables dropped in this zone."
+                    "label": "Automatikus igazítás engedélyezése",
+                    "description": "Automatikusan beigazítja az összes húzható elemet ennél a zónánál."
                   }
                 ]
               }
@@ -118,26 +118,26 @@
       ]
     },
     {
-      "label": "Overall Feedback",
+      "label": "Globális visszajelzés",
       "fields": [
         {
           "widgets": [
             {
-              "label": "Default"
+              "label": "Alapértelmezett"
             }
           ],
-          "label": "Define custom feedback for any score range",
-          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
-          "entity": "range",
+          "label": "Egyéni visszajelzés megadása tetszőleges eredmény intervallumokra",
+          "description": "Kattintson az \"Új intervallum\" gombra további intervallumok hozzáadásához. Például: 0-20% Rossz eredmény, 21-91% Átlagos eredmény, 91-100% Kimagasló eredmény!",
+          "entity": "intervallum",
           "field": {
             "fields": [
               {
-                "label": "Score Range"
+                "label": "Eredmény intervallum"
               },
               {},
               {
-                "label": "Feedback for defined score range",
-                "placeholder": "Fill in the feedback"
+                "label": "Visszajelzés az adott eredmény intervallumnál",
+                "placeholder": "Adja meg a visszajelzést"
               }
             ]
           }
@@ -145,127 +145,127 @@
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control how the task behaves.",
+      "label": "Viselkedési beállítások",
+      "description": "Ezek a beállításokkal szabályozható a feladat viselkedése.",
       "fields": [
         {
-          "label": "Enable \"Retry\""
+          "label": "\"Újra\" engedélyezve"
         },
         {
-          "label": "Enable \"Check\" button"
+          "label": "\"Ellenőrzés\" engedélyezve"
         },
         {
-          "label": "Give one point for the whole task",
-          "description": "Disable to give one point for each draggable that is placed correctly."
+          "label": "Egy pont jár a teljes feladatért",
+          "description": "Kikapcsolása esetén minden megfelelően elhelyezett húzható elemért egy pont jár."
         },
         {
-          "label": "Apply penalties",
-          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score."
+          "label": "Büntetőpont alkalmazása",
+          "description": "Pontlevonás a nem a megfelelő zónába helyezett elemekért. Ezt be kell kapcsolni, ha ugyanaz(ok) az elem(ek) több zónába is elhelyezhető(k), vagy ha csak egy elhelyezési zóna van. Ha ez nincs bekapcsolva, a tanulók az összes elemet az összes zónához elhelyezhetik, és mindig max pontszámot kapnak."
         },
         {
-          "label": "Enable score explanation",
-          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected)."
+          "label": "Pontszámmagyarázat engedélyezve",
+          "description": "Egy pontszámmagyarázat megjelenítése a felhasználónak, amikor a válaszait ellenőrzi (ha a \"Büntetőpont alkalmazása\" opció be van kapcsolva)."
         },
         {
-          "label": "Background opacity for draggables",
-          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency"
+          "label": "Mozgatható elemek háttérének átlátszósága",
+          "description": "Beállítása esetén a megadott érték felülírja az összes mozgatható elem átlátszóságát. Az értéknek 0 és 100 közötti számnak kell lennie, ahol a 0 a teljesen átlátszó, a 100 pedig az egyáltalán nem átlátszó"
         },
         {
-          "label": "Drop Zone Highlighting",
-          "description": "Choose when to highlight drop zones.",
+          "label": "Elhelyezési zóna kiemelése",
+          "description": "Válassza ki, mikor emelje ki az elhelyezési zónákat.",
           "options": [
             {
-              "label": "When dragging"
+              "label": "Mozgatáskor"
             },
             {
-              "label": "Always"
+              "label": "Mindig"
             },
             {
-              "label": "Never"
+              "label": "Soha"
             }
           ]
         },
         {
-          "label": "Spacing for Auto-Align (in px)"
+          "label": "Távolság az automatikus beigazításhoz (px-ben)"
         },
         {
-          "label": "Enable FullScreen",
-          "description": "Check this option to enable the full screen button."
+          "label": "Teljes képernyő engedélyezve",
+          "description": "Jelölje be ezt az opciót a teljes képernyős gomb engedélyezéséhez."
         },
         {
-          "label": "Show score points",
-          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled."
+          "label": "Pontszámok mutatása",
+          "description": "Az egyes válaszokért kapott pontok megjelenítése. Nem elérhető, ha az \"Egy pont jár a teljes feladatért\" beállítás használatban van."
         },
         {
-          "label": "Show Title",
-          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+          "label": "Cím megjelenítése",
+          "description": "Kikapcsolása esetén ez a cím nem jelenik meg. A cím csak összefoglalókban, statisztikákban stb. jelenik meg."
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalizáció",
       "fields": [
         {
-          "label": "Fullscreen label",
-          "default": "Fullscreen"
+          "label": "Teljes képernyő címke",
+          "default": "Teljes képernyő"
         },
         {
-          "label": "Exit fullscreen label",
-          "default": "Exit fullscreen"
+          "label": "Kilépés a teljes képernyőből címke",
+          "default": "Kilépés a teljes képernyőből"
         }
       ]
     },
     {
-      "label": "Grabbable prefix",
-      "default": "Grabbable {num} of {total}."
+      "label": "Mozgatható előtagja",
+      "default": "{total}/{num} mozgatható."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Mozgatható utótagja",
+      "default": "{num}. zónába helyezve."
     },
     {
-      "label": "Dropzone prefix",
-      "default": "Dropzone {num} of {total}."
+      "label": "Elhelyezési zóna előtagja",
+      "default": "{total}/{num} elhelyezési zóna."
     },
     {
-      "label": "No dropzone selection label",
-      "default": "No dropzone."
+      "label": "Nincs elhelyezési zóna kijelölve címke",
+      "default": "Nincs elhelyezési zóna."
     },
     {
-      "label": "Label for show tip button",
-      "default": "Show tip."
+      "label": "Címke a segítség megjelenítése gombhoz",
+      "default": "Segítség mutatása."
     },
     {
-      "label": "Label for tip available",
-      "default": "Tip available"
+      "label": "Címke a rendelkezésre álló segítségről",
+      "default": "Segítség elérhető"
     },
     {
-      "label": "Label for correct answer",
-      "default": "Correct answer"
+      "label": "Címke a helyes válaszhoz",
+      "default": "Helyes válasz"
     },
     {
-      "label": "Label for incorrect answer",
-      "default": "Wrong answer"
+      "label": "Címke a helytelen válaszhoz",
+      "default": "Helytelen válasz"
     },
     {
-      "label": "Header for panel containing feedback for correct/incorrect answers",
-      "default": "Feedback"
+      "label": "A helyes/helytelen válaszokkal kapcsolatos visszajelzéseket tartalmazó panel fejléce",
+      "default": "Visszajelzés"
     },
     {
-      "label": "Textual representation of the score bar for those using a readspeaker",
-      "default": "You got :num out of :total points"
+      "label": "A pontszámjelző sáv szöveges megjelenítése a szövegfelolvasót használók számára",
+      "default": "Elért pontszám: :num / :total"
     },
     {
-      "label": "Textual representation of the score explanation button",
-      "default": "Show score explanation"
+      "label": "A pontszám magyarázata gomb szöveges megjelenítése",
+      "default": "Pontszámmagyarázat mutatása"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "\"Ellenőrzés\" gomb címkéje támogató-segítő eszközöknek",
+      "default": "Válaszok ellenőrzése. A válaszokat helyesnek, helytelennek vagy megválaszolatlannak jelöli."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "\"Újra\" gomb címkéje támogató-segítő eszközöknek",
+      "default": "Feladat újrapróbálása. Minden válasz visszaállítása és a feladat újrakezdése."
     }
   ]
 }
