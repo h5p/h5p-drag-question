@@ -915,29 +915,69 @@ C.prototype.resetTask = function () {
  * @returns {Number} Max points
  */
 C.prototype.calculateMaxScore = function () {
-  var max = 0;
-
   if (this.blankIsCorrect) {
     return 1;
   }
 
-  var elements = this.options.question.task.elements;
-  for (var i = 0; i < elements.length; i++) {
-    var correctDropZones = this.correctDZs[i];
-
-    if (correctDropZones === undefined || !correctDropZones.length) {
-      continue;
-    }
-
-    if (elements[i].multiple) {
-      max += correctDropZones.length;
-    }
-    else {
-      max++;
-    }
+  if (this.maxScore) {
+    return this.maxScore; // Will never change
   }
 
-  return max;
+  const that = this;
+
+  /*
+   * Maximum number of correct elements that could be put into dropzone spots
+   * Could be larger than number of elements that can actually be dragged
+   * if an element could be placed into more than one dropzone, but if
+   * element does not allow to have multiple instances.
+   */
+  const maxScoreDropZones = this.options.question.task.dropZones.reduce(function (max, dropzone) {
+    return max + (dropzone.single ? 1 : dropzone.correctElements.length);
+  }, 0);
+
+  /*
+   * Maximum number of correct dropzone spots that could be filled by elements
+   * Could be larger than number of actually available dropzone spots if
+   * a dropzone accepts only one element.
+   */
+  let maxScoreDraggables = this.options.question.task.elements.reduce(function (max, element, index) {
+    const correctIn = that.correctDZs[index] ? that.correctDZs[index].length : 0;
+
+    return max + (element.multiple ? correctIn : Math.min(correctIn, 1));
+  }, 0);
+
+  /*
+   * There could be elements that are only correct on dropzones that accept
+   * only one element, and there could be more of these elements than dropzones
+   * available.
+   */
+
+  // Number of dropzones that allow 1 item only
+  const numberSingleDropZones = this.options.question.task.dropZones
+    .filter(function (dropzone) {
+      return dropzone.single;
+    })
+    .length;
+
+  // Number of elements that can only be put onto dropzones that allow 1 item
+  const numberElementsNeedSingleDZ = that.correctDZs
+    .map(function (dropzones) {
+      dropzones = dropzones || [];
+
+      return dropzones.every(function (dropzoneId) {
+        return that.options.question.task.dropZones[dropzoneId].single;
+      })
+    })
+    .reduce(function (amount, hasOnlySingleDropzones) {
+      return amount + ((hasOnlySingleDropzones) ? 1 : 0);
+    }, 0);
+
+  // Account for number of elements that cannot be placed anywhere
+  maxScoreDraggables = maxScoreDraggables - Math.max(0, numberElementsNeedSingleDZ - numberSingleDropZones);
+
+  this.maxScore = Math.min(maxScoreDropZones, maxScoreDraggables);
+
+  return this.maxScore;
 };
 
 /**
