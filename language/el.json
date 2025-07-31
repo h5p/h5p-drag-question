@@ -53,7 +53,7 @@
                   },
                   {
                     "label": "Διαφάνεια φόντου",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Η μείωση της διαφάνειας μπορεί να οδηγήσει σε ανεπαρκή αντίθεση και να κάνει το περιεχόμενο μη προσβάσιμο."
                   },
                   {
                     "label": "Απεριόριστος αριθμός επαναλήψεων στοιχείου",
@@ -70,7 +70,7 @@
                 "fields": [
                   {
                     "label": "Ετικέτα",
-                    "description": "The label is used by assistive technologies."
+                    "description": "Η ετικέτα χρησιμοποιείται από υποστηρικτικές τεχνολογίες."
                   },
                   {
                     "label": "Εμφάνιση ετικέτας"
@@ -84,7 +84,7 @@
                   },
                   {
                     "label": "Διαφάνεια φόντου",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Η μείωση της διαφάνειας μπορεί να οδηγήσει σε ανεπαρκή αντίθεση και να κάνει το περιεχόμενο μη προσβάσιμο."
                   },
                   {
                     "label": "Επεξηγήσεις και ανατροφοδότηση",
