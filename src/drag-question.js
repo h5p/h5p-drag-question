@@ -545,6 +545,12 @@ C.prototype.createQuestionContent = function () {
       // Add static element
       var $element = this.addElement(element, 'static', i);
       H5P.newRunnable(element.type, this.id, $element);
+
+      // Override image hover and use user defined hover text or none
+      if (element.type.library.indexOf('H5P.Image ') === 0) {
+        $element.find('img').attr('title', element.type.params.title || '');
+      }
+
       var timedOutOpacity = function ($el, el) {
         setTimeout(function () {
           DragUtils.setOpacity($el, 'background', el.backgroundOpacity);
