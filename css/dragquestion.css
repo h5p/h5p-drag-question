@@ -345,24 +345,28 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   line-height: 1.5em;
   width: 1.5em;
   height: 1.5em;
-  text-indent: 0.4em;
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-exit {
-  line-height: 2em;
-  width: 2.2em;
-  height: 2.2em;
-  text-indent: 0.25em;
+  line-height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-enter:before {
   font-family: 'h5p-theme';
   content: "\e915";
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-exit:before {
   font-family: 'h5p-theme';
   content: "\e914";
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
 
 .h5p-dragquestion .h5p-dq-no-dz {
