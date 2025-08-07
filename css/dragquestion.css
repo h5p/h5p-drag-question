@@ -334,7 +334,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-my-fullscreen-button-enter, .h5p-dragquestion .h5p-my-fullscreen-button-exit {
   cursor: pointer;
   font-size: 1.5em;
-  color: var(--h5p-theme-main-cta-base);
+  color: var(--h5p-theme-contrast-cta-white);
   position: absolute;
   right: 10px;
   top: 10px;
