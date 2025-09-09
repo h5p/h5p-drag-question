@@ -2,18 +2,6 @@
 export default class DragUtils {
 
   /**
-   * Makes element background transparent.
-   *
-   * @param {jQuery} $element
-   * @param {Number} opacity
-   */
-  static setElementOpacity($element, opacity) {
-    DragUtils.setOpacity($element, 'borderColor', opacity);
-    DragUtils.setOpacity($element, 'boxShadow', opacity);
-    DragUtils.setOpacity($element, 'background', opacity);
-  }
-
-  /**
    * Makes element background, border and shadow transparent.
    *
    * @param {jQuery} $element

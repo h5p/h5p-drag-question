@@ -2,6 +2,12 @@ import DragUtils from './drag-utils';
 
 const $ = H5P.jQuery;
 
+/** @constant {number} OPACITY_FULL Opacity value for fully visible elements. */
+const OPACITY_FULL = 100;
+
+/** @constant {number} OPACITY_DRAGGING Opacity value for elements being dragged. */
+const OPACITY_DRAGGING = 50;
+
 // Helper to stop propagating events
 const stopPropagation = event => event.stopPropagation();
 
@@ -16,8 +22,10 @@ export default class Draggable extends H5P.EventDispatcher {
    * @param {Array} [answers] from last session
    * @param {Object.<string, string>} l10n
    * @param {Array} [dropZones] Dropzones for a draggable
+   * @param {number} draggableNum Number of this draggable (for a11y)
+   * @param {Object} [options]
    */
-  constructor(element, id, answers, l10n, dropZones, draggableNum) {
+  constructor(element, id, answers, l10n, dropZones, draggableNum, options = {}) {
     super();
     var self = this;
 
@@ -35,6 +43,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.l10n = l10n;
     self.allDropzones = dropZones;
     self.draggableNum = draggableNum;
+    self.dragHandleWanted = options.dragHandleWanted ?? false;
 
     if (answers) {
       if (self.multiple) {
@@ -119,80 +128,91 @@ export default class Draggable extends H5P.EventDispatcher {
       }
     });
 
-    // Attach element
-    element.$ = $('<div/>', {
-      class: 'h5p-draggable',
-      tabindex: '-1',
-      role: 'button',
-      css: {
-        left: self.x + '%',
-        top: self.y + '%',
-        width: self.width + 'em',
-        height: self.height + 'em'
+    const instanceHolderDOM = document.createElement('div');
+    H5P.newRunnable(self.type, contentId, H5P.jQuery(instanceHolderDOM));
+
+    const draggableElement = H5P.Components.Draggable({
+      dom: instanceHolderDOM,
+      hasHandle: self.dragHandleWanted,
+      handleRevert: (dropZone) => {
+        $container.removeClass('h5p-dragging');
+        const $this = $(draggableElement);
+
+        $this.data("uiDraggable").originalPosition = {
+          top: self.y + '%',
+          left: self.x + '%'
+        };
+
+        this.updatePlacement(element);
+        $this[0].setAttribute('aria-grabbed', 'false');
+
+        this.trigger('dragend');
+
+        return !dropZone;
       },
-      appendTo: $container,
-      title: self.type.params.title
-    })
-      .on('click', function () {
-        self.trigger('focus', this);
-      })
-      .on('touchmove', stopPropagation)
-      .on('touchstart', stopPropagation)
-      .on('touchend', stopPropagation)
-      .draggable({
-        revert: function (dropZone) {
-          $container.removeClass('h5p-dragging');
-          var $this = $(this);
+      handleDragStartEvent: (event) => {
+        const $this = $(draggableElement);
 
-          $this.data("uiDraggable").originalPosition = {
-            top: self.y + '%',
-            left: self.x + '%'
-          };
-          self.updatePlacement(element);
-          $this[0].setAttribute('aria-grabbed', 'false');
-
-          self.trigger('dragend');
-
-          return !dropZone;
-        },
-        start: function() {
-          var $this = $(this);
-
-          var mustCopyElement = self.mustCopyElement(element);
-          if (mustCopyElement) {
-            // Leave a new element for next drag
-            element.clone();
-          }
-
-          // Send element to the top!
-          $this.removeClass('h5p-wrong').detach().appendTo($container);
-          $container.addClass('h5p-dragging');
-          DragUtils.setElementOpacity($this, self.backgroundOpacity);
-          this.setAttribute('aria-grabbed', 'true');
-
-          self.trigger('focus', this);
-          self.trigger('dragstart', {
-            element: this,
-            effect: mustCopyElement ? 'copy' : 'move'
-          });
-        },
-        stop: function() {
-          var $this = $(this);
-
-          // Convert position to % to support scaling.
-          element.position = DragUtils.positionToPercentage($container, $this);
-          $this.css(element.position);
-
-          var addToZone = $this.data('addToZone');
-          if (addToZone !== undefined) {
-            $this.removeData('addToZone');
-            self.addToDropZone(index, element, addToZone);
-          }
-          else {
-            element.reset();
-          }
+        const mustCopyElement = this.mustCopyElement(element);
+        if (mustCopyElement) {
+          // Leave a new element for next drag
+          element.clone();
         }
-      }).css('position', '');
+
+        // Send element to the top!
+        $this.removeClass('h5p-wrong').detach().appendTo($container);
+        $container.addClass('h5p-dragging');
+        draggableElement.setContentOpacity(this.backgroundOpacity);
+        draggableElement.setAttribute('aria-grabbed', 'true');
+
+        this.trigger('focus', draggableElement);
+        this.trigger('dragstart', {
+          element: draggableElement,
+          effect: mustCopyElement ? 'copy' : 'move'
+        });
+      },
+      handleDragEvent: () => {
+        draggableElement.setOpacity(OPACITY_DRAGGING);
+      },
+      handleDragStopEvent: () => {
+        draggableElement.setOpacity(OPACITY_FULL);
+
+        const $this = $(draggableElement);
+
+        // Convert position to % to support scaling.
+        element.position = DragUtils.positionToPercentage($container, $this);
+
+        $this.css(element.position);
+
+        const addToZone = $this.data('addToZone');
+        if (addToZone !== undefined) {
+          $this.removeData('addToZone');
+          this.addToDropZone(index, element, addToZone);
+        }
+        else {
+          element.reset();
+        }
+      }
+    });
+
+    draggableElement.addEventListener('click', () => {
+      self.trigger('focus', draggableElement);
+    });
+    draggableElement.addEventListener('touchstart', stopPropagation);
+    draggableElement.addEventListener('touchmove', stopPropagation);
+    draggableElement.addEventListener('touchend', stopPropagation);
+
+    $container[0].append(draggableElement);
+    draggableElement.style.left = self.x + '%';
+    draggableElement.style.top = self.y + '%';
+    draggableElement.style.width = self.width + 'em';
+    draggableElement.style.height = self.height + 'em';
+    draggableElement.style.position = '';
+
+    draggableElement.setContentOpacity(self.backgroundOpacity);
+
+    element.$ = $(draggableElement);
+
     self.element = element;
 
     if (element.position) {
@@ -201,19 +221,11 @@ export default class Draggable extends H5P.EventDispatcher {
       self.updatePlacement(element);
     }
 
-    DragUtils.addHover(element.$, self.backgroundOpacity);
-    H5P.newRunnable(self.type, contentId, element.$);
-
     // Add prefix for good a11y
     $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.draggableNum)) + '</span>').prependTo(element.$);
 
     // Add suffix for good a11y
     $('<span class="h5p-hidden-read"></span>').appendTo(element.$);
-
-    // Update opacity when element is attached.
-    setTimeout(function () {
-      DragUtils.setElementOpacity(element.$, self.backgroundOpacity);
-    }, 0);
 
     self.trigger('elementadd', element.$[0]);
   }
@@ -315,7 +327,6 @@ export default class Draggable extends H5P.EventDispatcher {
 
     if (element.dropZone !== undefined) {
       element.$.addClass('h5p-dropped');
-      DragUtils.setElementOpacity(element.$, self.backgroundOpacity);
 
       // Add suffix for good a11y
 
@@ -340,8 +351,9 @@ export default class Draggable extends H5P.EventDispatcher {
           border: '',
           background: ''
         });
-      DragUtils.setElementOpacity(element.$, this.backgroundOpacity);
     }
+
+    element.$[0].setContentOpacity(this.backgroundOpacity);
   }
 
   /**
@@ -548,6 +560,6 @@ export default class Draggable extends H5P.EventDispatcher {
     }
     element.$suffix = element.$suffix.add($elementResult);
     element.$.addClass('h5p-' + status).append($elementResult);
-    DragUtils.setElementOpacity(element.$, this.backgroundOpacity);
+    element.$[0].setContentOpacity(this.backgroundOpacity);
   }
 }
