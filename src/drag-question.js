@@ -156,10 +156,20 @@ function C(options, contentId, contentData) {
     }
 
     // Create new draggable instance
-    var draggable = new Draggable(element, i, answers, grabbablel10n, task.dropZones, draggableNum++);
+    var draggable = new Draggable(
+      element,
+      i,
+      answers,
+      grabbablel10n,
+      task.dropZones,
+      draggableNum++,
+      {
+        dragHandleWanted: self.options.behaviour.dragHandleVisibility
+      }
+    );
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
-      controls.drag.addElement(event.data);
+      // controls.drag.addElement(event.data);
     });
     draggable.on('elementremove', function (event) {
       controls.drag.removeElement(event.data);
@@ -301,12 +311,6 @@ C.prototype.registerDomElements = function () {
       classes += ' ';
     }
     classes += 'h5p-dq-highlight-dz-always';
-  }
-  if (self.options.behaviour.dragHandleVisibility) {
-    if (classes) {
-      classes += ' ';
-    }
-    classes += 'h5p-dq-handle';
   }
 
   // Register task content area
@@ -1065,7 +1069,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
   var deselect = function () {
     selected.draggable.trigger('dragend');
     selected.element.$.removeClass('h5p-draggable-hover');
-    DragUtils.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
+    selected.element.$[0].setContentOpacity(selected.draggable.backgroundOpacity);
 
     if (controls.drop.elements.indexOf(noDropzone) !== -1) {
       controls.drop.removeElement(noDropzone);
@@ -1108,7 +1112,7 @@ var getControls = function (draggables, dropZones, noDropzone) {
 
     // Select
     selected.element.$.addClass('h5p-draggable-hover');
-    DragUtils.setElementOpacity(selected.element.$, selected.draggable.backgroundOpacity);
+    selected.element.$[0].setContentOpacity(selected.draggable.backgroundOpacity);
     selected.draggable.trigger('dragstart', selected.draggable.mustCopyElement(selected.element) ? 'copy' : 'move');
 
     // Add special drop zone to reset
