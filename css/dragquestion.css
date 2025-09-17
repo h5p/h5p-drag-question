@@ -89,6 +89,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   padding-inline: var(--padding);
 }
 
+.h5p-dragquestion .h5p-draggable:before {
+  font-size: 1rem; /* Prevent scaling depending on task size settings */
+}
+
 .h5p-dragquestion .h5p-draggable:has(.h5p-image):not(:hover):not(:focus).h5p-draggable--has-handle:before {
   display: none;
 }
@@ -100,8 +104,9 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion:not(:has(.h5p-question-evaluation-container.evaluation-mode)) .h5p-draggable:has(.h5p-image):hover.h5p-draggable--has-handle,
 .h5p-dragquestion:not(:has(.h5p-question-evaluation-container.evaluation-mode)) .h5p-draggable:has(.h5p-image):focus.h5p-draggable--has-handle {
-  padding-left: calc(var(--handle-width) + var(--padding));
-  transform: translateX(calc(-1 * var(--handle-width)));
+  /* --border-width and --handle-width stem from H5P.Components.Draggable */
+  padding-left: calc(var(--border-width) + var(--handle-width) + var(--padding));
+  transform: translateX(calc(-1 * var(--border-width) - var(--handle-width)));
 }
 
 .h5p-dragquestion .h5p-draggable:focus {
