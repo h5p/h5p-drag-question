@@ -201,7 +201,7 @@
           "description": "Отключите настройку, если не хотите, чтобы заголовок отобрадался. Заголовок отобразится лишь в заключении, статистике и тд."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

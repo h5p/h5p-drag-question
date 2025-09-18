@@ -201,7 +201,7 @@
           "description": "Ära märgi seda valikut, kui ei taha pealkirja näidata. Pealkirja näidatakse ainult kokkuvõtetes, statistikas, jne."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

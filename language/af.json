@@ -201,7 +201,7 @@
           "description": "Ontmerk hierdie opsie as jy nie wil hê dat hierdie titel vertoon moet word nie. Die titel sal slegs in opsommings, statistieke ens. vertoon word."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

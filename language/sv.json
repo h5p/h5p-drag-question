@@ -201,7 +201,7 @@
           "description": "Bocka ur detta om du vill att din titel inte ska visas. Titeln kommer bara visas i sammanfattningar, statistik, etc."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
