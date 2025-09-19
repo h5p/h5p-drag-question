@@ -109,7 +109,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   transform: translateX(calc(-1 * var(--border-width) - var(--handle-width)));
 }
 
-.h5p-dragquestion .h5p-draggable:focus {
+.h5p-dragquestion .h5p-draggable:focus-visible {
   border-radius: 4px;
   outline: 2px ridge var(--h5p-theme-contrast-cta-white);
   outline-offset: 2px;
