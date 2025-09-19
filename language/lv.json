@@ -201,7 +201,7 @@
           "description": "Noņemiet šo atzīmi, ja nevēlaties, lai šis virsraksts tiktu rādīts. Virsraksts tiks parādīts tikai kopsavilkumos, statistikā utt."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

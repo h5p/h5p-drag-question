@@ -201,7 +201,7 @@
           "description": "このタイトルを表示したくない場合は、このオプションをオフにします。タイトルは概要、統計などでのみ表示されます。"
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

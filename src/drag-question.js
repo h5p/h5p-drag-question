@@ -169,7 +169,7 @@ function C(options, contentId, contentData) {
     );
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
-      // controls.drag.addElement(event.data);
+      controls.drag.addElement(event.data);
     });
     draggable.on('elementremove', function (event) {
       controls.drag.removeElement(event.data);

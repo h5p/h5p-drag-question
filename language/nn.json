@@ -201,7 +201,7 @@
           "description": "Fjern hake om du ikkje vil vise tittelen. Tittelen er synleg berre ved oppsummeringar, statistikk osb."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

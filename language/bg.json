@@ -201,7 +201,7 @@
           "description": "Махнете отметката от тази опция, ако не искате заглавието да се показва. То ще се показва само в резюмета, статистически данни и т.н."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]

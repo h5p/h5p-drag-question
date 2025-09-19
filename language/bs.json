@@ -201,7 +201,7 @@
           "description": "Isključi ovu opciju ako ne želiš vidjeti naslov.Naslov će biti prikazan samo u sažecima, statistikama, itd."
         },
         {
-          "label": "Drag handle visibility",
+          "label": "Show drag handles (new look and feel only)",
           "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
