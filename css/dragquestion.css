@@ -81,9 +81,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable {
   --padding: 0.3em;
 
-  position: absolute;
-  padding-block: var(--padding);
   line-height: 1.25em;
+  margin: 0; /* Overrides H5P.Components.Draggable margin */
+  padding-block: var(--padding);
+  position: absolute;
 }
 
 .h5p-dragquestion .h5p-draggable:not(.h5p-draggable--has-handle) {
