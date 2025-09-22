@@ -88,6 +88,7 @@ function C(options, contentId, contentData) {
 
   this.backgroundOpacity = (this.options.behaviour.backgroundOpacity === undefined || this.options.behaviour.backgroundOpacity.trim() === '') ? undefined : this.options.behaviour.backgroundOpacity;
 
+  // Additional dropzone that is added for keyboard users to be able to "unplace" a draggable
   self.$noDropZone = $('<div class="h5p-dq-no-dz" role="button" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '</span></div>');
 
   // Initialize controls for good a11y
@@ -1118,12 +1119,14 @@ var getControls = function (draggables, dropZones, noDropzone) {
     // Add special drop zone to reset
     controls.drop.addElement(noDropzone);
 
+    const draggableSize = selected.draggable.getSize();
+
     // Position at element position
     noDropzone.style.display = 'block';
     noDropzone.style.left = selected.draggable.x + '%';
     noDropzone.style.top = selected.draggable.y + '%';
-    noDropzone.style.width = selected.draggable.width + 'em';
-    noDropzone.style.height = selected.draggable.height + 'em';
+    noDropzone.style.width = `${draggableSize.width}px`;
+    noDropzone.style.height = `${draggableSize.height}px`;
 
     // Figure out which drop zones will accept this draggable
     var $first;

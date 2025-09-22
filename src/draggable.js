@@ -562,4 +562,12 @@ export default class Draggable extends H5P.EventDispatcher {
     element.$.addClass('h5p-' + status).append($elementResult);
     element.$[0].setContentOpacity(this.backgroundOpacity);
   }
+
+  /**
+   * Get currnt size of draggable element.
+   * @returns {ClientRect | DOMRect} Current size of draggable element.
+   */
+  getSize() {
+    return this.element.$.get(0).getBoundingClientRect();
+  }
 }
