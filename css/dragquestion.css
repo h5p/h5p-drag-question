@@ -199,6 +199,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   position: absolute;
 }
 
+.h5p-dragquestion .h5p-dropzone:focus-visible {
+  outline: var(--h5p-theme-contrast-cta-white) auto 1px;
+}
+
 .h5p-dragquestion .h5p-dropzone > .h5p-inner {
   height: 100%;
   min-width: unset;
