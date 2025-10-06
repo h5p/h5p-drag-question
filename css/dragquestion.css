@@ -211,6 +211,11 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   z-index: 1;
 }
 
+.h5p-dragquestion .h5p-my-fullscreen-button-enter:focus-visible,
+.h5p-dragquestion .h5p-my-fullscreen-button-exit:focus-visible{
+  outline: var(--h5p-theme-contrast-cta-white) auto 1px;
+}
+
 .h5p-dragquestion .h5p-my-fullscreen-button-enter {
   line-height: 1.5em;
   width: 1.5em;
