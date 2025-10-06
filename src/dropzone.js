@@ -148,7 +148,6 @@ export default class DropZone {
    * Update the background opacity
    */
   updateBackgroundOpacity() {
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-dropzone_label'), 'background', this.backgroundOpacity);
     DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
@@ -324,14 +323,14 @@ export default class DropZone {
    * Highlight the current drop zone
    */
   highlight() {
-    this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-active');
+    this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-dropzone--active');
   }
 
   /**
    * De-highlight the current drop zone
    */
   dehighlight() {
-    this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-active');
+    this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-dropzone--active');
   }
 
   /**

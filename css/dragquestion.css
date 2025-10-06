@@ -194,25 +194,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   content: "\e902";
 }
 
-.h5p-dragquestion .h5p-dropzone_label {
-  line-height: 1.25em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  right: 0;
-  left: 0;
-  bottom: 100%;
-  white-space: nowrap;
-  border-radius: 0.25em 0.25em 0 0;
-  position: absolute;
-  background: var(--h5p-theme-alternative-dark);
-  color: var(--h5p-theme-text-primary);
-}
-
-.h5p-dragquestion .h5p-dropzone_label > div {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 /* Make sure dragquestion has margins in fullscreen */
 .h5p-dragquestion.h5p-fullscreen > .h5p-question-buttons, .h5p-dragquestion.h5p-fullscreen > .h5p-question-feedback, .h5p-dragquestion.h5p-fullscreen > .h5p-question-introduction {
   margin-left: 1em;
