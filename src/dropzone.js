@@ -137,18 +137,6 @@ export default class DropZone {
     if (self.autoAlignable.enabled) {
       self.autoAlign();
     }
-
-    // Set element opacity when element has been appended
-    setTimeout(function () {
-      self.updateBackgroundOpacity();
-    }, 0);
-  }
-
-  /**
-   * Update the background opacity
-   */
-  updateBackgroundOpacity() {
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
   /**
