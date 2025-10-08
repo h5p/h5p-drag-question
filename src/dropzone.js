@@ -48,6 +48,7 @@ export default class DropZone {
       classes: 'h5p-inner',
       tolerance: 'intersect',
       role: 'button',
+      hasTransparentBackground: this.backgroundOpacity === 100,
       ariaDisabled: true,
       ariaLabel: self.showLabel ? undefined : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
       areaLabel: self.showLabel ? self.label : undefined,
@@ -63,7 +64,7 @@ export default class DropZone {
          */
 
         // Find draggable element belongs to
-        var result = DragUtils.elementToDraggable(draggables, element);
+        const result = DragUtils.elementToDraggable(draggables, element);
 
         // Found no Draggable that the element belongs to. Don't accept it.
         if (!result) {
@@ -71,28 +72,28 @@ export default class DropZone {
         }
 
         // Figure out if the drop zone will accept the draggable
-        return self.accepts(result.draggable, draggables);
+        return this.accepts(result.draggable, draggables);
       },
       handleDropEvent: (event, ui) => {
         const $this = this.$dropZone;
-        DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', self.backgroundOpacity);
-        ui.draggable.data('addToZone', self.id);
+        DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        ui.draggable.data('addToZone', this.id);
 
-        if (self.getIndexOf(ui.draggable) === -1) {
+        if (this.getIndexOf(ui.draggable) === -1) {
           // Add to alignables
-          self.alignables.push(ui.draggable);
+          this.alignables.push(ui.draggable);
         }
 
-        if (self.autoAlignable.enabled) {
+        if (this.autoAlignable.enabled) {
           // Trigger alignment
-          self.autoAlign();
+          this.autoAlign();
         }
       },
       handleDropOverEvent: () => {
-        DragUtils.setOpacity(this.$dropZone.addClass('h5p-over'), 'background', self.backgroundOpacity);
+        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
       },
       handleDropOutEvent: () => {
-        DragUtils.setOpacity(this.$dropZone.removeClass('h5p-over'), 'background', self.backgroundOpacity);
+        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
       }
     })).css({
       left: self.x + '%',
@@ -137,6 +138,19 @@ export default class DropZone {
     if (self.autoAlignable.enabled) {
       self.autoAlign();
     }
+
+    // Set element opacity when element has been appended
+    setTimeout(function () {
+      self.updateBackgroundOpacity();
+    }, 0);
+  }
+
+  /**
+   * Update the background opacity
+   */
+  updateBackgroundOpacity() {
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-dropzone_label'), 'background', this.backgroundOpacity);
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
   /**
