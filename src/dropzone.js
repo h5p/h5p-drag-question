@@ -48,7 +48,7 @@ export default class DropZone {
       classes: 'h5p-inner',
       tolerance: 'intersect',
       role: 'button',
-      hasTransparentBackground: this.backgroundOpacity === 100,
+      hasOpaqueBackground: this.backgroundOpacity < 100,
       ariaDisabled: true,
       ariaLabel: self.showLabel ? undefined : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
       areaLabel: self.showLabel ? self.label : undefined,
