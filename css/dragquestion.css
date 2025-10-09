@@ -213,7 +213,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .h5p-my-fullscreen-button-enter:focus-visible,
 .h5p-dragquestion .h5p-my-fullscreen-button-exit:focus-visible{
-  outline: var(--h5p-theme-contrast-cta-white) auto 1px;
+  outline: var(--h5p-theme-contrast-cta-white) solid 2px;
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-enter {
