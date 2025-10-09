@@ -341,5 +341,6 @@ export default class DropZone {
   reset() {
     // Remove alignables
     this.alignables = [];
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
   }
 }
