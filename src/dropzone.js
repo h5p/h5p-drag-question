@@ -42,79 +42,65 @@ export default class DropZone {
   appendTo($container, draggables) {
     var self = this;
 
-    // Prepare inner html with prefix for good a11y
-    var html = '<div class="h5p-inner"></div>';
-    var extraClass = '';
-    if (self.showLabel) {
-      html = '<div class="h5p-label">' + self.label + '<span class="h5p-hidden-read"></span></div>' + html;
-      extraClass = ' h5p-has-label';
-    }
-    html = '<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.id + 1)) + (!self.showLabel ? self.label : '') + '</span>' + html;
-
-    // Create drop zone element
-    self.$dropZone = $('<div/>', {
-      class: 'h5p-dropzone' + extraClass,
-      tabindex: '-1',
+    self.$dropZone = $(H5P.Components.Dropzone({
+      variant: 'area',
+      containerClasses: self.showLabel ? 'h5p-has-label' : '',
+      classes: 'h5p-inner',
+      tolerance: 'intersect',
       role: 'button',
-      'aria-disabled': true,
-      css: {
-        left: self.x + '%',
+      hasOpaqueBackground: this.backgroundOpacity < 100,
+      ariaDisabled: true,
+      ariaLabel: self.showLabel ? undefined : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
+      areaLabel: self.showLabel ? self.label : undefined,
+      handleAcceptEvent: (element) => {
+        /**
+         * Functional note:
+         * This will fire every time a draggable is starting to get dragged, globally
+         * for all initialized drop zones  <-> draggables. That means in a compound H5P this
+         * function will fire for all Drag Questions within that compound content type,
+         * no matter if it is at a different timestamp, already completed or otherwise
+         * intuitively would be disabled. This can lead to some unexpected behaviour if you
+         * don't take this into consideration.
+         */
+
+        // Find draggable element belongs to
+        const result = DragUtils.elementToDraggable(draggables, element);
+
+        // Found no Draggable that the element belongs to. Don't accept it.
+        if (!result) {
+          return false;
+        }
+
+        // Figure out if the drop zone will accept the draggable
+        return this.accepts(result.draggable, draggables);
+      },
+      handleDropEvent: (event, ui) => {
+        const $this = this.$dropZone;
+        DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        ui.draggable.data('addToZone', this.id);
+
+        if (this.getIndexOf(ui.draggable) === -1) {
+          // Add to alignables
+          this.alignables.push(ui.draggable);
+        }
+
+        if (this.autoAlignable.enabled) {
+          // Trigger alignment
+          this.autoAlign();
+        }
+      },
+      handleDropOverEvent: () => {
+        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
+      },
+      handleDropOutEvent: () => {
+        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+      }
+    })).css({
+      left: self.x + '%',
         top: self.y + '%',
         width: self.width + 'em',
         height: self.height + 'em'
-      },
-      html: html
-    })
-      .appendTo($container)
-      .children('.h5p-inner')
-        .droppable({
-          activeClass: 'h5p-active',
-          tolerance: 'intersect',
-          accept: function (element) {
-            /**
-             * Functional note:
-             * This will fire every time a draggable is starting to get dragged, globally
-             * for all initialized drop zones  <-> draggables. That means in a compound H5P this
-             * function will fire for all Drag Questions within that compound content type,
-             * no matter if it is at a different timestamp, already completed or otherwise
-             * intuitively would be disabled. This can lead to some unexpected behaviour if you
-             * don't take this into consideration.
-             */
-
-            // Find draggable element belongs to
-            var result = DragUtils.elementToDraggable(draggables, element);
-
-            // Found no Draggable that the element belongs to. Don't accept it.
-            if (!result) {
-              return false;
-            }
-
-            // Figure out if the drop zone will accept the draggable
-            return self.accepts(result.draggable, draggables);
-          },
-          drop: function (event, ui) {
-            var $this = $(this);
-            DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', self.backgroundOpacity);
-            ui.draggable.data('addToZone', self.id);
-
-            if (self.getIndexOf(ui.draggable) === -1) {
-              // Add to alignables
-              self.alignables.push(ui.draggable);
-            }
-
-            if (self.autoAlignable.enabled) {
-              // Trigger alignment
-              self.autoAlign();
-            }
-          },
-          over: function () {
-            DragUtils.setOpacity($(this).addClass('h5p-over'), 'background', self.backgroundOpacity);
-          },
-          out: function () {
-            DragUtils.setOpacity($(this).removeClass('h5p-over'), 'background', self.backgroundOpacity);
-          }
-        })
-        .end()
+    }).appendTo($container)
       .focus(function () {
         if ($tip instanceof H5P.jQuery) {
           $tip.attr('tabindex', '0');
@@ -163,7 +149,7 @@ export default class DropZone {
    * Update the background opacity
    */
   updateBackgroundOpacity() {
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-label'), 'background', this.backgroundOpacity);
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-dropzone_label'), 'background', this.backgroundOpacity);
     DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
@@ -339,14 +325,14 @@ export default class DropZone {
    * Highlight the current drop zone
    */
   highlight() {
-    this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-active');
+    this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-dropzone--active');
   }
 
   /**
    * De-highlight the current drop zone
    */
   dehighlight() {
-    this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-active');
+    this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-dropzone--active');
   }
 
   /**
@@ -355,5 +341,6 @@ export default class DropZone {
   reset() {
     // Remove alignables
     this.alignables = [];
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
   }
 }
