@@ -262,3 +262,10 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   top: 0;
   left: 0;
 }
+
+.h5p-dragquestion .h5p-dq-highlight-dz .h5p-dropzone > .h5p-inner.h5p-dropzone--active,
+.h5p-dragquestion .h5p-dq-highlight-dz-always .h5p-dropzone > .h5p-inner {
+  padding: 0;
+  border: 2px dashed var(--h5p-theme-contrast-cta-white);
+  border-style: dashed;
+}
