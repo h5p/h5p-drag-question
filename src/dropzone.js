@@ -28,6 +28,7 @@ export default class DropZone {
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignable = dropZone.autoAlign;
+    self.highlighting = dropZone.behaviour?.dropZoneHighlighting;
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -90,16 +91,20 @@ export default class DropZone {
         }
       },
       handleDropOverEvent: () => {
-        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
+        if (this.highlighting !== 'never') {
+          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
+        }
       },
       handleDropOutEvent: () => {
-        DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        if (this.highlighting !== 'never') {
+          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        }
       }
     })).css({
       left: self.x + '%',
-        top: self.y + '%',
-        width: self.width + 'em',
-        height: self.height + 'em'
+      top: self.y + '%',
+      width: self.width + 'em',
+      height: self.height + 'em'
     }).appendTo($container)
       .focus(function () {
         if ($tip instanceof H5P.jQuery) {
