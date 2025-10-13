@@ -237,6 +237,10 @@ function C(options, contentId, contentData) {
       size: self.options.question.settings.size
     };
 
+    dropZone.behaviour = {
+      dropZoneHighlighting: self.options.behaviour.dropZoneHighlighting,
+    };
+
     this.dropZones[i] = new DropZone(dropZone, i, dropzonel10n);
 
     // Update element internal position when aligned
