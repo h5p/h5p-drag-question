@@ -54,10 +54,34 @@ export default class DragUtils {
       style = original;
     }
 
+    style = DragUtils.convertSrgbToRgba(style); // Convert srgb to rgba
     style = DragUtils.setAlphas(style, 'rgba(', opacity); // Update rgba
     style = DragUtils.setAlphas(style, 'rgb(', opacity); // Convert rgb
 
     $element.css(getProperties(property, style));
+  }
+
+  /**
+   * Convert color(srgb ...) format to rgba format.
+   * @param {string} srgbColor Color string in srgb format
+   * @returns {string} Color string in rgba format
+   */
+  static convertSrgbToRgba(srgbColor) {
+    if (!srgbColor) {
+      return srgbColor;
+    }
+
+    const srgbPattern = /color\(srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?\s*\)/;
+    const match = srgbColor.match(srgbPattern);
+
+    if (!match) {
+      return srgbColor;
+    }
+
+    const [, r, g, b, a] = match;
+    const alpha = (a !== undefined) ? parseFloat(a) : 1;
+
+    return `rgba(${Math.round(parseFloat(r) * 255)}, ${Math.round(parseFloat(g) * 255)}, ${Math.round(parseFloat(b) * 255)}, ${alpha})`;
   }
 
   /**

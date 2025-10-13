@@ -36,7 +36,7 @@ export default class Draggable extends H5P.EventDispatcher {
     self.y = element.y;
     self.width = element.width;
     self.height = element.height;
-    self.backgroundOpacity = element.backgroundOpacity;
+    self.backgroundOpacity = parseFloat(element.backgroundOpacity);
     self.dropZones = element.dropZones;
     self.type = element.type;
     self.multiple = element.multiple;
