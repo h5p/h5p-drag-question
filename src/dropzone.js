@@ -17,6 +17,8 @@ export default class DropZone {
     var self = this;
     H5P.EventDispatcher.call(self);
 
+    const behaviour = dropZone.behaviour ?? {};
+
     self.id = id;
     self.showLabel = dropZone.showLabel;
     self.label = dropZone.label;
@@ -28,7 +30,7 @@ export default class DropZone {
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignable = dropZone.autoAlign;
-    self.highlighting = dropZone.behaviour?.dropZoneHighlighting;
+    self.useBackgroundHover = behaviour.dropZoneHighlighting === 'always' || behaviour.dropZoneHighlighting === 'dragging';
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -91,12 +93,12 @@ export default class DropZone {
         }
       },
       handleDropOverEvent: () => {
-        if (this.highlighting !== 'never') {
+        if (this.useBackgroundHover) {
           DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
         }
       },
       handleDropOutEvent: () => {
-        if (this.highlighting !== 'never') {
+        if (this.useBackgroundHover) {
           DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
         }
       }

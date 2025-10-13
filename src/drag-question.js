@@ -238,7 +238,7 @@ function C(options, contentId, contentData) {
     };
 
     dropZone.behaviour = {
-      dropZoneHighlighting: self.options.behaviour.dropZoneHighlighting
+      dropZoneHighlighting: self.options.behaviour.dropZoneHighlighting,
     };
 
     this.dropZones[i] = new DropZone(dropZone, i, dropzonel10n);
