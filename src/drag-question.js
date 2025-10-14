@@ -1113,6 +1113,10 @@ var getControls = function (draggables, dropZones, noDropzone) {
       deselect();
       return;
     }
+    if (!result) {
+      return; // No draggable found for element
+    }
+
     selected = result;
 
     // Select
