@@ -5,8 +5,8 @@
       "default": "Preveri"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Besedilo za gumb \"Oddaj\"",
+      "default": "Oddaj"
     },
     {
       "label": "Besedilo za gumb \"Poskusi ponovno\"",
@@ -53,7 +53,7 @@
                   },
                   {
                     "label": "Prekrivnost ozadja,",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Sprememba prekrivnosti lahko povzroči nezadosten kontrast in onemogoči dostop do vsebine."
                   },
                   {
                     "label": "Omogoči neskončno možnost izbire elementa (kloniranje)",
@@ -70,7 +70,7 @@
                 "fields": [
                   {
                     "label": "Oznaka",
-                    "description": "The label is used by assistive technologies."
+                    "description": "Besedilo uporabljajo bralniki zaslona."
                   },
                   {
                     "label": "Prikaži oznako"
@@ -84,7 +84,7 @@
                   },
                   {
                     "label": "Prekrivnost ozadja",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Sprememba prekrivnosti lahko povzroči nezadosten kontrast in onemogoči dostop do vsebine."
                   },
                   {
                     "label": "Namig in povratna informacija",
@@ -108,7 +108,7 @@
                   },
                   {
                     "label": "Omogoči samodejno poravnavo",
-                    "description": "Elementi se bodo v spustnem polju samodejno poravnali."
+                    "description": "Elementi se bodo v spustnem polju poravnali samodejno."
                   }
                 ]
               }
@@ -260,12 +260,12 @@
       "default": "Prikaži razlago točk"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Besedilo, ki ga bralnik zaslona uporabi za gumb \"Preveri\"",
+      "default": "Preveri pravilnost odgovorov. Odgovori bodo označeni kot pravilni, napačni ali brez odgovora."
     },
     {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Retry the task. Reset all responses and start the task over again."
+      "label": "Besedilo, ki ga bralnik zaslona uporabi za gumb \"Poskusi ponovno\"",
+      "default": "Poskusi ponovno. Ponastavi vse odzive in znova zaženi nalogo."
     }
   ]
 }
