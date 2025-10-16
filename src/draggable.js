@@ -300,7 +300,10 @@ export default class Draggable extends H5P.EventDispatcher {
           }
           element.$.remove();
           delete self.elements[index];
-          self.trigger('elementremove', this.element.$[0]);
+          if (!self.isInDropZone(addToZone)) {
+            self.trigger('elementremove', this.element.$[0]);
+          }
+
           return;
         }
       }
