@@ -153,13 +153,13 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   color: var(--h5p-theme-feedback-correct-main);
   border: 0.1em solid var(--h5p-theme-feedback-correct-third);
   box-shadow: none;
-  background: var(--h5p-theme-feedback-correct-secondary);
+  background: hsl(from var(--h5p-theme-feedback-correct-secondary) h s l / var(--content-opacity, 1));
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong {
   border: 0.1em solid var(--h5p-theme-feedback-incorrect-third);
   color: var(--h5p-theme-feedback-incorrect-main);
-  background: var(--h5p-theme-feedback-incorrect-secondary);
+  background: hsl(from var(--h5p-theme-feedback-incorrect-secondary) h s l / var(--content-opacity, 1));
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong, .h5p-dragquestion .h5p-dropped.h5p-correct {
