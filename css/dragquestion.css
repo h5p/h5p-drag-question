@@ -186,12 +186,20 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   background: none;
 }
 
+.h5p-dragquestion .h5p-draggable.h5p-dropped {
+  border-color: transparent;
+}
+
 .h5p-dragquestion .h5p-dropped.h5p-correct:after {
   content: "\e903";
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong:after {
   content: "\e902";
+}
+
+.h5p-dragquestion .h5p-draggable:hover {
+  border-color: transparent;
 }
 
 /* Make sure dragquestion has margins in fullscreen */
