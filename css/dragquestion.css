@@ -131,7 +131,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   width: fit-content;
   margin: auto;
   color: var(--h5p-theme-text-primary);
-  padding: var(--h5p-theme-spacing-xxs) var(--h5p-theme-spacing-xs);
+  padding: var(--h5p-theme-spacing-xxs) 0;
   line-height: 1;
   font-size: var(--h5p-theme-font-size-m);
 }
