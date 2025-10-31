@@ -150,7 +150,7 @@ export default class Draggable extends H5P.EventDispatcher {
 
         return !dropZone;
       },
-      handleDragStartEvent: (event) => {
+      handleDragStartEvent: () => {
         const $this = $(draggableElement);
 
         const mustCopyElement = this.mustCopyElement(element);
