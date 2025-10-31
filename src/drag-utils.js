@@ -194,7 +194,7 @@ export default class DragUtils {
    */
   static strip(html) {
     var tmp = document.createElement('div');
-    tmp.innerHTML = html;
+    tmp.innerHTML = H5P.Components.Utils.sanitizeHTML(html);
     return tmp.textContent || tmp.innerText || '';
   }
 }

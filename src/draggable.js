@@ -337,13 +337,13 @@ export default class Draggable extends H5P.EventDispatcher {
       let dropZoneLabel = this.allDropzones[element.dropZone].label;
       if (dropZoneLabel) {
         const labelElement = document.createElement('div');
-        labelElement.innerHTML = dropZoneLabel;
+        labelElement.innerHTML = H5P.Components.Utils.sanitizeHTML(dropZoneLabel);
         dropZoneLabel = labelElement.innerText;
       }
       else {
         dropZoneLabel = element.dropZone + 1;
       }
-      element.$suffix = $('<span class="h5p-hidden-read">' + (this.l10n.suffix.replace('{num}', dropZoneLabel)) + '</span>').appendTo(element.$);
+      element.$suffix = $('<span class="h5p-hidden-read"></span>').text(this.l10n.suffix.replace('{num}', dropZoneLabel)).appendTo(element.$);
     }
     else {
       element.$
