@@ -92,7 +92,7 @@ function C(options, contentId, contentData) {
   self.$noDropZone = $('<div class="h5p-dq-no-dz" role="button" style="display:none;"><span class="h5p-hidden-read">' + self.options.noDropzone + '</span></div>');
 
   // Initialize controls for good a11y
-  var controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
+  this.controls = getControls(self.draggables, self.dropZones, self.$noDropZone[0]);
 
   /**
    * Update the drop effect for all drop zones accepting this draggable.
@@ -101,8 +101,8 @@ function C(options, contentId, contentData) {
    * @param {string} effect
    */
   var setDropEffect = function (effect) {
-    for (var i = 0; i < controls.drop.elements.length; i++) {
-      controls.drop.elements[i].setAttribute('aria-dropeffect', effect);
+    for (var i = 0; i < self.controls.drop.elements.length; i++) {
+      self.controls.drop.elements[i].setAttribute('aria-dropeffect', effect);
     }
   };
 
@@ -170,18 +170,17 @@ function C(options, contentId, contentData) {
     );
     var highlightDropZones = (self.options.behaviour.dropZoneHighlighting === 'dragging');
     draggable.on('elementadd', function (event) {
-      controls.drag.addElement(event.data);
+      self.controls.drag.addElement(event.data);
     });
     draggable.on('elementremove', function (event) {
-      controls.drag.removeElement(event.data);
+      self.controls.drag.removeElement(event.data);
       if (event.data.getAttribute('aria-grabbed') === 'true') {
-        controls.drag.firesEvent('select', event.data);
+        self.controls.drag.firesEvent('select', event.data);
         event.data.removeAttribute('aria-grabbed');
       }
     });
     draggable.on('focus', function (event) {
-      controls.drag.setTabbable(event.data);
-      event.data.focus();
+      self.controls.drag.moveFocus(event.data);
     });
     draggable.on('dragstart', function (event) {
       if (highlightDropZones) {
@@ -918,6 +917,8 @@ C.prototype.resetTask = function () {
     }
   }
 
+  this.controls.drag.setTabbableByIndex(0);
+
   //Show solution button
   this.showButton('check-answer');
   this.hideButton('try-again');
@@ -1098,15 +1099,14 @@ var getControls = function (draggables, dropZones, noDropzone) {
     else {
       // Put focus on next draggable element
       var $next = selected.draggable.elements[selected.draggable.elements.length - 1].$;
-      controls.drag.setTabbable($next[0]);
-      $next.focus();
+      controls.drag.moveFocus($next[0]);
     }
     selected = undefined;
   };
 
   // Handle draggable selected through keyboard
   controls.drag.on('select', function (event) {
-    controls.drag.removeElement(noDropzone);
+    controls.drop.removeElement(noDropzone);
     var result = DragUtils.elementToDraggable(draggables, event.element);
     if (selected) {
       // De-select
@@ -1164,11 +1164,10 @@ var getControls = function (draggables, dropZones, noDropzone) {
     }
     if ($first) {
       // Focus the first drop zone after selecting a draggable
-      controls.drop.setTabbable($first[0]);
-      $first.focus();
+      controls.drop.moveFocus($first[0]);
     }
     else {
-      controls.drag.addElement(noDropzone);
+      controls.drop.addElement(noDropzone);
     }
   });
 

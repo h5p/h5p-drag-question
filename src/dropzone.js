@@ -340,6 +340,7 @@ export default class DropZone {
    */
   dehighlight() {
     this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-dropzone--active');
+    this.$dropZone.attr('tabindex', '-1');
   }
 
   /**
