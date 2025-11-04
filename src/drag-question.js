@@ -267,7 +267,7 @@ function C(options, contentId, contentData) {
   }
 
   this.on('resize', self.resize, self);
-  this.on('domChanged', function(event) {
+  this.on('domChanged', function (event) {
     if (self.contentId === event.data.contentId) {
       self.trigger('resize');
     }
@@ -395,7 +395,7 @@ C.prototype.getXAPIData = function () {
 /**
  * Add the question itselt to the definition part of an xAPIEvent
  */
-C.prototype.addQuestionToXAPI = function(xAPIEvent) {
+C.prototype.addQuestionToXAPI = function (xAPIEvent) {
   var definition = xAPIEvent.getVerifiedStatementValue(['object', 'definition']);
   $.extend(definition, this.getXAPIDefinition());
 };
@@ -478,10 +478,10 @@ C.prototype.getXAPIDefinition = function () {
  * @param {H5P.XAPIEvent} xAPIEvent
  *  The xAPI event we will add a response to
  */
-C.prototype.addResponseToXAPI = function(xAPIEvent) {
+C.prototype.addResponseToXAPI = function (xAPIEvent) {
   var maxScore = this.getMaxScore();
   var score = this.getScore();
-  var success = score == maxScore ? true : false;
+  var success = score === maxScore ? true : false;
   xAPIEvent.setScoredResult(score, maxScore, this, true, success);
   xAPIEvent.data.statement.result.response = this.getUserXAPIResponse();
 };
@@ -642,7 +642,7 @@ C.prototype.addExplanation = function () {
     let placedDraggables = {};
     this.draggables.forEach(draggable => {
       draggable.elements.forEach(dz => {
-        if (dz.dropZone == dropZoneId) {
+        if (dz.dropZone === dropZoneId) {
           // Save reference to draggable, and mark it as correct/incorrect
           placedDraggables[draggable.id] = {
             instance: draggable,
@@ -903,7 +903,8 @@ C.prototype.resetTask = function () {
     this.draggables.forEach(function (draggable) {
       draggable.resetPosition();
     });
-  } else {
+  }
+  else {
     // Reset actual position values
     for (let i = 0; i < this.draggables.length; i++) {
       if (this.draggables[i] !== undefined) {
@@ -1042,7 +1043,7 @@ C.prototype.getCurrentState = function () {
   return state;
 };
 
-C.prototype.getTitle = function() {
+C.prototype.getTitle = function () {
   return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : 'Drag and drop');
 };
 

@@ -13,7 +13,7 @@ export default class DropZone {
    * @param {string[]} l10n
    * @returns {_L8.DropZone}
    */
-  constructor (dropZone, id, l10n) {
+  constructor(dropZone, id, l10n) {
     var self = this;
     H5P.EventDispatcher.call(self);
 
