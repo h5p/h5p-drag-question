@@ -343,7 +343,7 @@ export default class Draggable extends H5P.EventDispatcher {
       else {
         dropZoneLabel = element.dropZone + 1;
       }
-      element.$suffix = $('<span class="h5p-hidden-read">' + (this.l10n.suffix.replace('{num}', dropZoneLabel)) + '</span>').appendTo(element.$);
+      element.$suffix = $('<span class="h5p-hidden-read"></span>').text(this.l10n.suffix.replace('{num}', dropZoneLabel)).appendTo(element.$);
     }
     else {
       element.$
