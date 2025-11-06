@@ -177,7 +177,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   background: var(--h5p-theme-ui-base);
   border-radius: 0.25em;
   line-height: 1;
-  padding: 0.2em;
+  padding: 0.125em;
 }
 
 .h5p-dragquestion .h5p-draggable.h5p-correct.h5p-advanced-text::after, .h5p-dragquestion .h5p-draggable.h5p-wrong.h5p-advanced-text::after {
@@ -190,12 +190,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .h5p-dropped.h5p-correct::after {
   content: "\e903";
-  border: var(--h5p-theme-feedback-correct-main) solid 2px;
+  border: var(--h5p-theme-feedback-correct-main) solid 0.125em;
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-wrong::after {
   content: "\e902";
-  border: var(--h5p-theme-feedback-incorrect-main) solid 2px;
+  border: var(--h5p-theme-feedback-incorrect-main) solid 0.125em;
 }
 
 .h5p-dragquestion .h5p-draggable:not(.h5p-draggable--has-handle):hover {
