@@ -173,7 +173,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   font-weight: normal;
   position: absolute;
   right: -0.15em;
-  bottom: 0.2em;
+  bottom: -0.15em;
   background: var(--h5p-theme-ui-base);
   border-radius: 0.25em;
   line-height: 1;
