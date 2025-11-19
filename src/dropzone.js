@@ -3,7 +3,6 @@ import DragUtils from './drag-utils';
 const $ = H5P.jQuery;
 
 export default class DropZone {
-
   /**
    * Creates a new drop zone instance.
    * Makes it easy to keep track of all instance variables.
@@ -30,7 +29,9 @@ export default class DropZone {
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignable = dropZone.autoAlign;
-    self.useBackgroundHover = behaviour.dropZoneHighlighting === 'always' || behaviour.dropZoneHighlighting === 'dragging';
+    self.useBackgroundHover =
+      behaviour.dropZoneHighlighting === 'always' ||
+      behaviour.dropZoneHighlighting === 'dragging';
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -45,69 +46,75 @@ export default class DropZone {
   appendTo($container, draggables) {
     var self = this;
 
-    self.$dropZone = $(H5P.Components.Dropzone({
-      variant: 'area',
-      containerClasses: self.showLabel ? 'h5p-has-label' : '',
-      classes: 'h5p-inner',
-      tolerance: 'intersect',
-      role: 'button',
-      hasOpaqueBackground: this.backgroundOpacity < 100,
-      ariaDisabled: true,
-      ariaLabel: self.showLabel ? undefined : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
-      areaLabel: self.showLabel ? self.label : undefined,
-      handleAcceptEvent: (element) => {
-        /**
-         * Functional note:
-         * This will fire every time a draggable is starting to get dragged, globally
-         * for all initialized drop zones  <-> draggables. That means in a compound H5P this
-         * function will fire for all Drag Questions within that compound content type,
-         * no matter if it is at a different timestamp, already completed or otherwise
-         * intuitively would be disabled. This can lead to some unexpected behaviour if you
-         * don't take this into consideration.
-         */
+    self.$dropZone = $(
+      H5P.Components.Dropzone({
+        variant: 'area',
+        containerClasses: self.showLabel ? 'h5p-has-label' : '',
+        classes: 'h5p-inner',
+        tolerance: 'intersect',
+        role: 'button',
+        hasOpaqueBackground: this.backgroundOpacity < 100,
+        ariaDisabled: true,
+        ariaLabel: self.showLabel
+          ? undefined
+          : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
+        areaLabel: self.showLabel ? self.label : undefined,
+        handleAcceptEvent: (element) => {
+          /**
+           * Functional note:
+           * This will fire every time a draggable is starting to get dragged, globally
+           * for all initialized drop zones  <-> draggables. That means in a compound H5P this
+           * function will fire for all Drag Questions within that compound content type,
+           * no matter if it is at a different timestamp, already completed or otherwise
+           * intuitively would be disabled. This can lead to some unexpected behaviour if you
+           * don't take this into consideration.
+           */
 
-        // Find draggable element belongs to
-        const result = DragUtils.elementToDraggable(draggables, element);
+          // Find draggable element belongs to
+          const result = DragUtils.elementToDraggable(draggables, element);
 
-        // Found no Draggable that the element belongs to. Don't accept it.
-        if (!result) {
-          return false;
-        }
+          // Found no Draggable that the element belongs to. Don't accept it.
+          if (!result) {
+            return false;
+          }
 
-        // Figure out if the drop zone will accept the draggable
-        return this.accepts(result.draggable, draggables);
-      },
-      handleDropEvent: (event, ui) => {
-        const $this = this.$dropZone;
-        DragUtils.setOpacity($this.removeClass('h5p-over'), 'background', this.backgroundOpacity);
-        ui.draggable.data('addToZone', this.id);
+          // Figure out if the drop zone will accept the draggable
+          return this.accepts(result.draggable, draggables);
+        },
+        handleDropEvent: (event, ui) => {
+          const $this = this.$dropZone;
+          $this.removeClass('h5p-over');
+          ui.draggable.data('addToZone', this.id);
 
-        if (this.getIndexOf(ui.draggable) === -1) {
-          // Add to alignables
-          this.alignables.push(ui.draggable);
-        }
+          if (this.getIndexOf(ui.draggable) === -1) {
+            // Add to alignables
+            this.alignables.push(ui.draggable);
+          }
 
-        if (this.autoAlignable.enabled) {
-          // Trigger alignment
-          this.autoAlign();
-        }
-      },
-      handleDropOverEvent: () => {
-        if (this.useBackgroundHover) {
-          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
-        }
-      },
-      handleDropOutEvent: () => {
-        if (this.useBackgroundHover) {
-          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
-        }
-      }
-    })).css({
-      left: self.x + '%',
-      top: self.y + '%',
-      width: self.width + 'em',
-      height: self.height + 'em'
-    }).appendTo($container)
+          if (this.autoAlignable.enabled) {
+            // Trigger alignment
+            this.autoAlign();
+          }
+        },
+        handleDropOverEvent: () => {
+          if (this.useBackgroundHover) {
+            this.$dropZone.children('.h5p-inner').addClass('h5p-over');
+          }
+        },
+        handleDropOutEvent: () => {
+          if (this.useBackgroundHover) {
+            this.$dropZone.children('.h5p-inner').removeClass('h5p-over');
+          }
+        },
+      })
+    )
+      .css({
+        left: self.x + '%',
+        top: self.y + '%',
+        width: self.width + 'em',
+        height: self.height + 'em',
+      })
+      .appendTo($container)
       .focus(function () {
         if ($tip instanceof H5P.jQuery) {
           $tip.attr('tabindex', '0');
@@ -122,15 +129,15 @@ export default class DropZone {
     // Add tip after setOpacity(), so this does not get background opacity:
     var $tip = H5P.JoubelUI.createTip(self.tip, {
       tipLabel: self.l10n.tipLabel,
-      tabcontrol: true
+      tabcontrol: true,
     });
     if ($tip instanceof H5P.jQuery) {
       // Create wrapper for tip
       $('<span/>', {
-        'class': 'h5p-dq-tipwrap',
+        class: 'h5p-dq-tipwrap',
         'aria-label': self.l10n.tipAvailable,
-        'append': $tip,
-        'appendTo': self.$dropZone
+        append: $tip,
+        appendTo: self.$dropZone,
       });
     }
 
@@ -156,8 +163,12 @@ export default class DropZone {
    * Update the background opacity
    */
   updateBackgroundOpacity() {
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-dropzone_label'), 'background', this.backgroundOpacity);
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
+    this.$dropZone
+      .children('.h5p-dropzone_label')
+      .css('opacity', this.backgroundOpacity / 100);
+    this.$dropZone
+      .children('.h5p-inner')
+      .css('opacity', this.backgroundOpacity / 100);
   }
 
   /**
@@ -212,7 +223,6 @@ export default class DropZone {
     // Find alignable index
     var index = self.getIndexOf($alignable);
     if (index !== -1) {
-
       // Remove alignable
       self.alignables.splice(index, 1);
 
@@ -238,26 +248,26 @@ export default class DropZone {
     // Calcuate borders and spacing values in percetage
     var spacing = {
       x: (self.autoAlignable.spacing / self.autoAlignable.size.width) * 100,
-      y: (self.autoAlignable.spacing / self.autoAlignable.size.height) * 100
+      y: (self.autoAlignable.spacing / self.autoAlignable.size.height) * 100,
     };
 
     // Determine coordinates for first 'spot'
     var pos = {
       x: self.x + spacing.x,
-      y: self.y + spacing.y
+      y: self.y + spacing.y,
     };
 
     // Determine space inside drop zone
     var dropZoneSize = self.$dropZone[0].getBoundingClientRect();
     var space = {
-      x: dropZoneSize.width - (spacing.x * 2),
-      y: dropZoneSize.height - (spacing.y * 2)
+      x: dropZoneSize.width - spacing.x * 2,
+      y: dropZoneSize.height - spacing.y * 2,
     };
 
     // Set current space left inside drop zone
     var spaceLeft = {
       x: space.x,
-      y: space.y
+      y: space.y,
     };
 
     // Set height for the active row of elements
@@ -276,17 +286,17 @@ export default class DropZone {
       // Position element at current spot
       $alignable.css({
         left: pos.x + '%',
-        top: pos.y + '%'
+        top: pos.y + '%',
       });
       self.trigger('elementaligned', $alignable);
 
       // Update horizontal space left + next position
-      var spaceDiffX = (alignableSize.width + self.autoAlignable.spacing);
+      var spaceDiffX = alignableSize.width + self.autoAlignable.spacing;
       spaceLeft.x -= spaceDiffX;
       pos.x += (spaceDiffX / containerSize.width) * 100;
 
       // Keep track of the highest element in this row
-      var spaceDiffY = (alignableSize.height + self.autoAlignable.spacing);
+      var spaceDiffY = alignableSize.height + self.autoAlignable.spacing;
       if (spaceDiffY > currentRowHeight) {
         currentRowHeight = spaceDiffY;
       }
@@ -295,7 +305,6 @@ export default class DropZone {
     // Try to order and align the alignables inside the drop zone
     // (in the order they were added)
     for (var i = 0; i < self.alignables.length; i++) {
-
       // Determine alignable size
       $alignable = self.alignables[i];
       alignableSize = $alignable[0].getBoundingClientRect();
@@ -303,8 +312,7 @@ export default class DropZone {
       // Try to fit on the current row
       if (spaceLeft.x >= alignableSize.width) {
         alignElement();
-      }
-      else {
+      } else {
         // Did not fit, try next row
 
         // Reset X values
@@ -332,23 +340,29 @@ export default class DropZone {
    * Highlight the current drop zone
    */
   highlight() {
-    this.$dropZone.attr('aria-disabled', 'false').children('.h5p-inner').addClass('h5p-dropzone--active');
+    this.$dropZone
+      .attr('aria-disabled', 'false')
+      .children('.h5p-inner')
+      .addClass('h5p-dropzone--active');
   }
 
   /**
    * De-highlight the current drop zone
    */
   dehighlight() {
-    this.$dropZone.attr('aria-disabled', 'true').children('.h5p-inner').removeClass('h5p-dropzone--active');
+    this.$dropZone
+      .attr('aria-disabled', 'true')
+      .children('.h5p-inner')
+      .removeClass('h5p-dropzone--active');
     this.$dropZone.attr('tabindex', '-1');
   }
 
   /**
-   * Invoked when reset task is run. Cleanup any internal states. 
+   * Invoked when reset task is run. Cleanup any internal states.
    */
   reset() {
     // Remove alignables
     this.alignables = [];
-    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+    this.$dropZone.children('.h5p-inner').removeClass('h5p-over');
   }
 }
