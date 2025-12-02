@@ -83,7 +83,7 @@ export default class DropZone {
         },
         handleDropEvent: (event, ui) => {
           const $this = this.$dropZone;
-          $this.removeClass('h5p-over');
+          DragUtils.setOpacity($this.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
           ui.draggable.data('addToZone', this.id);
 
           if (this.getIndexOf(ui.draggable) === -1) {
@@ -98,12 +98,12 @@ export default class DropZone {
         },
         handleDropOverEvent: () => {
           if (this.useBackgroundHover) {
-            this.$dropZone.children('.h5p-inner').addClass('h5p-over');
+            DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
           }
         },
         handleDropOutEvent: () => {
           if (this.useBackgroundHover) {
-            this.$dropZone.children('.h5p-inner').removeClass('h5p-over');
+            DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
           }
         },
       })
@@ -163,12 +163,8 @@ export default class DropZone {
    * Update the background opacity
    */
   updateBackgroundOpacity() {
-    this.$dropZone
-      .children('.h5p-dropzone_label')
-      .css('opacity', this.backgroundOpacity / 100);
-    this.$dropZone
-      .children('.h5p-inner')
-      .css('opacity', this.backgroundOpacity / 100);
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-dropzone_label'), 'background', this.backgroundOpacity);
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner'), 'background', this.backgroundOpacity);
   }
 
   /**
@@ -363,6 +359,6 @@ export default class DropZone {
   reset() {
     // Remove alignables
     this.alignables = [];
-    this.$dropZone.children('.h5p-inner').removeClass('h5p-over');
+    DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
   }
 }
