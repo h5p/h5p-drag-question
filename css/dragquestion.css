@@ -209,14 +209,29 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 /* Full screen button styling */
-.h5p-dragquestion .h5p-my-fullscreen-button-enter, .h5p-dragquestion .h5p-my-fullscreen-button-exit {
-  cursor: pointer;
-  font-size: 1.5em;
-  color: var(--h5p-theme-contrast-cta-white);
+.h5p-dragquestion .h5p-my-fullscreen-button-enter,
+.h5p-dragquestion .h5p-my-fullscreen-button-exit {
+  display: flex;
+  align-items: center;
   position: absolute;
   right: 10px;
   top: 10px;
   z-index: 1;
+  padding: var(--h5p-theme-spacing-xs);
+  font-size: var(--h5p-theme-font-size-m);
+  background-color: var(--h5p-theme-contrast-cta-light);
+  border-radius: var(--h5p-theme-border-radius-large);
+  color: var(--h5p-theme-contrast-cta-white);
+  cursor: pointer;
+}
+
+.h5p-dragquestion .h5p-my-fullscreen-button-enter:hover,
+.h5p-dragquestion .h5p-my-fullscreen-button-exit:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--h5p-theme-contrast-cta-light),
+    transparent 60%
+  );
 }
 
 .h5p-dragquestion .h5p-my-fullscreen-button-enter:focus-visible,
