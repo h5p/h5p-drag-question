@@ -129,6 +129,12 @@ export default class Draggable extends H5P.EventDispatcher {
     });
 
     const instanceHolderDOM = document.createElement('div');
+
+    // Use placeholder image if none specified
+    if (self.type.library.includes('H5P.Image')) {
+      self.type.params.usePlaceholderImage = true;
+    }
+
     H5P.newRunnable(self.type, contentId, H5P.jQuery(instanceHolderDOM));
 
     const draggableElement = H5P.Components.Draggable({
