@@ -133,10 +133,12 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   width: 100%;
 }
 
-.h5p-dragquestion .h5p-draggable p {
+/* Override component css */
+.h5p-dragquestion .h5p-draggable p,
+.h5p-dragquestion .h5p-draggable span {
   display: inline-block;
   align-content: center;
-  width: fit-content;
+  width: 100%;
   margin: auto;
   color: var(--h5p-theme-text-primary);
   padding: var(--h5p-theme-spacing-xxs) 0;
