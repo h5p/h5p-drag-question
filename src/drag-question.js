@@ -559,6 +559,10 @@ C.prototype.createQuestionContent = function () {
     else {
       // Add static element
       var $element = this.addElement(element, 'static', i);
+      // Use placeholder image if none specified
+      if (element.type.library.includes('H5P.Image')) {
+        element.type.params.usePlaceholderImage = true;
+      }
       H5P.newRunnable(element.type, this.id, $element);
       var timedOutOpacity = function ($el, el) {
         setTimeout(function () {
