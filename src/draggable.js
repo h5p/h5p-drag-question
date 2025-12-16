@@ -9,7 +9,7 @@ const OPACITY_FULL = 100;
 const OPACITY_DRAGGING = 50;
 
 // Helper to stop propagating events
-const stopPropagation = event => event.stopPropagation();
+const stopPropagation = (event) => event.stopPropagation();
 
 export default class Draggable extends H5P.EventDispatcher {
   /**
@@ -25,7 +25,15 @@ export default class Draggable extends H5P.EventDispatcher {
    * @param {number} draggableNum Number of this draggable (for a11y)
    * @param {Object} [options]
    */
-  constructor(element, id, answers, l10n, dropZones, draggableNum, options = {}) {
+  constructor(
+    element,
+    id,
+    answers,
+    l10n,
+    dropZones,
+    draggableNum,
+    options = {}
+  ) {
     super();
     var self = this;
 
@@ -57,8 +65,8 @@ export default class Draggable extends H5P.EventDispatcher {
           dropZone: answers[i].dz,
           position: {
             left: answers[i].x + '%',
-            top: answers[i].y + '%'
-          }
+            top: answers[i].y + '%',
+          },
         });
       }
     }
@@ -76,8 +84,7 @@ export default class Draggable extends H5P.EventDispatcher {
 
     if (!self.elements.length) {
       self.attachElement(null, $container, contentId);
-    }
-    else {
+    } else {
       for (var i = 0; i < self.elements.length; i++) {
         self.attachElement(i, $container, contentId);
       }
@@ -101,8 +108,7 @@ export default class Draggable extends H5P.EventDispatcher {
       element = {};
       self.elements.push(element);
       index = self.elements.length - 1;
-    }
-    else {
+    } else {
       // Get old element
       element = self.elements[index];
     }
@@ -125,10 +131,16 @@ export default class Draggable extends H5P.EventDispatcher {
           self.trigger('elementremove', element.$[0]);
         }
         delete element.position;
-      }
+      },
     });
 
     const instanceHolderDOM = document.createElement('div');
+
+    // Use placeholder image if none specified
+    if (self.type.library.includes('H5P.Image')) {
+      self.type.params.usePlaceholderImage = true;
+    }
+
     H5P.newRunnable(self.type, contentId, H5P.jQuery(instanceHolderDOM));
 
     const draggableElement = H5P.Components.Draggable({
@@ -138,9 +150,9 @@ export default class Draggable extends H5P.EventDispatcher {
         $container.removeClass('h5p-dragging');
         const $this = $(draggableElement);
 
-        $this.data("uiDraggable").originalPosition = {
+        $this.data('uiDraggable').originalPosition = {
           top: self.y + '%',
-          left: self.x + '%'
+          left: self.x + '%',
         };
 
         this.updatePlacement(element);
@@ -168,7 +180,7 @@ export default class Draggable extends H5P.EventDispatcher {
         this.trigger('focus', draggableElement);
         this.trigger('dragstart', {
           element: draggableElement,
-          effect: mustCopyElement ? 'copy' : 'move'
+          effect: mustCopyElement ? 'copy' : 'move',
         });
       },
       handleDragEvent: () => {
@@ -188,11 +200,10 @@ export default class Draggable extends H5P.EventDispatcher {
         if (addToZone !== undefined) {
           $this.removeData('addToZone');
           this.addToDropZone(index, element, addToZone);
-        }
-        else {
+        } else {
           element.reset();
         }
-      }
+      },
     });
 
     draggableElement.addEventListener('click', () => {
@@ -222,7 +233,11 @@ export default class Draggable extends H5P.EventDispatcher {
     }
 
     // Add prefix for good a11y
-    $('<span class="h5p-hidden-read">' + (self.l10n.prefix.replace('{num}', self.draggableNum)) + '</span>').prependTo(element.$);
+    $(
+      '<span class="h5p-hidden-read">' +
+        self.l10n.prefix.replace('{num}', self.draggableNum) +
+        '</span>'
+    ).prependTo(element.$);
 
     // Add suffix for good a11y
     $('<span class="h5p-hidden-read"></span>').appendTo(element.$);
@@ -236,12 +251,12 @@ export default class Draggable extends H5P.EventDispatcher {
    * @param {number} dropZoneId
    */
   setFeedback(feedback, dropZoneId) {
-    this.elements.forEach(element => {
+    this.elements.forEach((element) => {
       if (element.dropZone === dropZoneId) {
         if (element.$feedback === undefined) {
           element.$feedback = $('<span>', {
-            'class': 'h5p-hidden-read',
-            appendTo: element.$
+            class: 'h5p-hidden-read',
+            appendTo: element.$,
           });
         }
         element.$feedback.html(feedback);
@@ -256,7 +271,7 @@ export default class Draggable extends H5P.EventDispatcher {
    * @returns {boolean}
    */
   mustCopyElement(element) {
-    return (this.multiple && element.dropZone === undefined);
+    return this.multiple && element.dropZone === undefined;
   }
 
   /**
@@ -290,11 +305,18 @@ export default class Draggable extends H5P.EventDispatcher {
     if (self.multiple) {
       // Check that we're the only element here
       for (var i = 0; i < self.elements.length; i++) {
-        if (i !== index && self.elements[i] !== undefined && self.elements[i].dropZone === addToZone) {
+        if (
+          i !== index &&
+          self.elements[i] !== undefined &&
+          self.elements[i].dropZone === addToZone
+        ) {
           // Copy of element already in drop zone
 
           // Remove current element
-          if (self.elements[index].dropZone !== undefined && self.elements[index].dropZone !== addToZone) {
+          if (
+            self.elements[index].dropZone !== undefined &&
+            self.elements[index].dropZone !== addToZone
+          ) {
             // Leaving old drop zone!
             self.trigger('leavingDropZone', element);
           }
@@ -339,20 +361,19 @@ export default class Draggable extends H5P.EventDispatcher {
         const labelElement = document.createElement('div');
         labelElement.innerHTML = dropZoneLabel;
         dropZoneLabel = labelElement.innerText;
-      }
-      else {
+      } else {
         dropZoneLabel = element.dropZone + 1;
       }
-      element.$suffix = $('<span class="h5p-hidden-read"></span>').text(this.l10n.suffix.replace('{num}', dropZoneLabel)).appendTo(element.$);
-    }
-    else {
-      element.$
-        .removeClass('h5p-dropped')
+      element.$suffix = $('<span class="h5p-hidden-read"></span>')
+        .text(this.l10n.suffix.replace('{num}', dropZoneLabel))
+        .appendTo(element.$);
+    } else {
+      element.$.removeClass('h5p-dropped')
         .removeClass('h5p-wrong')
         .removeClass('h5p-correct')
         .css({
           border: '',
-          background: ''
+          background: '',
         });
     }
 
@@ -366,7 +387,6 @@ export default class Draggable extends H5P.EventDispatcher {
     var self = this;
 
     this.elements.forEach(function (draggable) {
-
       if (draggable.$feedback) {
         draggable.$feedback.remove();
         delete draggable.$feedback;
@@ -377,23 +397,26 @@ export default class Draggable extends H5P.EventDispatcher {
         var element = draggable.$;
 
         //Revert the button to initial position and then remove it.
-        element.animate({
-          left: self.x + '%',
-          top: self.y + '%'
-        }, function () {
-          //Remove the draggable if it is an infinity draggable.
-          if (self.multiple) {
-            if (element.dropZone !== undefined) {
-              self.trigger('leavingDropZone', element);
+        element.animate(
+          {
+            left: self.x + '%',
+            top: self.y + '%',
+          },
+          function () {
+            //Remove the draggable if it is an infinity draggable.
+            if (self.multiple) {
+              if (element.dropZone !== undefined) {
+                self.trigger('leavingDropZone', element);
+              }
+              element.remove();
+              //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
+              if (self.elements.indexOf(draggable) >= 0) {
+                delete self.elements[self.elements.indexOf(draggable)];
+              }
+              self.trigger('elementremove', element[0]);
             }
-            element.remove();
-            //Delete the element from elements list to avoid a cluster of draggables on top of infinity draggable.
-            if (self.elements.indexOf(draggable) >= 0) {
-              delete self.elements[self.elements.indexOf(draggable)];
-            }
-            self.trigger('elementremove', element[0]);
           }
-        });
+        );
 
         // Reset element style
         self.updatePlacement(draggable);
@@ -426,7 +449,7 @@ export default class Draggable extends H5P.EventDispatcher {
       if (self.elements[i] !== undefined && self.elements[i].$.is(element)) {
         return {
           element: self.elements[i],
-          index: i
+          index: i,
         };
       }
     }
@@ -494,7 +517,11 @@ export default class Draggable extends H5P.EventDispatcher {
    */
   results(skipVisuals, solutions, scorePoints) {
     var self = this;
-    var i, j, element, correct, points = 0;
+    var i,
+      j,
+      element,
+      correct,
+      points = 0;
     self.rawPoints = 0;
 
     if (solutions === undefined) {
@@ -555,11 +582,13 @@ export default class Draggable extends H5P.EventDispatcher {
    */
   markElement(element, status, scorePoints) {
     var $elementResult = $('<span/>', {
-      'class': 'h5p-hidden-read',
-      html: this.l10n[status + 'Answer'] + '. '
+      class: 'h5p-hidden-read',
+      html: this.l10n[status + 'Answer'] + '. ',
     });
     if (scorePoints) {
-      $elementResult = $elementResult.add(scorePoints.getElement(status === 'correct'));
+      $elementResult = $elementResult.add(
+        scorePoints.getElement(status === 'correct')
+      );
     }
     element.$suffix = element.$suffix.add($elementResult);
     element.$.addClass('h5p-' + status).append($elementResult);
