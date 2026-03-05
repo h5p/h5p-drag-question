@@ -116,11 +116,9 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 .h5p-dragquestion .h5p-draggable p {
   margin: 0;
   padding: 0;
-  font-size: unset;
 }
 .h5p-dragquestion .h5p-draggable span {
   line-height: 1em;
-  font-size: unset;
 }
 
 .h5p-dragquestion .h5p-dropped.h5p-correct, .h5p-dragquestion .h5p-dropzone.h5p-correct-answer {
