@@ -103,7 +103,6 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 .h5p-theme.h5p-dragquestion .h5p-draggable:has(.h5p-image).h5p-draggable--has-handle {
-  padding-inline: var(--padding);
   padding-left: var(--padding);
 }
 
