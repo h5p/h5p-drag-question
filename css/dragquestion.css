@@ -83,7 +83,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   --padding: 0.3em;
 
   line-height: 1.25em;
-  padding-block: var(--padding);
+  padding: var(--padding);
   position: absolute;
 }
 
@@ -104,7 +104,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 
 .h5p-dragquestion .h5p-draggable:has(.h5p-image).h5p-draggable--has-handle {
   padding-inline: var(--padding);
-  padding-left: var(--padding);
+  padding-left: var(--padding) !important;
 }
 
 .h5p-dragquestion:not(:has(.h5p-question-evaluation-container.evaluation-mode))
@@ -114,7 +114,7 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
   /* --border-width and --handle-width stem from H5P.Components.Draggable */
   padding-left: calc(
     var(--border-width) + var(--handle-width) + var(--padding)
-  );
+  ) !important;
   transform: translateX(calc(-1 * var(--border-width) - var(--handle-width)));
 }
 
