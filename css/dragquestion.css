@@ -134,8 +134,8 @@ html.h5p-iframe .h5p-container.h5p-dragquestion.h5p-semi-fullscreen {
 }
 
 /* Override component css */
-.h5p-dragquestion .h5p-draggable p,
-.h5p-dragquestion .h5p-draggable span {
+.h5p-dragquestion .h5p-draggable p:not(.h5p-hidden-read),
+.h5p-dragquestion .h5p-draggable span:not(.h5p-hidden-read) {
   display: inline-block;
   align-content: center;
   width: 100%;
