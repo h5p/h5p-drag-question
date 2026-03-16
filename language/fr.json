@@ -5,8 +5,8 @@
       "default": "Vérifier"
     },
     {
-      "label": "Submit answer button",
-      "default": "Submit"
+      "label": "Bouton soumettre la réponse",
+      "default": "Envoyer"
     },
     {
       "label": "Bouton \"Recommencer\"",
@@ -53,7 +53,7 @@
                   },
                   {
                     "label": "Opacité",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Réduire l'opacité peut entraîner un contraste insuffisant et rendre le contenu inaccessible."
                   },
                   {
                     "label": "Nombre illimité d'instances pour cet élément",
@@ -70,7 +70,7 @@
                 "fields": [
                   {
                     "label": "Etiquette",
-                    "description": "The label is used by assistive technologies."
+                    "description": "L'étiquette est utilisée par les technologies d'assistance."
                   },
                   {
                     "label": "Afficher l'étiquette"
@@ -84,7 +84,7 @@
                   },
                   {
                     "label": "Opacité",
-                    "description": "Reducing the opacity may result in an insufficient contrast and make the content not accessible."
+                    "description": "Réduire l'opacité peut entraîner un contraste insuffisant et rendre le contenu inaccessible."
                   },
                   {
                     "label": "Aides et commentaires",
@@ -220,16 +220,16 @@
       ]
     },
     {
-      "label": "Grabbable prefix",
+      "label": "Préfixe saisissable",
       "default": "Eléments déplaçables {num} de {total}."
     },
     {
-      "label": "Grabbable suffix",
-      "default": "Placed in dropzone {num}."
+      "label": "Suffixe saisissable",
+      "default": "Placé dans la zone de dépôt {num}."
     },
     {
       "label": "Préfix de la zone de Dépôt",
-      "default": "Dropzone {num} of {total}."
+      "default": "Zone de dépôt {num} sur {total}."
     },
     {
       "label": "Pas d'étiquette pour la séléction de la zone de dépôt",
@@ -264,8 +264,8 @@
       "default": "Montrer l'explication de votre score"
     },
     {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
+      "label": "Étiquette pour les technologies d'assistance du bouton \"Vérifier\"",
+      "default": "Vérifier les réponses. Les réponses seront marquées comme correctes, incorrectes ou sans réponse."
     },
     {
       "label": "Vignette de technologie fonctionnelle pour la touche « Réessayer »",
