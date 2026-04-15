@@ -57,7 +57,7 @@ export default class DropZone {
         ariaDisabled: true,
         ariaLabel: self.showLabel
           ? undefined
-          : self.l10n.prefix.replace('{num}', self.id + 1) + self.label,
+          : `${self.l10n.prefix.replace('{num}', self.id + 1)} ${DragUtils.strip(self.label)}`,
         areaLabel: self.showLabel ? self.label : undefined,
         handleAcceptEvent: (element) => {
           /**
