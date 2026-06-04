@@ -150,11 +150,6 @@ export default class Draggable extends H5P.EventDispatcher {
         $container.removeClass('h5p-dragging');
         const $this = $(draggableElement);
 
-        // $this.data('uiDraggable').originalPosition = {
-        //   top: self.y + '%',
-        //   left: self.x + '%',
-        // };
-
         this.updatePlacement(element);
         $this[0].setAttribute('aria-grabbed', 'false');
 
