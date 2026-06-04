@@ -195,6 +195,7 @@ function C(options, contentId, contentData) {
       setDropEffect('none');
     });
     draggable.on('interacted', function () {
+      debugger;
       self.answered = true;
       self.triggerXAPI('interacted');
     });

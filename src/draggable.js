@@ -196,8 +196,8 @@ export default class Draggable extends H5P.EventDispatcher {
 
         $this.css(element.position);
 
-        const addToZone = draggableElement.dataset.addToZone;
-        if (addToZone !== undefined) {
+        const addToZone = Number(draggableElement.dataset.addToZone);
+        if (!isNaN(addToZone)) {
           delete draggableElement.dataset.addToZone;
           this.addToDropZone(index, element, addToZone);
         }

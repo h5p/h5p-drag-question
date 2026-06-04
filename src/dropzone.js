@@ -81,7 +81,7 @@ export default class DropZone {
       handleDropEvent: (draggable) => {
         const $this = this.$dropZone;
         DragUtils.setOpacity($this.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
-        draggable.dataset.addToZone = String(this.id);
+        draggable.dataset.addToZone = this.id;
 
         const $draggable = H5P.jQuery(draggable);
 
