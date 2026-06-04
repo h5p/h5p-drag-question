@@ -496,7 +496,7 @@ export default class Draggable extends H5P.EventDispatcher {
       var element = self.elements[i];
 
       if (element) {
-        element.$.draggable('disable');
+        element.$[0].setDisabled(true);
         self.trigger('elementremove', element.$[0]);
       }
     }
@@ -513,7 +513,7 @@ export default class Draggable extends H5P.EventDispatcher {
       var element = self.elements[i];
 
       if (element) {
-        element.$.draggable('enable');
+        element.$[0].setDisabled(false);
         self.trigger('elementadd', element.$[0]);
       }
     }
