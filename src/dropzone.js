@@ -56,28 +56,6 @@ export default class DropZone {
         ? undefined
         : `${self.l10n.prefix.replace('{num}', self.id + 1)} ${DragUtils.strip(self.label)}`,
       areaLabel: self.showLabel ? self.label : undefined,
-      handleAcceptEvent: (element) => {
-        /**
-           * Functional note:
-           * This will fire every time a draggable is starting to get dragged, globally
-           * for all initialized drop zones  <-> draggables. That means in a compound H5P this
-           * function will fire for all Drag Questions within that compound content type,
-           * no matter if it is at a different timestamp, already completed or otherwise
-           * intuitively would be disabled. This can lead to some unexpected behaviour if you
-           * don't take this into consideration.
-           */
-
-        // Find draggable element belongs to
-        const result = DragUtils.elementToDraggable(draggables, element);
-
-        // Found no Draggable that the element belongs to. Don't accept it.
-        if (!result) {
-          return false;
-        }
-
-        // Figure out if the drop zone will accept the draggable
-        return this.accepts(result.draggable, draggables);
-      },
       handleDropEvent: (draggable) => {
         const $this = this.$dropZone;
         DragUtils.setOpacity($this.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
