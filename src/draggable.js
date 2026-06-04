@@ -30,7 +30,6 @@ export default class Draggable extends H5P.EventDispatcher {
     id,
     answers,
     l10n,
-    dropZones,
     draggableNum,
     options = {}
   ) {
@@ -49,7 +48,6 @@ export default class Draggable extends H5P.EventDispatcher {
     self.type = element.type;
     self.multiple = element.multiple;
     self.l10n = l10n;
-    self.allDropzones = dropZones;
     self.draggableNum = draggableNum;
     self.dragHandleWanted = options.dragHandleWanted ?? false;
 
@@ -146,14 +144,16 @@ export default class Draggable extends H5P.EventDispatcher {
     const draggableElement = H5P.Components.Draggable({
       dom: instanceHolderDOM,
       hasHandle: self.dragHandleWanted,
+      getDropZones: () => self.allDropzones.filter((dz) => self.hasDropZone(dz.id))
+        .map((dz) => dz && dz.$dropZone && dz.$dropZone[0]),
       handleRevert: (dropZone) => {
         $container.removeClass('h5p-dragging');
         const $this = $(draggableElement);
 
-        $this.data('uiDraggable').originalPosition = {
-          top: self.y + '%',
-          left: self.x + '%',
-        };
+        // $this.data('uiDraggable').originalPosition = {
+        //   top: self.y + '%',
+        //   left: self.x + '%',
+        // };
 
         this.updatePlacement(element);
         $this[0].setAttribute('aria-grabbed', 'false');
@@ -196,11 +196,12 @@ export default class Draggable extends H5P.EventDispatcher {
 
         $this.css(element.position);
 
-        const addToZone = $this.data('addToZone');
+        const addToZone = draggableElement.dataset.addToZone;
         if (addToZone !== undefined) {
-          $this.removeData('addToZone');
+          delete draggableElement.dataset.addToZone;
           this.addToDropZone(index, element, addToZone);
-        } else {
+        }
+        else {
           element.reset();
         }
       },
@@ -272,6 +273,15 @@ export default class Draggable extends H5P.EventDispatcher {
    */
   mustCopyElement(element) {
     return this.multiple && element.dropZone === undefined;
+  }
+
+  /**
+   * Setter for all drop zones.
+   *
+   * @param {Array} dropZones
+   */
+  setDropZones(dropZones) {
+    this.allDropzones = dropZones;
   }
 
   /**
@@ -361,13 +371,15 @@ export default class Draggable extends H5P.EventDispatcher {
         const labelElement = document.createElement('div');
         labelElement.innerHTML = dropZoneLabel;
         dropZoneLabel = labelElement.innerText;
-      } else {
+      }
+      else {
         dropZoneLabel = element.dropZone + 1;
       }
       element.$suffix = $('<span class="h5p-hidden-read"></span>')
         .text(this.l10n.suffix.replace('{num}', dropZoneLabel))
         .appendTo(element.$);
-    } else {
+    }
+    else {
       element.$.removeClass('h5p-dropped')
         .removeClass('h5p-wrong')
         .removeClass('h5p-correct')
