@@ -26,6 +26,14 @@
               "description": "Opcionális. Válassza ki a háttérként használni kívánt képet a fogd és vidd feladathoz."
             },
             {
+              "label": "Decorative Only",
+              "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+            },
+            {
+              "label": "Alternative text",
+              "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers."
+            },
+            {
               "label": "Feladat mérete",
               "description": "Adja meg, hogy mekkora legyen a játéktér (px-ben)."
             }
