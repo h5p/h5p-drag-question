@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/h5p/h5p-drag-question#readme",
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
+    "@babel/cli": "^8.0.4",
     "@babel/core": "^7.18.6",
     "@babel/plugin-transform-object-assign": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.6",
