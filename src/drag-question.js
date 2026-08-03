@@ -554,6 +554,7 @@ C.prototype.createQuestionContent = function () {
         'class': 'h5p-hidden-read',
         id: 'dq-bg-desc-' + numInstances,
         text: backgroundAlt,
+        'aria-hidden': 'true',
         appendTo: this.$container
       });
       this.$container.attr('aria-describedby', 'dq-bg-desc-' + numInstances);
