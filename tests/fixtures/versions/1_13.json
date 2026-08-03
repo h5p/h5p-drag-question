@@ -1,0 +1,14 @@
+{
+  "behaviour": {},
+  "question": {
+    "settings": {
+      "questionTitle": "<b>Sample</b> pending metadata title extraction.",
+      "showTitle": true
+    },
+    "task": {
+      "elements": [],
+      "dropZones": []
+    }
+  }
+}
+

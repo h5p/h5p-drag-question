@@ -1,0 +1,63 @@
+{
+  "question": {
+    "settings": {
+      "size": { "width": 620, "height": 310 }
+    },
+    "task": {
+      "elements": [
+        {
+          "type": { "library": "H5P.AdvancedText 1.1", "params": { "text": "<p>Apple</p>" } },
+          "x": 5,
+          "y": 5,
+          "width": 15,
+          "height": 6,
+          "dropZones": ["0"],
+          "backgroundOpacity": 100,
+          "multiple": false
+        },
+        {
+          "type": { "library": "H5P.AdvancedText 1.1", "params": { "text": "<p>Banana</p>" } },
+          "x": 5,
+          "y": 20,
+          "width": 15,
+          "height": 6,
+          "dropZones": ["0"],
+          "backgroundOpacity": 100,
+          "multiple": false
+        }
+      ],
+      "dropZones": [
+        {
+          "label": "Fruit",
+          "showLabel": true,
+          "x": 40,
+          "y": 5,
+          "width": 20,
+          "height": 20,
+          "correctElements": ["0", "1"],
+          "backgroundOpacity": 100,
+          "tipsAndFeedback": { "tip": "", "feedbackOnCorrect": "", "feedbackOnIncorrect": "" },
+          "single": false,
+          "autoAlign": false
+        }
+      ]
+    }
+  },
+  "overallFeedback": [
+    { "from": 0, "to": 100, "feedback": "" }
+  ],
+  "behaviour": {
+    "enableRetry": true,
+    "enableCheckButton": true,
+    "singlePoint": true,
+    "applyPenalties": true,
+    "enableScoreExplanation": false,
+    "dropZoneHighlighting": "dragging",
+    "autoAlignSpacing": 2,
+    "enableFullScreen": false,
+    "showScorePoints": true,
+    "showTitle": false,
+    "dragHandleVisibility": true
+  }
+}
+

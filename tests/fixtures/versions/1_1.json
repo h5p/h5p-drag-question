@@ -1,0 +1,13 @@
+{
+  "enableTryAgain": false,
+  "preventResize": false,
+  "singlePoint": false,
+  "showSolutionsRequiresInput": false,
+  "question": {
+    "task": {
+      "elements": [],
+      "dropZones": []
+    }
+  }
+}
+

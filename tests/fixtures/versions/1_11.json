@@ -1,0 +1,18 @@
+{
+  "feedback": "Old-style feedback message.",
+  "backgroundOpacity": 80,
+  "question": {
+    "settings": {
+      "dropZoneHighlighting": "always",
+      "autoAlignSpacing": 4,
+      "enableFullScreen": true
+    },
+    "task": {
+      "elements": [],
+      "dropZones": [
+        { "label": "Zone", "x": 0, "y": 0, "width": 10, "height": 10, "correctElements": [], "tip": "A helpful tip." }
+      ]
+    }
+  }
+}
+

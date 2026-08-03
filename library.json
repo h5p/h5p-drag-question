@@ -20,6 +20,9 @@
   "preloadedJs": [
     {
       "path": "h5p-drag-question.js"
+    },
+    {
+      "path": "js/drag-question-scoring.js"
     }
   ],
   "preloadedCss": [
