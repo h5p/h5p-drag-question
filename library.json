@@ -34,11 +34,6 @@
       "minorVersion": 5
     },
     {
-      "machineName": "jQuery.ui",
-      "majorVersion": 1,
-      "minorVersion": 10
-    },
-    {
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
       "minorVersion": 3

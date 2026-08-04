@@ -118,6 +118,26 @@ export default class DragUtils {
    * Find draggable instance from element
    *
    * @private
+   * @param {Draggable[]} draggables
+   * @param {Element} element
+   */
+  static elementToDraggable(draggables, element) {
+    for (var i = 0; i < draggables.length; i++) {
+      if (!draggables[i]) {
+        continue;
+      }
+      var result = draggables[i].findElement(element);
+      if (result) {
+        result.draggable = draggables[i];
+        return result;
+      }
+    }
+  }
+
+  /**
+   * Find draggable instance from element
+   *
+   * @private
    * @param {DropZone[]} dropZones
    * @param {Element} element
    */
