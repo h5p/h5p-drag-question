@@ -162,7 +162,6 @@ function C(options, contentId, contentData) {
       i,
       answers,
       grabbablel10n,
-      task.dropZones,
       draggableNum++,
       {
         dragHandleWanted: self.options.behaviour.dragHandleVisibility
