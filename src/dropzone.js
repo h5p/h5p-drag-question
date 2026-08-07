@@ -13,7 +13,7 @@ export default class DropZone {
    * @returns {_L8.DropZone}
    */
   constructor(dropZone, id, l10n) {
-    var self = this;
+    const self = this;
     H5P.EventDispatcher.call(self);
 
     const behaviour = dropZone.behaviour ?? {};
@@ -29,9 +29,8 @@ export default class DropZone {
     self.tip = dropZone.tipsAndFeedback.tip || '';
     self.single = dropZone.single;
     self.autoAlignable = dropZone.autoAlign;
-    self.useBackgroundHover =
-      behaviour.dropZoneHighlighting === 'always' ||
-      behaviour.dropZoneHighlighting === 'dragging';
+    self.useBackgroundHover = behaviour.dropZoneHighlighting === 'always'
+      || behaviour.dropZoneHighlighting === 'dragging';
     self.alignables = [];
     self.l10n = l10n;
   }
@@ -44,83 +43,62 @@ export default class DropZone {
    * @returns {undefined}
    */
   appendTo($container, draggables) {
-    var self = this;
+    const self = this;
+    const droppableElement = H5P.Components.Dropzone({
+      variant: 'area',
+      containerClasses: self.showLabel ? 'h5p-has-label' : '',
+      classes: 'h5p-inner',
+      tolerance: 'intersect',
+      role: 'button',
+      backgroundOpacity: this.backgroundOpacity,
+      ariaDisabled: true,
+      ariaLabel: self.showLabel
+        ? undefined
+        : `${self.l10n.prefix.replace('{num}', self.id + 1)} ${DragUtils.strip(self.label)}`,
+      areaLabel: self.showLabel ? self.label : undefined,
+      handleDropEvent: (draggable) => {
+        const $this = this.$dropZone;
+        DragUtils.setOpacity($this.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        draggable.dataset.addToZone = this.id;
 
-    self.$dropZone = $(
-      H5P.Components.Dropzone({
-        variant: 'area',
-        containerClasses: self.showLabel ? 'h5p-has-label' : '',
-        classes: 'h5p-inner',
-        tolerance: 'intersect',
-        role: 'button',
-        backgroundOpacity: this.backgroundOpacity,
-        ariaDisabled: true,
-        ariaLabel: self.showLabel
-          ? undefined
-          : `${self.l10n.prefix.replace('{num}', self.id + 1)} ${DragUtils.strip(self.label)}`,
-        areaLabel: self.showLabel ? self.label : undefined,
-        handleAcceptEvent: (element) => {
-          /**
-           * Functional note:
-           * This will fire every time a draggable is starting to get dragged, globally
-           * for all initialized drop zones  <-> draggables. That means in a compound H5P this
-           * function will fire for all Drag Questions within that compound content type,
-           * no matter if it is at a different timestamp, already completed or otherwise
-           * intuitively would be disabled. This can lead to some unexpected behaviour if you
-           * don't take this into consideration.
-           */
+        const $draggable = H5P.jQuery(draggable);
 
-          // Find draggable element belongs to
-          const result = DragUtils.elementToDraggable(draggables, element);
+        if (this.getIndexOf($draggable) === -1) {
+          // Add to alignables
+          this.alignables.push($draggable);
+        }
 
-          // Found no Draggable that the element belongs to. Don't accept it.
-          if (!result) {
-            return false;
-          }
+        if (this.autoAlignable.enabled) {
+          // Trigger alignment
+          this.autoAlign();
+        }
+      },
+      handleDropOverEvent: () => {
+        if (this.useBackgroundHover) {
+          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
+        }
+      },
+      handleDropOutEvent: () => {
+        if (this.useBackgroundHover) {
+          DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
+        }
+      },
+    });
 
-          // Figure out if the drop zone will accept the draggable
-          return this.accepts(result.draggable, draggables);
-        },
-        handleDropEvent: (event, ui) => {
-          const $this = this.$dropZone;
-          DragUtils.setOpacity($this.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
-          ui.draggable.data('addToZone', this.id);
-
-          if (this.getIndexOf(ui.draggable) === -1) {
-            // Add to alignables
-            this.alignables.push(ui.draggable);
-          }
-
-          if (this.autoAlignable.enabled) {
-            // Trigger alignment
-            this.autoAlign();
-          }
-        },
-        handleDropOverEvent: () => {
-          if (this.useBackgroundHover) {
-            DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').addClass('h5p-over'), 'background', this.backgroundOpacity);
-          }
-        },
-        handleDropOutEvent: () => {
-          if (this.useBackgroundHover) {
-            DragUtils.setOpacity(this.$dropZone.children('.h5p-inner').removeClass('h5p-over'), 'background', this.backgroundOpacity);
-          }
-        },
-      })
-    )
+    self.$dropZone = $(droppableElement)
       .css({
-        left: self.x + '%',
-        top: self.y + '%',
-        width: self.width + 'em',
-        height: self.height + 'em',
+        left: `${self.x}%`,
+        top: `${self.y}%`,
+        width: `${self.width}em`,
+        height: `${self.height}em`,
       })
       .appendTo($container)
-      .focus(function () {
+      .focus(() => {
         if ($tip instanceof H5P.jQuery) {
           $tip.attr('tabindex', '0');
         }
       })
-      .blur(function () {
+      .blur(() => {
         if ($tip instanceof H5P.jQuery) {
           $tip.attr('tabindex', '-1');
         }
@@ -141,8 +119,8 @@ export default class DropZone {
       });
     }
 
-    draggables.forEach(function (draggable) {
-      var dragEl = draggable.element.$;
+    draggables.forEach((draggable) => {
+      const dragEl = draggable.element.$;
 
       // Add to alignables
       if (draggable.isInDropZone(self.id) && self.getIndexOf(dragEl) === -1) {
@@ -154,7 +132,7 @@ export default class DropZone {
     }
 
     // Set element opacity when element has been appended
-    setTimeout(function () {
+    setTimeout(() => {
       self.updateBackgroundOpacity();
     }, 0);
   }
@@ -171,7 +149,7 @@ export default class DropZone {
    * Help determine if the drop zone can accept this draggable
    */
   accepts(draggable, draggables) {
-    var self = this;
+    const self = this;
     if (!draggable.hasDropZone(self.id)) {
       // Doesn't belong in this drop zone
       return false;
@@ -179,7 +157,7 @@ export default class DropZone {
 
     if (self.single) {
       // Make sure no other draggable is placed here
-      for (var i = 0; i < draggables.length; i++) {
+      for (let i = 0; i < draggables.length; i++) {
         if (draggables[i] && draggables[i].isInDropZone(self.id)) {
           // This drop zone is occupied
           return false;
@@ -197,9 +175,9 @@ export default class DropZone {
    * @return {number}
    */
   getIndexOf($alignable) {
-    var self = this;
+    const self = this;
 
-    for (var i = 0; i < self.alignables.length; i++) {
+    for (let i = 0; i < self.alignables.length; i++) {
       if (self.alignables[i][0] === $alignable[0]) {
         return i;
       }
@@ -214,17 +192,17 @@ export default class DropZone {
    * @param {jQuery} $alignable
    */
   removeAlignable($alignable) {
-    var self = this;
+    const self = this;
 
     // Find alignable index
-    var index = self.getIndexOf($alignable);
+    const index = self.getIndexOf($alignable);
     if (index !== -1) {
       // Remove alignable
       self.alignables.splice(index, 1);
 
       if (self.autoAlignTimer === undefined && self.autoAlignable.enabled) {
         // Schedule re-aligment of alignables left
-        self.autoAlignTimer = setTimeout(function () {
+        self.autoAlignTimer = setTimeout(() => {
           delete self.autoAlignTimer;
           self.autoAlign();
         }, 1);
@@ -236,41 +214,42 @@ export default class DropZone {
    * Auto-align alignable elements inside drop zone.
    */
   autoAlign() {
-    var self = this;
+    const self = this;
 
     // Determine container size in order to calculate percetages
-    var containerSize = self.$dropZone.parent()[0].getBoundingClientRect();
+    const containerSize = self.$dropZone.parent()[0].getBoundingClientRect();
 
     // Calcuate borders and spacing values in percetage
-    var spacing = {
+    const spacing = {
       x: (self.autoAlignable.spacing / self.autoAlignable.size.width) * 100,
       y: (self.autoAlignable.spacing / self.autoAlignable.size.height) * 100,
     };
 
     // Determine coordinates for first 'spot'
-    var pos = {
+    const pos = {
       x: self.x + spacing.x,
       y: self.y + spacing.y,
     };
 
     // Determine space inside drop zone
-    var dropZoneSize = self.$dropZone[0].getBoundingClientRect();
-    var space = {
+    const dropZoneSize = self.$dropZone[0].getBoundingClientRect();
+    const space = {
       x: dropZoneSize.width - spacing.x * 2,
       y: dropZoneSize.height - spacing.y * 2,
     };
 
     // Set current space left inside drop zone
-    var spaceLeft = {
+    const spaceLeft = {
       x: space.x,
       y: space.y,
     };
 
     // Set height for the active row of elements
-    var currentRowHeight = 0;
+    let currentRowHeight = 0;
 
     // Current alignable element and it's size
-    var $alignable, alignableSize;
+    let $alignable; let
+      alignableSize;
 
     /**
      * Helper doing the actual positioning of the element + recalculating
@@ -278,21 +257,21 @@ export default class DropZone {
      *
      * @private
      */
-    var alignElement = function () {
+    const alignElement = function () {
       // Position element at current spot
       $alignable.css({
-        left: pos.x + '%',
-        top: pos.y + '%',
+        left: `${pos.x}%`,
+        top: `${pos.y}%`,
       });
       self.trigger('elementaligned', $alignable);
 
       // Update horizontal space left + next position
-      var spaceDiffX = alignableSize.width + self.autoAlignable.spacing;
+      const spaceDiffX = alignableSize.width + self.autoAlignable.spacing;
       spaceLeft.x -= spaceDiffX;
       pos.x += (spaceDiffX / containerSize.width) * 100;
 
       // Keep track of the highest element in this row
-      var spaceDiffY = alignableSize.height + self.autoAlignable.spacing;
+      const spaceDiffY = alignableSize.height + self.autoAlignable.spacing;
       if (spaceDiffY > currentRowHeight) {
         currentRowHeight = spaceDiffY;
       }
@@ -300,7 +279,7 @@ export default class DropZone {
 
     // Try to order and align the alignables inside the drop zone
     // (in the order they were added)
-    for (var i = 0; i < self.alignables.length; i++) {
+    for (let i = 0; i < self.alignables.length; i++) {
       // Determine alignable size
       $alignable = self.alignables[i];
       alignableSize = $alignable[0].getBoundingClientRect();
@@ -308,7 +287,8 @@ export default class DropZone {
       // Try to fit on the current row
       if (spaceLeft.x >= alignableSize.width) {
         alignElement();
-      } else {
+      }
+      else {
         // Did not fit, try next row
 
         // Reset X values
