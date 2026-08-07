@@ -162,6 +162,7 @@ function C(options, contentId, contentData) {
       i,
       answers,
       grabbablel10n,
+      task.dropZones,
       draggableNum++,
       {
         dragHandleWanted: self.options.behaviour.dragHandleVisibility
@@ -265,10 +266,6 @@ function C(options, contentId, contentData) {
     });
   }
 
-  this.draggables.forEach(draggable => {
-    draggable.setDropZones(this.dropZones);
-  });
-  
   this.on('resize', self.resize, self);
   this.on('domChanged', function (event) {
     if (self.contentId === event.data.contentId) {
