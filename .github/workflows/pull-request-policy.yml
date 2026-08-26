@@ -1,0 +1,31 @@
+name: PR policy
+
+on:
+  pull_request_target:
+    branches:
+      - master
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    branches:
+      - master
+    types: [submitted, edited, dismissed]
+
+concurrency:
+  group: pr-policy-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  checks: write
+  pull-requests: write
+
+jobs:
+  policy:
+    uses: h5p/h5p-ci-workflows/.github/workflows/pull-request-policy.yml@<commit-sha-when-merged-in>
+    with:
+      policy-ref: <commit-sha-when-merged-in>
+      required-checks: '["ci / validate-translations", "ci / build"]'
+      translation-paths: '["language/*.json"]'
+      fallback-owner: makmentins
+      merge-method: merge
+      policy-check-name: H5P policy approval
