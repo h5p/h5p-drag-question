@@ -1,4 +1,5 @@
 *~
 node_modules
+coverage
 h5p-drag-question.js
 @legacy
