@@ -542,8 +542,23 @@ C.prototype.createQuestionContent = function () {
   // might have done so before.
 
   this.$container = $('<div class="h5p-inner" role="application" aria-labelledby="dq-intro-' + numInstances + '"></div>');
-  if (this.options.question.settings.background !== undefined) {
+
+  const settings = this.options.question.settings;
+
+  if (settings.background !== undefined) {
     this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+
+    const backgroundAlt = (!settings.backgroundDecorative && typeof settings.backgroundAlt === 'string') ? settings.backgroundAlt.trim() : '';
+    if (backgroundAlt !== '') {
+      $('<div/>', {
+        'class': 'h5p-hidden-read',
+        id: 'dq-bg-desc-' + numInstances,
+        text: backgroundAlt,
+        'aria-hidden': 'true',
+        appendTo: this.$container
+      });
+      this.$container.attr('aria-describedby', 'dq-bg-desc-' + numInstances);
+    }
   }
 
   var task = this.options.question.task;
