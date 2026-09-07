@@ -11,7 +11,7 @@ on:
     types: [submitted, edited, dismissed]
 
 concurrency:
-  group: pr-policy-${{ github.event.pull_request.number }}
+  group: pr-policy-${{ github.event.pull_request.number || github.event.workflow_run.head_sha }}
   cancel-in-progress: false
 
 permissions:
