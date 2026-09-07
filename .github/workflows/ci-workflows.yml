@@ -1,11 +1,19 @@
 name: CI
 
+concurrency:
+  group: ct-e2e-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   workflow_dispatch:
   pull_request:
     branches:
       - master
     types: [opened, synchronize]  # Triggers on PR open and commits to PR
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE*'
+      - '.gitignore'
 
 jobs:
   ci:
@@ -14,3 +22,5 @@ jobs:
       run-translations: true
       run-build: true
       run-tests: false
+      run-e2e: true
+    secrets: inherit
