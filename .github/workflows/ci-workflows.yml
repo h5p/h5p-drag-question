@@ -20,5 +20,7 @@ jobs:
     uses: h5p/h5p-ci-workflows/.github/workflows/h5p-ci-workflow.yml@master
     with:
       run-translations: true
+      run-build: true
+      run-tests: false
       run-e2e: true
     secrets: inherit
