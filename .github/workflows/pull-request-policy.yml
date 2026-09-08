@@ -21,9 +21,9 @@ permissions:
 
 jobs:
   policy:
-    uses: h5p/h5p-ci-workflows/.github/workflows/pull-request-policy.yml@<commit-sha-when-merged-in>
+    uses: h5p/h5p-ci-workflows/.github/workflows/pull-request-policy.yml@aef2c284358b47fd3d4d6895fa956f3cb748ff88
     with:
-      policy-ref: <commit-sha-when-merged-in>
+      policy-ref: aef2c284358b47fd3d4d6895fa956f3cb748ff88
       required-checks: '["ci / validate-translations", "ci / build"]'
       translation-paths: '["language/*.json"]'
       fallback-owner: makmentins
