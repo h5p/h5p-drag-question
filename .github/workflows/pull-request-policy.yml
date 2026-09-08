@@ -9,6 +9,9 @@ on:
     branches:
       - master
     types: [submitted, edited, dismissed]
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
 
 concurrency:
   group: pr-policy-${{ github.event.pull_request.number || github.event.workflow_run.head_sha }}
