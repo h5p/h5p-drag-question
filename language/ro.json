@@ -197,8 +197,12 @@
           "description": "Afișează punctele câștigate pentru fiecare răspuns. Nu este disponibil când opțiunea 'Acordă un singur punct pentru întreaga sarcină' este activată."
         },
         {
-          "label": "Afișează titlul",
-          "description": "Debifați această opțiune dacă nu doriți ca acest titlu să fie afișat. Titlul va fi afișat doar în rezumate, statistici etc."
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+        },
+        {
+          "label": "Show drag handles (new look and feel only)",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

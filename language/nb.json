@@ -199,6 +199,10 @@
         {
           "label": "Vis tittel",
           "description": "Fjern hake hvis du ikke ønsker å vise tittelen. Tittelen vises bare ved oppsummeringer, statistikk osv."
+        },
+        {
+          "label": "Show drag handles (new look and feel only)",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },

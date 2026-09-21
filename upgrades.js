@@ -158,6 +158,14 @@ H5PUpgrades['H5P.DragQuestion'] = (function () {
         }
 
         finished(null, parameters, extras);
+      },
+      15: function (parameters, finished, extras) {
+        if (typeof parameters?.behaviour === 'object' && parameters.behaviour !== null) {
+          // Do not show new design feature for old content.
+          parameters.behaviour.dragHandleVisibility = false;
+        }
+
+        finished(null, parameters, extras);
       }
     }
   };

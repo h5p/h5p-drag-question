@@ -197,8 +197,12 @@
           "description": "Az egyes válaszokért kapott pontok megjelenítése. Nem elérhető, ha az \"Egy pont jár a teljes feladatért\" beállítás használatban van."
         },
         {
-          "label": "Cím megjelenítése",
-          "description": "Kikapcsolása esetén ez a cím nem jelenik meg. A cím csak összefoglalókban, statisztikákban stb. jelenik meg."
+          "label": "Show Title",
+          "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc."
+        },
+        {
+          "label": "Show drag handles (new look and feel only)",
+          "description": "Toggles the visibility of drag handles used to move elements on the canvas."
         }
       ]
     },
