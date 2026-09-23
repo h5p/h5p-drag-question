@@ -26,6 +26,14 @@
               "description": "Не е задължително. Изберете изображение, което да използвате като фон за задачата за плъзгане и пускане."
             },
             {
+              "label": "Decorative Only",
+              "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+            },
+            {
+              "label": "Alternative text",
+              "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers."
+            },
+            {
               "label": "Размер на зоната за задачата",
               "description": "Посочете колко голяма (в px) трябва да бъде зоната за задачата."
             }

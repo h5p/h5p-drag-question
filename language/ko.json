@@ -26,6 +26,14 @@
               "description": "(선택사항) 끌어서 놓기 작업의 배경으로 사용할 이미지를 선택하십시오."
             },
             {
+              "label": "Decorative Only",
+              "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+            },
+            {
+              "label": "Alternative text",
+              "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers."
+            },
+            {
               "label": "태스크(과제) 영역 크기",
               "description": "과제 영역의 크기(픽셀)를 지정하십시오."
             }
