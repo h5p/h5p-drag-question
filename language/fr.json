@@ -5,8 +5,8 @@
       "default": "Vérifier"
     },
     {
-      "label": "Bouton soumettre la réponse",
-      "default": "Envoyer"
+      "label": "Submit answer button",
+      "default": "Submit"
     },
     {
       "label": "Bouton \"Recommencer\"",
