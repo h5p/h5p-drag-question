@@ -139,6 +139,12 @@ export default class Draggable extends H5P.EventDispatcher {
     // Use placeholder image if none specified
     if (self.type.library.includes('H5P.Image')) {
       self.type.params.usePlaceholderImage = true;
+
+      if (self.type.params.title) {
+        H5P.Tooltip(instanceHolderDOM, {
+          text: self.type.params.title
+        });
+      }
     }
 
     H5P.newRunnable(self.type, contentId, H5P.jQuery(instanceHolderDOM));
