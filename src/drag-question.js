@@ -537,35 +537,49 @@ C.prototype.getUserAnswers = function () {
  * Append field to wrapper.
  */
 C.prototype.createQuestionContent = function () {
-  var i;
   // If reattaching, we no longer show solution. So forget that we
   // might have done so before.
 
-  this.$container = $('<div class="h5p-inner" role="application" aria-labelledby="dq-intro-' + numInstances + '"></div>');
-  if (this.options.question.settings.background !== undefined) {
-    this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
-  }
+  this.$container = $('<div class="h5p-inner"></div>');
 
-  var task = this.options.question.task;
+  const settings = this.options.question.settings;
+
+  if (settings.background !== undefined) {
+    this.$container.css('backgroundImage', 'url("' + H5P.getPath(this.options.question.settings.background.path, this.id) + '")');
+
+    const backgroundAlt = (!settings.backgroundDecorative && typeof settings.backgroundAlt === 'string') ? settings.backgroundAlt.trim() : '';
+    if (backgroundAlt !== '') {
+      $('<div/>', {
+        'class': 'h5p-hidden-read',
+        id: `dq-bg-desc-${numInstances}`,
+        text: backgroundAlt,
+        appendTo: this.$container,
+      });
+      this.$container.attr('aria-describedby', `dq-bg-desc-${numInstances}`);
+    }
+  }
+  const $draggablesContainer = $('<div role="application" class="h5p-draggables-container"></div>');
+  this.$container.append($draggablesContainer);
+  const task = this.options.question.task;
 
   // Add elements (static and draggable)
-  for (i = 0; i < task.elements.length; i++) {
-    var element = task.elements[i];
+  for (let i = 0; i < task.elements.length; i++) {
+    const element = task.elements[i];
 
     if (element.dropZones !== undefined && element.dropZones.length !== 0) {
       // Attach draggable elements
-      this.draggables[i].appendTo(this.$container, this.id);
+      this.draggables[i].appendTo($draggablesContainer, this.id);
     }
     else {
       // Add static element
-      var $element = this.addElement(element, 'static', i);
+      const $element = this.addElement(element, 'static', i);
       // Use placeholder image if none specified
       if (element.type.library.includes('H5P.Image')) {
         element.type.params.usePlaceholderImage = true;
       }
       H5P.newRunnable(element.type, this.id, $element);
-      var timedOutOpacity = function ($el, el) {
-        setTimeout(function () {
+      const timedOutOpacity = ($el, el) => {
+        setTimeout(() => {
           DragUtils.setOpacity($el, 'background', el.backgroundOpacity);
         }, 0);
       };
@@ -574,11 +588,11 @@ C.prototype.createQuestionContent = function () {
   }
 
   // Attach invisible 'reset' drop zone for keyboard users
-  this.$noDropZone.appendTo(this.$container);
+  this.$noDropZone.appendTo($draggablesContainer);
 
   // Attach drop zones
-  for (i = 0; i < this.dropZones.length; i++) {
-    this.dropZones[i].appendTo(this.$container, this.draggables);
+  for (let i = 0; i < this.dropZones.length; i++) {
+    this.dropZones[i].appendTo($draggablesContainer, this.draggables);
   }
   return this.$container;
 };

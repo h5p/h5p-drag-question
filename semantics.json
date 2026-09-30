@@ -54,6 +54,30 @@
             "description": "Optional. Select an image to use as background for your drag and drop task."
           },
           {
+            "name": "backgroundDecorative",
+            "type": "boolean",
+            "label": "Decorative Only",
+            "default": false,
+            "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+          },
+          {
+            "name": "backgroundAlt",
+            "type": "text",
+            "label": "Alternative text",
+            "importance": "high",
+            "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers.",
+            "widget": "showWhen",
+            "showWhen": {
+              "rules": [
+                {
+                  "field": "backgroundDecorative",
+                  "equals": false
+                }
+              ],
+              "nullWhenHidden": true
+            }
+          },
+          {
             "name": "size",
             "type": "group",
             "widget": "dimensions",
