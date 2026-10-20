@@ -26,6 +26,14 @@
               "description": "オプションです。ドラッグ &amp; ドロップするときの背景として使う画像を選んで下さい。"
             },
             {
+              "label": "Decorative Only",
+              "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+            },
+            {
+              "label": "Alternative text",
+              "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers."
+            },
+            {
               "label": "タスクのサイズ",
               "description": "再生領域をサイズ (px) で指定します。"
             }

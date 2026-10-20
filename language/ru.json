@@ -26,6 +26,14 @@
               "description": "По желанию. Выберите изображение для использования в качестве фона для задачи с перетаскиванием."
             },
             {
+              "label": "Decorative Only",
+              "description": "Enable this option if the image is purely decorative and does not add any information to the content on the page. It will be ignored by screen readers and not given any alternative text."
+            },
+            {
+              "label": "Alternative text",
+              "description": "Required. If the browser can't load the image this text will be displayed instead. Also used by \"text-to-speech\" readers."
+            },
+            {
               "label": "Размер задачи",
               "description": "Укажите, насколько большой (в пикселях) должна быть игровая зона."
             }
