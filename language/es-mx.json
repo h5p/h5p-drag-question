@@ -262,14 +262,6 @@
     {
       "label": "Representación textual del botón para explicación del puntaje",
       "default": "Mostrar explicación del puntaje"
-    },
-    {
-      "label": "Etiqueta de tecnología asistiva para botón \"Comprobar\"",
-      "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
-    },
-    {
-      "label": "Etiqueta de tecnología asistiva para botón \"Reintentar\"",
-      "default": "Reintentar el trabajo. Reiniciar todas las respuestas e iniciar el trabajo de nuevo."
     }
   ]
 }

@@ -262,14 +262,6 @@
     {
       "label": "Reprezentarea textuală a butonului de explicație a punctajului",
       "default": "Arată explicația punctajului"
-    },
-    {
-      "label": "Etichetă pentru tehnologia asistivă a butonului „Verifică”",
-      "default": "Verifică răspunsurile. Răspunsurile vor fi marcate ca fiind corecte, incorecte sau fără răspuns."
-    },
-    {
-      "label": "Etichetă pentru tehnologia asistivă a butonului „Reîncearcă”",
-      "default": "Reîncearcă sarcina. Resetează toate răspunsurile și reia sarcina de la început."
     }
   ]
 }

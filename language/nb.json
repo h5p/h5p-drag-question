@@ -262,14 +262,6 @@
     {
       "label": "Tekstalternativ til \"Poengforklaring\"-knapp",
       "default": "Vis poengforklaring"
-    },
-    {
-      "label": "Beskrivelse av \"Sjekk\"-knappen for assisterende teknologi",
-      "default": "Sjekk svar. Svara blir merka som riktig, feil eller ubesvart."
-    },
-    {
-      "label": "Beskrivelse av \"Prøv igjen\"-knapp (for assisterende teknologi)",
-      "default": "Prøv igjen. Alle svar blir nullstilt, og oppgaven starter på nytt."
     }
   ]
 }

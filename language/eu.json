@@ -262,14 +262,6 @@
     {
       "label": "Puntuazioaren azalpenaren botoiaren testu bidezko azalpena",
       "default": "Erakutsi puntuazioaren azalpena"
-    },
-    {
-      "label": "\"Egiaztatu\" botoiaren laguntza-teknologientzako etiketa",
-      "default": "Egiaztatu erantzunak. Erantzunak zuzen, oker edo erantzun gabe gisa markatuko dira."
-    },
-    {
-      "label": "\"Berriz saiatu\" botoiaren laguntza-teknologientzako etiketa",
-      "default": "Zeregina berriz egiten saiatu. Berrabiarazi erantzun guztiak eta hasi zeregina berriz."
     }
   ]
 }

@@ -262,14 +262,6 @@
     {
       "label": "Tekstuele voorstelling van die telling-verduideliking-knoppie",
       "default": "Wys verduideliking van telling"
-    },
-    {
-      "label": "Hulptegnologieetiket vir \"Toets\" knoppie",
-      "default": "Toets die antwoorde. Die antwoorde sal as reg gemerk, verkeerd of onbeantwoord gemerk word."
-    },
-    {
-      "label": "Hulptegnologieetiket vir \"Probeer weer\" knoppie",
-      "default": "Probeer die taak weer. Herstel al die antwoorde en probeer die taak weer van die begin af."
     }
   ]
 }

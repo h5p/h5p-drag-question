@@ -69,8 +69,6 @@ function C(options, contentId, contentData) {
       showTitle: false,
       dragHandleVisibility: true
     },
-    a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
-    a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
     submit: 'Submit'
   }, options);
 
@@ -611,9 +609,7 @@ C.prototype.addSolutionButton = function () {
     // Focus top of task for better focus and read-speaker flow
     var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
     $nextFocus.focus();
-  }, true, {
-    'aria-label': this.options.a11yCheck,
-  }, {
+  }, true, undefined, {
     contentData: this.contentData,
     textIfSubmitting: this.options.submit,
     icon: 'check',
@@ -697,9 +693,7 @@ C.prototype.addRetryButton = function () {
     that.resetTask();
     that.showButton('check-answer');
     that.hideButton('try-again');
-  }, false, {
-    'aria-label': this.options.a11yRetry,
-  },
+  }, false, undefined,
   {
     styleType: 'secondary',
     icon: 'retry',
