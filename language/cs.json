@@ -262,14 +262,6 @@
     {
       "label": "Textové znázornění tlačítka pro vysvětlení skóre",
       "default": "Zobrazit vysvětlení skóre"
-    },
-    {
-      "label": "Popisek podpůrné technologie pro tlačítko „Zkontrolovat“",
-      "default": "Zkontrolovat odpovědi. Odpovědi budou označeny jako správné, nesprávné nebo nezodpovězené."
-    },
-    {
-      "label": "Popisek podpůrné technologie pro tlačítko „Opakovat“",
-      "default": "Opakovat úkol. Resetovat všechny odpovědi a spustit úlohu znovu."
     }
   ]
 }

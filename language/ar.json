@@ -262,14 +262,6 @@
     {
       "label": "زر تمثيل نصي لتفسير النتيجة",
       "default": "Show score explanation"
-    },
-    {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
-    },
-    {
-      "label": "علامة التكنولوجيا المساعدة لزر \"الإعادة\"",
-      "default": "إعادة المحاولة للمهمة. إعادة ضبط جميع الردود والبدء بالمهمة مرة أخرى."
     }
   ]
 }

@@ -262,14 +262,6 @@
     {
       "label": "A pontszám magyarázata gomb szöveges megjelenítése",
       "default": "Pontszámmagyarázat mutatása"
-    },
-    {
-      "label": "\"Ellenőrzés\" gomb címkéje támogató-segítő eszközöknek",
-      "default": "Válaszok ellenőrzése. A válaszokat helyesnek, helytelennek vagy megválaszolatlannak jelöli."
-    },
-    {
-      "label": "\"Újra\" gomb címkéje támogató-segítő eszközöknek",
-      "default": "Feladat újrapróbálása. Minden válasz visszaállítása és a feladat újrakezdése."
     }
   ]
 }

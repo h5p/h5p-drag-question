@@ -262,14 +262,6 @@
     {
       "label": "Représentation textuelle du bouton de l'explication de votre score",
       "default": "Montrer l'explication de votre score"
-    },
-    {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
-    },
-    {
-      "label": "Vignette de technologie fonctionnelle pour la touche « Réessayer »",
-      "default": "Réessayer la tâche. Réinitialiser toutes les réponses et recommencer la tâche."
     }
   ]
 }

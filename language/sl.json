@@ -262,14 +262,6 @@
     {
       "label": "Besedilo gumba za izražanje napredka",
       "default": "Prikaži razlago točk"
-    },
-    {
-      "label": "Besedilo, ki ga bralnik zaslona uporabi za gumb \"Preveri\"",
-      "default": "Preveri pravilnost odgovorov. Odgovori bodo označeni kot pravilni, napačni ali brez odgovora."
-    },
-    {
-      "label": "Besedilo, ki ga bralnik zaslona uporabi za gumb \"Poskusi ponovno\"",
-      "default": "Poskusi ponovno. Ponastavi vse odzive in znova zaženi nalogo."
     }
   ]
 }
