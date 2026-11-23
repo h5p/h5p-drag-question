@@ -262,14 +262,6 @@
     {
       "label": "Tekstinis vertinimo paaiškinimo mygtuko atvaizdavimas",
       "default": "Rodyti vertinimo paaiškinimą"
-    },
-    {
-      "label": "Pagalbinis technologinis užrašas \"Tikrinti\" mygtukui",
-      "default": "Patikrinti atsakymus. Atsakymai bus pažymėti kaip teisingi, neteisingi ar neatsakyti."
-    },
-    {
-      "label": "Pagalbinis technologinis užrašas \"Bandyti dar kartą\" mygtukui",
-      "default": "Bandyti užduotį dar kartą. Atšaukti visus atsakymus ir pradėti užduoti iš naujo."
     }
   ]
 }

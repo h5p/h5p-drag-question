@@ -262,14 +262,6 @@
     {
       "label": "Textual representation of the score explanation button",
       "default": "Show score explanation"
-    },
-    {
-      "label": "Assistive technology label for \"Check\" button",
-      "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered."
-    },
-    {
-      "label": "Assistive technology label for \"Retry\" button",
-      "default": "Görevi yeniden deneyin. Tüm cevapları sıfırlayın ve görevi yeniden başlatın."
     }
   ]
 }

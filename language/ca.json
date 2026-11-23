@@ -262,14 +262,6 @@
     {
       "label": "Representació textual del botó de l’explicació de la puntuació",
       "default": "Mostra l’explicació de la puntuació"
-    },
-    {
-      "label": "Etiqueta de la tecnologia d’assistència per al botó \"Comprova\"",
-      "default": "Comprova les respostes. Les respostes es marcaran com a correctes, incorrectes o sense resposta."
-    },
-    {
-      "label": "Etiqueta de la tecnologia d’assistència per a l’etiqueta \"Torna-ho a provar\"",
-      "default": "Intenta de nou la tasca. Reajusta totes les respostes i comença la tasca de nou."
     }
   ]
 }

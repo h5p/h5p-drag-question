@@ -262,14 +262,6 @@
     {
       "label": "Representación textual del botón para explicación de la puntuación",
       "default": "Mostrar explicación de la puntuación"
-    },
-    {
-      "label": "Etiqueta para las tecnologías de asistencia para el botón \"Comprobar\"",
-      "default": "Comprobar las respuestas. Las respuestas serán marcadas como correcta, incorrecta o sin contestar."
-    },
-    {
-      "label": "Descripción para las tecnologías de asistencia del botón \"Intentar de nuevo\"",
-      "default": "Vuelve a intentar la tarea. Borra todas tus respuestas y empieza de nuevo."
     }
   ]
 }
