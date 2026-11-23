@@ -68,8 +68,6 @@ function C(options, contentId, contentData) {
       showScorePoints: true,
       showTitle: false
     },
-    a11yCheck: 'Check the answers. The responses will be marked as correct, incorrect, or unanswered.',
-    a11yRetry: 'Retry the task. Reset all responses and start the task over again.',
     submit: 'Submit',
   }, options);
 
@@ -593,7 +591,7 @@ C.prototype.addSolutionButton = function () {
     var $nextFocus = that.$introduction ? that.$introduction : that.$container.children().first();
     $nextFocus.focus();
   }, true, {
-    'aria-label': this.options.a11yCheck,
+    'aria-label': this.options.scoreShow,
   }, {
     contentData: this.contentData,
     textIfSubmitting: this.options.submit,
@@ -678,7 +676,7 @@ C.prototype.addRetryButton = function () {
     that.showButton('check-answer');
     that.hideButton('try-again');
   }, false, {
-    'aria-label': this.options.a11yRetry,
+    'aria-label': this.options.tryAgain,
   });
 };
 

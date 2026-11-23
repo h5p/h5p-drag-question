@@ -262,14 +262,6 @@
     {
       "label": "Tekstimuotoinen esitys pisteidenselityspainikkeesta",
       "default": "Näytä pisteselvitys"
-    },
-    {
-      "label": "Avustavan teknologian otsikko \"Tarkista\"-painikkeelle",
-      "default": "Tarkista tulokset. Vastaukset merkitään joko oikein, väärin tai vastaamatta."
-    },
-    {
-      "label": "Avustavan teknologian otsikko \"Yritä uudelleen\" -painikkeelle",
-      "default": "Yritä tehtävää uudelleen. Tyhjennä kaikki vastaukset ja aloita tehtävä uudelleen alusta."
     }
   ]
 }

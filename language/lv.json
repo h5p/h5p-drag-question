@@ -262,14 +262,6 @@
     {
       "label": "Rezultātu skaidrojuma pogas teksta attēlojums",
       "default": "Rādīt rezultātu skaidrojumu"
-    },
-    {
-      "label": "Pogas \"Pārbaudīt\" etiķete asistīvajām tehnoloģijām",
-      "default": "Pārbaudīt atbildes. Atbildes tiks atzīmētas kā pareizas, nepareizas, vai neatbildētas."
-    },
-    {
-      "label": "Pogas \"Mēģināt vēlreiz\" etiķete asistīvajām tehnoloģijām",
-      "default": "Mēģināt uzdevumu vēlreiz. Dzēst visas sniegtās atbildes un sākt uzdevumu vēlreiz."
     }
   ]
 }

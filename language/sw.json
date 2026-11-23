@@ -262,14 +262,6 @@
     {
       "label": "Uwakilishi wa maandishi wa kitufe cha maelezo ya alama",
       "default": "Maandishi ya ufafanuzi wa alama"
-    },
-    {
-      "label": "Lebo ya teknolojia ya usaidizi kwa kitufe cha \"Weka alama\"",
-      "default": "Weka alama majibu. Majibu yatatiwa alama kuwa sahihi, siyo sahihi au haijajibiwa."
-    },
-    {
-      "label": "Lebo ya teknolojia ya usaidizi kwa kitufe cha \"Jaribu tena\"",
-      "default": "Jaribu tena kazi hiyo. Weka upya majibu yote na uanze kazi tena."
     }
   ]
 }

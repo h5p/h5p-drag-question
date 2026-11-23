@@ -262,14 +262,6 @@
     {
       "label": "Textuell visning av knappen som förklarar poäng",
       "default": "Visa förklaring till poäng"
-    },
-    {
-      "label": "Etikett för knappen \"Svara\" som används av tillgänglighetshjälpmedel",
-      "default": "Rätta mina svar. Svaren kommer att markeras som korrekta, felaktiga eller ej besvarade."
-    },
-    {
-      "label": "Etikett för knappen \"Försök igen\" som används av tillgänglighetshjälpmedel",
-      "default": "Starta ett nytt försök. Nollställer alla svar och startar om uppgiften."
     }
   ]
 }

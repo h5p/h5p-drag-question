@@ -262,14 +262,6 @@
     {
       "label": "Representação textual do botão de explicação da pontuação",
       "default": "Mostrar explicação da pontuação"
-    },
-    {
-      "label": "Rótulo da tecnologia assistiva para o botão \"Verificar\"",
-      "default": "Verifique as respostas. As respostas serão marcadas como corretas, incorretas ou sem resposta."
-    },
-    {
-      "label": "Etiqueta de tecnologia assistiva para botão \"Repetir\"",
-      "default": "Repetir a atividade. Apagar todas as respostas e reiniciar a atividade."
     }
   ]
 }
